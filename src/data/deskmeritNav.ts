@@ -16,6 +16,7 @@ export const PRODUCT_MENU = {
     {
       title: "Track",
       items: [
+        { name: "Features overview", href: "/features", description: "Explore the complete suite of 14 time tracking modules" },
         { name: "Automatic time tracking", href: "/features/automatic-time-tracking", description: "Computer time from the moment the agent starts" },
         { name: "Productivity tracking", href: "/features/productivity-tracking", description: "App, URL and document title scoring per role" },
         { name: "Document tracking", href: "/features/document-tracking", description: "Time per file and document — titles only, never content" },
@@ -39,6 +40,7 @@ export const PRODUCT_MENU = {
         { name: "Leave management", href: "/features/leave-management", description: "Requests, approvals and shared team absence calendar" },
         { name: "Idle & Private Time", href: "/features/idle-and-private-time", description: "Visible pauses, never miscounted as idle slacking" },
         { name: "Screenshots", href: "/features/screenshots", description: "Off by default, blurred by default, announced" },
+        { name: "Download desktop agent", href: "/download", description: "Native background app for macOS, Windows, and Linux" },
       ],
     },
   ],
@@ -91,6 +93,40 @@ export const SOLUTIONS_MENU = {
   ],
 };
 
+export const INTEGRATIONS_MENU = {
+  columns: [
+    {
+      title: "Developer & sprint",
+      items: [
+        { name: "Jira Software", href: "/integrations/jira", description: "Sprint issue sync and real-time ticket timers with personal tokens" },
+        { name: "Azure DevOps", href: "/integrations/azure-devops", description: "Boards, work items, and sprint planning direct timer integration" },
+        { name: "OpenProject", href: "/integrations/openproject", description: "Open-source project tracking and work package time records" },
+      ],
+    },
+    {
+      title: "Calendars & comms",
+      items: [
+        { name: "Google Calendar", href: "/integrations/google-calendar", description: "Automatically convert calendar events and Google Meet calls to time logs" },
+        { name: "Outlook Calendar", href: "/integrations/outlook-calendar", description: "Office 365 calendar meeting sync with project allocation" },
+        { name: "Slack", href: "/integrations/slack", description: "Daily standup digests, start/stop commands, and status sync" },
+        { name: "Microsoft Teams", href: "/integrations/microsoft-teams", description: "Teams presence status synchronization and meeting tracking" },
+      ],
+    },
+    {
+      title: "Automation & HRMS",
+      items: [
+        { name: "Zapier", href: "/integrations/zapier", description: "Trigger automated actions across 5,000+ cloud business apps" },
+        { name: "Make", href: "/integrations/make", description: "Visual automated workflows, webhooks, and multi-step scenarios" },
+        { name: "Sqalible HRMS", href: "/integrations/sqalible", description: "Native HRMS time tracking, payroll, and leave balance integration" },
+      ],
+    },
+  ],
+  bottomLinks: [
+    { label: "Integrations directory →", href: "/integrations" },
+    { label: "Tracker Plus for Jira →", href: "/features/tracker-plus" },
+  ],
+};
+
 export const RESOURCES_MENU = {
   columns: [
     {
@@ -99,22 +135,29 @@ export const RESOURCES_MENU = {
         { name: "Blog", href: "/blog", description: "Ideas on productivity, remote work, attendance and law" },
         { name: "Monitoring-law guides", href: "/guides/employee-monitoring-laws", description: "Country-by-country legal guides (India, AU, NZ, UAE, SA)" },
         { name: "Glossary", href: "/glossary", description: "Workforce terminology from billable utilisation to idle time" },
-        { name: "Customer stories", href: "/customers", description: "Real workflows and numbers from early pilot teams" },
       ],
     },
     {
-      title: "Free tools & templates",
+      title: "Free tools & calculators",
       items: [
         { name: "Utilisation calculator", href: "/tools/utilisation-calculator", description: "Calculate billable utilisation in seconds" },
         { name: "Overtime calculator", href: "/tools/overtime-calculator", description: "Work out overtime pay with country presets" },
+        { name: "All free tools", href: "/tools", description: "Browse all interactive workforce calculators" },
+      ],
+    },
+    {
+      title: "Policy & templates",
+      items: [
         { name: "Timesheet template", href: "/templates/timesheet-template", description: "Free weekly timesheet for Excel and Google Sheets" },
         { name: "Monitoring policy template", href: "/templates/employee-monitoring-policy", description: "A fair employee monitoring policy you can adapt" },
+        { name: "Templates hub", href: "/templates", description: "Free downloadable operational templates" },
       ],
     },
   ],
   bottomLinks: [
     { label: "Help centre ↗", href: "https://help.deskmerit.io", external: true },
-    { label: "Developers (REST API & MCP) →", href: "/developers" },
+    { label: "Monitoring-law guides →", href: "/guides/employee-monitoring-laws" },
+    { label: "Utilisation calculator →", href: "/tools/utilisation-calculator" },
   ],
 };
 
@@ -131,9 +174,61 @@ export const COMPARE_MENU = {
         { name: "vs Time Champ", href: "/compare/time-champ-alternative", description: "Starts from Jira/Azure tickets with Sqalible HRMS" },
       ],
     },
+    {
+      title: "Trust & security",
+      items: [
+        { name: "Security architecture", href: "/security", description: "Encryption in transit & at rest, multi-region residency, strict zero-keystrokes" },
+        { name: "Privacy promise", href: "/privacy-promise", description: "Designed for both sides of the screen — no webcams, no keylogging" },
+        { name: "Trust Center", href: "/trust", description: "SOC2 Type II, ISO 27001, and regional statutory compliance proofs" },
+      ],
+    },
   ],
   bottomLinks: [
     { label: "Compare all time trackers →", href: "/compare" },
+    { label: "Security architecture →", href: "/security" },
+    { label: "Privacy promise →", href: "/privacy-promise" },
+  ],
+};
+
+export const COMPANY_MENU = {
+  columns: [
+    {
+      title: "Company",
+      items: [
+        { name: "About us", href: "/about", description: "Our mission to bring trust and dignity back to workforce time" },
+        { name: "Careers", href: "/careers", description: "Join our globally distributed engineering & product team" },
+        { name: "Partners", href: "/partners", description: "White-label resellers, consulting and system integrators" },
+        { name: "Press & media", href: "/press", description: "Official logos, brand assets, and press releases" },
+        { name: "Contact", href: "/contact", description: "Speak with enterprise sales or product specialists" },
+        { name: "Book a demo", href: "/demo", description: "1-on-1 walkthrough tailored to your team's workflow" },
+      ],
+    },
+    {
+      title: "Developers & API",
+      items: [
+        { name: "Developers overview", href: "/developers", description: "REST API, webhook webhooks, and OpenAPI specifications" },
+        { name: "Claude MCP AI server", href: "/developers/mcp-server", description: "Connect Claude and AI coding agents to live workforce data" },
+        { name: "API documentation", href: "/developers/api", description: "Interactive endpoint explorer and code samples" },
+        { name: "Product changelog", href: "/changelog", description: "Weekly release updates, improvements, and fixes" },
+      ],
+    },
+    {
+      title: "Legal & compliance",
+      items: [
+        { name: "Terms of Service", href: "/legal/terms", description: "Standard enterprise terms and SaaS agreement" },
+        { name: "Privacy Policy", href: "/legal/privacy", description: "Transparent details on how user data is handled" },
+        { name: "Data Processing Agreement", href: "/legal/dpa", description: "GDPR, DPDP, and Australian Privacy Principles DPA" },
+        { name: "Sub-processors", href: "/legal/subprocessors", description: "Complete public directory of cloud infrastructure providers" },
+        { name: "Cookie Policy", href: "/legal/cookies", description: "Essential and analytics cookie disclosures" },
+        { name: "Service Level Agreement", href: "/legal/sla", description: "99.95% uptime commitment and response guarantees" },
+      ],
+    },
+  ],
+  bottomLinks: [
+    { label: "About Deskmerit →", href: "/about" },
+    { label: "Partner program →", href: "/partners" },
+    { label: "MCP AI server →", href: "/developers/mcp-server" },
+    { label: "Terms & Privacy →", href: "/legal/terms" },
   ],
 };
 
@@ -194,14 +289,14 @@ export const FOOTER_SECTIONS = [
     links: [
       { label: "Blog", href: "/blog" },
       { label: "Monitoring-law guides", href: "/guides/employee-monitoring-laws" },
-      { label: "Free tools", href: "/tools" },
+      { label: "Free tools hub", href: "/tools" },
       { label: "Utilisation calculator", href: "/tools/utilisation-calculator" },
       { label: "Overtime calculator", href: "/tools/overtime-calculator" },
       { label: "Templates hub", href: "/templates" },
-      { label: "Developers & REST API", href: "/developers" },
-      { label: "MCP server", href: "/developers/mcp-server" },
-      { label: "Help centre", href: "https://help.deskmerit.io", external: true },
+      { label: "Timesheet template", href: "/templates/timesheet-template" },
+      { label: "Monitoring policy template", href: "/templates/employee-monitoring-policy" },
       { label: "Glossary", href: "/glossary" },
+      { label: "Help centre", href: "https://help.deskmerit.io", external: true },
     ],
   },
   {

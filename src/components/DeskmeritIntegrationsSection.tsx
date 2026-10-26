@@ -99,7 +99,7 @@ function SqalibleLogo({ className = "w-6 h-6" }: { className?: string }) {
 function McpServerLogo({ className = "w-6 h-6" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="11" fill="#FFF0ED"/>
+      <circle cx="12" cy="12" r="11" fill="#FF5A36" fillOpacity="0.2" />
       <path d="M12 2L14.2 8.3L20.5 10.5L14.2 12.7L12 19L9.8 12.7L3.5 10.5L9.8 8.3L12 2Z" fill="#FF5A36"/>
       <circle cx="18" cy="17" r="2.2" fill="#FF8364"/>
       <circle cx="6" cy="6" r="1.5" fill="#FF8364"/>
@@ -195,58 +195,72 @@ export function DeskmeritIntegrationsSection() {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#F7F4EE] border-b border-[#E6E2D8]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
-            <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
-              Integrations
+    <section className="py-20 lg:py-28 bg-[#060B17] border-b border-slate-800 text-white font-sans relative overflow-hidden">
+      {/* Ambient Kombee-style glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-gradient-to-b from-[#FF5A36]/8 to-transparent rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Left Aligned Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6 text-left">
+          <div className="max-w-2xl">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2 font-mono">
+              INTEGRATIONS
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F1730] tracking-[-0.025em]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-[-0.025em] leading-tight">
               Works with the tools{" "}
-              <span className="block text-[#4A5370]">your team already lives in.</span>
+              <span className="block text-slate-400">your team already lives in.</span>
             </h2>
-            <p className="text-base sm:text-lg text-[#4A5370] mt-3 max-w-xl">
+            <p className="text-base sm:text-lg text-slate-300 mt-3 max-w-xl leading-relaxed">
               Project tools feed Tracker Plus, calendars feed attendance, chat gets daily summaries — and the REST API & MCP server connect everything else.
             </p>
           </div>
           <Link
             to="/integrations"
-            className="inline-flex items-center gap-1.5 text-sm font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors shrink-0"
+            className="inline-flex items-center gap-1.5 text-sm font-bold text-slate-300 hover:text-[#FF5A36] transition-colors shrink-0 self-start md:self-end"
           >
             Browse all integrations <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
-        {/* Integration Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-16">
+        {/* Integration Grid (Black BG as in Kombee: Logo on Left, All Integration Text on Right) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-4 mb-16">
           {tools.map((item) => (
             <div
               key={item.name}
-              className="group bg-[#FFFFFF] rounded-2xl p-4 sm:p-5 border border-[#E6E2D8] hover:border-[#FF5A36] hover:shadow-card transition-all flex flex-col justify-between"
+              className="group bg-[#0B1426] hover:bg-[#111D36] rounded-2xl p-4 border border-slate-800/90 hover:border-[#FF5A36] transition-all flex items-center gap-3.5 shadow-xs hover:shadow-lg"
             >
-              <div className="flex items-center justify-between mb-3">
-                <div className="w-10 h-10 rounded-xl bg-[#F8FAFC] border border-slate-200/90 shadow-2xs flex items-center justify-center p-2 group-hover:scale-105 group-hover:border-[#FF5A36]/40 transition-all">
-                  {item.logo}
-                </div>
-                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#F7F4EE] text-[#4A5370] border border-[#E6E2D8]">
-                  {item.badge}
-                </span>
+              {/* Left: Integration Logo */}
+              <div className="w-11 h-11 rounded-xl bg-[#060B17] border border-slate-800 flex items-center justify-center p-2.5 shrink-0 group-hover:scale-105 group-hover:border-[#FF5A36]/50 transition-all">
+                {item.logo}
               </div>
-              <div>
-                <h4 className="font-bold text-sm text-[#0F1730]">{item.name}</h4>
-                <p className="text-xs text-[#4A5370] mt-0.5 font-normal">{item.role}</p>
+
+              {/* Right: All Integration Text (Left-aligned) */}
+              <div className="flex-1 min-w-0 text-left">
+                <div className="flex items-center justify-between gap-1 mb-0.5">
+                  <h4 className="font-bold text-sm text-white group-hover:text-[#FF5A36] transition-colors truncate">
+                    {item.name}
+                  </h4>
+                  <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 shrink-0">
+                    {item.badge}
+                  </span>
+                </div>
+                <p className="text-xs text-slate-400 font-normal truncate">
+                  {item.role}
+                </p>
               </div>
             </div>
           ))}
         </div>
 
         {/* MCP Server Spotlight Highlight (Dark card with live AI dialogue) */}
-        <div className="bg-[#0F1730] text-white rounded-[24px] p-6 sm:p-10 border border-[#24305A] shadow-elevated relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="bg-[#0B1426] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
+          {/* Subtle Ambient Glow */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             {/* Left explanation */}
-            <div className="lg:col-span-5 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#24305A] text-xs font-semibold text-[#FFE6DF] border border-[#334173]">
+            <div className="lg:col-span-5 space-y-4 text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 text-xs font-semibold text-[#FFE6DF] border border-slate-700">
                 <Bot className="w-3.5 h-3.5 text-[#FF5A36]" />
                 <span>NEW · MCP SERVER</span>
               </div>
@@ -255,7 +269,7 @@ export function DeskmeritIntegrationsSection() {
                 Ask your AI assistant who's in today.
               </h3>
 
-              <p className="text-sm text-[#9AA1B2] leading-relaxed">
+              <p className="text-sm text-slate-300 leading-relaxed">
                 Deskmerit's Model Context Protocol (MCP) server lets AI assistants like Claude query attendance and productivity data directly — with exactly the same keys and scopes as the REST API.
               </p>
 
@@ -270,8 +284,8 @@ export function DeskmeritIntegrationsSection() {
             </div>
 
             {/* Right: Live Interactive Prompt Simulation */}
-            <div className="lg:col-span-7 bg-[#172348] rounded-2xl p-5 border border-[#24305A]">
-              <div className="text-xs font-semibold text-[#9AA1B2] mb-3">
+            <div className="lg:col-span-7 bg-[#060B17] rounded-2xl p-5 border border-slate-800">
+              <div className="text-xs font-semibold text-slate-400 mb-3 text-left">
                 Try a sample prompt:
               </div>
 
@@ -282,10 +296,10 @@ export function DeskmeritIntegrationsSection() {
                     key={idx}
                     type="button"
                     onClick={() => setActivePrompt(idx)}
-                    className={`text-xs px-3 py-1.5 rounded-lg border transition-all text-left ${
+                    className={`text-xs px-3 py-1.5 rounded-lg border transition-all text-left cursor-pointer ${
                       activePrompt === idx
-                        ? "bg-[#FF5A36] text-white font-extrabold border-[#FF5A36]"
-                        : "bg-[#0F1730] text-[#E6E2D8] border-[#24305A] hover:border-[#4A5370]"
+                        ? "bg-[#FF5A36] text-white font-extrabold border-[#FF5A36] shadow-sm"
+                        : "bg-[#0B1426] text-slate-300 border-slate-800 hover:border-slate-700 hover:text-white"
                     }`}
                   >
                     "{p.query}"
@@ -294,13 +308,13 @@ export function DeskmeritIntegrationsSection() {
               </div>
 
               {/* Chat Simulation Window */}
-              <div className="bg-[#0F1730] rounded-xl p-4 border border-[#24305A] space-y-3">
+              <div className="bg-[#0B1426] rounded-xl p-4 border border-slate-800 space-y-3">
                 {/* User Prompt */}
                 <div className="flex items-start gap-2.5">
-                  <span className="w-6 h-6 rounded-full bg-[#24305A] text-xs font-bold flex items-center justify-center shrink-0">
+                  <span className="w-6 h-6 rounded-full bg-slate-800 text-xs font-bold flex items-center justify-center shrink-0 text-slate-200">
                     U
                   </span>
-                  <div className="text-xs text-white bg-[#24305A]/70 px-3 py-2 rounded-xl">
+                  <div className="text-xs text-white bg-slate-800/80 px-3 py-2 rounded-xl">
                     {prompts[activePrompt].query}
                   </div>
                 </div>
@@ -310,11 +324,11 @@ export function DeskmeritIntegrationsSection() {
                   <span className="w-6 h-6 rounded-full bg-[#FF5A36] text-white text-xs font-black flex items-center justify-center shrink-0">
                     AI
                   </span>
-                  <div className="space-y-1.5 flex-1">
-                    <div className="text-xs text-[#E6E2D8] bg-[#172348] px-3.5 py-2.5 rounded-xl border border-[#24305A]">
+                  <div className="space-y-1.5 flex-1 text-left">
+                    <div className="text-xs text-slate-200 bg-[#060B17] px-3.5 py-2.5 rounded-xl border border-slate-800">
                       {prompts[activePrompt].response}
                     </div>
-                    <div className="text-[10px] text-[#9AA1B2] font-mono px-2 flex items-center gap-1">
+                    <div className="text-[10px] text-slate-400 font-mono px-2 flex items-center gap-1">
                       <Terminal className="w-3 h-3 text-[#12B886]" />
                       <span>{prompts[activePrompt].toolCall}</span>
                     </div>

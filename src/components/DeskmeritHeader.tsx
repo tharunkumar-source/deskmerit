@@ -20,12 +20,59 @@ import {
   CheckCircle2,
   Calendar,
   FileSpreadsheet,
+  Building,
+  Building2,
+  Briefcase,
+  Globe,
+  Rocket,
+  TrendingUp,
+  Laptop,
+  UserCheck,
+  Palette,
+  Headphones,
+  Scale,
+  Stethoscope,
+  Wifi,
+  Shuffle,
+  Code2,
+  HeartHandshake,
+  Receipt,
+  MapPin,
+  Compass,
+  Navigation,
+  BookOpen,
+  FileText,
+  Calculator,
+  Zap,
+  MessageSquare,
+  CalendarRange,
+  Timer,
+  CheckSquare,
+  Activity,
 } from "lucide-react";
 import { DeskmeritLogo } from "./DeskmeritLogo";
 
 export function DeskmeritHeader() {
   const location = useLocation();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [productsActiveTab, setProductsActiveTab] = useState<
+    "track" | "bill" | "people"
+  >("track");
+  const [solutionsActiveTab, setSolutionsActiveTab] = useState<
+    "industry" | "team" | "region"
+  >("industry");
+  const [integrationsActiveTab, setIntegrationsActiveTab] = useState<
+    "developer" | "calendar" | "automation"
+  >("developer");
+  const [resourcesActiveTab, setResourcesActiveTab] = useState<
+    "learn" | "tools" | "laws"
+  >("learn");
+  const [compareActiveTab, setCompareActiveTab] = useState<
+    "competitors" | "trust"
+  >("competitors");
+  const [companyActiveTab, setCompanyActiveTab] = useState<
+    "company" | "developers" | "legal"
+  >("company");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSection, setMobileSection] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
@@ -98,118 +145,156 @@ export function DeskmeritHeader() {
         aria-label="Main Navigation"
         onMouseLeave={handleMouseLeave}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Left: Logo & Nav Links */}
-          <div className="flex items-center gap-8 xl:gap-10">
-            {/* Clean Single-Line Logo Without Kombee Sub-line */}
+        <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          {/* Left: Logo anchored to left content margin */}
+          <div className="shrink-0 flex items-center">
             <DeskmeritLogo variant="horizontal" size="md" />
-
-            {/* Desktop Navigation Links */}
-            <div className="hidden lg:flex items-center gap-1 font-semibold text-[14px] text-[#0A2540]">
-              {/* Product Mega Menu Trigger */}
-              <button
-                type="button"
-                onMouseEnter={() => handleMouseEnter("products")}
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-colors ${
-                  activeMenu === "products"
-                    ? "text-[#FF5A36] bg-[#FFE6DF]/50"
-                    : "text-[#0A2540] hover:text-[#FF5A36] hover:bg-slate-50"
-                }`}
-                aria-expanded={activeMenu === "products"}
-              >
-                Products{" "}
-                <ChevronDown
-                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                    activeMenu === "products" ? "rotate-180 text-[#FF5A36]" : "text-slate-400"
-                  }`}
-                />
-              </button>
-
-              {/* Solutions Mega Menu Trigger */}
-              <button
-                type="button"
-                onMouseEnter={() => handleMouseEnter("solutions")}
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-colors ${
-                  activeMenu === "solutions"
-                    ? "text-[#FF5A36] bg-[#FFE6DF]/50"
-                    : "text-[#0A2540] hover:text-[#FF5A36] hover:bg-slate-50"
-                }`}
-                aria-expanded={activeMenu === "solutions"}
-              >
-                Solutions{" "}
-                <ChevronDown
-                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                    activeMenu === "solutions" ? "rotate-180 text-[#FF5A36]" : "text-slate-400"
-                  }`}
-                />
-              </button>
-
-              {/* Integrations Mega Menu Trigger */}
-              <button
-                type="button"
-                onMouseEnter={() => handleMouseEnter("integrations")}
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-colors ${
-                  activeMenu === "integrations"
-                    ? "text-[#FF5A36] bg-[#FFE6DF]/50"
-                    : "text-[#0A2540] hover:text-[#FF5A36] hover:bg-slate-50"
-                }`}
-                aria-expanded={activeMenu === "integrations"}
-              >
-                Integrations{" "}
-                <ChevronDown
-                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                    activeMenu === "integrations" ? "rotate-180 text-[#FF5A36]" : "text-slate-400"
-                  }`}
-                />
-              </button>
-
-              {/* Pricing Direct Link */}
-              <Link
-                to="/pricing"
-                onMouseEnter={() => handleMouseEnter("")}
-                className="px-3 py-2 rounded-lg text-[#0A2540] hover:text-[#FF5A36] hover:bg-slate-50 transition-colors"
-              >
-                Pricing
-              </Link>
-
-              {/* Resources Mega Menu Trigger */}
-              <button
-                type="button"
-                onMouseEnter={() => handleMouseEnter("resources")}
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-colors ${
-                  activeMenu === "resources"
-                    ? "text-[#FF5A36] bg-[#FFE6DF]/50"
-                    : "text-[#0A2540] hover:text-[#FF5A36] hover:bg-slate-50"
-                }`}
-                aria-expanded={activeMenu === "resources"}
-              >
-                Resources{" "}
-                <ChevronDown
-                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                    activeMenu === "resources" ? "rotate-180 text-[#FF5A36]" : "text-slate-400"
-                  }`}
-                />
-              </button>
-
-              {/* Compare Direct Link (Sitemap Specification) */}
-              <Link
-                to="/compare"
-                onMouseEnter={() => handleMouseEnter("")}
-                className="px-3 py-2 rounded-lg text-[#0A2540] hover:text-[#FF5A36] hover:bg-slate-50 transition-colors"
-              >
-                Compare
-              </Link>
-            </div>
           </div>
 
-          {/* Right Action Items — Crisp, Single Line, No Wrapping */}
-          <div className="hidden lg:flex items-center gap-3">
-            {/* Sign in / Log in (Never wraps) */}
+          {/* Center: Desktop Navigation Dock — Clearly visually grouped with generous breathing room */}
+          <div className="hidden xl:flex items-center gap-0.5 bg-[#F7F4EE]/90 border border-[#E6E2D8] rounded-full p-1 shadow-[inset_0_1px_2px_rgba(15,23,48,0.03)] font-semibold text-[12.5px] 2xl:text-[13px] text-[#0F1730]">
+            {/* Product Mega Menu Trigger */}
+            <button
+              type="button"
+              onMouseEnter={() => handleMouseEnter("products")}
+              onClick={() => setActiveMenu(activeMenu === "products" ? null : "products")}
+              className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
+                activeMenu === "products"
+                  ? "text-[#FF5A36] bg-white shadow-xs font-bold"
+                  : "text-[#0F1730] hover:text-[#FF5A36] hover:bg-white/70"
+              }`}
+              aria-expanded={activeMenu === "products"}
+            >
+              <span>Product</span>
+              <ChevronDown
+                className={`w-3 h-3 transition-transform duration-200 ${
+                  activeMenu === "products" ? "rotate-180 text-[#FF5A36]" : "text-slate-400"
+                }`}
+              />
+            </button>
+
+            {/* Solutions Mega Menu Trigger */}
+            <button
+              type="button"
+              onMouseEnter={() => handleMouseEnter("solutions")}
+              onClick={() => setActiveMenu(activeMenu === "solutions" ? null : "solutions")}
+              className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
+                activeMenu === "solutions"
+                  ? "text-[#FF5A36] bg-white shadow-xs font-bold"
+                  : "text-[#0F1730] hover:text-[#FF5A36] hover:bg-white/70"
+              }`}
+              aria-expanded={activeMenu === "solutions"}
+            >
+              <span>Solutions</span>
+              <ChevronDown
+                className={`w-3 h-3 transition-transform duration-200 ${
+                  activeMenu === "solutions" ? "rotate-180 text-[#FF5A36]" : "text-slate-400"
+                }`}
+              />
+            </button>
+
+            {/* Integrations Mega Menu Trigger */}
+            <button
+              type="button"
+              onMouseEnter={() => handleMouseEnter("integrations")}
+              onClick={() => setActiveMenu(activeMenu === "integrations" ? null : "integrations")}
+              className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
+                activeMenu === "integrations"
+                  ? "text-[#FF5A36] bg-white shadow-xs font-bold"
+                  : "text-[#0F1730] hover:text-[#FF5A36] hover:bg-white/70"
+              }`}
+              aria-expanded={activeMenu === "integrations"}
+            >
+              <span>Integrations</span>
+              <ChevronDown
+                className={`w-3 h-3 transition-transform duration-200 ${
+                  activeMenu === "integrations" ? "rotate-180 text-[#FF5A36]" : "text-slate-400"
+                }`}
+              />
+            </button>
+
+            {/* Compare Mega Menu Trigger */}
+            <button
+              type="button"
+              onMouseEnter={() => handleMouseEnter("compare")}
+              onClick={() => setActiveMenu(activeMenu === "compare" ? null : "compare")}
+              className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
+                activeMenu === "compare"
+                  ? "text-[#FF5A36] bg-white shadow-xs font-bold"
+                  : "text-[#0F1730] hover:text-[#FF5A36] hover:bg-white/70"
+              }`}
+              aria-expanded={activeMenu === "compare"}
+            >
+              <span>Compare</span>
+              <ChevronDown
+                className={`w-3 h-3 transition-transform duration-200 ${
+                  activeMenu === "compare" ? "rotate-180 text-[#FF5A36]" : "text-slate-400"
+                }`}
+              />
+            </button>
+
+            {/* Pricing Direct Link */}
+            <Link
+              to="/pricing"
+              onMouseEnter={() => handleMouseEnter("")}
+              className={`px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
+                location.pathname === "/pricing"
+                  ? "text-[#FF5A36] bg-white shadow-xs font-bold"
+                  : "text-[#0F1730] hover:text-[#FF5A36] hover:bg-white/70"
+              }`}
+            >
+              Pricing
+            </Link>
+
+            {/* Resources Mega Menu Trigger */}
+            <button
+              type="button"
+              onMouseEnter={() => handleMouseEnter("resources")}
+              onClick={() => setActiveMenu(activeMenu === "resources" ? null : "resources")}
+              className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
+                activeMenu === "resources"
+                  ? "text-[#FF5A36] bg-white shadow-xs font-bold"
+                  : "text-[#0F1730] hover:text-[#FF5A36] hover:bg-white/70"
+              }`}
+              aria-expanded={activeMenu === "resources"}
+            >
+              <span>Resources</span>
+              <ChevronDown
+                className={`w-3 h-3 transition-transform duration-200 ${
+                  activeMenu === "resources" ? "rotate-180 text-[#FF5A36]" : "text-slate-400"
+                }`}
+              />
+            </button>
+
+            {/* Company Mega Menu Trigger */}
+            <button
+              type="button"
+              onMouseEnter={() => handleMouseEnter("company")}
+              onClick={() => setActiveMenu(activeMenu === "company" ? null : "company")}
+              className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
+                activeMenu === "company"
+                  ? "text-[#FF5A36] bg-white shadow-xs font-bold"
+                  : "text-[#0F1730] hover:text-[#FF5A36] hover:bg-white/70"
+              }`}
+              aria-expanded={activeMenu === "company"}
+            >
+              <span>Company</span>
+              <ChevronDown
+                className={`w-3 h-3 transition-transform duration-200 ${
+                  activeMenu === "company" ? "rotate-180 text-[#FF5A36]" : "text-slate-400"
+                }`}
+              />
+            </button>
+          </div>
+
+          {/* Right Action Items — Desktop */}
+          <div className="hidden xl:flex items-center gap-2 shrink-0">
+            {/* Sign in / Log in */}
             <a
               href="https://app.deskmerit.com"
               target="_blank"
               rel="noreferrer"
-              className="text-[14px] font-semibold text-[#0A2540] hover:text-[#FF5A36] transition-colors px-2 py-1.5 whitespace-nowrap"
+              className="text-[12.5px] 2xl:text-[13px] font-semibold text-[#0F1730] hover:text-[#FF5A36] transition-colors px-2 py-1.5 whitespace-nowrap"
             >
               Sign in
             </a>
@@ -217,7 +302,7 @@ export function DeskmeritHeader() {
             {/* Book a Demo Button */}
             <Link
               to="/demo"
-              className="px-4 py-2 rounded-xl text-[13px] font-semibold text-[#0A2540] bg-white border border-slate-300 hover:border-[#0A2540] hover:bg-slate-50 transition-all shadow-sm whitespace-nowrap"
+              className="px-2.5 2xl:px-3 py-1.5 rounded-xl text-xs font-semibold text-[#0F1730] bg-white border border-[#E6E2D8] hover:border-[#0F1730] hover:bg-slate-50 transition-all shadow-xs whitespace-nowrap"
             >
               Book a demo
             </Link>
@@ -225,15 +310,27 @@ export function DeskmeritHeader() {
             {/* Start Free Trial Primary Button */}
             <Link
               to="/signup"
-              className="px-5 py-2.5 rounded-xl text-[13px] font-bold text-white bg-[#FF5A36] hover:bg-[#E94A27] transition-all shadow-[0_2px_10px_rgba(255,90,54,0.3)] hover:shadow-[0_4px_14px_rgba(255,90,54,0.4)] flex items-center gap-1.5 whitespace-nowrap group"
+              className="px-3 2xl:px-3.5 py-1.5 rounded-xl text-xs font-bold text-white bg-[#FF5A36] hover:bg-[#E94A27] transition-all shadow-[0_2px_8px_rgba(255,90,54,0.28)] hover:shadow-[0_4px_12px_rgba(255,90,54,0.38)] flex items-center gap-1.5 whitespace-nowrap group"
             >
               <span>Start free trial</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex lg:hidden items-center">
+          {/* Right Action Items — Tablet / Mobile (Never overflows, crisp quick-CTAs) */}
+          <div className="flex xl:hidden items-center gap-2">
+            <Link
+              to="/demo"
+              className="hidden sm:inline-flex px-3 py-1.5 rounded-xl text-xs font-semibold text-[#0F1730] bg-white border border-[#E6E2D8] hover:bg-slate-50 transition-all shadow-xs whitespace-nowrap"
+            >
+              Book a demo
+            </Link>
+            <Link
+              to="/signup"
+              className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-xl text-xs font-bold text-white bg-[#FF5A36] hover:bg-[#E94A27] transition-all shadow-xs whitespace-nowrap"
+            >
+              <span>Start free trial</span>
+            </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -245,7 +342,7 @@ export function DeskmeritHeader() {
           </div>
         </div>
 
-        {/* FULL-WIDTH MEGA MENU (Spans 100% of max-w-7xl navbar bounds!) */}
+        {/* FULL-WIDTH MEGA MENU (Aligned to max-w-7xl content bounds) */}
         <AnimatePresence>
           {activeMenu && (
             <motion.div
@@ -262,7 +359,9 @@ export function DeskmeritHeader() {
                   {activeMenu === "products" && renderProductsMegaMenu()}
                   {activeMenu === "solutions" && renderSolutionsMegaMenu()}
                   {activeMenu === "integrations" && renderIntegrationsMegaMenu()}
+                  {activeMenu === "compare" && renderCompareMegaMenu()}
                   {activeMenu === "resources" && renderResourcesMegaMenu()}
+                  {activeMenu === "company" && renderCompanyMegaMenu()}
                 </div>
               </div>
             </motion.div>
@@ -277,7 +376,7 @@ export function DeskmeritHeader() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.18, ease: "easeOut" }}
-              className="fixed inset-0 z-[100] bg-white overflow-y-auto flex flex-col justify-between px-6 py-6 lg:hidden font-sans"
+              className="fixed inset-0 z-[100] bg-white overflow-y-auto flex flex-col justify-between px-6 py-6 xl:hidden font-sans"
             >
               <div>
                 {/* Top Row: Wordmark Logo Left, Ember Close Button Right */}
@@ -330,39 +429,53 @@ export function DeskmeritHeader() {
                           </span>
                         </Link>
 
-                        {/* Group: Tracking */}
+                        {/* Group: Track */}
                         <div>
                           <div className="text-[10px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-1.5">
-                            Tracking
+                            Track
                           </div>
                           <div className="grid grid-cols-1 gap-1.5">
+                            <Link
+                              to="/features"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                            >
+                              Features overview
+                            </Link>
                             <Link
                               to="/features/automatic-time-tracking"
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
                             >
-                              Automatic Computer Tracking
+                              Automatic time tracking
                             </Link>
                             <Link
                               to="/features/productivity-tracking"
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
                             >
-                              Productivity Scores & App Analytics
+                              Productivity tracking
                             </Link>
                             <Link
                               to="/features/document-tracking"
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
                             >
-                              Document Tracking (Window Titles Only)
+                              Document tracking
                             </Link>
                             <Link
                               to="/features/live-status"
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
                             >
-                              Live Status Feed (60s Refresh)
+                              Live status
+                            </Link>
+                            <Link
+                              to="/features/focus-timer"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                            >
+                              Focus timer
                             </Link>
                           </div>
                         </div>
@@ -370,37 +483,37 @@ export function DeskmeritHeader() {
                         {/* Group: Bill & Report */}
                         <div>
                           <div className="text-[10px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-1.5">
-                            Bill & Report
+                            Bill & report
                           </div>
                           <div className="grid grid-cols-1 gap-1.5">
                             <Link
-                              to="/features/billable-hours"
+                              to="/features/tracker-plus"
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
                             >
-                              Billable Hours & Client Invoicing
+                              Tracker Plus ★
                             </Link>
                             <Link
-                              to="/features/timesheet-approvals"
+                              to="/features/project-time-tracking"
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
                             >
-                              Timesheet Approvals & Audit Trail
+                              Project time & billing
                             </Link>
                             <Link
-                              to="/features/project-costing"
+                              to="/features/timesheets-and-reports"
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
                             >
-                              Project Budgeting & Margins
+                              Timesheets & reports
                             </Link>
                           </div>
                         </div>
 
-                        {/* Group: People & Shifts */}
+                        {/* Group: People */}
                         <div>
                           <div className="text-[10px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-1.5">
-                            People & Shifts
+                            People
                           </div>
                           <div className="grid grid-cols-1 gap-1.5">
                             <Link
@@ -408,21 +521,42 @@ export function DeskmeritHeader() {
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
                             >
-                              Attendance & Shift Scheduling
+                              Attendance tracking
                             </Link>
                             <Link
-                              to="/features/geofenced-punch"
+                              to="/features/shift-scheduling"
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
                             >
-                              Geofenced Mobile Clock-in
+                              Shift scheduling
+                            </Link>
+                            <Link
+                              to="/features/leave-management"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                            >
+                              Leave management
+                            </Link>
+                            <Link
+                              to="/features/idle-and-private-time"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                            >
+                              Idle & Private Time
+                            </Link>
+                            <Link
+                              to="/features/screenshots"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                            >
+                              Screenshots
                             </Link>
                             <Link
                               to="/download"
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
                             >
-                              Download Desktop App (Win/Mac/Linux)
+                              Download desktop agent
                             </Link>
                           </div>
                         </div>
@@ -460,35 +594,42 @@ export function DeskmeritHeader() {
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              IT Services & Consultancies
-                            </Link>
-                            <Link
-                              to="/solutions/software-development"
-                              onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
-                            >
-                              Software & Product Engineering
+                              IT services
                             </Link>
                             <Link
                               to="/solutions/staff-augmentation"
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              Staff Augmentation
+                              Staff augmentation
                             </Link>
                             <Link
-                              to="/solutions/bpo-contact-centers"
+                              to="/solutions/agencies"
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              BPO & Contact Centers
+                              Agencies
+                            </Link>
+                            <Link
+                              to="/solutions/bpo"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              BPO & contact centres
+                            </Link>
+                            <Link
+                              to="/solutions/professional-services"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Consulting & accounting
                             </Link>
                           </div>
                         </div>
 
                         <div>
                           <div className="text-[10px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-1.5">
-                            By Work Model & Ecosystem
+                            By Team
                           </div>
                           <div className="grid grid-cols-1 gap-1.5">
                             <Link
@@ -496,14 +637,64 @@ export function DeskmeritHeader() {
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              Remote & Hybrid Teams
+                              Remote teams
                             </Link>
                             <Link
-                              to="/hrms-add-on"
+                              to="/solutions/hybrid-teams"
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              Sqalible HRMS Add-on
+                              Hybrid teams
+                            </Link>
+                            <Link
+                              to="/solutions/office-teams"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Office teams
+                            </Link>
+                            <Link
+                              to="/solutions/hr"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              For HR teams
+                            </Link>
+                            <Link
+                              to="/solutions/managers"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              For managers
+                            </Link>
+                            <Link
+                              to="/solutions/finance"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              For finance
+                            </Link>
+                          </div>
+                        </div>
+
+                        <div>
+                          <div className="text-[10px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-1.5">
+                            By Region & Resellers
+                          </div>
+                          <div className="grid grid-cols-1 gap-1.5">
+                            <Link
+                              to="/hrms-add-on"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-[#FFE6DF]/60 text-xs font-bold text-[#C2361A] hover:text-[#FF5A36] transition-colors"
+                            >
+                              HRMS add-on (Sqalible) →
+                            </Link>
+                            <Link
+                              to="/partners/white-label"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              White-label for resellers →
                             </Link>
                           </div>
                         </div>
@@ -533,7 +724,7 @@ export function DeskmeritHeader() {
                       <div className="mt-3 pl-2 space-y-4 pt-1 animate-fade-in">
                         <div>
                           <div className="text-[10px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-1.5">
-                            Developer & Sprint Tools
+                            Developer & Sprint
                           </div>
                           <div className="grid grid-cols-1 gap-1.5">
                             <Link
@@ -541,43 +732,90 @@ export function DeskmeritHeader() {
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              Jira Software Bi-directional Sync
+                              Jira Software
                             </Link>
                             <Link
                               to="/integrations/azure-devops"
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              Azure DevOps Work Items
+                              Azure DevOps
                             </Link>
                             <Link
-                              to="/developers/mcp-server"
+                              to="/integrations/openproject"
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              Claude MCP AI Server
+                              OpenProject
                             </Link>
                           </div>
                         </div>
 
                         <div>
                           <div className="text-[10px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-1.5">
-                            Ecosystem & Directory
+                            Calendars & Automation
                           </div>
                           <div className="grid grid-cols-1 gap-1.5">
                             <Link
-                              to="/developers"
+                              to="/integrations/google-calendar"
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              REST API & Webhooks
+                              Google Calendar
                             </Link>
+                            <Link
+                              to="/integrations/outlook-calendar"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Outlook Calendar
+                            </Link>
+                            <Link
+                              to="/integrations/slack"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Slack
+                            </Link>
+                            <Link
+                              to="/integrations/microsoft-teams"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Microsoft Teams
+                            </Link>
+                            <Link
+                              to="/integrations/zapier"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Zapier
+                            </Link>
+                            <Link
+                              to="/integrations/make"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Make
+                            </Link>
+                            <Link
+                              to="/integrations/sqalible"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Sqalible HRMS
+                            </Link>
+                          </div>
+                        </div>
+
+                        <div>
+                          <div className="grid grid-cols-1 gap-1.5 pt-1">
                             <Link
                               to="/integrations"
                               onClick={() => setMobileMenuOpen(false)}
                               className="p-2 rounded-lg bg-[#FFE6DF]/60 text-xs font-bold text-[#C2361A] hover:text-[#FF5A36] transition-colors"
                             >
-                              Explore all 50+ Integrations →
+                              Integrations hub →
                             </Link>
                           </div>
                         </div>
@@ -585,7 +823,127 @@ export function DeskmeritHeader() {
                     )}
                   </div>
 
-                  {/* 4. Resources Section */}
+                  {/* 4. Compare & Trust Section */}
+                  <div className="py-3.5">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setMobileSection(mobileSection === "compare" ? null : "compare")
+                      }
+                      className="w-full flex items-center justify-between font-extrabold text-[18px] text-[#0F1730] hover:text-[#FF5A36] transition-colors text-left"
+                    >
+                      <span className={mobileSection === "compare" ? "text-[#FF5A36]" : ""}>
+                        Compare & Trust
+                      </span>
+                      <ChevronRight
+                        className={`w-4 h-4 text-[#FF5A36] transition-transform duration-200 ${
+                          mobileSection === "compare" ? "rotate-90" : ""
+                        }`}
+                      />
+                    </button>
+                    {mobileSection === "compare" && (
+                      <div className="mt-3 pl-2 space-y-4 pt-1 animate-fade-in">
+                        <div>
+                          <div className="text-[10px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-1.5">
+                            Competitor Comparisons
+                          </div>
+                          <div className="grid grid-cols-1 gap-1.5">
+                            <Link
+                              to="/compare/desktime-alternative"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              vs DeskTime
+                            </Link>
+                            <Link
+                              to="/compare/hubstaff-alternative"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              vs Hubstaff
+                            </Link>
+                            <Link
+                              to="/compare/time-doctor-alternative"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              vs Time Doctor
+                            </Link>
+                            <Link
+                              to="/compare/activtrak-alternative"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              vs ActivTrak
+                            </Link>
+                            <Link
+                              to="/compare/toggl-alternative"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              vs Toggl Track
+                            </Link>
+                            <Link
+                              to="/compare/time-champ-alternative"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              vs Time Champ
+                            </Link>
+                            <Link
+                              to="/compare"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-[#FFE6DF]/60 text-xs font-bold text-[#C2361A] hover:text-[#FF5A36] transition-colors"
+                            >
+                              All comparisons overview →
+                            </Link>
+                          </div>
+                        </div>
+
+                        <div>
+                          <div className="text-[10px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-1.5">
+                            Trust & Security
+                          </div>
+                          <div className="grid grid-cols-1 gap-1.5">
+                            <Link
+                              to="/security"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Security architecture
+                            </Link>
+                            <Link
+                              to="/privacy-promise"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Privacy promise
+                            </Link>
+                            <Link
+                              to="/trust"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Trust Center
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* 5. Direct Link: Pricing */}
+                  <div className="py-3.5">
+                    <Link
+                      to="/pricing"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block font-extrabold text-[18px] text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                    >
+                      Pricing
+                    </Link>
+                  </div>
+
+                  {/* 6. Resources Section */}
                   <div className="py-3.5">
                     <button
                       type="button"
@@ -604,48 +962,205 @@ export function DeskmeritHeader() {
                       />
                     </button>
                     {mobileSection === "resources" && (
-                      <div className="mt-3 pl-2 space-y-3 pt-1 animate-fade-in">
-                        <Link
-                          to="/privacy-promise"
-                          onClick={() => setMobileMenuOpen(false)}
-                          className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] block"
-                        >
-                          Employee Privacy Promise (Zero Keylogging)
-                        </Link>
-                        <Link
-                          to="/compare"
-                          onClick={() => setMobileMenuOpen(false)}
-                          className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] block"
-                        >
-                          Competitor Comparisons (Hubstaff, Time Doctor)
-                        </Link>
-                        <Link
-                          to="/security"
-                          onClick={() => setMobileMenuOpen(false)}
-                          className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] block"
-                        >
-                          Security, SOC2 & GDPR Compliance
-                        </Link>
+                      <div className="mt-3 pl-2 space-y-2 pt-1 animate-fade-in">
                         <Link
                           to="/blog"
                           onClick={() => setMobileMenuOpen(false)}
                           className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] block"
                         >
-                          Guides & Remote Playbooks
+                          Blog & Insights
                         </Link>
+                        <Link
+                          to="/guides/employee-monitoring-laws"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] block"
+                        >
+                          Monitoring-law guides hub
+                        </Link>
+                        <Link
+                          to="/tools"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] block"
+                        >
+                          Free tools hub (Calculators)
+                        </Link>
+                        <Link
+                          to="/templates"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] block"
+                        >
+                          Templates hub (Timesheets & Policies)
+                        </Link>
+                        <Link
+                          to="/glossary"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] block"
+                        >
+                          Terminology Glossary
+                        </Link>
+                        <a
+                          href="https://help.deskmerit.io"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center justify-between"
+                        >
+                          <span>Help centre</span>
+                          <ExternalLink className="w-3.5 h-3.5 opacity-60" />
+                        </a>
                       </div>
                     )}
                   </div>
 
-                  {/* Direct Link: Pricing */}
+                  {/* 7. Company & Legal Section */}
                   <div className="py-3.5">
-                    <Link
-                      to="/pricing"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block font-extrabold text-[18px] text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setMobileSection(mobileSection === "company" ? null : "company")
+                      }
+                      className="w-full flex items-center justify-between font-extrabold text-[18px] text-[#0F1730] hover:text-[#FF5A36] transition-colors text-left"
                     >
-                      Pricing
-                    </Link>
+                      <span className={mobileSection === "company" ? "text-[#FF5A36]" : ""}>
+                        Company & Legal
+                      </span>
+                      <ChevronRight
+                        className={`w-4 h-4 text-[#FF5A36] transition-transform duration-200 ${
+                          mobileSection === "company" ? "rotate-90" : ""
+                        }`}
+                      />
+                    </button>
+                    {mobileSection === "company" && (
+                      <div className="mt-3 pl-2 space-y-4 pt-1 animate-fade-in">
+                        <div>
+                          <div className="text-[10px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-1.5">
+                            Company
+                          </div>
+                          <div className="grid grid-cols-1 gap-1.5">
+                            <Link
+                              to="/about"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              About us
+                            </Link>
+                            <Link
+                              to="/careers"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Careers
+                            </Link>
+                            <Link
+                              to="/partners"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Partners & Resellers
+                            </Link>
+                            <Link
+                              to="/press"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Press & Media Kit
+                            </Link>
+                            <Link
+                              to="/contact"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Contact us
+                            </Link>
+                            <Link
+                              to="/demo"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Book a demo
+                            </Link>
+                          </div>
+                        </div>
+
+                        <div>
+                          <div className="text-[10px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-1.5">
+                            Developers
+                          </div>
+                          <div className="grid grid-cols-1 gap-1.5">
+                            <Link
+                              to="/developers"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Developers & REST API
+                            </Link>
+                            <Link
+                              to="/developers/mcp-server"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Claude MCP AI server
+                            </Link>
+                            <Link
+                              to="/changelog"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Changelog
+                            </Link>
+                          </div>
+                        </div>
+
+                        <div>
+                          <div className="text-[10px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-1.5">
+                            Legal & Compliance
+                          </div>
+                          <div className="grid grid-cols-1 gap-1.5">
+                            <Link
+                              to="/legal/terms"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Terms of Service
+                            </Link>
+                            <Link
+                              to="/legal/privacy"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Privacy Policy
+                            </Link>
+                            <Link
+                              to="/legal/dpa"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Data Processing Agreement
+                            </Link>
+                            <Link
+                              to="/legal/subprocessors"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Sub-processors
+                            </Link>
+                            <Link
+                              to="/legal/cookies"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Cookie Policy
+                            </Link>
+                            <Link
+                              to="/legal/sla"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              Service Level Agreement
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   {/* Direct Link: Sign in */}
@@ -717,291 +1232,312 @@ export function DeskmeritHeader() {
   {/* 1. PRODUCTS FULL-WIDTH MEGA MENU (Stripe 4-Cols + Spotlight Card)         */}
   {/* ========================================================================= */}
   function renderProductsMegaMenu() {
+    const productCategories = [
+      {
+        id: "track" as const,
+        name: "Track",
+        icon: Clock,
+        banner: {
+          title: "Time & Activity Tracking",
+          href: "/features",
+          description:
+            "Silent background time capture and real-time team activity dashboards without intrusive spying.",
+        },
+        links: [
+          {
+            title: "Features overview",
+            description: "Explore the complete suite of 14 time tracking modules.",
+            href: "/features",
+            icon: Layers,
+          },
+          {
+            title: "Automatic time tracking",
+            description: "Silent background computer time logging without manual timers.",
+            href: "/features/automatic-time-tracking",
+            icon: Clock,
+          },
+          {
+            title: "Productivity tracking",
+            description: "Categorize work apps and productive vs unproductive hours.",
+            href: "/features/productivity-tracking",
+            icon: BarChart3,
+          },
+          {
+            title: "Document tracking",
+            description: "Track time against document titles and active window tabs.",
+            href: "/features/document-tracking",
+            icon: FileText,
+          },
+          {
+            title: "Live status",
+            description: "Real-time team presence, working states, and active tasks.",
+            href: "/features/live-status",
+            icon: Activity,
+          },
+          {
+            title: "Focus timer",
+            description: "Pomodoro focus intervals to maintain flow and prevent burnout.",
+            href: "/features/focus-timer",
+            icon: Timer,
+          },
+        ],
+      },
+      {
+        id: "bill" as const,
+        name: "Bill & report",
+        icon: Receipt,
+        banner: {
+          title: "Billing & Defensible Reports",
+          href: "/features/tracker-plus",
+          description:
+            "Defensible billable hours synced directly with Jira issues and client rate cards.",
+        },
+        links: [
+          {
+            title: "Tracker Plus ★",
+            description: "Start timers directly from Jira or Azure DevOps sprint tasks.",
+            href: "/features/tracker-plus",
+            icon: Sparkles,
+          },
+          {
+            title: "Project time & billing",
+            description: "Billable hours, hourly rate cards, and client invoice reconciliation.",
+            href: "/features/project-time-tracking",
+            icon: Receipt,
+          },
+          {
+            title: "Timesheets & reports",
+            description: "Export audit-ready CSV, Excel, and PDF timesheet summaries.",
+            href: "/features/timesheets-and-reports",
+            icon: FileSpreadsheet,
+          },
+        ],
+      },
+      {
+        id: "people" as const,
+        name: "People",
+        icon: Users,
+        banner: {
+          title: "Attendance & Workforce Planning",
+          href: "/features/attendance-tracking",
+          description:
+            "Transparent clock-ins, shift schedules, and ethical private time controls.",
+        },
+        links: [
+          {
+            title: "Attendance tracking",
+            description: "Automated punch-ins and transparent working hours proof.",
+            href: "/features/attendance-tracking",
+            icon: UserCheck,
+          },
+          {
+            title: "Shift scheduling",
+            description: "Shift roster planning, rotations, and adherence alerts.",
+            href: "/features/shift-scheduling",
+            icon: Calendar,
+          },
+          {
+            title: "Leave management",
+            description: "Time-off balances, company holidays, and manager approvals.",
+            href: "/features/leave-management",
+            icon: HeartHandshake,
+          },
+          {
+            title: "Idle & Private Time",
+            description: "Pause tracking during personal breaks with complete worker dignity.",
+            href: "/features/idle-and-private-time",
+            icon: Lock,
+          },
+          {
+            title: "Screenshots",
+            description: "Optional blurred or interval screenshots with employee opt-out.",
+            href: "/features/screenshots",
+            icon: Layers,
+          },
+          {
+            title: "Download desktop agent",
+            description: "Native background app for macOS, Windows, and Linux.",
+            href: "/download",
+            icon: Laptop,
+          },
+        ],
+      },
+    ];
+
+    const currentCategory =
+      productCategories.find((c) => c.id === productsActiveTab) ||
+      productCategories[0];
+
     return (
-      <div>
-        <div className="p-8 grid grid-cols-12 gap-8">
-          {/* 4 Main Structured Columns (9 Cols) */}
-          <div className="col-span-9 grid grid-cols-4 gap-6">
-            {/* Col 1: Tracking */}
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                Tracking
-              </h4>
-              <ul className="space-y-3.5">
-                <li>
-                  <Link to="/features/automatic-time-tracking" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Automatic tracking
+      <div className="bg-white">
+        <div className="p-6 lg:p-7 flex items-stretch gap-6 lg:gap-8 min-h-[380px]">
+          {/* 1. Left Sidebar: Category Tabs */}
+          <div className="w-52 xl:w-60 shrink-0 border-r border-[#E6E2D8] pr-4 flex flex-col justify-start">
+            <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em] px-3 pb-3">
+              PRODUCT
+            </p>
+            <div className="space-y-1.5">
+              {productCategories.map((cat) => {
+                const isActive = productsActiveTab === cat.id;
+                const IconComp = cat.icon;
+                return (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    onMouseEnter={() => setProductsActiveTab(cat.id)}
+                    onClick={() => setProductsActiveTab(cat.id)}
+                    className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left transition-all duration-150 cursor-pointer ${
+                      isActive
+                        ? "bg-[#FFE6DF] text-[#0F1730] font-bold border border-[#FF5A36]/40 shadow-xs"
+                        : "text-[#4A5370] hover:bg-[#F7F4EE] hover:text-[#0F1730] font-medium border border-transparent"
+                    }`}
+                  >
+                    <div
+                      className={`flex h-8 w-8 items-center justify-center rounded-lg shrink-0 transition-colors ${
+                        isActive
+                          ? "bg-[#FF5A36] text-white shadow-xs"
+                          : "bg-[#F7F4EE] text-[#4A5370]"
+                      }`}
+                    >
+                      <IconComp className="w-4 h-4 stroke-[1.8] text-current" />
                     </div>
-                    <div className="text-[11px] text-[#4A5370] leading-tight mt-0.5">
-                      Background computer time
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/features/productivity-tracking" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Productivity scores
-                    </div>
-                    <div className="text-[11px] text-[#4A5370] leading-tight mt-0.5">
-                      App & URL scoring per role
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/features/document-tracking" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Document tracking
-                    </div>
-                    <div className="text-[11px] text-[#4A5370] leading-tight mt-0.5">
-                      Window titles only
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/features/live-status" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Live status
-                    </div>
-                    <div className="text-[11px] text-[#4A5370] leading-tight mt-0.5">
-                      Refreshed every 60s
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/features/focus-timer" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Focus timer
-                    </div>
-                    <div className="text-[11px] text-[#4A5370] leading-tight mt-0.5">
-                      Pomodoro work intervals
-                    </div>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Col 2: Bill & Report */}
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                Bill & Report
-              </h4>
-              <ul className="space-y-3.5">
-                <li>
-                  <Link to="/features/tracker-plus" className="group block">
-                    <div className="flex items-center gap-1 font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      <span>Tracker Plus</span>
-                      <span className="text-[9px] font-extrabold px-1.5 py-0.2 rounded bg-[#FFE6DF] text-[#C2361A]">
-                        ★ Key
-                      </span>
-                    </div>
-                    <div className="text-[11px] text-[#4A5370] leading-tight mt-0.5">
-                      Start from Jira/Azure task
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/features/project-time-tracking" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Project time & billing
-                    </div>
-                    <div className="text-[11px] text-[#4A5370] leading-tight mt-0.5">
-                      Rates, costs & budget alerts
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/features/timesheets-and-reports" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Timesheets & reports
-                    </div>
-                    <div className="text-[11px] text-[#4A5370] leading-tight mt-0.5">
-                      Audit-matched CSV/Excel
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/solutions/it-services" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Utilisation metrics
-                    </div>
-                    <div className="text-[11px] text-[#4A5370] leading-tight mt-0.5">
-                      Bench & margin visibility
-                    </div>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Col 3: People & Shifts */}
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                People & Shifts
-              </h4>
-              <ul className="space-y-3.5">
-                <li>
-                  <Link to="/features/attendance-tracking" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Attendance tracking
-                    </div>
-                    <div className="text-[11px] text-[#4A5370] leading-tight mt-0.5">
-                      Calendar & work presence
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/features/shift-scheduling" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Shift scheduling
-                    </div>
-                    <div className="text-[11px] text-[#4A5370] leading-tight mt-0.5">
-                      Templates & overtime flags
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/features/leave-management" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Leave management
-                    </div>
-                    <div className="text-[11px] text-[#4A5370] leading-tight mt-0.5">
-                      Shared absence calendar
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/features/idle-and-private-time" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Idle & Private Time
-                    </div>
-                    <div className="text-[11px] text-[#4A5370] leading-tight mt-0.5">
-                      Visible pause, never idle
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/features/screenshots" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Optional screenshots
-                    </div>
-                    <div className="text-[11px] text-[#4A5370] leading-tight mt-0.5">
-                      Off & blurred by default
-                    </div>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Col 4: Embedded Modules */}
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                Embedded Modules
-              </h4>
-              <ul className="space-y-3.5">
-                <li>
-                  <Link to="/hrms-add-on" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Sqalible HRMS Add-on
-                    </div>
-                    <div className="text-[11px] text-[#4A5370] leading-tight mt-0.5">
-                      Native 1-click toggle
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/integrations/jira" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Jira & DevOps Sync
-                    </div>
-                    <div className="text-[11px] text-[#4A5370] leading-tight mt-0.5">
-                      Scoped personal tokens
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/developers/mcp-server" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Claude MCP Server
-                    </div>
-                    <div className="text-[11px] text-[#4A5370] leading-tight mt-0.5">
-                      Ask AI who is working
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/developers" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      REST API & Webhooks
-                    </div>
-                    <div className="text-[11px] text-[#4A5370] leading-tight mt-0.5">
-                      OpenAPI documentation
-                    </div>
-                  </Link>
-                </li>
-              </ul>
+                    <span className="text-xs sm:text-[13px] font-bold truncate">
+                      {cat.name}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          {/* 5th Column: Right "More" Sidebar + Featured Promo Card */}
-          <div className="col-span-3 pl-6 border-l border-slate-100 flex flex-col justify-between">
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                More
-              </h4>
-              <ul className="space-y-2.5">
-                <li>
-                  <Link to="/privacy-promise" className="text-xs font-semibold text-[#0A2540] hover:text-[#FF5A36] transition-colors">
-                    Privacy promise
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/security" className="text-xs font-semibold text-[#0A2540] hover:text-[#FF5A36] transition-colors">
-                    Security & encryption
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/download" className="text-xs font-semibold text-[#0A2540] hover:text-[#FF5A36] transition-colors">
-                    Download desktop app
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/compare" className="text-xs font-semibold text-[#0A2540] hover:text-[#FF5A36] transition-colors">
-                    Competitor comparisons
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Featured Highlight Card */}
-            <div className="mt-6 p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2.5">
-              <div className="w-full h-20 rounded-lg bg-gradient-to-tr from-[#0F1730] to-[#24305A] p-3 text-white flex flex-col justify-between">
-                <span className="text-[9px] font-extrabold uppercase tracking-wider text-[#FF5A36]">
-                  Tracker Plus
-                </span>
-                <span className="text-xs font-bold text-white leading-tight">
-                  Start tracking from Jira tasks.
+          {/* 2. Middle Column: Header Banner + 2-Column Links Grid */}
+          <div className="flex-1 px-1 lg:px-2 flex flex-col justify-start">
+            {/* Top Dark Banner Card */}
+            <Link
+              to={currentCategory.banner.href}
+              onClick={() => setActiveMenu(null)}
+              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#FF5A36]/60 transition-all shadow-xs"
+            >
+              <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#FF5A36] transition-colors">
+                <span>{currentCategory.banner.title}</span>
+                <span className="text-[#FF5A36] font-extrabold text-base transition-transform group-hover:translate-x-1">
+                  ›
                 </span>
               </div>
-              <p className="text-[11px] text-[#4A5370] leading-snug">
-                See how engineering teams capture defensible hours without micromanagement.
+              <p className="text-xs text-[#E6E2D8] mt-0.5 line-clamp-1 font-normal">
+                {currentCategory.banner.description}
               </p>
+            </Link>
+
+            {/* 2-Column Grid of Feature Links */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
+              {currentCategory.links.map((link) => {
+                const LinkIcon = link.icon;
+                return (
+                  <Link
+                    key={link.title}
+                    to={link.href}
+                    onClick={() => setActiveMenu(null)}
+                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F7F4EE] border border-transparent hover:border-[#E6E2D8] transition-all text-left"
+                  >
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F7F4EE] text-[#0F1730] group-hover:bg-[#FFE6DF] group-hover:text-[#C2361A] transition-colors mt-0.5 border border-[#E6E2D8]/60">
+                      <LinkIcon className="w-4 h-4 stroke-[1.8]" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                          {link.title}
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-[#4A5370] line-clamp-2 mt-0.5 leading-snug">
+                        {link.description}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* 3. Right Column: Spotlight Card */}
+          <div className="w-72 2xl:w-80 shrink-0 pl-6 border-l border-[#E6E2D8] flex flex-col justify-between">
+            <div className="space-y-3">
+              <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em]">
+                SPOTLIGHT
+              </p>
+              <div className="p-5 rounded-[16px] bg-[#F7F4EE] border border-[#E6E2D8] space-y-2.5 shadow-xs">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF5A36] block">
+                  KEY FEATURE
+                </span>
+                <h4 className="font-display font-bold text-[15px] leading-snug text-[#0F1730]">
+                  Tracker Plus for Jira & DevOps
+                </h4>
+                <p className="text-xs text-[#4A5370] leading-relaxed">
+                  Start timers directly from Jira issues and Azure DevOps work items with personal scoped tokens.
+                </p>
+                <Link
+                  to="/features/tracker-plus"
+                  onClick={() => setActiveMenu(null)}
+                  className="text-xs font-bold text-[#FF5A36] hover:underline flex items-center gap-1.5 pt-1 group"
+                >
+                  <span>Explore Tracker Plus</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="mt-4 pt-3.5 border-t border-[#E6E2D8]">
               <Link
-                to="/features/tracker-plus"
-                className="text-xs font-bold text-[#FF5A36] hover:underline flex items-center gap-1"
+                to="/download"
+                onClick={() => setActiveMenu(null)}
+                className="text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center justify-between group transition-colors"
               >
-                Watch demo <ArrowRight className="w-3 h-3" />
+                <span>Download desktop tracker</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36] group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
         </div>
 
-        {/* Full-Width Bottom Link Strip */}
-        <div className="px-8 py-3.5 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs">
-          <Link to="/features" className="font-bold text-[#0A2540] hover:text-[#FF5A36] flex items-center gap-1">
-            See all features <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-          <span className="text-[11px] text-[#4A5370] flex items-center gap-1 font-medium">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#12B886]" /> Zero keystroke logging · Pure trust
+        {/* Full-Width Bottom Strip (Sitemap Specification) */}
+        <div className="px-8 py-3.5 bg-[#F7F4EE] border-t border-[#E6E2D8] flex items-center justify-between text-xs font-sans">
+          <div className="flex items-center gap-6">
+            <Link
+              to="/features"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>All features</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+            <Link
+              to="/download"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>Download</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+            <Link
+              to="/security"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>Security</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+            <Link
+              to="/privacy-promise"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>Privacy promise</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+          </div>
+          <span className="text-[11px] text-[#4A5370] flex items-center gap-2 font-medium">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#12B886]" />
+            <span>Zero keystroke logging · Defensible billable hours · Pure trust</span>
           </span>
         </div>
       </div>
@@ -1012,213 +1548,318 @@ export function DeskmeritHeader() {
   {/* 2. SOLUTIONS FULL-WIDTH MEGA MENU                                         */}
   {/* ========================================================================= */}
   function renderSolutionsMegaMenu() {
+    const solutionsCategories = [
+      {
+        id: "industry" as const,
+        name: "By industry",
+        icon: Briefcase,
+        banner: {
+          title: "Industry Solutions",
+          href: "/solutions/it-services",
+          description:
+            "Tailored time tracking and margin defense built for professional services firms.",
+        },
+        links: [
+          {
+            title: "IT services",
+            description:
+              "Prove client billable hours with zero invasive keystroke logging or employee resentment.",
+            href: "/solutions/it-services",
+            icon: Laptop,
+          },
+          {
+            title: "Staff augmentation",
+            description:
+              "Multi-client scoped tokens, verified attendance proof, and client billing exports.",
+            href: "/solutions/staff-augmentation",
+            icon: UserCheck,
+          },
+          {
+            title: "Agencies",
+            description:
+              "Track project profitability, budget burn, and creative team milestones in real-time.",
+            href: "/solutions/agencies",
+            icon: Palette,
+          },
+          {
+            title: "BPO & contact centres",
+            description:
+              "Shift adherence, accurate break logging, and attendance without intrusive surveillance.",
+            href: "/solutions/bpo",
+            icon: Headphones,
+          },
+          {
+            title: "Consulting & accounting",
+            description:
+              "Audit-ready timesheets matched directly to matter codes and defensible client accounts.",
+            href: "/solutions/professional-services",
+            icon: Scale,
+          },
+        ],
+      },
+      {
+        id: "team" as const,
+        name: "By team",
+        icon: Users,
+        banner: {
+          title: "Solutions by Team Model",
+          href: "/solutions/remote-teams",
+          description:
+            "Purpose-built workflows for remote, hybrid, office, and specialized leadership departments.",
+        },
+        links: [
+          {
+            title: "Remote teams",
+            description:
+              "Outcomes over webcams. Asynchronous trust and accurate records for distributed staff.",
+            href: "/solutions/remote-teams",
+            icon: Wifi,
+          },
+          {
+            title: "Hybrid teams",
+            description:
+              "One unified, tamper-proof record across office desks and home setups.",
+            href: "/solutions/hybrid-teams",
+            icon: Shuffle,
+          },
+          {
+            title: "Office teams",
+            description:
+              "Eliminate punch clocks, biometrics, and manual paper cards with automatic attendance.",
+            href: "/solutions/office-teams",
+            icon: Building,
+          },
+          {
+            title: "For HR teams",
+            description:
+              "Attendance software, shift rosters, and leave balance with zero disputes.",
+            href: "/solutions/hr",
+            icon: HeartHandshake,
+          },
+          {
+            title: "For managers",
+            description:
+              "Team productivity dashboards, workload visibility, and burnout prevention.",
+            href: "/solutions/managers",
+            icon: TrendingUp,
+          },
+          {
+            title: "For finance",
+            description:
+              "Project profitability, client billing runs, and real-time margin visibility.",
+            href: "/solutions/finance",
+            icon: Receipt,
+          },
+        ],
+      },
+      {
+        id: "region" as const,
+        name: "By region",
+        icon: Globe,
+        banner: {
+          title: "Regional Compliance & Invoicing",
+          href: "/en-in/",
+          description:
+            "Country-specific labor laws, compliance frameworks, and regional currency invoicing.",
+        },
+        links: [
+          {
+            title: "India (₹ INR)",
+            description:
+              "DPDP Act 2023 compliant, local GST invoices, and Indian regional working week rules.",
+            href: "/en-in/",
+            icon: MapPin,
+          },
+          {
+            title: "Australia (A$ AUD)",
+            description:
+              "NSW 14-day employee notice compliance and Fair Work overtime transparency.",
+            href: "/en-au/",
+            icon: Compass,
+          },
+          {
+            title: "New Zealand (NZ$)",
+            description:
+              "Privacy Act 2020 open data principles built into every employee dashboard view.",
+            href: "/en-nz/",
+            icon: Navigation,
+          },
+          {
+            title: "UAE",
+            description:
+              "Sunday–Thursday work week support, UAE Federal Labour Law, and bilingual readiness.",
+            href: "/en-ae/",
+            icon: Globe,
+          },
+          {
+            title: "Saudi Arabia",
+            description:
+              "Saudi Labour Law, PDPL compliance, and Middle East enterprise data residency.",
+            href: "/en-sa/",
+            icon: Globe,
+          },
+        ],
+      },
+    ];
+
+    const currentCategory =
+      solutionsCategories.find((c) => c.id === solutionsActiveTab) ||
+      solutionsCategories[0];
+
     return (
-      <div>
-        <div className="p-8 grid grid-cols-12 gap-8">
-          {/* 4 Main Columns (9 Cols) */}
-          <div className="col-span-9 grid grid-cols-4 gap-6">
-            {/* Col 1: By Industry */}
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                By Industry
-              </h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/solutions/it-services" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      IT services
+      <div className="bg-white">
+        <div className="p-6 lg:p-7 flex items-stretch gap-6 lg:gap-8 min-h-[380px]">
+          {/* 1. Left Sidebar: Category Tabs */}
+          <div className="w-52 xl:w-60 shrink-0 border-r border-[#E6E2D8] pr-4 flex flex-col justify-start">
+            <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em] px-3 pb-3">
+              SOLUTIONS
+            </p>
+            <div className="space-y-1.5">
+              {solutionsCategories.map((cat) => {
+                const isActive = solutionsActiveTab === cat.id;
+                const IconComp = cat.icon;
+                return (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    onMouseEnter={() => setSolutionsActiveTab(cat.id)}
+                    onClick={() => setSolutionsActiveTab(cat.id)}
+                    className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left transition-all duration-150 cursor-pointer ${
+                      isActive
+                        ? "bg-[#FFE6DF] text-[#0F1730] font-bold border border-[#FF5A36]/40 shadow-xs"
+                        : "text-[#4A5370] hover:bg-[#F7F4EE] hover:text-[#0F1730] font-medium border border-transparent"
+                    }`}
+                  >
+                    <div
+                      className={`flex h-8 w-8 items-center justify-center rounded-lg shrink-0 transition-colors ${
+                        isActive
+                          ? "bg-[#FF5A36] text-white shadow-xs"
+                          : "bg-[#F7F4EE] text-[#4A5370]"
+                      }`}
+                    >
+                      <IconComp className="w-4 h-4 stroke-[1.8] text-current" />
                     </div>
-                    <div className="text-[11px] text-[#4A5370]">Prove billable hours</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/solutions/staff-augmentation" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Staff augmentation
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Multi-client tokens</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/solutions/agencies" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Agencies & studios
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Retainer profitability</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/solutions/bpo" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      BPO & contact centres
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Shift adherence</div>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Col 2: By Team */}
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                By Team Model
-              </h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/solutions/remote-teams" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Remote teams
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Outcomes over webcams</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/solutions/hybrid-teams" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Hybrid teams
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">One fair record</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/solutions/office-teams" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Office teams
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Zero hardware clocks</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/solutions/hr" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      For HR & Ops
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Audited attendance</div>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Col 3: By Region */}
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                By Region
-              </h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/en-in" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      India (₹ INR)
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">DPDP Act & GST invoices</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/en-au" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Australia (A$ AUD)
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">NSW 14-day notice support</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/en-nz" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      New Zealand (NZ$)
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Privacy Act 2020 open data</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/en-ae" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      UAE & Saudi Arabia
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Sun–Thu shift rules</div>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Col 4: By Company Size */}
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                By Size
-              </h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/pricing" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Startups (1–20)
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Zero setup, instant start</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/solutions/it-services" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Scaleups (20–150)
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Jira sprint automation</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/solutions/staff-augmentation" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Mid-Market (150–1000)
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Role-based scoping</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/demo" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Enterprise (1000+)
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Dedicated tenant & SSO</div>
-                  </Link>
-                </li>
-              </ul>
+                    <span className="text-xs sm:text-[13px] font-bold truncate">
+                      {cat.name}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          {/* 5th Column: Ecosystem & Resellers */}
-          <div className="col-span-3 pl-6 border-l border-slate-100 flex flex-col justify-between">
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                Ecosystem
-              </h4>
-              <Link to="/hrms-add-on" className="block p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-[#FF5A36] transition-colors">
-                <span className="text-[10px] font-bold text-[#12B886] uppercase block">
-                  Native Add-on
+          {/* 2. Middle Column: Header Banner + 2-Column Links Grid */}
+          <div className="flex-1 px-1 lg:px-2 flex flex-col justify-start">
+            {/* Top Dark Banner Card */}
+            <Link
+              to={currentCategory.banner.href}
+              onClick={() => setActiveMenu(null)}
+              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#FF5A36]/60 transition-all shadow-xs"
+            >
+              <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#FF5A36] transition-colors">
+                <span>{currentCategory.banner.title}</span>
+                <span className="text-[#FF5A36] font-extrabold text-base transition-transform group-hover:translate-x-1">
+                  ›
                 </span>
-                <span className="font-bold text-xs text-[#0A2540] block mt-1">
-                  Sqalible HRMS Add-on
+              </div>
+              <p className="text-xs text-[#E6E2D8] mt-0.5 line-clamp-1 font-normal">
+                {currentCategory.banner.description}
+              </p>
+            </Link>
+
+            {/* 2-Column Grid of Solution Links */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
+              {currentCategory.links.map((link) => {
+                const LinkIcon = link.icon;
+                return (
+                  <Link
+                    key={link.title}
+                    to={link.href}
+                    onClick={() => setActiveMenu(null)}
+                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F7F4EE] border border-transparent hover:border-[#E6E2D8] transition-all text-left"
+                  >
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F7F4EE] text-[#0F1730] group-hover:bg-[#FFE6DF] group-hover:text-[#C2361A] transition-colors mt-0.5 border border-[#E6E2D8]/60">
+                      <LinkIcon className="w-4 h-4 stroke-[1.8]" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                          {link.title}
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-[#4A5370] line-clamp-2 mt-0.5 leading-snug">
+                        {link.description}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* 3. Right Column: Spotlight Card (Replaces Case Study Image) */}
+          <div className="w-72 2xl:w-80 shrink-0 pl-6 border-l border-[#E6E2D8] flex flex-col justify-between">
+            <div className="space-y-3">
+              <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em]">
+                SPOTLIGHT
+              </p>
+              <div className="p-5 rounded-[16px] bg-[#F7F4EE] border border-[#E6E2D8] space-y-2.5 shadow-xs">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF5A36] block">
+                  HRMS ADD-ON
                 </span>
-                <span className="text-[11px] text-[#4A5370] block mt-0.5">
-                  Switch on directly in your HRMS console with 1 click.
-                </span>
-              </Link>
+                <h4 className="font-display font-bold text-[15px] leading-snug text-[#0F1730]">
+                  Deskmerit + Sqalible HRMS
+                </h4>
+                <p className="text-xs text-[#4A5370] leading-relaxed">
+                  Seamlessly bridge automatic desktop tracking with full HRMS payroll, leave balances, and employee records.
+                </p>
+                <Link
+                  to="/hrms-add-on"
+                  onClick={() => setActiveMenu(null)}
+                  className="text-xs font-bold text-[#FF5A36] hover:underline flex items-center gap-1.5 pt-1 group"
+                >
+                  <span>Discover HRMS add-on</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
-              <Link to="/partners/white-label" className="text-xs font-bold text-[#FF5A36] hover:underline flex items-center gap-1">
-                White-label for resellers <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-              <Link to="/demo" className="text-xs font-bold text-[#0A2540] hover:text-[#FF5A36] flex items-center gap-1">
-                Book enterprise consultation <ArrowRight className="w-3.5 h-3.5" />
+            <div className="mt-4 pt-3.5 border-t border-[#E6E2D8]">
+              <Link
+                to="/partners/white-label"
+                onClick={() => setActiveMenu(null)}
+                className="text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center justify-between group transition-colors"
+              >
+                <span>White-label for resellers</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36] group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
         </div>
 
-        {/* Full Width Bottom Strip */}
-        <div className="px-8 py-3.5 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs">
-          <Link to="/solutions" className="font-bold text-[#0A2540] hover:text-[#FF5A36] flex items-center gap-1">
-            Explore all customer solutions <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-          <span className="text-[11px] text-[#4A5370] flex items-center gap-1 font-medium">
-            <CheckCircle2 className="w-3.5 h-3.5 text-[#12B886]" /> Proven across engineering, agency & BPO models
+        {/* Full-Width Bottom Strip (Sitemap Specification) */}
+        <div className="px-8 py-3.5 bg-[#F7F4EE] border-t border-[#E6E2D8] flex items-center justify-between text-xs font-sans">
+          <div className="flex items-center gap-6">
+            <Link
+              to="/hrms-add-on"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>HRMS add-on (Sqalible)</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+            <Link
+              to="/partners/white-label"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>White-label for resellers</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+          </div>
+          <span className="text-[11px] text-[#4A5370] flex items-center gap-2 font-medium">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#12B886]" />
+            <span>Zero keystroke logging · Defensible billable hours · Employee dignity first</span>
           </span>
         </div>
       </div>
@@ -1229,216 +1870,274 @@ export function DeskmeritHeader() {
   {/* 3. INTEGRATIONS FULL-WIDTH MEGA MENU                                      */}
   {/* ========================================================================= */}
   function renderIntegrationsMegaMenu() {
+    const integrationCategories = [
+      {
+        id: "developer" as const,
+        name: "Developer & sprint",
+        icon: Code2,
+        banner: {
+          title: "Developer & Issue Trackers",
+          href: "/integrations",
+          description:
+            "Sync work directly with your sprint boards, code commits, and engineering backlog.",
+        },
+        links: [
+          {
+            title: "Jira Software",
+            description: "Sprint issue sync and real-time ticket timers with personal tokens.",
+            href: "/integrations/jira",
+            icon: Sparkles,
+          },
+          {
+            title: "Azure DevOps",
+            description: "Boards, work items, and sprint planning direct timer integration.",
+            href: "/integrations/azure-devops",
+            icon: Layers,
+          },
+          {
+            title: "OpenProject",
+            description: "Open-source project tracking and work package time records.",
+            href: "/integrations/openproject",
+            icon: CheckSquare,
+          },
+        ],
+      },
+      {
+        id: "calendar" as const,
+        name: "Calendars & comms",
+        icon: Calendar,
+        banner: {
+          title: "Calendars & Communication",
+          href: "/integrations",
+          description:
+            "Log meetings automatically and broadcast daily status to team channels.",
+        },
+        links: [
+          {
+            title: "Google Calendar",
+            description: "Automatically convert calendar events and Google Meet calls to time logs.",
+            href: "/integrations/google-calendar",
+            icon: Calendar,
+          },
+          {
+            title: "Outlook Calendar",
+            description: "Office 365 calendar meeting sync with project allocation.",
+            href: "/integrations/outlook-calendar",
+            icon: CalendarRange,
+          },
+          {
+            title: "Slack",
+            description: "Daily standup digests, start/stop commands, and status sync.",
+            href: "/integrations/slack",
+            icon: MessageSquare,
+          },
+          {
+            title: "Microsoft Teams",
+            description: "Teams presence status synchronization and meeting tracking.",
+            href: "/integrations/microsoft-teams",
+            icon: Users,
+          },
+        ],
+      },
+      {
+        id: "automation" as const,
+        name: "Automation & HRMS",
+        icon: Workflow,
+        banner: {
+          title: "Automation & HR Platforms",
+          href: "/integrations",
+          description:
+            "Connect Deskmerit to over 5,000 tools with no-code workflows and webhooks.",
+        },
+        links: [
+          {
+            title: "Zapier",
+            description: "Trigger automated actions across 5,000+ cloud business apps.",
+            href: "/integrations/zapier",
+            icon: Zap,
+          },
+          {
+            title: "Make",
+            description: "Visual automated workflows, webhooks, and multi-step scenarios.",
+            href: "/integrations/make",
+            icon: Workflow,
+          },
+          {
+            title: "Sqalible HRMS",
+            description: "Native HRMS time tracking, payroll, and leave balance integration.",
+            href: "/integrations/sqalible",
+            icon: Building2,
+          },
+        ],
+      },
+    ];
+
+    const currentCategory =
+      integrationCategories.find((c) => c.id === integrationsActiveTab) ||
+      integrationCategories[0];
+
     return (
-      <div>
-        <div className="p-8 grid grid-cols-12 gap-8">
-          {/* 4 Main Columns (9 Cols) */}
-          <div className="col-span-9 grid grid-cols-4 gap-6">
-            {/* Col 1: Issue Trackers & PM */}
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                Issue Trackers & PM
-              </h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/integrations/jira" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Jira Software
+      <div className="bg-white">
+        <div className="p-6 lg:p-7 flex items-stretch gap-6 lg:gap-8 min-h-[380px]">
+          {/* 1. Left Sidebar: Category Tabs */}
+          <div className="w-52 xl:w-60 shrink-0 border-r border-[#E6E2D8] pr-4 flex flex-col justify-start">
+            <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em] px-3 pb-3">
+              INTEGRATIONS
+            </p>
+            <div className="space-y-1.5">
+              {integrationCategories.map((cat) => {
+                const isActive = integrationsActiveTab === cat.id;
+                const IconComp = cat.icon;
+                return (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    onMouseEnter={() => setIntegrationsActiveTab(cat.id)}
+                    onClick={() => setIntegrationsActiveTab(cat.id)}
+                    className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left transition-all duration-150 cursor-pointer ${
+                      isActive
+                        ? "bg-[#FFE6DF] text-[#0F1730] font-bold border border-[#FF5A36]/40 shadow-xs"
+                        : "text-[#4A5370] hover:bg-[#F7F4EE] hover:text-[#0F1730] font-medium border border-transparent"
+                    }`}
+                  >
+                    <div
+                      className={`flex h-8 w-8 items-center justify-center rounded-lg shrink-0 transition-colors ${
+                        isActive
+                          ? "bg-[#FF5A36] text-white shadow-xs"
+                          : "bg-[#F7F4EE] text-[#4A5370]"
+                      }`}
+                    >
+                      <IconComp className="w-4 h-4 stroke-[1.8] text-current" />
                     </div>
-                    <div className="text-[11px] text-[#4A5370]">Sprint sync & ticket timers</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/integrations/azure-devops" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Azure DevOps
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Boards & work items sync</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/integrations/openproject" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      OpenProject
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Open-source project tracking</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/integrations" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      GitHub & Linear
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Issue ID auto-matching</div>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Col 2: HR & Payroll */}
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                HR & Payroll
-              </h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/hrms-add-on" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Sqalible HRMS
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Native 1-click attendance</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/integrations" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Deel & Remote
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Cross-border payroll sync</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/integrations" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      BambooHR
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Leave calendar import</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/integrations" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Gusto & ADP
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Audit-ready CSV & API</div>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Col 3: Collaboration & Calendar */}
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                Collaboration
-              </h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/integrations" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Slack Bot
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">/status commands & daily digest</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/integrations" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Microsoft Teams
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Presence & meeting logs</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/integrations" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Google Calendar
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Automatic meeting work time</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/integrations" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Outlook 365
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Calendar schedule sync</div>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Col 4: Developer & AI */}
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                Developer & AI
-              </h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/developers/mcp-server" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Claude MCP Server
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Ask AI who is working & on what</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/developers" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      REST API v2
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">OpenAPI 3.0 documentation</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/developers" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Webhooks v2
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Real-time timer & punch events</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/download" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Rust Desktop Engine
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Local SQLite offline queue</div>
-                  </Link>
-                </li>
-              </ul>
+                    <span className="text-xs sm:text-[13px] font-bold truncate">
+                      {cat.name}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          {/* 5th Column: Integration Spotlight */}
-          <div className="col-span-3 pl-6 border-l border-slate-100 flex flex-col justify-between">
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                Spotlight
-              </h4>
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
-                <span className="text-[9px] font-extrabold uppercase tracking-wider text-[#FF5A36] block">
-                  Tracker Plus for Jira
+          {/* 2. Middle Column: Header Banner + 2-Column Links Grid */}
+          <div className="flex-1 px-1 lg:px-2 flex flex-col justify-start">
+            {/* Top Dark Banner Card */}
+            <Link
+              to={currentCategory.banner.href}
+              onClick={() => setActiveMenu(null)}
+              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#FF5A36]/60 transition-all shadow-xs"
+            >
+              <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#FF5A36] transition-colors">
+                <span>{currentCategory.banner.title}</span>
+                <span className="text-[#FF5A36] font-extrabold text-base transition-transform group-hover:translate-x-1">
+                  ›
                 </span>
-                <p className="text-xs font-bold text-[#0F1730]">
+              </div>
+              <p className="text-xs text-[#E6E2D8] mt-0.5 line-clamp-1 font-normal">
+                {currentCategory.banner.description}
+              </p>
+            </Link>
+
+            {/* 2-Column Grid of Integration Links */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
+              {currentCategory.links.map((link) => {
+                const LinkIcon = link.icon;
+                return (
+                  <Link
+                    key={link.title}
+                    to={link.href}
+                    onClick={() => setActiveMenu(null)}
+                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F7F4EE] border border-transparent hover:border-[#E6E2D8] transition-all text-left"
+                  >
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F7F4EE] text-[#0F1730] group-hover:bg-[#FFE6DF] group-hover:text-[#C2361A] transition-colors mt-0.5 border border-[#E6E2D8]/60">
+                      <LinkIcon className="w-4 h-4 stroke-[1.8]" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                          {link.title}
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-[#4A5370] line-clamp-2 mt-0.5 leading-snug">
+                        {link.description}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* 3. Right Column: Spotlight Card (Exact Match to User Screenshot) */}
+          <div className="w-72 2xl:w-80 shrink-0 pl-6 border-l border-[#E6E2D8] flex flex-col justify-between">
+            <div className="space-y-3">
+              <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em]">
+                SPOTLIGHT
+              </p>
+              <div className="p-5 rounded-[16px] bg-[#F7F4EE] border border-[#E6E2D8] space-y-2.5 shadow-xs">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF5A36] block">
+                  TRACKER PLUS FOR JIRA
+                </span>
+                <h4 className="font-display font-bold text-[15px] leading-snug text-[#0F1730]">
                   Track directly inside Jira or Azure DevOps
-                </p>
-                <p className="text-[11px] text-[#4A5370] leading-snug">
+                </h4>
+                <p className="text-xs text-[#4A5370] leading-relaxed">
                   Personal scoped tokens with zero admin credentials required.
                 </p>
                 <Link
                   to="/features/tracker-plus"
-                  className="text-xs font-bold text-[#FF5A36] hover:underline flex items-center gap-1 pt-1"
+                  onClick={() => setActiveMenu(null)}
+                  className="text-xs font-bold text-[#FF5A36] hover:underline flex items-center gap-1.5 pt-1 group"
                 >
-                  Learn how it connects <ArrowRight className="w-3 h-3" />
+                  <span>Learn how it connects</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-100">
-              <Link to="/developers" className="text-xs font-bold text-[#0A2540] hover:text-[#FF5A36] flex items-center gap-1">
-                Request a custom integration <ArrowRight className="w-3.5 h-3.5" />
+            <div className="mt-4 pt-3.5 border-t border-[#E6E2D8]">
+              <Link
+                to="/developers"
+                onClick={() => setActiveMenu(null)}
+                className="text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center justify-between group transition-colors"
+              >
+                <span>Request a custom integration</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36] group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
         </div>
 
-        {/* Full Width Bottom Strip */}
-        <div className="px-8 py-3.5 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs">
-          <Link to="/integrations" className="font-bold text-[#0A2540] hover:text-[#FF5A36] flex items-center gap-1">
-            Browse all 50+ integrations in the directory <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-          <span className="text-[11px] text-[#4A5370] flex items-center gap-1 font-medium">
-            <Sparkles className="w-3.5 h-3.5 text-[#FF5A36]" /> 2-minute API key setup · No IT ticket required
+        {/* Full-Width Bottom Strip (Sitemap Specification) */}
+        <div className="px-8 py-3.5 bg-[#F7F4EE] border-t border-[#E6E2D8] flex items-center justify-between text-xs font-sans">
+          <div className="flex items-center gap-6">
+            <Link
+              to="/integrations"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>Integrations hub</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+            <Link
+              to="/developers/mcp-server"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>Claude MCP AI server</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+            <Link
+              to="/developers"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>REST API & Webhooks</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+          </div>
+          <span className="text-[11px] text-[#4A5370] flex items-center gap-2 font-medium">
+            <Sparkles className="w-3.5 h-3.5 text-[#FF5A36]" />
+            <span>2-minute API key setup · No IT ticket required</span>
           </span>
         </div>
       </div>
@@ -1449,216 +2148,927 @@ export function DeskmeritHeader() {
   {/* 4. RESOURCES FULL-WIDTH MEGA MENU                                         */}
   {/* ========================================================================= */}
   function renderResourcesMegaMenu() {
+    const resourceCategories = [
+      {
+        id: "learn" as const,
+        name: "Learn",
+        icon: BookOpen,
+        banner: {
+          title: "Deskmerit Knowledge & Guides",
+          href: "/blog",
+          description:
+            "Research, benchmark reports, and workplace guides for high-trust engineering teams.",
+        },
+        links: [
+          {
+            title: "Blog",
+            description: "Deep dives into remote productivity, trust, and operations.",
+            href: "/blog",
+            icon: FileText,
+          },
+          {
+            title: "Monitoring-law guides",
+            description: "Comprehensive international workplace monitoring compliance.",
+            href: "/guides/employee-monitoring-laws",
+            icon: Scale,
+          },
+          {
+            title: "Glossary",
+            description: "Definitive A to Z terms for time tracking and activity metrics.",
+            href: "/glossary",
+            icon: BookOpen,
+          },
+          {
+            title: "Free tools hub",
+            description: "Interactive calculators for workforce planning and bench margin.",
+            href: "/tools",
+            icon: Calculator,
+          },
+          {
+            title: "Templates hub",
+            description: "Ready-to-use timesheet spreadsheets and workplace policies.",
+            href: "/templates",
+            icon: FileSpreadsheet,
+          },
+        ],
+      },
+      {
+        id: "tools" as const,
+        name: "Free tools & templates",
+        icon: Calculator,
+        banner: {
+          title: "Free Calculators & Templates",
+          href: "/tools",
+          description:
+            "Interactive operational tools and production-ready timesheets and policies.",
+        },
+        links: [
+          {
+            title: "Utilisation calculator",
+            description: "Calculate team billable utilization rate and bench leakages.",
+            href: "/tools/utilisation-calculator",
+            icon: Calculator,
+          },
+          {
+            title: "Overtime calculator",
+            description: "Compute overtime costs and statutory working hour thresholds.",
+            href: "/tools/overtime-calculator",
+            icon: Clock,
+          },
+          {
+            title: "Timesheet template",
+            description: "Free downloadable Excel and Google Sheets bi-weekly timesheets.",
+            href: "/templates/timesheet-template",
+            icon: FileSpreadsheet,
+          },
+          {
+            title: "Monitoring policy template",
+            description: "Ethical workplace surveillance and employee notice charter.",
+            href: "/templates/employee-monitoring-policy",
+            icon: FileText,
+          },
+        ],
+      },
+      {
+        id: "laws" as const,
+        name: "Monitoring law guides",
+        icon: Scale,
+        banner: {
+          title: "Country Legal Guides",
+          href: "/guides/employee-monitoring-laws",
+          description:
+            "Detailed legal requirements for workplace surveillance and employee consent.",
+        },
+        links: [
+          {
+            title: "Guide: India",
+            description: "Digital Personal Data Protection (DPDP) Act 2023 compliance.",
+            href: "/guides/employee-monitoring-laws/india",
+            icon: MapPin,
+          },
+          {
+            title: "Guide: Australia",
+            description: "NSW Workplace Surveillance Act and Fair Work guidelines.",
+            href: "/guides/employee-monitoring-laws/australia",
+            icon: Compass,
+          },
+          {
+            title: "Guide: New Zealand",
+            description: "Privacy Act 2020 Information Privacy Principles (IPPs).",
+            href: "/guides/employee-monitoring-laws/new-zealand",
+            icon: Navigation,
+          },
+          {
+            title: "Guide: UAE",
+            description: "Federal Decree-Law No. 33 worker privacy protections.",
+            href: "/guides/employee-monitoring-laws/uae",
+            icon: Globe,
+          },
+          {
+            title: "Guide: Saudi Arabia",
+            description: "Personal Data Protection Law (PDPL) workplace requirements.",
+            href: "/guides/employee-monitoring-laws/saudi-arabia",
+            icon: Globe,
+          },
+        ],
+      },
+    ];
+
+    const currentCategory =
+      resourceCategories.find((c) => c.id === resourcesActiveTab) ||
+      resourceCategories[0];
+
     return (
-      <div>
-        <div className="p-8 grid grid-cols-12 gap-8">
-          {/* 4 Main Columns (9 Cols) */}
-          <div className="col-span-9 grid grid-cols-4 gap-6">
-            {/* Col 1: Guides & Research */}
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                Guides & Research
-              </h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/blog" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      2026 Remote Report
+      <div className="bg-white">
+        <div className="p-6 lg:p-7 flex items-stretch gap-6 lg:gap-8 min-h-[380px]">
+          {/* 1. Left Sidebar: Category Tabs */}
+          <div className="w-52 xl:w-60 shrink-0 border-r border-[#E6E2D8] pr-4 flex flex-col justify-start">
+            <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em] px-3 pb-3">
+              RESOURCES
+            </p>
+            <div className="space-y-1.5">
+              {resourceCategories.map((cat) => {
+                const isActive = resourcesActiveTab === cat.id;
+                const IconComp = cat.icon;
+                return (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    onMouseEnter={() => setResourcesActiveTab(cat.id)}
+                    onClick={() => setResourcesActiveTab(cat.id)}
+                    className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left transition-all duration-150 cursor-pointer ${
+                      isActive
+                        ? "bg-[#FFE6DF] text-[#0F1730] font-bold border border-[#FF5A36]/40 shadow-xs"
+                        : "text-[#4A5370] hover:bg-[#F7F4EE] hover:text-[#0F1730] font-medium border border-transparent"
+                    }`}
+                  >
+                    <div
+                      className={`flex h-8 w-8 items-center justify-center rounded-lg shrink-0 transition-colors ${
+                        isActive
+                          ? "bg-[#FF5A36] text-white shadow-xs"
+                          : "bg-[#F7F4EE] text-[#4A5370]"
+                      }`}
+                    >
+                      <IconComp className="w-4 h-4 stroke-[1.8] text-current" />
                     </div>
-                    <div className="text-[11px] text-[#4A5370]">Global engineering benchmarks</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/privacy-promise" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Employee Privacy Playbook
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Ethical tracking standards</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/solutions/it-services" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Utilization Framework
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Protect billable margins</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/en-in" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      DPDP Compliance Guide
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">India data protection laws</div>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Col 2: Alternative Comparisons */}
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                Comparisons
-              </h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/compare/desktime-alternative" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      DeskTime alternative
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">No keylogger, high trust</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/compare/hubstaff-alternative" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Hubstaff alternative
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">No webcam snapshots</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/compare/time-doctor-alternative" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Time Doctor alternative
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Transparent activity records</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/compare/activtrak-alternative" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      ActivTrak alternative
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Worker-first visibility</div>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Col 3: Downloads & SDK */}
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                Downloads & SDK
-              </h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/download" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      macOS Desktop App
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Apple Silicon & Intel</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/download" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Windows 10/11 Agent
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Lightweight MSI installer</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/download" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Linux Daemon
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Debian, Ubuntu, Fedora</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/developers/mcp-server" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      MCP Server Package
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Install via npx deskmerit-mcp</div>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Col 4: Trust & Company */}
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                Trust & Company
-              </h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/privacy-promise" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      5 Privacy Tenets
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Non-negotiable ethical charter</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/security" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Security & SOC 2
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">AES-256 + TLS 1.3 encryption</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/about" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      About Deskmerit
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Our origin and team mission</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/contact" className="group block">
-                    <div className="font-bold text-[13px] text-[#0A2540] group-hover:text-[#FF5A36] transition-colors">
-                      Contact Sales
-                    </div>
-                    <div className="text-[11px] text-[#4A5370]">Global response under 2 hours</div>
-                  </Link>
-                </li>
-              </ul>
+                    <span className="text-xs sm:text-[13px] font-bold truncate">
+                      {cat.name}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          {/* 5th Column: Live Interactive Demo */}
-          <div className="col-span-3 pl-6 border-l border-slate-100 flex flex-col justify-between">
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-bold uppercase tracking-wider text-[#0A2540]">
-                Interactive Tour
-              </h4>
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
-                <span className="text-[9px] font-extrabold uppercase tracking-wider text-[#FF5A36] block">
-                  Interactive Simulator
+          {/* 2. Middle Column: Header Banner + 2-Column Links Grid */}
+          <div className="flex-1 px-1 lg:px-2 flex flex-col justify-start">
+            {/* Top Dark Banner Card */}
+            <Link
+              to={currentCategory.banner.href}
+              onClick={() => setActiveMenu(null)}
+              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#FF5A36]/60 transition-all shadow-xs"
+            >
+              <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#FF5A36] transition-colors">
+                <span>{currentCategory.banner.title}</span>
+                <span className="text-[#FF5A36] font-extrabold text-base transition-transform group-hover:translate-x-1">
+                  ›
                 </span>
-                <p className="text-xs font-bold text-[#0F1730]">
-                  Try the desktop widget right in browser
-                </p>
-                <p className="text-[11px] text-[#4A5370] leading-snug">
-                  Experience how Jira tasks are selected and offline sync works.
+              </div>
+              <p className="text-xs text-[#E6E2D8] mt-0.5 line-clamp-1 font-normal">
+                {currentCategory.banner.description}
+              </p>
+            </Link>
+
+            {/* 2-Column Grid of Resource Links */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
+              {currentCategory.links.map((link) => {
+                const LinkIcon = link.icon;
+                return (
+                  <Link
+                    key={link.title}
+                    to={link.href}
+                    onClick={() => setActiveMenu(null)}
+                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F7F4EE] border border-transparent hover:border-[#E6E2D8] transition-all text-left"
+                  >
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F7F4EE] text-[#0F1730] group-hover:bg-[#FFE6DF] group-hover:text-[#C2361A] transition-colors mt-0.5 border border-[#E6E2D8]/60">
+                      <LinkIcon className="w-4 h-4 stroke-[1.8]" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                          {link.title}
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-[#4A5370] line-clamp-2 mt-0.5 leading-snug">
+                        {link.description}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* 3. Right Column: Spotlight Card */}
+          <div className="w-72 2xl:w-80 shrink-0 pl-6 border-l border-[#E6E2D8] flex flex-col justify-between">
+            <div className="space-y-3">
+              <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em]">
+                SPOTLIGHT
+              </p>
+              <div className="p-5 rounded-[16px] bg-[#F7F4EE] border border-[#E6E2D8] space-y-2.5 shadow-xs">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF5A36] block">
+                  COMPLIANCE SPOTLIGHT
+                </span>
+                <h4 className="font-display font-bold text-[15px] leading-snug text-[#0F1730]">
+                  Global Employee Monitoring Laws
+                </h4>
+                <p className="text-xs text-[#4A5370] leading-relaxed">
+                  Understand legal rights, employee notice requirements, and data privacy across top hiring regions.
                 </p>
                 <Link
-                  to="/demo"
-                  className="text-xs font-bold text-[#FF5A36] hover:underline flex items-center gap-1 pt-1"
+                  to="/guides/employee-monitoring-laws"
+                  onClick={() => setActiveMenu(null)}
+                  className="text-xs font-bold text-[#FF5A36] hover:underline flex items-center gap-1.5 pt-1 group"
                 >
-                  Book 1-on-1 walkthrough <ArrowRight className="w-3 h-3" />
+                  <span>Read legal guides</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-100">
-              <Link to="/legal/privacy" className="text-xs font-bold text-[#0A2540] hover:text-[#FF5A36] flex items-center gap-1">
-                Legal & subprocessor disclosures <ArrowRight className="w-3.5 h-3.5" />
+            <div className="mt-4 pt-3.5 border-t border-[#E6E2D8]">
+              <Link
+                to="/privacy-promise"
+                onClick={() => setActiveMenu(null)}
+                className="text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center justify-between group transition-colors"
+              >
+                <span>Review privacy promise</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36] group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
         </div>
 
-        {/* Full Width Bottom Strip */}
-        <div className="px-8 py-3.5 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs">
-          <Link to="/blog" className="font-bold text-[#0A2540] hover:text-[#FF5A36] flex items-center gap-1">
-            Visit Deskmerit Knowledge Hub & Guides <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-          <span className="text-[11px] text-[#4A5370] flex items-center gap-1 font-medium">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#12B886]" /> 24/7 dedicated engineering support
+        {/* Full-Width Bottom Strip (Sitemap Specification) */}
+        <div className="px-8 py-3.5 bg-[#F7F4EE] border-t border-[#E6E2D8] flex items-center justify-between text-xs font-sans">
+          <div className="flex items-center gap-6">
+            <a
+              href="https://help.deskmerit.io"
+              target="_blank"
+              rel="noreferrer"
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>Help centre</span>
+              <ExternalLink className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </a>
+            <Link
+              to="/developers"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>Developers (REST API)</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+            <Link
+              to="/developers/mcp-server"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>MCP server</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+            <Link
+              to="/changelog"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>Changelog</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+          </div>
+          <span className="text-[11px] text-[#4A5370] flex items-center gap-2 font-medium">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#12B886]" />
+            <span>Legal clarity for modern distributed employers</span>
+          </span>
+        </div>
+      </div>
+    );
+  }
+
+  {/* ========================================================================= */}
+  {/* 5. COMPARE FULL-WIDTH MEGA MENU (3-Cols: Tabs + Links + Spotlight)        */}
+  {/* ========================================================================= */}
+  function renderCompareMegaMenu() {
+    const compareCategories = [
+      {
+        id: "competitors" as const,
+        name: "Competitor comparisons",
+        icon: Scale,
+        banner: {
+          title: "Compare All Time Trackers",
+          href: "/compare",
+          description:
+            "See how Deskmerit's privacy-first model and task-led Tracker Plus compare to legacy monitoring tools.",
+        },
+        links: [
+          {
+            title: "vs DeskTime",
+            description: "Built around your PM tasks and HRMS with a generous free plan.",
+            href: "/compare/desktime-alternative",
+            icon: Scale,
+          },
+          {
+            title: "vs Hubstaff",
+            description: "Privacy-first tracking for desk teams without mobile GPS creep.",
+            href: "/compare/hubstaff-alternative",
+            icon: ShieldCheck,
+          },
+          {
+            title: "vs Time Doctor",
+            description: "Accountability without screenshot bombardment or intrusive alerts.",
+            href: "/compare/time-doctor-alternative",
+            icon: Clock,
+          },
+          {
+            title: "vs ActivTrak",
+            description: "Actionable workforce insights without enterprise complexity.",
+            href: "/compare/activtrak-alternative",
+            icon: BarChart3,
+          },
+          {
+            title: "vs Toggl Track",
+            description: "Automatic background tracking without forgotten timers.",
+            href: "/compare/toggl-alternative",
+            icon: Timer,
+          },
+          {
+            title: "vs Time Champ",
+            description: "Starts from Jira/Azure tickets with native Sqalible HRMS.",
+            href: "/compare/time-champ-alternative",
+            icon: Sparkles,
+          },
+        ],
+      },
+      {
+        id: "trust" as const,
+        name: "Trust & security",
+        icon: ShieldCheck,
+        banner: {
+          title: "Enterprise Trust & Compliance",
+          href: "/trust",
+          description:
+            "Designed for both sides of the screen: honest answers for managers, complete dignity for employees.",
+        },
+        links: [
+          {
+            title: "Security architecture",
+            description: "Encryption in transit & at rest, multi-region residency, strict zero-keystrokes.",
+            href: "/security",
+            icon: Lock,
+          },
+          {
+            title: "Privacy promise",
+            description: "Strict guarantee: no keylogging, no webcams, screenshots off by default.",
+            href: "/privacy-promise",
+            icon: ShieldCheck,
+          },
+          {
+            title: "Trust Center",
+            description: "SOC2 Type II, ISO 27001, and regional statutory compliance proofs.",
+            href: "/trust",
+            icon: CheckCircle2,
+          },
+        ],
+      },
+    ];
+
+    const currentCategory =
+      compareCategories.find((c) => c.id === compareActiveTab) ||
+      compareCategories[0];
+
+    return (
+      <div className="bg-white">
+        <div className="p-6 lg:p-7 flex items-stretch gap-6 lg:gap-8 min-h-[380px]">
+          {/* 1. Left Sidebar: Category Tabs */}
+          <div className="w-52 xl:w-60 shrink-0 border-r border-[#E6E2D8] pr-4 flex flex-col justify-start">
+            <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em] px-3 pb-3">
+              COMPARE & TRUST
+            </p>
+            <div className="space-y-1.5">
+              {compareCategories.map((cat) => {
+                const isActive = compareActiveTab === cat.id;
+                const IconComp = cat.icon;
+                return (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    onMouseEnter={() => setCompareActiveTab(cat.id)}
+                    onClick={() => setCompareActiveTab(cat.id)}
+                    className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left transition-all duration-150 cursor-pointer ${
+                      isActive
+                        ? "bg-[#FFE6DF] text-[#0F1730] font-bold border border-[#FF5A36]/40 shadow-xs"
+                        : "text-[#4A5370] hover:bg-[#F7F4EE] hover:text-[#0F1730] font-medium border border-transparent"
+                    }`}
+                  >
+                    <div
+                      className={`flex h-8 w-8 items-center justify-center rounded-lg shrink-0 transition-colors ${
+                        isActive
+                          ? "bg-[#FF5A36] text-white shadow-xs"
+                          : "bg-[#F7F4EE] text-[#4A5370]"
+                      }`}
+                    >
+                      <IconComp className="w-4 h-4 stroke-[1.8] text-current" />
+                    </div>
+                    <span className="text-xs sm:text-[13px] font-bold truncate">
+                      {cat.name}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* 2. Middle Column: Header Banner + 2-Column Links Grid */}
+          <div className="flex-1 px-1 lg:px-2 flex flex-col justify-start">
+            {/* Top Dark Banner Card */}
+            <Link
+              to={currentCategory.banner.href}
+              onClick={() => setActiveMenu(null)}
+              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#FF5A36]/60 transition-all shadow-xs"
+            >
+              <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#FF5A36] transition-colors">
+                <span>{currentCategory.banner.title}</span>
+                <span className="text-[#FF5A36] font-extrabold text-base transition-transform group-hover:translate-x-1">
+                  ›
+                </span>
+              </div>
+              <p className="text-xs text-[#E6E2D8] mt-0.5 line-clamp-1 font-normal">
+                {currentCategory.banner.description}
+              </p>
+            </Link>
+
+            {/* 2-Column Grid of Compare Links */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
+              {currentCategory.links.map((link) => {
+                const LinkIcon = link.icon;
+                return (
+                  <Link
+                    key={link.title}
+                    to={link.href}
+                    onClick={() => setActiveMenu(null)}
+                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F7F4EE] border border-transparent hover:border-[#E6E2D8] transition-all text-left"
+                  >
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F7F4EE] text-[#0F1730] group-hover:bg-[#FFE6DF] group-hover:text-[#C2361A] transition-colors mt-0.5 border border-[#E6E2D8]/60">
+                      <LinkIcon className="w-4 h-4 stroke-[1.8]" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                          {link.title}
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-[#4A5370] line-clamp-2 mt-0.5 leading-snug">
+                        {link.description}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* 3. Right Column: Spotlight Card */}
+          <div className="w-72 2xl:w-80 shrink-0 pl-6 border-l border-[#E6E2D8] flex flex-col justify-between">
+            <div className="space-y-3">
+              <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em]">
+                SPOTLIGHT
+              </p>
+              <div className="p-5 rounded-[16px] bg-[#F7F4EE] border border-[#E6E2D8] space-y-2.5 shadow-xs">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF5A36] block">
+                  WHY DESKMERIT
+                </span>
+                <h4 className="font-display font-bold text-[15px] leading-snug text-[#0F1730]">
+                  Outcomes over surveillance
+                </h4>
+                <p className="text-xs text-[#4A5370] leading-relaxed">
+                  Legacy trackers watch keystrokes and spy. Deskmerit connects to sprint tickets so honest proof happens automatically.
+                </p>
+                <Link
+                  to="/compare"
+                  onClick={() => setActiveMenu(null)}
+                  className="text-xs font-bold text-[#FF5A36] hover:underline flex items-center gap-1.5 pt-1 group"
+                >
+                  <span>Explore full comparison</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="mt-4 pt-3.5 border-t border-[#E6E2D8]">
+              <Link
+                to="/privacy-promise"
+                onClick={() => setActiveMenu(null)}
+                className="text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center justify-between group transition-colors"
+              >
+                <span>Read our Privacy Promise</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36] group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Full-Width Bottom Strip (Sitemap Specification) */}
+        <div className="px-8 py-3.5 bg-[#F7F4EE] border-t border-[#E6E2D8] flex items-center justify-between text-xs font-sans">
+          <div className="flex items-center gap-6">
+            <Link
+              to="/compare"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>Compare all time trackers</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+            <Link
+              to="/security"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>Security architecture</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+            <Link
+              to="/privacy-promise"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>Privacy promise</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+            <Link
+              to="/trust"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>Trust Center</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+          </div>
+          <span className="text-[11px] text-[#4A5370] flex items-center gap-2 font-medium">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#12B886]" />
+            <span>Zero keystroke logging · No webcams · 100% announced</span>
+          </span>
+        </div>
+      </div>
+    );
+  }
+
+  {/* ========================================================================= */}
+  {/* 6. COMPANY FULL-WIDTH MEGA MENU (3-Cols: Tabs + Links + Spotlight)        */}
+  {/* ========================================================================= */}
+  function renderCompanyMegaMenu() {
+    const companyCategories = [
+      {
+        id: "company" as const,
+        name: "Company",
+        icon: Building2,
+        banner: {
+          title: "About Deskmerit & Mission",
+          href: "/about",
+          description:
+            "Our mission to give distributed teams honest, defensible time records without sacrificing dignity.",
+        },
+        links: [
+          {
+            title: "About us",
+            description: "Our story, founding principles, and leadership team.",
+            href: "/about",
+            icon: Building2,
+          },
+          {
+            title: "Careers",
+            description: "Join our remote-first engineering and product team.",
+            href: "/careers",
+            icon: Briefcase,
+          },
+          {
+            title: "Partners",
+            description: "White-label resellers, consulting, and system integration tracks.",
+            href: "/partners",
+            icon: HeartHandshake,
+          },
+          {
+            title: "Press & media kit",
+            description: "Brand assets, executive bios, and press releases.",
+            href: "/press",
+            icon: FileText,
+          },
+          {
+            title: "Contact us",
+            description: "Speak with enterprise specialists or submit product feedback.",
+            href: "/contact",
+            icon: MessageSquare,
+          },
+          {
+            title: "Book a demo",
+            description: "1-on-1 walkthrough tailored to your team's tech stack.",
+            href: "/demo",
+            icon: Calendar,
+          },
+        ],
+      },
+      {
+        id: "developers" as const,
+        name: "Developers & API",
+        icon: Code2,
+        banner: {
+          title: "Developer Platform & API",
+          href: "/developers",
+          description:
+            "Versioned REST APIs, webhook events, and official Model Context Protocol (MCP) tooling.",
+        },
+        links: [
+          {
+            title: "Developers overview",
+            description: "API keys, rate limits, SDKs, and webhook configurations.",
+            href: "/developers",
+            icon: Code2,
+          },
+          {
+            title: "Claude MCP AI server",
+            description: "Query workforce capacity and margins directly inside Claude & AI tools.",
+            href: "/developers/mcp-server",
+            icon: Cpu,
+          },
+          {
+            title: "API documentation",
+            description: "OpenAPI specifications, endpoints, and authentication guides.",
+            href: "/developers/api",
+            icon: FileText,
+          },
+          {
+            title: "Product changelog",
+            description: "Weekly release notes, improvements, and new platform features.",
+            href: "/changelog",
+            icon: Sparkles,
+          },
+          {
+            title: "System status ↗",
+            description: "Real-time uptime metrics, incident logs, and SLA monitoring.",
+            href: "https://status.deskmerit.com",
+            icon: Activity,
+          },
+        ],
+      },
+      {
+        id: "legal" as const,
+        name: "Legal & compliance",
+        icon: ShieldCheck,
+        banner: {
+          title: "Legal Agreements & Compliance",
+          href: "/legal/terms",
+          description:
+            "Transparent enterprise contractual frameworks, DPAs, and privacy commitments.",
+        },
+        links: [
+          {
+            title: "Terms of Service",
+            description: "Master subscription agreement and customer obligations.",
+            href: "/legal/terms",
+            icon: FileText,
+          },
+          {
+            title: "Privacy Policy",
+            description: "What telemetry is captured, how it is stored, and your rights.",
+            href: "/legal/privacy",
+            icon: Lock,
+          },
+          {
+            title: "Data Processing Agreement",
+            description: "GDPR, DPDP, and APPs compliant data processing addendum.",
+            href: "/legal/dpa",
+            icon: CheckCircle2,
+          },
+          {
+            title: "Sub-processors list",
+            description: "Full list of infrastructure, cloud hosting, and email providers.",
+            href: "/legal/subprocessors",
+            icon: Layers,
+          },
+          {
+            title: "Cookie Policy",
+            description: "Essential and analytics cookie disclosures.",
+            href: "/legal/cookies",
+            icon: ShieldCheck,
+          },
+          {
+            title: "Service Level Agreement",
+            description: "99.95% availability guarantee and credit response schedules.",
+            href: "/legal/sla",
+            icon: CheckSquare,
+          },
+        ],
+      },
+    ];
+
+    const currentCategory =
+      companyCategories.find((c) => c.id === companyActiveTab) ||
+      companyCategories[0];
+
+    return (
+      <div className="bg-white">
+        <div className="p-6 lg:p-7 flex items-stretch gap-6 lg:gap-8 min-h-[380px]">
+          {/* 1. Left Sidebar: Category Tabs */}
+          <div className="w-52 xl:w-60 shrink-0 border-r border-[#E6E2D8] pr-4 flex flex-col justify-start">
+            <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em] px-3 pb-3">
+              COMPANY & DEVELOPERS
+            </p>
+            <div className="space-y-1.5">
+              {companyCategories.map((cat) => {
+                const isActive = companyActiveTab === cat.id;
+                const IconComp = cat.icon;
+                return (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    onMouseEnter={() => setCompanyActiveTab(cat.id)}
+                    onClick={() => setCompanyActiveTab(cat.id)}
+                    className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left transition-all duration-150 cursor-pointer ${
+                      isActive
+                        ? "bg-[#FFE6DF] text-[#0F1730] font-bold border border-[#FF5A36]/40 shadow-xs"
+                        : "text-[#4A5370] hover:bg-[#F7F4EE] hover:text-[#0F1730] font-medium border border-transparent"
+                    }`}
+                  >
+                    <div
+                      className={`flex h-8 w-8 items-center justify-center rounded-lg shrink-0 transition-colors ${
+                        isActive
+                          ? "bg-[#FF5A36] text-white shadow-xs"
+                          : "bg-[#F7F4EE] text-[#4A5370]"
+                      }`}
+                    >
+                      <IconComp className="w-4 h-4 stroke-[1.8] text-current" />
+                    </div>
+                    <span className="text-xs sm:text-[13px] font-bold truncate">
+                      {cat.name}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* 2. Middle Column: Header Banner + 2-Column Links Grid */}
+          <div className="flex-1 px-1 lg:px-2 flex flex-col justify-start">
+            {/* Top Dark Banner Card */}
+            <Link
+              to={currentCategory.banner.href}
+              onClick={() => setActiveMenu(null)}
+              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#FF5A36]/60 transition-all shadow-xs"
+            >
+              <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#FF5A36] transition-colors">
+                <span>{currentCategory.banner.title}</span>
+                <span className="text-[#FF5A36] font-extrabold text-base transition-transform group-hover:translate-x-1">
+                  ›
+                </span>
+              </div>
+              <p className="text-xs text-[#E6E2D8] mt-0.5 line-clamp-1 font-normal">
+                {currentCategory.banner.description}
+              </p>
+            </Link>
+
+            {/* 2-Column Grid of Links */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
+              {currentCategory.links.map((link) => {
+                const LinkIcon = link.icon;
+                const isExternal = link.href.startsWith("http");
+                return isExternal ? (
+                  <a
+                    key={link.title}
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() => setActiveMenu(null)}
+                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F7F4EE] border border-transparent hover:border-[#E6E2D8] transition-all text-left"
+                  >
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F7F4EE] text-[#0F1730] group-hover:bg-[#FFE6DF] group-hover:text-[#C2361A] transition-colors mt-0.5 border border-[#E6E2D8]/60">
+                      <LinkIcon className="w-4 h-4 stroke-[1.8]" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors inline-flex items-center gap-1">
+                          {link.title}
+                          <ExternalLink className="w-3 h-3 opacity-60" />
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-[#4A5370] line-clamp-2 mt-0.5 leading-snug">
+                        {link.description}
+                      </p>
+                    </div>
+                  </a>
+                ) : (
+                  <Link
+                    key={link.title}
+                    to={link.href}
+                    onClick={() => setActiveMenu(null)}
+                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F7F4EE] border border-transparent hover:border-[#E6E2D8] transition-all text-left"
+                  >
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F7F4EE] text-[#0F1730] group-hover:bg-[#FFE6DF] group-hover:text-[#C2361A] transition-colors mt-0.5 border border-[#E6E2D8]/60">
+                      <LinkIcon className="w-4 h-4 stroke-[1.8]" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                          {link.title}
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-[#4A5370] line-clamp-2 mt-0.5 leading-snug">
+                        {link.description}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* 3. Right Column: Spotlight Card */}
+          <div className="w-72 2xl:w-80 shrink-0 pl-6 border-l border-[#E6E2D8] flex flex-col justify-between">
+            <div className="space-y-3">
+              <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em]">
+                SPOTLIGHT
+              </p>
+              <div className="p-5 rounded-[16px] bg-[#F7F4EE] border border-[#E6E2D8] space-y-2.5 shadow-xs">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF5A36] block">
+                  PARTNER ECOSYSTEM
+                </span>
+                <h4 className="font-display font-bold text-[15px] leading-snug text-[#0F1730]">
+                  Global Partner Program
+                </h4>
+                <p className="text-xs text-[#4A5370] leading-relaxed">
+                  Deliver Deskmerit under your agency domain, earn recurring revenue shares, or integrate with bespoke HRMS.
+                </p>
+                <Link
+                  to="/partners"
+                  onClick={() => setActiveMenu(null)}
+                  className="text-xs font-bold text-[#FF5A36] hover:underline flex items-center gap-1.5 pt-1 group"
+                >
+                  <span>Explore partner tracks</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="mt-4 pt-3.5 border-t border-[#E6E2D8]">
+              <Link
+                to="/signup"
+                onClick={() => setActiveMenu(null)}
+                className="text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center justify-between group transition-colors"
+              >
+                <span>Try Deskmerit free for 14 days</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36] group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Full-Width Bottom Strip (Sitemap Specification) */}
+        <div className="px-8 py-3.5 bg-[#F7F4EE] border-t border-[#E6E2D8] flex items-center justify-between text-xs font-sans">
+          <div className="flex items-center gap-6">
+            <Link
+              to="/about"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>About Deskmerit</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+            <Link
+              to="/partners"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>Partner program</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+            <Link
+              to="/developers/mcp-server"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>Claude MCP AI server</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+            <Link
+              to="/legal/terms"
+              onClick={() => setActiveMenu(null)}
+              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+            >
+              <span>Terms & Privacy</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+            </Link>
+          </div>
+          <span className="text-[11px] text-[#4A5370] flex items-center gap-2 font-medium">
+            <Building2 className="w-3.5 h-3.5 text-[#FF5A36]" />
+            <span>A Kombee Technologies product · India · Australia · UAE</span>
           </span>
         </div>
       </div>

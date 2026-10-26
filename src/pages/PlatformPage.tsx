@@ -496,7 +496,7 @@ function AiWorkforceIntelligenceView({ stage }: { stage: LifecycleStage; slug?: 
       <section className="bg-[#0B0F19] py-14 md:py-20 text-white">
         <div className="mx-auto max-w-7xl px-6">
           <div className="w-full mb-10">
-            <p className="pretitle text-teal-400">Step-by-Step Architecture</p>
+            <p className="pretitle text-[#FF5A36]">Step-by-Step Architecture</p>
             <h3 className="mt-1 text-2xl sm:text-3xl font-bold text-white tracking-tight">
               How Sqalible Intelligence Operates in Practice
             </h3>
@@ -508,7 +508,7 @@ function AiWorkforceIntelligenceView({ stage }: { stage: LifecycleStage; slug?: 
           <div className="border-t border-b border-white/15">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/15">
               <div className="py-8 px-6 sm:py-10 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                <div className="text-teal-400 mb-6 group-hover:scale-105 transition-transform duration-200">
+                <div className="text-[#FF5A36] mb-6 group-hover:scale-105 transition-transform duration-200">
                   <DatabaseIcon size={38} strokeWidth={1.5} />
                 </div>
                 <h4 className="text-lg sm:text-xl font-bold text-white leading-snug">
@@ -520,7 +520,7 @@ function AiWorkforceIntelligenceView({ stage }: { stage: LifecycleStage; slug?: 
               </div>
 
               <div className="py-8 px-6 sm:py-10 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                <div className="text-teal-400 mb-6 group-hover:scale-105 transition-transform duration-200">
+                <div className="text-[#FF5A36] mb-6 group-hover:scale-105 transition-transform duration-200">
                   <ShieldCheckIcon size={38} strokeWidth={1.5} />
                 </div>
                 <h4 className="text-lg sm:text-xl font-bold text-white leading-snug">
@@ -532,7 +532,7 @@ function AiWorkforceIntelligenceView({ stage }: { stage: LifecycleStage; slug?: 
               </div>
 
               <div className="py-8 px-6 sm:py-10 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                <div className="text-teal-400 mb-6 group-hover:scale-105 transition-transform duration-200">
+                <div className="text-[#FF5A36] mb-6 group-hover:scale-105 transition-transform duration-200">
                   <CpuIcon size={38} strokeWidth={1.5} />
                 </div>
                 <h4 className="text-lg sm:text-xl font-bold text-white leading-snug">
@@ -544,7 +544,7 @@ function AiWorkforceIntelligenceView({ stage }: { stage: LifecycleStage; slug?: 
               </div>
 
               <div className="py-8 px-6 sm:py-10 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                <div className="text-teal-400 mb-6 group-hover:scale-105 transition-transform duration-200">
+                <div className="text-[#FF5A36] mb-6 group-hover:scale-105 transition-transform duration-200">
                   <CheckCircle2Icon size={38} strokeWidth={1.5} />
                 </div>
                 <h4 className="text-lg sm:text-xl font-bold text-white leading-snug">
@@ -729,7 +729,7 @@ function ModuleDetailView({
       <section className="bg-[#0B0F19] py-14 md:py-20 text-white">
         <div className="mx-auto max-w-7xl px-6">
           <div className="w-full mb-10">
-            <p className="pretitle text-teal-400">Step-by-Step Process</p>
+            <p className="pretitle text-[#FF5A36]">Step-by-Step Process</p>
             <h3 className="mt-1 text-2xl sm:text-3xl font-bold text-white tracking-tight">
               How {mod.title} Operates in Practice
             </h3>
@@ -743,7 +743,7 @@ function ModuleDetailView({
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/15">
               {/* Column 1 */}
               <div className="py-8 px-6 sm:py-10 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                <div className="text-teal-400 mb-6 group-hover:scale-105 transition-transform duration-200">
+                <div className="text-[#FF5A36] mb-6 group-hover:scale-105 transition-transform duration-200">
                   <ZapIcon size={38} strokeWidth={1.5} />
                 </div>
                 <h4 className="text-lg sm:text-xl font-bold text-white leading-snug">
@@ -756,7 +756,7 @@ function ModuleDetailView({
 
               {/* Column 2 */}
               <div className="py-8 px-6 sm:py-10 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                <div className="text-teal-400 mb-6 group-hover:scale-105 transition-transform duration-200">
+                <div className="text-[#FF5A36] mb-6 group-hover:scale-105 transition-transform duration-200">
                   <ShieldCheckIcon size={38} strokeWidth={1.5} />
                 </div>
                 <h4 className="text-lg sm:text-xl font-bold text-white leading-snug">
@@ -769,7 +769,7 @@ function ModuleDetailView({
 
               {/* Column 3 */}
               <div className="py-8 px-6 sm:py-10 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                <div className="text-teal-400 mb-6 group-hover:scale-105 transition-transform duration-200">
+                <div className="text-[#FF5A36] mb-6 group-hover:scale-105 transition-transform duration-200">
                   <BellRingIcon size={38} strokeWidth={1.5} />
                 </div>
                 <h4 className="text-lg sm:text-xl font-bold text-white leading-snug">
@@ -782,7 +782,7 @@ function ModuleDetailView({
 
               {/* Column 4 */}
               <div className="py-8 px-6 sm:py-10 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                <div className="text-teal-400 mb-6 group-hover:scale-105 transition-transform duration-200">
+                <div className="text-[#FF5A36] mb-6 group-hover:scale-105 transition-transform duration-200">
                   <DatabaseIcon size={38} strokeWidth={1.5} />
                 </div>
                 <h4 className="text-lg sm:text-xl font-bold text-white leading-snug">

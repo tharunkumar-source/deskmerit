@@ -4,7 +4,7 @@ import { DeskmeritHeader } from "../components/DeskmeritHeader";
 import { DeskmeritFooter } from "../components/DeskmeritFooter";
 import { DeskmeritCtaBand } from "../components/DeskmeritCtaBand";
 import { DeskmeritFaq } from "../components/DeskmeritFaq";
-import { Shield, FileText, CheckCircle2, Lock, ShieldCheck, Download } from "lucide-react";
+import { Shield, FileText, CheckCircle2, Lock, ShieldCheck, Download, ArrowRight } from "lucide-react";
 
 export function LegalPage() {
   const location = useLocation();
@@ -59,38 +59,117 @@ export function LegalPage() {
       <DeskmeritHeader />
 
       <main>
-        {/* Breadcrumb & Legal Nav Tabs */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-          <div className="flex flex-wrap items-center justify-between gap-4 text-xs text-[#4A5370]">
-            <div className="flex items-center gap-1.5">
-              <Link to="/" className="hover:text-[#0F1730]">Home</Link>
-              <span>/</span>
-              <span className="text-[#4A5370]">Legal</span>
-              <span>/</span>
-              <span className="font-semibold text-[#0F1730]">{title}</span>
+        {/* Standard Consistent Dark Hero */}
+        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
+          {/* Dual Radial Glows */}
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#24305A]/40 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#FF5A36]/10 blur-[100px] rounded-full pointer-events-none" />
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            {/* Breadcrumb */}
+            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+              <Link to="/" className="hover:underline text-slate-300">Home</Link>
+              <span className="text-slate-500">/</span>
+              <span className="text-slate-300">Legal</span>
+              <span className="text-slate-500">/</span>
+              <span>{title}</span>
             </div>
 
-            {/* Quick Switcher Across All 6 Legal Documents */}
-            <div className="flex items-center gap-1.5 flex-wrap">
-              <span className="text-[11px] font-semibold text-slate-500 mr-1 hidden md:inline">
-                Legal Documents:
-              </span>
-              {legalDocs.map((doc) => (
-                <Link
-                  key={doc.slug}
-                  to={doc.href}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
-                    activeDoc === doc.slug
-                      ? "bg-[#0F1730] text-white border-[#0F1730]"
-                      : "bg-white text-slate-700 border-slate-200 hover:border-slate-300"
-                  }`}
-                >
-                  {doc.label}
-                </Link>
-              ))}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              {/* Left Column: Heading & Pitch */}
+              <div className="lg:col-span-7 space-y-6">
+                <div className="inline-block px-3.5 py-1 rounded-full bg-[#FFE6DF]/15 border border-[#FF5A36]/30 text-[11px] font-bold uppercase tracking-wider text-[#FF5A36]">
+                  DESKMERIT LEGAL GOVERNANCE
+                </div>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                  {title} <span className="text-[#FF5A36] block">& Compliance Standards.</span>
+                </h1>
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                  {subtitle} Operated by Kombee Technologies (India) Pvt. Ltd. Structured for corporate integrity, data minimization, and cross-border statutory compliance.
+                </p>
+                <div className="flex flex-wrap gap-4 pt-2">
+                  <a
+                    href="#download"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.print();
+                    }}
+                    className="px-6 py-3.5 rounded-[12px] bg-[#FF5A36] hover:bg-[#E04826] text-white font-extrabold text-sm shadow-lg hover:shadow-glow-ember transition-all inline-flex items-center gap-2 cursor-pointer"
+                  >
+                    Print or save PDF <Download className="w-4 h-4" />
+                  </a>
+                  <Link
+                    to="/privacy-promise"
+                    className="px-6 py-3.5 rounded-[12px] bg-[#10192A] border border-slate-700 hover:border-slate-500 text-white font-semibold text-sm transition-all"
+                  >
+                    Privacy Promise & Security
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right Column: Floating macOS Mockup */}
+              <div className="lg:col-span-5">
+                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-2xl overflow-hidden backdrop-blur-md">
+                  {/* macOS Window Titlebar */}
+                  <div className="flex items-center justify-between px-4 py-3 bg-[#0A1628] border-b border-slate-800">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
+                      <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
+                      <div className="w-3 h-3 rounded-full bg-[#62C554]" />
+                    </div>
+                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
+                      app.deskmerit.com/legal/{activeDoc}
+                    </div>
+                    <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
+                      Audited 2026
+                    </div>
+                  </div>
+
+                  {/* Window Body Widget */}
+                  <div className="p-6 space-y-4">
+                    <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="text-slate-400">Jurisdiction & Entity</span>
+                        <span className="text-[#FF5A36] font-bold">Kombee Technologies</span>
+                      </div>
+                      <div className="text-sm font-bold text-white">
+                        {title} · Active Version 2.8
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-3 text-left">
+                      <div className="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+                        <div className="text-[10px] text-slate-400">Statutory Framework</div>
+                        <div className="text-xs font-bold text-[#FF5A36] mt-0.5">GDPR · DPDP 2023</div>
+                      </div>
+                      <div className="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+                        <div className="text-[10px] text-slate-400">Data Residency</div>
+                        <div className="text-xs font-bold text-white mt-0.5">Mumbai · Sydney · US</div>
+                      </div>
+                    </div>
+
+                    <div className="p-3 rounded-lg bg-slate-900/40 border border-slate-800/80 text-[11px] space-y-1.5">
+                      <div className="flex items-center justify-between text-slate-300">
+                        <span>Surveillance Tech:</span>
+                        <span className="text-red-400 font-bold">Keystrokes Blocked</span>
+                      </div>
+                      <div className="flex items-center justify-between text-slate-300">
+                        <span>Database Encryption:</span>
+                        <span className="text-[#FF5A36] font-bold">AES-256 KMS</span>
+                      </div>
+                    </div>
+
+                    <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
+                      <span>Effective: October 2026</span>
+                      <span className="text-[#FF5A36] font-semibold">Legally Binding</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Legal Document Content Card */}
         <section className="py-12 lg:py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

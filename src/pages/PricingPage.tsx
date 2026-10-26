@@ -102,29 +102,82 @@ export function PricingPage() {
       <DeskmeritHeader />
 
       <main>
-        {/* SECTION 1: Deep Navy Hero Matching Sqalible Screenshot 2 */}
-        <section className="bg-[#0A0F1D] text-white pt-10 pb-20 border-b border-[#24305A] text-center relative overflow-hidden">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#FF5A36]/10 rounded-full blur-[140px] pointer-events-none" />
+        {/* SECTION 1: Deep Navy Hero Matching Platform Standard with Product Showcase */}
+        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden mb-8">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
-            <div className="text-xs text-[#9AA1B2] flex items-center justify-center gap-1.5 mb-6">
-              <Link to="/" className="hover:text-white transition-colors">Home</Link>
-              <span>/</span>
-              <span className="font-semibold text-white">Pricing</span>
+            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+              <Link to="/" className="hover:underline text-slate-300">Home</Link>
+              <span className="text-slate-500">/</span>
+              <span>Pricing</span>
             </div>
 
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1A264F] border border-[#2E3C6B] text-xs font-semibold text-[#38BDF8] mb-6">
-              <span className="pulse-dot mr-1" />
-              <span>Transparent, Predictable Pricing</span>
-            </div>
+            <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
+              {/* Left Column */}
+              <div className="col-span-12 lg:col-span-6 space-y-6">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFE6DF]/15 border border-[#FF5A36]/30 text-[11px] font-bold uppercase tracking-wider text-[#FF5A36]">
+                  <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
+                  <span>Transparent, Predictable Pricing</span>
+                </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-[-0.03em] leading-tight mb-4">
-              Simple plans, predictable pricing.
-            </h1>
-            <p className="text-base sm:text-lg text-[#9AA1B2] max-w-2xl mx-auto">
-              Every plan starts with a 14-day full trial with every feature included. No credit card required.
-            </p>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                  Simple plans,{" "}
+                  <span className="text-[#FF5A36] block">predictable pricing.</span>
+                </h1>
+
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                  Every plan starts with a 14-day full trial with every feature included. No credit card required. Flat seat pricing with zero lock-in contracts.
+                </p>
+
+                <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                  <Link
+                    to="/signup"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all"
+                  >
+                    <span>Start free 14-day trial</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    to="/demo"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all"
+                  >
+                    <span>Talk to sales</span>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right Column: Authentic Figma Product Screenshot in macOS Browser Window Frame */}
+              <div className="col-span-12 lg:col-span-6">
+                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
+                  <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
+                      <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
+                      <div className="w-3 h-3 rounded-full bg-[#62C554]" />
+                    </div>
+                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
+                      app.deskmerit.com/executive/dashboard
+                    </div>
+                    <div className="text-[11px] font-bold text-emerald-400 flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      All Features Active
+                    </div>
+                  </div>
+
+                  <div className="bg-[#070E1A] p-2 max-h-[380px] overflow-hidden flex items-center justify-center">
+                    <img
+                      src="/images/figma/dashboard-executive-overview.png"
+                      alt="Deskmerit Executive Overview Dashboard Included on Pro & Premium"
+                      className="w-full h-auto rounded-lg object-cover object-top shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
+                      loading="eager"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

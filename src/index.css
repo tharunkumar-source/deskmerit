@@ -2,6 +2,26 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+:root {
+  /* PulseTrack Core Brand Color Tokens */
+  --color-midnight: #0F1730;
+  --color-ember: #FF5A36;
+  --color-paper: #F7F4EE;
+  --color-dusk: #24305A;
+  --color-ember-deep: #C2361A;
+  --color-ember-tint: #FFE6DF;
+  --color-slate: #4A5370;
+  --color-mist: #E6E2D8;
+  --color-white: #FFFFFF;
+
+  /* Live-State Semantic Color Tokens */
+  --color-live-mint: #12B886;
+  --color-live-amber: #F5A524;
+  --color-live-iris: #5B6CFF;
+  --color-live-fog: #9AA1B2;
+  --color-live-rose: #E5484D;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -10,38 +30,117 @@
   }
 
   body {
-    font-family: 'Martel Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background-color: #F7F4EE;
-    color: #0F1730;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--color-paper);
+    color: var(--color-midnight);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
 
+  /* Display headings strictly adhere to Inter Display sentence case */
   h1, h2, h3, h4, h5, h6 {
-    letter-spacing: -0.025em;
-    color: #0F1730;
-    text-transform: none; /* strictly sentence case per guidelines */
+    font-family: 'Inter Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--color-midnight);
+    text-transform: none; /* Strictly sentence case per guidelines */
   }
 
-  /* Tabular figures for all numbers in reports, timestamps, currency */
+  /* Tabular figures for all numbers in reports, timestamps, metrics, currency */
   .tnum, [data-tabular-nums] {
     font-variant-numeric: tabular-nums;
   }
 }
 
-/* Brand specific utilities */
+/* Typography Token Utilities */
+.font-display {
+  font-family: 'Inter Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-sans {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 .font-human {
   font-family: 'Lora', Georgia, serif;
   font-style: italic;
+  font-weight: 500;
 }
 
-/* Ember pulse dot */
+/* Brand Type Scale Utility Classes */
+.type-display-xl {
+  font-family: 'Inter Display', 'Inter', sans-serif;
+  font-size: 88px;
+  line-height: 92px;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+.type-h1 {
+  font-family: 'Inter Display', 'Inter', sans-serif;
+  font-size: 60px;
+  line-height: 64px;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+.type-h2 {
+  font-family: 'Inter Display', 'Inter', sans-serif;
+  font-size: 40px;
+  line-height: 46px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.type-h3 {
+  font-family: 'Inter Display', 'Inter', sans-serif;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+.type-body-l {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  line-height: 31px;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.type-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.type-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .type-display-xl {
+    font-size: calc(88px * 0.7);
+    line-height: calc(92px * 0.7);
+  }
+  .type-h1 {
+    font-size: calc(60px * 0.7);
+    line-height: calc(64px * 0.7);
+  }
+}
+
+/* Ember pulse dot: single dot per view, 1.6s ease gentle pulse */
 .pulse-dot {
   width: 8px;
   height: 8px;
   border-radius: 9999px;
-  background-color: #FF5A36;
+  background-color: var(--color-ember);
   display: inline-block;
   animation: pulseGentle 1.6s ease-in-out infinite;
 }
@@ -52,34 +151,34 @@
     box-shadow: 0 0 0 0 rgba(255, 90, 54, 0.4);
   }
   50% {
-    transform: scale(1.15);
+    transform: scale(1.22);
     box-shadow: 0 0 0 6px rgba(255, 90, 54, 0);
   }
 }
 
-/* The Day Line signature visual */
+/* The Day Line: Signature data visual */
 .day-line-bar {
   display: flex;
   height: 12px;
   border-radius: 9999px;
   overflow: hidden;
-  background-color: #E6E2D8;
+  background-color: var(--color-mist);
 }
 
-/* Custom scrollbars */
+/* Custom scrollbars adhering to Mist and Paper */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F7F4EE;
+  background: var(--color-paper);
 }
 ::-webkit-scrollbar-thumb {
-  background: #D6D1C5;
+  background: var(--color-mist);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #4A5370;
+  background: var(--color-slate);
 }
 
 /* Hide scrollbar utility */
@@ -107,28 +206,11 @@
   animation-play-state: paused;
 }
 
-/* Features marquee styles */
-@keyframes marqueeFeatures {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-.features-marquee {
-  display: flex;
-  width: max-content;
-  animation: marqueeFeatures 50s linear infinite;
-}
-
-.features-marquee:hover {
-  animation-play-state: paused;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .pulse-dot {
     animation: none;
   }
-  .marquee-content,
-  .features-marquee {
+  .marquee-content {
     animation: none;
   }
 }

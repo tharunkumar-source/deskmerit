@@ -178,6 +178,12 @@ export function DeskmeritFooter() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
+            <Link
+              to="/brand-guidelines"
+              className="text-[#FF5A36] font-semibold hover:underline transition-colors"
+            >
+              Brand Guidelines
+            </Link>
             {LEGAL_LINKS.map((item) => (
               <Link
                 key={item.label}

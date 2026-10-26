@@ -295,7 +295,7 @@ export function SolutionPage() {
       <section className="py-12 md:py-16 bg-white px-6 border-y border-neutral-200">
         <div className="mx-auto max-w-7xl">
           <div className="w-full">
-            <p className="pretitle text-primary">Measurable Impact</p>
+            <p className="pretitle text-[#FF5A36]">Measurable Impact</p>
             <h2 className="mt-1 text-2xl sm:text-3xl font-extrabold text-neutral-900">
               Why Choose Sqalible for {solution.name.replace(/^For /, "")}?
             </h2>
@@ -304,14 +304,17 @@ export function SolutionPage() {
             </p>
           </div>
 
-          {/* 4-Metric Grid */}
+          {/* 4-Metric Grid (Matching Capabilities Card Style on White BG) */}
           <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-6">
             {(solution.outcomes || []).map((o) => (
-              <div key={o.label} className="rounded-none border border-neutral-200 bg-neutral-50/70 p-6">
-                <span className="block text-3xl sm:text-4xl font-extrabold text-teal-700 tracking-tight">
+              <div
+                key={o.label}
+                className="rounded-2xl border border-[#E6E2D8] bg-[#F7F4EE] hover:bg-white hover:border-[#FF5A36] hover:shadow-card transition-all p-6 group"
+              >
+                <span className="block text-3xl sm:text-4xl font-extrabold text-[#FF5A36] tracking-tight group-hover:scale-105 transition-transform duration-200">
                   {o.metric}
                 </span>
-                <span className="mt-2 block text-xs sm:text-sm font-semibold text-neutral-800">
+                <span className="mt-2 block text-xs sm:text-sm font-semibold text-neutral-800 group-hover:text-[#FF5A36] transition-colors">
                   {o.label}
                 </span>
               </div>
@@ -325,7 +328,7 @@ export function SolutionPage() {
         <section className="bg-[#0B0F19] py-14 md:py-20 text-white">
           <div className="mx-auto max-w-7xl px-6">
             <div className="w-full mb-10">
-              <p className="pretitle text-teal-400">Core Challenges Solved</p>
+              <p className="pretitle text-[#FF5A36]">Core Challenges Solved</p>
               <h3 className="mt-1 text-2xl sm:text-3xl font-bold text-white tracking-tight">
                 Addressing Critical Friction for {solution.name.replace(/^For /, "")}
               </h3>
@@ -344,7 +347,7 @@ export function SolutionPage() {
                       key={c.title}
                       className="py-8 px-6 sm:py-10 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group"
                     >
-                      <div className="text-teal-400 mb-6 group-hover:scale-105 transition-transform duration-200">
+                      <div className="text-[#FF5A36] mb-6 group-hover:scale-105 transition-transform duration-200">
                         <Icon size={38} strokeWidth={1.5} />
                       </div>
                       <h4 className="text-lg sm:text-xl font-bold text-white leading-snug">

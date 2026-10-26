@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { DeskmeritHeader } from "../components/DeskmeritHeader";
 import { DeskmeritFooter } from "../components/DeskmeritFooter";
 import { DeskmeritFaq } from "../components/DeskmeritFaq";
+import { DeskmeritCtaBand } from "../components/DeskmeritCtaBand";
 import {
   Calendar,
   Clock,
@@ -97,7 +98,7 @@ export function AttendanceTrackingPage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb matching Reference */}
-            <div className="text-xs text-[#20C997] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
               <Link to="/features" className="hover:underline text-slate-300">Product</Link>
@@ -108,7 +109,7 @@ export function AttendanceTrackingPage() {
             <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
               {/* Left Copy */}
               <div className="col-span-12 lg:col-span-6 space-y-6">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#20C997] bg-[#132338] px-3.5 py-1 rounded-full inline-block border border-[#20C997]/30">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
                   WORKFORCE PRESENCE · ZERO BIOMETRICS
                 </div>
 
@@ -138,7 +139,7 @@ export function AttendanceTrackingPage() {
                 </div>
               </div>
 
-              {/* Right Framed App Mockup (macOS Window + June 2026 Calendar) */}
+              {/* Right Framed App Mockup (macOS Window + Authentic Attendance Matrix) */}
               <div className="col-span-12 lg:col-span-6">
                 <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
                   <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
@@ -148,52 +149,21 @@ export function AttendanceTrackingPage() {
                       <span className="w-3 h-3 rounded-full bg-[#62C554]" />
                     </div>
                     <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
-                      app.deskmerit.com/features/attendance-tracking
+                      app.deskmerit.com/attendance/matrix
                     </div>
-                    <span className="text-[11px] font-bold text-[#20C997] flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#20C997] animate-pulse" />
-                      Active Engine
+                    <span className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
+                      Live Verified
                     </span>
                   </div>
 
-                  <div className="p-6 bg-white text-[#0F1730]">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-xs font-bold text-[#0F1730]">June 2026</span>
-                      <span className="text-[11px] text-[#4A5370]">Min. 6h present threshold</span>
-                    </div>
-
-                    <div className="grid grid-cols-7 gap-1.5 text-center text-[10px]">
-                      {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((d) => (
-                        <div key={d} className="font-bold text-[#4A5370] py-1">{d}</div>
-                      ))}
-                      {calendarDays.map((item) => {
-                        const isSelected = selectedDay === item.day;
-                        let bg = "bg-[#F7F4EE] text-[#0F1730]";
-                        if (item.status === "Present") bg = "bg-[#E6F4EA] text-[#0D652D] font-bold";
-                        if (item.status === "Leave") bg = "bg-[#FEF7E0] text-[#B06000]";
-                        if (item.status === "Corrected") bg = "bg-[#E8F0FE] text-[#1967D2] font-bold border border-[#1967D2]/40";
-                        if (item.status === "Weekend") bg = "bg-transparent text-[#9AA1B2]";
-
-                        return (
-                          <button
-                            key={item.day}
-                            type="button"
-                            onClick={() => setSelectedDay(item.day)}
-                            className={`p-2 rounded-lg transition-all ${bg} ${
-                              isSelected ? "ring-2 ring-[#FF5A36]" : ""
-                            }`}
-                          >
-                            <span className="block font-semibold">{item.day}</span>
-                            <span className="text-[8px] block opacity-80">{item.status}</span>
-                          </button>
-                        );
-                      })}
-                    </div>
-
-                    <div className="mt-4 pt-3 border-t border-[#E6E2D8] text-[11px] text-[#4A5370]">
-                      <span className="font-bold text-[#0F1730]">Selected Day Note:</span>{" "}
-                      {calendarDays.find((d) => d.day === selectedDay)?.note || "Normal 7h 45m tracked working day."}
-                    </div>
+                  <div className="bg-slate-950 p-1 sm:p-2">
+                    <img
+                      src="/images/figma/attendance-company-matrix.png"
+                      alt="Deskmerit Workforce Attendance Matrix and Daily Work Verification"
+                      className="w-full h-auto object-contain rounded-lg block shadow-inner"
+                      loading="eager"
+                    />
                   </div>
                 </div>
               </div>
@@ -202,6 +172,7 @@ export function AttendanceTrackingPage() {
         </section>
 
         {/* SECTION 2: Key Capabilities (Sqalible Screenshot 1) */}
+        {/* SECTION 2: Key Capabilities (Matching Capabilities Section Style on White BG) */}
         <section className="py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#E6E2D8]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-14">
@@ -214,53 +185,53 @@ export function AttendanceTrackingPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-8 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] shadow-card flex flex-col justify-between">
+              <div className="p-8 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between group">
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] flex items-center justify-center mb-6 shadow-sm">
-                    <Globe2 className="w-6 h-6 text-[#FF5A36]" />
+                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-6 shadow-xs transition-all duration-200">
+                    <Globe2 className="w-6 h-6 transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0F1730] mb-3">
+                  <h3 className="text-xl font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-3">
                     Every Employee's Own Timezone
                   </h3>
                   <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed">
                     Days close at each person's local midnight. Teams distributed across Bengaluru, Dubai, Riyadh, Sydney, and Auckland get accurate days for everyone.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[#E6E2D8] text-xs font-semibold text-[#12B886]">
+                <div className="mt-6 pt-4 border-t border-[#E6E2D8] text-xs font-semibold text-[#FF5A36]">
                   DST Aware · Multi-Region
                 </div>
               </div>
 
-              <div className="p-8 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] shadow-card flex flex-col justify-between">
+              <div className="p-8 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between group">
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] flex items-center justify-center mb-6 shadow-sm">
-                    <Moon className="w-6 h-6 text-[#12B886]" />
+                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-6 shadow-xs transition-all duration-200">
+                    <Moon className="w-6 h-6 transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0F1730] mb-3">
+                  <h3 className="text-xl font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-3">
                     Fair for Late Nights & Shifts
                   </h3>
                   <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed">
                     A session crossing midnight is judged as a whole against your shift minimum — so a 6-hour night shift counts as present, never two separate absences.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[#E6E2D8] text-xs font-semibold text-[#12B886]">
+                <div className="mt-6 pt-4 border-t border-[#E6E2D8] text-xs font-semibold text-[#FF5A36]">
                   Overnight Shift Integrity
                 </div>
               </div>
 
-              <div className="p-8 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] shadow-card flex flex-col justify-between">
+              <div className="p-8 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between group">
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] flex items-center justify-center mb-6 shadow-sm">
-                    <FileCheck className="w-6 h-6 text-[#38BDF8]" />
+                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-6 shadow-xs transition-all duration-200">
+                    <FileCheck className="w-6 h-6 transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0F1730] mb-3">
+                  <h3 className="text-xl font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-3">
                     Audited HR Corrections
                   </h3>
                   <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed">
                     Set the minimum threshold for a present day. Every admin correction is logged with author, reason, and before/after values that are never overwritten.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[#E6E2D8] text-xs font-semibold text-[#12B886]">
+                <div className="mt-6 pt-4 border-t border-[#E6E2D8] text-xs font-semibold text-[#FF5A36]">
                   Immutable Audit Trail
                 </div>
               </div>
@@ -268,55 +239,73 @@ export function AttendanceTrackingPage() {
           </div>
         </section>
 
-        {/* SECTION 3: Deep Dark Section "How Attendance Operates in Practice" */}
+        {/* SECTION 3: Deep Dark Section "How Attendance Operates in Practice" (Architectural Line-Divided Segmented Grid) */}
         <section className="py-20 lg:py-28 bg-[#0A0F1D] text-white border-b border-[#24305A]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-16">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
-                Automated Verification
+              <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2 font-mono">
+                AUTOMATED VERIFICATION
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
                 How Attendance Operates in Practice
               </h2>
+              <p className="mt-3 text-sm text-slate-400 leading-relaxed max-w-2xl">
+                A transparent 4-stage operational process designed for speed, accountability, and statutory compliance integrity.
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="p-6 rounded-2xl bg-[#0F1730] border border-[#24305A]">
-                <span className="text-2xl font-black text-[#FF5A36] font-mono block mb-4">01</span>
-                <h3 className="text-base font-bold text-white mb-2">Passive Work Ingestion</h3>
-                <p className="text-xs text-[#9AA1B2] leading-relaxed">
-                  Desktop agent detects first user input in employee's local timezone and begins passive tally.
-                </p>
-              </div>
+            {/* Architectural Line-Divided Segmented Grid (Matching Sqalible Reference) */}
+            <div className="border-t border-b border-slate-800">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-800">
+                {/* Step 1 */}
+                <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
+                  <div className="text-xs font-bold font-mono text-[#FF5A36] mb-4">STEP 01</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
+                    Passive Work Ingestion
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                    Desktop agent detects first user input in employee's local timezone and begins passive tally.
+                  </p>
+                </div>
 
-              <div className="p-6 rounded-2xl bg-[#0F1730] border border-[#24305A]">
-                <span className="text-2xl font-black text-[#FF5A36] font-mono block mb-4">02</span>
-                <h3 className="text-base font-bold text-white mb-2">Calendar Meeting Blend</h3>
-                <p className="text-xs text-[#9AA1B2] leading-relaxed">
-                  Accepted Google & Outlook meetings merge seamlessly so off-keyboard Zoom/client calls count as work.
-                </p>
-              </div>
+                {/* Step 2 */}
+                <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
+                  <div className="text-xs font-bold font-mono text-[#FF5A36] mb-4">STEP 02</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
+                    Calendar Meeting Blend
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                    Accepted Google & Outlook meetings merge seamlessly so off-keyboard Zoom/client calls count as work.
+                  </p>
+                </div>
 
-              <div className="p-6 rounded-2xl bg-[#0F1730] border border-[#24305A]">
-                <span className="text-2xl font-black text-[#FF5A36] font-mono block mb-4">03</span>
-                <h3 className="text-base font-bold text-white mb-2">Threshold Evaluation</h3>
-                <p className="text-xs text-[#9AA1B2] leading-relaxed">
-                  At local midnight, engine compares total active + meeting minutes against team policy (e.g. 6h minimum).
-                </p>
-              </div>
+                {/* Step 3 */}
+                <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
+                  <div className="text-xs font-bold font-mono text-[#FF5A36] mb-4">STEP 03</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
+                    Threshold Evaluation
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                    At local midnight, engine compares total active + meeting minutes against team policy (e.g. 6h minimum).
+                  </p>
+                </div>
 
-              <div className="p-6 rounded-2xl bg-[#0F1730] border border-[#24305A]">
-                <span className="text-2xl font-black text-[#FF5A36] font-mono block mb-4">04</span>
-                <h3 className="text-base font-bold text-white mb-2">HRMS & Payroll Feed</h3>
-                <p className="text-xs text-[#9AA1B2] leading-relaxed">
-                  Validated status (Present, Half-Day, Leave) pushes directly to Sqalible HRMS or payroll REST API.
-                </p>
+                {/* Step 4 */}
+                <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
+                  <div className="text-xs font-bold font-mono text-[#FF5A36] mb-4">STEP 04</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
+                    HRMS & Payroll Feed
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                    Validated status (Present, Half-Day, Leave) pushes directly to Sqalible HRMS or payroll REST API.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* SECTION 4: Signature Split FAQ Layout (Matching Reference Image 2) */}
+        {/* SECTION 4: Signature Split FAQ Layout */}
         <DeskmeritFaq
           title="Attendance Tracking FAQs"
           category="COMMON QUESTIONS"
@@ -325,39 +314,12 @@ export function AttendanceTrackingPage() {
           helpDescription="Configure rotating contact center rosters, 24/7 support shifts, or regional Sunday–Thursday schedules in minutes."
         />
 
-        {/* SECTION 5: High-Impact Full-Width CTA Banner */}
-        <section className="bg-[#0F1730] text-white py-16 lg:py-20 border-b border-[#24305A]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 bg-[#172348] p-8 sm:p-12 rounded-[24px] border border-[#2B3969] shadow-2xl">
-              <div className="space-y-2 max-w-2xl">
-                <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
-                  Deploy In Minutes
-                </div>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
-                  Attendance without the punch clock or biometric queues.
-                </h3>
-                <p className="text-xs sm:text-sm text-[#9AA1B2]">
-                  Set up in under 10 minutes. Windows, macOS & Linux supported.
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
-                <Link
-                  to="/signup"
-                  className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-xs text-center transition-all shadow-md hover:shadow-glow-ember"
-                >
-                  Start free trial
-                </Link>
-                <Link
-                  to="/demo"
-                  className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#24305A] hover:bg-[#334173] text-white font-semibold text-xs text-center border border-[#384574] transition-all"
-                >
-                  Book a demo
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* SECTION 5: Standard Deskmerit CTA Band */}
+        <DeskmeritCtaBand
+          pretitle="DEPLOY IN MINUTES"
+          title="Attendance without the punch clock or biometric queues."
+          subtitle="Set up in under 10 minutes. Windows, macOS & Linux supported."
+        />
       </main>
 
       <DeskmeritFooter />

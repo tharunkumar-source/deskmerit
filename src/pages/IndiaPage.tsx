@@ -514,154 +514,89 @@ export function IndiaPage() {
               <span>/</span>
               <span className="font-semibold text-[#0F1730]">{region.name}</span>
             </div>
-
-            {/* Region Switcher Pills */}
-            <div className="flex items-center gap-2">
-              <span className="text-[11px] font-semibold text-slate-500 hidden sm:inline">
-                {region.isArabic ? "تغيير المنطقة:" : "Select region:"}
-              </span>
-              <Link
-                to="/en-in/"
-                className={`px-2 py-1 rounded-md text-[11px] font-medium border transition-colors ${
-                  activeKey === "in"
-                    ? "bg-[#0F1730] text-white border-[#0F1730]"
-                    : "bg-white text-slate-700 border-slate-200 hover:border-slate-300"
-                }`}
-              >
-                🇮🇳 India
-              </Link>
-              <Link
-                to="/en-au/"
-                className={`px-2 py-1 rounded-md text-[11px] font-medium border transition-colors ${
-                  activeKey === "au"
-                    ? "bg-[#0F1730] text-white border-[#0F1730]"
-                    : "bg-white text-slate-700 border-slate-200 hover:border-slate-300"
-                }`}
-              >
-                🇦🇺 Australia
-              </Link>
-              <Link
-                to="/en-nz/"
-                className={`px-2 py-1 rounded-md text-[11px] font-medium border transition-colors ${
-                  activeKey === "nz"
-                    ? "bg-[#0F1730] text-white border-[#0F1730]"
-                    : "bg-white text-slate-700 border-slate-200 hover:border-slate-300"
-                }`}
-              >
-                🇳🇿 New Zealand
-              </Link>
-              <Link
-                to="/en-ae/"
-                className={`px-2 py-1 rounded-md text-[11px] font-medium border transition-colors ${
-                  activeKey === "ae"
-                    ? "bg-[#0F1730] text-white border-[#0F1730]"
-                    : "bg-white text-slate-700 border-slate-200 hover:border-slate-300"
-                }`}
-              >
-                🇦🇪 UAE
-              </Link>
-              <Link
-                to="/en-sa/"
-                className={`px-2 py-1 rounded-md text-[11px] font-medium border transition-colors ${
-                  activeKey === "sa"
-                    ? "bg-[#0F1730] text-white border-[#0F1730]"
-                    : "bg-white text-slate-700 border-slate-200 hover:border-slate-300"
-                }`}
-              >
-                🇸🇦 Saudi
-              </Link>
-              <Link
-                to="/ar/"
-                className={`px-2 py-1 rounded-md text-[11px] font-medium border transition-colors ${
-                  activeKey === "ar"
-                    ? "bg-[#FF5A36] text-white border-[#FF5A36]"
-                    : "bg-white text-slate-700 border-slate-200 hover:border-slate-300"
-                }`}
-              >
-                🇸🇦 العربية
-              </Link>
-            </div>
           </div>
         </div>
 
-        {/* Hero Section */}
-        <section className="py-12 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFFFFF] border border-[#E6E2D8] text-xs font-semibold text-[#0F1730] shadow-sm">
-                <span>{region.badge}</span>
-              </div>
+        {/* ========================================================================= */}
+        {/* DARK HERO SECTION (Consistent Platform Standard)                          */}
+        {/* ========================================================================= */}
+        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F1730] tracking-[-0.03em] leading-tight">
-                {region.heroTitle}{" "}
-                <span className="text-[#FF5A36] block font-normal">
-                  {region.heroAccent}
-                </span>
-              </h1>
-
-              <p className="text-base sm:text-lg text-[#4A5370] leading-relaxed">
-                {region.heroDesc}
-              </p>
-
-              <div className="flex flex-wrap items-center gap-3 pt-2">
-                <Link
-                  to="/signup"
-                  className="inline-flex items-center justify-center text-xs font-extrabold text-white bg-[#FF5A36] hover:bg-[#E94A27] px-6 py-3.5 rounded-[12px] shadow-md hover:shadow-glow-ember transition-all"
-                >
-                  {region.isArabic
-                    ? "ابدأ التجربة المجانية 14 يوماً ←"
-                    : "Start free 14-day trial →"}
-                </Link>
-                <Link
-                  to="/demo"
-                  className="inline-flex items-center justify-center text-xs font-semibold text-[#0F1730] bg-[#FFFFFF] hover:bg-[#E6E2D8]/50 border border-[#0F1730] px-6 py-3.5 rounded-[12px] transition-all"
-                >
-                  {region.isArabic ? "طلب عرض توضيحي" : "Book a demo"}
-                </Link>
-              </div>
-
-              <p className="text-xs text-[#4A5370]">
-                {region.priceDisplay} · {region.priceSub}
-              </p>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            {/* Breadcrumb */}
+            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+              <Link to="/" className="hover:underline text-slate-300">Home</Link>
+              <span className="text-slate-500">/</span>
+              <span className="text-slate-300">
+                {region.isArabic ? "المناطق" : "Global Editions"}
+              </span>
+              <span className="text-slate-500">/</span>
+              <span>{region.name}</span>
             </div>
 
-            {/* Right: Regional Pricing Highlight Card */}
-            <div className="lg:col-span-5 bg-[#FFFFFF] rounded-[24px] p-6 sm:p-8 border border-[#E6E2D8] shadow-card">
-              <div className="flex items-center justify-between pb-4 mb-6 border-b border-[#E6E2D8]">
-                <span className="text-xs font-bold text-[#0F1730]">
-                  {region.planName}
-                </span>
-                <span className="text-xs font-bold px-2.5 py-1 rounded bg-[#FFE6DF] text-[#C2361A]">
-                  {region.isArabic ? "خصم 20% سنوياً" : "Save 20% Annual"}
-                </span>
+            <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
+              {/* Left Column */}
+              <div className="col-span-12 lg:col-span-6 space-y-6">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
+                  {region.badge}
+                </div>
+
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                  {region.heroTitle}{" "}
+                  <span className="text-[#FF5A36] block">{region.heroAccent}</span>
+                </h1>
+
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                  {region.heroDesc}
+                </p>
+
+                <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                  <Link
+                    to="/signup"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all"
+                  >
+                    <span>{region.isArabic ? "ابدأ التجربة المجانية 14 يوماً" : "Start free trial"}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    to="/demo"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all"
+                  >
+                    <span>{region.isArabic ? "طلب عرض توضيحي" : "Book a demo"}</span>
+                  </Link>
+                </div>
               </div>
 
-              <div className="text-center py-4">
-                <div className="text-5xl font-extrabold text-[#0F1730] font-display tnum">
-                  {region.priceDisplay}
-                </div>
-                <div className="text-xs text-[#4A5370] mt-1 font-medium">
-                  {region.priceSub}
+              {/* Right Column: Authentic Regional Edition Screenshot in macOS Browser Window Frame */}
+              <div className="col-span-12 lg:col-span-6">
+                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
+                  <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
+                      <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
+                      <div className="w-3 h-3 rounded-full bg-[#62C554]" />
+                    </div>
+                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
+                      app.deskmerit.com/{region.code}/statutory-roster
+                    </div>
+                    <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
+                      {region.currency} Statutory Ready
+                    </div>
+                  </div>
+
+                  <div className="bg-[#070E1A] p-2">
+                    <img
+                      src="/images/figma/regional-working-days.png"
+                      alt={`Deskmerit Statutory Time & Attendance Platform for ${region.name}`}
+                      className="w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
+                      loading="eager"
+                    />
+                  </div>
                 </div>
               </div>
-
-              <ul className="space-y-3 py-6 border-t border-[#E6E2D8] text-xs text-[#0F1730]">
-                {region.features.map((feat, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-[#12B886] shrink-0" />
-                    <span>{feat}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Link
-                to={`/signup?plan=pro&region=${region.code}`}
-                className="w-full py-3.5 rounded-[12px] bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-xs text-center transition-colors shadow-md hover:shadow-glow-ember block"
-              >
-                {region.isArabic
-                  ? "بدء التجربة المجانية الآن"
-                  : `Start 14-day free trial in ${region.name}`}
-              </Link>
             </div>
           </div>
         </section>
@@ -688,13 +623,13 @@ export function IndiaPage() {
                 return (
                   <div
                     key={c.title}
-                    className="p-7 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] transition-all hover:shadow-card flex flex-col justify-between"
+                    className="p-7 rounded-2xl bg-white border border-[#E6E2D8] hover:border-[#FF5A36] transition-all hover:shadow-card flex flex-col justify-between group"
                   >
                     <div>
-                      <div className="w-10 h-10 rounded-xl bg-[#FFFFFF] text-[#C2361A] flex items-center justify-center mb-4 border border-[#E6E2D8]">
-                        <Icon className="w-5 h-5" />
+                      <div className="w-11 h-11 rounded-xl bg-[#F8F9FA] border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-4 transition-all duration-200 shadow-xs">
+                        <Icon className="w-5 h-5 transition-colors" />
                       </div>
-                      <h3 className="font-bold text-base text-[#0F1730] mb-2">
+                      <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">
                         {c.title}
                       </h3>
                       <p className="text-xs text-[#4A5370] leading-relaxed">

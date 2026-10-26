@@ -14,118 +14,81 @@ export function HrmsAddonPage() {
       <DeskmeritHeader />
 
       <main>
-        {/* Breadcrumb */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-          <div className="text-xs text-[#4A5370] flex items-center gap-1.5">
-            <Link to="/" className="hover:text-[#0F1730]">Home</Link>
-            <span>/</span>
-            <span className="font-semibold text-[#0F1730]">HRMS add-on (Sqalible)</span>
-          </div>
-        </div>
+        {/* ========================================================================= */}
+        {/* DARK HERO SECTION (Consistent Platform Standard)                          */}
+        {/* ========================================================================= */}
+        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Hero Section */}
-        <section className="py-12 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFFFFF] border border-[#E6E2D8] text-xs font-semibold text-[#0F1730] shadow-sm">
-                <span className="pulse-dot" />
-                <span>Sqalible Native Integration</span>
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F1730] tracking-[-0.03em] leading-tight">
-                Time tracking,{" "}
-                <span className="text-[#FF5A36] block font-normal">switched on inside your HRMS.</span>
-              </h1>
-
-              <p className="text-base sm:text-lg text-[#4A5370] leading-relaxed">
-                If you run Sqalible, Deskmerit is one toggle away. No new vendor, no new login, no new invoice — attendance and work-time data flow straight into the HRMS you already use.
-              </p>
-
-              <div className="flex flex-wrap gap-3 pt-2">
-                <Link
-                  to="/signup"
-                  className="inline-flex items-center justify-center text-xs font-extrabold text-white bg-[#FF5A36] hover:bg-[#E94A27] px-6 py-3.5 rounded-[12px] shadow-md hover:shadow-glow-ember transition-all"
-                >
-                  Start free 14-day trial →
-                </Link>
-                <Link
-                  to="/demo"
-                  className="inline-flex items-center justify-center text-xs font-semibold text-[#0F1730] bg-[#FFFFFF] hover:bg-[#E6E2D8]/50 border border-[#0F1730] px-6 py-3.5 rounded-[12px] transition-all"
-                >
-                  Book a demo
-                </Link>
-              </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            {/* Breadcrumb */}
+            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+              <Link to="/" className="hover:underline text-slate-300">Home</Link>
+              <span className="text-slate-500">/</span>
+              <Link to="/solutions/it-services" className="hover:underline text-slate-300">Solutions</Link>
+              <span className="text-slate-500">/</span>
+              <span>HRMS Add-on</span>
             </div>
 
-            {/* Right: Interactive Sqalible UI Mock-up with Working Toggle */}
-            <div className="lg:col-span-6 bg-[#FFFFFF] rounded-[24px] p-6 sm:p-8 border border-[#E6E2D8] shadow-card">
-              <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#E6E2D8] text-xs">
-                <div className="flex items-center gap-2 font-bold text-[#0F1730]">
-                  <span className="w-5 h-5 rounded bg-[#0F1730] text-white flex items-center justify-center text-[10px]">
-                    S
-                  </span>
-                  <span>Sqalible HRMS</span>
-                  <span className="text-[#4A5370] font-normal">Admin · Settings › Add-ons</span>
+            <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
+              {/* Left Column */}
+              <div className="col-span-12 lg:col-span-6 space-y-6">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
+                  NATIVE 1-CLICK MODULE · ZERO RE-ENROLLMENT
                 </div>
-                <span className="text-[10px] font-semibold text-[#4A5370]">Live mock-up</span>
+
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                  Time tracking,{" "}
+                  <span className="text-[#FF5A36] block">switched on inside your HRMS.</span>
+                </h1>
+
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                  If you run an HRMS, Deskmerit is one toggle away. No new vendor, no new login, no separate invoice — attendance and work telemetry flow straight into your core employee directory.
+                </p>
+
+                <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                  <Link
+                    to="/signup"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all"
+                  >
+                    <span>Start free trial</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    to="/demo"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all"
+                  >
+                    <span>Book a demo</span>
+                  </Link>
+                </div>
               </div>
 
-              {/* Module Toggle Card */}
-              <div className="p-4 rounded-xl bg-[#F7F4EE] border border-[#E6E2D8] flex items-center justify-between mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#0F1730] text-white flex items-center justify-center font-display font-bold text-base">
-                    p
+              {/* Right Column: Authentic HRMS Integration Screenshot in macOS Browser Window Frame */}
+              <div className="col-span-12 lg:col-span-6">
+                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
+                  <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
+                      <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
+                      <div className="w-3 h-3 rounded-full bg-[#62C554]" />
+                    </div>
+                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
+                      app.deskmerit.com/hrms-module/workforce-insights
+                    </div>
+                    <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
+                      HRMS Ingress Active
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-sm text-[#0F1730]">Deskmerit</h4>
-                    <p className="text-xs text-[#4A5370]">Automatic time tracking & attendance</p>
-                  </div>
-                </div>
 
-                {/* Interactive toggle switch */}
-                <button
-                  type="button"
-                  onClick={() => setAddonEnabled(!addonEnabled)}
-                  className={`relative inline-flex h-7 w-12 items-center rounded-full transition-colors ${
-                    addonEnabled ? "bg-[#FF5A36]" : "bg-[#9AA1B2]"
-                  }`}
-                  aria-label="Toggle Deskmerit Add-on"
-                >
-                  <span
-                    className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform ${
-                      addonEnabled ? "translate-x-6" : "translate-x-1"
-                    }`}
-                  />
-                </button>
-              </div>
-
-              {/* Addon Stats Grid */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-3.5 rounded-xl bg-[#F7F4EE] border border-[#E6E2D8]/60">
-                  <div className="text-[11px] text-[#4A5370]">Employees provisioned</div>
-                  <div className="text-xl font-bold text-[#0F1730] mt-0.5 font-display tnum">
-                    {addonEnabled ? "142" : "0"}
-                  </div>
-                </div>
-
-                <div className="p-3.5 rounded-xl bg-[#F7F4EE] border border-[#E6E2D8]/60">
-                  <div className="text-[11px] text-[#4A5370]">Agents installed</div>
-                  <div className="text-xl font-bold text-[#12B886] mt-0.5 font-display tnum">
-                    {addonEnabled ? "131 · 92%" : "Inactive"}
-                  </div>
-                </div>
-
-                <div className="p-3.5 rounded-xl bg-[#F7F4EE] border border-[#E6E2D8]/60">
-                  <div className="text-[11px] text-[#4A5370]">Present today</div>
-                  <div className="text-xl font-bold text-[#0F1730] mt-0.5 font-display tnum">
-                    {addonEnabled ? "118" : "—"}
-                  </div>
-                </div>
-
-                <div className="p-3.5 rounded-xl bg-[#F7F4EE] border border-[#E6E2D8]/60">
-                  <div className="text-[11px] text-[#4A5370]">On invoice</div>
-                  <div className="text-xl font-bold text-[#0F1730] mt-0.5 font-display">
-                    {addonEnabled ? "Line item" : "Excluded"}
+                  <div className="bg-[#070E1A] p-2">
+                    <img
+                      src="/images/figma/hrms-employee-profile.png"
+                      alt="Deskmerit Switched On Inside Sqalible HRMS Workforce Insights"
+                      className="w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
+                      loading="eager"
+                    />
                   </div>
                 </div>
               </div>
@@ -152,11 +115,11 @@ export function HrmsAddonPage() {
                 { step: "03", title: "Install", desc: "Staff sign in to the desktop agent with their regular HRMS login." },
                 { step: "04", title: "Report", desc: "Attendance, productivity and project time appear inside Sqalible." },
               ].map((s) => (
-                <div key={s.step} className="p-6 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8]">
-                  <span className="text-sm font-mono font-extrabold text-[#C2361A] bg-[#FFE6DF] px-2.5 py-1 rounded-md inline-block mb-4">
+                <div key={s.step} className="p-6 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] hover:bg-white hover:shadow-card transition-all group">
+                  <span className="text-sm font-mono font-extrabold text-[#0F1730] bg-white border border-[#E6E2D8] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white px-2.5 py-1 rounded-md inline-block mb-4 transition-colors shadow-xs">
                     {s.step}
                   </span>
-                  <h3 className="text-base font-bold text-[#0F1730] mb-2">{s.title}</h3>
+                  <h3 className="text-base font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">{s.title}</h3>
                   <p className="text-xs text-[#4A5370] leading-relaxed">{s.desc}</p>
                 </div>
               ))}

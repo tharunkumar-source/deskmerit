@@ -60,70 +60,120 @@ export function ToolsAndTemplatesPage() {
       <DeskmeritHeader />
 
       <main>
-        {/* Breadcrumb */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-          <div className="text-xs text-[#4A5370] flex items-center gap-1.5">
-            <Link to="/" className="hover:text-[#0F1730]">Home</Link>
-            <span>/</span>
-            <Link to="/resources" className="hover:text-[#0F1730]">Resources</Link>
-            <span>/</span>
-            <span className="font-semibold text-[#0F1730]">
-              {isOvertime
-                ? "Overtime calculator"
-                : isTimesheet
-                ? "Timesheet template"
-                : isPolicy
-                ? "Employee monitoring policy"
-                : "Utilisation calculator"}
-            </span>
-          </div>
-        </div>
+        {/* Standard Consistent Dark Hero */}
+        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
+          {/* Dual Radial Glows */}
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#24305A]/40 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#FF5A36]/10 blur-[100px] rounded-full pointer-events-none" />
 
-        {/* Navigation Tabs between Free Tools */}
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
-          <div className="flex flex-wrap items-center justify-center gap-2 p-1 bg-[#FFFFFF] rounded-2xl border border-[#E6E2D8] shadow-subtle max-w-fit mx-auto">
-            <Link
-              to="/tools/utilisation-calculator"
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-                !isOvertime && !isTimesheet && !isPolicy
-                  ? "bg-[#0F1730] text-white shadow-sm"
-                  : "text-[#4A5370] hover:text-[#0F1730]"
-              }`}
-            >
-              Utilisation calculator
-            </Link>
-            <Link
-              to="/tools/overtime-calculator"
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-                isOvertime
-                  ? "bg-[#0F1730] text-white shadow-sm"
-                  : "text-[#4A5370] hover:text-[#0F1730]"
-              }`}
-            >
-              Overtime calculator
-            </Link>
-            <Link
-              to="/templates/timesheet-template"
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-                isTimesheet
-                  ? "bg-[#0F1730] text-white shadow-sm"
-                  : "text-[#4A5370] hover:text-[#0F1730]"
-              }`}
-            >
-              Timesheet template
-            </Link>
-            <Link
-              to="/templates/employee-monitoring-policy"
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-                isPolicy
-                  ? "bg-[#0F1730] text-white shadow-sm"
-                  : "text-[#4A5370] hover:text-[#0F1730]"
-              }`}
-            >
-              Policy template
-            </Link>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            {/* Breadcrumb */}
+            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+              <Link to="/" className="hover:underline text-slate-300">Home</Link>
+              <span className="text-slate-500">/</span>
+              <Link to="/tools" className="hover:underline text-slate-300">Resources</Link>
+              <span className="text-slate-500">/</span>
+              <span>
+                {isOvertime
+                  ? "Overtime Calculator"
+                  : isTimesheet
+                  ? "Timesheet Template"
+                  : isPolicy
+                  ? "Monitoring Policy"
+                  : "Utilisation Calculator"}
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              {/* Left Column: Heading & Pitch */}
+              <div className="lg:col-span-7 space-y-6">
+                <div className="inline-block px-3.5 py-1 rounded-full bg-[#FFE6DF]/15 border border-[#FF5A36]/30 text-[11px] font-bold uppercase tracking-wider text-[#FF5A36]">
+                  {isTimesheet || isPolicy ? "FREE COMPLIANCE TEMPLATE" : "FREE PRODUCTIVITY TOOL"}
+                </div>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                  {isOvertime ? (
+                    <>
+                      Work out overtime hours & pay <span className="text-[#FF5A36] block">with statutory accuracy.</span>
+                    </>
+                  ) : isTimesheet ? (
+                    <>
+                      Professional weekly timesheet <span className="text-[#FF5A36] block">Excel & Sheets template.</span>
+                    </>
+                  ) : isPolicy ? (
+                    <>
+                      A fair employee monitoring policy <span className="text-[#FF5A36] block">built on mutual trust.</span>
+                    </>
+                  ) : (
+                    <>
+                      Calculate billable utilisation <span className="text-[#FF5A36] block">in seconds.</span>
+                    </>
+                  )}
+                </h1>
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                  {isOvertime
+                    ? "Calculate overtime hours, standard thresholds, and overtime multipliers (1.5x, 2.0x) with regional support for India, Australia, NZ, and the Middle East."
+                    : isTimesheet
+                    ? "Formula-ready, printable weekly timesheet templates designed for client billing, project reconciliation, and automated Deskmerit sync."
+                    : isPolicy
+                    ? "A legally audited workplace transparency policy template aligned with DPDP, NSW surveillance acts, and zero-keylogging standards."
+                    : "Billable hours divided by available hours with automated team benchmarks. Stop guessing utilization and optimize your engineering delivery."}
+                </p>
+                <div className="flex flex-wrap gap-4 pt-2">
+                  <Link
+                    to="/signup"
+                    className="px-6 py-3.5 rounded-[12px] bg-[#FF5A36] hover:bg-[#E04826] text-white font-extrabold text-sm shadow-lg hover:shadow-glow-ember transition-all inline-flex items-center gap-2"
+                  >
+                    Start free trial <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    to="/demo"
+                    className="px-6 py-3.5 rounded-[12px] bg-[#10192A] border border-slate-700 hover:border-slate-500 text-white font-semibold text-sm transition-all"
+                  >
+                    Book a demo
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right Column: Authentic Tool & Template Screenshot in macOS Browser Window Frame */}
+              <div className="lg:col-span-5">
+                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-2xl overflow-hidden group">
+                  {/* macOS Window Titlebar */}
+                  <div className="flex items-center justify-between px-4 py-3 bg-[#0A1628] border-b border-slate-800">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
+                      <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
+                      <div className="w-3 h-3 rounded-full bg-[#62C554]" />
+                    </div>
+                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
+                      app.deskmerit.com/tools/{isOvertime ? "overtime" : isTimesheet ? "timesheet" : isPolicy ? "policy" : "utilisation"}
+                    </div>
+                    <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
+                      Calculated
+                    </div>
+                  </div>
+
+                  <div className="bg-[#070E1A] p-2">
+                    <img
+                      src={
+                        isOvertime
+                          ? "/images/figma/reports-extra-hours.png"
+                          : isTimesheet
+                          ? "/images/figma/timesheet-time-ledger.png"
+                          : isPolicy
+                          ? "/images/figma/privacy-settings-audit.png"
+                          : "/images/figma/productivity-breakdown.png"
+                      }
+                      alt="Deskmerit Workplace Tool and Compliance Template Preview"
+                      className="w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
+                      loading="eager"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
 
         {/* Content depending on active tab */}
         <section className="py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

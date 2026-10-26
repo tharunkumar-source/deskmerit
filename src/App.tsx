@@ -16,12 +16,16 @@ import { PrivacyPromisePage } from "./pages/PrivacyPromisePage";
 import { AboutPage } from "./pages/AboutPage";
 import { BlogPage } from "./pages/BlogPage";
 import { DemoPage } from "./pages/DemoPage";
+import { ContactPage } from "./pages/ContactPage";
+import { DevelopersPage } from "./pages/DevelopersPage";
+import { CareersPage } from "./pages/CareersPage";
 import { DownloadPage } from "./pages/DownloadPage";
 import { ToolsAndTemplatesPage } from "./pages/ToolsAndTemplatesPage";
 import { LegalPage } from "./pages/LegalPage";
 import { TrialSignupPage } from "./pages/TrialSignupPage";
 import { ProductDetailPage } from "./pages/ProductDetailPage";
 import { SolutionDetailPage } from "./pages/SolutionDetailPage";
+import { BrandGuidelinesPage } from "./pages/BrandGuidelinesPage";
 
 export function App() {
   return (
@@ -29,6 +33,11 @@ export function App() {
       <BrowserRouter>
         <RouteEffects />
         <Routes>
+          {/* Brand Guidelines & Design System */}
+          <Route path="/brand-guidelines" element={<BrandGuidelinesPage />} />
+          <Route path="/design-system" element={<BrandGuidelinesPage />} />
+          <Route path="/brand" element={<BrandGuidelinesPage />} />
+
           {/* Core Home */}
           <Route path="/" element={<Home />} />
 
@@ -104,9 +113,10 @@ export function App() {
           {/* Integrations & Developers */}
           <Route path="/integrations" element={<IntegrationsPage />} />
           <Route path="/integrations/:slug" element={<IntegrationsPage />} />
-          <Route path="/developers" element={<IntegrationsPage />} />
-          <Route path="/developers/mcp-server" element={<IntegrationsPage />} />
-          <Route path="/docs" element={<Navigate to="/developers" replace />} />
+          <Route path="/developers" element={<DevelopersPage mode="overview" />} />
+          <Route path="/developers/mcp-server" element={<DevelopersPage mode="mcp" />} />
+          <Route path="/developers/api" element={<DevelopersPage mode="api" />} />
+          <Route path="/docs" element={<Navigate to="/developers/api" replace />} />
           <Route path="/status" element={<Navigate to="/" replace />} />
 
           {/* Editorial & Guides */}
@@ -126,10 +136,10 @@ export function App() {
 
           {/* Company & Conversion */}
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/careers" element={<AboutPage />} />
+          <Route path="/careers" element={<CareersPage />} />
           <Route path="/partners" element={<AboutPage />} />
           <Route path="/press" element={<AboutPage />} />
-          <Route path="/contact" element={<DemoPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/demo" element={<DemoPage />} />
           <Route path="/signup" element={<TrialSignupPage />} />
           <Route path="/login" element={<TrialSignupPage />} />

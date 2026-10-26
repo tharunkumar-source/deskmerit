@@ -1,58 +1,64 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ShieldCheck } from "lucide-react";
 
-export function DeskmeritCtaBand({
-  title = "See your team's real week by Friday.",
-  subtitle = "Install in minutes, start from a task, and get your first report this week.",
-}: {
+export interface DeskmeritCtaBandProps {
+  pretitle?: string;
   title?: string;
   subtitle?: string;
-}) {
+  trialText?: string;
+  demoText?: string;
+  trialHref?: string;
+  demoHref?: string;
+}
+
+/**
+ * Global Call to Action Band — Styled after Sqalible reference with Deskmerit branding.
+ * Clean, horizontal, simple and clear layout with side-by-side action pills.
+ */
+export function DeskmeritCtaBand({
+  pretitle = "Get Started",
+  title = "Experience automatic time tracking and task binding in action with our engineering specialists.",
+  subtitle,
+  trialText = "Start free trial",
+  demoText = "Book a demo",
+  trialHref = "/signup",
+  demoHref = "/demo",
+}: DeskmeritCtaBandProps) {
   return (
-    <section className="bg-[#0F1730] text-[#F7F4EE] py-20 lg:py-24 relative overflow-hidden">
-      {/* Signature Master Live Loop Graphic on right */}
-      <div className="absolute right-[-40px] top-1/2 -translate-y-1/2 opacity-25 lg:opacity-40 pointer-events-none">
-        <svg width="420" height="420" viewBox="0 0 64 64" fill="none">
-          <path
-            d="M 21 52 L 21 25 A 13 13 0 1 1 43.19 34.19"
-            stroke="#FFFFFF"
-            strokeWidth="8.5"
-            strokeLinecap="round"
-          />
-          <circle cx="31.2" cy="37.7" r="5.4" fill="#FF5A36" />
-        </svg>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-2xl">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-[-0.03em] leading-tight mb-4">
-            {title}
-          </h2>
-          <p className="text-base sm:text-lg text-[#9AA1B2] mb-8 font-normal">
-            {subtitle}
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-4">
-            <Link
-              to="/signup"
-              className="inline-flex items-center justify-center text-sm font-bold text-[#0F1730] bg-white hover:bg-slate-100 px-8 py-3.5 rounded-xl shadow-lg transition-all group"
-            >
-              <span>Start free 14-day trial</span>
-              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1 text-[#0F1730]" />
-            </Link>
-
-            <Link
-              to="/demo"
-              className="inline-flex items-center justify-center text-sm font-semibold text-white bg-[#24305A] hover:bg-[#334173] border border-[#334173] px-7 py-3.5 rounded-[12px] transition-all"
-            >
-              Book a demo
-            </Link>
+    <section className="bg-[#0F1730] text-white py-12 lg:py-16 border-t border-[#24305A]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          {/* Left: Overline + Headline (Sqalible Style) */}
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2 font-mono">
+              {pretitle}
+            </p>
+            <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-extrabold text-white leading-snug tracking-[-0.02em]">
+              {title}
+            </h2>
+            {subtitle && (
+              <p className="text-sm text-slate-300 mt-2 font-normal leading-relaxed">
+                {subtitle}
+              </p>
+            )}
           </div>
 
-          <p className="text-xs text-[#9AA1B2]">
-            No credit card · Windows, macOS and Linux · Cancel anytime
-          </p>
+          {/* Right: Side-by-side Action Pills (Sqalible Style) */}
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <Link
+              to={trialHref}
+              className="inline-flex items-center justify-center text-sm font-bold text-[#0F1730] bg-white hover:bg-slate-100 px-7 py-3 rounded-full transition-all shadow-md hover:shadow-lg whitespace-nowrap cursor-pointer"
+            >
+              {trialText}
+            </Link>
+
+            <Link
+              to={demoHref}
+              className="inline-flex items-center justify-center text-sm font-bold text-white bg-transparent hover:bg-white/10 border border-white/80 hover:border-white px-7 py-3 rounded-full transition-all whitespace-nowrap cursor-pointer"
+            >
+              {demoText}
+            </Link>
+          </div>
         </div>
       </div>
     </section>

@@ -57,70 +57,33 @@ export function DeskmeritTrackerPlusSpotlight() {
 
           {/* Right Column: Interactive PM Tools Display */}
           <div className="lg:col-span-6">
-            <div className="bg-[#172348] rounded-[24px] p-6 sm:p-8 border border-[#24305A] shadow-2xl">
-              <div className="flex items-center justify-between pb-4 border-b border-[#24305A]">
-                <div>
-                  <h4 className="text-sm font-bold text-white">Your connected tools</h4>
-                  <p className="text-xs text-[#9AA1B2]">Each personal access token is verified before saving</p>
+            <div className="bg-[#172348] rounded-[24px] p-4 sm:p-5 border border-[#24305A] shadow-2xl overflow-hidden group">
+              <div className="flex items-center justify-between pb-3 px-2 border-b border-[#24305A]/80">
+                <div className="flex items-center gap-2">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#ED6A5E]" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#F5BF4F]" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#62C554]" />
+                  <span className="text-xs font-mono text-slate-300 ml-2">Deskmerit Tray · Task Search</span>
                 </div>
-                <span className="text-[11px] font-semibold px-2.5 py-1 rounded bg-[#12B886]/20 text-[#12B886]">
-                  Active sync
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#12B886]/20 text-[#12B886] border border-[#12B886]/30">
+                  Active Sync
                 </span>
               </div>
 
-              {/* Connected Tool Rows */}
-              <div className="py-4 space-y-2.5">
-                <div className="p-3.5 rounded-xl bg-[#0F1730] border border-[#24305A] flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <span className="w-9 h-9 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">
-                      J
-                    </span>
-                    <div>
-                      <div className="text-xs font-bold text-white">Jira Software</div>
-                      <div className="text-[11px] text-[#9AA1B2]">Connected · ananya@acme.com</div>
-                    </div>
-                  </div>
-                  <span className="text-[11px] font-semibold text-[#12B886] flex items-center gap-1">
-                    <Check className="w-3.5 h-3.5" /> Verified
-                  </span>
-                </div>
-
-                <div className="p-3.5 rounded-xl bg-[#0F1730] border border-[#24305A] flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <span className="w-9 h-9 rounded-lg bg-sky-600 text-white font-bold text-xs flex items-center justify-center">
-                      AD
-                    </span>
-                    <div>
-                      <div className="text-xs font-bold text-white">Azure DevOps</div>
-                      <div className="text-[11px] text-[#9AA1B2]">Connected · 2 organisations</div>
-                    </div>
-                  </div>
-                  <span className="text-[11px] font-semibold text-[#12B886] flex items-center gap-1">
-                    <Check className="w-3.5 h-3.5" /> Verified
-                  </span>
-                </div>
-
-                <div className="p-3.5 rounded-xl bg-[#0F1730] border border-[#24305A] flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <span className="w-9 h-9 rounded-lg bg-[#182A44] text-white font-bold text-xs flex items-center justify-center">
-                      O
-                    </span>
-                    <div>
-                      <div className="text-xs font-bold text-white">OpenProject</div>
-                      <div className="text-[11px] text-[#9AA1B2]">Self-hosted or cloud instance</div>
-                    </div>
-                  </div>
-                  <span className="text-[11px] font-semibold text-[#FF5A36] hover:underline cursor-pointer">
-                    + Add token
-                  </span>
-                </div>
+              <div className="pt-3">
+                <img
+                  src="/images/figma/tray-project-search.png"
+                  alt="Deskmerit Desktop Tray Task & Project Search Interface"
+                  className="w-full h-auto rounded-xl object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
+                  loading="lazy"
+                />
               </div>
 
               {/* 3 Step Flow Indicator */}
-              <div className="mt-4 pt-4 border-t border-[#24305A] grid grid-cols-3 gap-2 text-center">
+              <div className="mt-4 pt-3 border-t border-[#24305A] grid grid-cols-3 gap-2 text-center">
                 <div className="p-2 rounded-lg bg-[#0F1730] text-[11px]">
-                  <span className="text-[#FF5A36] font-bold block mb-0.5">1 · Pick</span>
-                  <span className="text-[#9AA1B2]">Select PM issue</span>
+                  <span className="text-[#FF5A36] font-bold block mb-0.5">1 · Search</span>
+                  <span className="text-[#9AA1B2]">Jira & DevOps tasks</span>
                 </div>
                 <div className="p-2 rounded-lg bg-[#0F1730] text-[11px]">
                   <span className="text-[#FF5A36] font-bold block mb-0.5">2 · Start</span>

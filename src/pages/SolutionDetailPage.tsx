@@ -33,6 +33,8 @@ interface SolutionDetail {
   title: string;
   titleAccent: string;
   description: string;
+  image: string;
+  imageAlt: string;
   checkPoints: string[];
   pillars: { title: string; desc: string; icon: any }[];
   faqs: { q: string; a: string }[];
@@ -52,6 +54,8 @@ const SOLUTIONS: Record<string, SolutionDetail> = {
     titleAccent: "with outcomes, not webcam surveillance.",
     description:
       "Keep remote developers, designers, and consultants accountable across multiple time zones without creepy webcams, random mouse-jiggler paranoia, or invasive surveillance.",
+    image: "/images/figma/solution-remote-teams.png",
+    imageAlt: "Deskmerit Distributed Remote Workforce Dashboard & Timezone Intelligence",
     checkPoints: [
       "Timezone-aware daily attendance computed in each worker's local time",
       "One-click Private Time so staff can step away for lunch or personal tasks",
@@ -112,6 +116,8 @@ const SOLUTIONS: Record<string, SolutionDetail> = {
     titleAccent: "for home and office days.",
     description:
       "Replace clunky physical fingerprint turnstiles with seamless desktop presence. Whether an employee is at their desk in the office or working from home on Thursday, attendance is consistent.",
+    image: "/images/figma/solution-hybrid-teams.png",
+    imageAlt: "Deskmerit Hybrid Team Roster & Office/Remote Presence Intelligence",
     checkPoints: [
       "Eliminates hardware biometric queues and punch card maintenance",
       "Unified attendance policy across remote and physical office environments",
@@ -167,6 +173,8 @@ const SOLUTIONS: Record<string, SolutionDetail> = {
     titleAccent: "Retire physical biometric machines.",
     description:
       "Biometric hardware fails, creates morning queues, and breaks during power outages. Deskmerit verifies presence through the laptop itself from the second employees boot up.",
+    image: "/images/figma/solution-office-teams.png",
+    imageAlt: "Deskmerit In-Office Shift Attendance & Desktop Activity Console",
     checkPoints: [
       "Instant clock-in upon opening laptop in the office",
       "Zero physical scanner hardware maintenance or replacement costs",
@@ -222,6 +230,8 @@ const SOLUTIONS: Record<string, SolutionDetail> = {
     titleAccent: "Prove every developer hour.",
     description:
       "When your augmented engineers work on multiple client codebases, you need a single source of truth. Connect each client's Jira or Azure DevOps token and deliver unassailable timesheets.",
+    image: "/images/figma/solution-staff-augmentation.png",
+    imageAlt: "Deskmerit Contractor & Staff Augmentation Defensible Time Ledger",
     checkPoints: [
       "Engineers connect separate tokens for Client A (Jira) and Client B (DevOps)",
       "Zero cross-contamination: client project names and tickets never merged",
@@ -278,6 +288,8 @@ const SOLUTIONS: Record<string, SolutionDetail> = {
     titleAccent: "are actually making you money.",
     description:
       "Stop losing agency margins to scope creep and unpaid revisions. Track real creative hours across Figma, Photoshop, Illustrator, and web tools to bill with total confidence.",
+    image: "/images/figma/solution-agencies.png",
+    imageAlt: "Deskmerit Creative & Digital Agency Billable Hours Analytics",
     checkPoints: [
       "Automatic document title capture for Figma, Adobe Creative Cloud, and code",
       "Real-time retainer consumption meters that flag budget overages at 80%",
@@ -333,6 +345,8 @@ const SOLUTIONS: Record<string, SolutionDetail> = {
     titleAccent: "across rotating 24/7 rosters.",
     description:
       "Track shift adherence, handle complex rotating rosters that cross midnight, and maintain audit records for hundreds of agents without high hardware overhead.",
+    image: "/images/figma/solution-bpo.png",
+    imageAlt: "Deskmerit BPO & Contact Centre High-Volume Shift Adherence Console",
     checkPoints: [
       "Real-time shift adherence alerts for late logins or extended unauthorized breaks",
       "Multi-shift scheduling crossing midnight without splitting daily attendance",
@@ -388,6 +402,8 @@ const SOLUTIONS: Record<string, SolutionDetail> = {
     titleAccent: "you currently give away for free.",
     description:
       "Consultants lose up to 20% of their billable hours answering quick client emails, reviewing PDFs, and drafting models. Deskmerit automatically captures every minute of client work.",
+    image: "/images/figma/solution-professional-services.png",
+    imageAlt: "Deskmerit Consulting & Accounting Billable Hours Tracking",
     checkPoints: [
       "Captures time in standard 6-minute (0.1h) or 15-minute billing increments",
       "Automatic file name attribution for Excel financial models and legal PDFs",
@@ -443,6 +459,8 @@ const SOLUTIONS: Record<string, SolutionDetail> = {
     titleAccent: "HR can actually stand behind.",
     description:
       "Eliminate end-of-month timesheet chaos. Deskmerit feeds clean, verified attendance and leave records straight into payroll without disputes, biometric errors, or manual spreadsheets.",
+    image: "/images/figma/solution-hr.png",
+    imageAlt: "Deskmerit People Operations Attendance & Leave Reconciliation Matrix",
     checkPoints: [
       "Direct 1-click attendance synchronization with Sqalible HRMS",
       "Statutory compliance readiness: India DPDP Act, NSW Surveillance Act, NZ Privacy Act",
@@ -498,6 +516,8 @@ const SOLUTIONS: Record<string, SolutionDetail> = {
     titleAccent: "not guesswork or feelings.",
     description:
       "Know who is blocked, who is overloaded, and which projects are eating up engineering time. Get clean workforce insights without feeling like a surveillance cop.",
+    image: "/images/figma/solution-managers.png",
+    imageAlt: "Deskmerit Engineering Manager Sprint Capacity & Focus Console",
     checkPoints: [
       "Real-time team presence board shows who is working on what without asking in Slack",
       "Workload distribution alerts flag engineers working 50+ hours to prevent burnout",
@@ -553,6 +573,8 @@ const SOLUTIONS: Record<string, SolutionDetail> = {
     titleAccent: "in crystal-clear focus.",
     description:
       "Labour is your biggest expense. Deskmerit compares internal payroll costs with client billable revenue in real time, giving CFOs and finance leaders true gross project margins.",
+    image: "/images/figma/solution-finance.png",
+    imageAlt: "Deskmerit CFO & Finance Billing Ledger & Margin Intelligence",
     checkPoints: [
       "Real-time gross margin tracking: billable revenue minus actual internal labour cost",
       "Budget versus actual burn rate tracking across all client retainers and milestones",
@@ -608,6 +630,8 @@ const SOLUTIONS: Record<string, SolutionDetail> = {
     titleAccent: "under your own agency brand.",
     description:
       "Deliver Deskmerit under your company's domain, brand colors, and custom logo. Provide clients with a premium time tracking suite while keeping 30% recurring software margin.",
+    image: "/images/figma/solution-white-label.png",
+    imageAlt: "Deskmerit Partner White-Label Reseller Portal & Multi-Tenant Management",
     checkPoints: [
       "Custom domain (e.g. tracker.youragency.com) with SSL certificate included",
       "Branded desktop agent installer with your custom app name and icon",
@@ -710,7 +734,7 @@ export function SolutionDetailPage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb matching Reference */}
-            <div className="text-xs text-[#20C997] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
               <Link to="/solutions/it-services" className="hover:underline text-slate-300">Solutions</Link>
@@ -721,7 +745,7 @@ export function SolutionDetailPage() {
             <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
               {/* Left Column: Headline, Overline, Description & CTAs */}
               <div className="col-span-12 lg:col-span-6 space-y-6">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#20C997] bg-[#132338] px-3.5 py-1 rounded-full inline-block border border-[#20C997]/30">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
                   {sol.badge}
                 </div>
 
@@ -765,7 +789,7 @@ export function SolutionDetailPage() {
 
               {/* Right Column: Browser Window Mockup with macOS Controls (Screenshot Reference Match) */}
               <div className="col-span-12 lg:col-span-6">
-                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
+                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
                   <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
@@ -775,55 +799,19 @@ export function SolutionDetailPage() {
                     <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
                       app.deskmerit.com/{sol.slug}
                     </div>
-                    <div className="text-[11px] font-bold text-[#20C997] flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#20C997] animate-pulse" />
+                    <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
                       Active Engine
                     </div>
                   </div>
 
-                  <div className="p-6 space-y-4">
-                    <div className="p-4 rounded-xl bg-slate-900/70 border border-slate-800 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-lg bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center">
-                          <SolutionIcon className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <div className="text-xs font-bold text-white">{sol.mockup.title}</div>
-                          <div className="text-[10px] text-slate-400">{sol.mockup.subtitle}</div>
-                        </div>
-                      </div>
-                      <span className="font-mono text-xs font-bold text-[#20C997]">{sol.mockup.stats[0]?.value || "1h 42m"}</span>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="p-3.5 rounded-xl bg-slate-900/50 border border-slate-800 text-left">
-                        <div className="text-[10px] text-slate-400 font-bold uppercase">Attendance Today</div>
-                        <div className="text-sm font-bold text-white mt-1">6h 12m (Present)</div>
-                      </div>
-                      <div className="p-3.5 rounded-xl bg-slate-900/50 border border-slate-800 text-left">
-                        <div className="text-[10px] text-slate-400 font-bold uppercase">Surveillance Status</div>
-                        <div className="text-sm font-bold text-[#20C997] mt-1">Zero Keylogging</div>
-                      </div>
-                    </div>
-
-                    {/* Live Telemetry Rows */}
-                    <div className="space-y-2 pt-1">
-                      {sol.mockup.rows.slice(0, 2).map((r, i) => (
-                        <div
-                          key={i}
-                          className="bg-slate-900/40 p-2.5 rounded-xl border border-slate-800/80 flex items-center justify-between text-xs"
-                        >
-                          <div>
-                            <div className="font-semibold text-white">{r.name}</div>
-                            <div className="text-[10px] text-slate-400">{r.tag}</div>
-                          </div>
-                          <div className="text-right">
-                            <div className="font-bold text-[#FFE6DF]">{r.metric}</div>
-                            <div className="text-[10px] text-[#20C997]">{r.status}</div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+                  <div className="bg-[#070E1A] p-2 sm:p-3">
+                    <img
+                      src={sol.image}
+                      alt={sol.imageAlt}
+                      className="w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
+                      loading="eager"
+                    />
                   </div>
                 </div>
               </div>
@@ -851,13 +839,13 @@ export function SolutionDetailPage() {
                 return (
                   <div
                     key={p.title}
-                    className="p-7 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] transition-all hover:shadow-card flex flex-col justify-between"
+                    className="p-7 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between group"
                   >
                     <div>
-                      <div className="w-11 h-11 rounded-xl bg-[#FFFFFF] text-[#C2361A] flex items-center justify-center mb-5 border border-[#E6E2D8] shadow-xs">
-                        <Icon className="w-5 h-5" />
+                      <div className="w-11 h-11 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-5 transition-all duration-200 shadow-xs">
+                        <Icon className="w-5 h-5 transition-colors" />
                       </div>
-                      <h3 className="font-bold text-base text-[#0F1730] mb-2">{p.title}</h3>
+                      <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">{p.title}</h3>
                       <p className="text-xs text-[#4A5370] leading-relaxed">{p.desc}</p>
                     </div>
                   </div>

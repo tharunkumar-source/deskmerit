@@ -72,13 +72,13 @@ export function DeskmeritTrustSection() {
               return (
                 <div
                   key={idx}
-                  className="bg-[#F7F4EE] rounded-2xl p-6 border border-[#E6E2D8] hover:border-[#4A5370]/50 transition-all shadow-subtle flex flex-col justify-between"
+                  className="bg-white rounded-2xl p-6 border border-[#E6E2D8] hover:border-[#FF5A36] transition-all shadow-subtle hover:shadow-card flex flex-col justify-between group"
                 >
                   <div>
-                    <div className="w-10 h-10 rounded-xl bg-[#FFE6DF] text-[#C2361A] flex items-center justify-center mb-4">
-                      <Icon className="w-5 h-5" />
+                    <div className="w-11 h-11 rounded-xl bg-[#F8F9FA] border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-4 transition-all duration-200 shadow-xs">
+                      <Icon className="w-5 h-5 transition-colors" />
                     </div>
-                    <h3 className="text-base font-bold text-[#0F1730] mb-2">
+                    <h3 className="text-base font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">
                       {p.title}
                     </h3>
                     <p className="text-xs text-[#4A5370] leading-relaxed">

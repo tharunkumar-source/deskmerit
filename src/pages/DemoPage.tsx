@@ -27,214 +27,239 @@ export function DemoPage() {
       <DeskmeritHeader />
 
       <main>
-        {/* Breadcrumb */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-          <div className="text-xs text-[#4A5370] flex items-center gap-1.5">
-            <Link to="/" className="hover:text-[#0F1730]">Home</Link>
-            <span>/</span>
-            <span className="font-semibold text-[#0F1730]">Book a demo</span>
-          </div>
-        </div>
+        {/* Standard Consistent Dark Hero */}
+        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
+          {/* Dual Radial Glows */}
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#24305A]/40 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#FF5A36]/10 blur-[100px] rounded-full pointer-events-none" />
 
-        <section className="py-12 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Left Column: What you'll see in the demo */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFFFFF] border border-[#E6E2D8] text-xs font-semibold text-[#0F1730] shadow-sm">
-                <span className="pulse-dot" />
-                <span>20-minute walkthrough</span>
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-[#0F1730] tracking-[-0.03em] leading-tight">
-                See Deskmerit with your own workflow in 20 minutes.
-              </h1>
-
-              <p className="text-sm sm:text-base text-[#4A5370] leading-relaxed">
-                We will walk you through your exact setup — whether you're syncing Jira issues, configuring attendance for Sunday–Thursday shifts, or connecting Sqalible HRMS.
-              </p>
-
-              <div className="space-y-3.5 pt-2">
-                {[
-                  "Tracker Plus live demonstration with your own PM tool",
-                  "Attendance rules tailored to your country and work week",
-                  "Reports your finance & delivery team will actually defend",
-                  "Transparent proposal in your local currency (INR, AUD, NZD, AED, USD)",
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-[#0F1730]">
-                    <span className="w-5 h-5 rounded-full bg-[#FFE6DF] text-[#C2361A] flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3.5 h-3.5" />
-                    </span>
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Product Specialist Card */}
-              <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#E6E2D8] shadow-subtle flex items-center gap-4 mt-6">
-                <div className="w-12 h-12 rounded-full bg-[#0F1730] text-[#FF5A36] font-bold text-sm flex items-center justify-center font-display shrink-0">
-                  PT
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-[#0F1730]">
-                    Talk to a product specialist
-                  </div>
-                  <div className="text-[11px] text-[#4A5370] mt-0.5">
-                    Available in India (IST), Middle East (GST), and Australia/NZ (AEST) time zones.
-                  </div>
-                </div>
-              </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            {/* Breadcrumb */}
+            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+              <Link to="/" className="hover:underline text-slate-300">Home</Link>
+              <span className="text-slate-500">/</span>
+              <span className="text-slate-300">Product Walkthrough</span>
+              <span className="text-slate-500">/</span>
+              <span>Book a Demo</span>
             </div>
 
-            {/* Right Column: Demo Booking Form */}
-            <div className="lg:col-span-7 bg-[#FFFFFF] rounded-[24px] p-8 sm:p-10 border border-[#E6E2D8] shadow-card">
-              {submitted ? (
-                <div className="text-center py-12 space-y-4">
-                  <div className="w-14 h-14 rounded-full bg-[#12B886]/20 text-[#12B886] flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-8 h-8" />
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              {/* Left Column: Heading & Value Proposition */}
+              <div className="lg:col-span-5 space-y-6">
+                <div className="inline-block px-3 py-1 rounded-full bg-[#FFE6DF]/15 border border-[#FF5A36]/30 text-[11px] font-bold uppercase tracking-wider text-[#FF5A36]">
+                  20-MINUTE LIVE WALKTHROUGH
+                </div>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                  See Deskmerit with your own workflow <span className="text-[#FF5A36] block">in 20 minutes.</span>
+                </h1>
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                  We will walk you through your exact setup — whether you're syncing Jira issues, configuring attendance for Sunday–Thursday shifts, or connecting Sqalible HRMS.
+                </p>
+
+                <div className="space-y-3 pt-2">
+                  {[
+                    "Tracker Plus live demonstration with your own PM tool",
+                    "Attendance rules tailored to your country and work week",
+                    "Reports your finance & delivery team will actually defend",
+                    "Transparent proposal in your local currency (INR, AUD, NZD, AED, USD)",
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
+                      <span className="w-5 h-5 rounded-full bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center shrink-0 mt-0.5 font-bold">
+                        <Check className="w-3.5 h-3.5 stroke-[2.5]" />
+                      </span>
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Specialist Card */}
+                <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 text-left flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#FF5A36] text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-xs">
+                    DM
                   </div>
-                  <h3 className="text-2xl font-bold text-[#0F1730]">Demo request received!</h3>
-                  <p className="text-xs sm:text-sm text-[#4A5370] max-w-md mx-auto leading-relaxed">
-                    Thank you, <strong>{formData.name}</strong>. A product specialist will email you at <strong>{formData.email}</strong> within one working day with a calendar link.
-                  </p>
-                  <div className="pt-4">
-                    <Link
-                      to="/"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF5A36] hover:underline"
-                    >
-                      Return to home page <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
+                  <div>
+                    <div className="text-xs font-bold text-white">
+                      Direct engineering product specialist
+                    </div>
+                    <div className="text-[11px] text-slate-400 mt-0.5">
+                      Available in India (IST), Gulf (GST), and Australia/NZ (AEST) timezones.
+                    </div>
                   </div>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="mb-2">
-                    <h3 className="text-xl font-bold text-[#0F1730]">Book your walkthrough</h3>
-                    <p className="text-xs text-[#4A5370] mt-0.5">We’ll reply within one working day.</p>
-                  </div>
+              </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-semibold text-[#0F1730] mb-1">
-                        Full name *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="Ananya Sharma"
-                        className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE] text-[#0F1730] focus:outline-none focus:border-[#FF5A36]"
-                      />
+              {/* Right Column: macOS Window with Booking Form */}
+              <div className="lg:col-span-7">
+                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-2xl overflow-hidden backdrop-blur-md">
+                  {/* macOS Window Titlebar */}
+                  <div className="flex items-center justify-between px-4 py-3 bg-[#0A1628] border-b border-slate-800">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-3 h-3 rounded-full bg-[#FF5F56]" />
+                      <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
+                      <div className="w-3 h-3 rounded-full bg-[#27C93F]" />
                     </div>
-
-                    <div>
-                      <label className="block text-xs font-semibold text-[#0F1730] mb-1">
-                        Work email *
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="ananya@company.com"
-                        className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE] text-[#0F1730] focus:outline-none focus:border-[#FF5A36]"
-                      />
+                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
+                      app.deskmerit.com/demo/schedule
+                    </div>
+                    <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
+                      Live Calendar
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-semibold text-[#0F1730] mb-1">
-                        Company *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.company}
-                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        placeholder="Acme Technologies"
-                        className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE] text-[#0F1730] focus:outline-none focus:border-[#FF5A36]"
-                      />
-                    </div>
+                  {/* Window Body Form */}
+                  <div className="p-6 sm:p-8">
+                    {submitted ? (
+                      <div className="text-center py-10 space-y-4">
+                        <div className="w-14 h-14 rounded-full bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center mx-auto shadow-sm">
+                          <CheckCircle2 className="w-8 h-8" />
+                        </div>
+                        <h3 className="text-2xl font-bold text-white">Demo Walkthrough Scheduled!</h3>
+                        <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
+                          Thank you, <strong>{formData.name}</strong>. A product specialist will email you at <strong>{formData.email}</strong> within one working day with a calendar link.
+                        </p>
+                        <div className="pt-4">
+                          <Link
+                            to="/"
+                            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF5A36] hover:underline"
+                          >
+                            Return to home page <ArrowRight className="w-3.5 h-3.5" />
+                          </Link>
+                        </div>
+                      </div>
+                    ) : (
+                      <form onSubmit={handleSubmit} className="space-y-4 text-left">
+                        <div className="mb-2">
+                          <h3 className="text-lg font-bold text-white">Book your live walkthrough</h3>
+                          <p className="text-xs text-slate-400 mt-0.5">We’ll reply within one working day with calendar slots.</p>
+                        </div>
 
-                    <div>
-                      <label className="block text-xs font-semibold text-[#0F1730] mb-1">
-                        Team size *
-                      </label>
-                      <select
-                        value={formData.teamSize}
-                        onChange={(e) => setFormData({ ...formData, teamSize: e.target.value })}
-                        className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE] text-[#0F1730] focus:outline-none focus:border-[#FF5A36]"
-                      >
-                        <option value="1–15">1–15 seats</option>
-                        <option value="16–50">16–50 seats</option>
-                        <option value="51–150">51–150 seats</option>
-                        <option value="151–500">151–500 seats</option>
-                        <option value="500+">500+ seats</option>
-                      </select>
-                    </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div>
+                            <label className="block text-xs font-semibold text-slate-300 mb-1">
+                              Full name *
+                            </label>
+                            <input
+                              type="text"
+                              required
+                              value={formData.name}
+                              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                              placeholder="Ananya Sharma"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white placeholder-slate-500 focus:outline-none focus:border-[#FF5A36]"
+                            />
+                          </div>
+
+                          <div>
+                            <label className="block text-xs font-semibold text-slate-300 mb-1">
+                              Work email *
+                            </label>
+                            <input
+                              type="email"
+                              required
+                              value={formData.email}
+                              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                              placeholder="ananya@company.com"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white placeholder-slate-500 focus:outline-none focus:border-[#FF5A36]"
+                            />
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div>
+                            <label className="block text-xs font-semibold text-slate-300 mb-1">
+                              Company *
+                            </label>
+                            <input
+                              type="text"
+                              required
+                              value={formData.company}
+                              onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                              placeholder="Acme Technologies"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white placeholder-slate-500 focus:outline-none focus:border-[#FF5A36]"
+                            />
+                          </div>
+
+                          <div>
+                            <label className="block text-xs font-semibold text-slate-300 mb-1">
+                              Team size *
+                            </label>
+                            <select
+                              value={formData.teamSize}
+                              onChange={(e) => setFormData({ ...formData, teamSize: e.target.value })}
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white focus:outline-none focus:border-[#FF5A36]"
+                            >
+                              <option value="1–15" className="bg-[#0A1628]">1–15 seats</option>
+                              <option value="16–50" className="bg-[#0A1628]">16–50 seats</option>
+                              <option value="51–150" className="bg-[#0A1628]">51–150 seats</option>
+                              <option value="151–500" className="bg-[#0A1628]">151–500 seats</option>
+                              <option value="500+" className="bg-[#0A1628]">500+ seats</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div>
+                            <label className="block text-xs font-semibold text-slate-300 mb-1">
+                              Country / Region *
+                            </label>
+                            <select
+                              value={formData.country}
+                              onChange={(e) => setFormData({ ...formData, country: e.target.value })}
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white focus:outline-none focus:border-[#FF5A36]"
+                            >
+                              <option value="India" className="bg-[#0A1628]">India (₹ INR)</option>
+                              <option value="Australia" className="bg-[#0A1628]">Australia (A$ AUD)</option>
+                              <option value="New Zealand" className="bg-[#0A1628]">New Zealand (NZ$ NZD)</option>
+                              <option value="UAE" className="bg-[#0A1628]">United Arab Emirates (AED)</option>
+                              <option value="Saudi Arabia" className="bg-[#0A1628]">Saudi Arabia (SAR)</option>
+                              <option value="United States" className="bg-[#0A1628]">United States (USD)</option>
+                              <option value="Other" className="bg-[#0A1628]">Other Region</option>
+                            </select>
+                          </div>
+
+                          <div>
+                            <label className="block text-xs font-semibold text-slate-300 mb-1">
+                              Project tools you use
+                            </label>
+                            <input
+                              type="text"
+                              value={formData.pmTool}
+                              onChange={(e) => setFormData({ ...formData, pmTool: e.target.value })}
+                              placeholder="Jira, Azure DevOps, OpenProject, etc."
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white placeholder-slate-500 focus:outline-none focus:border-[#FF5A36]"
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-300 mb-1">
+                            Already on Sqalible HRMS?
+                          </label>
+                          <select
+                            value={formData.isSqalibleUser}
+                            onChange={(e) => setFormData({ ...formData, isSqalibleUser: e.target.value })}
+                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white focus:outline-none focus:border-[#FF5A36]"
+                          >
+                            <option value="No" className="bg-[#0A1628]">No, evaluating standalone Deskmerit</option>
+                            <option value="Yes" className="bg-[#0A1628]">Yes, want to activate the HRMS add-on</option>
+                          </select>
+                        </div>
+
+                        <button
+                          type="submit"
+                          className="w-full py-3.5 rounded-[12px] bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-xs transition-colors shadow-md hover:shadow-glow-ember flex items-center justify-center gap-2 mt-2 cursor-pointer"
+                        >
+                          Schedule Product Demo →
+                        </button>
+
+                        <p className="text-[11px] text-slate-400 text-center pt-1">
+                          By submitting you agree to our <Link to="/legal/privacy" className="underline hover:text-white">Privacy Policy</Link>. We never sell or share data.
+                        </p>
+                      </form>
+                    )}
                   </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-semibold text-[#0F1730] mb-1">
-                        Country / Region *
-                      </label>
-                      <select
-                        value={formData.country}
-                        onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                        className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE] text-[#0F1730] focus:outline-none focus:border-[#FF5A36]"
-                      >
-                        <option value="India">India (₹ INR)</option>
-                        <option value="Australia">Australia (A$ AUD)</option>
-                        <option value="New Zealand">New Zealand (NZ$ NZD)</option>
-                        <option value="UAE">United Arab Emirates (AED)</option>
-                        <option value="Saudi Arabia">Saudi Arabia (SAR)</option>
-                        <option value="United States">United States (USD)</option>
-                        <option value="Other">Other Region</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-semibold text-[#0F1730] mb-1">
-                        Project tools you use
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.pmTool}
-                        onChange={(e) => setFormData({ ...formData, pmTool: e.target.value })}
-                        placeholder="Jira, Azure DevOps, OpenProject, etc."
-                        className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE] text-[#0F1730] focus:outline-none focus:border-[#FF5A36]"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-[#0F1730] mb-1">
-                      Already on Sqalible HRMS?
-                    </label>
-                    <select
-                      value={formData.isSqalibleUser}
-                      onChange={(e) => setFormData({ ...formData, isSqalibleUser: e.target.value })}
-                      className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE] text-[#0F1730] focus:outline-none focus:border-[#FF5A36]"
-                    >
-                      <option value="No">No, evaluating standalone Deskmerit</option>
-                      <option value="Yes">Yes, want to activate the HRMS add-on</option>
-                    </select>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full py-3.5 rounded-[12px] bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-xs transition-colors shadow-md hover:shadow-glow-ember flex items-center justify-center gap-2 mt-2"
-                  >
-                    Book my demo →
-                  </button>
-
-                  <p className="text-[11px] text-[#9AA1B2] text-center pt-1">
-                    By submitting you agree to our <Link to="/legal/privacy" className="underline hover:text-[#0F1730]">Privacy Policy</Link>. We never sell data.
-                  </p>
-                </form>
-              )}
+                </div>
+              </div>
             </div>
           </div>
         </section>

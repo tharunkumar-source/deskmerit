@@ -13,6 +13,8 @@ interface CompetitorConfig {
   heroTitle: string;
   heroAccent: string;
   heroDesc: string;
+  image: string;
+  imageAlt: string;
   rows: { feature: string; pulse: string; comp: string; highlight?: boolean; honestComp?: boolean }[];
   betterWhenDesc: string;
   switchTitle: string;
@@ -28,6 +30,8 @@ const COMPETITORS: Record<string, CompetitorConfig> = {
     heroAccent: "and your HRMS.",
     heroDesc:
       "DeskTime is a solid automatic tracker. Deskmerit matches its core features and adds Tracker Plus, attendance that counts meetings, a free Starter plan, and a deeper API with an MCP server.",
+    image: "/images/figma/compare-desktime.png",
+    imageAlt: "Deskmerit Team Members Directory & Transparent Workforce Management",
     rows: [
       { feature: "Automatic time tracking", pulse: "✓", comp: "✓" },
       { feature: "App, URL & document tracking", pulse: "✓", comp: "✓" },
@@ -60,6 +64,8 @@ const COMPETITORS: Record<string, CompetitorConfig> = {
     heroAccent: "without invasive spyware.",
     heroDesc:
       "Hubstaff is widely known for aggressive mouse-click monitoring and GPS tracking. Deskmerit delivers honest proof of work that engineering and agency teams respect, without humiliating micromanagement.",
+    image: "/images/figma/compare-hubstaff.png",
+    imageAlt: "Deskmerit Unblurred Screenshots Transparency & Ethical Screen Audit",
     rows: [
       { feature: "Automatic background tracking", pulse: "✓ Seamless Rust agent", comp: "✓ Desktop timer" },
       { feature: "Project & task time attribution", pulse: "✓ Direct PM integration", comp: "✓ Manual timer selection" },
@@ -87,6 +93,8 @@ const COMPETITORS: Record<string, CompetitorConfig> = {
     heroAccent: "not employee resentment.",
     heroDesc:
       "Replace constant video captures, keyboard logging paranoia and popup alarms with transparent output metrics, automatic document tracking and seamless project management workflows.",
+    image: "/images/figma/compare-time-doctor.png",
+    imageAlt: "Deskmerit My PulseTrack Application Activity & Background Telemetry",
     rows: [
       { feature: "Automated desktop time tracking", pulse: "✓ Quiet & non-intrusive", comp: "✓ Popup prompt based" },
       { feature: "Distraction & pop-up alarms", pulse: "— No annoying alarm popups", comp: "Frequent idle nagging", highlight: true },
@@ -114,6 +122,8 @@ const COMPETITORS: Record<string, CompetitorConfig> = {
     heroAccent: "the agile ActivTrak alternative.",
     heroDesc:
       "Get deep application scoring, document title tracking and billable hours analytics without convoluted enterprise pricing, rigid annual contracts, or multi-week deployment hurdles.",
+    image: "/images/figma/compare-activtrak.png",
+    imageAlt: "Deskmerit Productivity Analytics & Role-Based Rules Scoring",
     rows: [
       { feature: "Automatic activity tracking", pulse: "✓", comp: "✓" },
       { feature: "Productivity categorization", pulse: "✓ Role-based categories", comp: "✓ Deep categorization" },
@@ -140,6 +150,8 @@ const COMPETITORS: Record<string, CompetitorConfig> = {
     heroAccent: "never lose billable minutes to forgotten timers.",
     heroDesc:
       "Love Toggl's clean interface but tired of contractors forgetting to click 'Start Timer' in the morning? Deskmerit combines effortless automatic tracking with precise task attribution.",
+    image: "/images/figma/compare-toggl.png",
+    imageAlt: "Deskmerit Time Ledger & Automatic Background Timesheet Records",
     rows: [
       { feature: "Manual timer start / stop", pulse: "✓ Optional", comp: "✓ Core workflow" },
       { feature: "Automatic background tracking", pulse: "✓ Starts on computer boot", comp: "Limited timeline only", highlight: true },
@@ -167,6 +179,8 @@ const COMPETITORS: Record<string, CompetitorConfig> = {
     heroAccent: "lighter, faster, and built into your HRMS.",
     heroDesc:
       "Looking for a snappier, more reliable alternative to Time Champ? Deskmerit delivers a high-performance native desktop client, instant Jira/Azure DevOps ticket start, and complete DPDP Act readiness.",
+    image: "/images/figma/compare-time-champ.png",
+    imageAlt: "Deskmerit Automated Attendance Matrix & Shift Reconciliation",
     rows: [
       { feature: "Desktop agent footprint", pulse: "< 25MB RAM (Rust native)", comp: "> 200MB RAM (Electron)", highlight: true },
       { feature: "Automatic time & productivity", pulse: "✓", comp: "✓" },
@@ -217,79 +231,105 @@ export function DeskTimeAlternativePage() {
       <DeskmeritHeader />
 
       <main>
-        {/* Breadcrumb */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-          <div className="text-xs text-[#4A5370] flex items-center gap-1.5">
-            <Link to="/" className="hover:text-[#0F1730]">
-              Home
-            </Link>
-            <span>/</span>
-            <Link to="/compare" className="hover:text-[#0F1730]">
-              Compare
-            </Link>
-            {!isHub && (
-              <>
-                <span>/</span>
-                <span className="font-semibold text-[#0F1730]">
-                  {comp.name} alternative
-                </span>
-              </>
-            )}
-          </div>
-        </div>
+        {/* ========================================================================= */}
+        {/* DARK HERO SECTION (Consistent Platform Standard)                          */}
+        {/* ========================================================================= */}
+        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Hero Section */}
-        <section className="py-12 lg:py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFFFFF] border border-[#E6E2D8] text-xs font-semibold text-[#0F1730] shadow-sm mb-6">
-            <span>
-              {isHub
-                ? "COMPARE · ALL COMPETITOR PLATFORMS"
-                : comp.heroBadge}
-            </span>
-          </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            {/* Breadcrumb */}
+            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+              <Link to="/" className="hover:underline text-slate-300">Home</Link>
+              <span className="text-slate-500">/</span>
+              <Link to="/compare" className="hover:underline text-slate-300">Compare</Link>
+              {!isHub && (
+                <>
+                  <span className="text-slate-500">/</span>
+                  <span>{comp.name} Alternative</span>
+                </>
+              )}
+            </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F1730] tracking-[-0.03em] leading-tight mb-6">
-            {isHub ? (
-              <>
-                How Deskmerit compares to{" "}
-                <span className="text-[#FF5A36] block font-normal">
-                  legacy time tracking software.
-                </span>
-              </>
-            ) : (
-              <>
-                {comp.heroTitle}{" "}
-                <span className="text-[#FF5A36] block font-normal">
-                  {comp.heroAccent}
-                </span>
-              </>
-            )}
-          </h1>
+            <div className="grid grid-cols-12 gap-8 lg:gap-10 items-center">
+              {/* Left Column */}
+              <div className="col-span-12 lg:col-span-5 space-y-6">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
+                  {isHub ? "COMPARE · ALL COMPETITOR PLATFORMS" : comp.heroBadge}
+                </div>
 
-          <p className="text-base sm:text-lg text-[#4A5370] max-w-2xl mx-auto mb-8 font-normal">
-            {isHub
-              ? "See how Deskmerit's privacy-first architecture, Tracker Plus PM integrations, and built-in HRMS sync stack up against DeskTime, Hubstaff, Time Doctor, ActivTrak, Toggl, and Time Champ."
-              : comp.heroDesc}
-          </p>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                  {isHub ? (
+                    <>
+                      How Deskmerit compares to{" "}
+                      <span className="text-[#FF5A36] block">legacy time tracking software.</span>
+                    </>
+                  ) : (
+                    <>
+                      {comp.heroTitle}{" "}
+                      <span className="text-[#FF5A36] block">{comp.heroAccent}</span>
+                    </>
+                  )}
+                </h1>
 
-          <div className="flex flex-wrap justify-center gap-3">
-            <Link
-              to="/signup"
-              className="inline-flex items-center justify-center text-xs font-extrabold text-white bg-[#FF5A36] hover:bg-[#E94A27] px-6 py-3.5 rounded-[12px] shadow-md hover:shadow-glow-ember transition-all"
-            >
-              Start free 14-day trial →
-            </Link>
-            <Link
-              to="/demo"
-              className="inline-flex items-center justify-center text-xs font-semibold text-[#0F1730] bg-[#FFFFFF] hover:bg-[#E6E2D8]/50 border border-[#0F1730] px-6 py-3.5 rounded-[12px] transition-all"
-            >
-              Book a demo
-            </Link>
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                  {isHub
+                    ? "See how Deskmerit's privacy-first architecture, Tracker Plus PM integrations, and built-in HRMS sync stack up against DeskTime, Hubstaff, Time Doctor, ActivTrak, Toggl, and Time Champ."
+                    : comp.heroDesc}
+                </p>
+
+                <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                  <Link
+                    to="/signup"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all"
+                  >
+                    <span>Start free trial</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    to="/demo"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all"
+                  >
+                    <span>Book a demo</span>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right Column: Full Width Authentic Figma Product Screenshot in macOS Window Frame */}
+              <div className="col-span-12 lg:col-span-7">
+                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
+                  <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
+                      <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
+                      <div className="w-3 h-3 rounded-full bg-[#62C554]" />
+                    </div>
+                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
+                      app.deskmerit.com/compare/{isHub ? "overview" : comp.slug}
+                    </div>
+                    <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
+                      Live Verified
+                    </div>
+                  </div>
+
+                  <div className="bg-[#070E1A] p-2 sm:p-2.5">
+                    <img
+                      src={isHub ? "/images/figma/productivity-breakdown.png" : comp.image}
+                      alt={isHub ? "Deskmerit Cross-Platform Productivity Comparison Matrix" : comp.imageAlt}
+                      className="w-full h-auto block rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
+                      loading="eager"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Competitor Switcher Navigation Pills */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+        {/* Competitor Switcher Navigation Pills with Proper Spacing */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-4">
           <div className="flex items-center justify-center gap-2 flex-wrap">
             <span className="text-xs font-semibold text-slate-500 mr-1">
               Select competitor:
@@ -374,13 +414,13 @@ export function DeskTimeAlternativePage() {
               {Object.values(COMPETITORS).map((c) => (
                 <div
                   key={c.slug}
-                  className="bg-white rounded-2xl p-7 border border-[#E6E2D8] hover:border-[#FF5A36] transition-all shadow-subtle flex flex-col justify-between"
+                  className="bg-white rounded-2xl p-7 border border-[#E6E2D8] hover:border-[#FF5A36] transition-all shadow-subtle hover:shadow-card flex flex-col justify-between group"
                 >
                   <div>
                     <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
                       Deskmerit vs {c.name}
                     </div>
-                    <h3 className="text-xl font-bold text-[#0F1730] mb-3">
+                    <h3 className="text-xl font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-3">
                       {c.name} Alternative
                     </h3>
                     <p className="text-xs text-[#4A5370] leading-relaxed mb-6">
@@ -391,9 +431,10 @@ export function DeskTimeAlternativePage() {
                   <div className="pt-4 border-t border-[#E6E2D8]">
                     <Link
                       to={`/compare/${c.slug}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors"
                     >
-                      View detailed comparison <ArrowRight className="w-3.5 h-3.5" />
+                      <span>View detailed comparison</span>
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </div>
                 </div>

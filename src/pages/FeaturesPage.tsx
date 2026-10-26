@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { DeskmeritHeader } from "../components/DeskmeritHeader";
 import { DeskmeritFooter } from "../components/DeskmeritFooter";
@@ -24,11 +24,17 @@ import {
   ArrowRight,
   Check,
   Minus,
+  Plus,
   Sparkles,
   ShieldCheck,
 } from "lucide-react";
 
 export function FeaturesPage() {
+  const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({});
+
+  const toggleGroup = (num: string) => {
+    setOpenGroups((prev) => ({ ...prev, [num]: !prev[num] }));
+  };
   const groups = [
     {
       num: "01",
@@ -178,12 +184,12 @@ export function FeaturesPage() {
         {/* 1. DARK HERO SECTION (Exact Reference Image 2 Layout)                     */}
         {/* ========================================================================= */}
         <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-20 lg:pt-12 lg:pb-28 relative overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#20C997]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb matching Reference */}
-            <div className="text-xs text-[#20C997] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
               <span className="text-slate-300">Product</span>
@@ -194,7 +200,7 @@ export function FeaturesPage() {
             <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
               {/* Left Column: Headline, Overline, Description & CTAs */}
               <div className="col-span-12 lg:col-span-6 space-y-6">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#20C997] bg-[#20C997]/10 px-3 py-1 rounded-full inline-block border border-[#20C997]/20">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3 py-1 rounded-full inline-block border border-[#FF5A36]/30">
                   COMPLETE FEATURE CATALOGUE
                 </div>
 
@@ -223,9 +229,9 @@ export function FeaturesPage() {
                 </div>
               </div>
 
-              {/* Right Column: Browser Window Mockup with macOS Controls (Image 2 Match) */}
+              {/* Right Column: Authentic Figma Product Screenshot in macOS Browser Window Frame */}
               <div className="col-span-12 lg:col-span-6">
-                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
+                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
                   <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
@@ -233,35 +239,21 @@ export function FeaturesPage() {
                       <div className="w-3 h-3 rounded-full bg-[#62C554]" />
                     </div>
                     <div className="text-[11px] font-mono text-slate-400 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
-                      app.deskmerit.com/features-cockpit
+                      app.deskmerit.com/features/screenshots-audit
                     </div>
-                    <div className="text-[11px] font-bold text-[#20C997]">● Active Engine</div>
+                    <div className="text-[11px] font-bold text-[#12B886] flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#12B886] animate-pulse" />
+                      Live Verified
+                    </div>
                   </div>
 
-                  <div className="p-6 space-y-4">
-                    <div className="p-4 rounded-xl bg-slate-900/70 border border-slate-800 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-lg bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center">
-                          <Layers className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <div className="text-xs font-bold text-white">Tracker Plus Active</div>
-                          <div className="text-[10px] text-slate-400">Jira KMB-482 · API Refactor</div>
-                        </div>
-                      </div>
-                      <span className="font-mono text-xs font-bold text-[#20C997]">1h 42m</span>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="p-3.5 rounded-xl bg-slate-900/50 border border-slate-800 text-left">
-                        <div className="text-[10px] text-slate-400 font-bold uppercase">Attendance Today</div>
-                        <div className="text-sm font-bold text-white mt-1">6h 12m (Present)</div>
-                      </div>
-                      <div className="p-3.5 rounded-xl bg-slate-900/50 border border-slate-800 text-left">
-                        <div className="text-[10px] text-slate-400 font-bold uppercase">Surveillance Status</div>
-                        <div className="text-sm font-bold text-[#20C997] mt-1">Zero Keylogging</div>
-                      </div>
-                    </div>
+                  <div className="bg-[#070E1A] p-2">
+                    <img
+                      src="/images/figma/screenshots-audit-gallery.png"
+                      alt="Deskmerit Screenshot Gallery & Privacy Audit Dashboard"
+                      className="w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
+                      loading="eager"
+                    />
                   </div>
                 </div>
               </div>
@@ -270,63 +262,96 @@ export function FeaturesPage() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 2. CATEGORIZED FEATURE GROUPS (White background)                          */}
+        {/* 2. CATEGORIZED FEATURE GROUPS (Sqalible Style Dropdowns with Brand Cards)  */}
         {/* ========================================================================= */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-16">
-          {groups.map((grp) => (
-            <div key={grp.num} className="bg-slate-50/70 rounded-[28px] p-8 sm:p-12 border border-slate-200 shadow-sm">
-              <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 mb-8 border-b border-slate-200 gap-4">
-                <div className="flex items-center gap-4">
-                  <span className="text-xs font-extrabold text-[#0A1628] bg-white border border-slate-300 px-3 py-1 rounded-lg font-mono">
-                    {grp.num}
-                  </span>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F1730]">
-                    {grp.question}
-                  </h2>
-                </div>
-              </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 divide-y divide-[#E6E2D8]">
+          {groups.map((grp) => {
+            const isOpen = Boolean(openGroups[grp.num]);
+            const isFourCards = grp.items.length === 4;
+            return (
+              <div
+                key={grp.num}
+                className="py-8 sm:py-10 first:pt-0 last:pb-0 transition-all"
+              >
+                {/* Interactive Dropdown / Accordion Header matching Sqalible reference */}
+                <button
+                  type="button"
+                  onClick={() => toggleGroup(grp.num)}
+                  className="w-full flex items-center justify-between text-left group/btn cursor-pointer py-2"
+                  aria-expanded={isOpen}
+                >
+                  <div className="flex items-center gap-3.5 sm:gap-4">
+                    <span className="text-xs font-extrabold text-[#0F1730] bg-[#F7F4EE] border border-[#E6E2D8] px-3 py-1 rounded-lg font-mono">
+                      {grp.num}
+                    </span>
+                    <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F1730] group-hover/btn:text-[#FF5A36] transition-colors tracking-tight">
+                      {grp.question}
+                    </h2>
+                  </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {grp.items.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <Link
-                      key={item.title}
-                      to={item.href}
-                      className="group p-6 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200/90 hover:border-[#20C997] transition-all hover:shadow-md flex flex-col justify-between"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between mb-4">
-                          <div className="w-10 h-10 rounded-xl bg-slate-100 text-[#0F1730] group-hover:bg-[#E8FBF5] group-hover:text-[#20C997] flex items-center justify-center transition-colors">
-                            <Icon className="w-5 h-5" />
+                  <div className="w-10 h-10 rounded-full bg-white border border-[#E6E2D8] flex items-center justify-center text-[#4A5370] group-hover/btn:border-[#FF5A36] group-hover/btn:text-[#FF5A36] group-hover/btn:bg-[#FFE6DF]/30 transition-all shrink-0">
+                    {isOpen ? (
+                      <Minus className="w-4 h-4 stroke-[2.5]" />
+                    ) : (
+                      <Plus className="w-4 h-4 stroke-[2.5]" />
+                    )}
+                  </div>
+                </button>
+
+                {/* Dropdown Content: Grid of White Cards with Brand Hover Interaction */}
+                {isOpen && (
+                  <div
+                    className={`pt-8 animate-fadeIn ${
+                      isFourCards
+                        ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+                        : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                    }`}
+                  >
+                    {grp.items.map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <Link
+                          key={item.title}
+                          to={item.href}
+                          className="group p-6 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between"
+                        >
+                          <div>
+                            <div className="flex items-center justify-between mb-4">
+                              {/* Icon container: white in default with border, on hover brand BG #FF5A36 & icon turns white */}
+                              <div className="w-11 h-11 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center transition-all duration-200 shadow-xs">
+                                <Icon className="w-5 h-5 transition-colors" />
+                              </div>
+                              {item.badge && (
+                                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-white text-[#C2361A] border border-[#E6E2D8] group-hover:bg-[#FFE6DF] group-hover:border-[#FF5A36]/30 transition-colors shadow-2xs">
+                                  {item.badge}
+                                </span>
+                              )}
+                            </div>
+                            <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">
+                              {item.title}
+                            </h3>
+                            <p className="text-xs text-[#4A5370] leading-relaxed">
+                              {item.desc}
+                            </p>
                           </div>
-                          {item.badge && (
-                            <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#FFE6DF] text-[#C2361A]">
-                              {item.badge}
-                            </span>
-                          )}
-                        </div>
-                        <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#20C997] transition-colors mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-xs text-[#4A5370] leading-relaxed">
-                          {item.desc}
-                        </p>
-                      </div>
 
-                      <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-[#0F1730] group-hover:text-[#20C997]">
-                        <span>Explore details</span>
-                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                      </div>
-                    </Link>
-                  );
-                })}
+                          <div className="mt-5 pt-3 border-t border-[#E6E2D8] flex items-center justify-between text-xs font-semibold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                            <span>Explore details</span>
+                            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
+        </div>
 
-          {/* Plan Comparison Table */}
-          <div className="bg-white rounded-[28px] p-8 sm:p-12 border border-slate-200 shadow-sm">
+        {/* Plan Comparison Table Section */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+          <div className="bg-white rounded-[28px] p-8 sm:p-12 border border-[#E6E2D8] shadow-sm">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F1730] mb-2">
               Feature Availability by Plan
             </h2>

@@ -211,16 +211,16 @@ export function DeskmeritHero() {
             <div className="relative z-10 grid grid-cols-12 gap-4 items-center">
               {/* Left & Center Block (Cols 1-8): Real Team Photo + Satellite UI Cards */}
               <div className="col-span-12 sm:col-span-8 relative">
-                {/* 1. Center Team Photograph Card (Image 4 Centerpiece) */}
-                <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100 max-h-[340px] relative">
+                {/* 1. Center Product UI Card (Authentic Figma Interface) */}
+                <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 max-h-[340px] relative">
                   <img
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
-                    alt="Engineers reviewing Jira sprint time and deliverables"
-                    className="w-full h-full object-cover"
+                    src="/images/figma/projects-active-portfolio.png"
+                    alt="Deskmerit Active Projects Portfolio & Jira Sprint Attribution"
+                    className="w-full h-full object-cover object-top"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F1730]/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F1730]/70 via-transparent to-transparent pointer-events-none" />
                   <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#0F1730]/80 px-2.5 py-0.5 rounded-full inline-block backdrop-blur-sm">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#0F1730]/90 px-2.5 py-0.5 rounded-full inline-block backdrop-blur-sm border border-[#FF5A36]/30">
                       Engineering Pod Pune & Sydney
                     </span>
                     <p className="text-xs font-semibold mt-1">Sprint KMB-482: 100% Billable & Tracked</p>

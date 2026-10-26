@@ -1,187 +1,345 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 
 interface FeatureCard {
   title: string;
   href: string;
   description: string;
-  tag: string;
+  badge: string;
+  category: "time" | "billing" | "attendance" | "privacy" | "integrations";
   image: string;
   highlight?: boolean;
 }
 
 export function DeskmeritFeatureGrid() {
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [isPaused, setIsPaused] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const features: FeatureCard[] = [
+  const categories = [
+    { id: "all", label: "All features" },
+    { id: "time", label: "Time & Activity" },
+    { id: "billing", label: "Project & Billing" },
+    { id: "attendance", label: "Attendance & Shifts" },
+    { id: "privacy", label: "Privacy & Compliance" },
+    { id: "integrations", label: "Integrations & AI" },
+  ];
+
+  const allFeatures: FeatureCard[] = [
     {
       title: "Tracker Plus for Jira & DevOps",
       href: "/features/tracker-plus",
       description:
         "Start tracking directly from the PM task itself. Automatic bi-directional work log sync with zero second login.",
-      tag: "Flagship ★",
-      image:
-        "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80",
+      badge: "Flagship ★",
+      category: "billing",
+      image: "/images/features/tracker-plus.jpg",
       highlight: true,
     },
     {
       title: "Automatic Time Tracking",
       href: "/features/automatic-time-tracking",
       description:
-        "Tracks computer time in the background from the moment the agent starts. No manual timers to forget.",
-      tag: "Zero-effort",
-      image:
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+        "Lightweight native desktop agent starts on computer boot. Attributes active window titles and application focus without manual start/stop timers.",
+      badge: "Zero-effort",
+      category: "time",
+      image: "/images/features/automatic-time.jpg",
     },
     {
-      title: "Productivity & App Analytics",
+      title: "Productivity & App Scoring",
       href: "/features/productivity-tracking",
       description:
-        "App, URL, and document-title scoring per person, team, and organization with role-aware rubrics.",
-      tag: "Role-aware",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+        "Role-customized application, URL, and window scoring. Developers on GitHub and designers in Figma are scored accurately without rigid blanket rules.",
+      badge: "Role-aware",
+      category: "time",
+      image: "/images/features/productivity-scoring.jpg",
     },
     {
       title: "Attendance & Daily Presence",
       href: "/features/attendance-tracking",
       description:
-        "Daily presence from tracked computer work, calendar meetings, and logged offline time. Zero invasive biometrics.",
-      tag: "No biometrics",
-      image:
-        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+        "Daily presence derived from active computer time, calendar video calls, and approved leaves. Completely eliminates invasive biometric scanners.",
+      badge: "No biometrics",
+      category: "attendance",
+      image: "/images/features/attendance-presence.jpg",
     },
     {
-      title: "Project Time & Billing",
+      title: "Timesheets & Defensible Reports",
+      href: "/features/timesheets-and-reports",
+      description:
+        "Slice and filter 100,000+ hours by employee, ticket, client, or date. Clean CSV and Excel exports that balance to the exact second.",
+      badge: "CSV & Excel",
+      category: "billing",
+      image: "/images/features/timesheets-reports.jpg",
+    },
+    {
+      title: "Project Time & Client Billing",
       href: "/features/project-time-tracking",
       description:
-        "Rates per person and project, defensible cost totals, budget-versus-actual alerts, and client invoices.",
-      tag: "Defensible revenue",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+        "Hourly rates per person, client budgets, burn-down alerts, and invoice-ready billing rollups with zero spreadsheet math.",
+      badge: "Defensible revenue",
+      category: "billing",
+      image: "/images/features/project-billing.jpg",
     },
     {
-      title: "Shifts & Leave Scheduling",
+      title: "Shift Scheduling & Midnight Rosters",
       href: "/features/shift-scheduling",
       description:
-        "Overnight shift templates crossing midnight, late and overtime flags, leave requests, and a team calendar.",
-      tag: "Rosters & holiday",
-      image:
-        "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80",
+        "Multi-shift scheduling with overnight support crossing midnight. Tracks late check-ins, early leaves, and shift adherence automatically.",
+      badge: "24/7 Rosters",
+      category: "attendance",
+      image: "/images/features/shift-scheduling.jpg",
     },
     {
-      title: "Live Team Status Feed",
-      href: "/features/live-status",
+      title: "Leave Management & PTO Calendars",
+      href: "/features/leave-management",
       description:
-        "Real-time activity pulse updated every 60 seconds so managers see active tasks without micromanaging.",
-      tag: "60s refresh",
-      image:
-        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+        "Employee self-service PTO requests, multi-manager approval workflows, public holiday sets, and automatic deduction from expected hours.",
+      badge: "Team calendar",
+      category: "attendance",
+      image: "/images/features/leave-management.jpg",
     },
     {
-      title: "Document Tracking",
+      title: "Ethical Screenshots (Blurred by Default)",
+      href: "/features/screenshots",
+      description:
+        "Screenshots are disabled by default. If enabled for client audit compliance, frames are blurred, employee-announced, and deletable.",
+      badge: "Privacy-first",
+      category: "privacy",
+      image: "/images/features/ethical-screenshots.jpg",
+    },
+    {
+      title: "Idle Detection & Private Time",
+      href: "/features/idle-and-private-time",
+      description:
+        "Smart idle prompts when keyboard/mouse activity ceases. Employees can switch to Private Time anytime for complete unmonitored personal breaks.",
+      badge: "Dignity first",
+      category: "privacy",
+      image: "/images/features/idle-private-time.jpg",
+    },
+    {
+      title: "Document Title Tracking",
       href: "/features/document-tracking",
       description:
-        "Window title and document verification without keystroke logging, clipboard sniffing, or webcam recording.",
-      tag: "Privacy-first",
-      image:
-        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
+        "Attribute hours spent on specific CAD models, spreadsheets, presentations, and code files by reading OS window titles only — never document contents.",
+      badge: "Titles only",
+      category: "time",
+      image: "/images/features/document-tracking.jpg",
+    },
+    {
+      title: "Real-Time Live Status Feed",
+      href: "/features/live-status",
+      description:
+        "Live presence feed updated every 60 seconds. Know who is actively coding, in a meeting, on a break, or offline without pinging in Slack.",
+      badge: "60s refresh",
+      category: "time",
+      image: "/images/features/live-status.jpg",
+    },
+    {
+      title: "Pomodoro Deep Work Focus Timer",
+      href: "/features/focus-timer",
+      description:
+        "Built-in 25/50-minute deep work sprints with gentle break reminders. Ties directly into active Jira and Azure DevOps tasks to minimize context switching.",
+      badge: "Deep work",
+      category: "time",
+      image: "/images/features/pomodoro-focus.jpg",
+    },
+    {
+      title: "Developer Platform & AI MCP Server",
+      href: "/developers",
+      description:
+        "Query live workforce telemetry directly inside Claude Desktop, ChatGPT, or Cursor via native Model Context Protocol (MCP) and REST endpoints.",
+      badge: "Claude & MCP",
+      category: "integrations",
+      image: "/images/features/developer-mcp.jpg",
+    },
+    {
+      title: "Integrations Hub Catalog",
+      href: "/integrations",
+      description:
+        "Bi-directional connectors for Jira, Azure DevOps, OpenProject, Google Calendar, Outlook 365, Slack, Teams, Zapier, Make, and Sqalible HRMS.",
+      badge: "10+ Connectors",
+      category: "integrations",
+      image: "/images/features/integrations-hub.jpg",
+    },
+    {
+      title: "Enterprise Security & Audit Logs",
+      href: "/security",
+      description:
+        "Immutable tamper-proof activity audit trails, SAML 2.0 / Entra ID SSO, granular RBAC permissions, and SOC-2 Type II enterprise readiness.",
+      badge: "SOC-2 & SAML",
+      category: "privacy",
+      image: "/images/features/security-compliance.jpg",
     },
   ];
 
+  const filteredFeatures =
+    selectedCategory === "all"
+      ? allFeatures
+      : allFeatures.filter((f) => f.category === selectedCategory);
+
+  // Duplicated list for infinite seamless auto-scrolling
+  const displayItems =
+    filteredFeatures.length >= 4
+      ? [...filteredFeatures, ...filteredFeatures]
+      : filteredFeatures;
+
+  // Step-based discrete auto-scroll: every 5 seconds, move by 1 card to the right
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      const el = scrollRef.current;
+      if (!el) return;
+
+      const card = el.querySelector<HTMLElement>("[data-card]");
+      const cardWidth = card ? card.offsetWidth + 28 : 448;
+
+      const maxScroll = el.scrollWidth - el.clientWidth;
+      if (el.scrollLeft + cardWidth >= maxScroll - 15) {
+        // Smoothly loop back to start when reaching end
+        el.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        el.scrollBy({ left: cardWidth, behavior: "smooth" });
+      }
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isPaused, selectedCategory]);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const card = scrollRef.current.querySelector<HTMLElement>("[data-card]");
+      const cardWidth = card ? card.offsetWidth + 28 : 448;
+      const offset = direction === "left" ? -cardWidth : cardWidth;
+      scrollRef.current.scrollBy({ left: offset, behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="py-20 lg:py-28 bg-[#FBF9F5] border-b border-[#E6E2D8]/80 font-sans relative overflow-hidden">
+      {/* 1. Header & Controls - Contained to Standard Content Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header with Title and Scroll Controls */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
           <div>
-            <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] mb-3">
-              Features
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-[1.12]">
-              Everything you'd expect.
-              <span className="block text-[#0F1730] mt-1">
-                Plus one click that does three jobs.
-              </span>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] font-mono">
+              TAILORED ARCHITECTURE
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-[1.12] mt-2">
+              Features Built for Every Workflow
             </h2>
+            <p className="text-sm sm:text-base text-[#4A5370] mt-3 max-w-2xl leading-relaxed">
+              Automatic background time capture, bi-directional Jira sprint sync, role-aware application scoring, and audit-ready defensible timesheets.
+            </p>
           </div>
 
-          {/* Top Right: View all features CTA (no arrow inside per request) */}
-          <div className="shrink-0 mb-1">
+          {/* Top Right Controls: < Arrow, View All Pill, > Arrow */}
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              type="button"
+              onClick={() => scroll("left")}
+              className="w-10 h-10 rounded-full border border-slate-300 bg-white hover:border-[#0F1730] hover:bg-[#F7F4EE] text-[#0F1730] flex items-center justify-center transition-all shadow-xs cursor-pointer active:scale-95"
+              aria-label="Scroll features left"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
             <Link
               to="/features"
-              className="inline-flex items-center px-5 py-2.5 rounded-full bg-white border border-slate-300 hover:border-[#0F1730] text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] shadow-xs hover:shadow-sm transition-all"
+              className="px-5 py-2.5 rounded-full border border-slate-300 bg-white hover:border-[#0F1730] hover:bg-[#0F1730] hover:text-white text-xs font-bold text-[#0F1730] shadow-xs hover:shadow-sm transition-all"
             >
-              <span>View all features</span>
+              View all
             </Link>
+            <button
+              type="button"
+              onClick={() => scroll("right")}
+              className="w-10 h-10 rounded-full border border-slate-300 bg-white hover:border-[#0F1730] hover:bg-[#F7F4EE] text-[#0F1730] flex items-center justify-center transition-all shadow-xs cursor-pointer active:scale-95"
+              aria-label="Scroll features right"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
           </div>
         </div>
 
-        {/* Continuous Auto-Scrolling Cards Marquee (Screenshot Reference) */}
-        <div className="relative">
-          {/* Subtle Left & Right Edge Gradient Fade Masks */}
-          <div className="absolute left-0 top-0 bottom-6 w-10 sm:w-24 bg-gradient-to-r from-[#FBF9F5] via-[#FBF9F5]/80 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-6 w-10 sm:w-24 bg-gradient-to-l from-[#FBF9F5] via-[#FBF9F5]/80 to-transparent z-10 pointer-events-none" />
+        {/* Filter Pills */}
+        <div className="flex items-center gap-2 flex-wrap mb-10 pb-2">
+          {categories.map((cat) => {
+            const isActive = selectedCategory === cat.id;
+            return (
+              <button
+                key={cat.id}
+                type="button"
+                onClick={() => {
+                  setSelectedCategory(cat.id);
+                  if (scrollRef.current) scrollRef.current.scrollLeft = 0;
+                }}
+                className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer border ${
+                  isActive
+                    ? "bg-[#0F1730] text-white border-[#0F1730] shadow-sm"
+                    : "bg-white text-[#4A5370] border-slate-300 hover:border-[#0F1730] hover:text-[#0F1730]"
+                }`}
+              >
+                {cat.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
 
-          {/* Horizontally Auto-Scrolling Marquee Container */}
-          <div className="flex overflow-hidden py-2 select-none">
-            <div className="features-marquee flex gap-6 sm:gap-7 shrink-0 pb-6 pt-2">
-              {[...features, ...features].map((item, idx) => (
-                <div
-                  key={`${item.title}-${idx}`}
-                  className={`group shrink-0 w-[300px] sm:w-[350px] lg:w-[380px] rounded-3xl p-5 sm:p-6 bg-white transition-all duration-300 flex flex-col justify-between shadow-subtle hover:shadow-card hover:-translate-y-1.5 ${
-                    item.highlight
-                      ? "border-2 border-[#FF5A36] ring-4 ring-[#FF5A36]/10"
-                      : "border border-slate-200/90 hover:border-slate-300"
-                  }`}
-                >
-                  <div>
-                    {/* Framed Feature Image with Floating Pill Tag */}
-                    <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-slate-100 mb-5 border border-slate-100 shadow-xs">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0F1730]/40 via-transparent to-transparent opacity-60" />
+      {/* 2. Full-Bleed Scrolling Track - Extends all the way to screen edges across full desktop width */}
+      <div className="relative w-full overflow-hidden">
+        {/* Soft edge gradient fade on left only to blend with header margin */}
+        <div className="absolute left-0 top-0 bottom-6 w-6 sm:w-12 bg-gradient-to-r from-[#FBF9F5] via-[#FBF9F5]/80 to-transparent z-10 pointer-events-none" />
 
-                      {/* Floating Pill Tag */}
-                      <div className="absolute top-3 right-3">
-                        <span
-                          className={`inline-flex items-center px-3 py-1 rounded-full text-[11px] font-extrabold shadow-sm backdrop-blur-md ${
-                            item.highlight
-                              ? "bg-[#FFE6DF]/95 text-[#C2361A] border border-[#FFD4CA]"
-                              : "bg-white/95 text-[#0F1730] border border-slate-200/80"
-                          }`}
-                        >
-                          {item.tag}
-                        </span>
-                      </div>
-                    </div>
+        {/* Scrollable Container bleeding to the very right edge of the screen */}
+        <div
+          ref={scrollRef}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
+          className="flex overflow-x-auto no-scrollbar gap-6 sm:gap-7 py-3 pb-8 select-none"
+          style={{
+            scrollBehavior: "smooth",
+            paddingLeft: "max(1.25rem, calc((100vw - 80rem) / 2 + 1.5rem))",
+            paddingRight: "2rem",
+          }}
+        >
+          {displayItems.map((item, idx) => (
+            <Link
+              key={`${item.title}-${idx}`}
+              to={item.href}
+              data-card="true"
+              className="group shrink-0 w-[310px] sm:w-[370px] lg:w-[410px] rounded-none bg-[#0B1426] border border-slate-800/90 shadow-lg hover:shadow-2xl hover:border-slate-700 transition-all duration-300 flex flex-col justify-between overflow-hidden block"
+            >
+              {/* Top Image Canvas flush to top edges with sharp corners */}
+              <div className="relative aspect-[16/10] overflow-hidden bg-slate-900 border-b border-slate-800 rounded-none">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-none"
+                  loading="lazy"
+                />
 
-                    {/* Card Title */}
-                    <h3 className="text-xl font-extrabold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2.5">
-                      {item.title}
-                    </h3>
-
-                    {/* Card Description */}
-                    <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed mb-6">
-                      {item.description}
-                    </p>
-                  </div>
-
-                  {/* Bottom Pill Action Button */}
-                  <Link
-                    to={item.href}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-slate-300 bg-white hover:bg-[#0F1730] hover:text-white hover:border-[#0F1730] text-xs font-bold text-[#0F1730] shadow-xs transition-all w-max group/btn"
-                  >
-                    <span>Learn More</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
-                  </Link>
+                {/* Floating Pill Tag matching Reference */}
+                <div className="absolute top-3.5 right-3.5 z-10">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold shadow-md bg-white text-[#0F1730]">
+                    {item.badge}
+                  </span>
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
+
+              {/* Bottom Dark Card Body with bold white title and slate description */}
+              <div className="p-6 bg-[#0B1426] flex-1 flex flex-col justify-start">
+                <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-[#FF5A36] transition-colors mb-2.5 line-clamp-1">
+                  {item.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300/90 leading-relaxed line-clamp-3">
+                  {item.description}
+                </p>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>

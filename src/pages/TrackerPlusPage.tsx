@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { DeskmeritHeader } from "../components/DeskmeritHeader";
 import { DeskmeritFooter } from "../components/DeskmeritFooter";
 import { DeskmeritFaq } from "../components/DeskmeritFaq";
+import { DeskmeritCtaBand } from "../components/DeskmeritCtaBand";
 import { InteractiveTrackerWidget } from "../components/InteractiveTrackerWidget";
 import {
   Check,
@@ -77,7 +78,7 @@ export function TrackerPlusPage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb matching Reference */}
-            <div className="text-xs text-[#20C997] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
               <Link to="/features" className="hover:underline text-slate-300">Product</Link>
@@ -88,7 +89,7 @@ export function TrackerPlusPage() {
             <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
               {/* Left Copy */}
               <div className="col-span-12 lg:col-span-6 space-y-6">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#20C997] bg-[#132338] px-3.5 py-1 rounded-full inline-block border border-[#20C997]/30">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
                   FLAGSHIP INNOVATION · MULTI-TOOL TRACKER
                 </div>
 
@@ -143,14 +144,19 @@ export function TrackerPlusPage() {
                     <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
                       app.deskmerit.com/features/tracker-plus
                     </div>
-                    <span className="text-[11px] font-bold text-[#20C997] flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#20C997] animate-pulse" />
-                      Active Engine
+                    <span className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
+                      Jira & ClickUp Sync
                     </span>
                   </div>
 
-                  <div className="p-6">
-                    <InteractiveTrackerWidget />
+                  <div className="bg-slate-950 p-1 sm:p-2">
+                    <img
+                      src="/images/figma/tray-pm-tasks-sync.png"
+                      alt="Deskmerit Tracker Plus Task in Project with PM Tool Badges and Status Sync"
+                      className="w-full h-auto object-contain rounded-lg block shadow-inner"
+                      loading="eager"
+                    />
                   </div>
                 </div>
               </div>
@@ -159,6 +165,7 @@ export function TrackerPlusPage() {
         </section>
 
         {/* SECTION 2: Key Capabilities (Matching Sqalible Screenshot 1) */}
+        {/* SECTION 2: Key Capabilities (Matching Capabilities Section Style on White BG) */}
         <section className="py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#E6E2D8]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-14">
@@ -175,12 +182,12 @@ export function TrackerPlusPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Card 1 */}
-              <div className="p-8 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] transition-all hover:shadow-card flex flex-col justify-between">
+              <div className="p-8 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between group">
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] flex items-center justify-center mb-6 shadow-sm">
-                    <Layers className="w-6 h-6 text-[#FF5A36]" />
+                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-6 shadow-xs transition-all duration-200">
+                    <Layers className="w-6 h-6 transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0F1730] mb-3">
+                  <h3 className="text-xl font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-3">
                     Multi-Tool Live Sync
                   </h3>
                   <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed">
@@ -189,17 +196,17 @@ export function TrackerPlusPage() {
                 </div>
                 <div className="mt-6 pt-4 border-t border-[#E6E2D8] text-xs font-semibold text-[#0F1730] flex items-center justify-between">
                   <span>Jira & Azure DevOps</span>
-                  <span className="text-[#12B886]">Zero cross-tenant leaks</span>
+                  <span className="text-[#FF5A36]">Zero cross-tenant leaks</span>
                 </div>
               </div>
 
               {/* Card 2 */}
-              <div className="p-8 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] transition-all hover:shadow-card flex flex-col justify-between">
+              <div className="p-8 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between group">
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] flex items-center justify-center mb-6 shadow-sm">
-                    <FileSpreadsheet className="w-6 h-6 text-[#12B886]" />
+                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-6 shadow-xs transition-all duration-200">
+                    <FileSpreadsheet className="w-6 h-6 transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0F1730] mb-3">
+                  <h3 className="text-xl font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-3">
                     3-in-1 Automated Ledger
                   </h3>
                   <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed">
@@ -208,17 +215,17 @@ export function TrackerPlusPage() {
                 </div>
                 <div className="mt-6 pt-4 border-t border-[#E6E2D8] text-xs font-semibold text-[#0F1730] flex items-center justify-between">
                   <span>Timesheet + Attendance + Billing</span>
-                  <span className="text-[#12B886]">1 Click</span>
+                  <span className="text-[#FF5A36]">1 Click</span>
                 </div>
               </div>
 
               {/* Card 3 */}
-              <div className="p-8 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] transition-all hover:shadow-card flex flex-col justify-between">
+              <div className="p-8 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between group">
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] flex items-center justify-center mb-6 shadow-sm">
-                    <ShieldCheck className="w-6 h-6 text-[#38BDF8]" />
+                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-6 shadow-xs transition-all duration-200">
+                    <ShieldCheck className="w-6 h-6 transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0F1730] mb-3">
+                  <h3 className="text-xl font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-3">
                     Collision & Duplicate Shield
                   </h3>
                   <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed">
@@ -227,63 +234,74 @@ export function TrackerPlusPage() {
                 </div>
                 <div className="mt-6 pt-4 border-t border-[#E6E2D8] text-xs font-semibold text-[#0F1730] flex items-center justify-between">
                   <span>Audit-grade keying</span>
-                  <span className="text-[#12B886]">100% separate</span>
+                  <span className="text-[#FF5A36]">100% separate</span>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* SECTION 3: Deep Dark Section "How Tracker Plus Operates In Practice" (Sqalible Screenshot 1) */}
+        {/* SECTION 3: Deep Dark Section "How Tracker Plus Operates In Practice" (Architectural Line-Divided Segmented Grid) */}
         <section className="py-20 lg:py-28 bg-[#0A0F1D] text-white border-b border-[#24305A]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-16">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
-                Technical Execution Pipeline
+              <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2 font-mono">
+                TECHNICAL EXECUTION PIPELINE
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
                 How Tracker Plus Operates in Practice
               </h2>
-              <p className="text-base text-[#9AA1B2] mt-3">
+              <p className="text-base text-slate-400 mt-3 leading-relaxed">
                 From engineer authorization to defensible invoice export: an immutable, four-step pipeline.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* Step 1 */}
-              <div className="p-6 rounded-2xl bg-[#0F1730] border border-[#24305A] relative">
-                <span className="text-2xl font-black text-[#FF5A36] font-mono block mb-4">01</span>
-                <h3 className="text-base font-bold text-white mb-2">Trigger / Initiation</h3>
-                <p className="text-xs text-[#9AA1B2] leading-relaxed">
-                  Admin enables Jira or Azure DevOps connector once. Employee pastes personal token verified securely via OAuth/PAT.
-                </p>
-              </div>
+            {/* Architectural Line-Divided Segmented Grid (Matching Reference) */}
+            <div className="border-t border-b border-slate-800">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-800">
+                {/* Step 1 */}
+                <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
+                  <div className="text-xs font-bold font-mono text-[#FF5A36] mb-4">STEP 01</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
+                    Trigger / Initiation
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                    Admin enables Jira or Azure DevOps connector once. Employee pastes personal token verified securely via OAuth/PAT.
+                  </p>
+                </div>
 
-              {/* Step 2 */}
-              <div className="p-6 rounded-2xl bg-[#0F1730] border border-[#24305A] relative">
-                <span className="text-2xl font-black text-[#FF5A36] font-mono block mb-4">02</span>
-                <h3 className="text-base font-bold text-white mb-2">Policy Validation & Routing</h3>
-                <p className="text-xs text-[#9AA1B2] leading-relaxed">
-                  Assigned issues fetch in real-time. System enforces project billable rate limits and verifies user access rights.
-                </p>
-              </div>
+                {/* Step 2 */}
+                <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
+                  <div className="text-xs font-bold font-mono text-[#FF5A36] mb-4">STEP 02</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
+                    Policy Validation & Routing
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                    Assigned issues fetch in real-time. System enforces project billable rate limits and verifies user access rights.
+                  </p>
+                </div>
 
-              {/* Step 3 */}
-              <div className="p-6 rounded-2xl bg-[#0F1730] border border-[#24305A] relative">
-                <span className="text-2xl font-black text-[#FF5A36] font-mono block mb-4">03</span>
-                <h3 className="text-base font-bold text-white mb-2">Execution & Offline Telemetry</h3>
-                <p className="text-xs text-[#9AA1B2] leading-relaxed">
-                  Rust desktop daemon logs active intervals. Offline queue protects against spotty Wi-Fi with automatic local ledger sync.
-                </p>
-              </div>
+                {/* Step 3 */}
+                <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
+                  <div className="text-xs font-bold font-mono text-[#FF5A36] mb-4">STEP 03</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
+                    Execution & Offline Telemetry
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                    Rust desktop daemon logs active intervals. Offline queue protects against spotty Wi-Fi with automatic local ledger sync.
+                  </p>
+                </div>
 
-              {/* Step 4 */}
-              <div className="p-6 rounded-2xl bg-[#0F1730] border border-[#24305A] relative">
-                <span className="text-2xl font-black text-[#FF5A36] font-mono block mb-4">04</span>
-                <h3 className="text-base font-bold text-white mb-2">Central Sync & Ledger Stamp</h3>
-                <p className="text-xs text-[#9AA1B2] leading-relaxed">
-                  Hours land against client billing codes. Timesheet lock prevents retroactive tampering and prepares audited invoices.
-                </p>
+                {/* Step 4 */}
+                <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
+                  <div className="text-xs font-bold font-mono text-[#FF5A36] mb-4">STEP 04</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
+                    Central Sync & Ledger Stamp
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                    Hours land against client billing codes. Timesheet lock prevents retroactive tampering and prepares audited invoices.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -353,39 +371,12 @@ export function TrackerPlusPage() {
           helpDescription="Our solutions engineers can show you how Tracker Plus maps onto your Jira boards, Azure DevOps pipelines, or Sqalible HRMS directory in minutes."
         />
 
-        {/* SECTION 6: High-Impact Full-Width CTA Banner */}
-        <section className="bg-[#0F1730] text-white py-16 lg:py-20 border-b border-[#24305A]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 bg-[#172348] p-8 sm:p-12 rounded-[24px] border border-[#2B3969] shadow-2xl">
-              <div className="space-y-2 max-w-2xl">
-                <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
-                  Get Started Today
-                </div>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
-                  Experience Tracker Plus in action with your own Jira tasks.
-                </h3>
-                <p className="text-xs sm:text-sm text-[#9AA1B2]">
-                  Set up in under 10 minutes. No credit card required. Cancel anytime.
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
-                <Link
-                  to="/signup"
-                  className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-xs text-center transition-all shadow-md hover:shadow-glow-ember"
-                >
-                  Start free trial
-                </Link>
-                <Link
-                  to="/demo"
-                  className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#24305A] hover:bg-[#334173] text-white font-semibold text-xs text-center border border-[#384574] transition-all"
-                >
-                  Book a demo
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* SECTION 6: Standard Deskmerit CTA Band */}
+        <DeskmeritCtaBand
+          pretitle="GET STARTED TODAY"
+          title="Experience Tracker Plus in action with your own Jira tasks."
+          subtitle="Set up in under 10 minutes. No credit card required. Cancel anytime."
+        />
       </main>
 
       <DeskmeritFooter />

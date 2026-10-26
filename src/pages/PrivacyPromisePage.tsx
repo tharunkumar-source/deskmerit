@@ -24,36 +24,43 @@ export function PrivacyPromisePage() {
       num: "01",
       title: "We never record keystroke content.",
       desc: "Idle detection monitors only whether hardware input occurred, never individual keystrokes, passwords, or personal messages.",
+      icon: EyeOff,
     },
     {
       num: "02",
       title: "We never use the webcam or microphone.",
       desc: "Not under any plan, toggle or setting. There is no media recording code in our desktop application binary.",
+      icon: VideoOff,
     },
     {
       num: "03",
       title: "We never read the content of your documents — titles only.",
       desc: "Deskmerit records active window titles to calculate project time, and never scans, uploads, or inspects document bodies.",
+      icon: FileCheck,
     },
     {
       num: "04",
-      title: "Screenshots are off unless your employer enables them, blurred by default, and you are told.",
+      title: "Screenshots are off by default, blurred by default, and you are told.",
       desc: "If an enterprise admin switches on screenshot capture for a compliance contract, the capture is blurred by default and employees receive an explicit notification.",
+      icon: Lock,
     },
     {
       num: "05",
-      title: "Private Time is yours: nothing is tracked during it, and it is never labelled idle.",
+      title: "Private Time is yours: nothing is tracked, and it is never labelled idle.",
       desc: "One single click puts you in Private Time. App names, URLs, window titles and timers stop immediately until you choose to resume.",
+      icon: ShieldCheck,
     },
     {
       num: "06",
       title: "You can always see your own data.",
       desc: "Every team member has access to their personal dashboard showing the exact same numbers, hours and scores their manager sees.",
+      icon: Database,
     },
     {
       num: "07",
       title: "Nothing is tracked before you have seen the consent screen.",
       desc: "When the desktop agent is installed, a clear consent modal explicitly details what will and won't be recorded before any telemetry starts.",
+      icon: Key,
     },
   ];
 
@@ -62,57 +69,135 @@ export function PrivacyPromisePage() {
       <DeskmeritHeader />
 
       <main>
-        {/* Breadcrumb */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-          <div className="text-xs text-[#4A5370] flex items-center gap-1.5">
-            <Link to="/" className="hover:text-[#0F1730]">Home</Link>
-            <span>/</span>
-            <span className="font-semibold text-[#0F1730]">Employee privacy promise</span>
-          </div>
-        </div>
+        {/* ========================================================================= */}
+        {/* DARK HERO SECTION (Consistent Platform Standard)                          */}
+        {/* ========================================================================= */}
+        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden mb-12">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Hero Section */}
-        <section className="py-12 lg:py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFFFFF] border border-[#E6E2D8] text-xs font-semibold text-[#0F1730] shadow-sm mb-6">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#12B886]" />
-            <span>Binding Transparency Contract</span>
-          </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            {/* Breadcrumb */}
+            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+              <Link to="/" className="hover:underline text-slate-300">Home</Link>
+              <span className="text-slate-500">/</span>
+              <span className="text-slate-300">Trust & Security</span>
+              <span className="text-slate-500">/</span>
+              <span>Employee Privacy Promise</span>
+            </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F1730] tracking-[-0.03em] leading-tight mb-6">
-            What Deskmerit{" "}
-            <span className="text-[#FF5A36] block font-normal">will never do.</span>
-          </h1>
+            <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
+              {/* Left Column */}
+              <div className="col-span-12 lg:col-span-6 space-y-6">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3 py-1 rounded-full inline-block border border-[#FF5A36]/30">
+                  BINDING TRANSPARENCY CHARTER
+                </div>
 
-          <p className="text-base sm:text-lg text-[#4A5370] max-w-2xl mx-auto mb-8 font-normal">
-            We build time tracking for people we’d want to work with. These promises hold on every plan and cannot be switched off by any admin.
-          </p>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                  What Deskmerit will never do.{" "}
+                  <span className="text-[#FF5A36] block">Non-invasive by design.</span>
+                </h1>
 
-          <blockquote className="font-human text-2xl sm:text-3xl text-[#0F1730] italic max-w-xl mx-auto pt-2 pb-4">
-            “Every hour, honestly accounted for.”
-          </blockquote>
-        </section>
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                  We build time tracking for people we’d want to work with. These promises hold on every plan and cannot be switched off by any admin.
+                </p>
 
-        {/* The 7 Promises Numbered List */}
-        <section className="py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-4">
-            {promises.map((p) => (
-              <div
-                key={p.num}
-                className="bg-[#FFFFFF] rounded-2xl p-6 sm:p-8 border border-[#E6E2D8] shadow-subtle flex items-start gap-5 hover:border-[#FF5A36] transition-all"
-              >
-                <span className="w-10 h-10 rounded-xl bg-[#FFE6DF] text-[#C2361A] font-extrabold text-sm flex items-center justify-center font-mono shrink-0">
-                  {p.num}
-                </span>
-                <div>
-                  <h3 className="text-base sm:text-lg font-bold text-[#0F1730] mb-1.5">
-                    {p.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed">
-                    {p.desc}
-                  </p>
+                <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                  <Link
+                    to="/signup"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all"
+                  >
+                    <span>Start free trial</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    to="/demo"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all"
+                  >
+                    <span>Book a demo</span>
+                  </Link>
                 </div>
               </div>
-            ))}
+
+              {/* Right Column: Authentic Privacy & Security Charter Screenshot in macOS Browser Window Frame */}
+              <div className="col-span-12 lg:col-span-6">
+                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
+                  <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-[#FF5F56]" />
+                      <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
+                      <div className="w-3 h-3 rounded-full bg-[#27C93F]" />
+                    </div>
+                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
+                      app.deskmerit.com/security/charter-audit
+                    </div>
+                    <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
+                      Audited Code
+                    </div>
+                  </div>
+
+                  <div className="bg-[#070E1A] p-2">
+                    <img
+                      src="/images/figma/privacy-settings-audit.png"
+                      alt="Deskmerit Enterprise Privacy Settings & Security Audit Controls"
+                      className="w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
+                      loading="eager"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* The 7 Promises: 3 Cards in a Row Grid (Matching Solution Cards Design) */}
+        <section className="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
+              EMPLOYEE TRANSPARENCY CHARTER
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-[-0.025em] mt-2">
+              Our 7 Non-Negotiable Privacy Commitments
+            </h2>
+            <p className="text-sm text-[#4A5370] mt-3 leading-relaxed">
+              These promises hold on every plan — starter, pro, and enterprise. They are enforced in our desktop binary and cannot be overridden by any administrator.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {promises.map((p) => {
+              const Icon = p.icon;
+              return (
+                <div
+                  key={p.num}
+                  className="p-7 rounded-2xl bg-white border border-[#E6E2D8] hover:border-[#FF5A36] transition-all hover:shadow-card flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="w-11 h-11 rounded-xl bg-[#F8F9FA] border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center transition-all duration-200 shadow-xs">
+                        <Icon className="w-5 h-5 transition-colors" />
+                      </div>
+                      <span className="text-xs font-mono font-bold text-[#FF5A36] bg-[#FFE6DF]/60 px-2.5 py-1 rounded-full border border-[#FF5A36]/30">
+                        PROMISE {p.num}
+                      </span>
+                    </div>
+                    <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2.5 leading-snug">
+                      {p.title}
+                    </h3>
+                    <p className="text-xs text-[#4A5370] leading-relaxed">
+                      {p.desc}
+                    </p>
+                  </div>
+                  <div className="pt-5 mt-5 border-t border-[#E6E2D8]/70 flex items-center gap-2 text-xs font-semibold text-[#0F1730]">
+                    <div className="w-4 h-4 rounded-full bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center shrink-0">
+                      <Check className="w-3 h-3 stroke-[3]" />
+                    </div>
+                    <span>Guaranteed in desktop binary</span>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </section>
 
@@ -133,11 +218,11 @@ export function PrivacyPromisePage() {
 
                 <div className="space-y-2 text-xs text-[#0F1730]">
                   <div className="p-3 rounded-xl bg-[#F7F4EE] border border-[#E6E2D8] flex items-center gap-2">
-                    <Check className="w-4 h-4 text-[#12B886]" />
+                    <Check className="w-4 h-4 text-[#FF5A36]" />
                     <span>Personal timeline reviewable at any point of the day</span>
                   </div>
                   <div className="p-3 rounded-xl bg-[#F7F4EE] border border-[#E6E2D8] flex items-center gap-2">
-                    <Check className="w-4 h-4 text-[#12B886]" />
+                    <Check className="w-4 h-4 text-[#FF5A36]" />
                     <span>One-click export of your own timesheets and attendance history</span>
                   </div>
                 </div>
@@ -189,12 +274,19 @@ export function PrivacyPromisePage() {
             ].map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="bg-[#FFFFFF] rounded-2xl p-6 border border-[#E6E2D8] shadow-subtle">
-                  <div className="w-10 h-10 rounded-xl bg-[#FFE6DF] text-[#C2361A] flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5" />
+                <div
+                  key={idx}
+                  className="bg-[#FFFFFF] rounded-2xl p-6 border border-[#E6E2D8] hover:border-[#FF5A36] transition-all shadow-subtle hover:shadow-card flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="w-11 h-11 rounded-xl bg-[#F8F9FA] border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-4 transition-all duration-200 shadow-xs">
+                      <Icon className="w-5 h-5 transition-colors" />
+                    </div>
+                    <h4 className="font-bold text-sm text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-1.5">
+                      {item.title}
+                    </h4>
+                    <p className="text-xs text-[#4A5370] leading-relaxed">{item.desc}</p>
                   </div>
-                  <h4 className="font-bold text-sm text-[#0F1730] mb-1.5">{item.title}</h4>
-                  <p className="text-xs text-[#4A5370] leading-relaxed">{item.desc}</p>
                 </div>
               );
             })}

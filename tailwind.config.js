@@ -7,11 +7,23 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["'Martel Sans'", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
-        display: ["'Martel Sans'", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
-        human: ["Lora", "Georgia", "serif"],
+        // PulseTrack Typography: Inter Display for headlines, Inter for UI & body, Lora Italic for human accent
+        sans: ["'Inter'", "-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "sans-serif"],
+        display: ["'Inter Display'", "'Inter'", "-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "sans-serif"],
+        human: ["'Lora'", "Georgia", "serif"],
+      },
+      fontSize: {
+        // Official PulseTrack Web & Desktop Type Scale
+        'display-xl': ['88px', { lineHeight: '92px', letterSpacing: '-0.03em', fontWeight: '800' }],
+        'display-h1': ['60px', { lineHeight: '64px', letterSpacing: '-0.025em', fontWeight: '700' }],
+        'display-h2': ['40px', { lineHeight: '46px', letterSpacing: '-0.02em', fontWeight: '700' }],
+        'display-h3': ['24px', { lineHeight: '30px', letterSpacing: '-0.01em', fontWeight: '600' }],
+        'body-l': ['20px', { lineHeight: '31px', letterSpacing: '0', fontWeight: '400' }],
+        'body-base': ['16px', { lineHeight: '25px', letterSpacing: '0', fontWeight: '400' }],
+        'label-caps': ['13px', { lineHeight: '16px', letterSpacing: '0.14em', fontWeight: '600' }],
       },
       colors: {
+        // Core Brand Palette (Strictly from guidelines)
         midnight: {
           DEFAULT: "#0F1730",
           50: "#F2F4F8",
@@ -46,14 +58,18 @@ export default {
           dark: "#D6D1C5",
           light: "#F0ECE3",
         },
+        white: "#FFFFFF",
+
+        // Live-State Colours (Semantic only: never mere decoration)
         live: {
-          mint: "#12B886",
-          amber: "#F5A524",
-          iris: "#5B6CFF",
-          fog: "#9AA1B2",
-          rose: "#E5484D",
+          mint: "#12B886",    // Tracking / Productive
+          amber: "#F5A524",   // Idle / Neutral
+          iris: "#5B6CFF",    // Private Time
+          fog: "#9AA1B2",     // Offline
+          rose: "#E5484D",    // Unproductive / Alert
         },
-        // Backwards compatibility with generic tokens
+
+        // Backward compatibility mappings
         primary: {
           DEFAULT: "#FF5A36",
           hover: "#E94A27",
@@ -77,6 +93,7 @@ export default {
       borderRadius: {
         'button': '12px',
         'card': '20px',
+        'image-card': '24px',
         'widget': '18px',
       },
       animation: {
@@ -86,7 +103,7 @@ export default {
       keyframes: {
         pulseGentle: {
           '0%, 100%': { transform: 'scale(1)', opacity: '1' },
-          '50%': { transform: 'scale(1.22)', opacity: '0.8' },
+          '50%': { transform: 'scale(1.22)', opacity: '0.85' },
         },
         marquee: {
           '0%': { transform: 'translateX(0)' },

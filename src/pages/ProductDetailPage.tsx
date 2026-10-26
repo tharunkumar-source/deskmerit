@@ -39,6 +39,11 @@ interface ProductFeatureDetail {
   checkPoints: string[];
   pillars: { title: string; desc: string; icon: any }[];
   faqs: { q: string; a: string }[];
+  screenshot?: {
+    src: string;
+    alt: string;
+    type: "tray" | "dashboard";
+  };
   mockup: {
     title: string;
     subtitle: string;
@@ -97,6 +102,11 @@ const PRODUCT_FEATURES: Record<string, ProductFeatureDetail> = {
         a: "No. Deskmerit is compiled directly to native machine code in Rust, consuming less than 1% CPU and under 25MB RAM.",
       },
     ],
+        screenshot: {
+      src: "/images/figma/timesheet-time-ledger.png",
+      alt: "Deskmerit Automatic Time Ledger and Timesheet Review",
+      type: "dashboard",
+    },
     mockup: {
       title: "Active Session · Desktop Agent",
       subtitle: "Automatic capture running since 09:14 AM",
@@ -158,6 +168,11 @@ const PRODUCT_FEATURES: Record<string, ProductFeatureDetail> = {
         a: "Only by default for non-marketing roles. For social media managers or recruiters, platforms like LinkedIn and Twitter are categorized as productive.",
       },
     ],
+        screenshot: {
+      src: "/images/figma/productivity-breakdown.png",
+      alt: "Deskmerit Role-Aware Productivity Scoring and Categorization",
+      type: "dashboard",
+    },
     mockup: {
       title: "Team Productivity Scorecard",
       subtitle: "Engineering Department · 24 Active Members",
@@ -218,6 +233,11 @@ const PRODUCT_FEATURES: Record<string, ProductFeatureDetail> = {
         a: "No. Private Time is logged as unbilled personal time, ensuring that only actual work time is billed to clients.",
       },
     ],
+        screenshot: {
+      src: "/images/figma/tray-private-mode.png",
+      alt: "Deskmerit Pulse Track Desktop Tray with Private Mode Active",
+      type: "dashboard",
+    },
     mockup: {
       title: "Privacy Controls · Toolbar Agent",
       subtitle: "Employee Privacy Guarantee Active",
@@ -277,6 +297,11 @@ const PRODUCT_FEATURES: Record<string, ProductFeatureDetail> = {
         a: "Our blurring filter masks individual characters. Furthermore, employees have the unilateral power to delete that frame.",
       },
     ],
+    screenshot: {
+      src: "/images/figma/tray-screenshot-transparency.png",
+      alt: "Deskmerit Pulse Track Screenshot Transparency and Privacy Controls",
+      type: "dashboard",
+    },
     mockup: {
       title: "Proof of Work · Frame Inspector",
       subtitle: "Client Audit Policy: 1 frame per 15 mins (Blurred)",
@@ -336,6 +361,11 @@ const PRODUCT_FEATURES: Record<string, ProductFeatureDetail> = {
         a: "Yes, you can create read-only client portal guest access or export branded PDF/Excel reports.",
       },
     ],
+        screenshot: {
+      src: "/images/figma/projects-active-portfolio.png",
+      alt: "Deskmerit Active Projects Portfolio and Budget Tracking",
+      type: "dashboard",
+    },
     mockup: {
       title: "Project Retainer Financials",
       subtitle: "Acme FinTech · Q4 Mobile Delivery",
@@ -395,6 +425,11 @@ const PRODUCT_FEATURES: Record<string, ProductFeatureDetail> = {
         a: "Yes. You can schedule weekly or monthly reports to be automatically emailed to designated client contacts.",
       },
     ],
+        screenshot: {
+      src: "/images/figma/reports-summary-overview.png",
+      alt: "Deskmerit Defensible Timesheet and Hours Reporting",
+      type: "dashboard",
+    },
     mockup: {
       title: "Export Center · Timesheet Master",
       subtitle: "Week 43 · Oct 19 – Oct 25, 2026",
@@ -451,6 +486,11 @@ const PRODUCT_FEATURES: Record<string, ProductFeatureDetail> = {
         a: "Shifts are mapped to each employee's local timezone so daylight saving adjustments and local workweeks are handled seamlessly.",
       },
     ],
+        screenshot: {
+      src: "/images/figma/attendance-shift-schedule.png",
+      alt: "Deskmerit Workforce Shift Scheduling and Roster Management",
+      type: "dashboard",
+    },
     mockup: {
       title: "Team Shift Roster",
       subtitle: "Support & Infrastructure · 24/7 Roster",
@@ -507,6 +547,11 @@ const PRODUCT_FEATURES: Record<string, ProductFeatureDetail> = {
         a: "Yes. Approved leave periods can be subscribed to via standard iCal feeds for Google Workspace and Microsoft 365.",
       },
     ],
+        screenshot: {
+      src: "/images/figma/scheduling-leave-requests.png",
+      alt: "Deskmerit Leave Management, PTO Balances and Approval Workflow",
+      type: "dashboard",
+    },
     mockup: {
       title: "Leave Balances & Team Calendar",
       subtitle: "Engineering Org Absence Overview",
@@ -562,6 +607,11 @@ const PRODUCT_FEATURES: Record<string, ProductFeatureDetail> = {
         a: "Never. Deskmerit only inspects the active window title string exposed by the operating system. It has zero access to your file system contents.",
       },
     ],
+        screenshot: {
+      src: "/images/figma/exports-audit-jobs.png",
+      alt: "Deskmerit Activity Auditing, Document Logs and Export Generation",
+      type: "dashboard",
+    },
     mockup: {
       title: "Document Time Attribution",
       subtitle: "Active File Window Tracking",
@@ -617,6 +667,11 @@ const PRODUCT_FEATURES: Record<string, ProductFeatureDetail> = {
         a: "Yes. You can adjust sprint durations from 15 minutes to 90 minutes with custom short and long break intervals.",
       },
     ],
+        screenshot: {
+      src: "/images/figma/tray-focus-interval.png",
+      alt: "Deskmerit Pulse Track Focus Interval and Health Break Timer",
+      type: "tray",
+    },
     mockup: {
       title: "Focus Sprint #3 in Progress",
       subtitle: "Pomodoro Deep Work · Cycle 3 of 4",
@@ -673,6 +728,11 @@ const PRODUCT_FEATURES: Record<string, ProductFeatureDetail> = {
         a: "Status updates via lightweight WebSocket every 60 seconds, or instantly when a team member presses Start or Private Time.",
       },
     ],
+        screenshot: {
+      src: "/images/figma/dashboard-system-status.png",
+      alt: "Deskmerit Real-Time System and Team Live Status",
+      type: "dashboard",
+    },
     mockup: {
       title: "Live Team Presence Board",
       subtitle: "Real-Time WebSocket Feed · 18 Active Now",
@@ -722,7 +782,7 @@ export function ProductDetailPage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb matching Reference */}
-            <div className="text-xs text-[#20C997] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
               <Link to="/features" className="hover:underline text-slate-300">Product</Link>
@@ -733,7 +793,7 @@ export function ProductDetailPage() {
             <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
               {/* Left Column: Headline, Overline, Description & CTAs */}
               <div className="col-span-12 lg:col-span-6 space-y-6">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#20C997] bg-[#132338] px-3.5 py-1 rounded-full inline-block border border-[#20C997]/30">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
                   {feat.badge}
                 </div>
 
@@ -775,69 +835,101 @@ export function ProductDetailPage() {
                 </div>
               </div>
 
-              {/* Right Column: Browser Window Mockup with macOS Controls (Screenshot Reference Match) */}
-              <div className="col-span-12 lg:col-span-6">
-                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
-                  <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
-                      <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
-                      <div className="w-3 h-3 rounded-full bg-[#62C554]" />
-                    </div>
-                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
-                      app.deskmerit.com/{feat.slug}
-                    </div>
-                    <div className="text-[11px] font-bold text-[#20C997] flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#20C997] animate-pulse" />
-                      Active Engine
-                    </div>
-                  </div>
-
-                  <div className="p-6 space-y-4">
-                    <div className="p-4 rounded-xl bg-slate-900/70 border border-slate-800 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-lg bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center">
-                          <FeatureIcon className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <div className="text-xs font-bold text-white">{feat.mockup.title}</div>
-                          <div className="text-[10px] text-slate-400">{feat.mockup.subtitle}</div>
-                        </div>
-                      </div>
-                      <span className="font-mono text-xs font-bold text-[#20C997]">{feat.mockup.stats[0]?.value || "1h 42m"}</span>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="p-3.5 rounded-xl bg-slate-900/50 border border-slate-800 text-left">
-                        <div className="text-[10px] text-slate-400 font-bold uppercase">Attendance Today</div>
-                        <div className="text-sm font-bold text-white mt-1">6h 12m (Present)</div>
-                      </div>
-                      <div className="p-3.5 rounded-xl bg-slate-900/50 border border-slate-800 text-left">
-                        <div className="text-[10px] text-slate-400 font-bold uppercase">Surveillance Status</div>
-                        <div className="text-sm font-bold text-[#20C997] mt-1">Zero Keylogging</div>
-                      </div>
-                    </div>
-
-                    {/* Live Telemetry Rows */}
-                    <div className="space-y-2 pt-1">
-                      {feat.mockup.rows.slice(0, 2).map((r, i) => (
-                        <div
-                          key={i}
-                          className="bg-slate-900/40 p-2.5 rounded-xl border border-slate-800/80 flex items-center justify-between text-xs"
-                        >
-                          <div>
-                            <div className="font-semibold text-white">{r.name}</div>
-                            <div className="text-[10px] text-slate-400">{r.tag}</div>
+              {/* Right Column: Authentic Product Screenshot or Mockup */}
+              <div className="col-span-12 lg:col-span-6 flex justify-center items-center">
+                {feat.screenshot ? (
+                  feat.screenshot.type === "tray" ? (
+                    /* Native Windows/Desktop Tray UI Showcase */
+                    <div className="relative max-w-[340px] sm:max-w-[360px] w-full mx-auto">
+                      <div className="absolute -inset-2 bg-gradient-to-r from-[#FF5A36]/20 via-[#38BDF8]/20 to-[#FF5A36]/10 rounded-3xl blur-xl opacity-75" />
+                      <div className="relative rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] overflow-hidden">
+                        <div className="bg-[#0A1628] px-4 py-2.5 border-b border-slate-800 flex items-center justify-between">
+                          <div className="flex items-center gap-1.5">
+                            <div className="w-2.5 h-2.5 rounded-full bg-[#ED6A5E]" />
+                            <div className="w-2.5 h-2.5 rounded-full bg-[#F5BF4F]" />
+                            <div className="w-2.5 h-2.5 rounded-full bg-[#62C554]" />
                           </div>
-                          <div className="text-right">
-                            <div className="font-bold text-[#FFE6DF]">{r.metric}</div>
-                            <div className="text-[10px] text-[#20C997]">{r.status}</div>
+                          <div className="text-[10px] font-mono text-slate-300">
+                            Pulse Track Tray · Windows & macOS
+                          </div>
+                          <div className="flex items-center gap-1 text-[10px] text-[#12B886] font-bold">
+                            <span className="w-2 h-2 rounded-full bg-[#12B886] animate-pulse" />
+                            Live
                           </div>
                         </div>
-                      ))}
+                        <img
+                          src={feat.screenshot.src}
+                          alt={feat.screenshot.alt}
+                          className="w-full h-auto object-contain block"
+                          loading="eager"
+                        />
+                      </div>
+                    </div>
+                  ) : (
+                    /* Web Admin Dashboard Screen Showcase */
+                    <div className="w-full">
+                      <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
+                        <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
+                            <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
+                            <div className="w-3 h-3 rounded-full bg-[#62C554]" />
+                          </div>
+                          <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
+                            app.deskmerit.com/{feat.slug}
+                          </div>
+                          <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
+                            <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
+                            Verified Output
+                          </div>
+                        </div>
+                        <div className="bg-slate-950 p-1 sm:p-2">
+                          <img
+                            src={feat.screenshot.src}
+                            alt={feat.screenshot.alt}
+                            className="w-full h-auto max-h-[460px] object-contain object-top rounded-lg block shadow-inner"
+                            loading="eager"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  )
+                ) : (
+                  /* Fallback Mockup if no screenshot */
+                  <div className="w-full">
+                    <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
+                      <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
+                          <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
+                          <div className="w-3 h-3 rounded-full bg-[#62C554]" />
+                        </div>
+                        <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
+                          app.deskmerit.com/{feat.slug}
+                        </div>
+                        <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
+                          <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
+                          Active Engine
+                        </div>
+                      </div>
+
+                      <div className="p-6 space-y-4">
+                        <div className="p-4 rounded-xl bg-slate-900/70 border border-slate-800 flex items-center justify-between">
+                          <div className="flex items-center gap-3">
+                            <div className="w-9 h-9 rounded-lg bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center">
+                              <FeatureIcon className="w-5 h-5" />
+                            </div>
+                            <div>
+                              <div className="text-xs font-bold text-white">{feat.mockup.title}</div>
+                              <div className="text-[10px] text-slate-400">{feat.mockup.subtitle}</div>
+                            </div>
+                          </div>
+                          <span className="font-mono text-xs font-bold text-[#FF5A36]">{feat.mockup.stats[0]?.value || "1h 42m"}</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>
@@ -863,13 +955,13 @@ export function ProductDetailPage() {
                 return (
                   <div
                     key={p.title}
-                    className="p-7 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] transition-all hover:shadow-card flex flex-col justify-between"
+                    className="p-7 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between group"
                   >
                     <div>
-                      <div className="w-11 h-11 rounded-xl bg-[#FFFFFF] text-[#C2361A] flex items-center justify-center mb-5 border border-[#E6E2D8] shadow-xs">
-                        <Icon className="w-5 h-5" />
+                      <div className="w-11 h-11 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-5 transition-all duration-200 shadow-xs">
+                        <Icon className="w-5 h-5 transition-colors" />
                       </div>
-                      <h3 className="font-bold text-base text-[#0F1730] mb-2">{p.title}</h3>
+                      <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">{p.title}</h3>
                       <p className="text-xs text-[#4A5370] leading-relaxed">{p.desc}</p>
                     </div>
                   </div>

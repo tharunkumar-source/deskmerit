@@ -62,7 +62,7 @@ export function DeskmeritHeader() {
     "industry" | "team" | "region"
   >("industry");
   const [integrationsActiveTab, setIntegrationsActiveTab] = useState<
-    "developer" | "calendar" | "automation"
+    "developer" | "calendar" | "automation" | "developers"
   >("developer");
   const [resourcesActiveTab, setResourcesActiveTab] = useState<
     "learn" | "tools" | "laws"
@@ -723,87 +723,169 @@ export function DeskmeritHeader() {
                     {mobileSection === "integrations" && (
                       <div className="mt-3 pl-2 space-y-4 pt-1 animate-fade-in">
                         <div>
-                          <div className="text-[10px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-1.5">
-                            Developer & Sprint
+                          <div className="text-[10px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-1.5 flex items-center justify-between">
+                            <span>Developer & Sprint (8)</span>
                           </div>
-                          <div className="grid grid-cols-1 gap-1.5">
+                          <div className="grid grid-cols-2 gap-1.5">
                             <Link
-                              to="/integrations/jira"
+                              to="/features/integrations/jira"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              Jira Software
+                              <img src="/images/integrations/jira.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
+                              <span className="truncate">Jira</span>
                             </Link>
                             <Link
-                              to="/integrations/azure-devops"
+                              to="/features/integrations/azure-devops"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              Azure DevOps
+                              <img src="/images/integrations/azure-devops.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
+                              <span className="truncate">Azure DevOps</span>
                             </Link>
                             <Link
-                              to="/integrations/openproject"
+                              to="/features/integrations/linear"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              OpenProject
+                              <img src="/images/integrations/linear.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
+                              <span className="truncate">Linear</span>
+                            </Link>
+                            <Link
+                              to="/features/integrations/asana"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              <img src="/images/integrations/asana.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
+                              <span className="truncate">Asana</span>
+                            </Link>
+                            <Link
+                              to="/features/integrations/clickup"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              <img src="/images/integrations/clickup.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
+                              <span className="truncate">ClickUp</span>
+                            </Link>
+                            <Link
+                              to="/features/integrations/trello"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              <img src="/images/integrations/trello.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
+                              <span className="truncate">Trello</span>
+                            </Link>
+                            <Link
+                              to="/features/integrations/gitlab"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              <img src="/images/integrations/gitlab.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
+                              <span className="truncate">GitLab</span>
+                            </Link>
+                            <Link
+                              to="/features/integrations/openproject"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              <img src="/images/integrations/openproject.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
+                              <span className="truncate">OpenProject</span>
                             </Link>
                           </div>
                         </div>
 
                         <div>
-                          <div className="text-[10px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-1.5">
-                            Calendars & Automation
+                          <div className="text-[10px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-1.5 flex items-center justify-between">
+                            <span>Calendars & Comms (4)</span>
                           </div>
-                          <div className="grid grid-cols-1 gap-1.5">
+                          <div className="grid grid-cols-2 gap-1.5">
                             <Link
-                              to="/integrations/google-calendar"
+                              to="/features/integrations/google-calendar"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              Google Calendar
+                              <img src="/images/integrations/google-calendar.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
+                              <span className="truncate">Google Cal</span>
                             </Link>
                             <Link
-                              to="/integrations/outlook-calendar"
+                              to="/features/integrations/outlook-calendar"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              Outlook Calendar
+                              <img src="/images/integrations/outlook.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
+                              <span className="truncate">Outlook</span>
                             </Link>
                             <Link
-                              to="/integrations/slack"
+                              to="/features/integrations/slack"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              Slack
+                              <img src="/images/integrations/slack.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
+                              <span className="truncate">Slack</span>
                             </Link>
                             <Link
-                              to="/integrations/microsoft-teams"
+                              to="/features/integrations/microsoft-teams"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              Microsoft Teams
+                              <img src="/images/integrations/teams.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
+                              <span className="truncate">MS Teams</span>
+                            </Link>
+                          </div>
+                        </div>
+
+                        <div>
+                          <div className="text-[10px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-1.5 flex items-center justify-between">
+                            <span>Automation & HRMS (3)</span>
+                          </div>
+                          <div className="grid grid-cols-2 gap-1.5">
+                            <Link
+                              to="/features/integrations/zapier"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              <img src="/images/integrations/zapier.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
+                              <span className="truncate">Zapier</span>
                             </Link>
                             <Link
-                              to="/integrations/zapier"
+                              to="/features/integrations/make"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              Zapier
+                              <img src="/images/integrations/make.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
+                              <span className="truncate">Make</span>
                             </Link>
                             <Link
-                              to="/integrations/make"
+                              to="/features/integrations/sqalible"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              Make
+                              <img src="/images/integrations/sqalible.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
+                              <span className="truncate">Sqalible HRMS</span>
+                            </Link>
+                          </div>
+                        </div>
+
+                        <div>
+                          <div className="text-[10px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-1.5 flex items-center justify-between">
+                            <span>Developers & AI (2)</span>
+                          </div>
+                          <div className="grid grid-cols-2 gap-1.5">
+                            <Link
+                              to="/developers/mcp-server"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                            >
+                              <img src="/images/integrations/claude.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
+                              <span className="truncate">Claude MCP</span>
                             </Link>
                             <Link
-                              to="/integrations/sqalible"
+                              to="/developers/api"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
                             >
-                              Sqalible HRMS
+                              <img src="/images/integrations/rest-api.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
+                              <span className="truncate">REST API</span>
                             </Link>
                           </div>
                         </div>
@@ -813,9 +895,10 @@ export function DeskmeritHeader() {
                             <Link
                               to="/integrations"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-[#FFE6DF]/60 text-xs font-bold text-[#C2361A] hover:text-[#FF5A36] transition-colors"
+                              className="p-2.5 rounded-lg bg-[#FFE6DF] text-xs font-bold text-[#C2361A] hover:text-[#FF5A36] transition-colors flex items-center justify-between"
                             >
-                              Integrations hub →
+                              <span>Explore all 17 Integrations Hub</span>
+                              <ArrowRight className="w-3.5 h-3.5" />
                             </Link>
                           </div>
                         </div>
@@ -1871,19 +1954,57 @@ export function DeskmeritHeader() {
           {
             title: "Jira Software",
             description: "Sprint issue sync and real-time ticket timers with personal tokens.",
-            href: "/integrations/jira",
+            href: "/features/integrations/jira",
+            iconUrl: "/images/integrations/jira.svg",
             icon: Sparkles,
           },
           {
             title: "Azure DevOps",
             description: "Boards, work items, and sprint planning direct timer integration.",
-            href: "/integrations/azure-devops",
+            href: "/features/integrations/azure-devops",
+            iconUrl: "/images/integrations/azure-devops.svg",
             icon: Layers,
+          },
+          {
+            title: "Linear",
+            description: "Bring Linear teams, issues, and cycles directly into Deskmerit.",
+            href: "/features/integrations/linear",
+            iconUrl: "/images/integrations/linear.svg",
+            icon: Sparkles,
+          },
+          {
+            title: "Asana",
+            description: "Sync Asana projects, portfolios, and tasks for accurate time logs.",
+            href: "/features/integrations/asana",
+            iconUrl: "/images/integrations/asana.svg",
+            icon: Workflow,
+          },
+          {
+            title: "ClickUp",
+            description: "Import spaces, lists, and tasks with bi-directional time sync.",
+            href: "/features/integrations/clickup",
+            iconUrl: "/images/integrations/clickup.svg",
+            icon: Layers,
+          },
+          {
+            title: "Trello",
+            description: "Attribute logged hours directly to Kanban cards and board lists.",
+            href: "/features/integrations/trello",
+            iconUrl: "/images/integrations/trello.svg",
+            icon: CheckSquare,
+          },
+          {
+            title: "GitLab",
+            description: "Map engineering hours against GitLab issues, MRs, and milestones.",
+            href: "/features/integrations/gitlab",
+            iconUrl: "/images/integrations/gitlab.svg",
+            icon: Code2,
           },
           {
             title: "OpenProject",
             description: "Open-source project tracking and work package time records.",
-            href: "/integrations/openproject",
+            href: "/features/integrations/openproject",
+            iconUrl: "/images/integrations/openproject.svg",
             icon: CheckSquare,
           },
         ],
@@ -1902,25 +2023,29 @@ export function DeskmeritHeader() {
           {
             title: "Google Calendar",
             description: "Automatically convert calendar events and Google Meet calls to time logs.",
-            href: "/integrations/google-calendar",
+            href: "/features/integrations/google-calendar",
+            iconUrl: "/images/integrations/google-calendar.svg",
             icon: Calendar,
           },
           {
             title: "Outlook Calendar",
             description: "Office 365 calendar meeting sync with project allocation.",
-            href: "/integrations/outlook-calendar",
+            href: "/features/integrations/outlook-calendar",
+            iconUrl: "/images/integrations/outlook.svg",
             icon: CalendarRange,
           },
           {
             title: "Slack",
             description: "Daily standup digests, start/stop commands, and status sync.",
-            href: "/integrations/slack",
+            href: "/features/integrations/slack",
+            iconUrl: "/images/integrations/slack.svg",
             icon: MessageSquare,
           },
           {
             title: "Microsoft Teams",
             description: "Teams presence status synchronization and meeting tracking.",
-            href: "/integrations/microsoft-teams",
+            href: "/features/integrations/microsoft-teams",
+            iconUrl: "/images/integrations/teams.svg",
             icon: Users,
           },
         ],
@@ -1939,20 +2064,50 @@ export function DeskmeritHeader() {
           {
             title: "Zapier",
             description: "Trigger automated actions across 5,000+ cloud business apps.",
-            href: "/integrations/zapier",
+            href: "/features/integrations/zapier",
+            iconUrl: "/images/integrations/zapier.svg",
             icon: Zap,
           },
           {
             title: "Make",
             description: "Visual automated workflows, webhooks, and multi-step scenarios.",
-            href: "/integrations/make",
+            href: "/features/integrations/make",
+            iconUrl: "/images/integrations/make.svg",
             icon: Workflow,
           },
           {
             title: "Sqalible HRMS",
             description: "Native HRMS time tracking, payroll, and leave balance integration.",
-            href: "/integrations/sqalible",
+            href: "/features/integrations/sqalible",
+            iconUrl: "/images/integrations/sqalible.svg",
             icon: Building2,
+          },
+        ],
+      },
+      {
+        id: "developers" as const,
+        name: "AI & Developer APIs",
+        icon: Cpu,
+        banner: {
+          title: "AI Agents & Developer APIs",
+          href: "/developers",
+          description:
+            "Connect Claude Code, Cursor, LLMs, and custom enterprise webhooks.",
+        },
+        links: [
+          {
+            title: "Claude MCP Server",
+            description: "Connect Claude, Cursor, and AI coding agents to live workforce data.",
+            href: "/developers/mcp-server",
+            iconUrl: "/images/integrations/claude.svg",
+            icon: Cpu,
+          },
+          {
+            title: "REST API & Webhooks",
+            description: "Versioned REST endpoints with webhooks, OpenAPI specs, and SDKs.",
+            href: "/developers/api",
+            iconUrl: "/images/integrations/rest-api.svg",
+            icon: Code2,
           },
         ],
       },
@@ -2032,10 +2187,19 @@ export function DeskmeritHeader() {
                     key={link.title}
                     to={link.href}
                     onClick={() => setActiveMenu(null)}
-                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F7F4EE] border border-transparent hover:border-[#E6E2D8] transition-all text-left"
+                    className="group flex items-start gap-3 p-2 rounded-xl hover:bg-[#F7F4EE] border border-transparent hover:border-[#E6E2D8] transition-all text-left"
                   >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F7F4EE] text-[#0F1730] group-hover:bg-[#FFE6DF] group-hover:text-[#C2361A] transition-colors mt-0.5 border border-[#E6E2D8]/60">
-                      <LinkIcon className="w-4 h-4 stroke-[1.8]" />
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F7F4EE] text-[#0F1730] group-hover:bg-white group-hover:shadow-xs transition-all mt-0.5 border border-[#E6E2D8]/60 p-1.5">
+                      {link.iconUrl ? (
+                        <img
+                          src={link.iconUrl}
+                          alt={link.title}
+                          className="w-5 h-5 object-contain"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <LinkIcon className="w-4 h-4 stroke-[1.8]" />
+                      )}
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">

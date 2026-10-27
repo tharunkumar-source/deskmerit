@@ -56,7 +56,7 @@ export function LegalPage() {
 
   const legalImages: Record<string, { src: string; alt: string }> = {
     terms: {
-      src: "/images/legal/legal-terms.jpg",
+      src: "/images/legal/legal-terms-v3.jpg",
       alt: "Deskmerit Master Terms of Service & Enterprise Agreement",
     },
     privacy: {

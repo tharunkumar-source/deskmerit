@@ -100,6 +100,11 @@ export const INTEGRATIONS_MENU = {
       items: [
         { name: "Jira Software", href: "/integrations/jira", description: "Sprint issue sync and real-time ticket timers with personal tokens" },
         { name: "Azure DevOps", href: "/integrations/azure-devops", description: "Boards, work items, and sprint planning direct timer integration" },
+        { name: "Linear", href: "/integrations/linear", description: "Bring Linear teams, issues and cycles directly into Deskmerit" },
+        { name: "Asana", href: "/integrations/asana", description: "Sync Asana projects, portfolios and tasks for time tracking" },
+        { name: "ClickUp", href: "/integrations/clickup", description: "Import spaces, lists and tasks from ClickUp workspaces" },
+        { name: "Trello", href: "/integrations/trello", description: "Attribute logged hours directly to Trello board cards and sprint lists" },
+        { name: "GitLab", href: "/integrations/gitlab", description: "Map engineering hours against GitLab issues, MRs and release milestones" },
         { name: "OpenProject", href: "/integrations/openproject", description: "Open-source project tracking and work package time records" },
       ],
     },
@@ -120,9 +125,17 @@ export const INTEGRATIONS_MENU = {
         { name: "Sqalible HRMS", href: "/integrations/sqalible", description: "Native HRMS time tracking, payroll, and leave balance integration" },
       ],
     },
+    {
+      title: "Developers & AI",
+      items: [
+        { name: "Claude MCP Server", href: "/developers/mcp-server", description: "Connect Claude and AI coding agents to live workforce data" },
+        { name: "REST API & Webhooks", href: "/developers/api", description: "Versioned REST endpoints with webhooks, OpenAPI specs, and SDKs" },
+      ],
+    },
   ],
   bottomLinks: [
     { label: "Integrations directory →", href: "/integrations" },
+    { label: "Claude MCP AI server →", href: "/developers/mcp-server" },
     { label: "Tracker Plus for Jira →", href: "/features/tracker-plus" },
   ],
 };
@@ -252,6 +265,8 @@ export const FOOTER_SECTIONS = [
       { label: "Screenshots", href: "/features/screenshots" },
       { label: "Pricing", href: "/pricing" },
       { label: "Download desktop agent", href: "/download" },
+      { label: "Security architecture", href: "/security" },
+      { label: "Privacy promise", href: "/privacy-promise" },
     ],
   },
   {
@@ -278,6 +293,11 @@ export const FOOTER_SECTIONS = [
       { label: "Integrations overview", href: "/integrations" },
       { label: "Jira Software", href: "/integrations/jira" },
       { label: "Azure DevOps", href: "/integrations/azure-devops" },
+      { label: "Linear", href: "/integrations/linear" },
+      { label: "Asana", href: "/integrations/asana" },
+      { label: "ClickUp", href: "/integrations/clickup" },
+      { label: "Trello", href: "/integrations/trello" },
+      { label: "GitLab", href: "/integrations/gitlab" },
       { label: "OpenProject", href: "/integrations/openproject" },
       { label: "Google Calendar", href: "/integrations/google-calendar" },
       { label: "Outlook Calendar", href: "/integrations/outlook-calendar" },
@@ -286,6 +306,8 @@ export const FOOTER_SECTIONS = [
       { label: "Zapier", href: "/integrations/zapier" },
       { label: "Make", href: "/integrations/make" },
       { label: "Sqalible HRMS", href: "/integrations/sqalible" },
+      { label: "Claude MCP Server", href: "/developers/mcp-server" },
+      { label: "REST API & Webhooks", href: "/developers/api" },
     ],
   },
   {
@@ -328,6 +350,7 @@ export const FOOTER_SECTIONS = [
       { label: "Contact", href: "/contact" },
       { label: "Book a demo", href: "/demo" },
       { label: "Start free trial", href: "/signup" },
+      { label: "Log in", href: "/login" },
       { label: "Developers overview", href: "/developers" },
       { label: "Claude MCP AI server", href: "/developers/mcp-server" },
       { label: "API documentation", href: "/developers/api" },

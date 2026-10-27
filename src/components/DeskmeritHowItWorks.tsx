@@ -124,13 +124,14 @@ export function DeskmeritHowItWorks() {
           </p>
         </div>
 
-        {/* 1. Horizontal Step Navigation Tabs (Fills Full Width) */}
+        {/* 1. Horizontal Step Navigation Tabs (Fills Full Width, Horizontal Scroll on Mobile) */}
+        {/* 1. Horizontal Step Navigation Tabs (Step 1, 2, and preview of Step 3 visible on mobile, smooth horizontal scroll) */}
         <div
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          className="border-b border-[#E6E2D8] mb-8 w-full"
+          className="border-b border-[#E6E2D8] mb-8 w-full overflow-x-auto no-scrollbar scroll-smooth"
         >
-          <div className="grid grid-cols-1 sm:grid-cols-3 w-full">
+          <div className="flex sm:grid sm:grid-cols-3 min-w-[410px] sm:min-w-0 w-full snap-x">
             {steps.map((step, idx) => {
               const isActive = activeStep === idx;
               const Icon = step.icon;
@@ -139,7 +140,7 @@ export function DeskmeritHowItWorks() {
                   key={step.num}
                   type="button"
                   onClick={() => selectStep(idx)}
-                  className={`group relative text-center transition-all duration-200 cursor-pointer w-full px-4 sm:px-6 py-4 sm:py-5 select-none ${isActive
+                  className={`group relative text-center transition-all duration-200 cursor-pointer w-[38%] min-w-[128px] max-w-[155px] sm:w-auto sm:min-w-0 sm:max-w-none sm:flex-1 shrink-0 snap-start px-2.5 sm:px-6 py-3.5 sm:py-5 select-none ${isActive
                       ? "bg-white border-t border-x border-[#E6E2D8] shadow-xs z-10"
                       : "bg-transparent hover:bg-white/60 border-t border-x border-transparent z-0"
                     }`}
@@ -149,13 +150,13 @@ export function DeskmeritHowItWorks() {
                 >
                   <div className="flex flex-col items-center justify-center">
                     {/* Top Line: Icon + Step Title */}
-                    <div className="flex items-center justify-center gap-2.5">
+                    <div className="flex items-center justify-center gap-1.5 sm:gap-2.5 w-full">
                       <Icon
-                        className={`w-4 h-4 transition-colors shrink-0 ${isActive ? "text-[#FF5A36]" : "text-slate-400 group-hover:text-[#0F1730]"
+                        className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-colors shrink-0 ${isActive ? "text-[#FF5A36]" : "text-slate-400 group-hover:text-[#0F1730]"
                           }`}
                       />
                       <span
-                        className={`text-sm sm:text-base font-extrabold tracking-tight transition-colors ${isActive ? "text-[#FF5A36]" : "text-[#0F1730] group-hover:text-[#FF5A36]"
+                        className={`text-xs sm:text-base font-extrabold tracking-tight transition-colors truncate sm:overflow-visible ${isActive ? "text-[#FF5A36]" : "text-[#0F1730] group-hover:text-[#FF5A36]"
                           }`}
                       >
                         {step.tabTitle}
@@ -163,7 +164,7 @@ export function DeskmeritHowItWorks() {
                     </div>
 
                     {/* Subtitle underneath matching reference */}
-                    <div className="text-xs text-slate-400 font-medium mt-1">
+                    <div className="text-[11px] sm:text-xs text-slate-400 font-medium mt-0.5 truncate sm:overflow-visible">
                       {step.tabSub}
                     </div>
                   </div>
@@ -194,12 +195,10 @@ export function DeskmeritHowItWorks() {
             {/* Left Column: Pill, Title, Description, Bullets & Architecture Link (Col 1-5) */}
             <div className="lg:col-span-5 flex flex-col justify-between transition-all duration-300">
               <div>
-                {/* Pill Tag */}
+                {/* Clean Tag */}
                 <div className="mb-4">
-                  <span
-                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border shadow-2xs ${current.badgeColor}`}
-                  >
-                    <CheckCircle2 className="w-3.5 h-3.5" />
+                  <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5A36]" />
                     <span>{current.badge}</span>
                   </span>
                 </div>

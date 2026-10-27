@@ -221,68 +221,70 @@ export function DeskmeritFeatureGrid() {
     <section className="py-20 lg:py-28 bg-[#FBF9F5] border-b border-[#E6E2D8]/80 font-sans relative overflow-hidden">
       {/* 1. Header & Controls - Contained to Standard Content Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
-          <div>
-            <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
-              TAILORED ARCHITECTURE
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-[1.24]">
-              Features Built for Every Workflow
-            </h2>
-            <p className="text-sm sm:text-base text-[#4A5370] mt-3 max-w-2xl leading-relaxed">
-              Automatic background time capture, bi-directional Jira sprint sync, role-aware application scoring, and audit-ready defensible timesheets.
-            </p>
+        {/* Headline */}
+        <div className="mb-8 max-w-3xl">
+          <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+            TAILORED ARCHITECTURE
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-[1.24]">
+            Features Built for Every Workflow
+          </h2>
+          <p className="text-sm sm:text-base text-[#4A5370] mt-3 leading-relaxed">
+            Automatic background time capture, bi-directional Jira sprint sync, role-aware application scoring, and audit-ready defensible timesheets.
+          </p>
+        </div>
+
+        {/* Toolbar: Categories with horizontal scroll on left, View All & Navigation on right */}
+        <div className="flex items-center justify-between gap-3 mb-10 pb-1">
+          {/* Categories with Horizontal Scroll on Mobile/Desktop */}
+          <div className="flex-1 min-w-0 overflow-x-auto no-scrollbar scrollbar-none flex items-center gap-2 py-1 pr-2">
+            {categories.map((cat) => {
+              const isActive = selectedCategory === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => {
+                    setSelectedCategory(cat.id);
+                    if (scrollRef.current) scrollRef.current.scrollLeft = 0;
+                  }}
+                  className={`shrink-0 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border whitespace-nowrap ${
+                    isActive
+                      ? "bg-[#0F1730] text-white border-[#0F1730] shadow-sm"
+                      : "bg-white text-[#4A5370] border-slate-300 hover:border-[#0F1730] hover:text-[#0F1730]"
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              );
+            })}
           </div>
 
-          {/* Top Right Controls: < Arrow, View All Button, > Arrow */}
-          <div className="flex items-center gap-2 shrink-0">
+          {/* Right Controls: < Arrow, View All Button, > Arrow */}
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <button
               type="button"
               onClick={() => scroll("left")}
-              className="w-10 h-10 rounded-full border border-slate-300 bg-white hover:border-[#0F1730] hover:bg-[#F7F4EE] text-[#0F1730] flex items-center justify-center transition-all shadow-xs cursor-pointer active:scale-95"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-300 bg-white hover:border-[#0F1730] hover:bg-[#F7F4EE] text-[#0F1730] flex items-center justify-center transition-all shadow-xs cursor-pointer active:scale-95 shrink-0"
               aria-label="Scroll features left"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
             <Link
               to="/features"
-              className="px-5 py-2.5 rounded-xl border border-slate-300 bg-white hover:border-[#0F1730] hover:bg-[#0F1730] hover:text-white text-xs font-bold text-[#0F1730] shadow-xs hover:shadow-sm transition-all"
+              className="px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-white hover:border-[#0F1730] hover:bg-[#0F1730] hover:text-white text-xs font-bold text-[#0F1730] shadow-xs hover:shadow-sm transition-all whitespace-nowrap shrink-0"
             >
               View all
             </Link>
             <button
               type="button"
               onClick={() => scroll("right")}
-              className="w-10 h-10 rounded-full border border-slate-300 bg-white hover:border-[#0F1730] hover:bg-[#F7F4EE] text-[#0F1730] flex items-center justify-center transition-all shadow-xs cursor-pointer active:scale-95"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-300 bg-white hover:border-[#0F1730] hover:bg-[#F7F4EE] text-[#0F1730] flex items-center justify-center transition-all shadow-xs cursor-pointer active:scale-95 shrink-0"
               aria-label="Scroll features right"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </div>
-        </div>
-
-        {/* Filter Buttons */}
-        <div className="flex items-center gap-2 flex-wrap mb-10 pb-2">
-          {categories.map((cat) => {
-            const isActive = selectedCategory === cat.id;
-            return (
-              <button
-                key={cat.id}
-                type="button"
-                onClick={() => {
-                  setSelectedCategory(cat.id);
-                  if (scrollRef.current) scrollRef.current.scrollLeft = 0;
-                }}
-                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border ${
-                  isActive
-                    ? "bg-[#0F1730] text-white border-[#0F1730] shadow-sm"
-                    : "bg-white text-[#4A5370] border-slate-300 hover:border-[#0F1730] hover:text-[#0F1730]"
-                }`}
-              >
-                {cat.label}
-              </button>
-            );
-          })}
         </div>
       </div>
 
@@ -321,9 +323,9 @@ export function DeskmeritFeatureGrid() {
                   loading="lazy"
                 />
 
-                {/* Floating Pill Tag matching Reference */}
+                {/* Floating Tag */}
                 <div className="absolute top-3.5 right-3.5 z-10">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold shadow-md bg-white text-[#0F1730]">
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider shadow-sm bg-white/95 text-[#0F1730] backdrop-blur-xs border border-white/60">
                     {item.badge}
                   </span>
                 </div>

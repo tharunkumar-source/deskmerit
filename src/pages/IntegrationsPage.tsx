@@ -4,6 +4,7 @@ import { DeskmeritHeader } from "../components/DeskmeritHeader";
 import { DeskmeritFooter } from "../components/DeskmeritFooter";
 import { DeskmeritCtaBand } from "../components/DeskmeritCtaBand";
 import { DeskmeritFaq } from "../components/DeskmeritFaq";
+import { DeskmeritLogo } from "../components/DeskmeritLogo";
 import {
   ArrowRight,
   ExternalLink,
@@ -39,166 +40,211 @@ import {
 // AUTHENTIC OFFICIAL SVG LOGOS FOR INTEGRATIONS
 // =============================================================================
 
-function GoogleCalendarLogo({ className = "w-6 h-6" }: { className?: string }) {
+function GoogleCalendarLogo({ className = "w-11 h-11" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
-      <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2z" fill="#FFFFFF" />
-      <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v3h18V6a2 2 0 00-2-2z" fill="#4285F4" />
-      <path d="M3 9v11a2 2 0 002 2h2V9H3z" fill="#34A853" />
-      <path d="M17 22h2a2 2 0 002-2V9h-4v13z" fill="#EA4335" />
-      <path d="M7 20h10v2H7v-2z" fill="#FBBC04" />
-      <text x="12" y="17.5" textAnchor="middle" fill="#1973E8" fontSize="7.5" fontWeight="900" fontFamily="sans-serif">31</text>
+    <svg className={className} viewBox="0 0 44 44" fill="none">
+      <rect width="44" height="44" rx="10" fill="#FFFFFF" stroke="#E6E8EB" strokeWidth="1" />
+      <g transform="translate(6, 6) scale(0.666)">
+        <rect x="6" y="6" width="36" height="36" rx="8" fill="#FFFFFF" />
+        <path d="M34 6H14C9.58 6 6 9.58 6 14v20c0 4.42 3.58 8 8 8h20c4.42 0 8-3.58 8-8V14c0-4.42-3.58-8-8-8z" fill="#FFFFFF"/>
+        <path d="M34 6H14C9.58 6 6 9.58 6 14v2h36v-2c0-4.42-3.58-8-8-8z" fill="#4285F4"/>
+        <path d="M6 14v20c0 4.42 3.58 8 8 8v-4H10V16H6v-2z" fill="#34A853"/>
+        <path d="M14 42h20c4.42 0 8-3.58 8-8v-2H10v4c0 3.31 2.69 6 4 6z" fill="#FBBC04"/>
+        <path d="M42 14v20c0 4.42-3.58 8-8 8v-4h4V16h4v-2z" fill="#EA4335"/>
+        <path d="M21.2 31.5h-5.4v-2.2l3-3.1c.9-.9 1.5-1.7 1.5-2.5 0-.6-.4-1.1-1.1-1.1-.7 0-1.2.4-1.3 1.1l-2.1-.3c.3-1.6 1.7-2.6 3.4-2.6 1.8 0 3.2 1.1 3.2 2.8 0 1.2-.7 2.2-1.8 3.3l-2 1.9h4v2.8zm11 0h-2.5v-7.8l-2.4 1.7-1.1-1.8 3.5-2.5h2.5v10.4z" fill="#1A73E8"/>
+      </g>
     </svg>
   );
 }
 
-function OutlookLogo({ className = "w-6 h-6" }: { className?: string }) {
+function OutlookLogo({ className = "w-11 h-11" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
-      <path d="M13 5.5h7.5a1 1 0 011 1v11a1 1 0 01-1 1H13V5.5z" fill="#0078D4"/>
-      <path d="M13 12l8.5-5.5v11L13 12z" fill="#005A9E" fillOpacity="0.8"/>
-      <path d="M13 5.5l8.5 5.5-8.5 5.5V5.5z" fill="#28A8EA"/>
-      <rect x="2" y="5" width="13" height="14" rx="2.5" fill="#0078D4"/>
-      <ellipse cx="8.5" cy="12" rx="3.5" ry="4" fill="#FFFFFF"/>
-      <ellipse cx="8.5" cy="12" rx="2" ry="2.5" fill="#0078D4"/>
+    <svg className={className} viewBox="0 0 44 44" fill="none">
+      <rect width="44" height="44" rx="10" fill="#0078D4" />
+      <path d="M22 10h12a2 2 0 012 2v20a2 2 0 01-2 2H22V10z" fill="#005A9E"/>
+      <path d="M22 22l14-9v18l-14 3V22z" fill="#004B87" opacity="0.6"/>
+      <path d="M22 10l14 8.5-14 8.5V10z" fill="#28A8EA"/>
+      <rect x="8" y="12" width="18" height="20" rx="3.5" fill="#0078D4" stroke="#28A8EA" strokeWidth="1"/>
+      <ellipse cx="17" cy="22" rx="4.5" ry="5.5" fill="#FFFFFF"/>
+      <ellipse cx="17" cy="22" rx="2.5" ry="3.5" fill="#0078D4"/>
     </svg>
   );
 }
 
-function JiraLogo({ className = "w-6 h-6" }: { className?: string }) {
+function JiraLogo({ className = "w-11 h-11" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
-      <path d="M11.571 0H2.083C.932 0 0 .933 0 2.083v9.488C0 6.012 4.417 1.595 9.976 1.595h1.595V0z" fill="#0052CC"/>
-      <path d="M11.917 5.952H6.071c-.932 0-1.69.758-1.69 1.69v4.262c0 3.286 2.667 5.953 5.953 5.953h1.583V5.952z" fill="#2684FF"/>
-      <path d="M23.833 11.905h-9.488c-5.559 0-9.976 4.417-9.976 9.976v.036c0 1.15.932 2.083 2.083 2.083h9.488c5.559 0 9.976-4.417 9.976-9.976v-.036c0-1.15-.932-2.083-2.083-2.083z" fill="#0052CC"/>
+    <svg className={className} viewBox="0 0 44 44" fill="none">
+      <rect width="44" height="44" rx="10" fill="#0052CC" />
+      <g transform="translate(10, 10)">
+        <path d="M11.571 0H2.083C.932 0 0 .933 0 2.083v9.488C0 6.012 4.417 1.595 9.976 1.595h1.595V0z" fill="#FFFFFF" fillOpacity="0.85"/>
+        <path d="M11.917 5.952H6.071c-.932 0-1.69.758-1.69 1.69v4.262c0 3.286 2.667 5.953 5.953 5.953h1.583V5.952z" fill="#2684FF"/>
+        <path d="M23.833 11.905h-9.488c-5.559 0-9.976 4.417-9.976 9.976v.036c0 1.15.932 2.083 2.083 2.083h9.488c5.559 0 9.976-4.417 9.976-9.976v-.036c0-1.15-.932-2.083-2.083-2.083z" fill="#FFFFFF"/>
+        <path d="M23.958 17.857h-5.845c-.932 0-1.69.758-1.69 1.69v4.262c0 3.286 2.667 5.953 5.953 5.953h1.582v-11.905z" fill="#2684FF"/>
+      </g>
     </svg>
   );
 }
 
-function AsanaLogo({ className = "w-6 h-6" }: { className?: string }) {
+function AsanaLogo({ className = "w-11 h-11" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
-      <defs>
-        <linearGradient id="asanaGradDetail" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#FC636B" />
-          <stop offset="100%" stopColor="#FF7A59" />
-        </linearGradient>
-      </defs>
-      <circle cx="12" cy="6.5" r="4.2" fill="url(#asanaGradDetail)" />
-      <circle cx="5.6" cy="17" r="4.2" fill="url(#asanaGradDetail)" />
-      <circle cx="18.4" cy="17" r="4.2" fill="url(#asanaGradDetail)" />
+    <svg className={className} viewBox="0 0 44 44" fill="none">
+      <rect width="44" height="44" rx="10" fill="#FFFFFF" stroke="#FDE2DF" strokeWidth="1.5" />
+      <circle cx="22" cy="14" r="6.5" fill="#FC636B"/>
+      <circle cx="12.5" cy="29" r="6.5" fill="#FC636B"/>
+      <circle cx="31.5" cy="29" r="6.5" fill="#FC636B"/>
     </svg>
   );
 }
 
-function TrelloLogo({ className = "w-6 h-6" }: { className?: string }) {
+function TrelloLogo({ className = "w-11 h-11" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
-      <rect width="24" height="24" rx="5" fill="#0079BF" />
-      <rect x="4" y="4" width="6.5" height="13" rx="1.5" fill="#FFFFFF" />
-      <rect x="13.5" y="4" width="6.5" height="8.5" rx="1.5" fill="#FFFFFF" />
+    <svg className={className} viewBox="0 0 44 44" fill="none">
+      <rect width="44" height="44" rx="10" fill="#0079BF"/>
+      <rect x="8" y="9" width="11" height="22" rx="2.5" fill="#FFFFFF"/>
+      <rect x="25" y="9" width="11" height="15" rx="2.5" fill="#FFFFFF"/>
     </svg>
   );
 }
 
-function GitLabLogo({ className = "w-6 h-6" }: { className?: string }) {
+function GitLabLogo({ className = "w-11 h-11" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
-      <path d="M23.6 9.6l-1.3-4.1c-.2-.5-.8-.8-1.3-.8-.5 0-1 .3-1.2.8L17.7 12H6.3L4.2 5.5c-.2-.5-.7-.8-1.2-.8-.5 0-1.1.3-1.3.8L.4 9.6c-.2.5 0 1.1.4 1.4L12 20.2l11.2-9.2c.4-.3.6-.9.4-1.4z" fill="#E24329"/>
-      <path d="M12 20.2l5.7-8.2H6.3l5.7 8.2z" fill="#E24329"/>
-      <path d="M12 20.2L6.3 12H.4l11.6 8.2z" fill="#FC6D26"/>
-      <path d="M.4 9.6c-.2.5 0 1.1.4 1.4L6.3 12 4.2 5.5.4 9.6z" fill="#FCA326"/>
-      <path d="M12 20.2l5.7-8.2h5.9L12 20.2z" fill="#FC6D26"/>
-      <path d="M23.6 9.6c.2.5 0 1.1-.4 1.4L17.7 12l2.1-6.5 3.8 4.1z" fill="#FCA326"/>
+    <svg className={className} viewBox="0 0 44 44" fill="none">
+      <rect width="44" height="44" rx="10" fill="#FFFFFF" stroke="#FEE5DF" strokeWidth="1.5" />
+      <g transform="translate(4, 4) scale(0.75)">
+        <path d="M47.2 19.2l-2.6-8.2a2.4 2.4 0 00-4.6 0l-4.2 13H12.2l-4.2-13a2.4 2.4 0 00-4.6 0L.8 19.2a3 3 0 001.1 3.4L24 41.4l22.1-18.8a3 3 0 001.1-3.4z" fill="#E24329"/>
+        <path d="M24 41.4l11.4-17.4H12.6L24 41.4z" fill="#E24329"/>
+        <path d="M24 41.4L12.6 24H.8l23.2 17.4z" fill="#FC6D26"/>
+        <path d="M.8 19.2a3 3 0 001.1 3.4L12.6 24 8.4 11l-7.6 8.2z" fill="#FCA326"/>
+        <path d="M24 41.4l11.4-17.4h11.8L24 41.4z" fill="#FC6D26"/>
+        <path d="M47.2 19.2a3 3 0 01-1.1 3.4L35.4 24l4.2-13 7.6 8.2z" fill="#FCA326"/>
+      </g>
     </svg>
   );
 }
 
-function SlackLogo({ className = "w-6 h-6" }: { className?: string }) {
+function SlackLogo({ className = "w-11 h-11" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
-      <path d="M5.5 10a2 2 0 100-4 2 2 0 000 4z" fill="#36C5F0"/>
-      <path d="M2 11.5a2 2 0 002 2h3.5a2 2 0 100-4H4a2 2 0 00-2 2z" fill="#36C5F0"/>
-      <path d="M10 5.5a2 2 0 10-4 0 2 2 0 004 0z" fill="#2EB67D"/>
-      <path d="M11.5 2a2 2 0 00-2 2v3.5a2 2 0 104 0V4a2 2 0 00-2-2z" fill="#2EB67D"/>
-      <path d="M18.5 14a2 2 0 100 4 2 2 0 000-4z" fill="#ECB22E"/>
-      <path d="M22 12.5a2 2 0 00-2-2h-3.5a2 2 0 100 4H20a2 2 0 002-2z" fill="#ECB22E"/>
-      <path d="M14 18.5a2 2 0 104 0 2 2 0 00-4 0z" fill="#E01E5A"/>
-      <path d="M12.5 22a2 2 0 002-2v-3.5a2 2 0 10-4 0V20a2 2 0 002 2z" fill="#E01E5A"/>
+    <svg className={className} viewBox="0 0 44 44" fill="none">
+      <rect width="44" height="44" rx="10" fill="#FFFFFF" stroke="#E6E8EB" strokeWidth="1.5" />
+      <g transform="translate(6, 6) scale(0.666)">
+        <path d="M11 20a4 4 0 100-8 4 4 0 000 8z" fill="#36C5F0"/>
+        <path d="M4 23a4 4 0 004 4h7a4 4 0 100-8H8a4 4 0 00-4 4z" fill="#36C5F0"/>
+        <path d="M20 11a4 4 0 10-8 0 4 4 0 008 0z" fill="#2EB67D"/>
+        <path d="M23 4a4 4 0 00-4 4v7a4 4 0 108 0V8a4 4 0 00-4-4z" fill="#2EB67D"/>
+        <path d="M37 28a4 4 0 100 8 4 4 0 000-8z" fill="#ECB22E"/>
+        <path d="M44 25a4 4 0 00-4-4h-7a4 4 0 100 8h7a4 4 0 004-4z" fill="#ECB22E"/>
+        <path d="M28 37a4 4 0 108 0 4 4 0 00-8 0z" fill="#E01E5A"/>
+        <path d="M25 44a4 4 0 004-4v-7a4 4 0 10-8 0v7a4 4 0 004 4z" fill="#E01E5A"/>
+      </g>
     </svg>
   );
 }
 
-function ZapierLogo({ className = "w-6 h-6" }: { className?: string }) {
+function ZapierLogo({ className = "w-11 h-11" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
-      <rect width="24" height="24" rx="6" fill="#FFF2ED" />
-      <path
-        d="M12 4v16M4 12h16M6.34 6.34l11.32 11.32M6.34 17.66L17.66 6.34"
-        stroke="#FF4F00"
-        strokeWidth="2.8"
-        strokeLinecap="round"
-      />
+    <svg className={className} viewBox="0 0 44 44" fill="none">
+      <rect width="44" height="44" rx="10" fill="#FF4F00"/>
+      <path d="M22 8v28M8 22h28M12.1 12.1l19.8 19.8M12.1 31.9l19.8-19.8" stroke="#FFFFFF" strokeWidth="4.8" strokeLinecap="round"/>
     </svg>
   );
 }
 
-function MakeLogo({ className = "w-6 h-6" }: { className?: string }) {
+function MakeLogo({ className = "w-11 h-11" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
-      <rect width="24" height="24" rx="6" fill="#6D32EC" />
-      <path d="M6 16l4-8 4 8M14 8l4 8" stroke="#FFFFFF" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+    <svg className={className} viewBox="0 0 44 44" fill="none">
+      <rect width="44" height="44" rx="10" fill="#6D32EC"/>
+      <path d="M11 29l7-14 7 14M25 15l7 14" stroke="#FFFFFF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   );
 }
 
-function TeamsLogo({ className = "w-6 h-6" }: { className?: string }) {
+function TeamsLogo({ className = "w-11 h-11" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
-      <rect width="24" height="24" rx="6" fill="#5059C9" />
-      <path d="M16 8a2 2 0 100-4 2 2 0 000 4zM16 10h-2a1 1 0 00-1 1v4a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 00-2-1z" fill="#FFFFFF" fillOpacity="0.7"/>
-      <circle cx="10" cy="7" r="2.5" fill="#FFFFFF" />
-      <rect x="5.5" y="11" width="9" height="8" rx="2" fill="#FFFFFF" />
-      <text x="10" y="17" textAnchor="middle" fill="#5059C9" fontSize="6.5" fontWeight="900" fontFamily="sans-serif">T</text>
+    <svg className={className} viewBox="0 0 44 44" fill="none">
+      <rect width="44" height="44" rx="10" fill="#5059C9"/>
+      <circle cx="30" cy="15" r="3.5" fill="#FFFFFF" fillOpacity="0.8"/>
+      <path d="M30 20h-3c-1.3 0-2.5 1-2.5 2.3v6.7h8v-6.7c0-1.3-1.2-2.3-2.5-2.3z" fill="#FFFFFF" fillOpacity="0.8"/>
+      <circle cx="18" cy="14" r="4.5" fill="#FFFFFF"/>
+      <path d="M18 20h-3.5c-1.8 0-3.5 1.5-3.5 3.3V32h14V23.3c0-1.8-1.7-3.3-3.5-3.3H18z" fill="#FFFFFF"/>
+      <rect x="7" y="15" width="13" height="14" rx="2.5" fill="#444CAC"/>
+      <text x="13.5" y="25.5" textAnchor="middle" fill="#FFFFFF" fontSize="10.5" fontWeight="900" fontFamily="system-ui, sans-serif">T</text>
     </svg>
   );
 }
 
-function AzureDevOpsLogo({ className = "w-6 h-6" }: { className?: string }) {
+function AzureDevOpsLogo({ className = "w-11 h-11" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
-      <rect width="24" height="24" rx="6" fill="#0078D4" />
-      <path d="M17.5 7.5L12 4 6.5 7.5v9l5.5 3.5 5.5-3.5V7.5z" stroke="#FFFFFF" strokeWidth="1.8" strokeLinejoin="round" fill="none"/>
-      <path d="M12 4v16M6.5 7.5l11 9M17.5 7.5l-11 9" stroke="#FFFFFF" strokeWidth="1.4" strokeLinecap="round" strokeOpacity="0.8"/>
+    <svg className={className} viewBox="0 0 44 44" fill="none">
+      <rect width="44" height="44" rx="10" fill="#0078D4"/>
+      <path d="M32 14L22 7.5 12 14v16l10 6.5 10-6.5V14z" stroke="#FFFFFF" strokeWidth="3" strokeLinejoin="round" fill="none"/>
+      <path d="M22 7.5v29M12 14l20 16M32 14l-20 16" stroke="#FFFFFF" strokeWidth="2.2" strokeLinecap="round" strokeOpacity="0.85"/>
     </svg>
   );
 }
 
-function ClaudeMcpLogo({ className = "w-6 h-6" }: { className?: string }) {
+function ClaudeMcpLogo({ className = "w-11 h-11" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
-      <rect width="24" height="24" rx="6" fill="#0F1730" />
-      <circle cx="12" cy="12" r="7" stroke="#FF5A36" strokeWidth="2" strokeDasharray="3 2" />
-      <circle cx="12" cy="12" r="3" fill="#FF5A36" />
+    <svg className={className} viewBox="0 0 44 44" fill="none">
+      <rect width="44" height="44" rx="10" fill="#0F1730"/>
+      <circle cx="22" cy="22" r="12" stroke="#FF5A36" strokeWidth="3" strokeDasharray="4 3"/>
+      <circle cx="22" cy="22" r="5" fill="#FF5A36"/>
     </svg>
   );
 }
 
-function SqalibleLogo({ className = "w-6 h-6" }: { className?: string }) {
+function SqalibleLogo({ className = "w-11 h-11" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
-      <rect width="24" height="24" rx="6" fill="#0F1730" />
-      <path d="M7 16l5-8 5 8" stroke="#FF5A36" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="12" cy="14" r="1.5" fill="#FFFFFF" />
+    <svg className={className} viewBox="0 0 44 44" fill="none">
+      <rect width="44" height="44" rx="10" fill="#0F1730"/>
+      <path d="M13 30l9-15 9 15" stroke="#FF5A36" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="22" cy="26" r="2.8" fill="#FFFFFF"/>
     </svg>
   );
 }
 
-function RestApiLogo({ className = "w-6 h-6" }: { className?: string }) {
+function RestApiLogo({ className = "w-11 h-11" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
-      <rect width="24" height="24" rx="6" fill="#1E293B" />
-      <path d="M8 9l-3 3 3 3M16 9l3 3-3 3M13 7l-2 10" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <svg className={className} viewBox="0 0 44 44" fill="none">
+      <rect width="44" height="44" rx="10" fill="#1E293B"/>
+      <path d="M15 17l-5 5 5 5M29 17l5 5-5 5M24 13l-4 18" stroke="#10B981" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+function LinearLogo({ className = "w-11 h-11" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 44 44" fill="none">
+      <rect width="44" height="44" rx="10" fill="#12151A"/>
+      <path d="M11 33L33 11M7 24L24 7M20 37L37 20" stroke="#5E6AD2" strokeWidth="3.6" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function ClickUpLogo({ className = "w-11 h-11" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 44 44" fill="none">
+      <rect width="44" height="44" rx="10" fill="#FFFFFF" stroke="#EDE9FE" strokeWidth="1.5"/>
+      <path d="M9 27c4.5 3.5 9.5 5 13 5s8.5-1.5 13-5" stroke="#7B68EE" strokeWidth="4.2" strokeLinecap="round"/>
+      <path d="M14 19l8-8 8 8" stroke="#FF007A" strokeWidth="4.2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+function OpenProjectLogo({ className = "w-11 h-11" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 44 44" fill="none">
+      <rect width="44" height="44" rx="10" fill="#1070CA"/>
+      <circle cx="22" cy="22" r="12" stroke="#FFFFFF" strokeWidth="3.8" fill="none"/>
+      <circle cx="22" cy="22" r="4.8" fill="#FFFFFF"/>
+    </svg>
+  );
+}
+
+function GitHubLogo({ className = "w-11 h-11" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 44 44" fill="none">
+      <rect width="44" height="44" rx="10" fill="#181717"/>
+      <path fillRule="evenodd" clipRule="evenodd" d="M22 9C14.82 9 9 14.82 9 22.02c0 5.76 3.73 10.64 8.91 12.36.65.12.89-.28.89-.63 0-.31-.01-1.13-.02-2.22-3.61.79-4.37-1.74-4.37-1.74-.59-1.5-1.45-1.9-1.45-1.9-1.18-.81.09-.79.09-.79 1.3.09 1.99 1.34 1.99 1.34 1.16 1.99 3.04 1.41 3.79 1.08.12-.84.45-1.41.82-1.74-2.88-.33-5.91-1.44-5.91-6.43 0-1.42.51-2.58 1.34-3.49-.13-.33-.58-1.65.13-3.45 0 0 1.09-.35 3.57 1.33a12.4 12.4 0 016.5 0c2.48-1.68 3.57-1.33 3.57-1.33.71 1.8.26 3.12.13 3.45.83.91 1.34 2.07 1.34 3.49 0 5-3.04 6.1-5.94 6.42.47.4.88 1.2.88 2.41 0 1.74-.02 3.14-.02 3.57 0 .35.23.76.89.63A13.03 13.03 0 0035 22.02C35 14.82 29.18 9 22 9z" fill="#FFFFFF"/>
     </svg>
   );
 }
@@ -222,7 +268,8 @@ export interface FigmaIntegrationItem {
   href: string;
   tagline: string;
   badge: string;
-  logo: React.ReactNode;
+  iconUrl: string;
+  logo?: React.ReactNode;
 }
 
 export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
@@ -240,7 +287,8 @@ export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
     href: "/features/integrations/asana",
     tagline: "Task & Milestone Telemetry",
     badge: "Native Sync",
-    logo: <AsanaLogo className="w-8 h-8" />,
+    iconUrl: "/images/integrations/asana.svg",
+    logo: <img src="/images/integrations/asana.svg" alt="Asana" className="w-10 h-10 object-contain" />,
   },
   {
     id: "azure-devops",
@@ -256,7 +304,8 @@ export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
     href: "/features/integrations/azure-devops",
     tagline: "Work Item & Board Sync",
     badge: "Enterprise",
-    logo: <AzureDevOpsLogo className="w-8 h-8" />,
+    iconUrl: "/images/integrations/azure-devops.svg",
+    logo: <img src="/images/integrations/azure-devops.svg" alt="Azure DevOps" className="w-10 h-10 object-contain" />,
   },
   {
     id: "clickup",
@@ -272,7 +321,8 @@ export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
     href: "/features/integrations/clickup",
     tagline: "Spaces & Tasks Sync",
     badge: "Tracker Plus",
-    logo: <span className="font-extrabold text-purple-600 text-xl">C</span>,
+    iconUrl: "/images/integrations/clickup.svg",
+    logo: <img src="/images/integrations/clickup.svg" alt="ClickUp" className="w-10 h-10 object-contain" />,
   },
   {
     id: "jira",
@@ -288,7 +338,8 @@ export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
     href: "/features/integrations/jira",
     tagline: "Bi-directional sprint worklog",
     badge: "Tracker Plus",
-    logo: <JiraLogo className="w-8 h-8" />,
+    iconUrl: "/images/integrations/jira.svg",
+    logo: <img src="/images/integrations/jira.svg" alt="Jira Software" className="w-10 h-10 object-contain" />,
   },
   {
     id: "linear",
@@ -304,7 +355,8 @@ export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
     href: "/features/integrations/linear",
     tagline: "Cycles & Issue Binding",
     badge: "Tracker Plus",
-    logo: <span className="font-extrabold text-indigo-600 text-xl">L</span>,
+    iconUrl: "/images/integrations/linear.svg",
+    logo: <img src="/images/integrations/linear.svg" alt="Linear" className="w-10 h-10 object-contain" />,
   },
   {
     id: "openproject",
@@ -320,7 +372,8 @@ export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
     href: "/features/integrations/openproject",
     tagline: "Work Package & Project Sync",
     badge: "Open Source Ready",
-    logo: <span className="font-extrabold text-blue-600 text-xl">O</span>,
+    iconUrl: "/images/integrations/openproject.svg",
+    logo: <img src="/images/integrations/openproject.svg" alt="OpenProject" className="w-10 h-10 object-contain" />,
   },
   {
     id: "google-calendar",
@@ -336,7 +389,8 @@ export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
     href: "/features/integrations/google-calendar",
     tagline: "Auto-credit meeting hours",
     badge: "1-click OAuth",
-    logo: <GoogleCalendarLogo className="w-8 h-8" />,
+    iconUrl: "/images/integrations/google-calendar.svg",
+    logo: <img src="/images/integrations/google-calendar.svg" alt="Google Calendar" className="w-10 h-10 object-contain" />,
   },
   {
     id: "outlook-calendar",
@@ -352,7 +406,8 @@ export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
     href: "/features/integrations/outlook-calendar",
     tagline: "Microsoft 365 attendance sync",
     badge: "Enterprise ready",
-    logo: <OutlookLogo className="w-8 h-8" />,
+    iconUrl: "/images/integrations/outlook.svg",
+    logo: <img src="/images/integrations/outlook.svg" alt="Outlook Calendar" className="w-10 h-10 object-contain" />,
   },
   {
     id: "slack",
@@ -368,7 +423,8 @@ export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
     href: "/features/integrations/slack",
     tagline: "Standup digests & status bot",
     badge: "Bot-based",
-    logo: <SlackLogo className="w-8 h-8" />,
+    iconUrl: "/images/integrations/slack.svg",
+    logo: <img src="/images/integrations/slack.svg" alt="Slack" className="w-10 h-10 object-contain" />,
   },
   {
     id: "microsoft-teams",
@@ -384,7 +440,8 @@ export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
     href: "/features/integrations/microsoft-teams",
     tagline: "Live team presence",
     badge: "M365 certified",
-    logo: <TeamsLogo className="w-8 h-8" />,
+    iconUrl: "/images/integrations/teams.svg",
+    logo: <img src="/images/integrations/teams.svg" alt="Microsoft Teams" className="w-10 h-10 object-contain" />,
   },
   {
     id: "zapier",
@@ -400,7 +457,8 @@ export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
     href: "/features/integrations/zapier",
     tagline: "9,000+ app connectors",
     badge: "No-code",
-    logo: <ZapierLogo className="w-8 h-8" />,
+    iconUrl: "/images/integrations/zapier.svg",
+    logo: <img src="/images/integrations/zapier.svg" alt="Zapier" className="w-10 h-10 object-contain" />,
   },
   {
     id: "make",
@@ -416,7 +474,8 @@ export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
     href: "/features/integrations/make",
     tagline: "Visual workflows & webhooks",
     badge: "Enterprise",
-    logo: <MakeLogo className="w-8 h-8" />,
+    iconUrl: "/images/integrations/make.svg",
+    logo: <img src="/images/integrations/make.svg" alt="Make" className="w-10 h-10 object-contain" />,
   },
   {
     id: "trello",
@@ -432,7 +491,8 @@ export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
     href: "/features/integrations/trello",
     tagline: "Kanban card time tracking",
     badge: "Power-up ready",
-    logo: <TrelloLogo className="w-8 h-8" />,
+    iconUrl: "/images/integrations/trello.svg",
+    logo: <img src="/images/integrations/trello.svg" alt="Trello" className="w-10 h-10 object-contain" />,
   },
   {
     id: "gitlab",
@@ -448,14 +508,15 @@ export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
     href: "/features/integrations/gitlab",
     tagline: "Issue & MR tracking",
     badge: "DevOps ready",
-    logo: <GitLabLogo className="w-8 h-8" />,
+    iconUrl: "/images/integrations/gitlab.svg",
+    logo: <img src="/images/integrations/gitlab.svg" alt="GitLab" className="w-10 h-10 object-contain" />,
   },
   {
     id: "sqalible",
     name: "Sqalible HRMS",
     category: "hrms",
     categoryLabel: "HRMS & Payroll",
-    avatarBg: "#0F1730",
+    avatarBg: "#008891",
     monogram: "SQ",
     authType: "Native SSO",
     description: "Turn on time tracking inside Sqalible HRMS with unified payroll sync.",
@@ -464,7 +525,8 @@ export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
     href: "/features/integrations/sqalible",
     tagline: "Native payroll & leave engine",
     badge: "1-click toggle",
-    logo: <SqalibleLogo className="w-8 h-8" />,
+    iconUrl: "/images/integrations/sqalible.svg",
+    logo: <img src="/images/integrations/sqalible.svg" alt="Sqalible HRMS" className="w-10 h-10 object-contain" />,
   },
   {
     id: "mcp-server",
@@ -480,7 +542,8 @@ export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
     href: "/developers/mcp-server",
     tagline: "Model Context Protocol for AI",
     badge: "AI ready",
-    logo: <ClaudeMcpLogo className="w-8 h-8" />,
+    iconUrl: "/images/integrations/claude.svg",
+    logo: <img src="/images/integrations/claude.svg" alt="Claude MCP Server" className="w-10 h-10 object-contain" />,
   },
   {
     id: "rest-api",
@@ -496,155 +559,51 @@ export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
     href: "/developers/api",
     tagline: "Scoped keys & OpenAPI specs",
     badge: "Developer API",
-    logo: <RestApiLogo className="w-8 h-8" />,
+    iconUrl: "/images/integrations/rest-api.svg",
+    logo: <img src="/images/integrations/rest-api.svg" alt="REST API" className="w-10 h-10 object-contain" />,
   },
 ];
 
 // =============================================================================
-// FIGMA INTEGRATION CARD COMPONENT
-// Strict 1:1 match with Figma Product Card reference
+// COMPACT INTEGRATION CARD COMPONENT (Strict 1:1 match with Idea 2)
+// Clean 4-per-row card: Real brand SVG logo image, bold title, compact description
 // =============================================================================
 
 export function FigmaIntegrationCard({
   item,
-  onActionClick,
   className = "",
 }: {
   item: FigmaIntegrationItem;
   onActionClick?: (id: string, action: string) => void;
   className?: string;
 }) {
-  const [currentStatus, setCurrentStatus] = useState<"connected" | "reconnect" | "connect">(item.status);
-
-  const handleStatusToggle = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (currentStatus === "connect" || currentStatus === "reconnect") {
-      setCurrentStatus("connected");
-    } else {
-      setCurrentStatus("connect");
-    }
-    if (onActionClick) onActionClick(item.id, currentStatus);
-  };
-
   return (
-    <div
-      className={`bg-white rounded-2xl p-6 border border-[#E6E2D8] hover:border-[#FF5A36] hover:shadow-card transition-all duration-200 flex flex-col justify-between group text-left ${className}`}
+    <Link
+      to={item.href || `/features/integrations/${item.id}-time-tracking`}
+      className={`bg-white rounded-2xl p-5 sm:p-6 border border-[#E6E2D8] hover:border-[#FF5A36] hover:shadow-[0_8px_24px_rgba(15,23,48,0.06)] hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between group cursor-pointer text-left ${className}`}
     >
       <div>
-        {/* Top Header Row */}
-        <div className="flex items-start justify-between gap-3 mb-3">
-          <div className="flex items-center gap-3 min-w-0">
-            {/* Squircle Avatar with Monogram */}
-            <div
-              className="w-11 h-11 rounded-xl flex items-center justify-center font-bold text-white text-sm shrink-0 shadow-xs tracking-tight"
-              style={{ backgroundColor: item.avatarBg }}
-            >
-              {item.monogram}
-            </div>
-
-            <div className="min-w-0">
-              <h3 className="text-base font-bold text-[#0F1730] truncate group-hover:text-[#FF5A36] transition-colors leading-tight">
-                {item.name}
-              </h3>
-              <div className="flex flex-wrap items-center gap-1.5 mt-1">
-                <span className="inline-flex items-center text-[11px] font-semibold px-2 py-0.5 rounded-full bg-[#F0EBFE] text-[#6938EF] whitespace-nowrap">
-                  {item.categoryLabel}
-                </span>
-                <span className="inline-flex items-center text-[10px] font-medium px-1.5 py-0.5 rounded-md bg-[#F4F5F7] text-[#4A5370] whitespace-nowrap">
-                  {item.authType}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Action Icons */}
-          <div className="flex items-center gap-1 text-slate-400 shrink-0">
-            <button
-              type="button"
-              title="Edit settings"
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                if (onActionClick) onActionClick(item.id, "edit");
-              }}
-              className="p-1 rounded-md hover:text-[#0F1730] hover:bg-slate-100 transition-colors cursor-pointer"
-            >
-              <Pencil className="w-4 h-4 stroke-[2]" />
-            </button>
-            <button
-              type="button"
-              title="Delete integration"
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                if (onActionClick) onActionClick(item.id, "delete");
-              }}
-              className="p-1 rounded-md hover:text-rose-600 hover:bg-rose-50 transition-colors cursor-pointer"
-            >
-              <Trash2 className="w-4 h-4 stroke-[2]" />
-            </button>
-          </div>
+        {/* Real Official SVG Logo Image (No fake container box) */}
+        <div className="w-10 h-10 flex items-center justify-start shrink-0 mb-4 group-hover:scale-105 transition-transform">
+          <img
+            src={item.iconUrl}
+            alt={`${item.name} logo`}
+            className="w-9 h-9 max-h-9 max-w-9 object-contain"
+            loading="lazy"
+          />
         </div>
 
-        {/* Description */}
-        <p className="text-xs sm:text-[13px] text-[#4A5370] leading-relaxed my-3 line-clamp-2">
+        {/* Integration Name */}
+        <h3 className="font-bold text-[15px] sm:text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors leading-snug">
+          {item.name}
+        </h3>
+
+        {/* Short, crisp description matching Idea 2 */}
+        <p className="text-xs text-[#64748B] leading-relaxed mt-1.5 line-clamp-2 font-normal">
           {item.description}
         </p>
-
-        {/* Scope Tags */}
-        <div className="flex flex-wrap gap-1.5 mb-5">
-          {item.scopes.map((scope, idx) => (
-            <span
-              key={idx}
-              className="px-2 py-0.5 rounded-md bg-[#F8F9FA] text-[#4A5370] text-[11px] font-mono border border-slate-200/80"
-            >
-              {scope}
-            </span>
-          ))}
-        </div>
       </div>
-
-      {/* Footer Row */}
-      <div className="flex items-center justify-between pt-3 border-t border-slate-100 mt-auto">
-        <Link
-          to={item.href}
-          className="text-xs font-semibold text-[#5B6CFF] hover:text-[#4338CA] hover:underline cursor-pointer"
-        >
-          View Details
-        </Link>
-
-        {currentStatus === "connected" && (
-          <button
-            type="button"
-            onClick={handleStatusToggle}
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#ECFDF3] text-[#027A48] border border-[#A6F4C5] hover:bg-emerald-100 transition-colors cursor-pointer"
-          >
-            <Check className="w-3.5 h-3.5 stroke-[2.5]" /> Connected
-          </button>
-        )}
-
-        {currentStatus === "reconnect" && (
-          <button
-            type="button"
-            onClick={handleStatusToggle}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold border border-slate-300 text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer"
-          >
-            <RefreshCw className="w-3 h-3 stroke-[2.5]" /> Reconnect
-          </button>
-        )}
-
-        {currentStatus === "connect" && (
-          <button
-            type="button"
-            onClick={handleStatusToggle}
-            className="inline-flex items-center justify-center px-4 py-1.5 rounded-xl text-xs font-bold text-white bg-[#5B6CFF] hover:bg-[#4E5BA6] shadow-sm transition-all cursor-pointer"
-          >
-            Connect
-          </button>
-        )}
-      </div>
-    </div>
+    </Link>
   );
 }
 
@@ -664,6 +623,7 @@ export interface IntegrationDetailData {
   heroHighlight: string;
   heroDescription: string;
   logo: React.ReactNode;
+  tldr?: string[];
   previewCardTitle: string;
   previewCardSub: string;
   previewMetricLabel: string;
@@ -1061,49 +1021,76 @@ export const INTEGRATION_DETAILS: Record<string, IntegrationDetailData> = {
     categoryLabel: "Calendars",
     tagline: "Meetings Count as Work",
     badge: "Calendar Sync",
-    heroHeadline: "Automatically count meetings as",
-    heroHighlight: "active billable attendance.",
+    heroHeadline: "Integrating Google Calendar with",
+    heroHighlight: "automatic time tracking.",
     heroDescription:
-      "Never get penalized for meeting-heavy days. Deskmerit detects accepted Google Calendar invites during shift hours and logs them to client projects with zero manual intervention.",
+      "Never lose billable hours to meeting-heavy days. Deskmerit synchronizes seamlessly with Google Calendar to automatically count scheduled calls, client syncs, and team standups as active work without manual timer toggles or stopwatch apps.",
     logo: <GoogleCalendarLogo className="w-12 h-12" />,
+    tldr: [
+      "Eliminates manual time tracking for video calls, client reviews, and scheduled events.",
+      "Deskmerit automatically accounts for accepted calendar meetings during work hours.",
+      "Events marked 'Private' stay strictly confidential and are excluded from shared logs.",
+    ],
     previewCardTitle: "Architecture Sprint Review · Google Meet",
-    previewCardSub: "Accepted Calendar Invite",
+    previewCardSub: "Accepted Calendar Invite · Core Engineering",
     previewMetricLabel: "Auto-Logged Duration",
     previewMetricValue: "45 min",
-    previewBadgeText: "Credited as Billable Time",
+    previewBadgeText: "Credited as Shift Work",
     steps: [
       {
         num: "01",
-        title: "Authorize Google Workspace",
-        desc: "Connect your work Google account using Google's secure read-only calendar permissions.",
+        title: "Connect Google Workspace",
+        desc: "Authorize Deskmerit with 1-click Google OAuth 2.0 using least-privilege, read-only calendar permissions.",
       },
       {
         num: "02",
-        title: "Define Meeting Matching Rules",
-        desc: "Map recurring client standups, architecture syncs, and 1-on-1s to corresponding project billing tags.",
+        title: "Configure Sync & Project Rules",
+        desc: "Choose which calendars sync and map recurring meetings (e.g. client standups, 1-on-1s) to respective project codes.",
       },
       {
         num: "03",
-        title: "Automatic Timesheet Credit",
-        desc: "Meetings you attend automatically count toward your daily shift hours without manual clock-ins.",
+        title: "Attend Meetings Freely",
+        desc: "Join Google Meet, Zoom, or offline rooms. Deskmerit logs meeting durations directly onto your daily timeline.",
       },
     ],
     features: [
       {
         icon: Calendar,
-        title: "Offline & Video Meeting Credit",
-        desc: "Calendar meetings automatically override idle penalties when employees are on calls or in meeting rooms.",
+        title: "Automatic Offline & Video Meeting Capture",
+        desc: "Never get penalized by idle timers during discussions. Scheduled events automatically credit toward your daily shift hours.",
+      },
+      {
+        icon: RefreshCw,
+        title: "Zero End-of-Week Timesheet Guesswork",
+        desc: "Reconciles meetings and desktop tasks automatically down to the second, so your Friday timesheets are already finished.",
       },
       {
         icon: ShieldCheck,
-        title: "Private Events Filtered",
-        desc: "Events marked 'Private' in Google Calendar are excluded from client logs and timesheet exports.",
+        title: "Strict Employee Privacy Controls",
+        desc: "Personal appointments and events marked 'Private' in Google Calendar are completely shielded from employers and timesheet exports.",
+      },
+      {
+        icon: BarChart3,
+        title: "Accurate Client Project Allocation",
+        desc: "Assign client discovery calls and architecture reviews to client billing codes for defensible client invoices.",
       },
     ],
     faqs: [
       {
-        q: "What happens if a meeting ends early?",
-        a: "Deskmerit verifies meeting attendance against desktop activity to ensure precise, fair duration records.",
+        q: "How does Deskmerit track time spent in meetings?",
+        a: "When you accept a meeting invite in Google Calendar, Deskmerit reads the start and end time. During that window, Deskmerit credits your shift hours so meeting time is counted as active work rather than idle time.",
+      },
+      {
+        q: "Are private calendar events visible to my manager or employer?",
+        a: "No. Any event marked 'Private' in Google Calendar is completely filtered out. Deskmerit will never expose the title, description, or attendees of personal appointments.",
+      },
+      {
+        q: "What happens if a scheduled meeting gets canceled or finishes early?",
+        a: "Deskmerit correlates calendar bookings with desktop activity. If you finish early and resume coding or browsing, Deskmerit seamlessly transitions to recording your active desktop tasks.",
+      },
+      {
+        q: "Can I manually adjust or delete meeting time if needed?",
+        a: "Yes. Employees have 100% audit priority and can review or edit their daily timeline before timesheets finalize.",
       },
     ],
   },
@@ -1114,13 +1101,18 @@ export const INTEGRATION_DETAILS: Record<string, IntegrationDetailData> = {
     categoryLabel: "Calendars",
     tagline: "Microsoft 365 attendance sync",
     badge: "Enterprise ready",
-    heroHeadline: "Count Microsoft 365 appointments as",
-    heroHighlight: "active client meeting attendance.",
+    heroHeadline: "Integrate Outlook Calendar with",
+    heroHighlight: "enterprise time tracking.",
     heroDescription:
-      "Detect accepted Microsoft Teams and Outlook appointments. Credit meeting hours automatically into project billing reports with enterprise SSO governance.",
+      "Count Microsoft 365 appointments, Teams calls, and client syncs as verified attendance. Deskmerit links with Microsoft Exchange to turn calendar bookings into accurate, defensible project hours with zero manual timers.",
     logo: <OutlookLogo className="w-12 h-12" />,
+    tldr: [
+      "Direct Microsoft 365 Exchange sync with Microsoft Teams call correlation.",
+      "Scheduled Outlook appointments automatically credit toward employee shift hours.",
+      "Enterprise Entra ID OAuth governance with zero access to personal mailboxes.",
+    ],
     previewCardTitle: "Client Steering Committee · MS Teams",
-    previewCardSub: "Outlook Calendar Invite",
+    previewCardSub: "Outlook 365 Invite · Core Delivery",
     previewMetricLabel: "Auto-Credited Duration",
     previewMetricValue: "1h 00m",
     previewBadgeText: "Credited as Shift Work",
@@ -1128,35 +1120,57 @@ export const INTEGRATION_DETAILS: Record<string, IntegrationDetailData> = {
       {
         num: "01",
         title: "Connect Microsoft 365",
-        desc: "Single-click OAuth connection through your Microsoft Entra ID corporate tenant.",
+        desc: "Authenticate using your Microsoft Entra ID (Azure AD) corporate account with standard read-only calendar scope.",
       },
       {
         num: "02",
-        title: "Map Client Projects",
-        desc: "Assign Outlook meeting subject patterns or client email domains to project codes.",
+        title: "Define Project & Client Rules",
+        desc: "Map meeting subjects or client email domains to specific client billing accounts in Deskmerit.",
       },
       {
         num: "03",
-        title: "Hands-Free Credit",
-        desc: "Meeting times credit into daily employee shift hours without manual stopwatch toggles.",
+        title: "Effortless Meeting Attendance",
+        desc: "Accepted meetings credit automatically into your shift attendance ledger without stopwatch button presses.",
       },
     ],
     features: [
       {
         icon: Calendar,
-        title: "Enterprise M365 Compliance",
-        desc: "Meets global IT requirements with tenant-level consent and zero access to personal mailboxes.",
+        title: "Seamless Microsoft 365 Exchange Sync",
+        desc: "Cloud-to-cloud synchronization updates meetings instantaneously without requiring browser extensions or Outlook add-ins.",
       },
       {
         icon: RefreshCw,
-        title: "Teams Call Telemetry",
-        desc: "Correlates scheduled Outlook meetings with actual Teams audio/video active participation.",
+        title: "Microsoft Teams Call Correlation",
+        desc: "Correlates scheduled appointments with Teams desktop audio/video participation for verified attendance records.",
+      },
+      {
+        icon: ShieldCheck,
+        title: "Enterprise SSO & Tenant Governance",
+        desc: "Complies with strict corporate IT policies with tenant-level consent, AES-256 encryption, and zero email reading.",
+      },
+      {
+        icon: BarChart3,
+        title: "Defensible Client Invoicing",
+        desc: "Provide clients with transparent meeting attendance logs backed by verified calendar records and delivery codes.",
       },
     ],
     faqs: [
       {
-        q: "Does Deskmerit read email contents?",
-        a: "No. Deskmerit only accesses calendar invite timestamps and titles; email contents are never accessed.",
+        q: "Does Deskmerit have access to my emails in Microsoft Outlook?",
+        a: "No. Deskmerit requests restricted Microsoft Graph API permissions limited exclusively to Calendar.Read. Your mailbox, sent items, and email contents are never accessed.",
+      },
+      {
+        q: "Does this integration work with self-hosted Microsoft Exchange?",
+        a: "Yes. Deskmerit supports both Microsoft 365 Cloud (Entra ID) and hybrid Exchange Server deployments via secure HTTPS endpoints.",
+      },
+      {
+        q: "How fast do calendar updates reflect in Deskmerit?",
+        a: "Changes to meeting invites sync via Microsoft Graph webhooks in near real time (sub-60 second latency).",
+      },
+      {
+        q: "Can private Outlook appointments be hidden?",
+        a: "Yes. Events marked as 'Private' in Outlook are automatically shielded, protecting confidential medical or personal errant blocks.",
       },
     ],
   },
@@ -1268,49 +1282,76 @@ export const INTEGRATION_DETAILS: Record<string, IntegrationDetailData> = {
     categoryLabel: "Automation",
     tagline: "9,000+ app connectors",
     badge: "No-code",
-    heroHeadline: "Connect time tracking telemetry to",
-    heroHighlight: "9,000+ business applications.",
+    heroHeadline: "Automate your workforce operations with",
+    heroHighlight: "Zapier time tracking triggers.",
     heroDescription:
-      "Build powerful automated workflows without writing a single line of code. Trigger payroll deductions, post attendance digests, or push billable hours to your CRM automatically.",
+      "Connect Deskmerit to over 9,000 web applications without writing code. Dispatch real-time webhooks on shifts, breaks, and project logs, and route verified time entries straight to QuickBooks, Xero, Slack, or Google Sheets.",
     logo: <ZapierLogo className="w-12 h-12" />,
-    previewCardTitle: "Zap: Shift Completed → QuickBooks Invoice",
+    tldr: [
+      "Connect Deskmerit to 9,000+ web apps including accounting, HRMS, and CRM software.",
+      "Real-time webhook triggers on shift start/end, task completion, and overtime breaches.",
+      "Eliminate manual data entry by routing verified time logs into payroll engines automatically.",
+    ],
+    previewCardTitle: "Zap: Shift Ended → Sync QuickBooks & Post Slack",
     previewCardSub: "Live Trigger · Automated Workflow",
-    previewMetricLabel: "Zaps Triggered",
-    previewMetricValue: "18,400 / mo",
+    previewMetricLabel: "Real-Time Triggers",
+    previewMetricValue: "Instant webhook",
     previewBadgeText: "Verified Zapier Partner",
     steps: [
       {
         num: "01",
-        title: "Generate Scoped API Key",
+        title: "Generate API Token in Deskmerit",
         desc: "Create a restricted Zapier integration token within your Deskmerit workspace security settings.",
       },
       {
         num: "02",
-        title: "Select Trigger & Action",
-        desc: "Choose triggers like 'Shift Completed', 'New Overtime Logged', or 'Project Milestone Reached'.",
+        title: "Choose Triggers & Downstream Actions",
+        desc: "Select triggers like 'Shift Completed', 'New Overtime Logged', or 'Project Milestone Reached' in Zapier.",
       },
       {
         num: "03",
-        title: "Automate Downstream Tools",
-        desc: "Pipe verified time records to HubSpot, Salesforce, Xero, QuickBooks, or Google Sheets in real time.",
+        title: "Automate Payroll & Reporting",
+        desc: "Pipe verified time records to QuickBooks, Xero, Google Sheets, or Airtable automatically on every pay cycle.",
       },
     ],
     features: [
       {
         icon: Zap,
-        title: "Instant Webhook Triggers",
-        desc: "Events fire the exact millisecond a shift starts, a break ends, or a project target is logged.",
+        title: "Connect 9,000+ Business Applications",
+        desc: "Build automated pipelines connecting Deskmerit to HubSpot, Salesforce, Notion, Asana, Xero, and thousands more.",
       },
       {
-        icon: Folder,
-        title: "Multi-Step Automation Pipelines",
-        desc: "Route time logs through branching logic to verify contractor hours before triggering payouts.",
+        icon: RefreshCw,
+        title: "Instant Millisecond Webhook Triggers",
+        desc: "Events fire the exact millisecond a shift starts, a break ends, or a project target is logged with 99.99% delivery reliability.",
+      },
+      {
+        icon: BarChart3,
+        title: "Automated Payroll & Accounting Sync",
+        desc: "Eliminate end-of-month manual data entry by auto-exporting billable client hours directly into accounting ledgers.",
+      },
+      {
+        icon: ShieldCheck,
+        title: "Multi-Step Conditional Logic",
+        desc: "Route time logs through branching logic to verify contractor hours before triggering automatic payouts or manager alerts.",
       },
     ],
     faqs: [
       {
         q: "Is there an additional charge for using Zapier with Deskmerit?",
-        a: "Deskmerit provides Zapier webhook access across all plans with no added API surcharges.",
+        a: "Deskmerit provides Zapier webhook access across all plans with no added API surcharges or connection fees.",
+      },
+      {
+        q: "What events can trigger a Zap?",
+        a: "Deskmerit supports triggers for: Shift Started, Shift Ended, Break Started, Break Ended, Task Assigned, Overtime Threshold Breached, and Project Time Logged.",
+      },
+      {
+        q: "Can Zapier push data into Deskmerit as well?",
+        a: "Yes. You can use Zapier actions to create new projects, add employees, assign tasks, and trigger time entries from external CRM or ERP systems.",
+      },
+      {
+        q: "How does Deskmerit secure data transmitted through Zapier?",
+        a: "All webhook payloads are encrypted in transit with TLS 1.3 and signed with HMAC SHA-256 signatures for tamper-proof verification.",
       },
     ],
   },
@@ -1609,13 +1650,51 @@ export const INTEGRATION_DETAILS: Record<string, IntegrationDetailData> = {
   },
 };
 
-// Aliases mapping common variations to canonical slugs
-const SLUG_ALIASES: Record<string, string> = {
-  outlook: "outlook-calendar",
-  teams: "microsoft-teams",
-  mcp: "mcp-server",
-  api: "rest-api",
-};
+// Helper to normalize any route slug (supporting variations like -time-tracking suffixes)
+function normalizeSlug(raw?: string): string | null {
+  if (!raw) return null;
+  const s = raw.toLowerCase().trim();
+  const withoutSuffix = s.replace(/-time-tracking$/, "");
+  const aliases: Record<string, string> = {
+    outlook: "outlook-calendar",
+    "outlook-calendar": "outlook-calendar",
+    "outlook-time-tracking": "outlook-calendar",
+    "google-calendar": "google-calendar",
+    "google-calendar-time-tracking": "google-calendar",
+    zapier: "zapier",
+    "zapier-time-tracking": "zapier",
+    jira: "jira",
+    "jira-time-tracking": "jira",
+    "azure-devops": "azure-devops",
+    "azure-devops-time-tracking": "azure-devops",
+    teams: "microsoft-teams",
+    "microsoft-teams": "microsoft-teams",
+    "microsoft-teams-time-tracking": "microsoft-teams",
+    slack: "slack",
+    "slack-time-tracking": "slack",
+    asana: "asana",
+    "asana-time-tracking": "asana",
+    linear: "linear",
+    "linear-time-tracking": "linear",
+    gitlab: "gitlab",
+    "gitlab-time-tracking": "gitlab",
+    trello: "trello",
+    "trello-time-tracking": "trello",
+    clickup: "clickup",
+    "clickup-time-tracking": "clickup",
+    basecamp: "basecamp",
+    "basecamp-time-tracking": "basecamp",
+    openproject: "openproject",
+    "openproject-time-tracking": "openproject",
+    sqalible: "sqalible",
+    "sqalible-hrms": "sqalible",
+    mcp: "mcp-server",
+    "mcp-server": "mcp-server",
+    api: "rest-api",
+    "rest-api": "rest-api",
+  };
+  return aliases[s] || aliases[withoutSuffix] || withoutSuffix;
+}
 
 // =============================================================================
 // MAIN COMPONENT: INTEGRATIONS PAGE
@@ -1641,7 +1720,7 @@ export function IntegrationsPage() {
   ];
 
   // Resolve canonical slug if provided
-  const canonicalSlug = slug ? SLUG_ALIASES[slug.toLowerCase()] || slug.toLowerCase() : null;
+  const canonicalSlug = normalizeSlug(slug);
 
   // Resolve matching detail data, or generate a rich dynamic detail object from FIGMA_INTEGRATIONS
   let detailData: IntegrationDetailData | null = null;
@@ -1751,10 +1830,10 @@ export function IntegrationsPage() {
                 </div>
 
                 <div className="grid grid-cols-12 gap-10 lg:gap-14 items-center">
-                  {/* Left Column */}
+                  {/* Left Column: Headline + CTAs (No bi-directional sync capsule or dot above heading) */}
                   <div className="col-span-12 lg:col-span-7 space-y-6">
                     <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
-                      INTEGRATION: {detailData.name.toUpperCase()}
+                      INTEGRATION: {detailData.name.toUpperCase()} TIME TRACKING
                     </div>
 
                     <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-[-0.03em] leading-[1.22] text-white">
@@ -1785,44 +1864,37 @@ export function IntegrationsPage() {
                     </div>
                   </div>
 
-                  {/* Right Column: THE REAL FIGMA INTEGRATION CARD IN HERO (White Card Container) */}
+                  {/* Right Column: Clean Integration Showcase Card matching Screenshot 1 branding */}
                   <div className="col-span-12 lg:col-span-5">
                     <div className="relative">
                       {/* Clean Soft Ambient Glow */}
-                      <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 via-orange-500/15 to-purple-500/20 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
+                      <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 via-orange-500/10 to-teal-500/10 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
 
-                      {/* Crisp White Hero Container matching other pages */}
-                      <div className="relative rounded-3xl bg-white border border-slate-200/90 p-5 sm:p-6 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.35)] text-[#0F1730]">
-                        {/* macOS Window Title Bar */}
-                        <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
-                          <div className="flex items-center gap-2.5">
-                            <div className="flex items-center gap-1.5">
-                              <span className="w-2.5 h-2.5 rounded-full bg-[#ED6A5E]" />
-                              <span className="w-2.5 h-2.5 rounded-full bg-[#F5BF4F]" />
-                              <span className="w-2.5 h-2.5 rounded-full bg-[#62C554]" />
-                            </div>
-                            <span className="text-xs font-bold tracking-tight text-[#0F1730] ml-1">
-                              Active Workspace Component
-                            </span>
+                      {/* Clean White Card strictly matching Screenshot 1 branding */}
+                      <div className="relative rounded-3xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] text-[#0F1730]">
+                        {/* Top Grey Area with Official SVG inside White Circular Badge */}
+                        <div className="bg-[#F8F9FA] p-8 flex flex-col items-center justify-center border-b border-slate-100 relative">
+                          <div className="w-20 h-20 rounded-2xl bg-white shadow-xs border border-slate-200/90 flex items-center justify-center p-3.5">
+                            <img
+                              src={matchingFigmaItem.iconUrl}
+                              alt={detailData.name}
+                              className="w-14 h-14 max-h-14 max-w-14 object-contain"
+                            />
                           </div>
-                          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#F8FAFC] border border-slate-200 text-[11px] font-mono text-[#4A5370]">
-                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                            <span>v2.4 Live Sync</span>
+                          <h3 className="font-extrabold text-lg sm:text-xl text-[#0F1730] mt-4 tracking-tight">
+                            {detailData.name} + Deskmerit
+                          </h3>
+                          <div className="text-xs text-[#4A5370] font-medium mt-1">
+                            Automatic Background Synchronization
                           </div>
                         </div>
 
-                        {/* Exact Figma Product Card (Internal cards are perfect) */}
-                        <FigmaIntegrationCard
-                          item={matchingFigmaItem}
-                          className="shadow-sm border-slate-200"
-                        />
-
-                        {/* Real-time telemetry strip below the card in clean light style */}
-                        <div className="mt-4 pt-3 border-t border-slate-100 space-y-2.5">
+                        {/* Card Content & Trust Features */}
+                        <div className="p-6 sm:p-7 space-y-4">
                           <div className="p-3.5 rounded-xl bg-[#F8FAFC] border border-slate-200/90 flex items-center justify-between text-xs">
                             <div>
                               <div className="text-[10px] font-mono font-bold uppercase text-[#4A5370]">
-                                Active Mapped Entity
+                                Connected Entity
                               </div>
                               <div className="font-bold text-[#0F1730] mt-0.5">
                                 {detailData.previewCardTitle}
@@ -1832,12 +1904,28 @@ export function IntegrationsPage() {
                               {detailData.previewMetricValue}
                             </span>
                           </div>
-                          <div className="flex items-center justify-between text-[11px] text-[#4A5370] px-1">
+
+                          <div className="space-y-2 text-xs text-[#4A5370]">
+                            <div className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                              <span>Zero keystroke or screen recording</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                              <span>Direct worklog attribution to projects</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                              <span>100% employee audit priority review</span>
+                            </div>
+                          </div>
+
+                          <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-[#4A5370]">
                             <span className="flex items-center gap-1.5 font-medium">
                               <ShieldCheck className="w-3.5 h-3.5 text-[#027A48]" />
-                              TLS 1.3 End-to-End Encrypted
+                              TLS 1.3 Encrypted
                             </span>
-                            <span className="text-[#4A5370] font-mono">0 pending worklogs</span>
+                            <span className="text-emerald-600 font-mono font-semibold">Active & Verified</span>
                           </div>
                         </div>
                       </div>
@@ -1847,74 +1935,132 @@ export function IntegrationsPage() {
               </div>
             </section>
 
-            {/* 3-Step Setup Section */}
-            <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center max-w-3xl mx-auto mb-14">
-                <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
-                  SETUP IN MINUTES
+            {/* TL;DR KEY TAKEAWAYS SECTION (DeskTime-inspired callout) */}
+            {detailData.tldr && detailData.tldr.length > 0 && (
+              <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12 relative z-20">
+                <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E6E2D8] shadow-[0_12px_32px_rgba(15,23,48,0.08)]">
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-4">
+                    <Sparkles className="w-4 h-4 text-[#FF5A36]" />
+                    <span>TL;DR – Key Takeaways for {detailData.name} Time Tracking</span>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {detailData.tldr.map((point, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <div className="w-6 h-6 rounded-md bg-emerald-50 text-emerald-600 border border-emerald-200/80 flex items-center justify-center shrink-0 mt-0.5">
+                          <Check className="w-3.5 h-3.5 stroke-[3]" />
+                        </div>
+                        <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed font-normal">
+                          {point}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-tight leading-[1.24]">
-                  Connect {detailData.name} in under 3 minutes
+              </section>
+            )}
+
+            {/* Deep Feature Capabilities Grid */}
+            <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center max-w-3xl mx-auto mb-16">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                  WHY INTEGRATE
+                </div>
+                <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-[#0F1730] tracking-tight leading-[1.2]">
+                  Why delivery teams choose Deskmerit for {detailData.name} time tracking
                 </h2>
-                <p className="text-sm sm:text-base text-[#4A5370] mt-3 leading-relaxed">
-                  Fast, verified, and enterprise-secure. No complicated webhook infrastructure or IT tickets required.
+                <p className="text-base text-[#4A5370] mt-3 max-w-2xl mx-auto leading-relaxed font-normal">
+                  Built for high-trust modern organizations. Automate attendance, prevent timesheet friction, and protect employee privacy.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                {detailData.steps.map((st) => (
-                  <div
-                    key={st.num}
-                    className="p-8 rounded-2xl bg-white border border-[#E6E2D8] shadow-subtle flex flex-col justify-between hover:border-[#FF5A36] hover:shadow-card transition-all"
-                  >
-                    <div>
-                      <span className="text-xs font-extrabold text-[#FF5A36] bg-[#FFE6DF] border border-[#FF5A36]/30 px-3 py-1 rounded-lg font-mono inline-block mb-4">
-                        STEP {st.num}
-                      </span>
-                      <h3 className="text-lg font-bold text-[#0F1730] mb-2">{st.title}</h3>
-                      <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed">{st.desc}</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {detailData.features.map((feat, i) => {
+                  const IconC = feat.icon;
+                  return (
+                    <div
+                      key={i}
+                      className="p-7 rounded-2xl bg-white border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all flex flex-col justify-between group"
+                    >
+                      <div>
+                        <div className="w-12 h-12 rounded-xl bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+                          <IconC className="w-6 h-6 stroke-[2]" />
+                        </div>
+                        <h3 className="font-bold text-lg text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2.5">
+                          {feat.title}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed font-normal">
+                          {feat.desc}
+                        </p>
+                      </div>
                     </div>
+                  );
+                })}
+              </div>
+            </section>
+
+            {/* 3-Step Setup Section */}
+            <section className="py-20 bg-white border-y border-[#E6E2D8]">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                    QUICK SETUP
                   </div>
+                  <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-tight leading-[1.2]">
+                    How does the {detailData.name} time tracking integration work?
+                  </h2>
+                  <p className="text-base text-[#4A5370] mt-3 max-w-2xl mx-auto leading-relaxed">
+                    Connect your workspace in under 3 minutes. Zero server scripting, zero IT tickets, zero code required.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {detailData.steps.map((st) => (
+                    <div
+                      key={st.num}
+                      className="p-8 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] flex flex-col justify-between hover:border-[#FF5A36] hover:bg-white hover:shadow-card transition-all"
+                    >
+                      <div>
+                        <span className="text-xs font-mono font-bold text-[#FF5A36] bg-[#FFE6DF] border border-[#FF5A36]/30 px-3 py-1 rounded-md inline-block mb-5">
+                          STEP {st.num}
+                        </span>
+                        <h3 className="text-xl font-bold text-[#0F1730] mb-3">{st.title}</h3>
+                        <p className="text-sm text-[#4A5370] leading-relaxed font-normal">{st.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Related Integrations Bar */}
+            <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+                <div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-1">
+                    MORE INTEGRATIONS
+                  </div>
+                  <h3 className="text-2xl font-extrabold text-[#0F1730]">
+                    Explore other tools that connect with Deskmerit
+                  </h3>
+                </div>
+                <Link
+                  to="/features/integrations"
+                  className="text-xs font-bold text-[#FF5A36] hover:underline flex items-center gap-1"
+                >
+                  <span>View all 20+ integrations</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+                {FIGMA_INTEGRATIONS.filter((item) => item.id !== detailData.id).slice(0, 4).map((item) => (
+                  <FigmaIntegrationCard key={item.id} item={item} />
                 ))}
               </div>
             </section>
 
-            {/* Deep Feature Capabilities Grid */}
-            <section className="py-16 bg-white border-y border-[#E6E2D8]">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center max-w-3xl mx-auto mb-14">
-                  <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
-                    CORE CAPABILITIES
-                  </div>
-                  <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-tight leading-[1.24]">
-                    Why engineering teams prefer Deskmerit + {detailData.name}
-                  </h2>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {detailData.features.map((feat, i) => {
-                    const IconC = feat.icon;
-                    return (
-                      <div
-                        key={i}
-                        className="p-6 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] hover:bg-white hover:shadow-card transition-all group"
-                      >
-                        <div className="w-10 h-10 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:text-white group-hover:border-[#FF5A36] flex items-center justify-center mb-4 transition-all">
-                          <IconC className="w-5 h-5" />
-                        </div>
-                        <h4 className="font-bold text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">
-                          {feat.title}
-                        </h4>
-                        <p className="text-xs text-[#4A5370] leading-relaxed">{feat.desc}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </section>
-
             {/* Back to All Integrations Link */}
-            <div className="py-10 text-center bg-[#F7F4EE]">
+            <div className="pb-12 text-center">
               <Link
                 to="/features/integrations"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white border border-slate-300 text-[#0F1730] font-bold text-sm hover:border-[#FF5A36] hover:text-[#FF5A36] transition-all cursor-pointer shadow-xs"
@@ -2191,14 +2337,14 @@ export function IntegrationsPage() {
                 </div>
 
                 {/* Filter and Search Bar */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
-                  <div className="flex flex-wrap gap-2 p-1.5 bg-[#F7F4EE] rounded-2xl border border-[#E6E2D8]">
+                <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-10">
+                  <div className="flex-1 min-w-0 overflow-x-auto no-scrollbar scrollbar-none flex items-center gap-2 p-1.5 bg-[#F7F4EE] rounded-2xl border border-[#E6E2D8]">
                     {categories.map((c) => (
                       <button
                         key={c.id}
                         type="button"
                         onClick={() => setFilter(c.id)}
-                        className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                        className={`shrink-0 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
                           filter === c.id
                             ? "bg-[#0F1730] text-white shadow-xs"
                             : "text-[#4A5370] hover:text-[#0F1730] hover:bg-white"
@@ -2221,8 +2367,8 @@ export function IntegrationsPage() {
                   </div>
                 </div>
 
-                {/* Grid of Authentic Figma Cards (3 Columns for spacious, authentic layout) */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Compact Grid: 4 Cards in a Row (Strictly matching Idea 2) */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
                   {filtered.map((item) => (
                     <FigmaIntegrationCard key={item.id} item={item} />
                   ))}

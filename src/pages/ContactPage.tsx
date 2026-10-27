@@ -115,29 +115,31 @@ export function ContactPage() {
 
                 {/* Direct Channel Badges (High Contrast & Clear Readability) */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                  <div className="p-4 rounded-xl bg-[#0F1E36] border border-slate-700/80 text-left shadow-md hover:border-[#FF5A36]/60 transition-all">
-                    <div className="flex items-center gap-2 text-xs font-bold text-slate-200 mb-1.5">
+                  <div className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-left shadow-md hover:border-[#FF5A36] transition-all group">
+                    <div className="flex items-center gap-2 text-xs font-bold text-white mb-2">
                       <Mail className="w-4 h-4 text-[#FF5A36]" />
                       <span>Sales inquiries</span>
                     </div>
                     <a
                       href="mailto:sales@deskmerit.com"
-                      className="text-xs font-mono font-bold text-white hover:text-[#FF5A36] transition-colors block bg-slate-800/80 px-2.5 py-1.5 rounded-lg border border-slate-700/70"
+                      className="text-xs sm:text-[13px] font-mono font-bold text-[#0F1730] bg-white hover:bg-slate-50 transition-colors flex items-center justify-between px-3 py-2 rounded-lg border border-slate-200 shadow-sm"
                     >
-                      sales@deskmerit.com
+                      <span>sales@deskmerit.com</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36] shrink-0" />
                     </a>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-[#0F1E36] border border-slate-700/80 text-left shadow-md hover:border-[#FF5A36]/60 transition-all">
-                    <div className="flex items-center gap-2 text-xs font-bold text-slate-200 mb-1.5">
+                  <div className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-left shadow-md hover:border-[#FF5A36] transition-all group">
+                    <div className="flex items-center gap-2 text-xs font-bold text-white mb-2">
                       <ShieldCheck className="w-4 h-4 text-[#FF5A36]" />
                       <span>Security & Legal</span>
                     </div>
                     <a
                       href="mailto:security@deskmerit.com"
-                      className="text-xs font-mono font-bold text-white hover:text-[#FF5A36] transition-colors block bg-slate-800/80 px-2.5 py-1.5 rounded-lg border border-slate-700/70"
+                      className="text-xs sm:text-[13px] font-mono font-bold text-[#0F1730] bg-white hover:bg-slate-50 transition-colors flex items-center justify-between px-3 py-2 rounded-lg border border-slate-200 shadow-sm"
                     >
-                      security@deskmerit.com
+                      <span>security@deskmerit.com</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36] shrink-0" />
                     </a>
                   </div>
                 </div>

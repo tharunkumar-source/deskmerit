@@ -46,7 +46,7 @@ function HeroInteractiveAppCard() {
             <h3 className="text-sm sm:text-base font-bold text-[#0F1730]">Today's activity</h3>
             <p className="text-[11px] text-[#64748B]">Timeline · Oct 27, 2026</p>
           </div>
-          <span className="text-xs font-bold text-[#4F46E5] bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100/80 shadow-xs">
+          <span className="text-xs font-bold text-[#4F46E5] bg-indigo-50 px-2.5 py-1 rounded-md border border-indigo-100/80">
             6h 40m Tracked
           </span>
         </div>
@@ -135,20 +135,20 @@ function HeroInteractiveAppCard() {
       </div>
 
       {/* ========================================================================= */}
-      {/* CARD 2: OVERLAPPING TOP-RIGHT CARD — TEAM LIVE STATUS                       */}
+      {/* CARD 2: OVERLAPPING TOP-RIGHT CARD — TEAM LIVE STATUS (Hidden on Mobile)  */}
       {/* ========================================================================= */}
-      <div className="absolute -top-6 -right-2 sm:-right-8 w-64 sm:w-72 bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-[#E6E2D8] shadow-[0_20px_45px_rgba(15,23,48,0.14)] z-20 hover:z-30 hover:-translate-y-1 transition-all duration-300">
+      <div className="hidden sm:block absolute -top-6 -right-2 sm:-right-8 w-64 sm:w-72 bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-[#E6E2D8] shadow-[0_20px_45px_rgba(15,23,48,0.14)] z-20 hover:z-30 hover:-translate-y-1 transition-all duration-300">
         <div className="flex items-center justify-between pb-2 border-b border-slate-100">
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
             <span className="text-xs font-bold text-[#0F1730]">Team live status</span>
           </div>
-          <span className="text-[10px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full font-bold border border-emerald-100">
+          <span className="text-[10px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md font-bold border border-emerald-100">
             Live sync
           </span>
         </div>
 
-        {/* Counter Pills */}
+        {/* Counter Grid */}
         <div className="grid grid-cols-3 gap-1.5 my-2.5 text-center">
           <div className="p-1.5 rounded-xl bg-emerald-50/90 border border-emerald-100">
             <div className="text-[9px] text-emerald-800 font-bold uppercase">Track</div>
@@ -195,14 +195,14 @@ function HeroInteractiveAppCard() {
       </div>
 
       {/* ========================================================================= */}
-      {/* CARD 3: OVERLAPPING BOTTOM-LEFT CARD — PRODUCTIVITY SUMMARY                 */}
+      {/* CARD 3: OVERLAPPING BOTTOM-LEFT CARD — PRODUCTIVITY (Hidden on Mobile)    */}
       {/* ========================================================================= */}
-      <div className="absolute -bottom-8 -left-2 sm:-left-8 w-60 sm:w-68 bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-[#E6E2D8] shadow-[0_20px_45px_rgba(15,23,48,0.14)] z-20 hover:z-30 hover:-translate-y-1 transition-all duration-300">
+      <div className="hidden sm:block absolute -bottom-8 -left-2 sm:-left-8 w-60 sm:w-68 bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-[#E6E2D8] shadow-[0_20px_45px_rgba(15,23,48,0.14)] z-20 hover:z-30 hover:-translate-y-1 transition-all duration-300">
         <div className="flex items-center justify-between mb-1.5">
           <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
             Time tracking summary
           </span>
-          <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100 font-mono">
+          <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100 font-mono">
             79% Score
           </span>
         </div>
@@ -376,10 +376,10 @@ export function DeskmeritHero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           {/* Left Column: Bold Typography & Lead Capture (Reference Image 4) */}
           <div className="lg:col-span-6 space-y-6 text-left">
-            {/* Eyebrow Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F8FAFC] border border-slate-200 shadow-sm text-xs font-semibold text-[#0F1730]">
-              <span className="pulse-dot" />
-              <span>Automatic time tracking for modern teams</span>
+            {/* Clean Eyebrow Standard */}
+            <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
+              <span>AUTOMATIC TIME TRACKING FOR MODERN TEAMS</span>
             </div>
 
             {/* H1 Headline Matching Reference Image 4 Style */}
@@ -396,44 +396,36 @@ export function DeskmeritHero() {
               Connect Jira or Azure DevOps, press start, and defensible client hours and attendance build on their own.
             </p>
 
-            {/* Direct High-Converting CTAs (Email input removed as requested) */}
+            {/* Direct High-Converting CTAs */}
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
               <Link
                 to="/signup"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E04422] text-white font-bold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.32)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E04422] text-white font-bold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.32)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all cursor-pointer"
               >
                 <span>Start free trial</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/demo"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-[#0F1730] font-bold text-sm border border-slate-300 shadow-sm hover:border-slate-400 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-[#0F1730] font-bold text-sm border border-slate-300 shadow-sm hover:border-slate-400 transition-all cursor-pointer"
               >
                 <span>Book a demo</span>
               </Link>
             </div>
 
-            {/* Standalone Trust & Platform Badges (Clean, Responsive, Independent Modern Pills) */}
-            <div className="pt-4 flex flex-wrap items-center gap-2.5 sm:gap-3">
-              <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-emerald-50/80 border border-emerald-200/80 text-xs font-bold text-[#0F1730] shadow-xs hover:border-emerald-300 transition-colors">
-                <span className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center text-[#12B886] shrink-0">
-                  <Check className="w-3.5 h-3.5 stroke-[3]" />
-                </span>
-                <span>14-day free trial</span>
-                <span className="text-[11px] font-normal text-emerald-800">· No card needed</span>
+            {/* Clean Key Value Signals (No AI Pill Capsules) */}
+            <div className="pt-3 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-[#4A5370]">
+              <div className="flex items-center gap-1.5 font-medium">
+                <Check className="w-4 h-4 text-[#12B886] stroke-[2.5]" />
+                <span className="text-[#0F1730] font-bold">14-day free trial</span>
+                <span className="text-slate-400">· No card needed</span>
               </div>
-
-              <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-slate-50 border border-slate-200 text-xs font-bold text-[#0F1730] shadow-xs hover:border-slate-300 transition-colors">
-                <span className="w-5 h-5 rounded-full bg-slate-200/80 flex items-center justify-center text-[#0F1730] shrink-0 text-[10px] font-mono font-black">
-                  OS
-                </span>
+              <div className="flex items-center gap-1.5 font-medium">
+                <Laptop className="w-4 h-4 text-slate-500" />
                 <span>Windows, macOS & Linux</span>
               </div>
-
-              <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#FFE6DF]/70 border border-[#FFD4CA] text-xs font-bold text-[#0F1730] shadow-xs hover:border-[#FF5A36] transition-colors">
-                <span className="w-5 h-5 rounded-full bg-[#FFE6DF] flex items-center justify-center text-[#FF5A36] shrink-0">
-                  <Clock className="w-3.5 h-3.5 stroke-[2.5]" />
-                </span>
+              <div className="flex items-center gap-1.5 font-medium">
+                <Clock className="w-4 h-4 text-[#FF5A36]" />
                 <span>10-minute setup</span>
               </div>
             </div>
@@ -442,41 +434,6 @@ export function DeskmeritHero() {
           {/* Right Column: Interactive Clean Application Cards (Reference Images 2, 3, 4) */}
           <div className="lg:col-span-6 relative">
             <HeroInteractiveAppCard />
-          </div>
-        </div>
-
-        {/* Integration Partner Badges (Screenshot 1: Infinite Auto-Scrolling Marquee) */}
-        <div className="mt-16 sm:mt-20 pt-8 sm:pt-10 border-t border-slate-100 relative overflow-hidden">
-          <p className="text-center text-[11px] font-bold uppercase tracking-wider text-[#9AA1B2] mb-6">
-            Trusted by modern delivery teams across Jira, Azure DevOps, and Sqalible HRMS
-          </p>
-
-          {/* Left & Right gradient edge masks for smooth fade */}
-          <div className="absolute left-0 top-16 bottom-0 w-12 sm:w-28 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-16 bottom-0 w-12 sm:w-28 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
-
-          {/* Continuous Auto-Scrolling Marquee Track */}
-          <div className="flex overflow-hidden py-2 select-none">
-            <div className="marquee-content flex items-center gap-3.5 sm:gap-4 shrink-0">
-              {[...partnerTools, ...partnerTools].map((tool, idx) => (
-                <div
-                  key={`${tool.name}-${idx}`}
-                  className="group shrink-0 px-4 py-2.5 rounded-2xl bg-white hover:bg-slate-50/80 border border-slate-200/90 hover:border-[#FF5A36] shadow-subtle hover:shadow-md transition-all flex items-center gap-3 cursor-pointer"
-                >
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 p-1.5 group-hover:scale-105 transition-transform">
-                    {tool.icon}
-                  </div>
-                  <div className="text-left">
-                    <div className="text-xs sm:text-sm font-bold text-[#0F1730] whitespace-nowrap">
-                      {tool.name}
-                    </div>
-                    <div className="text-[10px] text-[#4A5370] whitespace-nowrap">
-                      {tool.category}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>

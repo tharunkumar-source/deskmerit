@@ -90,7 +90,7 @@ export function DeskmeritGlobalSection() {
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-2xl">{region.flag}</span>
-                  <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#FFFFFF] text-[#C2361A] border border-[#E6E2D8]">
+                  <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded-md bg-[#FFFFFF] text-[#C2361A] border border-[#E6E2D8]">
                     {region.priceBadge}
                   </span>
                 </div>

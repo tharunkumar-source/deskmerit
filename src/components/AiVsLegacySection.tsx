@@ -61,48 +61,59 @@ export function AiVsLegacySection() {
           </Link>
         </div>
 
-        {/* 3-Column Table (Capability | Legacy Trackers | Deskmerit) */}
-        <div className="overflow-hidden rounded-2xl border border-[#E6E2D8] bg-[#FFFFFF] shadow-card">
-          {/* Header Row */}
-          <div className="grid grid-cols-12 border-b border-[#E6E2D8] font-semibold text-xs">
-            <div className="col-span-3 px-6 py-4 bg-[#F7F4EE] text-[#0F1730] uppercase tracking-wider font-bold">
-              Capability
-            </div>
-            <div className="col-span-4 px-6 py-4 border-x border-[#E6E2D8] bg-[#F7F4EE]/70 text-[#4A5370] font-bold">
-              Legacy Trackers (DeskTime, Hubstaff, Time Doctor)
-            </div>
-            <div className="col-span-5 flex items-center justify-between bg-[#0F1730] text-white px-6 py-4">
-              <span className="text-white text-xs sm:text-sm font-extrabold tracking-tight">
-                Deskmerit (Trust-First)
-              </span>
-              <span className="inline-flex items-center gap-1 text-[11px] font-extrabold text-white bg-[#FF5A36] px-2.5 py-0.5 rounded-full shadow-xs">
-                Recommended
-              </span>
-            </div>
-          </div>
+        {/* Mobile Swipe Notice */}
+        <div className="sm:hidden flex items-center justify-between text-[11px] text-[#4A5370] font-medium mb-3 px-1">
+          <span className="flex items-center gap-1.5 font-mono">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A36] animate-pulse" />
+            <span>Swipe horizontally to compare</span>
+          </span>
+          <span className="text-slate-400 font-mono text-[10px]">← 3 COLUMNS →</span>
+        </div>
 
-          {/* Table Rows */}
-          <div className="divide-y divide-[#E6E2D8]">
-            {comparisonRows.map((row, i) => (
-              <div key={row.capability} className="grid grid-cols-12 items-stretch group hover:bg-[#F7F4EE]/40 transition-colors text-xs">
-                {/* Capability Column */}
-                <div className="col-span-3 p-5 flex flex-col justify-center bg-white group-hover:bg-[#F7F4EE]/40 font-bold text-[#0F1730]">
-                  {row.capability}
-                </div>
-
-                {/* Legacy Column */}
-                <div className="col-span-4 p-5 flex items-start gap-2.5 border-x border-[#E6E2D8] text-[#4A5370] bg-[#FAF8F5]">
-                  <XCircle className="w-4 h-4 text-[#E5484D] shrink-0 mt-0.5" />
-                  <span className="leading-relaxed">{row.legacy}</span>
-                </div>
-
-                {/* Deskmerit Column */}
-                <div className="col-span-5 p-5 flex items-start gap-2.5 bg-[#FFF9F7] text-[#0F1730] font-medium">
-                  <CheckCircle2 className="w-4 h-4 text-[#12B886] shrink-0 mt-0.5" />
-                  <span className="leading-relaxed">{row.deskmerit}</span>
-                </div>
+        {/* 3-Column Table with Mobile Horizontal Scroll */}
+        <div className="overflow-x-auto no-scrollbar rounded-2xl border border-[#E6E2D8] bg-[#FFFFFF] shadow-card">
+          <div className="min-w-[660px] sm:min-w-full">
+            {/* Header Row */}
+            <div className="grid grid-cols-12 border-b border-[#E6E2D8] font-semibold text-xs">
+              <div className="col-span-3 px-6 py-4 bg-[#F7F4EE] text-[#0F1730] uppercase tracking-wider font-bold">
+                Capability
               </div>
-            ))}
+              <div className="col-span-4 px-6 py-4 border-x border-[#E6E2D8] bg-[#F7F4EE]/70 text-[#4A5370] font-bold">
+                Legacy Trackers (DeskTime, Hubstaff, Time Doctor)
+              </div>
+              <div className="col-span-5 flex items-center justify-between bg-[#0F1730] text-white px-6 py-4">
+                <span className="text-white text-xs sm:text-sm font-extrabold tracking-tight">
+                  Deskmerit (Trust-First)
+                </span>
+                <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider text-white bg-[#FF5A36] px-2 py-0.5 rounded-md shadow-xs">
+                  Recommended
+                </span>
+              </div>
+            </div>
+
+            {/* Table Rows */}
+            <div className="divide-y divide-[#E6E2D8]">
+              {comparisonRows.map((row, i) => (
+                <div key={row.capability} className="grid grid-cols-12 items-stretch group hover:bg-[#F7F4EE]/40 transition-colors text-xs">
+                  {/* Capability Column */}
+                  <div className="col-span-3 p-5 flex flex-col justify-center bg-white group-hover:bg-[#F7F4EE]/40 font-bold text-[#0F1730]">
+                    {row.capability}
+                  </div>
+
+                  {/* Legacy Column */}
+                  <div className="col-span-4 p-5 flex items-start gap-2.5 border-x border-[#E6E2D8] text-[#4A5370] bg-[#FAF8F5]">
+                    <XCircle className="w-4 h-4 text-[#E5484D] shrink-0 mt-0.5" />
+                    <span className="leading-relaxed">{row.legacy}</span>
+                  </div>
+
+                  {/* Deskmerit Column */}
+                  <div className="col-span-5 p-5 flex items-start gap-2.5 bg-[#FFF9F7] text-[#0F1730] font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-[#12B886] shrink-0 mt-0.5" />
+                    <span className="leading-relaxed">{row.deskmerit}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

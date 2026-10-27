@@ -24,13 +24,13 @@ export function DeskmeritTwoWaysToBuy() {
           {/* Card 1: Standalone */}
           <div className="bg-white rounded-3xl p-8 sm:p-10 border border-[#E6E2D8] shadow-[0_4px_20px_rgba(15,23,48,0.04)] hover:shadow-[0_12px_32px_rgba(15,23,48,0.08)] hover:border-[#FF5A36]/40 transition-all duration-300 flex flex-col justify-between group">
             <div>
-              {/* Badge & Icon Header */}
-              <div className="flex items-center justify-between mb-6 pb-5 border-b border-slate-100">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F7F4EE] border border-[#E6E2D8] text-xs font-extrabold uppercase tracking-wider text-[#4A5370]">
-                  <Laptop className="w-3.5 h-3.5 text-[#FF5A36]" />
+              {/* Clean Badge & Icon Header */}
+              <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#4A5370]">
+                  <Laptop className="w-4 h-4 text-[#FF5A36]" />
                   <span>Standalone Edition</span>
                 </div>
-                <span className="text-xs font-bold text-slate-400">Self-Serve Ready</span>
+                <span className="text-xs font-semibold text-slate-400">Self-Serve Ready</span>
               </div>
 
               {/* Title & Description */}
@@ -105,14 +105,15 @@ export function DeskmeritTwoWaysToBuy() {
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#FF5A36] via-[#FF8A65] to-[#38BDF8]" />
 
             <div>
-              {/* Badge & Icon Header */}
-              <div className="flex items-center justify-between mb-6 pb-5 border-b border-slate-100">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFE6DF]/40 border border-[#FF5A36]/30 text-xs font-extrabold uppercase tracking-wider text-[#FF5A36]">
-                  <Building2 className="w-3.5 h-3.5 text-[#FF5A36]" />
+              {/* Clean Badge & Icon Header */}
+              <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
+                  <Building2 className="w-4 h-4 text-[#FF5A36]" />
                   <span>HRMS Native Module</span>
                 </div>
-                <span className="text-[11px] font-extrabold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
-                  Recommended for Sqalible
+                <span className="text-xs font-semibold text-emerald-700 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                  <span>Recommended for Sqalible</span>
                 </span>
               </div>
 
@@ -184,8 +185,8 @@ export function DeskmeritTwoWaysToBuy() {
         </div>
 
         {/* Bottom Reassurance Banner (Aligned with max-w-6xl width of cards above) */}
-        <div className="max-w-6xl mx-auto mt-8 p-4 sm:p-5 rounded-2xl bg-white border border-[#E6E2D8] flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left shadow-xs">
-          <div className="w-10 h-10 rounded-xl bg-orange-50 text-[#FF5A36] flex items-center justify-center shrink-0">
+        <div className="max-w-6xl mx-auto mt-8 p-4 sm:p-5 rounded-2xl bg-white border border-[#E6E2D8] flex items-center gap-3.5 text-left shadow-xs">
+          <div className="hidden sm:flex w-10 h-10 rounded-xl bg-orange-50 text-[#FF5A36] items-center justify-center shrink-0">
             <ShieldCheck className="w-5 h-5" />
           </div>
           <div className="text-xs text-[#4A5370] leading-relaxed">

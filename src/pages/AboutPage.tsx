@@ -50,10 +50,89 @@ export function AboutPage() {
   ];
 
   const offices = [
-    { country: "India", role: "Headquarters, Engineering & Support", location: "Pune & Bengaluru", flag: "🇮🇳" },
-    { country: "Middle East", role: "Sales & Customer Success", location: "Dubai, UAE", flag: "🇦🇪" },
-    { country: "Australia & NZ", role: "Sales & Strategic Partnerships", location: "Sydney, NSW", flag: "🇦🇺" },
-    { country: "United States", role: "Enterprise Sales & Accounts", location: "San Francisco, CA", flag: "🇺🇸" },
+    {
+      country: "India",
+      role: "Global Headquarters, Rust Engine & Core Platform",
+      location: "Pune & Bengaluru",
+      flag: "🇮🇳",
+      image: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=800&q=80",
+      stats: "120+ Engineers · 24/7 Support"
+    },
+    {
+      country: "Middle East",
+      role: "Enterprise Growth & Solutions Architecture",
+      location: "Dubai, UAE",
+      flag: "🇦🇪",
+      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
+      stats: "DIFC Regional Hub"
+    },
+    {
+      country: "Australia & NZ",
+      role: "Strategic Alliances & Partner Network",
+      location: "Sydney, NSW",
+      flag: "🇦🇺",
+      image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&q=80",
+      stats: "Barangaroo Tech District"
+    },
+    {
+      country: "United States",
+      role: "Enterprise Accounts & North America Security",
+      location: "San Francisco, CA",
+      flag: "🇺🇸",
+      image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=800&q=80",
+      stats: "Financial District Office"
+    },
+  ];
+
+  const teamMembers = [
+    {
+      name: "Keyur Mehta",
+      role: "Managing Director",
+      avatar: "/team/keyur-mehta.jpg",
+      bio: "Guiding enterprise vision, governance, and ethical workplace principles."
+    },
+    {
+      name: "Dishant Mehta",
+      role: "Chief Technology Officer",
+      avatar: "/team/dishant-mehta.jpg",
+      bio: "Architect of Deskmerit's native Rust desktop engine and sub-20ms WebSocket sync."
+    },
+    {
+      name: "Zil Mehta",
+      role: "Sr. Project Manager",
+      avatar: "/team/zil-mehta.jpg",
+      bio: "Leading software delivery sprints, agile governance, and customer outcomes."
+    },
+    {
+      name: "Sohail Khan",
+      role: "Head of Strategy and Growth",
+      avatar: "/team/sohail-khan.jpg",
+      bio: "Scaling reseller partnerships, global MSP programs, and enterprise accounts."
+    },
+    {
+      name: "Anshika Mishra",
+      role: "Project Manager",
+      avatar: "/team/anshika-mishra.jpg",
+      bio: "Managing cross-functional engineering pods, quality metrics, and release cycles."
+    },
+    {
+      name: "Shivani Mehta",
+      role: "Technical Project Manager",
+      avatar: "/team/shivani-mehta.jpg",
+      bio: "Overseeing Jira and Azure DevOps integrations, API tooling, and client onboarding."
+    },
+    {
+      name: "Himali Jaiswal",
+      role: "Lead – Account Management",
+      avatar: "/team/himali-jaiswal.jpg",
+      bio: "Championing client satisfaction, rollout success, and SLA assurance."
+    },
+    {
+      name: "Shashi Gupta",
+      role: "Human Resource Manager",
+      avatar: "/team/shashi-gupta.jpg",
+      bio: "Nurturing our remote-first async culture and high-trust engineering talent."
+    }
   ];
 
   const openRoles = [
@@ -194,54 +273,30 @@ export function AboutPage() {
                 </div>
               </div>
 
-              {/* Right Column: Browser Window Mockup with macOS Controls */}
+              {/* Right Column: Individual Clean Image (No UI wrappers) */}
               <div className="col-span-12 lg:col-span-6">
-                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
-                  <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
-                      <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
-                      <div className="w-3 h-3 rounded-full bg-[#62C554]" />
-                    </div>
-                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
-                      app.deskmerit.com/company/{isCareers ? "careers" : isPartners ? "partners" : isPress ? "press" : "overview"}
-                    </div>
-                    <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
-                      Active Operations
-                    </div>
-                  </div>
-
-                  <div className="p-6 space-y-4">
-                    <div className="p-4 rounded-xl bg-slate-900/70 border border-slate-800 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-lg bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center font-bold text-sm">
-                          DM
-                        </div>
-                        <div>
-                          <div className="text-xs font-bold text-white">Deskmerit Worldwide</div>
-                          <div className="text-[10px] text-slate-400">Kombee Technologies Pvt. Ltd.</div>
-                        </div>
-                      </div>
-                      <span className="font-mono text-xs font-bold text-[#FF5A36]">Global Team</span>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="p-3.5 rounded-xl bg-slate-900/50 border border-slate-800 text-left">
-                        <div className="text-[10px] text-slate-400 font-bold uppercase">Workplace Model</div>
-                        <div className="text-sm font-bold text-white mt-1">100% Async Remote</div>
-                      </div>
-                      <div className="p-3.5 rounded-xl bg-slate-900/50 border border-slate-800 text-left">
-                        <div className="text-[10px] text-slate-400 font-bold uppercase">Regional Hubs</div>
-                        <div className="text-sm font-bold text-[#FF5A36] mt-1">IN · US · ME · AU</div>
-                      </div>
-                    </div>
-
-                    <div className="p-3 rounded-xl bg-slate-900/40 border border-slate-800/80 flex items-center justify-between text-xs">
-                      <span className="text-slate-400 font-medium">Core Architecture</span>
-                      <span className="text-[#FF5A36] font-bold">Zero-Spyware Guarantee</span>
-                    </div>
-                  </div>
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 aspect-[16/10] sm:aspect-[4/3] group bg-slate-900">
+                  <img
+                    src={
+                      isCareers
+                        ? "/images/company/careers-hero.jpg"
+                        : isPartners
+                        ? "/images/company/partners-hero.jpg"
+                        : isPress
+                        ? "/images/company/press-hero.jpg"
+                        : "/images/company/about-hero.jpg"
+                    }
+                    alt={
+                      isCareers
+                        ? "Deskmerit Engineering Team and Culture"
+                        : isPartners
+                        ? "Deskmerit Global Partner Ecosystem"
+                        : isPress
+                        ? "Deskmerit Press Kit and Official Media Assets"
+                        : "Deskmerit Company & Collaborative Engineering Pods"
+                    }
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
               </div>
             </div>
@@ -436,7 +491,56 @@ export function AboutPage() {
               </div>
             </section>
 
-            {/* Where We Work */}
+            {/* Leadership & Core Team */}
+            <section className="py-20 bg-[#FBF9F5] border-b border-[#E6E2D8]">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center max-w-2xl mx-auto mb-16">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                    Executive Leadership & Core Team
+                  </div>
+                  <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-[-0.025em]">
+                    The team building high-trust software
+                  </h2>
+                  <p className="text-sm text-[#4A5370] mt-3 leading-relaxed">
+                    Senior systems engineers, product designers, and client success leaders committed to ethical proof of work.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {teamMembers.map((member) => (
+                    <div
+                      key={member.name}
+                      className="bg-white rounded-2xl overflow-hidden border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all group flex flex-col justify-between"
+                    >
+                      <div className="p-6">
+                        <div className="w-24 h-24 mx-auto rounded-2xl overflow-hidden mb-4 border-2 border-[#E6E2D8] group-hover:border-[#FF5A36] transition-colors shadow-xs">
+                          <img
+                            src={member.avatar}
+                            alt={member.name}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                        <h3 className="text-base font-bold text-[#0F1730] text-center group-hover:text-[#FF5A36] transition-colors">
+                          {member.name}
+                        </h3>
+                        <div className="text-xs font-semibold text-[#FF5A36] text-center mt-0.5 mb-3">
+                          {member.role}
+                        </div>
+                        <p className="text-xs text-[#4A5370] leading-relaxed text-center font-normal">
+                          {member.bio}
+                        </p>
+                      </div>
+
+                      <div className="px-5 py-3 bg-[#FAF8F5] border-t border-[#F0ECE1] text-center text-[11px] text-slate-500 font-medium">
+                        Kombee Technologies
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Where We Work with Photographic City Hubs */}
             <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-2xl mx-auto mb-16">
                 <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
@@ -445,18 +549,44 @@ export function AboutPage() {
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-[-0.025em]">
                   Where we work
                 </h2>
-                <p className="text-xs text-[#4A5370] mt-1">
-                  Serving distributed delivery and software teams worldwide.
+                <p className="text-xs sm:text-sm text-[#4A5370] mt-2">
+                  Serving distributed delivery and software teams across 4 global operating hubs.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {offices.map((off) => (
-                  <div key={off.country} className="bg-[#FFFFFF] rounded-2xl p-6 border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all group">
-                    <span className="text-3xl block mb-3">{off.flag}</span>
-                    <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-1">{off.country}</h3>
-                    <div className="text-xs font-semibold text-[#FF5A36] mb-2">{off.location}</div>
-                    <p className="text-xs text-[#4A5370]">{off.role}</p>
+                  <div
+                    key={off.country}
+                    className="bg-white rounded-2xl overflow-hidden border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all group flex flex-col justify-between"
+                  >
+                    {/* Location Image */}
+                    <div className="h-44 w-full relative overflow-hidden bg-slate-900">
+                      <img
+                        src={off.image}
+                        alt={`${off.country} Hub - ${off.location}`}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0F1730]/80 via-transparent to-transparent pointer-events-none" />
+                      <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-bold shadow-xs">
+                        {off.flag} {off.country}
+                      </div>
+                      <div className="absolute bottom-3 left-3 right-3 text-white">
+                        <div className="text-xs font-bold text-white">{off.location}</div>
+                        <div className="text-[10px] text-slate-300 font-mono">{off.stats}</div>
+                      </div>
+                    </div>
+
+                    <div className="p-5">
+                      <p className="text-xs text-[#4A5370] leading-relaxed font-normal">
+                        {off.role}
+                      </p>
+                    </div>
+
+                    <div className="px-5 py-2.5 bg-[#FAF8F5] border-t border-[#F0ECE1] text-[11px] font-mono text-emerald-600 flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                      <span>Active Regional Cluster</span>
+                    </div>
                   </div>
                 ))}
               </div>

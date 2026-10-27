@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Check, ArrowRight, Layers, ShieldCheck, Sparkles, AlertTriangle } from "lucide-react";
+import { Check, ArrowRight, Layers, ShieldCheck, AlertTriangle } from "lucide-react";
 
 export function DeskmeritTrackerPlusSpotlight() {
   const [activeTab, setActiveTab] = useState<"Jira" | "Azure DevOps" | "OpenProject">("Jira");
@@ -14,9 +14,8 @@ export function DeskmeritTrackerPlusSpotlight() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Copy & Checklist */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#24305A] text-xs font-semibold text-[#FFE6DF] border border-[#334173]">
-              <Sparkles className="w-3.5 h-3.5 text-[#FF5A36]" />
-              <span>Flagship innovation</span>
+            <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+              Flagship innovation
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-[-0.025em] leading-tight">

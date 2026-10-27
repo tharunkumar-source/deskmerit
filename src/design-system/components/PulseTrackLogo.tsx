@@ -94,8 +94,7 @@ export function PulseTrackLogo({
   // Stacked version
   if (variant === "stacked") {
     const content = (
-      <div className={`inline-flex flex-col items-center gap-2 ${className}`}>
-        <LiveLoopSymbol size={symbolPx * 1.3} variant={symbolVariant} />
+      <div className={`inline-flex flex-col items-center gap-1 ${className}`}>
         <span
           className={`font-display font-bold leading-none select-none ${textClass}`}
           style={{ color: textColor }}
@@ -119,8 +118,7 @@ export function PulseTrackLogo({
 
   const logoContent = (
     <div className={`inline-flex flex-col items-start ${className}`}>
-      <div className="inline-flex items-center gap-2.5">
-        <LiveLoopSymbol size={symbolPx} variant={symbolVariant} />
+      <div className="inline-flex items-center">
         <span
           className={`font-display font-bold leading-none select-none ${textClass}`}
           style={{ color: textColor }}

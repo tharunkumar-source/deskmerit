@@ -54,6 +54,35 @@ export function LegalPage() {
     { name: "Grafana Labs", purpose: "Infrastructure telemetry and cluster metrics", location: "United States" },
   ];
 
+  const legalImages: Record<string, { src: string; alt: string }> = {
+    terms: {
+      src: "/images/legal/legal-terms.jpg",
+      alt: "Deskmerit Master Terms of Service & Enterprise Agreement",
+    },
+    privacy: {
+      src: "/images/legal/legal-privacy.jpg",
+      alt: "Deskmerit Data Privacy, Trust & Protection Architecture",
+    },
+    dpa: {
+      src: "/images/legal/legal-dpa.jpg",
+      alt: "Deskmerit Data Processing Agreement & Regulatory Compliance",
+    },
+    subprocessors: {
+      src: "/images/legal/legal-subprocessors.jpg",
+      alt: "Deskmerit Verified Cloud Infrastructure & Subprocessors",
+    },
+    cookies: {
+      src: "/images/legal/legal-cookies.jpg",
+      alt: "Deskmerit Cookie Policy & Minimalist Session Telemetry",
+    },
+    sla: {
+      src: "/images/legal/legal-sla.jpg",
+      alt: "Deskmerit 99.9% High Availability Service Level Agreement",
+    },
+  };
+
+  const currentImage = legalImages[activeDoc] || legalImages.terms;
+
   return (
     <div className="min-h-screen bg-[#F7F4EE] text-[#0F1730]">
       <DeskmeritHeader />
@@ -107,64 +136,15 @@ export function LegalPage() {
                 </div>
               </div>
 
-              {/* Right Column: Floating macOS Mockup */}
+              {/* Right Column: Individual Clean Compliance Image (Unique to each page, No UI wrappers) */}
               <div className="lg:col-span-5">
-                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-2xl overflow-hidden backdrop-blur-md">
-                  {/* macOS Window Titlebar */}
-                  <div className="flex items-center justify-between px-4 py-3 bg-[#0A1628] border-b border-slate-800">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
-                      <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
-                      <div className="w-3 h-3 rounded-full bg-[#62C554]" />
-                    </div>
-                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
-                      app.deskmerit.com/legal/{activeDoc}
-                    </div>
-                    <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
-                      Audited 2026
-                    </div>
-                  </div>
-
-                  {/* Window Body Widget */}
-                  <div className="p-6 space-y-4">
-                    <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
-                      <div className="flex items-center justify-between text-xs">
-                        <span className="text-slate-400">Jurisdiction & Entity</span>
-                        <span className="text-[#FF5A36] font-bold">Kombee Technologies</span>
-                      </div>
-                      <div className="text-sm font-bold text-white">
-                        {title} · Active Version 2.8
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-3 text-left">
-                      <div className="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
-                        <div className="text-[10px] text-slate-400">Statutory Framework</div>
-                        <div className="text-xs font-bold text-[#FF5A36] mt-0.5">GDPR · DPDP 2023</div>
-                      </div>
-                      <div className="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
-                        <div className="text-[10px] text-slate-400">Data Residency</div>
-                        <div className="text-xs font-bold text-white mt-0.5">Mumbai · Sydney · US</div>
-                      </div>
-                    </div>
-
-                    <div className="p-3 rounded-lg bg-slate-900/40 border border-slate-800/80 text-[11px] space-y-1.5">
-                      <div className="flex items-center justify-between text-slate-300">
-                        <span>Surveillance Tech:</span>
-                        <span className="text-red-400 font-bold">Keystrokes Blocked</span>
-                      </div>
-                      <div className="flex items-center justify-between text-slate-300">
-                        <span>Database Encryption:</span>
-                        <span className="text-[#FF5A36] font-bold">AES-256 KMS</span>
-                      </div>
-                    </div>
-
-                    <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
-                      <span>Effective: October 2026</span>
-                      <span className="text-[#FF5A36] font-semibold">Legally Binding</span>
-                    </div>
-                  </div>
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 aspect-[16/11] group bg-slate-900">
+                  <img
+                    key={activeDoc}
+                    src={currentImage.src}
+                    alt={currentImage.alt}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
               </div>
             </div>

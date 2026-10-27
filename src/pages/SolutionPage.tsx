@@ -295,8 +295,8 @@ export function SolutionPage() {
       <section className="py-12 md:py-16 bg-white px-6 border-y border-neutral-200">
         <div className="mx-auto max-w-7xl">
           <div className="w-full">
-            <p className="pretitle text-[#FF5A36]">Measurable Impact</p>
-            <h2 className="mt-1 text-2xl sm:text-3xl font-extrabold text-neutral-900">
+            <p className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">Measurable Impact</p>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900">
               Why Choose Sqalible for {solution.name.replace(/^For /, "")}?
             </h2>
             <p className="mt-2 text-neutral-600 text-body2">
@@ -328,8 +328,8 @@ export function SolutionPage() {
         <section className="bg-[#0B0F19] py-14 md:py-20 text-white">
           <div className="mx-auto max-w-7xl px-6">
             <div className="w-full mb-10">
-              <p className="pretitle text-[#FF5A36]">Core Challenges Solved</p>
-              <h3 className="mt-1 text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              <p className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">Core Challenges Solved</p>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
                 Addressing Critical Friction for {solution.name.replace(/^For /, "")}
               </h3>
               <p className="mt-2 text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-3xl">

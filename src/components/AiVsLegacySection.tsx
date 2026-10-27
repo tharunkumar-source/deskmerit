@@ -42,10 +42,10 @@ export function AiVsLegacySection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
           <div className="flex-1">
-            <p className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
+            <p className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
               Architectural Benchmark
             </p>
-            <h2 id="why-title" className="mt-1 text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-tight">
+            <h2 id="why-title" className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-tight">
               Trust-First Tracker vs Legacy Surveillance Software
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-[#4A5370] max-w-2xl leading-relaxed">

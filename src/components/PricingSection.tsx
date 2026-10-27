@@ -254,7 +254,7 @@ export function PricingSection() {
                   <Button
                     href={plan.cta.href}
                     variant={isGrowth ? "primary" : "secondary"}
-                    className={`w-full justify-center !rounded-full text-xs sm:text-sm font-bold shadow-sm ${
+                    className={`w-full justify-center !rounded-xl text-xs sm:text-sm font-bold shadow-sm ${
                       isGrowth ? "hover:scale-[1.02] shadow-teal-700/20" : ""
                     }`}
                   >

@@ -272,7 +272,7 @@ export function WhyPage() {
                 <button
                   type="button"
                   onClick={toggleAll}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 bg-white px-4 py-2 text-xs font-bold text-neutral-800 shadow-2xs hover:border-primary hover:text-primary transition-all cursor-pointer"
+                  className="inline-flex items-center gap-1.5 rounded-xl border border-neutral-300 bg-white px-4 py-2 text-xs font-bold text-neutral-800 shadow-2xs hover:border-primary hover:text-primary transition-all cursor-pointer"
                 >
                   {isAllExpanded ? "Collapse all" : "Expand all"}
                 </button>
@@ -397,7 +397,7 @@ export function WhyPage() {
                 <Link
                   key={link.title}
                   to={link.href}
-                  className="rounded-full border border-neutral-700 bg-neutral-800/90 px-5 py-2.5 text-xs font-semibold text-white hover:border-teal-400 hover:bg-neutral-700 transition-colors"
+                  className="rounded-xl border border-neutral-700 bg-neutral-800/90 px-5 py-2.5 text-xs font-semibold text-white hover:border-teal-400 hover:bg-neutral-700 transition-colors"
                 >
                   {link.title.replace("Sqalible ", "")} &rarr;
                 </Link>

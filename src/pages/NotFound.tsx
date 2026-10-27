@@ -11,7 +11,7 @@ export function NotFound() {
           <h1 className="mt-3 text-[40px] font-bold leading-[48px] text-white">This page has moved or does not exist</h1>
           <p className="mt-4 max-w-xl text-body1 text-neutral-400">Use the menu above, or head back to the homepage.</p>
           <div className="mt-8">
-            <Button href="/" className="!rounded-full">Back to home</Button>
+            <Button href="/" className="!rounded-xl">Back to home</Button>
           </div>
         </div>
       </section>

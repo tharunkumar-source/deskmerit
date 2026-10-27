@@ -214,3 +214,16 @@
     animation: none;
   }
 }
+
+/* Unified Accent Heading across website */
+.accent-heading,
+.pretitle {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.75rem; /* text-xs */
+  line-height: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #FF5A36;
+}
+

@@ -42,9 +42,8 @@ export function FaqSection({
       <div className={containerClassName}>
         {/* Section Heading */}
         <div className="mb-12">
-          <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2 flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-[#FF5A36]" />
-            <span>{pretitle}</span>
+          <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+            {pretitle}
           </div>
           <h2 id="faq-title" className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-[-0.03em]">
             {title}

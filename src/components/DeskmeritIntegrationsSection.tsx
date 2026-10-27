@@ -1,8 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { Terminal, Bot, ArrowRight, Check, Sparkles, MessageSquare } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 // Authentic Official SVG Logos for Integrations
+function GoogleCalendarLogo({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2z" fill="#FFFFFF" />
+      <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v3h18V6a2 2 0 00-2-2z" fill="#4285F4" />
+      <path d="M3 9v11a2 2 0 002 2h2V9H3z" fill="#34A853" />
+      <path d="M17 22h2a2 2 0 002-2V9h-4v13z" fill="#EA4335" />
+      <path d="M7 20h10v2H7v-2z" fill="#FBBC04" />
+      <text x="12" y="17.5" textAnchor="middle" fill="#1973E8" fontSize="7.5" fontWeight="900" fontFamily="sans-serif">31</text>
+    </svg>
+  );
+}
+
 function JiraLogo({ className = "w-6 h-6" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none">
@@ -13,70 +26,18 @@ function JiraLogo({ className = "w-6 h-6" }: { className?: string }) {
   );
 }
 
-function AzureDevopsLogo({ className = "w-6 h-6" }: { className?: string }) {
+function AsanaLogo({ className = "w-6 h-6" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none">
-      <path d="M24 8.784l-4.706-4.5-8.529 3.098L4.235 2.5 0 6.647v10.706l3.97 4.147 6.471-2.47 8.853 2.47L24 16.588V8.784zm-4.706 7.442l-7.765-2.206v-3.882l7.765-2.206v8.294z" fill="#0078D7"/>
-      <path d="M19.294 8.353l-7.765 2.206v3.882l7.765 2.206V8.353z" fill="#008AD7"/>
-      <path d="M4.235 2.5l6.53 4.882-6.53 2.47V2.5z" fill="#0078D7"/>
-    </svg>
-  );
-}
-
-function OpenProjectLogo({ className = "w-6 h-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="11" fill="#006699" />
-      <circle cx="12" cy="12" r="6.5" fill="#1DA1F2" />
-      <circle cx="12" cy="12" r="3" fill="#FFFFFF" />
-    </svg>
-  );
-}
-
-function GoogleCalendarLogo({ className = "w-6 h-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24">
-      <rect x="2" y="2" width="20" height="20" rx="4" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="0.8" />
-      <path d="M18 2H6C3.79 2 2 3.79 2 6v2h20V6c0-2.21-1.79-4-4-4z" fill="#4285F4"/>
-      <path d="M2 8v10c0 2.21 1.79 4 4 4h2V8H2z" fill="#34A853"/>
-      <path d="M8 22h8c2.21 0 4-1.79 4-4v-2H8v6z" fill="#FBBC05"/>
-      <path d="M20 16V8h2v8c0 2.21-1.79 4-4 4h-2v-4h4z" fill="#EA4335"/>
-      <text x="12" y="16" textAnchor="middle" fontSize="9" fontWeight="800" fill="#1A73E8" fontFamily="sans-serif">31</text>
-    </svg>
-  );
-}
-
-function OutlookLogo({ className = "w-6 h-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
-      <rect x="6" y="3" width="15" height="18" rx="2.5" fill="#0072C6"/>
-      <path d="M13.5 7.5h7.5l-7.5 5.5V7.5z" fill="#005A9E"/>
-      <rect x="3" y="6" width="12" height="12" rx="2.5" fill="#0078D4" stroke="#FFFFFF" strokeWidth="0.8"/>
-      <text x="9" y="14.5" textAnchor="middle" fontSize="7.5" fontWeight="900" fill="#FFFFFF" fontFamily="sans-serif">O</text>
-    </svg>
-  );
-}
-
-function SlackLogo({ className = "w-6 h-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
-      <path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313z" fill="#E01E5A"/>
-      <path d="M8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312z" fill="#36C5F0"/>
-      <path d="M18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312z" fill="#2EB67D"/>
-      <path d="M15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z" fill="#ECB22E"/>
-    </svg>
-  );
-}
-
-function TeamsLogo({ className = "w-6 h-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
-      <circle cx="16.5" cy="7.5" r="3" fill="#5059C9"/>
-      <path d="M12.5 13c0-2.2 2-3.5 4-3.5s4 1.3 4 3.5v3h-8v-3z" fill="#5059C9"/>
-      <circle cx="9" cy="6" r="3.5" fill="#7B83EB"/>
-      <path d="M4 12c0-2.5 2.5-4 5-4s5 1.5 5 4v6H4v-6z" fill="#7B83EB"/>
-      <rect x="2" y="10" width="8" height="8" rx="1.5" fill="#4B53BC"/>
-      <text x="6" y="16" textAnchor="middle" fontSize="6.5" fontWeight="900" fill="#FFFFFF" fontFamily="sans-serif">T</text>
+      <defs>
+        <linearGradient id="asanaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#FC636B" />
+          <stop offset="100%" stopColor="#FF7A59" />
+        </linearGradient>
+      </defs>
+      <circle cx="12" cy="6.5" r="4.2" fill="url(#asanaGrad)" />
+      <circle cx="5.6" cy="17" r="4.2" fill="url(#asanaGrad)" />
+      <circle cx="18.4" cy="17" r="4.2" fill="url(#asanaGrad)" />
     </svg>
   );
 }
@@ -84,257 +45,196 @@ function TeamsLogo({ className = "w-6 h-6" }: { className?: string }) {
 function ZapierLogo({ className = "w-6 h-6" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="11" fill="#FFF3EE"/>
-      <path d="M10.8 4h2.4v5.3l3.8-3.8 1.7 1.7-3.8 3.8H20v2.4h-5.1l3.8 3.8-1.7 1.7-3.8-3.8V20h-2.4v-5.1l-3.8 3.8-1.7-1.7 3.8-3.8H4v-2.4h5.3l-3.8-3.8 1.7-1.7 3.8 3.8V4z" fill="#FF4F00"/>
+      <rect width="24" height="24" rx="6" fill="#FFF2ED" />
+      <path
+        d="M12 4v16M4 12h16M6.34 6.34l11.32 11.32M6.34 17.66L17.66 6.34"
+        stroke="#FF4F00"
+        strokeWidth="2.8"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
 
-function SqalibleLogo({ className = "w-6 h-6" }: { className?: string }) {
+function TrelloLogo({ className = "w-6 h-6" }: { className?: string }) {
   return (
-    <img src="/sqalible-logo.png" alt="Sqalible HRMS" className={`${className} object-contain`} />
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <rect width="24" height="24" rx="5" fill="#0079BF" />
+      <rect x="4" y="4" width="6.5" height="13" rx="1.5" fill="#FFFFFF" />
+      <rect x="13.5" y="4" width="6.5" height="8.5" rx="1.5" fill="#FFFFFF" />
+    </svg>
   );
 }
 
-function McpServerLogo({ className = "w-6 h-6" }: { className?: string }) {
+function OutlookLogo({ className = "w-6 h-6" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="11" fill="#FF5A36" fillOpacity="0.2" />
-      <path d="M12 2L14.2 8.3L20.5 10.5L14.2 12.7L12 19L9.8 12.7L3.5 10.5L9.8 8.3L12 2Z" fill="#FF5A36"/>
-      <circle cx="18" cy="17" r="2.2" fill="#FF8364"/>
-      <circle cx="6" cy="6" r="1.5" fill="#FF8364"/>
+      <path d="M13 5.5h7.5a1 1 0 011 1v11a1 1 0 01-1 1H13V5.5z" fill="#0078D4"/>
+      <path d="M13 12l8.5-5.5v11L13 12z" fill="#005A9E" fillOpacity="0.8"/>
+      <path d="M13 5.5l8.5 5.5-8.5 5.5V5.5z" fill="#28A8EA"/>
+      <rect x="2" y="5" width="13" height="14" rx="2.5" fill="#0078D4"/>
+      <ellipse cx="8.5" cy="12" rx="3.5" ry="4" fill="#FFFFFF"/>
+      <ellipse cx="8.5" cy="12" rx="2" ry="2.5" fill="#0078D4"/>
+    </svg>
+  );
+}
+
+function GitLabLogo({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <path d="M23.6 9.6l-1.3-4.1c-.2-.5-.8-.8-1.3-.8-.5 0-1 .3-1.2.8L17.7 12H6.3L4.2 5.5c-.2-.5-.7-.8-1.2-.8-.5 0-1.1.3-1.3.8L.4 9.6c-.2.5 0 1.1.4 1.4L12 20.2l11.2-9.2c.4-.3.6-.9.4-1.4z" fill="#E24329"/>
+      <path d="M12 20.2l5.7-8.2H6.3l5.7 8.2z" fill="#E24329"/>
+      <path d="M12 20.2L6.3 12H.4l11.6 8.2z" fill="#FC6D26"/>
+      <path d="M.4 9.6c-.2.5 0 1.1.4 1.4L6.3 12 4.2 5.5.4 9.6z" fill="#FCA326"/>
+      <path d="M12 20.2l5.7-8.2h5.9L12 20.2z" fill="#FC6D26"/>
+      <path d="M23.6 9.6c.2.5 0 1.1-.4 1.4L17.7 12l2.1-6.5 3.8 4.1z" fill="#FCA326"/>
+    </svg>
+  );
+}
+
+function SlackLogo({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <path d="M5.5 10a2 2 0 100-4 2 2 0 000 4z" fill="#36C5F0"/>
+      <path d="M2 11.5a2 2 0 002 2h3.5a2 2 0 100-4H4a2 2 0 00-2 2z" fill="#36C5F0"/>
+      <path d="M10 5.5a2 2 0 10-4 0 2 2 0 004 0z" fill="#2EB67D"/>
+      <path d="M11.5 2a2 2 0 00-2 2v3.5a2 2 0 104 0V4a2 2 0 00-2-2z" fill="#2EB67D"/>
+      <path d="M18.5 14a2 2 0 100 4 2 2 0 000-4z" fill="#ECB22E"/>
+      <path d="M22 12.5a2 2 0 00-2-2h-3.5a2 2 0 100 4H20a2 2 0 002-2z" fill="#ECB22E"/>
+      <path d="M14 18.5a2 2 0 104 0 2 2 0 00-4 0z" fill="#E01E5A"/>
+      <path d="M12.5 22a2 2 0 002-2v-3.5a2 2 0 10-4 0V20a2 2 0 002 2z" fill="#E01E5A"/>
     </svg>
   );
 }
 
 export function DeskmeritIntegrationsSection() {
-  const [activePrompt, setActivePrompt] = useState(0);
-
-  const prompts = [
-    {
-      query: "Who worked more than 45 hours last week?",
-      response:
-        "3 people: Wei L. (47h 20m), Rohan P. (46h 05m), Ananya R. (45h 40m). Most overtime was logged against Northwind · Cloud billing export.",
-      toolCall: "deskmerit.timesheets.summary · scope: reports:read",
-    },
-    {
-      query: "Which projects have crossed 90% of their billable budget?",
-      response:
-        "2 projects: Northwind Billing Export is at 108% (Alert triggered), and Fabrikam Microservices is at 91%. Acme Retail is healthy at 72%.",
-      toolCall: "deskmerit.projects.margins · scope: billing:read",
-    },
-    {
-      query: "Who is currently marked on Private Time or Idle?",
-      response:
-        "Daniel K. is on Private Time (12:30 - present). Wei L. is currently marked Idle (no mouse/key input for 8 mins, Teams call in progress).",
-      toolCall: "deskmerit.live.status · scope: presence:read",
-    },
-  ];
-
-  const tools = [
-    {
-      name: "Jira",
-      role: "Tracker Plus",
-      badge: "Live sync",
-      logo: <JiraLogo className="w-5 h-5" />,
-    },
-    {
-      name: "Azure DevOps",
-      role: "Tracker Plus",
-      badge: "Work items",
-      logo: <AzureDevopsLogo className="w-5 h-5" />,
-    },
-    {
-      name: "OpenProject",
-      role: "Tracker Plus",
-      badge: "Self-hosted",
-      logo: <OpenProjectLogo className="w-5 h-5" />,
-    },
+  const integrationTools = [
     {
       name: "Google Calendar",
-      role: "Meetings as work",
-      badge: "Auto-present",
-      logo: <GoogleCalendarLogo className="w-5 h-5" />,
+      category: "Calendar & Meet Sync",
+      href: "/integrations/google-calendar",
+      logo: <GoogleCalendarLogo className="w-6 h-6 shrink-0" />,
     },
     {
-      name: "Outlook 365",
-      role: "Meetings as work",
-      badge: "Auto-present",
-      logo: <OutlookLogo className="w-5 h-5" />,
+      name: "Jira Software",
+      category: "Bi-directional Worklogs",
+      href: "/integrations/jira",
+      logo: <JiraLogo className="w-6 h-6 shrink-0" />,
     },
     {
       name: "Slack",
-      role: "Summaries & /status",
-      badge: "Bot",
-      logo: <SlackLogo className="w-5 h-5" />,
+      category: "Live Status & Alerts",
+      href: "/integrations",
+      logo: <SlackLogo className="w-6 h-6 shrink-0" />,
     },
     {
-      name: "Microsoft Teams",
-      role: "Daily status feed",
-      badge: "App",
-      logo: <TeamsLogo className="w-5 h-5" />,
+      name: "Asana",
+      category: "Milestone & Task Tracking",
+      href: "/integrations",
+      logo: <AsanaLogo className="w-6 h-6 shrink-0" />,
     },
     {
       name: "Zapier",
-      role: "7,000+ app connectors",
-      badge: "No-code",
-      logo: <ZapierLogo className="w-5 h-5" />,
+      category: "5,000+ App Connectors",
+      href: "/integrations/zapier",
+      logo: <ZapierLogo className="w-6 h-6 shrink-0" />,
     },
     {
-      name: "Sqalible HRMS",
-      role: "Native 1-click toggle",
-      badge: "Built-in",
-      logo: <SqalibleLogo className="w-5 h-5" />,
+      name: "Microsoft Outlook",
+      category: "Meeting Attendance",
+      href: "/integrations/outlook",
+      logo: <OutlookLogo className="w-6 h-6 shrink-0" />,
     },
     {
-      name: "MCP Server",
-      role: "AI Assistant Query",
-      badge: "New ★",
-      logo: <McpServerLogo className="w-5 h-5" />,
+      name: "Trello",
+      category: "Kanban Card Timers",
+      href: "/integrations",
+      logo: <TrelloLogo className="w-6 h-6 shrink-0" />,
+    },
+    {
+      name: "GitLab",
+      category: "Commit & Branch Telemetry",
+      href: "/integrations",
+      logo: <GitLabLogo className="w-6 h-6 shrink-0" />,
     },
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#060B17] border-b border-slate-800 text-white font-sans relative overflow-hidden">
-      {/* Ambient Kombee-style glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-gradient-to-b from-[#FF5A36]/8 to-transparent rounded-full blur-3xl pointer-events-none" />
+    <section className="py-20 lg:py-28 bg-[#FFFFFF] border-b border-[#E6E2D8] font-sans relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Left Column: Structured Integration Ecosystem Stage */}
+          <div className="lg:col-span-6">
+            <div className="bg-[#FBF9F5] border border-[#E6E2D8] rounded-3xl p-5 sm:p-7 shadow-[0_10px_30px_rgba(15,23,48,0.04)] relative overflow-hidden">
+              {/* Subtle Ambient Glow */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF5A36]/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Left Aligned Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6 text-left">
-          <div className="max-w-2xl">
-            <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2 font-mono">
-              INTEGRATIONS
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-[-0.025em] leading-tight">
-              Works with the tools{" "}
-              <span className="block text-slate-400">your team already lives in.</span>
-            </h2>
-            <p className="text-base sm:text-lg text-slate-300 mt-3 max-w-xl leading-relaxed">
-              Project tools feed Tracker Plus, calendars feed attendance, chat gets daily summaries — and the REST API & MCP server connect everything else.
-            </p>
-          </div>
-          <Link
-            to="/integrations"
-            className="inline-flex items-center gap-1.5 text-sm font-bold text-slate-300 hover:text-[#FF5A36] transition-colors shrink-0 self-start md:self-end"
-          >
-            Browse all integrations <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-
-        {/* Integration Grid (Black BG as in Kombee: Logo on Left, All Integration Text on Right) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-4 mb-16">
-          {tools.map((item) => (
-            <div
-              key={item.name}
-              className="group bg-[#0B1426] hover:bg-[#111D36] rounded-2xl p-4 border border-slate-800/90 hover:border-[#FF5A36] transition-all flex items-center gap-3.5 shadow-xs hover:shadow-lg"
-            >
-              {/* Left: Integration Logo */}
-              <div className="w-11 h-11 rounded-xl bg-[#060B17] border border-slate-800 flex items-center justify-center p-2.5 shrink-0 group-hover:scale-105 group-hover:border-[#FF5A36]/50 transition-all">
-                {item.logo}
-              </div>
-
-              {/* Right: All Integration Text (Left-aligned) */}
-              <div className="flex-1 min-w-0 text-left">
-                <div className="flex items-center justify-between gap-1 mb-0.5">
-                  <h4 className="font-bold text-sm text-white group-hover:text-[#FF5A36] transition-colors truncate">
-                    {item.name}
-                  </h4>
-                  <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 shrink-0">
-                    {item.badge}
+              {/* Stage Top Bar */}
+              <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#E6E2D8] relative z-10">
+                <div className="flex items-center gap-2">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#10B981] animate-pulse" />
+                  <span className="text-xs font-bold text-[#0F1730] uppercase tracking-wider">
+                    Ecosystem Connectors
                   </span>
                 </div>
-                <p className="text-xs text-slate-400 font-normal truncate">
-                  {item.role}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* MCP Server Spotlight Highlight (Dark card with live AI dialogue) */}
-        <div className="bg-[#0B1426] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
-          {/* Subtle Ambient Glow */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            {/* Left explanation */}
-            <div className="lg:col-span-5 space-y-4 text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 text-xs font-semibold text-[#FFE6DF] border border-slate-700">
-                <Bot className="w-3.5 h-3.5 text-[#FF5A36]" />
-                <span>NEW · MCP SERVER</span>
+                <span className="text-[11px] font-mono text-emerald-700 font-bold bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                  Zero Code Setup
+                </span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                Ask your AI assistant who's in today.
-              </h3>
-
-              <p className="text-sm text-slate-300 leading-relaxed">
-                Deskmerit's Model Context Protocol (MCP) server lets AI assistants like Claude query attendance and productivity data directly — with exactly the same keys and scopes as the REST API.
-              </p>
-
-              <div className="pt-2">
-                <Link
-                  to="/developers/mcp-server"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-[#FF5A36] hover:text-[#FFA994] transition-colors"
-                >
-                  Read developer MCP docs <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Right: Live Interactive Prompt Simulation */}
-            <div className="lg:col-span-7 bg-[#060B17] rounded-2xl p-5 border border-slate-800">
-              <div className="text-xs font-semibold text-slate-400 mb-3 text-left">
-                Try a sample prompt:
-              </div>
-
-              {/* Sample Prompt Chips */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {prompts.map((p, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={() => setActivePrompt(idx)}
-                    className={`text-xs px-3 py-1.5 rounded-lg border transition-all text-left cursor-pointer ${
-                      activePrompt === idx
-                        ? "bg-[#FF5A36] text-white font-extrabold border-[#FF5A36] shadow-sm"
-                        : "bg-[#0B1426] text-slate-300 border-slate-800 hover:border-slate-700 hover:text-white"
-                    }`}
+              {/* 2-Column Balanced Staggered Composition */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 relative z-10">
+                {integrationTools.map((tool) => (
+                  <Link
+                    key={tool.name}
+                    to={tool.href}
+                    className="flex items-center gap-3 p-3.5 bg-white rounded-2xl border border-slate-200/90 shadow-[0_2px_8px_rgba(15,23,48,0.03)] hover:shadow-[0_8px_20px_rgba(255,90,54,0.12)] hover:border-[#FF5A36]/50 hover:-translate-y-0.5 transition-all duration-200 group cursor-pointer"
                   >
-                    "{p.query}"
-                  </button>
+                    <div className="p-2 rounded-xl bg-[#F7F4EE] border border-slate-100 group-hover:scale-105 transition-transform shrink-0">
+                      {tool.logo}
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="font-bold text-[#0F1730] text-sm tracking-tight group-hover:text-[#FF5A36] transition-colors truncate">
+                        {tool.name}
+                      </div>
+                      <div className="text-[11px] text-[#64748B] font-medium truncate">
+                        {tool.category}
+                      </div>
+                    </div>
+                  </Link>
                 ))}
               </div>
 
-              {/* Chat Simulation Window */}
-              <div className="bg-[#0B1426] rounded-xl p-4 border border-slate-800 space-y-3">
-                {/* User Prompt */}
-                <div className="flex items-start gap-2.5">
-                  <span className="w-6 h-6 rounded-full bg-slate-800 text-xs font-bold flex items-center justify-center shrink-0 text-slate-200">
-                    U
-                  </span>
-                  <div className="text-xs text-white bg-slate-800/80 px-3 py-2 rounded-xl">
-                    {prompts[activePrompt].query}
-                  </div>
-                </div>
-
-                {/* AI Response */}
-                <div className="flex items-start gap-2.5">
-                  <span className="w-6 h-6 rounded-full bg-[#FF5A36] text-white text-xs font-black flex items-center justify-center shrink-0">
-                    AI
-                  </span>
-                  <div className="space-y-1.5 flex-1 text-left">
-                    <div className="text-xs text-slate-200 bg-[#060B17] px-3.5 py-2.5 rounded-xl border border-slate-800">
-                      {prompts[activePrompt].response}
-                    </div>
-                    <div className="text-[10px] text-slate-400 font-mono px-2 flex items-center gap-1">
-                      <Terminal className="w-3 h-3 text-[#12B886]" />
-                      <span>{prompts[activePrompt].toolCall}</span>
-                    </div>
-                  </div>
-                </div>
+              {/* Stage Bottom Reassurance */}
+              <div className="mt-4 pt-3.5 border-t border-[#E6E2D8] flex items-center justify-between text-[11px] text-[#64748B] relative z-10">
+                <span>Auto-sync every 60 seconds</span>
+                <span className="text-[#FF5A36] font-bold font-mono">REST & Webhooks Ready</span>
               </div>
+            </div>
+          </div>
+
+          {/* Right Column: Clean Content with Standard Accent Heading and Spacious Line Height */}
+          <div className="lg:col-span-6 max-w-xl text-left">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-3">
+              INTEGRATIONS
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#0F1730] tracking-[-0.025em] leading-[1.28] sm:leading-[1.25] lg:leading-[1.22]">
+              Integrations with popular work tools
+            </h2>
+
+            <p className="text-base sm:text-lg text-[#4A5370] mt-5 leading-relaxed font-normal">
+              From calendar apps to help you track offline time, to project management software to make project and task tracking accurate, while effortless. Deskmerit connects with the tools your team already lives in.
+            </p>
+
+            <div className="pt-8">
+              <Link
+                to="/integrations"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-[#0F1730] font-bold text-sm border border-slate-300 shadow-sm hover:border-slate-400 transition-all cursor-pointer"
+              >
+                <span>View integrations</span>
+                <ArrowRight className="w-4 h-4 text-[#FF5A36]" />
+              </Link>
             </div>
           </div>
         </div>
@@ -342,3 +242,4 @@ export function DeskmeritIntegrationsSection() {
     </section>
   );
 }
+

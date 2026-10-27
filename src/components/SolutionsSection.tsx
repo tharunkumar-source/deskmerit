@@ -116,7 +116,7 @@ export function SolutionsSection() {
             </button>
             <Link
               to="/solutions"
-              className="inline-flex h-10 items-center justify-center rounded-full border border-neutral-300 bg-white px-5 text-xs font-bold text-neutral-800 shadow-xs transition-all duration-150 hover:border-primary hover:text-primary hover:scale-105 cursor-pointer"
+              className="inline-flex h-10 items-center justify-center rounded-xl border border-neutral-300 bg-white px-5 text-xs font-bold text-neutral-800 shadow-xs transition-all duration-150 hover:border-primary hover:text-primary hover:scale-105 cursor-pointer"
             >
               View all
             </Link>
@@ -141,7 +141,7 @@ export function SolutionsSection() {
               aria-selected={tab === t.id}
               aria-controls="solutions-panel"
               onClick={() => setTab(t.id)}
-              className={`h-10 rounded-full border px-5 text-xs sm:text-sm font-semibold transition-all duration-150 cursor-pointer ${
+              className={`h-10 rounded-xl border px-5 text-xs sm:text-sm font-semibold transition-all duration-150 cursor-pointer ${
                 tab === t.id
                   ? "border-neutral-900 bg-neutral-900 text-white shadow-sm"
                   : "border-neutral-300 bg-white text-neutral-700 hover:border-neutral-500 hover:bg-neutral-50"

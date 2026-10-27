@@ -255,58 +255,15 @@ export function CareersPage() {
                 </div>
               </div>
 
-              {/* Right Column: Key Culture Metrics */}
+              {/* Right Column: Hero Showcase with Authentic General Culture Images (White Window Standard) */}
+              {/* Right Column: Individual Clean Image (No UI wrappers) */}
               <div className="col-span-12 lg:col-span-5">
-                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] p-7 shadow-2xl space-y-6">
-                  <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-                    <span className="text-xs font-bold uppercase text-slate-400 font-mono">
-                      Engineering Principles
-                    </span>
-                    <span className="flex items-center gap-1.5 text-xs font-bold text-[#FF5A36]">
-                      <Sparkles className="w-3.5 h-3.5" /> Deskmerit Craft
-                    </span>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-lg bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center font-bold text-xs">
-                          <Globe className="w-4 h-4" />
-                        </div>
-                        <div>
-                          <div className="text-xs font-bold text-white">Remote & Async-First</div>
-                          <div className="text-[10px] text-slate-400">Deep work over constant syncs</div>
-                        </div>
-                      </div>
-                      <span className="text-xs font-bold text-slate-300 font-mono">100% Flexible</span>
-                    </div>
-
-                    <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-lg bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center font-bold text-xs">
-                          <Terminal className="w-4 h-4" />
-                        </div>
-                        <div>
-                          <div className="text-xs font-bold text-white">Native Client Craft</div>
-                          <div className="text-[10px] text-slate-400">Rust & TypeScript, &lt; 25MB RAM</div>
-                        </div>
-                      </div>
-                      <span className="text-xs font-bold text-emerald-400 font-mono">Sub-20ms</span>
-                    </div>
-
-                    <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-lg bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center font-bold text-xs">
-                          <ShieldCheck className="w-4 h-4" />
-                        </div>
-                        <div>
-                          <div className="text-xs font-bold text-white">Zero Surveillance Spyware</div>
-                          <div className="text-[10px] text-slate-400">No keystrokes, no hidden webcam</div>
-                        </div>
-                      </div>
-                      <span className="text-xs font-bold text-emerald-400 font-mono">Guaranteed</span>
-                    </div>
-                  </div>
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 aspect-[16/10] sm:aspect-[4/3] group bg-slate-900">
+                  <img
+                    src="/images/company/careers-hero.jpg"
+                    alt="Life at Deskmerit & Engineering Team"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
               </div>
             </div>
@@ -369,6 +326,52 @@ export function CareersPage() {
                   We strictly refuse to build keyloggers, webcam stalkerware, or stealth trackers. We
                   only build features we would proudly run on our own personal machines.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Culture & Team Workplace Photo Gallery */}
+        <section className="py-16 bg-[#FFFFFF] border-b border-[#E6E2D8]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="rounded-2xl overflow-hidden shadow-subtle border border-[#E6E2D8] group relative h-64">
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                  alt="Team Whiteboard and Sprint Planning"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0F1730]/75 via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-4 right-4 text-white">
+                  <div className="text-xs font-bold">Collaborative Sprint Planning</div>
+                  <div className="text-[10px] text-slate-300">Bi-weekly async roadmap alignments</div>
+                </div>
+              </div>
+
+              <div className="rounded-2xl overflow-hidden shadow-subtle border border-[#E6E2D8] group relative h-64">
+                <img
+                  src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
+                  alt="Ergonomic Workstation Setup"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0F1730]/75 via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-4 right-4 text-white">
+                  <div className="text-xs font-bold">Home Office & Hardware Stipend</div>
+                  <div className="text-[10px] text-slate-300">Top-spec M3 Max or Dell XPS + 4K monitors</div>
+                </div>
+              </div>
+
+              <div className="rounded-2xl overflow-hidden shadow-subtle border border-[#E6E2D8] group relative h-64">
+                <img
+                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80"
+                  alt="Global Engineering Team Hackathon"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0F1730]/75 via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-4 right-4 text-white">
+                  <div className="text-xs font-bold">Annual Engineering Summits</div>
+                  <div className="text-[10px] text-slate-300">In-person hackathons & regional pods</div>
+                </div>
               </div>
             </div>
           </div>

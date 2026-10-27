@@ -8,7 +8,7 @@ export function DeskmeritProblemSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: The Problem Copy */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
               The problem
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F1730] tracking-[-0.025em] leading-tight">

@@ -118,9 +118,8 @@ export function PricingPage() {
             <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
               {/* Left Column */}
               <div className="col-span-12 lg:col-span-6 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFE6DF]/15 border border-[#FF5A36]/30 text-[11px] font-bold uppercase tracking-wider text-[#FF5A36]">
-                  <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
-                  <span>Transparent, Predictable Pricing</span>
+                <div className="inline-block px-3.5 py-1.5 rounded-full bg-[#FFE6DF]/15 border border-[#FF5A36]/30 text-[11px] font-bold uppercase tracking-wider text-[#FF5A36]">
+                  Transparent, Predictable Pricing
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">

@@ -106,16 +106,6 @@ export function InteractiveTrackerWidget() {
         {/* Widget Header */}
         <div className="flex items-center justify-between pb-4 border-b border-[#24305A]">
           <div className="flex items-center gap-2">
-            {/* Mini Live Loop */}
-            <svg width="22" height="22" viewBox="0 0 64 64" fill="none">
-              <path
-                d="M 21 52 L 21 25 A 13 13 0 1 1 43.19 34.19"
-                stroke="#FFFFFF"
-                strokeWidth="8.5"
-                strokeLinecap="round"
-              />
-              <circle cx="31.2" cy="37.7" r="5.4" fill="#FF5A36" />
-            </svg>
             <span className="font-bold text-sm tracking-tight text-white">Deskmerit</span>
             <span className="text-[10px] uppercase font-semibold tracking-wider text-[#9AA1B2] ml-1">
               Desktop

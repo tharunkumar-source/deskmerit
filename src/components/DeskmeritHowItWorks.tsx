@@ -113,10 +113,10 @@ export function DeskmeritHowItWorks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2 font-mono">
+          <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
             CONTINUOUS WORKFORCE AUTOMATION
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-[1.24]">
             One Click. Three Answers.
           </h2>
           <p className="text-sm sm:text-base text-[#4A5370] mt-3 max-w-2xl mx-auto leading-relaxed">

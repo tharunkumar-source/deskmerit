@@ -26,6 +26,7 @@ import { TrialSignupPage } from "./pages/TrialSignupPage";
 import { ProductDetailPage } from "./pages/ProductDetailPage";
 import { SolutionDetailPage } from "./pages/SolutionDetailPage";
 import { BrandGuidelinesPage } from "./pages/BrandGuidelinesPage";
+import { GlossaryPage } from "./pages/GlossaryPage";
 
 export function App() {
   return (
@@ -113,6 +114,8 @@ export function App() {
           {/* Integrations & Developers */}
           <Route path="/integrations" element={<IntegrationsPage />} />
           <Route path="/integrations/:slug" element={<IntegrationsPage />} />
+          <Route path="/features/integrations" element={<IntegrationsPage />} />
+          <Route path="/features/integrations/:slug" element={<IntegrationsPage />} />
           <Route path="/developers" element={<DevelopersPage mode="overview" />} />
           <Route path="/developers/mcp-server" element={<DevelopersPage mode="mcp" />} />
           <Route path="/developers/api" element={<DevelopersPage mode="api" />} />
@@ -159,7 +162,7 @@ export function App() {
           <Route path="/terms" element={<Navigate to="/legal/terms" replace />} />
           <Route path="/calculator" element={<Navigate to="/tools/utilisation-calculator" replace />} />
           <Route path="/customers" element={<Home />} />
-          <Route path="/glossary" element={<BlogPage />} />
+          <Route path="/glossary" element={<GlossaryPage />} />
           <Route path="/changelog" element={<FeaturesPage />} />
 
           {/* 404 Catch-All */}

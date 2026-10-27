@@ -191,10 +191,10 @@ export function DeskmeritWhoItsFor() {
         {/* Top Header: Tailored Architecture + Controls (Screenshot 3 Reference) */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 gap-6">
           <div className="max-w-3xl">
-            <div className="text-[12px] font-bold uppercase tracking-wider text-[#12B886] mb-2.5">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
               Tailored Architecture
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-[1.12]">
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-[1.24]">
               Solutions for Every Size, Industry & Region
             </h2>
             <p className="text-sm sm:text-base text-[#4A5370] mt-3 leading-relaxed">
@@ -214,7 +214,7 @@ export function DeskmeritWhoItsFor() {
             </button>
             <Link
               to="/solutions"
-              className="px-4 py-2 rounded-full bg-white border border-slate-200/90 hover:border-[#0F1730] text-xs font-bold text-[#0F1730] shadow-xs transition-colors"
+              className="px-4 py-2 rounded-xl bg-white border border-slate-200/90 hover:border-[#0F1730] text-xs font-bold text-[#0F1730] shadow-xs transition-colors"
             >
               View all
             </Link>
@@ -229,12 +229,12 @@ export function DeskmeritWhoItsFor() {
           </div>
         </div>
 
-        {/* Filter Pills Row (Screenshot 3 Reference) */}
+        {/* Filter Buttons Row (Screenshot 3 Reference) */}
         <div className="flex items-center gap-2.5 overflow-x-auto no-scrollbar pb-6 pt-1">
           <button
             type="button"
             onClick={() => setActiveTab("industry")}
-            className={`px-5 py-2 rounded-full text-xs font-bold transition-all shadow-xs shrink-0 ${
+            className={`px-5 py-2 rounded-xl text-xs font-bold transition-all shadow-xs shrink-0 ${
               activeTab === "industry"
                 ? "bg-[#0F1730] text-white"
                 : "bg-white border border-slate-200 text-[#0F1730] hover:border-slate-400"
@@ -245,7 +245,7 @@ export function DeskmeritWhoItsFor() {
           <button
             type="button"
             onClick={() => setActiveTab("size")}
-            className={`px-5 py-2 rounded-full text-xs font-bold transition-all shadow-xs shrink-0 ${
+            className={`px-5 py-2 rounded-xl text-xs font-bold transition-all shadow-xs shrink-0 ${
               activeTab === "size"
                 ? "bg-[#0F1730] text-white"
                 : "bg-white border border-slate-200 text-[#0F1730] hover:border-slate-400"
@@ -256,7 +256,7 @@ export function DeskmeritWhoItsFor() {
           <button
             type="button"
             onClick={() => setActiveTab("team")}
-            className={`px-5 py-2 rounded-full text-xs font-bold transition-all shadow-xs shrink-0 ${
+            className={`px-5 py-2 rounded-xl text-xs font-bold transition-all shadow-xs shrink-0 ${
               activeTab === "team"
                 ? "bg-[#0F1730] text-white"
                 : "bg-white border border-slate-200 text-[#0F1730] hover:border-slate-400"
@@ -267,7 +267,7 @@ export function DeskmeritWhoItsFor() {
           <button
             type="button"
             onClick={() => setActiveTab("region")}
-            className={`px-5 py-2 rounded-full text-xs font-bold transition-all shadow-xs shrink-0 ${
+            className={`px-5 py-2 rounded-xl text-xs font-bold transition-all shadow-xs shrink-0 ${
               activeTab === "region"
                 ? "bg-[#0F1730] text-white"
                 : "bg-white border border-slate-200 text-[#0F1730] hover:border-slate-400"

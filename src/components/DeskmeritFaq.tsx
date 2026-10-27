@@ -63,9 +63,8 @@ export function DeskmeritFaq({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="mb-12">
-          <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2 flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-[#FF5A36]" />
-            <span>{category}</span>
+          <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+            {category}
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-[-0.03em]">
             {title}

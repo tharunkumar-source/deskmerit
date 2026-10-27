@@ -496,8 +496,8 @@ function AiWorkforceIntelligenceView({ stage }: { stage: LifecycleStage; slug?: 
       <section className="bg-[#0B0F19] py-14 md:py-20 text-white">
         <div className="mx-auto max-w-7xl px-6">
           <div className="w-full mb-10">
-            <p className="pretitle text-[#FF5A36]">Step-by-Step Architecture</p>
-            <h3 className="mt-1 text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            <p className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">Step-by-Step Architecture</p>
+            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
               How Sqalible Intelligence Operates in Practice
             </h3>
             <p className="mt-2 text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-3xl">
@@ -729,8 +729,8 @@ function ModuleDetailView({
       <section className="bg-[#0B0F19] py-14 md:py-20 text-white">
         <div className="mx-auto max-w-7xl px-6">
           <div className="w-full mb-10">
-            <p className="pretitle text-[#FF5A36]">Step-by-Step Process</p>
-            <h3 className="mt-1 text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            <p className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">Step-by-Step Process</p>
+            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
               How {mod.title} Operates in Practice
             </h3>
             <p className="mt-2 text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-3xl">

@@ -245,7 +245,7 @@ export function TrackerPlusPage() {
         <section className="py-20 lg:py-28 bg-[#0A0F1D] text-white border-b border-[#24305A]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-16">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2 font-mono">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
                 TECHNICAL EXECUTION PIPELINE
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">

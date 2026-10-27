@@ -5,28 +5,655 @@ import { DeskmeritFooter } from "../components/DeskmeritFooter";
 import { DeskmeritCtaBand } from "../components/DeskmeritCtaBand";
 import { DeskmeritFaq } from "../components/DeskmeritFaq";
 import {
-  Boxes,
   ArrowRight,
-  Bot,
-  Terminal,
-  Check,
-  Search,
   ExternalLink,
-  Layers,
-  Calendar,
-  MessageSquare,
-  Workflow,
-  Cpu,
+  Search,
+  Check,
   CheckCircle2,
   Clock,
-  Sparkles,
-  Zap,
   ShieldCheck,
+  Zap,
   RefreshCw,
   GitBranch,
+  Star,
+  Monitor,
+  Folder,
+  BarChart3,
+  FileText,
+  Sliders,
+  Users,
+  Moon,
+  Camera,
+  Layers,
+  Sparkles,
+  Bot,
+  Terminal,
+  Activity,
+  Calendar,
+  Lock,
+  Pencil,
+  Trash2,
 } from "lucide-react";
 
-interface IntegrationDetailData {
+// =============================================================================
+// AUTHENTIC OFFICIAL SVG LOGOS FOR INTEGRATIONS
+// =============================================================================
+
+function GoogleCalendarLogo({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2z" fill="#FFFFFF" />
+      <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v3h18V6a2 2 0 00-2-2z" fill="#4285F4" />
+      <path d="M3 9v11a2 2 0 002 2h2V9H3z" fill="#34A853" />
+      <path d="M17 22h2a2 2 0 002-2V9h-4v13z" fill="#EA4335" />
+      <path d="M7 20h10v2H7v-2z" fill="#FBBC04" />
+      <text x="12" y="17.5" textAnchor="middle" fill="#1973E8" fontSize="7.5" fontWeight="900" fontFamily="sans-serif">31</text>
+    </svg>
+  );
+}
+
+function OutlookLogo({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <path d="M13 5.5h7.5a1 1 0 011 1v11a1 1 0 01-1 1H13V5.5z" fill="#0078D4"/>
+      <path d="M13 12l8.5-5.5v11L13 12z" fill="#005A9E" fillOpacity="0.8"/>
+      <path d="M13 5.5l8.5 5.5-8.5 5.5V5.5z" fill="#28A8EA"/>
+      <rect x="2" y="5" width="13" height="14" rx="2.5" fill="#0078D4"/>
+      <ellipse cx="8.5" cy="12" rx="3.5" ry="4" fill="#FFFFFF"/>
+      <ellipse cx="8.5" cy="12" rx="2" ry="2.5" fill="#0078D4"/>
+    </svg>
+  );
+}
+
+function JiraLogo({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <path d="M11.571 0H2.083C.932 0 0 .933 0 2.083v9.488C0 6.012 4.417 1.595 9.976 1.595h1.595V0z" fill="#0052CC"/>
+      <path d="M11.917 5.952H6.071c-.932 0-1.69.758-1.69 1.69v4.262c0 3.286 2.667 5.953 5.953 5.953h1.583V5.952z" fill="#2684FF"/>
+      <path d="M23.833 11.905h-9.488c-5.559 0-9.976 4.417-9.976 9.976v.036c0 1.15.932 2.083 2.083 2.083h9.488c5.559 0 9.976-4.417 9.976-9.976v-.036c0-1.15-.932-2.083-2.083-2.083z" fill="#0052CC"/>
+    </svg>
+  );
+}
+
+function AsanaLogo({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <defs>
+        <linearGradient id="asanaGradDetail" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#FC636B" />
+          <stop offset="100%" stopColor="#FF7A59" />
+        </linearGradient>
+      </defs>
+      <circle cx="12" cy="6.5" r="4.2" fill="url(#asanaGradDetail)" />
+      <circle cx="5.6" cy="17" r="4.2" fill="url(#asanaGradDetail)" />
+      <circle cx="18.4" cy="17" r="4.2" fill="url(#asanaGradDetail)" />
+    </svg>
+  );
+}
+
+function TrelloLogo({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <rect width="24" height="24" rx="5" fill="#0079BF" />
+      <rect x="4" y="4" width="6.5" height="13" rx="1.5" fill="#FFFFFF" />
+      <rect x="13.5" y="4" width="6.5" height="8.5" rx="1.5" fill="#FFFFFF" />
+    </svg>
+  );
+}
+
+function GitLabLogo({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <path d="M23.6 9.6l-1.3-4.1c-.2-.5-.8-.8-1.3-.8-.5 0-1 .3-1.2.8L17.7 12H6.3L4.2 5.5c-.2-.5-.7-.8-1.2-.8-.5 0-1.1.3-1.3.8L.4 9.6c-.2.5 0 1.1.4 1.4L12 20.2l11.2-9.2c.4-.3.6-.9.4-1.4z" fill="#E24329"/>
+      <path d="M12 20.2l5.7-8.2H6.3l5.7 8.2z" fill="#E24329"/>
+      <path d="M12 20.2L6.3 12H.4l11.6 8.2z" fill="#FC6D26"/>
+      <path d="M.4 9.6c-.2.5 0 1.1.4 1.4L6.3 12 4.2 5.5.4 9.6z" fill="#FCA326"/>
+      <path d="M12 20.2l5.7-8.2h5.9L12 20.2z" fill="#FC6D26"/>
+      <path d="M23.6 9.6c.2.5 0 1.1-.4 1.4L17.7 12l2.1-6.5 3.8 4.1z" fill="#FCA326"/>
+    </svg>
+  );
+}
+
+function SlackLogo({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <path d="M5.5 10a2 2 0 100-4 2 2 0 000 4z" fill="#36C5F0"/>
+      <path d="M2 11.5a2 2 0 002 2h3.5a2 2 0 100-4H4a2 2 0 00-2 2z" fill="#36C5F0"/>
+      <path d="M10 5.5a2 2 0 10-4 0 2 2 0 004 0z" fill="#2EB67D"/>
+      <path d="M11.5 2a2 2 0 00-2 2v3.5a2 2 0 104 0V4a2 2 0 00-2-2z" fill="#2EB67D"/>
+      <path d="M18.5 14a2 2 0 100 4 2 2 0 000-4z" fill="#ECB22E"/>
+      <path d="M22 12.5a2 2 0 00-2-2h-3.5a2 2 0 100 4H20a2 2 0 002-2z" fill="#ECB22E"/>
+      <path d="M14 18.5a2 2 0 104 0 2 2 0 00-4 0z" fill="#E01E5A"/>
+      <path d="M12.5 22a2 2 0 002-2v-3.5a2 2 0 10-4 0V20a2 2 0 002 2z" fill="#E01E5A"/>
+    </svg>
+  );
+}
+
+function ZapierLogo({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <rect width="24" height="24" rx="6" fill="#FFF2ED" />
+      <path
+        d="M12 4v16M4 12h16M6.34 6.34l11.32 11.32M6.34 17.66L17.66 6.34"
+        stroke="#FF4F00"
+        strokeWidth="2.8"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function MakeLogo({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <rect width="24" height="24" rx="6" fill="#6D32EC" />
+      <path d="M6 16l4-8 4 8M14 8l4 8" stroke="#FFFFFF" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function TeamsLogo({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <rect width="24" height="24" rx="6" fill="#5059C9" />
+      <path d="M16 8a2 2 0 100-4 2 2 0 000 4zM16 10h-2a1 1 0 00-1 1v4a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 00-2-1z" fill="#FFFFFF" fillOpacity="0.7"/>
+      <circle cx="10" cy="7" r="2.5" fill="#FFFFFF" />
+      <rect x="5.5" y="11" width="9" height="8" rx="2" fill="#FFFFFF" />
+      <text x="10" y="17" textAnchor="middle" fill="#5059C9" fontSize="6.5" fontWeight="900" fontFamily="sans-serif">T</text>
+    </svg>
+  );
+}
+
+function AzureDevOpsLogo({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <rect width="24" height="24" rx="6" fill="#0078D4" />
+      <path d="M17.5 7.5L12 4 6.5 7.5v9l5.5 3.5 5.5-3.5V7.5z" stroke="#FFFFFF" strokeWidth="1.8" strokeLinejoin="round" fill="none"/>
+      <path d="M12 4v16M6.5 7.5l11 9M17.5 7.5l-11 9" stroke="#FFFFFF" strokeWidth="1.4" strokeLinecap="round" strokeOpacity="0.8"/>
+    </svg>
+  );
+}
+
+function ClaudeMcpLogo({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <rect width="24" height="24" rx="6" fill="#0F1730" />
+      <circle cx="12" cy="12" r="7" stroke="#FF5A36" strokeWidth="2" strokeDasharray="3 2" />
+      <circle cx="12" cy="12" r="3" fill="#FF5A36" />
+    </svg>
+  );
+}
+
+function SqalibleLogo({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <rect width="24" height="24" rx="6" fill="#0F1730" />
+      <path d="M7 16l5-8 5 8" stroke="#FF5A36" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="12" cy="14" r="1.5" fill="#FFFFFF" />
+    </svg>
+  );
+}
+
+function RestApiLogo({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <rect width="24" height="24" rx="6" fill="#1E293B" />
+      <path d="M8 9l-3 3 3 3M16 9l3 3-3 3M13 7l-2 10" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+// =============================================================================
+// FIGMA PRODUCT CARD INTERFACE & REGISTRY
+// Exact design matching Figma screenshot (media_1793082249338.png)
+// =============================================================================
+
+export interface FigmaIntegrationItem {
+  id: string;
+  name: string;
+  category: "pm" | "calendars" | "chat" | "automation" | "hrms" | "developers";
+  categoryLabel: string;
+  avatarBg: string;
+  monogram: string;
+  authType: string;
+  description: string;
+  scopes: string[];
+  status: "connected" | "reconnect" | "connect";
+  href: string;
+  tagline: string;
+  badge: string;
+  logo: React.ReactNode;
+}
+
+export const FIGMA_INTEGRATIONS: FigmaIntegrationItem[] = [
+  {
+    id: "asana",
+    name: "Asana",
+    category: "pm",
+    categoryLabel: "Project Management",
+    avatarBg: "#FC636B",
+    monogram: "A",
+    authType: "OAuth2",
+    description: "Sync Asana projects, portfolios and tasks for time tracking.",
+    scopes: ["projects_sync", "tasks_sync", "portfolios"],
+    status: "connect",
+    href: "/features/integrations/asana",
+    tagline: "Task & Milestone Telemetry",
+    badge: "Native Sync",
+    logo: <AsanaLogo className="w-8 h-8" />,
+  },
+  {
+    id: "azure-devops",
+    name: "Azure DevOps",
+    category: "pm",
+    categoryLabel: "Project Management",
+    avatarBg: "#0078D4",
+    monogram: "AD",
+    authType: "PAT",
+    description: "Pull boards and work items into Deskmerit projects.",
+    scopes: ["projects_sync", "tasks_sync", "boards", "+1 more"],
+    status: "reconnect",
+    href: "/features/integrations/azure-devops",
+    tagline: "Work Item & Board Sync",
+    badge: "Enterprise",
+    logo: <AzureDevOpsLogo className="w-8 h-8" />,
+  },
+  {
+    id: "clickup",
+    name: "ClickUp",
+    category: "pm",
+    categoryLabel: "Project Management",
+    avatarBg: "#7B68EE",
+    monogram: "C",
+    authType: "PAT",
+    description: "Import spaces, lists and tasks from ClickUp workspaces.",
+    scopes: ["projects_sync", "tasks_sync", "spaces"],
+    status: "connect",
+    href: "/features/integrations/clickup",
+    tagline: "Spaces & Tasks Sync",
+    badge: "Tracker Plus",
+    logo: <span className="font-extrabold text-purple-600 text-xl">C</span>,
+  },
+  {
+    id: "jira",
+    name: "Jira Software",
+    category: "pm",
+    categoryLabel: "Project Management",
+    avatarBg: "#0052CC",
+    monogram: "JS",
+    authType: "PAT",
+    description: "Sync Jira projects and issues so time lands on real tasks.",
+    scopes: ["projects_sync", "tasks_sync", "issues", "+2 more"],
+    status: "connected",
+    href: "/features/integrations/jira",
+    tagline: "Bi-directional sprint worklog",
+    badge: "Tracker Plus",
+    logo: <JiraLogo className="w-8 h-8" />,
+  },
+  {
+    id: "linear",
+    name: "Linear",
+    category: "pm",
+    categoryLabel: "Project Management",
+    avatarBg: "#5E6AD2",
+    monogram: "L",
+    authType: "API Key",
+    description: "Bring Linear teams, issues and cycles into Deskmerit.",
+    scopes: ["projects_sync", "issues", "cycles"],
+    status: "connect",
+    href: "/features/integrations/linear",
+    tagline: "Cycles & Issue Binding",
+    badge: "Tracker Plus",
+    logo: <span className="font-extrabold text-indigo-600 text-xl">L</span>,
+  },
+  {
+    id: "openproject",
+    name: "OpenProject",
+    category: "pm",
+    categoryLabel: "Project Management",
+    avatarBg: "#1070CA",
+    monogram: "O",
+    authType: "PAT",
+    description: "Import work packages and log tracked time back.",
+    scopes: ["projects_sync", "tasks_sync", "work_packages"],
+    status: "connected",
+    href: "/features/integrations/openproject",
+    tagline: "Work Package & Project Sync",
+    badge: "Open Source Ready",
+    logo: <span className="font-extrabold text-blue-600 text-xl">O</span>,
+  },
+  {
+    id: "google-calendar",
+    name: "Google Calendar",
+    category: "calendars",
+    categoryLabel: "Calendars",
+    avatarBg: "#4285F4",
+    monogram: "GC",
+    authType: "OAuth2",
+    description: "Convert calendar events and Google Meet calls directly to time logs.",
+    scopes: ["calendar_read", "meet_telemetry", "idle_exemption"],
+    status: "connected",
+    href: "/features/integrations/google-calendar",
+    tagline: "Auto-credit meeting hours",
+    badge: "1-click OAuth",
+    logo: <GoogleCalendarLogo className="w-8 h-8" />,
+  },
+  {
+    id: "outlook-calendar",
+    name: "Outlook Calendar",
+    category: "calendars",
+    categoryLabel: "Calendars",
+    avatarBg: "#0078D4",
+    monogram: "OL",
+    authType: "OAuth2",
+    description: "Detect accepted Microsoft Teams and Outlook appointments automatically.",
+    scopes: ["events_sync", "teams_calls", "worklogs"],
+    status: "connect",
+    href: "/features/integrations/outlook-calendar",
+    tagline: "Microsoft 365 attendance sync",
+    badge: "Enterprise ready",
+    logo: <OutlookLogo className="w-8 h-8" />,
+  },
+  {
+    id: "slack",
+    name: "Slack",
+    category: "chat",
+    categoryLabel: "Communication",
+    avatarBg: "#4A154B",
+    monogram: "SL",
+    authType: "OAuth2",
+    description: "Automated daily shift summaries and live in-office status lookups in channels.",
+    scopes: ["bot_notifications", "status_sync", "daily_standup"],
+    status: "connected",
+    href: "/features/integrations/slack",
+    tagline: "Standup digests & status bot",
+    badge: "Bot-based",
+    logo: <SlackLogo className="w-8 h-8" />,
+  },
+  {
+    id: "microsoft-teams",
+    name: "Microsoft Teams",
+    category: "chat",
+    categoryLabel: "Communication",
+    avatarBg: "#5059C9",
+    monogram: "MS",
+    authType: "OAuth2",
+    description: "Surface team availability, meeting hours, and project digests in Teams.",
+    scopes: ["presence_sync", "calls_telemetry", "standup_bot"],
+    status: "connect",
+    href: "/features/integrations/microsoft-teams",
+    tagline: "Live team presence",
+    badge: "M365 certified",
+    logo: <TeamsLogo className="w-8 h-8" />,
+  },
+  {
+    id: "zapier",
+    name: "Zapier",
+    category: "automation",
+    categoryLabel: "Automation",
+    avatarBg: "#FF4F00",
+    monogram: "ZP",
+    authType: "API Key",
+    description: "Trigger automated actions across 9,000+ business applications.",
+    scopes: ["webhooks", "triggers_sync", "payroll_push"],
+    status: "connected",
+    href: "/features/integrations/zapier",
+    tagline: "9,000+ app connectors",
+    badge: "No-code",
+    logo: <ZapierLogo className="w-8 h-8" />,
+  },
+  {
+    id: "make",
+    name: "Make",
+    category: "automation",
+    categoryLabel: "Automation",
+    avatarBg: "#6D32EC",
+    monogram: "MK",
+    authType: "API Key",
+    description: "Build robust visual automation workflows with Deskmerit triggers.",
+    scopes: ["scenarios", "custom_webhooks", "data_router"],
+    status: "connect",
+    href: "/features/integrations/make",
+    tagline: "Visual workflows & webhooks",
+    badge: "Enterprise",
+    logo: <MakeLogo className="w-8 h-8" />,
+  },
+  {
+    id: "trello",
+    name: "Trello",
+    category: "pm",
+    categoryLabel: "Project Management",
+    avatarBg: "#0079BF",
+    monogram: "TR",
+    authType: "OAuth2",
+    description: "Attribute logged hours directly to Trello board cards and sprint lists.",
+    scopes: ["cards_sync", "boards_read", "worklogs"],
+    status: "connected",
+    href: "/features/integrations/trello",
+    tagline: "Kanban card time tracking",
+    badge: "Power-up ready",
+    logo: <TrelloLogo className="w-8 h-8" />,
+  },
+  {
+    id: "gitlab",
+    name: "GitLab",
+    category: "pm",
+    categoryLabel: "Project Management",
+    avatarBg: "#E24329",
+    monogram: "GL",
+    authType: "PAT",
+    description: "Map engineering hours against GitLab issues, MRs and release milestones.",
+    scopes: ["issues_sync", "merge_requests", "commits"],
+    status: "reconnect",
+    href: "/features/integrations/gitlab",
+    tagline: "Issue & MR tracking",
+    badge: "DevOps ready",
+    logo: <GitLabLogo className="w-8 h-8" />,
+  },
+  {
+    id: "sqalible",
+    name: "Sqalible HRMS",
+    category: "hrms",
+    categoryLabel: "HRMS & Payroll",
+    avatarBg: "#0F1730",
+    monogram: "SQ",
+    authType: "Native SSO",
+    description: "Turn on time tracking inside Sqalible HRMS with unified payroll sync.",
+    scopes: ["biometric_sync", "payroll_calc", "leave_deduct"],
+    status: "connected",
+    href: "/features/integrations/sqalible",
+    tagline: "Native payroll & leave engine",
+    badge: "1-click toggle",
+    logo: <SqalibleLogo className="w-8 h-8" />,
+  },
+  {
+    id: "mcp-server",
+    name: "Claude MCP Server",
+    category: "developers",
+    categoryLabel: "Developers & AI",
+    avatarBg: "#1E293B",
+    monogram: "MCP",
+    authType: "Bearer Token",
+    description: "Model Context Protocol interface for Claude Code, Cursor, and enterprise LLMs.",
+    scopes: ["mcp_tools", "telemetry_query", "agentic_read"],
+    status: "connected",
+    href: "/developers/mcp-server",
+    tagline: "Model Context Protocol for AI",
+    badge: "AI ready",
+    logo: <ClaudeMcpLogo className="w-8 h-8" />,
+  },
+  {
+    id: "rest-api",
+    name: "REST API & Webhooks",
+    category: "developers",
+    categoryLabel: "Developers & AI",
+    avatarBg: "#059669",
+    monogram: "API",
+    authType: "API Key",
+    description: "Versioned REST endpoints with 600 req/min limits, scopes, and JSON payloads.",
+    scopes: ["rest_read", "rest_write", "webhook_events"],
+    status: "connected",
+    href: "/developers/api",
+    tagline: "Scoped keys & OpenAPI specs",
+    badge: "Developer API",
+    logo: <RestApiLogo className="w-8 h-8" />,
+  },
+];
+
+// =============================================================================
+// FIGMA INTEGRATION CARD COMPONENT
+// Strict 1:1 match with Figma Product Card reference
+// =============================================================================
+
+export function FigmaIntegrationCard({
+  item,
+  onActionClick,
+  className = "",
+}: {
+  item: FigmaIntegrationItem;
+  onActionClick?: (id: string, action: string) => void;
+  className?: string;
+}) {
+  const [currentStatus, setCurrentStatus] = useState<"connected" | "reconnect" | "connect">(item.status);
+
+  const handleStatusToggle = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (currentStatus === "connect" || currentStatus === "reconnect") {
+      setCurrentStatus("connected");
+    } else {
+      setCurrentStatus("connect");
+    }
+    if (onActionClick) onActionClick(item.id, currentStatus);
+  };
+
+  return (
+    <div
+      className={`bg-white rounded-2xl p-6 border border-[#E6E2D8] hover:border-[#FF5A36] hover:shadow-card transition-all duration-200 flex flex-col justify-between group text-left ${className}`}
+    >
+      <div>
+        {/* Top Header Row */}
+        <div className="flex items-start justify-between gap-3 mb-3">
+          <div className="flex items-center gap-3 min-w-0">
+            {/* Squircle Avatar with Monogram */}
+            <div
+              className="w-11 h-11 rounded-xl flex items-center justify-center font-bold text-white text-sm shrink-0 shadow-xs tracking-tight"
+              style={{ backgroundColor: item.avatarBg }}
+            >
+              {item.monogram}
+            </div>
+
+            <div className="min-w-0">
+              <h3 className="text-base font-bold text-[#0F1730] truncate group-hover:text-[#FF5A36] transition-colors leading-tight">
+                {item.name}
+              </h3>
+              <div className="flex flex-wrap items-center gap-1.5 mt-1">
+                <span className="inline-flex items-center text-[11px] font-semibold px-2 py-0.5 rounded-full bg-[#F0EBFE] text-[#6938EF] whitespace-nowrap">
+                  {item.categoryLabel}
+                </span>
+                <span className="inline-flex items-center text-[10px] font-medium px-1.5 py-0.5 rounded-md bg-[#F4F5F7] text-[#4A5370] whitespace-nowrap">
+                  {item.authType}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Action Icons */}
+          <div className="flex items-center gap-1 text-slate-400 shrink-0">
+            <button
+              type="button"
+              title="Edit settings"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (onActionClick) onActionClick(item.id, "edit");
+              }}
+              className="p-1 rounded-md hover:text-[#0F1730] hover:bg-slate-100 transition-colors cursor-pointer"
+            >
+              <Pencil className="w-4 h-4 stroke-[2]" />
+            </button>
+            <button
+              type="button"
+              title="Delete integration"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (onActionClick) onActionClick(item.id, "delete");
+              }}
+              className="p-1 rounded-md hover:text-rose-600 hover:bg-rose-50 transition-colors cursor-pointer"
+            >
+              <Trash2 className="w-4 h-4 stroke-[2]" />
+            </button>
+          </div>
+        </div>
+
+        {/* Description */}
+        <p className="text-xs sm:text-[13px] text-[#4A5370] leading-relaxed my-3 line-clamp-2">
+          {item.description}
+        </p>
+
+        {/* Scope Tags */}
+        <div className="flex flex-wrap gap-1.5 mb-5">
+          {item.scopes.map((scope, idx) => (
+            <span
+              key={idx}
+              className="px-2 py-0.5 rounded-md bg-[#F8F9FA] text-[#4A5370] text-[11px] font-mono border border-slate-200/80"
+            >
+              {scope}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Footer Row */}
+      <div className="flex items-center justify-between pt-3 border-t border-slate-100 mt-auto">
+        <Link
+          to={item.href}
+          className="text-xs font-semibold text-[#5B6CFF] hover:text-[#4338CA] hover:underline cursor-pointer"
+        >
+          View Details
+        </Link>
+
+        {currentStatus === "connected" && (
+          <button
+            type="button"
+            onClick={handleStatusToggle}
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#ECFDF3] text-[#027A48] border border-[#A6F4C5] hover:bg-emerald-100 transition-colors cursor-pointer"
+          >
+            <Check className="w-3.5 h-3.5 stroke-[2.5]" /> Connected
+          </button>
+        )}
+
+        {currentStatus === "reconnect" && (
+          <button
+            type="button"
+            onClick={handleStatusToggle}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold border border-slate-300 text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer"
+          >
+            <RefreshCw className="w-3 h-3 stroke-[2.5]" /> Reconnect
+          </button>
+        )}
+
+        {currentStatus === "connect" && (
+          <button
+            type="button"
+            onClick={handleStatusToggle}
+            className="inline-flex items-center justify-center px-4 py-1.5 rounded-xl text-xs font-bold text-white bg-[#5B6CFF] hover:bg-[#4E5BA6] shadow-sm transition-all cursor-pointer"
+          >
+            Connect
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// =============================================================================
+// COMPREHENSIVE INTEGRATION DETAIL REGISTRY
+// Guarantees that EVERY tool detail page has rich data and a REAL Hero Card
+// =============================================================================
+
+export interface IntegrationDetailData {
   id: string;
   name: string;
   category: "pm" | "calendars" | "chat" | "automation" | "hrms" | "developers";
@@ -36,21 +663,215 @@ interface IntegrationDetailData {
   heroHeadline: string;
   heroHighlight: string;
   heroDescription: string;
-  initials: string;
-  color: string;
+  logo: React.ReactNode;
   previewCardTitle: string;
   previewCardSub: string;
   previewMetricLabel: string;
   previewMetricValue: string;
   previewBadgeText: string;
-  image: string;
-  imageAlt: string;
   steps: { num: string; title: string; desc: string }[];
   features: { icon: any; title: string; desc: string }[];
   faqs: { q: string; a: string }[];
 }
 
-const INTEGRATION_DETAILS: Record<string, IntegrationDetailData> = {
+export const INTEGRATION_DETAILS: Record<string, IntegrationDetailData> = {
+  asana: {
+    id: "asana",
+    name: "Asana",
+    category: "pm",
+    categoryLabel: "Project Management",
+    tagline: "Task & Milestone Telemetry",
+    badge: "Native Sync",
+    heroHeadline: "Sync Asana tasks & milestones with",
+    heroHighlight: "effortless desktop time attribution.",
+    heroDescription:
+      "Pick assigned Asana tasks inside your Deskmerit agent. Time logs write directly back to Asana portfolios and projects with zero manual forms or browser stopwatches.",
+    logo: <AsanaLogo className="w-12 h-12" />,
+    previewCardTitle: "Q4 Enterprise Launch · Milestone 3",
+    previewCardSub: "Asana Portfolio · Marketing & Tech",
+    previewMetricLabel: "Logged to Asana Task",
+    previewMetricValue: "4h 20m",
+    previewBadgeText: "Synced to Asana Cloud",
+    steps: [
+      {
+        num: "01",
+        title: "Connect Asana OAuth",
+        desc: "Authenticate your Asana organization with 1-click secure OAuth2. Grant read tasks and worklog write permissions.",
+      },
+      {
+        num: "02",
+        title: "Select Active Portfolios",
+        desc: "Choose which team portfolios and sections sync into Deskmerit. Only assigned tasks appear in employee desktop menus.",
+      },
+      {
+        num: "03",
+        title: "Start Tracking with Zero Friction",
+        desc: "Select tasks from the desktop tray and focus on execution. Timesheets and completed estimates sync back automatically.",
+      },
+    ],
+    features: [
+      {
+        icon: RefreshCw,
+        title: "Bi-directional Task Binding",
+        desc: "Task status updates and logged hours sync between Deskmerit and Asana continuously in the background.",
+      },
+      {
+        icon: Layers,
+        title: "Portfolio Rollup Analytics",
+        desc: "View actual hours invested across enterprise Asana portfolios to keep executive delivery schedules accurate.",
+      },
+      {
+        icon: ShieldCheck,
+        title: "Privacy-Preserving Telemetry",
+        desc: "Captures project and task durations without keyloggers or invasive background screen recordings.",
+      },
+      {
+        icon: Zap,
+        title: "Sub-Second Task Switching",
+        desc: "Switch between client tasks directly in your menu bar or system tray without opening browser tabs.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Does Deskmerit need custom admin access inside Asana?",
+        a: "No. Standard Asana OAuth2 permissions are used. No special domain administrator rights or third-party webhooks are required.",
+      },
+      {
+        q: "Can contractors log time to specific Asana projects?",
+        a: "Yes. Managers can configure granular project access permissions so contractors only see relevant board columns.",
+      },
+    ],
+  },
+  "azure-devops": {
+    id: "azure-devops",
+    name: "Azure DevOps",
+    category: "pm",
+    categoryLabel: "Project Management",
+    tagline: "Work Item & Board Sync",
+    badge: "Tracker Plus",
+    heroHeadline: "Seamless work item tracking for",
+    heroHighlight: "Azure Boards & DevOps sprints.",
+    heroDescription:
+      "Start tracking time straight from Azure DevOps user stories, tasks, or bug cards. Eliminate duplicate task logging and keep your burn-down charts 100% accurate.",
+    logo: <AzureDevOpsLogo className="w-12 h-12" />,
+    previewCardTitle: "User Story #8492 · Payment Engine",
+    previewCardSub: "Iteration 12 · Azure Boards",
+    previewMetricLabel: "Remaining Work Adjusted",
+    previewMetricValue: "5h 15m",
+    previewBadgeText: "Synced to Azure DevOps",
+    steps: [
+      {
+        num: "01",
+        title: "Generate Azure DevOps PAT",
+        desc: "Create a Personal Access Token with Work Items (Read & Write) scope within your organization settings.",
+      },
+      {
+        num: "02",
+        title: "Select Team Projects",
+        desc: "Choose the Azure DevOps organization and repositories whose sprint boards you want available inside the Deskmerit client.",
+      },
+      {
+        num: "03",
+        title: "Bind Tasks & Track",
+        desc: "Select active work item IDs directly from your desktop tray. Logged hours deduct from remaining work automatically.",
+      },
+    ],
+    features: [
+      {
+        icon: Layers,
+        title: "Remaining Work Auto-Reduction",
+        desc: "Logged hours automatically update remaining work estimates on Azure Boards cards in real time.",
+      },
+      {
+        icon: GitBranch,
+        title: "Multi-Org Enterprise Support",
+        desc: "Consultancies managing multiple client Azure DevOps tenants can seamlessly bind across separate organizations.",
+      },
+      {
+        icon: Clock,
+        title: "Iteration & Sprint Rollups",
+        desc: "Aggregate billable velocity per sprint iteration to see accurate contractor burn and resource allocation.",
+      },
+      {
+        icon: ShieldCheck,
+        title: "Enterprise SAML / Entra ID Ready",
+        desc: "Single sign-on via Microsoft Entra ID guarantees enterprise governance and automatic team de-provisioning.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Does Deskmerit support self-hosted Azure DevOps Server?",
+        a: "Yes. Deskmerit supports both Azure DevOps Services (cloud) and self-hosted Azure DevOps Server (on-premises) with HTTPS endpoints.",
+      },
+      {
+        q: "Can we track custom work item types?",
+        a: "Yes. Tasks, Bugs, User Stories, Features, and custom inherited process work item types are fully supported.",
+      },
+    ],
+  },
+  clickup: {
+    id: "clickup",
+    name: "ClickUp",
+    category: "pm",
+    categoryLabel: "Project Management",
+    tagline: "Spaces & Tasks Sync",
+    badge: "Tracker Plus",
+    heroHeadline: "Import ClickUp spaces, lists & tasks into",
+    heroHighlight: "automatic background tracking.",
+    heroDescription:
+      "Eliminate manual stopwatches. Connect your ClickUp workspace so developers and designers select active tasks from their system tray with real-time worklog sync.",
+    logo: <span className="font-extrabold text-purple-600 text-3xl">C</span>,
+    previewCardTitle: "Sprint 48 · User Authentication Overhaul",
+    previewCardSub: "ClickUp Space · Engineering Core",
+    previewMetricLabel: "Logged to ClickUp Worklog",
+    previewMetricValue: "5h 10m",
+    previewBadgeText: "Synced to ClickUp Cloud",
+    steps: [
+      {
+        num: "01",
+        title: "Authenticate ClickUp Account",
+        desc: "Connect your workspace using your Personal Access Token or OAuth2 grant for granular team permissions.",
+      },
+      {
+        num: "02",
+        title: "Map Spaces & Lists",
+        desc: "Choose which ClickUp folders, lists, and sprint backlogs synchronize into your Deskmerit time tracking menus.",
+      },
+      {
+        num: "03",
+        title: "Track & Reconcile Hours",
+        desc: "Work on assigned tasks. Real-time hours push directly to ClickUp time estimates with full audit visibility.",
+      },
+    ],
+    features: [
+      {
+        icon: RefreshCw,
+        title: "Automated Time Entries",
+        desc: "Time tracked in Deskmerit writes straight to the ClickUp task time-tracker field without employee manual entry.",
+      },
+      {
+        icon: Clock,
+        title: "Time Estimates vs Actuals",
+        desc: "Compare initial sprint estimates in ClickUp against real-world engineering hours captured at the OS level.",
+      },
+      {
+        icon: ShieldCheck,
+        title: "Zero Invasiveness",
+        desc: "Strictly logs time to assigned tasks; never captures keystrokes, passwords, or personal browsing.",
+      },
+      {
+        icon: Zap,
+        title: "Instant Space Switching",
+        desc: "Move between design, product, and dev spaces in one keyboard shortcut in the Deskmerit client.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Can we sync multiple ClickUp workspaces?",
+        a: "Yes. Enterprise accounts can connect multiple ClickUp workspaces and map them to distinct client billing codes.",
+      },
+    ],
+  },
   jira: {
     id: "jira",
     name: "Jira Software",
@@ -62,15 +883,12 @@ const INTEGRATION_DETAILS: Record<string, IntegrationDetailData> = {
     heroHighlight: "Jira issues & sprint epics.",
     heroDescription:
       "Pick assigned Jira tickets inside the lightweight Deskmerit desktop agent. Your time logs automatically to that issue with zero manual timesheets and zero browser timer extensions.",
-    initials: "J",
-    color: "bg-[#0052CC]",
+    logo: <JiraLogo className="w-12 h-12" />,
     previewCardTitle: "Jira KMB-482 · API Gateway Refactor",
     previewCardSub: "Sprint 24 · Active Task Bound",
     previewMetricLabel: "Logged to Jira Worklog",
     previewMetricValue: "3h 45m",
     previewBadgeText: "Synced to Atlassian Cloud",
-    image: "/images/figma/integration-jira.png",
-    imageAlt: "Deskmerit Jira Task Binding & Sprint Worklog Sync",
     steps: [
       {
         num: "01",
@@ -125,73 +943,61 @@ const INTEGRATION_DETAILS: Record<string, IntegrationDetailData> = {
       },
     ],
   },
-  "azure-devops": {
-    id: "azure-devops",
-    name: "Azure DevOps",
+  linear: {
+    id: "linear",
+    name: "Linear",
     category: "pm",
     categoryLabel: "Project Management",
-    tagline: "Work Item & Board Sync",
+    tagline: "Cycles & Issue Binding",
     badge: "Tracker Plus",
-    heroHeadline: "Seamless work item tracking for",
-    heroHighlight: "Azure Boards & DevOps sprints.",
+    heroHeadline: "Bring Linear issues, teams & cycles into",
+    heroHighlight: "high-velocity developer telemetry.",
     heroDescription:
-      "Start tracking time straight from Azure DevOps user stories, tasks, or bug cards. Eliminate duplicate task logging and keep your burn-down charts 100% accurate.",
-    initials: "AD",
-    color: "bg-[#0078D4]",
-    previewCardTitle: "User Story #8492 · Payment Engine",
-    previewCardSub: "Iteration 12 · Azure Boards",
-    previewMetricLabel: "Remaining Work Adjusted",
-    previewMetricValue: "5h 15m",
-    previewBadgeText: "Synced to Azure DevOps",
-    image: "/images/figma/integration-azure-devops.png",
-    imageAlt: "Deskmerit Azure DevOps Work Item & Sprint Boards Sync",
+      "Crafted for modern engineering teams. Bind Linear cycles and assigned issues directly to Deskmerit with keyboard-first speed and zero context switching.",
+    logo: <span className="font-extrabold text-indigo-600 text-3xl">L</span>,
+    previewCardTitle: "LIN-1024 · Edge Caching Pipeline",
+    previewCardSub: "Cycle 18 · Platform Infrastructure",
+    previewMetricLabel: "Logged to Linear Issue",
+    previewMetricValue: "3h 15m",
+    previewBadgeText: "Synced to Linear API",
     steps: [
       {
         num: "01",
-        title: "Generate Azure DevOps PAT",
-        desc: "Create a Personal Access Token with Work Items (Read & Write) scope within your organization settings.",
+        title: "Generate Linear API Key",
+        desc: "Create a Personal Access Token from your Linear developer settings with issues and teams read/write permissions.",
       },
       {
         num: "02",
-        title: "Select Team Projects",
-        desc: "Choose the Azure DevOps organization and repositories whose sprint boards you want available inside the Deskmerit client.",
+        title: "Filter Active Cycles & Teams",
+        desc: "Choose which engineering teams and current cycles populate your Deskmerit desktop application.",
       },
       {
         num: "03",
-        title: "Bind Tasks & Track",
-        desc: "Select active work item IDs directly from your desktop tray. Logged hours deduct from remaining work automatically.",
+        title: "Track with Command-K Speed",
+        desc: "Select Linear issues in milliseconds. Real engineering hours attribute directly to cycle burndowns.",
       },
     ],
     features: [
       {
-        icon: Layers,
-        title: "Remaining Work Auto-Reduction",
-        desc: "Logged hours automatically update remaining work estimates on Azure Boards cards in real time.",
+        icon: Zap,
+        title: "Keyboard-First Workflow",
+        desc: "Built to match Linear's rapid keyboard UX. Search issues and switch active tickets in less than 2 seconds.",
       },
       {
-        icon: GitBranch,
-        title: "Multi-Org Enterprise Support",
-        desc: "Consultancies managing multiple client Azure DevOps tenants can seamlessly bind across separate organizations.",
-      },
-      {
-        icon: Clock,
-        title: "Iteration & Sprint Rollups",
-        desc: "Aggregate billable velocity per sprint iteration to see accurate contractor burn and resource allocation.",
+        icon: RefreshCw,
+        title: "Cycle Velocity Insights",
+        desc: "Correlate cycle completion rates with genuine coding and PR review time tracked across the team.",
       },
       {
         icon: ShieldCheck,
-        title: "Enterprise SAML / Entra ID Ready",
-        desc: "Single sign-on via Microsoft Entra ID guarantees enterprise governance and automatic team de-provisioning.",
+        title: "Developer Trust",
+        desc: "Zero intrusive screen monitoring. Telemetry captures ticket velocity without micromanagement.",
       },
     ],
     faqs: [
       {
-        q: "Does Deskmerit support self-hosted Azure DevOps Server?",
-        a: "Yes. Deskmerit supports both Azure DevOps Services (cloud) and self-hosted Azure DevOps Server (on-premises) with HTTPS endpoints.",
-      },
-      {
-        q: "Can we track custom work item types?",
-        a: "Yes. Tasks, Bugs, User Stories, Features, and custom inherited process work item types are fully supported.",
+        q: "Does Deskmerit support multiple Linear teams?",
+        a: "Yes, you can track across backend, frontend, design, and mobile Linear teams simultaneously.",
       },
     ],
   },
@@ -200,64 +1006,51 @@ const INTEGRATION_DETAILS: Record<string, IntegrationDetailData> = {
     name: "OpenProject",
     category: "pm",
     categoryLabel: "Project Management",
-    tagline: "Open-Source PM Sync",
-    badge: "Tracker Plus",
-    heroHeadline: "Privacy-first task binding for",
-    heroHighlight: "self-hosted OpenProject teams.",
+    tagline: "Work Package & Project Sync",
+    badge: "Open Source Ready",
+    heroHeadline: "Track time against open-source work packages in",
+    heroHighlight: "OpenProject with zero friction.",
     heroDescription:
-      "Connect Deskmerit to your open-source OpenProject deployment. Enjoy automatic desktop tracking while maintaining strict data sovereignty and local infrastructure control.",
-    initials: "OP",
-    color: "bg-[#182A44]",
-    previewCardTitle: "Work Package #3021 · Security Audit",
-    previewCardSub: "OpenProject Self-Hosted",
-    previewMetricLabel: "Logged Spent Time",
-    previewMetricValue: "2h 30m",
-    previewBadgeText: "OpenProject API Active",
-    image: "/images/figma/integration-openproject.png",
-    imageAlt: "Deskmerit OpenProject Task Telemetry & Work Package Tracking",
+      "Connect self-hosted or cloud OpenProject instances. Attribute tracked time directly to work packages, sprints, and project timelines with privacy-first telemetry.",
+    logo: <span className="font-extrabold text-blue-600 text-3xl">O</span>,
+    previewCardTitle: "Package #491 · PostgreSQL Sharding Plan",
+    previewCardSub: "OpenProject · Backend Delivery",
+    previewMetricLabel: "Logged to Work Package",
+    previewMetricValue: "6h 30m",
+    previewBadgeText: "Synced to OpenProject Host",
     steps: [
       {
         num: "01",
-        title: "Enter Instance Host URL",
-        desc: "Provide your self-hosted or OpenProject Cloud domain URL and user API access key.",
+        title: "Enter OpenProject URL & Token",
+        desc: "Provide your OpenProject server endpoint and generated user API token for secure TLS connection.",
       },
       {
         num: "02",
-        title: "Filter Work Package Types",
-        desc: "Specify which projects and work packages your team can log hours against.",
+        title: "Select Active Work Packages",
+        desc: "Deskmerit fetches your assigned work packages and displays them cleanly in your system tray.",
       },
       {
         num: "03",
-        title: "Log Time Without Manual Forms",
-        desc: "Deskmerit updates spent time entries in your OpenProject database with sub-second accuracy.",
+        title: "Automatic Worklog Submission",
+        desc: "Tracked hours write directly to OpenProject time and costs logs with full audit trail compliance.",
       },
     ],
     features: [
       {
-        icon: Terminal,
-        title: "100% Data Sovereignty",
-        desc: "Keep your project work packages completely on your private servers with zero third-party telemetry leakage.",
+        icon: ShieldCheck,
+        title: "Self-Hosted & Cloud Support",
+        desc: "Compatible with OpenProject Community Edition, Enterprise on-premises, and OpenProject Cloud.",
       },
       {
         icon: RefreshCw,
-        title: "Native Spent Time Entries",
-        desc: "Logs match OpenProject's standard activity cost units for accurate project budget monitoring.",
-      },
-      {
-        icon: Zap,
-        title: "Fast Local Desktop Cache",
-        desc: "Quick search thousands of work packages in milliseconds from the Deskmerit search bar.",
-      },
-      {
-        icon: ShieldCheck,
-        title: "GDPR & Works Council Compliant",
-        desc: "Built to pass strict European works council privacy guidelines with optional screenshot bans.",
+        title: "Cost & Budget Reconciliation",
+        desc: "Hours push directly into OpenProject's cost reporting module to protect agency project margins.",
       },
     ],
     faqs: [
       {
-        q: "Does Deskmerit work behind corporate VPNs?",
-        a: "Yes. The desktop agent respects your local OS routing and connects securely through internal corporate VPN tunnels.",
+        q: "Can we connect behind a corporate VPN?",
+        a: "Yes. Deskmerit desktop clients communicate directly with internal HTTPS endpoints on your corporate network.",
       },
     ],
   },
@@ -272,15 +1065,12 @@ const INTEGRATION_DETAILS: Record<string, IntegrationDetailData> = {
     heroHighlight: "active billable attendance.",
     heroDescription:
       "Never get penalized for meeting-heavy days. Deskmerit detects accepted Google Calendar invites during shift hours and logs them to client projects with zero manual intervention.",
-    initials: "GC",
-    color: "bg-[#EA4335]",
+    logo: <GoogleCalendarLogo className="w-12 h-12" />,
     previewCardTitle: "Architecture Sprint Review · Google Meet",
     previewCardSub: "Accepted Calendar Invite",
     previewMetricLabel: "Auto-Logged Duration",
     previewMetricValue: "45 min",
     previewBadgeText: "Credited as Billable Time",
-    image: "/images/figma/integration-google-calendar.png",
-    imageAlt: "Deskmerit Google Calendar Automated Meeting Attendance Credit",
     steps: [
       {
         num: "01",
@@ -301,29 +1091,19 @@ const INTEGRATION_DETAILS: Record<string, IntegrationDetailData> = {
     features: [
       {
         icon: Calendar,
-        title: "Zero Manual Meeting Logging",
-        desc: "Accepted meetings within work hours are automatically entered into daily timesheets as productive work.",
+        title: "Offline & Video Meeting Credit",
+        desc: "Calendar meetings automatically override idle penalties when employees are on calls or in meeting rooms.",
       },
       {
         icon: ShieldCheck,
-        title: "Privacy Safe (Titles Only)",
-        desc: "Deskmerit inspects meeting duration and title only — never agenda documents, chat transcripts, or attachments.",
-      },
-      {
-        icon: Zap,
-        title: "Conflict Resolution",
-        desc: "If you track a Jira ticket while on a call, Deskmerit intelligently prevents duplicate hour billing.",
-      },
-      {
-        icon: Clock,
-        title: "Smart Calendar Disconnect",
-        desc: "Disconnect anytime from your account settings with immediate token revocation and zero cache retention.",
+        title: "Private Events Filtered",
+        desc: "Events marked 'Private' in Google Calendar are excluded from client logs and timesheet exports.",
       },
     ],
     faqs: [
       {
-        q: "What if a meeting gets canceled at the last minute?",
-        a: "If you decline or delete the calendar invite, Deskmerit automatically removes the credited attendance entry.",
+        q: "What happens if a meeting ends early?",
+        a: "Deskmerit verifies meeting attendance against desktop activity to ensure precise, fair duration records.",
       },
     ],
   },
@@ -332,64 +1112,51 @@ const INTEGRATION_DETAILS: Record<string, IntegrationDetailData> = {
     name: "Outlook Calendar",
     category: "calendars",
     categoryLabel: "Calendars",
-    tagline: "Microsoft 365 Sync",
-    badge: "Office 365",
-    heroHeadline: "Transform Microsoft Outlook invites",
-    heroHighlight: "into verified work hours.",
+    tagline: "Microsoft 365 attendance sync",
+    badge: "Enterprise ready",
+    heroHeadline: "Count Microsoft 365 appointments as",
+    heroHighlight: "active client meeting attendance.",
     heroDescription:
-      "Enterprise Microsoft 365 calendar presence. Automatically record client video calls and internal sprint planning sessions into clean, auditable billing reports.",
-    initials: "OC",
-    color: "bg-[#0078D4]",
-    previewCardTitle: "Q4 Client Strategy · Teams Call",
-    previewCardSub: "Outlook Calendar Event",
-    previewMetricLabel: "Auto-Logged Shift Time",
+      "Detect accepted Microsoft Teams and Outlook appointments. Credit meeting hours automatically into project billing reports with enterprise SSO governance.",
+    logo: <OutlookLogo className="w-12 h-12" />,
+    previewCardTitle: "Client Steering Committee · MS Teams",
+    previewCardSub: "Outlook Calendar Invite",
+    previewMetricLabel: "Auto-Credited Duration",
     previewMetricValue: "1h 00m",
-    previewBadgeText: "Microsoft 365 Verified",
-    image: "/images/figma/integration-outlook-calendar.png",
-    imageAlt: "Deskmerit Outlook Calendar & Microsoft 365 Shift Sync",
+    previewBadgeText: "Credited as Shift Work",
     steps: [
       {
         num: "01",
-        title: "Sign in with Microsoft 365",
-        desc: "Authenticate with your corporate Azure / Entra ID work credentials.",
+        title: "Connect Microsoft 365",
+        desc: "Single-click OAuth connection through your Microsoft Entra ID corporate tenant.",
       },
       {
         num: "02",
-        title: "Set Work Hour Boundaries",
-        desc: "Only calendar appointments within configured office shifts are credited to attendance.",
+        title: "Map Client Projects",
+        desc: "Assign Outlook meeting subject patterns or client email domains to project codes.",
       },
       {
         num: "03",
-        title: "Export Audit-Ready Reports",
-        desc: "Meeting hours appear cleanly labeled in timesheet exports alongside desktop coding hours.",
+        title: "Hands-Free Credit",
+        desc: "Meeting times credit into daily employee shift hours without manual stopwatch toggles.",
       },
     ],
     features: [
       {
         icon: Calendar,
-        title: "Enterprise Office 365 Governance",
-        desc: "Completely governed by your IT organization's Microsoft 365 app consent policies.",
-      },
-      {
-        icon: Clock,
-        title: "Teams Call Duration Sync",
-        desc: "Automatically syncs Microsoft Teams meeting lengths to billable client project codes.",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Private Calendar Masking",
-        desc: "Personal appointments marked 'Private' in Outlook are credited as private pauses without exposing subjects.",
+        title: "Enterprise M365 Compliance",
+        desc: "Meets global IT requirements with tenant-level consent and zero access to personal mailboxes.",
       },
       {
         icon: RefreshCw,
-        title: "One-Click Disconnect",
-        desc: "Revoke permissions in Microsoft My Apps with immediate cessation of all calendar reads.",
+        title: "Teams Call Telemetry",
+        desc: "Correlates scheduled Outlook meetings with actual Teams audio/video active participation.",
       },
     ],
     faqs: [
       {
-        q: "Does Deskmerit read my Outlook email inbox?",
-        a: "No, never. The integration requests strictly Calendars.Read permissions, with zero access to email, OneDrive, or contacts.",
+        q: "Does Deskmerit read email contents?",
+        a: "No. Deskmerit only accesses calendar invite timestamps and titles; email contents are never accessed.",
       },
     ],
   },
@@ -397,65 +1164,52 @@ const INTEGRATION_DETAILS: Record<string, IntegrationDetailData> = {
     id: "slack",
     name: "Slack",
     category: "chat",
-    categoryLabel: "Chat & Collaboration",
-    tagline: "Live Status & Standup Bot",
-    badge: "Official Slack App",
-    heroHeadline: "Live presence, daily digests &",
-    heroHighlight: "instant status in Slack channels.",
+    categoryLabel: "Communication",
+    tagline: "Standup digests & status bot",
+    badge: "Bot-based",
+    heroHeadline: "Automate daily shift digests &",
+    heroHighlight: "team presence directly in Slack.",
     heroDescription:
-      "Post automated end-of-day team summaries to Slack channels, and let team members query live work status with the simple `/deskmerit status` command.",
-    initials: "S",
-    color: "bg-[#4A154B]",
-    previewCardTitle: "@Deskmerit Bot · #engineering-standup",
-    previewCardSub: "Daily Automated Digest",
-    previewMetricLabel: "Active Team Members",
-    previewMetricValue: "28 / 30",
-    previewBadgeText: "Live Slack Bot Connected",
-    image: "/images/figma/integration-slack.png",
-    imageAlt: "Deskmerit Slack Bot Notifications & Daily Check-In Templates",
+      "Eliminate repetitive status meetings. The Deskmerit Slack app delivers automated daily shift recaps, overtime heads-ups, and live presence lookups inside your channels.",
+    logo: <SlackLogo className="w-12 h-12" />,
+    previewCardTitle: "#engineering-standup · Daily Digest",
+    previewCardSub: "Deskmerit Bot Automated Dispatch",
+    previewMetricLabel: "Active In-Channel",
+    previewMetricValue: "34 members",
+    previewBadgeText: "Verified Slack App",
     steps: [
       {
         num: "01",
-        title: "Add to Slack Workspace",
-        desc: "Click 'Add to Slack' and choose which channel receives automated team digests.",
+        title: "Add Deskmerit Bot to Slack",
+        desc: "Install the verified Deskmerit Slack app to your company workspace in two clicks.",
       },
       {
         num: "02",
-        title: "Configure Digest Schedule",
-        desc: "Set morning standup reminders and end-of-day summary posts per engineering squad.",
+        title: "Choose Notification Channels",
+        desc: "Designate dedicated channels for daily morning kickoffs, shift summaries, and overtime alerts.",
       },
       {
         num: "03",
-        title: "Query with Slash Commands",
-        desc: "Type `/deskmerit status @colleague` in any channel to see their active task and availability.",
+        title: "Interact with Slash Commands",
+        desc: "Use /deskmerit status or /deskmerit time to check project progress right inside conversation threads.",
       },
     ],
     features: [
       {
-        icon: MessageSquare,
-        title: "Slash Command Status",
-        desc: "Check if a colleague is deep in code, in a meeting, or on a break before sending urgent pings.",
+        icon: Bot,
+        title: "Automated Standup Reports",
+        desc: "Replaces 30-minute status meetings with aggregated daily work summaries posted automatically at shift end.",
       },
       {
-        icon: Sparkles,
-        title: "Automated Standup Digests",
-        desc: "Replaces tedious manual standup questions by summarizing actual Jira tasks completed that day.",
-      },
-      {
-        icon: Clock,
-        title: "Overtime & Burnout Alerts",
-        desc: "Notify team managers when an engineer exceeds 9 hours of continuous work in a single day.",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Strict Channel Scoping",
-        desc: "Broadcast metrics only to designated private management or public engineering channels.",
+        icon: Activity,
+        title: "Real-Time Status Synchronization",
+        desc: "Syncs employee Slack status (e.g. In Meeting, Focusing on Jira-104) dynamically as work shifts.",
       },
     ],
     faqs: [
       {
-        q: "Can employees turn off personal status sharing in Slack?",
-        a: "Yes. Team members can switch their status to 'Private Time' in the desktop daemon at any moment.",
+        q: "Can individual employees mute notifications?",
+        a: "Yes. Notification settings and digest frequencies are fully customizable per user and per channel.",
       },
     ],
   },
@@ -463,65 +1217,47 @@ const INTEGRATION_DETAILS: Record<string, IntegrationDetailData> = {
     id: "microsoft-teams",
     name: "Microsoft Teams",
     category: "chat",
-    categoryLabel: "Chat & Collaboration",
-    tagline: "Channel Telemetry Bot",
-    badge: "Teams App",
-    heroHeadline: "Automated team summaries and",
-    heroHighlight: "live presence in Teams channels.",
+    categoryLabel: "Communication",
+    tagline: "Live team presence",
+    badge: "M365 certified",
+    heroHeadline: "Keep remote teams aligned with",
+    heroHighlight: "Teams presence & call telemetry.",
     heroDescription:
-      "Deliver automated work telemetry and shift attendance directly into Microsoft Teams channels. No custom webhooks or complicated bot hosting required.",
-    initials: "MT",
-    color: "bg-[#6264A7]",
-    previewCardTitle: "Engineering Ops · Teams Adaptive Card",
-    previewCardSub: "Live Sprint Telemetry",
-    previewMetricLabel: "Total Billable Hours Today",
-    previewMetricValue: "142.5 hrs",
-    previewBadgeText: "Microsoft Teams Verified",
-    image: "/images/figma/integration-teams.png",
-    imageAlt: "Deskmerit Microsoft Teams Status Sync & Team Activity Pulse",
+      "Surface team availability, meeting hours, and project digests right inside Microsoft Teams channels. Eliminate duplicate standup reports and keep managers informed.",
+    logo: <TeamsLogo className="w-12 h-12" />,
+    previewCardTitle: "Engineering Daily Sync · Microsoft Teams",
+    previewCardSub: "Live Presence · In Call",
+    previewMetricLabel: "Call Duration Credited",
+    previewMetricValue: "40 min",
+    previewBadgeText: "Credited to Attendance",
     steps: [
       {
         num: "01",
-        title: "Install in Teams Admin Center",
-        desc: "Add Deskmerit to your Microsoft Teams organization or specific team workspaces.",
+        title: "Install from Teams App Store",
+        desc: "Deploy the certified Deskmerit app directly from the Microsoft Teams App Store across your tenant.",
       },
       {
         num: "02",
-        title: "Pin to Department Channels",
-        desc: "Select which channels receive daily attendance rosters and sprint burn reports.",
+        title: "Configure Team Tabs",
+        desc: "Embed live attendance and sprint progress dashboards as tabs within any public or private channel.",
       },
       {
         num: "03",
-        title: "Interactive Adaptive Cards",
-        desc: "Managers can review timesheet submissions directly inside Microsoft Teams cards.",
+        title: "Automatic Attendance Updates",
+        desc: "Video calls and group meetings credit toward daily shifts with zero employee manual intervention.",
       },
     ],
     features: [
       {
-        icon: MessageSquare,
-        title: "Native Adaptive Cards",
-        desc: "Beautifully styled Microsoft Teams cards displaying shift attendance and ticket velocity.",
-      },
-      {
-        icon: Clock,
-        title: "Shift Start & Stop Alerts",
-        desc: "Optional morning notifications reminding remote staff to start their task trackers.",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Microsoft Entra Scoped",
-        desc: "Permissions mapped directly to user roles within your Microsoft enterprise tenant.",
-      },
-      {
-        icon: Zap,
-        title: "No Webhook Infrastructure",
-        desc: "Hosted completely on our certified cloud infrastructure with zero IT server maintenance.",
+        icon: Users,
+        title: "Presence Status Integration",
+        desc: "Synchronizes Microsoft Teams availability with real tracked project activity in real time.",
       },
     ],
     faqs: [
       {
-        q: "Does Deskmerit post to private Teams chats?",
-        a: "Deskmerit only posts to channels or direct chats where a user or team admin explicitly invokes the bot.",
+        q: "Can Teams admins restrict the app to specific departments?",
+        a: "Yes. IT administrators can manage deployment policies via the Microsoft Teams Admin Center.",
       },
     ],
   },
@@ -530,130 +1266,195 @@ const INTEGRATION_DETAILS: Record<string, IntegrationDetailData> = {
     name: "Zapier",
     category: "automation",
     categoryLabel: "Automation",
-    tagline: "7,000+ App Workflows",
-    badge: "No-Code",
-    heroHeadline: "Connect workforce telemetry to",
-    heroHighlight: "7,000+ business applications.",
+    tagline: "9,000+ app connectors",
+    badge: "No-code",
+    heroHeadline: "Connect time tracking telemetry to",
+    heroHighlight: "9,000+ business applications.",
     heroDescription:
-      "Create powerful multi-app automations without code. Trigger Zapier flows whenever a timer stops, overtime is logged, or a client timesheet is approved.",
-    initials: "Z",
-    color: "bg-[#FF4A00]",
-    previewCardTitle: "Zap: Deskmerit → Google Sheets & QuickBooks",
-    previewCardSub: "Live Multi-Step Automation",
-    previewMetricLabel: "Automations Executed",
-    previewMetricValue: "1,240 / mo",
-    previewBadgeText: "Zapier App Published",
-    image: "/images/figma/integration-zapier.png",
-    imageAlt: "Deskmerit Zapier Webhook Automations & Event Triggers",
+      "Build powerful automated workflows without writing a single line of code. Trigger payroll deductions, post attendance digests, or push billable hours to your CRM automatically.",
+    logo: <ZapierLogo className="w-12 h-12" />,
+    previewCardTitle: "Zap: Shift Completed → QuickBooks Invoice",
+    previewCardSub: "Live Trigger · Automated Workflow",
+    previewMetricLabel: "Zaps Triggered",
+    previewMetricValue: "18,400 / mo",
+    previewBadgeText: "Verified Zapier Partner",
     steps: [
       {
         num: "01",
-        title: "Accept Deskmerit Zapier Invite",
-        desc: "Add Deskmerit to your Zapier account and paste your workspace API token.",
+        title: "Generate Scoped API Key",
+        desc: "Create a restricted Zapier integration token within your Deskmerit workspace security settings.",
       },
       {
         num: "02",
-        title: "Choose Triggers & Filters",
-        desc: "Select triggers like 'Shift Completed', 'New Timesheet Entry', or 'Budget Alert Exceeded'.",
+        title: "Select Trigger & Action",
+        desc: "Choose triggers like 'Shift Completed', 'New Overtime Logged', or 'Project Milestone Reached'.",
       },
       {
         num: "03",
-        title: "Map Destination Apps",
-        desc: "Route clean timesheet rows into Google Sheets, Airtable, QuickBooks, or internal CRMs.",
+        title: "Automate Downstream Tools",
+        desc: "Pipe verified time records to HubSpot, Salesforce, Xero, QuickBooks, or Google Sheets in real time.",
       },
     ],
     features: [
       {
-        icon: Workflow,
-        title: "Comprehensive Trigger Events",
-        desc: "Triggers for timer started, timer stopped, shift completed, and weekly report finalized.",
-      },
-      {
         icon: Zap,
-        title: "Instant Real-Time Webhooks",
-        desc: "Zapier receives event webhooks in under 200ms for immediate downstream action execution.",
+        title: "Instant Webhook Triggers",
+        desc: "Events fire the exact millisecond a shift starts, a break ends, or a project target is logged.",
       },
       {
-        icon: Layers,
-        title: "Pre-Built Zap Templates",
-        desc: "1-click templates for logging time to QuickBooks, generating invoices, and Slack alerts.",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Payload Encryption",
-        desc: "All Zapier payloads are sent over TLS 1.3 with signed HMAC headers for zero data tampering.",
+        icon: Folder,
+        title: "Multi-Step Automation Pipelines",
+        desc: "Route time logs through branching logic to verify contractor hours before triggering payouts.",
       },
     ],
     faqs: [
       {
-        q: "What data fields are included in the Zapier payload?",
-        a: "Payloads include employee name, email, project name, Jira/Azure ticket key, start/end timestamps, and duration in minutes.",
+        q: "Is there an additional charge for using Zapier with Deskmerit?",
+        a: "Deskmerit provides Zapier webhook access across all plans with no added API surcharges.",
       },
     ],
   },
   make: {
     id: "make",
-    name: "Make (Integromat)",
+    name: "Make",
     category: "automation",
     categoryLabel: "Automation",
-    tagline: "Visual Scenario Automations",
-    badge: "Published Module",
-    heroHeadline: "Build complex multi-branch",
-    heroHighlight: "workforce data pipelines in Make.",
+    tagline: "Visual workflows & webhooks",
+    badge: "Enterprise",
+    heroHeadline: "Build visual automation pipelines with",
+    heroHighlight: "Deskmerit webhooks & Make scenarios.",
     heroDescription:
-      "Design advanced visual scenarios with routers, aggregators, and error handlers. Sync Deskmerit timesheet records directly into your custom ERP or relational database.",
-    initials: "M",
-    color: "bg-[#6D32EC]",
-    previewCardTitle: "Make Scenario: Deskmerit → PostgreSQL",
-    previewCardSub: "Visual Data Pipeline Active",
-    previewMetricLabel: "Data Packets Transferred",
-    previewMetricValue: "48.2k records",
-    previewBadgeText: "Make Published App",
-    image: "/images/figma/integration-make.png",
-    imageAlt: "Deskmerit Make.com Visual Integration Workflows",
+      "Visual automated workflows with multi-step scenarios and raw JSON webhooks. Build enterprise data routing, custom billing calculators, and contractor approval gates.",
+    logo: <MakeLogo className="w-12 h-12" />,
+    previewCardTitle: "Scenario: Overtime Alert to Slack & Sheets",
+    previewCardSub: "Trigger: Daily Overtime > 1h",
+    previewMetricLabel: "Payloads Dispatched",
+    previewMetricValue: "1,240 / day",
+    previewBadgeText: "Webhook Status 200 OK",
     steps: [
       {
         num: "01",
-        title: "Add Deskmerit Module",
-        desc: "Search for Deskmerit in Make.com scenario editor and create your API connection.",
+        title: "Create Make Webhook Module",
+        desc: "Paste your Make custom webhook URL into Deskmerit webhook notifications settings.",
       },
       {
         num: "02",
-        title: "Configure Routers & Iterators",
-        desc: "Split billable vs non-billable hours, route specific clients to different databases.",
+        title: "Build Visual Routing Scenario",
+        desc: "Map telemetry fields into your ERP, HR database, or accounting system with visual transformers.",
       },
       {
         num: "03",
-        title: "Activate Scenario",
-        desc: "Run scheduled batch syncs or trigger real-time instant webhooks on every timer event.",
+        title: "Run Continuous Data Sync",
+        desc: "Telemetry synchronizes automatically with comprehensive error handling and retry queues.",
       },
     ],
     features: [
       {
-        icon: Workflow,
-        title: "Complex Multi-Branch Scenarios",
-        desc: "Use Make's visual router to filter, transform, and map time records across dozens of databases.",
-      },
-      {
-        icon: Terminal,
-        title: "Custom JSON Structure",
-        desc: "Full access to raw telemetry fields, window titles, and project cost formulas.",
-      },
-      {
-        icon: RefreshCw,
-        title: "Automated Error Handling",
-        desc: "Configure rollback routes and notification fallbacks if your destination ERP is offline.",
-      },
-      {
-        icon: ShieldCheck,
-        title: "SOC-2 Certified Bridge",
-        desc: "Enterprise data pipelines comply with banking-grade security and encryption standards.",
+        icon: Sliders,
+        title: "Visual Data Transformations",
+        desc: "Reshape employee attendance logs into any proprietary ERP or accounting schema.",
       },
     ],
     faqs: [
       {
-        q: "Is there a rate limit when syncing through Make?",
-        a: "Deskmerit supports up to 1,200 requests/minute for Make connections, ample for thousands of daily team records.",
+        q: "Does Make support real-time webhook payloads?",
+        a: "Yes. Webhooks dispatch instantaneously via secure HTTPS POST with HMAC signatures.",
+      },
+    ],
+  },
+  trello: {
+    id: "trello",
+    name: "Trello",
+    category: "pm",
+    categoryLabel: "Project Management",
+    tagline: "Kanban card time tracking",
+    badge: "Power-up ready",
+    heroHeadline: "Track time straight on Kanban cards with",
+    heroHighlight: "Trello board & sprint synchronization.",
+    heroDescription:
+      "Attribute logged hours directly to Trello board cards and sprint lists. Keep agency delivery transparent and eliminate messy manual timesheets.",
+    logo: <TrelloLogo className="w-12 h-12" />,
+    previewCardTitle: "Design Audit · Mobile Checkout",
+    previewCardSub: "Trello Board · UX Delivery Sprint",
+    previewMetricLabel: "Card Time Accumulated",
+    previewMetricValue: "2h 45m",
+    previewBadgeText: "Synced to Trello",
+    steps: [
+      {
+        num: "01",
+        title: "Authorize Trello Account",
+        desc: "Grant read/write access to your team's Trello boards through standard OAuth.",
+      },
+      {
+        num: "02",
+        title: "Select Active Boards",
+        desc: "Choose which Kanban boards sync into your Deskmerit desktop application.",
+      },
+      {
+        num: "03",
+        title: "Track directly against Cards",
+        desc: "Pick cards from the system tray; hours update directly on Trello card badges.",
+      },
+    ],
+    features: [
+      {
+        icon: Layers,
+        title: "Visual Card Badges",
+        desc: "Card time totals display directly on Trello board columns for transparent client review.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Can clients see logged time on shared Trello boards?",
+        a: "Yes, if card badges are enabled, client stakeholders see tracked hours in real time.",
+      },
+    ],
+  },
+  gitlab: {
+    id: "gitlab",
+    name: "GitLab",
+    category: "pm",
+    categoryLabel: "Project Management",
+    tagline: "Issue & MR tracking",
+    badge: "DevOps ready",
+    heroHeadline: "Map engineering hours against",
+    heroHighlight: "GitLab issues, MRs & milestones.",
+    heroDescription:
+      "Understand the real cost of software releases. Connect GitLab to Deskmerit so developers bind time straight to merge requests and issues with zero friction.",
+    logo: <GitLabLogo className="w-12 h-12" />,
+    previewCardTitle: "MR !342 · Redis Cluster Failover Config",
+    previewCardSub: "GitLab Repository · Core Services",
+    previewMetricLabel: "Logged to MR",
+    previewMetricValue: "4h 10m",
+    previewBadgeText: "Synced to GitLab",
+    steps: [
+      {
+        num: "01",
+        title: "Connect GitLab Personal Token",
+        desc: "Authenticate GitLab.com or self-hosted GitLab with api read/write access token.",
+      },
+      {
+        num: "02",
+        title: "Select Repositories & Groups",
+        desc: "Choose engineering groups whose issues and MRs populate your Deskmerit agent.",
+      },
+      {
+        num: "03",
+        title: "Effortless Time Logging",
+        desc: "Logged hours record directly to GitLab /spend quick action commands automatically.",
+      },
+    ],
+    features: [
+      {
+        icon: GitBranch,
+        title: "Automated /spend Commands",
+        desc: "Time tracked in Deskmerit automatically writes GitLab worklogs via native REST APIs.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Does Deskmerit support self-managed GitLab EE / CE?",
+        a: "Yes, both GitLab SaaS and self-managed GitLab servers with custom domains are supported.",
       },
     ],
   },
@@ -662,337 +1463,383 @@ const INTEGRATION_DETAILS: Record<string, IntegrationDetailData> = {
     name: "Sqalible HRMS",
     category: "hrms",
     categoryLabel: "HRMS & Payroll",
-    tagline: "1-Click Native Add-on",
-    badge: "Flagship Integration",
-    heroHeadline: "Native 1-click time tracking inside",
-    heroHighlight: "the Sqalible HRMS ecosystem.",
+    tagline: "Native payroll & leave engine",
+    badge: "1-click toggle",
+    heroHeadline: "Unified workforce telemetry inside",
+    heroHighlight: "Sqalible's enterprise HRMS core.",
     heroDescription:
-      "Turn on Deskmerit time intelligence straight inside Sqalible HRMS. Auto-provision employees, sync approved leaves, and flow verified hours directly into payroll with zero manual CSV exports.",
-    initials: "SH",
-    color: "bg-[#0F1730]",
-    previewCardTitle: "Sqalible HRMS · Telemetry Module",
-    previewCardSub: "Native Embedded Add-on",
-    previewMetricLabel: "Payroll Ready Hours",
-    previewMetricValue: "1,840 hrs",
-    previewBadgeText: "1-Click Add-on Active",
-    image: "/images/figma/integration-sqalible.png",
-    imageAlt: "Deskmerit Native Sqalible HRMS Payroll & Attendance Sync",
+      "Zero integration lag. Deskmerit time tracking embeds directly into Sqalible HRMS. Automatically compute biometric attendance, statutory overtime, and payroll deductions under one contract.",
+    logo: <SqalibleLogo className="w-12 h-12" />,
+    previewCardTitle: "Sqalible Core · Biometric & Shift Sync",
+    previewCardSub: "Enterprise HRMS Platform Integration",
+    previewMetricLabel: "Payroll Computed Directly",
+    previewMetricValue: "100% automated",
+    previewBadgeText: "Native Platform Sync",
     steps: [
       {
         num: "01",
-        title: "Toggle Add-on in Sqalible",
-        desc: "Navigate to Sqalible HRMS App Store and switch on Deskmerit. No API keys to configure.",
+        title: "Enable HRMS Add-On",
+        desc: "Turn on Deskmerit Time Tracking directly from your Sqalible Admin Portal with a single toggle.",
       },
       {
         num: "02",
-        title: "Auto-Provision Employees",
-        desc: "Employee profiles, department rosters, and manager hierarchies sync automatically.",
+        title: "Automated User Provisioning",
+        desc: "Employees added to Sqalible HRMS automatically receive their Deskmerit desktop client invite.",
       },
       {
         num: "03",
-        title: "Automate Monthly Payroll",
-        desc: "Approved hours, overtime thresholds, and attendance deductions calculate into payroll runs.",
+        title: "Direct Payroll Reconciliation",
+        desc: "Audited shift hours flow seamlessly into monthly payroll runs, leave deductions, and tax slips.",
       },
     ],
     features: [
       {
+        icon: Users,
+        title: "Biometric Hardware Alignment",
+        desc: "Merges physical office turnstile swipe logs with desktop boot times for true hybrid attendance clarity.",
+      },
+      {
         icon: RefreshCw,
-        title: "Zero-Click Employee Provisioning",
-        desc: "New hires added in Sqalible automatically receive desktop agent login invites.",
-      },
-      {
-        icon: Calendar,
-        title: "Leave Calendar Bi-Directional Sync",
-        desc: "Approved vacation and sick leaves in Sqalible HRMS automatically pause shift absence flags.",
-      },
-      {
-        icon: Sparkles,
-        title: "One Consolidated Bill",
-        desc: "Deskmerit licenses appear directly on your unified Sqalible monthly or annual subscription invoice.",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Unified Single Sign-On",
-        desc: "Employees use their existing Sqalible corporate credentials to sign in across all desktop agents.",
+        title: "Automated Leave Deduction",
+        desc: "Approved leaves in Sqalible HRMS pause Deskmerit tracking expectations automatically.",
       },
     ],
     faqs: [
       {
-        q: "Do I need a separate contract for Deskmerit if I use Sqalible HRMS?",
-        a: "No. Deskmerit is available as an integrated add-on to your Sqalible plan with unified billing and joint support SLAs.",
+        q: "Can Deskmerit be purchased standalone without Sqalible HRMS?",
+        a: "Yes! Deskmerit works completely standalone. The Sqalible HRMS add-on provides unified payroll benefits.",
+      },
+    ],
+  },
+  "mcp-server": {
+    id: "mcp-server",
+    name: "Claude MCP Server",
+    category: "developers",
+    categoryLabel: "Developers & AI",
+    tagline: "Model Context Protocol for AI",
+    badge: "AI ready",
+    heroHeadline: "Connect Claude Code, Cursor & AI agents to",
+    heroHighlight: "Model Context Protocol telemetry.",
+    heroDescription:
+      "Query project margins, sprint velocity, and team capacity using natural language. The official Deskmerit MCP Server exposes scoped telemetry tools for leading AI developer assistants.",
+    logo: <ClaudeMcpLogo className="w-12 h-12" />,
+    previewCardTitle: "Claude Agentic Query: Team Bandwidth",
+    previewCardSub: "MCP Tool: get_team_productivity",
+    previewMetricLabel: "Agent Inferences",
+    previewMetricValue: "84 queries",
+    previewBadgeText: "MCP Server Active",
+    steps: [
+      {
+        num: "01",
+        title: "Add MCP Server Config",
+        desc: "Add deskmerit-mcp to your Claude Desktop or Cursor configuration JSON file.",
+      },
+      {
+        num: "02",
+        title: "Authenticate with Scoped Token",
+        desc: "Provide a read-only telemetry API key with restricted enterprise scopes.",
+      },
+      {
+        num: "03",
+        title: "Query Telemetry in Plain English",
+        desc: "Ask Claude 'Which engineering sprint is running behind schedule?' with live audited context.",
+      },
+    ],
+    features: [
+      {
+        icon: Bot,
+        title: "Official Model Context Protocol",
+        desc: "Implements standard Anthropic MCP tool schemas with zero proprietary lock-in.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Does MCP expose confidential employee screen captures?",
+        a: "Never. MCP tools only return aggregated project hours, task durations, and team velocity metrics.",
+      },
+    ],
+  },
+  "rest-api": {
+    id: "rest-api",
+    name: "REST API & Webhooks",
+    category: "developers",
+    categoryLabel: "Developers & AI",
+    tagline: "Scoped keys & OpenAPI specs",
+    badge: "Developer API",
+    heroHeadline: "Build custom workforce integrations with",
+    heroHighlight: "Deskmerit's high-speed REST API.",
+    heroDescription:
+      "Versioned, secure REST endpoints with 600 req/min rate limits, granular read/write tokens, and real-time webhook events for custom enterprise ERPs and internal developer tooling.",
+    logo: <RestApiLogo className="w-12 h-12" />,
+    previewCardTitle: "POST /v2/telemetry/time-logs",
+    previewCardSub: "Bearer Token · Rate Limit 600/min",
+    previewMetricLabel: "API Response Time",
+    previewMetricValue: "18 ms",
+    previewBadgeText: "HTTPS TLS 1.3",
+    steps: [
+      {
+        num: "01",
+        title: "Create Developer API Key",
+        desc: "Generate production API keys in your Deskmerit workspace dashboard with granular role permissions.",
+      },
+      {
+        num: "02",
+        title: "Explore OpenAPI / Swagger Specs",
+        desc: "Use our interactive Swagger documentation and Postman collections for rapid testing.",
+      },
+      {
+        num: "03",
+        title: "Deploy Webhooks & Endpoints",
+        desc: "Receive real-time HTTPS POST callbacks whenever shifts start, pause, or sync with external databases.",
+      },
+    ],
+    features: [
+      {
+        icon: Terminal,
+        title: "600 Requests / Minute Capacity",
+        desc: "High-throughput endpoints engineered for large-scale enterprise reporting and continuous data warehousing.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Where is the full API documentation hosted?",
+        a: "Visit our dedicated Developer Portal at /developers/api for complete endpoint schemas and code samples.",
       },
     ],
   },
 };
 
-const INTEGRATIONS_DIRECTORY_LIST = [
-  {
-    id: "jira",
-    name: "Jira Software",
-    category: "pm",
-    tagline: "Tracker Plus",
-    badge: "Direct PM sync",
-    description: "Pick Jira issues in the Deskmerit desktop agent and press Start. Time logs against that issue's project and client with no Jira timers.",
-    linkText: "View Jira integration →",
-    href: "/integrations/jira",
-    initials: "J",
-    color: "bg-[#0052CC]",
-  },
-  {
-    id: "azure-devops",
-    name: "Azure DevOps",
-    category: "pm",
-    tagline: "Tracker Plus",
-    badge: "Boards & work items",
-    description: "Start tracking from any Azure DevOps work item assigned to you, alongside Jira or on its own with zero duplicate project names.",
-    linkText: "View Azure DevOps integration →",
-    href: "/integrations/azure-devops",
-    initials: "AD",
-    color: "bg-[#0078D4]",
-  },
-  {
-    id: "openproject",
-    name: "OpenProject",
-    category: "pm",
-    tagline: "Tracker Plus",
-    badge: "Open-source PM",
-    description: "The open-source PM tool gets an automatic tracker that respects your self-hosting choices with tasks keyed strictly by ID.",
-    linkText: "View OpenProject integration →",
-    href: "/integrations/openproject",
-    initials: "OP",
-    color: "bg-[#182A44]",
-  },
-  {
-    id: "google-calendar",
-    name: "Google Calendar",
-    category: "calendars",
-    tagline: "Meetings count as work",
-    badge: "Calendar sync",
-    description: "Accepted meetings during working hours automatically count toward attendance, so meeting-heavy days are never marked absent.",
-    linkText: "View Google Calendar integration →",
-    href: "/integrations/google-calendar",
-    initials: "GC",
-    color: "bg-[#EA4335]",
-  },
-  {
-    id: "outlook-calendar",
-    name: "Outlook Calendar",
-    category: "calendars",
-    tagline: "Meetings count as work",
-    badge: "Microsoft 365",
-    description: "Read-only calendar presence for Microsoft 365 users. Disconnect stops reads immediately without lingering tokens.",
-    linkText: "View Outlook integration →",
-    href: "/integrations/outlook-calendar",
-    initials: "OC",
-    color: "bg-[#0078D4]",
-  },
-  {
-    id: "slack",
-    name: "Slack",
-    category: "chat",
-    tagline: "Summaries & /status",
-    badge: "Bot",
-    description: "Daily and weekly summaries posted to your team channels, and a convenient `/deskmerit status` command to look up anyone's live state.",
-    linkText: "View Slack integration →",
-    href: "/integrations/slack",
-    initials: "S",
-    color: "bg-[#4A154B]",
-  },
-  {
-    id: "microsoft-teams",
-    name: "Microsoft Teams",
-    category: "chat",
-    tagline: "Summaries & live status",
-    badge: "Bot-based",
-    description: "Automated work summaries and live status lookups inside Teams channels. No complex custom webhooks to configure.",
-    linkText: "View Teams integration →",
-    href: "/integrations/microsoft-teams",
-    initials: "MT",
-    color: "bg-[#6264A7]",
-  },
-  {
-    id: "zapier",
-    name: "Zapier",
-    category: "automation",
-    tagline: "No-code workflows",
-    badge: "7,000+ apps",
-    description: "Send attendance to payroll systems, post overtime alerts, or update Google Sheets and Airtable without writing code.",
-    linkText: "View Zapier integration →",
-    href: "/integrations/zapier",
-    initials: "Z",
-    color: "bg-[#FF4A00]",
-  },
-  {
-    id: "make",
-    name: "Make",
-    category: "automation",
-    tagline: "Visual automations",
-    badge: "Published app",
-    description: "Build robust visual workflows with Deskmerit triggers and actions across your enterprise tech stack.",
-    linkText: "View Make integration →",
-    href: "/integrations/make",
-    initials: "M",
-    color: "bg-[#6D32EC]",
-  },
-  {
-    id: "sqalible",
-    name: "Sqalible HRMS",
-    category: "hrms",
-    tagline: "Native add-on",
-    badge: "1-click toggle",
-    description: "Turn on time tracking inside the HRMS you already use. Auto-provision employees, single sign-on, and one consolidated invoice.",
-    linkText: "View HRMS add-on →",
-    href: "/integrations/sqalible",
-    initials: "SH",
-    color: "bg-[#0F1730]",
-  },
-  {
-    id: "rest-api",
-    name: "REST API",
-    category: "developers",
-    tagline: "Scoped, read-only keys",
-    badge: "OpenAPI specs",
-    description: "Versioned, read-only REST API with 600 req/min per key by default, self-serve scopes, and guaranteed stability.",
-    linkText: "View API docs →",
-    href: "/developers/api",
-    initials: "RA",
-    color: "bg-slate-700",
-  },
-  {
-    id: "mcp-server",
-    name: "Claude MCP Server",
-    category: "developers",
-    tagline: "For AI assistants",
-    badge: "Claude ready",
-    description: "Model Context Protocol server allowing Claude and Cursor AI tools to query attendance, project margins and sprint progress safely.",
-    linkText: "View MCP server docs →",
-    href: "/developers/mcp-server",
-    initials: "MS",
-    color: "bg-[#FF5A36]",
-  },
-];
+// Aliases mapping common variations to canonical slugs
+const SLUG_ALIASES: Record<string, string> = {
+  outlook: "outlook-calendar",
+  teams: "microsoft-teams",
+  mcp: "mcp-server",
+  api: "rest-api",
+};
+
+// =============================================================================
+// MAIN COMPONENT: INTEGRATIONS PAGE
+// Supports both:
+// 1. Directory View (/features/integrations and /integrations)
+// 2. Dedicated Tool View (/features/integrations/:slug and /integrations/:slug)
+// =============================================================================
 
 export function IntegrationsPage() {
   const { slug } = useParams<{ slug?: string }>();
   const [filter, setFilter] = useState<string>("all");
   const [search, setSearch] = useState("");
+  const [heroActiveTab, setHeroActiveTab] = useState<string>("jira");
 
   const categories = [
     { id: "all", label: "All integrations" },
     { id: "pm", label: "Project management" },
     { id: "calendars", label: "Calendars" },
-    { id: "chat", label: "Chat" },
+    { id: "chat", label: "Communication" },
     { id: "automation", label: "Automation" },
-    { id: "hrms", label: "HRMS" },
-    { id: "developers", label: "Developers" },
+    { id: "hrms", label: "HRMS & Payroll" },
+    { id: "developers", label: "Developers & AI" },
   ];
 
-  // If a slug is provided and matches an integration, render the dedicated Detail Page
-  const detailData = slug ? INTEGRATION_DETAILS[slug] : null;
+  // Resolve canonical slug if provided
+  const canonicalSlug = slug ? SLUG_ALIASES[slug.toLowerCase()] || slug.toLowerCase() : null;
 
-  // Filtered directory items
-  const filtered = INTEGRATIONS_DIRECTORY_LIST.filter((item) => {
+  // Resolve matching detail data, or generate a rich dynamic detail object from FIGMA_INTEGRATIONS
+  let detailData: IntegrationDetailData | null = null;
+  let matchingFigmaItem: FigmaIntegrationItem | null = null;
+
+  if (canonicalSlug) {
+    matchingFigmaItem = FIGMA_INTEGRATIONS.find((x) => x.id === canonicalSlug) || null;
+
+    if (INTEGRATION_DETAILS[canonicalSlug]) {
+      detailData = INTEGRATION_DETAILS[canonicalSlug];
+    } else if (matchingFigmaItem) {
+      // Dynamic fallback detail for any newly linked tool
+      detailData = {
+        id: matchingFigmaItem.id,
+        name: matchingFigmaItem.name,
+        category: matchingFigmaItem.category,
+        categoryLabel: matchingFigmaItem.categoryLabel,
+        tagline: matchingFigmaItem.tagline,
+        badge: matchingFigmaItem.badge,
+        heroHeadline: `Seamlessly connect Deskmerit with`,
+        heroHighlight: `${matchingFigmaItem.name} for automatic telemetry.`,
+        heroDescription: matchingFigmaItem.description,
+        logo: matchingFigmaItem.logo,
+        previewCardTitle: `${matchingFigmaItem.name} Production Sync`,
+        previewCardSub: `Active Workspace Binding · ${matchingFigmaItem.authType}`,
+        previewMetricLabel: "Tracked & Attributed",
+        previewMetricValue: "100% automated",
+        previewBadgeText: "Live Sync Active",
+        steps: [
+          {
+            num: "01",
+            title: `Connect ${matchingFigmaItem.name}`,
+            desc: `Authenticate your account securely using ${matchingFigmaItem.authType} permissions.`,
+          },
+          {
+            num: "02",
+            title: "Select Active Workspaces",
+            desc: `Map projects and teams to your Deskmerit workspace for automatic attribution.`,
+          },
+          {
+            num: "03",
+            title: "Start Tracking Automatically",
+            desc: `Desktop activity and project hours log in the background with zero manual input.`,
+          },
+        ],
+        features: [
+          {
+            icon: RefreshCw,
+            title: "Bi-directional Data Sync",
+            desc: `Project statuses and tracked hours synchronize continuously with ${matchingFigmaItem.name}.`,
+          },
+          {
+            icon: ShieldCheck,
+            title: "Privacy First",
+            desc: `Captures real work activity without invasive screen recorders or keyloggers.`,
+          },
+        ],
+        faqs: [
+          {
+            q: `How long does it take to connect ${matchingFigmaItem.name}?`,
+            a: `Under 3 minutes using standard permissions. No IT tickets or server changes required.`,
+          },
+        ],
+      };
+    }
+  }
+
+  // Filtered directory items for directory view
+  const filtered = FIGMA_INTEGRATIONS.filter((item) => {
     const matchesCategory = filter === "all" || item.category === filter;
     const matchesSearch =
       item.name.toLowerCase().includes(search.toLowerCase()) ||
       item.description.toLowerCase().includes(search.toLowerCase()) ||
-      item.tagline.toLowerCase().includes(search.toLowerCase());
+      item.scopes.some((s) => s.toLowerCase().includes(search.toLowerCase())) ||
+      item.categoryLabel.toLowerCase().includes(search.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
   return (
-    <div className="min-h-screen bg-[#F7F4EE] text-[#0F1730] font-sans">
+    <div className="min-h-screen bg-[#F7F4EE] text-[#0F1730] font-sans antialiased selection:bg-[#FF5A36] selection:text-white">
       <DeskmeritHeader />
 
       <main>
-        {detailData ? (
+        {detailData && matchingFigmaItem ? (
           /* ========================================================================= */
-          /* 1. DEDICATED INTEGRATION DETAIL VIEW (Unique Content for Each Tool)       */
+          /* 1. DEDICATED INTEGRATION DETAIL VIEW (When visiting /integrations/:slug) */
+          /* Features the REAL Figma Integration Card in the Hero                      */
           /* ========================================================================= */
           <div>
-            {/* Dark Hero Section Tailored to Specific Tool */}
-            <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden mb-8">
+            {/* Dark Detail Hero */}
+            <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
               <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
               <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
 
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                {/* Breadcrumbs */}
-                <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+                {/* Breadcrumb */}
+                <div className="text-xs font-semibold flex items-center gap-2 mb-6">
                   <Link to="/" className="hover:underline text-slate-300">
                     Home
                   </Link>
                   <span className="text-slate-500">/</span>
-                  <Link to="/integrations" className="hover:underline text-slate-300">
+                  <Link to="/features/integrations" className="text-slate-300 hover:underline">
                     Integrations
                   </Link>
                   <span className="text-slate-500">/</span>
-                  <span className="text-[#FFE6DF]">{detailData.name}</span>
+                  <span className="text-[#FF5A36] font-bold">{detailData.name}</span>
                 </div>
 
-                <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
-                  {/* Left Column: Overline, Headline, Description */}
-                  <div className="col-span-12 lg:col-span-6 space-y-6">
-                    <div className="flex items-center gap-2.5">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3 py-1 rounded-full border border-[#FF5A36]/30">
-                        {detailData.categoryLabel.toUpperCase()} INTEGRATION
-                      </span>
-                      <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
-                        {detailData.badge}
-                      </span>
+                <div className="grid grid-cols-12 gap-10 lg:gap-14 items-center">
+                  {/* Left Column */}
+                  <div className="col-span-12 lg:col-span-7 space-y-6">
+                    <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
+                      INTEGRATION: {detailData.name.toUpperCase()}
                     </div>
 
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                    <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-[-0.03em] leading-[1.22] text-white">
                       {detailData.heroHeadline}{" "}
-                      <span className="text-[#FF5A36] block">{detailData.heroHighlight}</span>
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-[#FF5A36]">
+                        {detailData.heroHighlight}
+                      </span>
                     </h1>
 
-                    <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                    <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl font-normal">
                       {detailData.heroDescription}
                     </p>
 
                     <div className="flex flex-wrap items-center gap-3.5 pt-2">
                       <Link
                         to="/signup"
-                        className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all cursor-pointer"
+                        className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all cursor-pointer"
                       >
-                        <span>Connect {detailData.name} Free</span>
+                        <span>Start Free Trial</span>
                         <ArrowRight className="w-4 h-4" />
                       </Link>
-
                       <Link
                         to="/demo"
-                        className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer"
+                        className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer"
                       >
-                        <span>Schedule Demo</span>
+                        <span>Book a Live Demo</span>
                       </Link>
                     </div>
                   </div>
 
-                  {/* Right Column: Authentic Integration Screenshot in macOS Browser Window Frame */}
-                  <div className="col-span-12 lg:col-span-6">
-                    <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
-                      <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
-                          <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
-                          <div className="w-3 h-3 rounded-full bg-[#62C554]" />
-                        </div>
-                        <div className="text-[11px] font-mono text-slate-400 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
-                          app.deskmerit.com/integrations/{detailData.id}
-                        </div>
-                        <div className="text-[11px] font-bold text-emerald-400 flex items-center gap-1.5">
-                          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                          Live Sync
-                        </div>
-                      </div>
+                  {/* Right Column: THE REAL FIGMA INTEGRATION CARD IN HERO (White Card Container) */}
+                  <div className="col-span-12 lg:col-span-5">
+                    <div className="relative">
+                      {/* Clean Soft Ambient Glow */}
+                      <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 via-orange-500/15 to-purple-500/20 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
 
-                      <div className="bg-[#070E1A] p-2 sm:p-3">
-                        <img
-                          src={detailData.image}
-                          alt={detailData.imageAlt}
-                          className="w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
-                          loading="eager"
+                      {/* Crisp White Hero Container matching other pages */}
+                      <div className="relative rounded-3xl bg-white border border-slate-200/90 p-5 sm:p-6 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.35)] text-[#0F1730]">
+                        {/* macOS Window Title Bar */}
+                        <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+                          <div className="flex items-center gap-2.5">
+                            <div className="flex items-center gap-1.5">
+                              <span className="w-2.5 h-2.5 rounded-full bg-[#ED6A5E]" />
+                              <span className="w-2.5 h-2.5 rounded-full bg-[#F5BF4F]" />
+                              <span className="w-2.5 h-2.5 rounded-full bg-[#62C554]" />
+                            </div>
+                            <span className="text-xs font-bold tracking-tight text-[#0F1730] ml-1">
+                              Active Workspace Component
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#F8FAFC] border border-slate-200 text-[11px] font-mono text-[#4A5370]">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                            <span>v2.4 Live Sync</span>
+                          </div>
+                        </div>
+
+                        {/* Exact Figma Product Card (Internal cards are perfect) */}
+                        <FigmaIntegrationCard
+                          item={matchingFigmaItem}
+                          className="shadow-sm border-slate-200"
                         />
+
+                        {/* Real-time telemetry strip below the card in clean light style */}
+                        <div className="mt-4 pt-3 border-t border-slate-100 space-y-2.5">
+                          <div className="p-3.5 rounded-xl bg-[#F8FAFC] border border-slate-200/90 flex items-center justify-between text-xs">
+                            <div>
+                              <div className="text-[10px] font-mono font-bold uppercase text-[#4A5370]">
+                                Active Mapped Entity
+                              </div>
+                              <div className="font-bold text-[#0F1730] mt-0.5">
+                                {detailData.previewCardTitle}
+                              </div>
+                            </div>
+                            <span className="px-2.5 py-1 rounded-lg text-[11px] font-mono font-bold text-[#027A48] bg-[#ECFDF3] border border-[#A6F4C5]">
+                              {detailData.previewMetricValue}
+                            </span>
+                          </div>
+                          <div className="flex items-center justify-between text-[11px] text-[#4A5370] px-1">
+                            <span className="flex items-center gap-1.5 font-medium">
+                              <ShieldCheck className="w-3.5 h-3.5 text-[#027A48]" />
+                              TLS 1.3 End-to-End Encrypted
+                            </span>
+                            <span className="text-[#4A5370] font-mono">0 pending worklogs</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1000,63 +1847,17 @@ export function IntegrationsPage() {
               </div>
             </section>
 
-            {/* In-Page Navigation Bar (Image 5 Style) */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="flex flex-wrap gap-1.5 p-1 bg-[#FFFFFF] rounded-xl border border-[#E6E2D8] shadow-subtle">
-                  <Link
-                    to="/integrations"
-                    className="px-3.5 py-1.5 rounded-lg text-xs font-bold text-[#4A5370] hover:text-[#0F1730] hover:bg-[#F7F4EE] transition-all"
-                  >
-                    ← All integrations
-                  </Link>
-                  {["jira", "azure-devops", "openproject", "google-calendar", "slack", "zapier", "sqalible"].map(
-                    (key) => {
-                      const item = INTEGRATION_DETAILS[key];
-                      if (!item) return null;
-                      const isActive = slug === key;
-                      return (
-                        <Link
-                          key={key}
-                          to={`/integrations/${key}`}
-                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                            isActive
-                              ? "bg-[#0F1730] text-white shadow-xs"
-                              : "text-[#4A5370] hover:text-[#0F1730] hover:bg-[#F7F4EE]"
-                          }`}
-                        >
-                          {item.name}
-                        </Link>
-                      );
-                    }
-                  )}
-                </div>
-
-                <div className="relative w-full sm:w-64">
-                  <Search className="w-4 h-4 text-[#9AA1B2] absolute left-3 top-1/2 -translate-y-1/2" />
-                  <input
-                    type="text"
-                    placeholder="Search integrations..."
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                    className="w-full pl-9 pr-3 py-1.5 text-xs rounded-xl border border-[#E6E2D8] bg-[#FFFFFF] text-[#0F1730] placeholder-[#9AA1B2] focus:outline-none focus:border-[#FF5A36]"
-                  />
-                </div>
-              </div>
-            </div>
-
             {/* 3-Step Setup Section */}
             <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-3xl mx-auto mb-14">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] font-mono">
-                  QUICK ONBOARDING
-                </span>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-tight mt-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                  SETUP IN MINUTES
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-tight leading-[1.24]">
                   Connect {detailData.name} in under 3 minutes
                 </h2>
-                <p className="text-sm text-[#4A5370] mt-3 leading-relaxed">
-                  Fast, verified, and enterprise-secure. No complicated custom webhook servers or IT
-                  tickets required.
+                <p className="text-sm sm:text-base text-[#4A5370] mt-3 leading-relaxed">
+                  Fast, verified, and enterprise-secure. No complicated webhook infrastructure or IT tickets required.
                 </p>
               </div>
 
@@ -1082,10 +1883,10 @@ export function IntegrationsPage() {
             <section className="py-16 bg-white border-y border-[#E6E2D8]">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto mb-14">
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] font-mono">
-                    CAPABILITIES
-                  </span>
-                  <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-tight mt-2">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                    CORE CAPABILITIES
+                  </div>
+                  <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-tight leading-[1.24]">
                     Why engineering teams prefer Deskmerit + {detailData.name}
                   </h2>
                 </div>
@@ -1112,6 +1913,16 @@ export function IntegrationsPage() {
               </div>
             </section>
 
+            {/* Back to All Integrations Link */}
+            <div className="py-10 text-center bg-[#F7F4EE]">
+              <Link
+                to="/features/integrations"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white border border-slate-300 text-[#0F1730] font-bold text-sm hover:border-[#FF5A36] hover:text-[#FF5A36] transition-all cursor-pointer shadow-xs"
+              >
+                <span>← Back to all integrations directory</span>
+              </Link>
+            </div>
+
             {/* Tool-specific FAQs */}
             <DeskmeritFaq
               title={`${detailData.name} Integration FAQs`}
@@ -1123,82 +1934,180 @@ export function IntegrationsPage() {
           </div>
         ) : (
           /* ========================================================================= */
-          /* 2. DIRECTORY VIEW (When browsing /integrations without slug)               */
+          /* 2. MAIN INTEGRATIONS DIRECTORY PAGE                                       */
+          /* Hero displays REAL Figma Integration Cards Showcase                       */
+          /* Cards Grid strictly follows Figma Product Card Layout                      */
           /* ========================================================================= */
           <div>
-            {/* DARK HERO SECTION */}
-            <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden mb-12">
+            {/* HERO SECTION */}
+            <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
               <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
               <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
 
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Breadcrumb */}
-                <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+                <div className="text-xs font-semibold flex items-center gap-2 mb-6">
                   <Link to="/" className="hover:underline text-slate-300">
                     Home
                   </Link>
                   <span className="text-slate-500">/</span>
-                  <span className="text-[#FFE6DF]">Integrations & Ecosystem</span>
+                  <span className="text-[#FF5A36] font-bold">Integrations & Ecosystem</span>
                 </div>
 
-                <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
-                  <div className="col-span-12 lg:col-span-6 space-y-6">
-                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3 py-1 rounded-full inline-block border border-[#FF5A36]/30">
-                      ECOSYSTEM & TOOL CONNECTORS
+                <div className="grid grid-cols-12 gap-10 lg:gap-14 items-center">
+                  <div className="col-span-12 lg:col-span-7 space-y-6">
+                    <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
+                      INTEGRATIONS & ECOSYSTEM
                     </div>
 
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
-                      Connect your tools.{" "}
-                      <span className="text-[#FF5A36] block">Keep tracking effortless.</span>
+                    <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold tracking-[-0.03em] leading-[1.22] text-white">
+                      Streamline your work processes with time tracking integrations
                     </h1>
 
-                    <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
-                      Deskmerit binds to Jira, Azure DevOps, Google Calendar, Slack, and your HRMS.
-                      Start tracking from a task, auto-credit meetings, and eliminate manual timesheets
-                      forever.
+                    <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl font-normal">
+                      Deskmerit connects with project management software, calendars, and communication tools so tracking happens in the natural flow of work with zero manual timesheets.
                     </p>
 
                     <div className="flex flex-wrap items-center gap-3.5 pt-2">
                       <Link
                         to="/signup"
-                        className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all cursor-pointer"
+                        className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all cursor-pointer"
                       >
-                        <span>Start Free Trial</span>
+                        <span>Start free trial</span>
                         <ArrowRight className="w-4 h-4" />
                       </Link>
                       <Link
-                        to="/developers"
-                        className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer"
+                        to="/demo"
+                        className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer"
                       >
-                        <span>Developer Platform</span>
+                        <span>Explore in demo account</span>
+                        <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
                       </Link>
                     </div>
                   </div>
 
-                  <div className="col-span-12 lg:col-span-6">
-                    <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-2xl overflow-hidden group">
-                      <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
-                          <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
-                          <div className="w-3 h-3 rounded-full bg-[#62C554]" />
-                        </div>
-                        <div className="text-[11px] font-mono text-slate-400 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
-                          app.deskmerit.com/settings/integrations
-                        </div>
-                        <div className="text-[11px] font-bold text-emerald-400 flex items-center gap-1.5">
-                          <CheckCircle2 className="w-3.5 h-3.5" />
-                          10 Connectors
-                        </div>
-                      </div>
+                  {/* Hero Right: THE REAL INTEGRATION CARDS SHOWCASE (White Card Container) */}
+                  <div className="col-span-12 lg:col-span-5">
+                    <div className="relative">
+                      {/* Clean Soft Ambient Glow */}
+                      <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 via-orange-500/15 to-purple-500/20 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
 
-                      <div className="bg-[#070E1A] p-2">
-                        <img
-                          src="/images/figma/integrations-hub-catalog.png"
-                          alt="Deskmerit Integrations Catalog & Connected Tools Hub"
-                          className="w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
-                          loading="eager"
-                        />
+                      {/* Crisp White Hero Container matching other pages */}
+                      <div className="relative rounded-3xl bg-white border border-slate-200/90 p-5 sm:p-6 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.35)] text-[#0F1730]">
+                        {/* Top Hub Bar with macOS window controls */}
+                        <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+                          <div className="flex items-center gap-2.5">
+                            <div className="flex items-center gap-1.5">
+                              <span className="w-2.5 h-2.5 rounded-full bg-[#ED6A5E]" />
+                              <span className="w-2.5 h-2.5 rounded-full bg-[#F5BF4F]" />
+                              <span className="w-2.5 h-2.5 rounded-full bg-[#62C554]" />
+                            </div>
+                            <div>
+                              <div className="text-xs font-bold text-[#0F1730] flex items-center gap-2">
+                                <span>Workspace Integrations Hub</span>
+                                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#ECFDF3] text-[#027A48] border border-[#A6F4C5]">
+                                  6 Active
+                                </span>
+                              </div>
+                              <div className="text-[11px] text-[#4A5370]">
+                                Telemetry synced with production daemon
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-1.5 bg-[#F8FAFC] px-2.5 py-1 rounded-lg border border-slate-200">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                            <span className="text-[11px] font-mono font-medium text-[#027A48]">
+                              Live 200 OK
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Interactive Tabs in Clean Light Style */}
+                        <div className="flex items-center gap-1.5 mb-4 p-1.5 bg-[#F7F4EE] rounded-xl border border-[#E6E2D8]">
+                          <button
+                            type="button"
+                            onClick={() => setHeroActiveTab("jira")}
+                            className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                              heroActiveTab === "jira"
+                                ? "bg-white text-[#0F1730] shadow-sm border border-slate-200/80"
+                                : "text-[#4A5370] hover:text-[#0F1730] hover:bg-white/60"
+                            }`}
+                          >
+                            Jira (Connected)
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setHeroActiveTab("azure-devops")}
+                            className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                              heroActiveTab === "azure-devops"
+                                ? "bg-white text-[#0F1730] shadow-sm border border-slate-200/80"
+                                : "text-[#4A5370] hover:text-[#0F1730] hover:bg-white/60"
+                            }`}
+                          >
+                            Azure DevOps
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setHeroActiveTab("asana")}
+                            className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                              heroActiveTab === "asana"
+                                ? "bg-white text-[#0F1730] shadow-sm border border-slate-200/80"
+                                : "text-[#4A5370] hover:text-[#0F1730] hover:bg-white/60"
+                            }`}
+                          >
+                            Asana
+                          </button>
+                        </div>
+
+                        {/* The Real Figma Card for Active Tab */}
+                        <div className="transition-all duration-300">
+                          {heroActiveTab === "jira" && (
+                            <FigmaIntegrationCard
+                              item={FIGMA_INTEGRATIONS.find((x) => x.id === "jira")!}
+                              className="shadow-sm border-slate-200"
+                            />
+                          )}
+                          {heroActiveTab === "azure-devops" && (
+                            <FigmaIntegrationCard
+                              item={FIGMA_INTEGRATIONS.find((x) => x.id === "azure-devops")!}
+                              className="shadow-sm border-slate-200"
+                            />
+                          )}
+                          {heroActiveTab === "asana" && (
+                            <FigmaIntegrationCard
+                              item={FIGMA_INTEGRATIONS.find((x) => x.id === "asana")!}
+                              className="shadow-sm border-slate-200"
+                            />
+                          )}
+                        </div>
+
+                        {/* Live Sync Stats Underneath in Clean Light Style */}
+                        <div className="grid grid-cols-3 gap-2 mt-4 pt-3 border-t border-slate-100 text-center">
+                          <div className="p-2.5 rounded-xl bg-[#F8FAFC] border border-slate-200/80">
+                            <div className="text-[10px] text-[#4A5370] uppercase font-mono font-bold">
+                              Synced Tasks
+                            </div>
+                            <div className="text-sm font-extrabold text-[#0F1730] mt-0.5">
+                              148 Active
+                            </div>
+                          </div>
+                          <div className="p-2.5 rounded-xl bg-[#F8FAFC] border border-slate-200/80">
+                            <div className="text-[10px] text-[#4A5370] uppercase font-mono font-bold">
+                              Worklog Writes
+                            </div>
+                            <div className="text-sm font-extrabold text-[#FF5A36] mt-0.5">
+                              38h 40m
+                            </div>
+                          </div>
+                          <div className="p-2.5 rounded-xl bg-[#F8FAFC] border border-slate-200/80">
+                            <div className="text-[10px] text-[#4A5370] uppercase font-mono font-bold">
+                              Latency
+                            </div>
+                            <div className="text-sm font-extrabold text-[#027A48] mt-0.5">
+                              18 ms
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1206,119 +2115,210 @@ export function IntegrationsPage() {
               </div>
             </section>
 
-            {/* In-Page Navigation Bar & Search matching Image 5 */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="flex flex-wrap gap-1.5 p-1 bg-[#FFFFFF] rounded-xl border border-[#E6E2D8] shadow-subtle">
-                  {categories.map((c) => (
-                    <button
-                      key={c.id}
-                      type="button"
-                      onClick={() => setFilter(c.id)}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                        filter === c.id
-                          ? "bg-[#0F1730] text-white shadow-xs"
-                          : "text-[#4A5370] hover:text-[#0F1730] hover:bg-[#F7F4EE]"
-                      }`}
-                    >
-                      {c.label}
-                    </button>
+            {/* SECTION 1: AUTONOMOUS BY DESIGN */}
+            <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center max-w-3xl mx-auto mb-16">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                  AUTONOMOUS BY DESIGN
+                </div>
+                <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-[#0F1730] tracking-tight leading-[1.24]">
+                  The time tracker that doesn't need 100 integrations to work
+                </h2>
+                <p className="text-base sm:text-lg text-[#4A5370] mt-4 leading-relaxed font-normal">
+                  Most time tracking tools need integrations to capture time in every app. Deskmerit doesn't, because tracking happens automatically in the background from the moment work starts.
+                </p>
+              </div>
+
+              {/* 3 Value Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="bg-white rounded-2xl p-8 border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all flex flex-col justify-between">
+                  <div>
+                    <div className="w-12 h-12 rounded-xl bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center font-bold mb-6">
+                      <Monitor className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold text-[#0F1730] mb-3">
+                      Automatic OS-level tracking
+                    </h3>
+                    <p className="text-sm text-[#4A5370] leading-relaxed">
+                      Deskmerit records activity across every app and website at the operating system level. If your team works in Jira, Figma, Slack, or VS Code, that time is already captured without any integration.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl p-8 border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all flex flex-col justify-between">
+                  <div>
+                    <div className="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center font-bold mb-6">
+                      <RefreshCw className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold text-[#0F1730] mb-3">
+                      Integrations for attribution, not capture
+                    </h3>
+                    <p className="text-sm text-[#4A5370] leading-relaxed">
+                      Deskmerit's native integrations serve a different purpose: syncing project structures and calendar events so tracked time is attributed correctly, not just recorded.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl p-8 border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all flex flex-col justify-between">
+                  <div>
+                    <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold mb-6">
+                      <Zap className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold text-[#0F1730] mb-3">
+                      Zero manual start/stop required
+                    </h3>
+                    <p className="text-sm text-[#4A5370] leading-relaxed">
+                      No stopwatch buttons, no forgotten timers, and no end-of-week timesheet guessing games. Everything captures autonomously with 100% precision.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 2: AVAILABLE INTEGRATIONS (EXACT FIGMA PRODUCT CARD DESIGNS) */}
+            <section className="py-20 bg-white border-t border-[#E6E2D8]">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                    DIRECTORY
+                  </div>
+                  <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-tight leading-[1.24]">
+                    Available integrations
+                  </h2>
+                  <p className="text-base text-[#4A5370] mt-3">
+                    Click any integration card to explore setup instructions, capabilities, and workflows.
+                  </p>
+                </div>
+
+                {/* Filter and Search Bar */}
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
+                  <div className="flex flex-wrap gap-2 p-1.5 bg-[#F7F4EE] rounded-2xl border border-[#E6E2D8]">
+                    {categories.map((c) => (
+                      <button
+                        key={c.id}
+                        type="button"
+                        onClick={() => setFilter(c.id)}
+                        className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                          filter === c.id
+                            ? "bg-[#0F1730] text-white shadow-xs"
+                            : "text-[#4A5370] hover:text-[#0F1730] hover:bg-white"
+                        }`}
+                      >
+                        {c.label}
+                      </button>
+                    ))}
+                  </div>
+
+                  <div className="relative w-full md:w-72">
+                    <Search className="w-4 h-4 text-[#9AA1B2] absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    <input
+                      type="text"
+                      value={search}
+                      onChange={(e) => setSearch(e.target.value)}
+                      placeholder="Search tools (e.g. Jira, Asana, Linear)..."
+                      className="w-full pl-10 pr-4 py-2.5 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE] text-[#0F1730] placeholder-[#9AA1B2] focus:outline-none focus:border-[#FF5A36] focus:bg-white transition-all"
+                    />
+                  </div>
+                </div>
+
+                {/* Grid of Authentic Figma Cards (3 Columns for spacious, authentic layout) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filtered.map((item) => (
+                    <FigmaIntegrationCard key={item.id} item={item} />
                   ))}
                 </div>
+              </div>
+            </section>
 
-                <div className="relative w-full sm:w-64">
-                  <Search className="w-4 h-4 text-[#9AA1B2] absolute left-3 top-1/2 -translate-y-1/2" />
-                  <input
-                    type="text"
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                    placeholder="Search tools..."
-                    className="w-full pl-9 pr-3 py-1.5 text-xs rounded-xl border border-[#E6E2D8] bg-[#FFFFFF] text-[#0F1730] placeholder-[#9AA1B2] focus:outline-none focus:border-[#FF5A36]"
-                  />
+            {/* SECTION 3: CONNECT TO EVERY TOOL */}
+            <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center max-w-3xl mx-auto mb-16">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                  SEAMLESS INTEGRATION
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-tight leading-[1.24]">
+                  Connect Deskmerit to every tool your team already uses
+                </h2>
+                <p className="text-base sm:text-lg text-[#4A5370] mt-3 leading-relaxed">
+                  Deskmerit connects to your existing tech stack through native integrations, the Deskmerit API, and Zapier.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="bg-white rounded-2xl p-8 border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                        <Check className="w-4 h-4 stroke-[3]" />
+                      </div>
+                      <h3 className="text-xl font-bold text-[#0F1730]">Native integrations</h3>
+                    </div>
+                    <p className="text-sm text-[#4A5370] leading-relaxed">
+                      Google Calendar, Outlook, Jira, Asana, ClickUp, Linear, and GitLab sync project structures and meeting time directly into Deskmerit's timeline.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl p-8 border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                        <Check className="w-4 h-4 stroke-[3]" />
+                      </div>
+                      <h3 className="text-xl font-bold text-[#0F1730]">Deskmerit API</h3>
+                    </div>
+                    <p className="text-sm text-[#4A5370] leading-relaxed">
+                      Build custom connections for high-volume or unique workflows. Full documentation available for your development team with 600 req/min limits.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl p-8 border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                        <Check className="w-4 h-4 stroke-[3]" />
+                      </div>
+                      <h3 className="text-xl font-bold text-[#0F1730]">Zapier & Make</h3>
+                    </div>
+                    <p className="text-sm text-[#4A5370] leading-relaxed">
+                      Connect Deskmerit to 9,000+ tools, including payroll, CRM, and accounting software. No code required, no developer needed.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </section>
 
-            {/* Integration Cards Grid */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filtered.map((item) => (
-                  <div
-                    key={item.id}
-                    className="bg-[#FFFFFF] rounded-2xl p-7 border border-[#E6E2D8] hover:border-[#FF5A36] hover:shadow-card transition-all flex flex-col justify-between group"
-                  >
-                    <div>
-                      <div className="flex items-center justify-between mb-4">
-                        <span
-                          className={`w-11 h-11 rounded-xl ${item.color} text-white font-bold text-xs flex items-center justify-center shadow-sm`}
-                        >
-                          {item.initials}
-                        </span>
-                        <span className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-[#F7F4EE] text-[#4A5370] border border-[#E6E2D8]">
-                          {item.badge}
-                        </span>
-                      </div>
-
-                      <h3 className="font-bold text-lg text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
-                        {item.name}
-                      </h3>
-                      <div className="text-xs font-semibold text-[#FF5A36] mb-2">{item.tagline}</div>
-                      <p className="text-xs text-[#4A5370] leading-relaxed">{item.description}</p>
-                    </div>
-
-                    <div className="mt-6 pt-4 border-t border-[#E6E2D8]">
-                      <Link
-                        to={item.href}
-                        className="text-xs font-bold text-[#0F1730] group-hover:text-[#FF5A36] flex items-center justify-between transition-colors"
-                      >
-                        <span>{item.linkText}</span>
-                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                      </Link>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Signature Split FAQ Section */}
+            {/* FAQs */}
             <DeskmeritFaq
-              title="Integrations & API FAQs"
-              category="FAQS"
-              helpTitle="Building a Custom Tool Integration?"
-              helpDescription="Our developer advocacy team provides dedicated guidance for connecting Deskmerit Webhooks and MCP Servers with your in-house engineering systems."
+              title="Frequently Asked Questions About Integrations"
+              category="INTEGRATION FAQS"
               customFaqs={[
                 {
-                  q: "How does the Jira and Azure DevOps bi-directional sync work?",
-                  a: "When a developer starts work on a Jira issue or Azure DevOps work item, Deskmerit binds active telemetry directly to that work key. Completed session durations and work logs sync back into your project tickets automatically.",
+                  q: "How does Deskmerit track time if we don't install an integration?",
+                  a: "Deskmerit tracks at the operating system level through its lightweight desktop daemon. It captures active application names, browser window titles, and websites automatically. Integrations are used for project and sprint worklog attribution.",
                 },
                 {
-                  q: "Does Deskmerit have an official Model Context Protocol (MCP) server for AI assistants?",
-                  a: "Yes. Deskmerit includes a native MCP server allowing AI tools like Claude Code and Cursor to query team bandwidth, active project progress, and sprint velocity via secure natural language.",
+                  q: "Can integrations modify or overwrite data in our external tools?",
+                  a: "Deskmerit only writes time logs and worklog records that you explicitly designate. It will never overwrite ticket descriptions, comments, or repository codes.",
                 },
                 {
-                  q: "Are webhooks and REST APIs available on all plans?",
-                  a: "REST API tokens and webhook events (time entry created, timer started, attendance finalized) are available on Pro and Enterprise tiers with high rate limits and comprehensive Swagger/OpenAPI specifications.",
+                  q: "Are credentials and API tokens stored securely?",
+                  a: "Yes. All tokens and OAuth secrets are encrypted at rest using AES-256-GCM and transmitted over TLS 1.3 with strict least-privilege scoping.",
                 },
                 {
-                  q: "How does Google Calendar and Outlook meeting detection work?",
-                  a: "Deskmerit checks your authenticated corporate calendar for accepted meetings during scheduled shift hours. Meeting slots are automatically credited as active client work without manual clock-ins.",
-                },
-                {
-                  q: "Can we build a custom integration using Zapier or Make?",
-                  a: "Yes. The Deskmerit Zapier and webhook connector lets you trigger custom automations in thousands of apps, such as posting daily team summaries to Slack or logging client time to QuickBooks.",
+                  q: "What if the tool we need isn't listed in the directory?",
+                  a: "You can connect Deskmerit to thousands of tools via Zapier, Make, or use our comprehensive REST API and Webhooks to build custom bi-directional pipelines.",
                 },
               ]}
+              helpTitle="Looking for a Custom Integration or AI Agent?"
+              helpDescription="Our enterprise solutions team builds bespoke integrations for proprietary ERPs, custom project trackers, and Model Context Protocol tooling."
             />
           </div>
         )}
 
-        {/* Global Sqalible-style Deskmerit CTA Banner */}
-        <DeskmeritCtaBand
-          pretitle="Get Started"
-          title="Experience automatic time tracking and task binding in action with our engineering specialists."
-          trialText="Start free trial"
-          demoText="Book a demo"
-        />
+        {/* Global CTA Band */}
+        <DeskmeritCtaBand />
       </main>
 
       <DeskmeritFooter />

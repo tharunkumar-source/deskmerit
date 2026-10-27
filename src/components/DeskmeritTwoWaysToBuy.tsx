@@ -1,106 +1,195 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Check, ArrowRight, Laptop, Building2, ToggleRight } from "lucide-react";
+import { Check, ArrowRight, Laptop, Building2, ShieldCheck, Zap, Layers, Sparkles } from "lucide-react";
 
 export function DeskmeritTwoWaysToBuy() {
   return (
-    <section className="py-20 lg:py-28 bg-[#F7F4EE] border-b border-[#E6E2D8]">
+    <section className="py-20 lg:py-28 bg-[#F7F4EE] border-b border-[#E6E2D8] font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
-            Two ways to buy
+          <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-3">
+            TWO WAYS TO BUY
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F1730] tracking-[-0.025em]">
+          <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-[1.2]">
             Use it on its own, or inside your HRMS.
           </h2>
-          <p className="text-base sm:text-lg text-[#4A5370] mt-4">
-            Whether you want a modern standalone tracker or a native module embedded in Sqalible HRMS, the tracking agent and reports are identical.
+          <p className="text-base sm:text-lg text-[#4A5370] mt-4 leading-relaxed font-normal">
+            Whether you want a modern standalone tracker or a native module embedded in Sqalible HRMS, the tracking agent, privacy guarantees, and timesheet reports are 100% identical.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {/* 2 Symmetrical, Clean & Professional Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Card 1: Standalone */}
-          <div className="bg-[#FFFFFF] rounded-2xl p-8 border border-[#E6E2D8] shadow-card hover:shadow-elevated transition-all flex flex-col justify-between">
+          <div className="bg-white rounded-3xl p-8 sm:p-10 border border-[#E6E2D8] shadow-[0_4px_20px_rgba(15,23,48,0.04)] hover:shadow-[0_12px_32px_rgba(15,23,48,0.08)] hover:border-[#FF5A36]/40 transition-all duration-300 flex flex-col justify-between group">
             <div>
-              <div className="flex items-center justify-between mb-6">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#4A5370] bg-[#F7F4EE] px-3 py-1 rounded-full border border-[#E6E2D8]">
-                  Standalone
-                </span>
-                <Laptop className="w-6 h-6 text-[#0F1730]" />
+              {/* Badge & Icon Header */}
+              <div className="flex items-center justify-between mb-6 pb-5 border-b border-slate-100">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F7F4EE] border border-[#E6E2D8] text-xs font-extrabold uppercase tracking-wider text-[#4A5370]">
+                  <Laptop className="w-3.5 h-3.5 text-[#FF5A36]" />
+                  <span>Standalone Edition</span>
+                </div>
+                <span className="text-xs font-bold text-slate-400">Self-Serve Ready</span>
               </div>
 
-              <h3 className="text-2xl font-bold text-[#0F1730] mb-3">
+              {/* Title & Description */}
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0F1730] tracking-tight mb-3">
                 Deskmerit on its own
               </h3>
-              <p className="text-sm text-[#4A5370] leading-relaxed mb-6">
-                Sign up, invite your team and start tracking today. Your own web dashboard and login, with single sign-on and SCIM on Enterprise.
+              <p className="text-sm text-[#4A5370] leading-relaxed mb-6 font-normal">
+                Deploy in under 10 minutes for any engineering team, consultancy, or distributed squad. Your own dedicated web dashboard, custom integrations, and team management.
               </p>
 
+              {/* Quick Specs Grid */}
+              <div className="grid grid-cols-3 gap-2 p-3.5 rounded-2xl bg-[#F7F4EE]/80 border border-[#E6E2D8] mb-6 text-center">
+                <div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Setup</div>
+                  <div className="text-xs font-extrabold text-[#0F1730] mt-0.5">&lt; 10 mins</div>
+                </div>
+                <div className="border-x border-[#E6E2D8]">
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Billing</div>
+                  <div className="text-xs font-extrabold text-[#0F1730] mt-0.5">Card or PO</div>
+                </div>
+                <div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Directory</div>
+                  <div className="text-xs font-extrabold text-[#0F1730] mt-0.5">Google / Okta</div>
+                </div>
+              </div>
+
+              {/* Included Capabilities List */}
+              <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">
+                What's included:
+              </div>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Self-serve in under 10 minutes",
-                  "Free Starter plan for up to 5 users",
-                  "SSO, SCIM and data residency on Enterprise",
-                  "Card payment or annual PO invoicing",
+                  "Standalone web analytics portal with role-based permissions",
+                  "Cross-platform desktop agents (macOS, Windows, Linux)",
+                  "1-click timer sync for Jira, Azure DevOps & GitHub",
+                  "Defensible CSV, Excel and client-ready PDF invoice exports",
+                  "Self-serve seat provisioning & Google/Okta Single Sign-On",
                 ].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-2.5 text-xs text-[#0F1730]">
-                    <Check className="w-4 h-4 text-[#12B886] shrink-0" />
-                    <span>{item}</span>
+                  <li key={idx} className="flex items-start gap-2.5 text-xs text-[#0F1730]">
+                    <div className="w-4 h-4 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3" />
+                    </div>
+                    <span className="leading-snug">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <Link
-              to="/signup"
-              className="w-full py-3.5 px-4 rounded-[12px] bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-xs text-center transition-colors shadow-md hover:shadow-glow-ember flex items-center justify-center gap-2"
-            >
-              Start free trial
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+            {/* CTAs */}
+            <div className="pt-6 border-t border-slate-100 space-y-3">
+              <Link
+                to="/signup"
+                className="w-full py-3.5 px-6 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-bold text-sm text-center transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <span>Start 14-day free trial</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <div className="text-center">
+                <Link
+                  to="/pricing"
+                  className="text-xs font-bold text-[#4A5370] hover:text-[#FF5A36] transition-colors"
+                >
+                  View standalone plans & pricing →
+                </Link>
+              </div>
+            </div>
           </div>
 
           {/* Card 2: HRMS Add-on */}
-          <div className="bg-[#0F1730] text-white rounded-2xl p-8 border border-[#24305A] shadow-card hover:shadow-elevated transition-all flex flex-col justify-between relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF5A36]/10 rounded-full blur-2xl pointer-events-none" />
+          <div className="bg-white rounded-3xl p-8 sm:p-10 border border-[#E6E2D8] shadow-[0_4px_20px_rgba(15,23,48,0.04)] hover:shadow-[0_12px_32px_rgba(15,23,48,0.08)] hover:border-[#FF5A36]/40 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+            {/* Subtle top brand accent line */}
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#FF5A36] via-[#FF8A65] to-[#38BDF8]" />
 
             <div>
-              <div className="flex items-center justify-between mb-6">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#FFE6DF] bg-[#24305A] px-3 py-1 rounded-full border border-[#334173]">
-                  HRMS Add-on
+              {/* Badge & Icon Header */}
+              <div className="flex items-center justify-between mb-6 pb-5 border-b border-slate-100">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFE6DF]/40 border border-[#FF5A36]/30 text-xs font-extrabold uppercase tracking-wider text-[#FF5A36]">
+                  <Building2 className="w-3.5 h-3.5 text-[#FF5A36]" />
+                  <span>HRMS Native Module</span>
+                </div>
+                <span className="text-[11px] font-extrabold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                  Recommended for Sqalible
                 </span>
-                <ToggleRight className="w-6 h-6 text-[#FF5A36]" />
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-3">
+              {/* Title & Description */}
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0F1730] tracking-tight mb-3">
                 Deskmerit for Sqalible HRMS
               </h3>
-              <p className="text-sm text-[#9AA1B2] leading-relaxed mb-6">
-                Already on Sqalible? Switch Deskmerit on from your HRMS admin panel. Employees are auto-provisioned from your directory and reports appear inside the HRMS — on the same invoice.
+              <p className="text-sm text-[#4A5370] leading-relaxed mb-6 font-normal">
+                Already on Sqalible? Switch Deskmerit on with a single toggle in your admin console. Employees are auto-provisioned from your directory and reports appear in your HRMS.
               </p>
 
+              {/* Quick Specs Grid */}
+              <div className="grid grid-cols-3 gap-2 p-3.5 rounded-2xl bg-[#F7F4EE]/80 border border-[#E6E2D8] mb-6 text-center">
+                <div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Setup</div>
+                  <div className="text-xs font-extrabold text-[#0F1730] mt-0.5">1-Click Toggle</div>
+                </div>
+                <div className="border-x border-[#E6E2D8]">
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Billing</div>
+                  <div className="text-xs font-extrabold text-[#0F1730] mt-0.5">Unified Invoice</div>
+                </div>
+                <div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Directory</div>
+                  <div className="text-xs font-extrabold text-[#0F1730] mt-0.5">Auto-Synced</div>
+                </div>
+              </div>
+
+              {/* Included Capabilities List */}
+              <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">
+                What's included:
+              </div>
               <ul className="space-y-3 mb-8">
                 {[
-                  "One toggle, no new vendor or paperwork",
-                  "Same login as your Sqalible HRMS account",
-                  "Billed as a simple line item on your Sqalible invoice",
-                  "Attendance feeds payroll calculations directly",
+                  "Real-time attendance feeds directly into Sqalible payroll engine",
+                  "Automated shift adherence, midnight roster math & leave deductions",
+                  "Single sign-on using your team's existing Sqalible credentials",
+                  "Single consolidated invoice line-item with zero vendor overhead",
+                  "No second login or browser tab for employees and managers",
                 ].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-2.5 text-xs text-[#E6E2D8]">
-                    <Check className="w-4 h-4 text-[#12B886] shrink-0" />
-                    <span>{item}</span>
+                  <li key={idx} className="flex items-start gap-2.5 text-xs text-[#0F1730]">
+                    <div className="w-4 h-4 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3" />
+                    </div>
+                    <span className="leading-snug">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <Link
-              to="/hrms-add-on"
-              className="w-full py-3.5 px-4 rounded-[12px] bg-[#24305A] hover:bg-[#334173] text-white font-bold text-xs text-center border border-[#334173] transition-colors flex items-center justify-center gap-2"
-            >
-              Explore the HRMS add-on
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
-            </Link>
+            {/* CTAs */}
+            <div className="pt-6 border-t border-slate-100 space-y-3">
+              <Link
+                to="/hrms-add-on"
+                className="w-full py-3.5 px-6 rounded-xl bg-[#0F1730] hover:bg-[#1E293B] text-white font-bold text-sm text-center transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <span>Explore the HRMS add-on</span>
+                <ArrowRight className="w-4 h-4 text-[#FF5A36]" />
+              </Link>
+              <div className="text-center">
+                <Link
+                  to="/demo"
+                  className="text-xs font-bold text-[#4A5370] hover:text-[#FF5A36] transition-colors"
+                >
+                  Book architecture walkthrough with an engineer →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Reassurance Banner (Aligned with max-w-6xl width of cards above) */}
+        <div className="max-w-6xl mx-auto mt-8 p-4 sm:p-5 rounded-2xl bg-white border border-[#E6E2D8] flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left shadow-xs">
+          <div className="w-10 h-10 rounded-xl bg-orange-50 text-[#FF5A36] flex items-center justify-center shrink-0">
+            <ShieldCheck className="w-5 h-5" />
+          </div>
+          <div className="text-xs text-[#4A5370] leading-relaxed">
+            <span className="font-bold text-[#0F1730]">Identical Privacy Guarantee:</span> Both deployment models run the exact same privacy-first desktop agent with zero keystroke logging, blurred screenshots, and 100% employee audit priority.
           </div>
         </div>
       </div>

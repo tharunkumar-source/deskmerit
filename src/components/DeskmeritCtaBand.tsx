@@ -30,7 +30,7 @@ export function DeskmeritCtaBand({
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           {/* Left: Overline + Headline (Sqalible Style) */}
           <div className="max-w-3xl">
-            <p className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2 font-mono">
+            <p className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
               {pretitle}
             </p>
             <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-extrabold text-white leading-snug tracking-[-0.02em]">
@@ -43,18 +43,18 @@ export function DeskmeritCtaBand({
             )}
           </div>
 
-          {/* Right: Side-by-side Action Pills (Sqalible Style) */}
+          {/* Right: Side-by-side Action Buttons (Matching Home Section Buttons) */}
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <Link
               to={trialHref}
-              className="inline-flex items-center justify-center text-sm font-bold text-[#0F1730] bg-white hover:bg-slate-100 px-7 py-3 rounded-full transition-all shadow-md hover:shadow-lg whitespace-nowrap cursor-pointer"
+              className="inline-flex items-center justify-center text-sm font-bold text-[#0F1730] bg-white hover:bg-slate-100 px-7 py-3 rounded-xl transition-all shadow-md hover:shadow-lg whitespace-nowrap cursor-pointer"
             >
               {trialText}
             </Link>
 
             <Link
               to={demoHref}
-              className="inline-flex items-center justify-center text-sm font-bold text-white bg-transparent hover:bg-white/10 border border-white/80 hover:border-white px-7 py-3 rounded-full transition-all whitespace-nowrap cursor-pointer"
+              className="inline-flex items-center justify-center text-sm font-bold text-white bg-transparent hover:bg-white/10 border border-white/80 hover:border-white px-7 py-3 rounded-xl transition-all whitespace-nowrap cursor-pointer"
             >
               {demoText}
             </Link>

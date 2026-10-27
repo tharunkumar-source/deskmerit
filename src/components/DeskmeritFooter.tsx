@@ -55,8 +55,8 @@ export function DeskmeritFooter() {
           </div>
         </div>
 
-        {/* All 7 Sitemap Columns Grid: Product, Solutions, Regions, Compare, Resources, Company, Legal */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8 pb-12 border-b border-[#24305A]">
+        {/* All 8 Sitemap Columns Grid: Product, Solutions, Integrations, Compare & Trust, Resources, Company, Regions, Legal */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8 gap-7 pb-12 border-b border-[#24305A]">
           {FOOTER_SECTIONS.map((section) => (
             <div key={section.title} className="space-y-3">
               <h4 className="text-[11px] font-bold uppercase tracking-wider text-[#9AA1B2]">

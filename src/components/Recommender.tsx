@@ -190,14 +190,14 @@ export function Recommender() {
               <div className="mt-6 pt-4 flex flex-col sm:flex-row gap-3">
                 <a
                   href="/pricing"
-                  className="flex-1 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-5 text-body2 font-semibold text-white hover:bg-primary-hover transition-colors shadow-xs"
+                  className="flex-1 inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-primary px-5 text-body2 font-semibold text-white hover:bg-primary-hover transition-colors shadow-xs"
                 >
                   Explore Pricing Plans
                   <ArrowRightIcon size={15} />
                 </a>
                 <a
                   href="/contact"
-                  className="inline-flex h-11 items-center justify-center rounded-full border border-neutral-600 px-5 text-body2 font-medium text-white hover:bg-neutral-800 transition-colors"
+                  className="inline-flex h-11 items-center justify-center rounded-xl border border-neutral-600 px-5 text-body2 font-medium text-white hover:bg-neutral-800 transition-colors"
                 >
                   Book a demo
                 </a>

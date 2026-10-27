@@ -93,17 +93,17 @@ export function TrialSignupPage() {
                 </div>
               </div>
 
-              {/* Right Column: macOS Provisioning Window */}
+              {/* Right Column: macOS Provisioning Window (White Background Standard) */}
               <div className="lg:col-span-7">
-                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-2xl overflow-hidden backdrop-blur-md">
+                <div className="rounded-2xl border border-slate-200/90 bg-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.25)] overflow-hidden">
                   {/* macOS Window Titlebar */}
-                  <div className="flex items-center justify-between px-4 py-3 bg-[#0A1628] border-b border-slate-800">
+                  <div className="flex items-center justify-between px-4 py-3 bg-slate-50 border-b border-slate-200">
                     <div className="flex items-center space-x-2">
                       <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
                       <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
                       <div className="w-3 h-3 rounded-full bg-[#62C554]" />
                     </div>
-                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
+                    <div className="text-[11px] font-mono text-slate-700 bg-white px-3 py-1 rounded-md border border-slate-200 shadow-xs">
                       app.deskmerit.com/signup/provision
                     </div>
                     <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
@@ -113,88 +113,88 @@ export function TrialSignupPage() {
                   </div>
 
                   {/* Window Body Form */}
-                  <div className="p-6 sm:p-8">
+                  <div className="p-6 sm:p-8 bg-white">
                     {step === "form" && (
                       <form onSubmit={handleSubmit} className="space-y-4 text-left">
                         <div className="mb-2">
-                          <h3 className="text-lg font-bold text-white">Create your workspace</h3>
-                          <p className="text-xs text-slate-400 mt-0.5">Free 14-day sandbox · No payment method needed</p>
+                          <h3 className="text-lg font-bold text-[#0F1730]">Create your workspace</h3>
+                          <p className="text-xs text-slate-500 mt-0.5">Free 14-day sandbox · No payment method needed</p>
                         </div>
 
                         <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1">Full name *</label>
+                          <label className="block text-xs font-semibold text-[#0F1730] mb-1">Full name *</label>
                           <input
                             type="text"
                             required
                             value={formData.fullName}
                             onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                             placeholder="Ananya Sharma"
-                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white placeholder-slate-500 focus:outline-none focus:border-[#FF5A36]"
+                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 bg-white text-[#0F1730] placeholder-slate-400 focus:outline-none focus:border-[#FF5A36] shadow-xs"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1">Work email *</label>
+                          <label className="block text-xs font-semibold text-[#0F1730] mb-1">Work email *</label>
                           <input
                             type="email"
                             required
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             placeholder="ananya@company.com"
-                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white placeholder-slate-500 focus:outline-none focus:border-[#FF5A36]"
+                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 bg-white text-[#0F1730] placeholder-slate-400 focus:outline-none focus:border-[#FF5A36] shadow-xs"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1">Company name *</label>
+                          <label className="block text-xs font-semibold text-[#0F1730] mb-1">Company name *</label>
                           <input
                             type="text"
                             required
                             value={formData.company}
                             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                             placeholder="Cognitive Scale Solutions"
-                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white placeholder-slate-500 focus:outline-none focus:border-[#FF5A36]"
+                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 bg-white text-[#0F1730] placeholder-slate-400 focus:outline-none focus:border-[#FF5A36] shadow-xs"
                           />
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-semibold text-slate-300 mb-1">Trial Plan</label>
+                            <label className="block text-xs font-semibold text-[#0F1730] mb-1">Trial Plan</label>
                             <select
                               value={formData.plan}
                               onChange={(e) => setFormData({ ...formData, plan: e.target.value })}
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white focus:outline-none focus:border-[#FF5A36]"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 bg-white text-[#0F1730] focus:outline-none focus:border-[#FF5A36] shadow-xs cursor-pointer"
                             >
-                              <option value="pro" className="bg-[#0A1628]">Pro (Tracker Plus + Calendars)</option>
-                              <option value="premium" className="bg-[#0A1628]">Premium (White-label + Reseller)</option>
-                              <option value="enterprise" className="bg-[#0A1628]">Enterprise (SSO + SCIM + Residency)</option>
+                              <option value="pro">Pro (Tracker Plus + Calendars)</option>
+                              <option value="premium">Premium (White-label + Reseller)</option>
+                              <option value="enterprise">Enterprise (SSO + SCIM + Residency)</option>
                             </select>
                           </div>
 
                           <div>
-                            <label className="block text-xs font-semibold text-slate-300 mb-1">Data Residency Region</label>
+                            <label className="block text-xs font-semibold text-[#0F1730] mb-1">Data Residency Region</label>
                             <select
                               value={formData.region}
                               onChange={(e) => setFormData({ ...formData, region: e.target.value })}
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white focus:outline-none focus:border-[#FF5A36]"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 bg-white text-[#0F1730] focus:outline-none focus:border-[#FF5A36] shadow-xs cursor-pointer"
                             >
-                              <option value="India (Mumbai · ap-south-1)" className="bg-[#0A1628]">India (Mumbai · ap-south-1)</option>
-                              <option value="Australia (Sydney · ap-southeast-2)" className="bg-[#0A1628]">Australia (Sydney · ap-southeast-2)</option>
-                              <option value="Middle East (UAE · me-central-1)" className="bg-[#0A1628]">Middle East (UAE · me-central-1)</option>
-                              <option value="United States (N. Virginia · us-east-1)" className="bg-[#0A1628]">United States (N. Virginia · us-east-1)</option>
+                              <option value="India (Mumbai · ap-south-1)">India (Mumbai · ap-south-1)</option>
+                              <option value="Australia (Sydney · ap-southeast-2)">Australia (Sydney · ap-southeast-2)</option>
+                              <option value="Middle East (UAE · me-central-1)">Middle East (UAE · me-central-1)</option>
+                              <option value="United States (N. Virginia · us-east-1)">United States (N. Virginia · us-east-1)</option>
                             </select>
                           </div>
                         </div>
 
                         <button
                           type="submit"
-                          className="w-full py-3.5 rounded-[12px] bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-xs shadow-md hover:shadow-glow-ember transition-colors flex items-center justify-center gap-2 mt-2 cursor-pointer"
+                          className="w-full py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-xs shadow-md transition-colors flex items-center justify-center gap-2 mt-2 cursor-pointer"
                         >
                           Create workspace →
                         </button>
 
-                        <div className="text-[11px] text-slate-400 text-center pt-2">
-                          🔒 No credit card required. You agree to our <Link to="/legal/terms" className="underline hover:text-white">Terms</Link> and <Link to="/legal/privacy" className="underline hover:text-white">Privacy Policy</Link>.
+                        <div className="text-[11px] text-slate-500 text-center pt-2">
+                          🔒 No credit card required. You agree to our <Link to="/legal/terms" className="underline hover:text-[#FF5A36]">Terms</Link> and <Link to="/legal/privacy" className="underline hover:text-[#FF5A36]">Privacy Policy</Link>.
                         </div>
                       </form>
                     )}

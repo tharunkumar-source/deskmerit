@@ -223,10 +223,10 @@ export function DeskmeritFeatureGrid() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] font-mono">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
               TAILORED ARCHITECTURE
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-[1.12] mt-2">
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-[1.24]">
               Features Built for Every Workflow
             </h2>
             <p className="text-sm sm:text-base text-[#4A5370] mt-3 max-w-2xl leading-relaxed">
@@ -234,7 +234,7 @@ export function DeskmeritFeatureGrid() {
             </p>
           </div>
 
-          {/* Top Right Controls: < Arrow, View All Pill, > Arrow */}
+          {/* Top Right Controls: < Arrow, View All Button, > Arrow */}
           <div className="flex items-center gap-2 shrink-0">
             <button
               type="button"
@@ -246,7 +246,7 @@ export function DeskmeritFeatureGrid() {
             </button>
             <Link
               to="/features"
-              className="px-5 py-2.5 rounded-full border border-slate-300 bg-white hover:border-[#0F1730] hover:bg-[#0F1730] hover:text-white text-xs font-bold text-[#0F1730] shadow-xs hover:shadow-sm transition-all"
+              className="px-5 py-2.5 rounded-xl border border-slate-300 bg-white hover:border-[#0F1730] hover:bg-[#0F1730] hover:text-white text-xs font-bold text-[#0F1730] shadow-xs hover:shadow-sm transition-all"
             >
               View all
             </Link>
@@ -261,7 +261,7 @@ export function DeskmeritFeatureGrid() {
           </div>
         </div>
 
-        {/* Filter Pills */}
+        {/* Filter Buttons */}
         <div className="flex items-center gap-2 flex-wrap mb-10 pb-2">
           {categories.map((cat) => {
             const isActive = selectedCategory === cat.id;
@@ -273,7 +273,7 @@ export function DeskmeritFeatureGrid() {
                   setSelectedCategory(cat.id);
                   if (scrollRef.current) scrollRef.current.scrollLeft = 0;
                 }}
-                className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer border ${
+                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border ${
                   isActive
                     ? "bg-[#0F1730] text-white border-[#0F1730] shadow-sm"
                     : "bg-white text-[#4A5370] border-slate-300 hover:border-[#0F1730] hover:text-[#0F1730]"

@@ -57,9 +57,9 @@ export function DeskmeritTestimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header matching Kombee reference layout */}
         <div className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] font-mono">
+          <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
             OUR CLIENTS
-          </span>
+          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-tight mt-2 max-w-3xl">
             Read Real Stories from Distributed Teams Worldwide
           </h2>
@@ -193,7 +193,7 @@ export function DeskmeritTestimonials() {
             <div className="relative z-10 pt-2">
               <Link
                 to="/signup"
-                className="px-5 py-2.5 rounded-full bg-white hover:bg-[#FBF9F5] text-[#0F1730] font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2 w-fit group/btn cursor-pointer"
+                className="px-5 py-2.5 rounded-xl bg-white hover:bg-[#FBF9F5] text-[#0F1730] font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2 w-fit group/btn cursor-pointer"
               >
                 <span>Contact</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36] group-hover/btn:translate-x-1 transition-transform" />

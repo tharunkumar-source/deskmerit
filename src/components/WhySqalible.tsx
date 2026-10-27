@@ -114,7 +114,7 @@ export function WhySqalible() {
                 <a
                   key={link.title}
                   href={link.href}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-neutral-700 bg-neutral-800/80 px-3.5 py-1.5 text-caption font-medium text-white hover:border-teal-400 hover:bg-neutral-700 hover:text-teal-300 transition-colors"
+                  className="inline-flex items-center gap-1.5 rounded-xl border border-neutral-700 bg-neutral-800/80 px-3.5 py-1.5 text-caption font-medium text-white hover:border-teal-400 hover:bg-neutral-700 hover:text-teal-300 transition-colors"
                 >
                   {link.title.replace("Sqalible ", "")}
                   <ArrowRightIcon size={13} className="text-teal-400" />

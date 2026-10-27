@@ -91,7 +91,7 @@ export function Testimonials() {
               <Button
                 variant="inverse"
                 href="/contact"
-                className="!rounded-full w-full justify-center bg-white text-primary hover:bg-neutral-100 shadow-lg hover:scale-[1.02] transition-all font-semibold"
+                className="!rounded-xl w-full justify-center bg-white text-primary hover:bg-neutral-100 shadow-lg hover:scale-[1.02] transition-all font-semibold"
               >
                 Book a demo
               </Button>

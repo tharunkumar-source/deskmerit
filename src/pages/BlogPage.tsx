@@ -189,15 +189,15 @@ export function BlogPage() {
               Stay ahead of the curve with the latest insights, reviews, and benchmarks in workforce analytics, engineering billing, and privacy-first tracking.
             </p>
 
-            {/* Search Input Bar */}
+            {/* Search Input Bar (White Background Standard) */}
             <div className="max-w-xl mx-auto relative mb-8">
-              <Search className="w-5 h-5 text-[#9AA1B2] absolute left-4 top-1/2 -translate-y-1/2" />
+              <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search articles by title, category, or topic..."
-                className="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-[#0F1730] border border-[#24305A] text-white placeholder-[#9AA1B2] text-xs sm:text-sm focus:outline-none focus:border-[#FF5A36] transition-colors"
+                className="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-white border border-slate-200/90 text-[#0F1730] placeholder-slate-400 text-xs sm:text-sm focus:outline-none focus:border-[#FF5A36] focus:ring-1 focus:ring-[#FF5A36] shadow-md transition-all"
               />
             </div>
 

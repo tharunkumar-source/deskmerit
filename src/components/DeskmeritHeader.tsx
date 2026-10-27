@@ -978,20 +978,6 @@ export function DeskmeritHeader() {
                           Monitoring-law guides hub
                         </Link>
                         <Link
-                          to="/tools"
-                          onClick={() => setMobileMenuOpen(false)}
-                          className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] block"
-                        >
-                          Free tools hub (Calculators)
-                        </Link>
-                        <Link
-                          to="/templates"
-                          onClick={() => setMobileMenuOpen(false)}
-                          className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] block"
-                        >
-                          Templates hub (Timesheets & Policies)
-                        </Link>
-                        <Link
                           to="/glossary"
                           onClick={() => setMobileMenuOpen(false)}
                           className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] block"
@@ -2177,18 +2163,6 @@ export function DeskmeritHeader() {
             description: "Definitive A to Z terms for time tracking and activity metrics.",
             href: "/glossary",
             icon: BookOpen,
-          },
-          {
-            title: "Free tools hub",
-            description: "Interactive calculators for workforce planning and bench margin.",
-            href: "/tools",
-            icon: Calculator,
-          },
-          {
-            title: "Templates hub",
-            description: "Ready-to-use timesheet spreadsheets and workplace policies.",
-            href: "/templates",
-            icon: FileSpreadsheet,
           },
         ],
       },

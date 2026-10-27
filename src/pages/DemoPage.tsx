@@ -88,17 +88,17 @@ export function DemoPage() {
                 </div>
               </div>
 
-              {/* Right Column: macOS Window with Booking Form */}
+              {/* Right Column: Clean White Window with Booking Form (White Background Only for Form) */}
               <div className="lg:col-span-7">
-                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-2xl overflow-hidden backdrop-blur-md">
-                  {/* macOS Window Titlebar */}
-                  <div className="flex items-center justify-between px-4 py-3 bg-[#0A1628] border-b border-slate-800">
+                <div className="rounded-2xl border border-slate-200/90 bg-white shadow-2xl overflow-hidden text-[#0F1730]">
+                  {/* Window Titlebar */}
+                  <div className="flex items-center justify-between px-4 py-3 bg-slate-100/90 border-b border-slate-200">
                     <div className="flex items-center space-x-2">
                       <div className="w-3 h-3 rounded-full bg-[#FF5F56]" />
                       <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
                       <div className="w-3 h-3 rounded-full bg-[#27C93F]" />
                     </div>
-                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
+                    <div className="text-[11px] font-mono text-slate-600 bg-white px-3 py-1 rounded-md border border-slate-200 shadow-xs">
                       app.deskmerit.com/demo/schedule
                     </div>
                     <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
@@ -108,14 +108,14 @@ export function DemoPage() {
                   </div>
 
                   {/* Window Body Form */}
-                  <div className="p-6 sm:p-8">
+                  <div className="p-6 sm:p-8 bg-white">
                     {submitted ? (
                       <div className="text-center py-10 space-y-4">
                         <div className="w-14 h-14 rounded-full bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center mx-auto shadow-sm">
                           <CheckCircle2 className="w-8 h-8" />
                         </div>
-                        <h3 className="text-2xl font-bold text-white">Demo Walkthrough Scheduled!</h3>
-                        <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
+                        <h3 className="text-2xl font-bold text-[#0F1730]">Demo Walkthrough Scheduled!</h3>
+                        <p className="text-xs sm:text-sm text-[#4A5370] max-w-md mx-auto leading-relaxed">
                           Thank you, <strong>{formData.name}</strong>. A product specialist will email you at <strong>{formData.email}</strong> within one working day with a calendar link.
                         </p>
                         <div className="pt-4">
@@ -130,13 +130,13 @@ export function DemoPage() {
                     ) : (
                       <form onSubmit={handleSubmit} className="space-y-4 text-left">
                         <div className="mb-2">
-                          <h3 className="text-lg font-bold text-white">Book your live walkthrough</h3>
-                          <p className="text-xs text-slate-400 mt-0.5">We’ll reply within one working day with calendar slots.</p>
+                          <h3 className="text-lg font-bold text-[#0F1730]">Book your live walkthrough</h3>
+                          <p className="text-xs text-slate-500 mt-0.5">We’ll reply within one working day with calendar slots.</p>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-semibold text-slate-300 mb-1">
+                            <label className="block text-xs font-semibold text-slate-700 mb-1">
                               Full name *
                             </label>
                             <input
@@ -145,12 +145,12 @@ export function DemoPage() {
                               value={formData.name}
                               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                               placeholder="Ananya Sharma"
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white placeholder-slate-500 focus:outline-none focus:border-[#FF5A36]"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#FF5A36] focus:ring-2 focus:ring-[#FF5A36]/10"
                             />
                           </div>
 
                           <div>
-                            <label className="block text-xs font-semibold text-slate-300 mb-1">
+                            <label className="block text-xs font-semibold text-slate-700 mb-1">
                               Work email *
                             </label>
                             <input
@@ -159,14 +159,14 @@ export function DemoPage() {
                               value={formData.email}
                               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                               placeholder="ananya@company.com"
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white placeholder-slate-500 focus:outline-none focus:border-[#FF5A36]"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#FF5A36] focus:ring-2 focus:ring-[#FF5A36]/10"
                             />
                           </div>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-semibold text-slate-300 mb-1">
+                            <label className="block text-xs font-semibold text-slate-700 mb-1">
                               Company *
                             </label>
                             <input
@@ -175,50 +175,50 @@ export function DemoPage() {
                               value={formData.company}
                               onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                               placeholder="Acme Technologies"
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white placeholder-slate-500 focus:outline-none focus:border-[#FF5A36]"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#FF5A36] focus:ring-2 focus:ring-[#FF5A36]/10"
                             />
                           </div>
 
                           <div>
-                            <label className="block text-xs font-semibold text-slate-300 mb-1">
+                            <label className="block text-xs font-semibold text-slate-700 mb-1">
                               Team size *
                             </label>
                             <select
                               value={formData.teamSize}
                               onChange={(e) => setFormData({ ...formData, teamSize: e.target.value })}
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white focus:outline-none focus:border-[#FF5A36]"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] focus:bg-white focus:outline-none focus:border-[#FF5A36]"
                             >
-                              <option value="1–15" className="bg-[#0A1628]">1–15 seats</option>
-                              <option value="16–50" className="bg-[#0A1628]">16–50 seats</option>
-                              <option value="51–150" className="bg-[#0A1628]">51–150 seats</option>
-                              <option value="151–500" className="bg-[#0A1628]">151–500 seats</option>
-                              <option value="500+" className="bg-[#0A1628]">500+ seats</option>
+                              <option value="1–15">1–15 seats</option>
+                              <option value="16–50">16–50 seats</option>
+                              <option value="51–150">51–150 seats</option>
+                              <option value="151–500">151–500 seats</option>
+                              <option value="500+">500+ seats</option>
                             </select>
                           </div>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-semibold text-slate-300 mb-1">
+                            <label className="block text-xs font-semibold text-slate-700 mb-1">
                               Country / Region *
                             </label>
                             <select
                               value={formData.country}
                               onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white focus:outline-none focus:border-[#FF5A36]"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] focus:bg-white focus:outline-none focus:border-[#FF5A36]"
                             >
-                              <option value="India" className="bg-[#0A1628]">India (₹ INR)</option>
-                              <option value="Australia" className="bg-[#0A1628]">Australia (A$ AUD)</option>
-                              <option value="New Zealand" className="bg-[#0A1628]">New Zealand (NZ$ NZD)</option>
-                              <option value="UAE" className="bg-[#0A1628]">United Arab Emirates (AED)</option>
-                              <option value="Saudi Arabia" className="bg-[#0A1628]">Saudi Arabia (SAR)</option>
-                              <option value="United States" className="bg-[#0A1628]">United States (USD)</option>
-                              <option value="Other" className="bg-[#0A1628]">Other Region</option>
+                              <option value="India">India (₹ INR)</option>
+                              <option value="Australia">Australia (A$ AUD)</option>
+                              <option value="New Zealand">New Zealand (NZ$ NZD)</option>
+                              <option value="UAE">United Arab Emirates (AED)</option>
+                              <option value="Saudi Arabia">Saudi Arabia (SAR)</option>
+                              <option value="United States">United States (USD)</option>
+                              <option value="Other">Other Region</option>
                             </select>
                           </div>
 
                           <div>
-                            <label className="block text-xs font-semibold text-slate-300 mb-1">
+                            <label className="block text-xs font-semibold text-slate-700 mb-1">
                               Project tools you use
                             </label>
                             <input
@@ -226,34 +226,34 @@ export function DemoPage() {
                               value={formData.pmTool}
                               onChange={(e) => setFormData({ ...formData, pmTool: e.target.value })}
                               placeholder="Jira, Azure DevOps, OpenProject, etc."
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white placeholder-slate-500 focus:outline-none focus:border-[#FF5A36]"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#FF5A36] focus:ring-2 focus:ring-[#FF5A36]/10"
                             />
                           </div>
                         </div>
 
                         <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1">
+                          <label className="block text-xs font-semibold text-slate-700 mb-1">
                             Already on Sqalible HRMS?
                           </label>
                           <select
                             value={formData.isSqalibleUser}
                             onChange={(e) => setFormData({ ...formData, isSqalibleUser: e.target.value })}
-                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-900/90 text-white focus:outline-none focus:border-[#FF5A36]"
+                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] focus:bg-white focus:outline-none focus:border-[#FF5A36]"
                           >
-                            <option value="No" className="bg-[#0A1628]">No, evaluating standalone Deskmerit</option>
-                            <option value="Yes" className="bg-[#0A1628]">Yes, want to activate the HRMS add-on</option>
+                            <option value="No">No, evaluating standalone Deskmerit</option>
+                            <option value="Yes">Yes, want to activate the HRMS add-on</option>
                           </select>
                         </div>
 
                         <button
                           type="submit"
-                          className="w-full py-3.5 rounded-[12px] bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-xs transition-colors shadow-md hover:shadow-glow-ember flex items-center justify-center gap-2 mt-2 cursor-pointer"
+                          className="w-full py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E04422] text-white font-bold text-xs transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 mt-2 cursor-pointer"
                         >
                           Schedule Product Demo →
                         </button>
 
-                        <p className="text-[11px] text-slate-400 text-center pt-1">
-                          By submitting you agree to our <Link to="/legal/privacy" className="underline hover:text-white">Privacy Policy</Link>. We never sell or share data.
+                        <p className="text-[11px] text-slate-500 text-center pt-1">
+                          By submitting you agree to our <Link to="/legal/privacy" className="underline hover:text-[#0F1730]">Privacy Policy</Link>. We never sell or share data.
                         </p>
                       </form>
                     )}

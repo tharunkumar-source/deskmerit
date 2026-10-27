@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { DeskmeritHeader } from "../components/DeskmeritHeader";
 import { DeskmeritFooter } from "../components/DeskmeritFooter";
@@ -465,10 +465,121 @@ const REGIONS: Record<string, RegionConfig> = {
   },
 };
 
+interface RegionalCardConfig {
+  code: string;
+  name: string;
+  flagUrl: string;
+  badge: string;
+  cardTitle: string;
+  cardSubtitle: string;
+  statutoryFramework: string;
+  metricBadge: string;
+  guarantees: string[];
+  securityNote: string;
+  routeUrl: string;
+}
+
+const REGIONAL_CARD_CONFIGS: RegionalCardConfig[] = [
+  {
+    code: "in",
+    name: "India",
+    flagUrl: "/images/flags/in.svg",
+    badge: "DPDP ACT 2023 READY",
+    cardTitle: "India Edition + Deskmerit",
+    cardSubtitle: "DPDP Act 2023 · IT Act 2000 §43A · GST Tax Invoices",
+    statutoryFramework: "Digital Personal Data Protection Act 2023",
+    metricBadge: "₹299/mo · GST Credit",
+    guarantees: [
+      "DPDP-compliant clear employee notice & lawful consent templates",
+      "Zero keystroke logging, webcam captures or continuous screenshots",
+      "AWS Mumbai (ap-south-1) sovereign data residency option",
+      "GST tax invoices with input credit & UPI / NEFT payment",
+    ],
+    securityNote: "TLS 1.3 · DPDP Ready · ISO 27001",
+    routeUrl: "/guides/employee-monitoring-laws/india",
+  },
+  {
+    code: "au",
+    name: "Australia",
+    flagUrl: "/images/flags/au.svg",
+    badge: "FAIR WORK & NSW ACT READY",
+    cardTitle: "Australia Edition + Deskmerit",
+    cardSubtitle: "NSW Workplace Surveillance Act 2005 · Fair Work Act",
+    statutoryFramework: "NSW Surveillance Act 2005 & Fair Work Standards",
+    metricBadge: "14-Day Notice · A$8/mo",
+    guarantees: [
+      "Mandatory 14-day prior written surveillance notice generator",
+      "Fair Work compliant records for ordinary hours, overtime & breaks",
+      "AWS Sydney (ap-southeast-2) local cloud residency tier",
+      "ABN tax invoices in AUD with GST input credit support",
+    ],
+    securityNote: "TLS 1.3 · Fair Work Aligned · AEST/AWST",
+    routeUrl: "/guides/employee-monitoring-laws/australia",
+  },
+  {
+    code: "nz",
+    name: "New Zealand",
+    flagUrl: "/images/flags/nz.svg",
+    badge: "PRIVACY ACT 2020 COMPLIANT",
+    cardTitle: "New Zealand Edition + Deskmerit",
+    cardSubtitle: "Privacy Act 2020 IPPs 1–13 · Holidays Act 2003 Records",
+    statutoryFramework: "NZ Privacy Commissioner IPP Principles & Holidays Act",
+    metricBadge: "NZ$9/mo · IPP 6 Access",
+    guarantees: [
+      "Adheres to all 13 NZ Information Privacy Principles (IPPs)",
+      "Worker self-service timesheet access under IPP Principle 6",
+      "Verifiable actual daily hours worked records for Holidays Act 2003",
+      "One-click private break mode for remote banking & personal time",
+    ],
+    securityNote: "TLS 1.3 · Privacy Commissioner Compliant",
+    routeUrl: "/guides/employee-monitoring-laws/new-zealand",
+  },
+  {
+    code: "ae",
+    name: "UAE",
+    flagUrl: "/images/flags/ae.svg",
+    badge: "MOHRE & LABOUR LAW READY",
+    cardTitle: "UAE & GCC Edition + Deskmerit",
+    cardSubtitle: "Federal Decree-Law No. 33 · DIFC/ADGM Data Laws",
+    statutoryFramework: "UAE Federal Decree-Law No. 33 & Freezone Laws",
+    metricBadge: "AED 22/mo · 5% VAT",
+    guarantees: [
+      "Aligned with Ministry of Human Resources (MOHRE) guidelines",
+      "Preconfigured Mon–Fri & Sun–Thu GCC workweek shift presets",
+      "Statutory Ramadan reduced working hours shift scheduling",
+      "Multi-branch DIFC, ADGM and mainland VAT tax invoices",
+    ],
+    securityNote: "TLS 1.3 · MOHRE Aligned · Gulf Standard Time",
+    routeUrl: "/guides/employee-monitoring-laws/uae",
+  },
+  {
+    code: "sa",
+    name: "Saudi Arabia",
+    flagUrl: "/images/flags/sa.svg",
+    badge: "SAUDI PDPL & ZATCA READY",
+    cardTitle: "Saudi Arabia Edition + Deskmerit",
+    cardSubtitle: "Saudi PDPL (Royal Decree M/19) · SDAIA Regulations",
+    statutoryFramework: "Saudi Data & AI Authority (SDAIA) & Labor Law",
+    metricBadge: "SAR 25/mo · ZATCA Ready",
+    guarantees: [
+      "Compliant with SDAIA Personal Data Protection Law (PDPL)",
+      "Sunday–Thursday standard Saudi business week & overtime rules",
+      "ZATCA e-invoicing ready with standard 15% VAT details in SAR",
+      "Ethical monitoring: no keystroke logging & blurred screenshots",
+    ],
+    securityNote: "TLS 1.3 · SDAIA Aligned · AST (UTC+3)",
+    routeUrl: "/guides/employee-monitoring-laws/saudi-arabia",
+  },
+];
+
 export function IndiaPage() {
   const location = useLocation();
   const path = location.pathname.toLowerCase();
   const { setCurrencyCode } = useCurrency();
+
+  const isGuidesOverview =
+    path === "/guides/employee-monitoring-laws" ||
+    path === "/guides/employee-monitoring-laws/";
 
   // Determine active region from URL path
   let activeKey = "in";
@@ -485,6 +596,11 @@ export function IndiaPage() {
   }
 
   const region = REGIONS[activeKey] || REGIONS.in;
+
+  const activeCard =
+    REGIONAL_CARD_CONFIGS.find(
+      (c) => c.code === (activeKey === "ar" ? "sa" : activeKey)
+    ) || REGIONAL_CARD_CONFIGS[0];
 
   useEffect(() => {
     setCurrencyCode(region.currency);
@@ -530,26 +646,37 @@ export function IndiaPage() {
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
               <span className="text-slate-300">
-                {region.isArabic ? "المناطق" : "Global Editions"}
+                {isGuidesOverview ? "Resources" : region.isArabic ? "المناطق" : "Global Editions"}
               </span>
               <span className="text-slate-500">/</span>
-              <span>{region.name}</span>
+              <span>{isGuidesOverview ? "Monitoring Law Guides" : region.name}</span>
             </div>
 
             <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
               {/* Left Column */}
               <div className="col-span-12 lg:col-span-6 space-y-6">
                 <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
-                  {region.badge}
+                  {isGuidesOverview ? "🌐 GLOBAL EMPLOYEE MONITORING LAWS" : region.badge}
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
-                  {region.heroTitle}{" "}
-                  <span className="text-[#FF5A36] block">{region.heroAccent}</span>
+                  {isGuidesOverview ? (
+                    <>
+                      Employee monitoring laws & compliance guides,{" "}
+                      <span className="text-[#FF5A36] block">built for defensible workforce privacy.</span>
+                    </>
+                  ) : (
+                    <>
+                      {region.heroTitle}{" "}
+                      <span className="text-[#FF5A36] block">{region.heroAccent}</span>
+                    </>
+                  )}
                 </h1>
 
                 <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
-                  {region.heroDesc}
+                  {isGuidesOverview
+                    ? "Country-by-country legal requirements, mandatory employee notice standards, and data protection regulations for modern distributed teams across India, Australia, New Zealand, UAE, and Saudi Arabia."
+                    : region.heroDesc}
                 </p>
 
                 <div className="flex flex-wrap items-center gap-3.5 pt-2">
@@ -569,31 +696,73 @@ export function IndiaPage() {
                 </div>
               </div>
 
-              {/* Right Column: Authentic Regional Edition Screenshot in macOS Browser Window Frame */}
+              {/* Right Column: Clean Regional Compliance Showcase Card matching application hero standard */}
               <div className="col-span-12 lg:col-span-6">
-                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
-                  <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
-                      <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
-                      <div className="w-3 h-3 rounded-full bg-[#62C554]" />
-                    </div>
-                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
-                      app.deskmerit.com/{region.code}/statutory-roster
-                    </div>
-                    <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
-                      {region.currency} Statutory Ready
-                    </div>
-                  </div>
+                <div className="relative">
+                  {/* Clean Soft Ambient Glow */}
+                  <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 via-orange-500/10 to-teal-500/10 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
 
-                  <div className="bg-[#070E1A] p-2">
-                    <img
-                      src="/images/figma/regional-working-days.png"
-                      alt={`Deskmerit Statutory Time & Attendance Platform for ${region.name}`}
-                      className="w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
-                      loading="eager"
-                    />
+                  {/* Clean White Card strictly matching Application Hero Standard */}
+                  <div className="relative rounded-3xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] text-[#0F1730]">
+                    {/* Top Grey Area with Official Regional Badge */}
+                    <div className="bg-[#F8F9FA] p-6 sm:p-7 flex flex-col items-center justify-center border-b border-slate-100 relative text-center">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white shadow-xs border border-slate-200/90 flex items-center justify-center p-3 overflow-hidden shadow-xs">
+                        <img
+                          src={activeCard.flagUrl}
+                          alt={activeCard.name}
+                          className="w-12 h-9 sm:w-14 sm:h-10.5 rounded-md object-cover shadow-xs border border-slate-100"
+                        />
+                      </div>
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-[#FF5A36] mt-3 bg-[#FFE6DF]/60 px-3 py-0.5 rounded-full border border-[#FF5A36]/30">
+                        {activeCard.badge}
+                      </div>
+                      <h3 className="font-extrabold text-lg sm:text-xl text-[#0F1730] mt-1.5 tracking-tight">
+                        {activeCard.cardTitle}
+                      </h3>
+                      <div className="text-xs text-[#4A5370] font-medium mt-0.5">
+                        {activeCard.cardSubtitle}
+                      </div>
+                    </div>
+
+                    {/* Card Content & Trust Features */}
+                    <div className="p-6 sm:p-7 space-y-4">
+                      {/* Connected Entity / Statutory Regime Box */}
+                      <div className="p-3.5 rounded-xl bg-[#F8FAFC] border border-slate-200/90 flex items-center justify-between text-xs gap-3">
+                        <div className="min-w-0 flex-1">
+                          <div className="text-[10px] font-mono font-bold uppercase text-[#4A5370]">
+                            Governing Statutory Regime
+                          </div>
+                          <div className="font-bold text-[#0F1730] mt-0.5 truncate">
+                            {activeCard.statutoryFramework}
+                          </div>
+                        </div>
+                        <span className="px-2.5 py-1 rounded-lg text-[11px] font-mono font-bold text-[#027A48] bg-[#ECFDF3] border border-[#A6F4C5] shrink-0">
+                          {activeCard.metricBadge}
+                        </span>
+                      </div>
+
+                      {/* Feature Guarantees */}
+                      <div className="space-y-2.5 text-xs text-[#4A5370]">
+                        {activeCard.guarantees.map((item, idx) => (
+                          <div key={idx} className="flex items-start gap-2.5">
+                            <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                            <span className="leading-snug">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Bottom Verification Strip */}
+                      <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-[#4A5370]">
+                        <span className="flex items-center gap-1.5 font-medium">
+                          <ShieldCheck className="w-3.5 h-3.5 text-[#027A48]" />
+                          {activeCard.securityNote}
+                        </span>
+                        <span className="text-emerald-600 font-mono font-semibold flex items-center gap-1.5">
+                          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                          Statutory Verified
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

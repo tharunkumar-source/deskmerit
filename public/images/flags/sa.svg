@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
+  <path fill="#006c35" d="M0 0h640v480H0z"/>
+  <g fill="#fff" transform="translate(130, 260) scale(1.8)">
+    <path d="M10 22h190v4H10zM195 24l15-2-15-2z"/>
+    <path d="M30 17h6v14h-6zM40 14h4v20h-4z"/>
+  </g>
+  <text x="320" y="220" text-anchor="middle" fill="#fff" font-size="52" font-family="sans-serif" font-weight="bold" letter-spacing="4">لا إله إلا الله محمد رسول الله</text>
+</svg>

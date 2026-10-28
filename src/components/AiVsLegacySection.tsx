@@ -37,12 +37,12 @@ export function AiVsLegacySection() {
   ];
 
   return (
-    <section id="why" className="border-b border-[#E6E2D8] bg-[#FFFFFF] py-20" aria-labelledby="why-title">
+    <section id="why" className="border-b border-[#E8D5EC] bg-[#FFFFFF] py-20" aria-labelledby="why-title">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
           <div className="flex-1">
-            <p className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+            <p className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
               Architectural Benchmark
             </p>
             <h2 id="why-title" className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-tight">
@@ -54,7 +54,7 @@ export function AiVsLegacySection() {
           </div>
           <Link
             to="/compare"
-            className="inline-flex shrink-0 items-center gap-1.5 text-xs font-bold text-[#FF5A36] hover:text-[#E94A27] transition-colors"
+            className="inline-flex shrink-0 items-center gap-1.5 text-xs font-bold text-[#61126E] hover:text-[#4E0E58] transition-colors"
           >
             See full competitor comparison
             <ArrowRight size={14} />
@@ -64,50 +64,50 @@ export function AiVsLegacySection() {
         {/* Mobile Swipe Notice */}
         <div className="sm:hidden flex items-center justify-between text-[11px] text-[#4A5370] font-medium mb-3 px-1">
           <span className="flex items-center gap-1.5 font-mono">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A36] animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#61126E] animate-pulse" />
             <span>Swipe horizontally to compare</span>
           </span>
           <span className="text-slate-400 font-mono text-[10px]">← 3 COLUMNS →</span>
         </div>
 
         {/* 3-Column Table with Mobile Horizontal Scroll */}
-        <div className="overflow-x-auto no-scrollbar rounded-2xl border border-[#E6E2D8] bg-[#FFFFFF] shadow-card">
+        <div className="overflow-x-auto no-scrollbar rounded-2xl border border-[#E8D5EC] bg-[#FFFFFF] shadow-card">
           <div className="min-w-[660px] sm:min-w-full">
             {/* Header Row */}
-            <div className="grid grid-cols-12 border-b border-[#E6E2D8] font-semibold text-xs">
-              <div className="col-span-3 px-6 py-4 bg-[#F7F4EE] text-[#0F1730] uppercase tracking-wider font-bold">
+            <div className="grid grid-cols-12 border-b border-[#E8D5EC] font-semibold text-xs">
+              <div className="col-span-3 px-6 py-4 bg-[#FAF4FB] text-[#0F1730] uppercase tracking-wider font-bold">
                 Capability
               </div>
-              <div className="col-span-4 px-6 py-4 border-x border-[#E6E2D8] bg-[#F7F4EE]/70 text-[#4A5370] font-bold">
+              <div className="col-span-4 px-6 py-4 border-x border-[#E8D5EC] bg-[#FAF4FB]/70 text-[#4A5370] font-bold">
                 Legacy Trackers (DeskTime, Hubstaff, Time Doctor)
               </div>
-              <div className="col-span-5 flex items-center justify-between bg-[#0F1730] text-white px-6 py-4">
+              <div className="col-span-5 flex items-center justify-between bg-[#61126E] text-white px-6 py-4">
                 <span className="text-white text-xs sm:text-sm font-extrabold tracking-tight">
                   Deskmerit (Trust-First)
                 </span>
-                <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider text-white bg-[#FF5A36] px-2 py-0.5 rounded-md shadow-xs">
+                <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider text-white bg-white/20 px-2 py-0.5 rounded-md shadow-xs">
                   Recommended
                 </span>
               </div>
             </div>
 
             {/* Table Rows */}
-            <div className="divide-y divide-[#E6E2D8]">
+            <div className="divide-y divide-[#E8D5EC]">
               {comparisonRows.map((row, i) => (
-                <div key={row.capability} className="grid grid-cols-12 items-stretch group hover:bg-[#F7F4EE]/40 transition-colors text-xs">
+                <div key={row.capability} className="grid grid-cols-12 items-stretch group hover:bg-[#FAF4FB]/40 transition-colors text-xs">
                   {/* Capability Column */}
-                  <div className="col-span-3 p-5 flex flex-col justify-center bg-white group-hover:bg-[#F7F4EE]/40 font-bold text-[#0F1730]">
+                  <div className="col-span-3 p-5 flex flex-col justify-center bg-white group-hover:bg-[#FAF4FB]/40 font-bold text-[#0F1730]">
                     {row.capability}
                   </div>
 
                   {/* Legacy Column */}
-                  <div className="col-span-4 p-5 flex items-start gap-2.5 border-x border-[#E6E2D8] text-[#4A5370] bg-[#FAF8F5]">
+                  <div className="col-span-4 p-5 flex items-start gap-2.5 border-x border-[#E8D5EC] text-[#4A5370] bg-[#FAF4FB]/70">
                     <XCircle className="w-4 h-4 text-[#E5484D] shrink-0 mt-0.5" />
                     <span className="leading-relaxed">{row.legacy}</span>
                   </div>
 
                   {/* Deskmerit Column */}
-                  <div className="col-span-5 p-5 flex items-start gap-2.5 bg-[#FFF9F7] text-[#0F1730] font-medium">
+                  <div className="col-span-5 p-5 flex items-start gap-2.5 bg-white text-[#0F1730] font-medium shadow-xs">
                     <CheckCircle2 className="w-4 h-4 text-[#12B886] shrink-0 mt-0.5" />
                     <span className="leading-relaxed">{row.deskmerit}</span>
                   </div>

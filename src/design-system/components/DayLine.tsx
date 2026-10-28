@@ -59,7 +59,7 @@ export function DayLine({
 
       {/* Rounded bar */}
       <div
-        className="w-full rounded-full overflow-hidden flex bg-[#E6E2D8] shadow-inner"
+        className="w-full rounded-full overflow-hidden flex bg-[#E8D5EC] shadow-inner"
         style={{ height }}
       >
         {segments.map((seg, idx) => {

@@ -5,7 +5,7 @@ import { BrandGuidelinesShowcase } from "../design-system";
 
 export function BrandGuidelinesPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#F7F4EE]">
+    <div className="min-h-screen flex flex-col bg-[#FAF4FB]">
       <DeskmeritHeader />
       <main className="flex-1">
         <BrandGuidelinesShowcase />

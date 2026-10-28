@@ -165,12 +165,12 @@ export function InteractiveTrackerWidget() {
               className={`h-11 px-4 rounded-[12px] font-extrabold text-xs flex items-center justify-center gap-2 transition-all ${
                 isTracking && !isPrivateTime
                   ? "bg-[#24305A] hover:bg-[#334173] text-white border border-[#384574]"
-                  : "bg-[#FF5A36] hover:bg-[#E94A27] text-white shadow-md hover:shadow-glow-ember"
+                  : "bg-[#61126E] hover:bg-[#4E0E58] text-white shadow-md hover:shadow-glow-ember"
               }`}
             >
               {isTracking && !isPrivateTime ? (
                 <>
-                  <Square className="w-3.5 h-3.5 fill-current text-[#FF5A36]" /> Stop
+                  <Square className="w-3.5 h-3.5 fill-current text-[#61126E]" /> Stop
                 </>
               ) : (
                 <>
@@ -185,7 +185,7 @@ export function InteractiveTrackerWidget() {
               className={`h-11 px-4 rounded-[12px] font-semibold text-xs border transition-all flex items-center justify-center gap-1.5 ${
                 isPrivateTime
                   ? "bg-[#5B6CFF] text-white border-[#5B6CFF]"
-                  : "bg-[#24305A] text-[#F7F4EE] border-[#334173] hover:bg-[#2c3b6f]"
+                  : "bg-[#24305A] text-[#FAF4FB] border-[#334173] hover:bg-[#2c3b6f]"
               }`}
             >
               <Shield className="w-3.5 h-3.5" />
@@ -230,7 +230,7 @@ export function InteractiveTrackerWidget() {
                   onClick={() => handleSelectTask(task)}
                   className={`w-full text-left p-2.5 rounded-xl transition-all flex items-center justify-between ${
                     isSelected
-                      ? "bg-[#24305A] border border-[#FF5A36]/50 text-white"
+                      ? "bg-[#24305A] border border-[#61126E]/50 text-white"
                       : "bg-[#172348]/40 hover:bg-[#24305A]/70 text-[#9AA1B2]"
                   }`}
                 >
@@ -249,7 +249,7 @@ export function InteractiveTrackerWidget() {
                   </div>
                   <div className="shrink-0">
                     {isSelected ? (
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#FF5A36] inline-block animate-pulse" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#61126E] inline-block animate-pulse" />
                     ) : (
                       <ChevronRight className="w-3.5 h-3.5 text-[#9AA1B2]" />
                     )}
@@ -263,7 +263,7 @@ export function InteractiveTrackerWidget() {
         {/* Footer info: Today summary */}
         <div className="mt-4 pt-3 border-t border-[#24305A] flex items-center justify-between text-xs text-[#9AA1B2]">
           <span className="flex items-center gap-1 text-white font-medium">
-            <Clock className="w-3.5 h-3.5 text-[#FF5A36]" /> Today: 6h 12m
+            <Clock className="w-3.5 h-3.5 text-[#61126E]" /> Today: 6h 12m
           </span>
           <span className="text-[#12B886] font-semibold">
             Productive 84%

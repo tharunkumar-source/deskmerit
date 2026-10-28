@@ -42,7 +42,7 @@ export function FaqSection({
       <div className={containerClassName}>
         {/* Section Heading */}
         <div className="mb-12">
-          <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+          <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
             {pretitle}
           </div>
           <h2 id="faq-title" className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-[-0.03em]">
@@ -56,7 +56,7 @@ export function FaqSection({
           <div className="col-span-1 lg:col-span-5 min-w-0 max-w-full w-full">
             <div className="rounded-3xl bg-gradient-to-br from-[#0A1628] via-[#0F1E36] to-[#0A1324] p-8 sm:p-10 text-white shadow-xl border border-slate-800 relative overflow-hidden flex flex-col justify-between min-h-[380px]">
               {/* Subtle Radial Glow in background */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
 
               <div>
                 {/* Brand Logo in Reverse (White Wordmark) */}
@@ -79,7 +79,7 @@ export function FaqSection({
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-[#0F1730] hover:bg-slate-100 font-bold text-xs sm:text-sm shadow-md transition-all group"
                 >
                   <span>{cardButtonText}</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 text-[#FF5A36]" />
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 text-[#61126E]" />
                 </Link>
               </div>
             </div>
@@ -94,13 +94,13 @@ export function FaqSection({
                   <button
                     type="button"
                     onClick={() => toggle(idx)}
-                    className="w-full text-left flex items-start justify-between gap-4 font-bold text-base sm:text-[17px] text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                    className="w-full text-left flex items-start justify-between gap-4 font-bold text-base sm:text-[17px] text-[#0F1730] hover:text-[#61126E] transition-colors"
                     aria-expanded={isOpen}
                   >
                     <span>{faq.q}</span>
-                    <span className="shrink-0 text-slate-400 hover:text-[#FF5A36] mt-0.5">
+                    <span className="shrink-0 text-slate-400 hover:text-[#61126E] mt-0.5">
                       {isOpen ? (
-                        <Minus className="w-4 h-4 text-[#FF5A36]" />
+                        <Minus className="w-4 h-4 text-[#61126E]" />
                       ) : (
                         <Plus className="w-4 h-4" />
                       )}

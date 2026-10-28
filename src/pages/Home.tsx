@@ -17,7 +17,7 @@ import { DeskmeritFooter } from "../components/DeskmeritFooter";
 
 export function Home() {
   return (
-    <div className="min-h-screen w-full bg-[#F7F4EE] font-sans text-[#0F1730]">
+    <div className="min-h-screen w-full bg-[#FAF4FB] font-sans text-[#0F1730]">
       {/* 1. Header with top announcement banner & mega-menu */}
       <DeskmeritHeader />
 

@@ -608,7 +608,7 @@ export function IndiaPage() {
 
   return (
     <div
-      className={`min-h-screen bg-[#F7F4EE] text-[#0F1730] ${
+      className={`min-h-screen bg-[#FAF4FB] text-[#0F1730] ${
         region.isArabic ? "font-sans" : ""
       }`}
       dir={region.isArabic ? "rtl" : "ltr"}
@@ -638,24 +638,24 @@ export function IndiaPage() {
         {/* ========================================================================= */}
         <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
-            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-slate-400 font-medium flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
               <span className="text-slate-300">
                 {isGuidesOverview ? "Resources" : region.isArabic ? "المناطق" : "Global Editions"}
               </span>
               <span className="text-slate-500">/</span>
-              <span>{isGuidesOverview ? "Monitoring Law Guides" : region.name}</span>
+              <span className="text-[#D8B4FE] font-bold">{isGuidesOverview ? "Monitoring Law Guides" : region.name}</span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column */}
               <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
                   {isGuidesOverview ? "🌐 GLOBAL EMPLOYEE MONITORING LAWS" : region.badge}
                 </div>
 
@@ -663,12 +663,12 @@ export function IndiaPage() {
                   {isGuidesOverview ? (
                     <>
                       Employee monitoring laws & compliance guides,{" "}
-                      <span className="text-[#FF5A36] block">built for defensible workforce privacy.</span>
+                      <span className="text-[#D8B4FE]">built for defensible workforce privacy.</span>
                     </>
                   ) : (
                     <>
                       {region.heroTitle}{" "}
-                      <span className="text-[#FF5A36] block">{region.heroAccent}</span>
+                      <span className="text-[#D8B4FE]">{region.heroAccent}</span>
                     </>
                   )}
                 </h1>
@@ -679,17 +679,17 @@ export function IndiaPage() {
                     : region.heroDesc}
                 </p>
 
-                <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                   <Link
                     to="/signup"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>{region.isArabic ? "ابدأ التجربة المجانية 14 يوماً" : "Start free trial"}</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>{region.isArabic ? "طلب عرض توضيحي" : "Book a demo"}</span>
                   </Link>
@@ -700,7 +700,7 @@ export function IndiaPage() {
               <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
                 <div className="relative w-full max-w-full overflow-hidden sm:overflow-visible">
                   {/* Clean Soft Ambient Glow */}
-                  <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 via-orange-500/10 to-teal-500/10 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
+                  <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 via-[#61126E]/10 to-teal-500/10 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
 
                   {/* Clean White Card strictly matching Application Hero Standard */}
                   <div className="relative rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] text-[#0F1730] w-full max-w-full">
@@ -713,7 +713,7 @@ export function IndiaPage() {
                           className="w-12 h-9 sm:w-14 sm:h-10.5 rounded-md object-cover shadow-xs border border-slate-100"
                         />
                       </div>
-                      <div className="text-[10px] font-bold uppercase tracking-wider text-[#FF5A36] mt-3 bg-[#FFE6DF]/60 px-3 py-0.5 rounded-full border border-[#FF5A36]/30">
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-[#D8B4FE] mt-3 bg-[#F6EDF8]/60 px-3 py-0.5 rounded-full border border-[#61126E]/30">
                         {activeCard.badge}
                       </div>
                       <h3 className="font-extrabold text-lg sm:text-xl text-[#0F1730] mt-1.5 tracking-tight">
@@ -771,10 +771,10 @@ export function IndiaPage() {
         </section>
 
         {/* 6 Reasons Regional Teams Choose Deskmerit */}
-        <section className="py-20 bg-[#FFFFFF] border-y border-[#E6E2D8]">
+        <section className="py-20 bg-[#FFFFFF] border-y border-[#E8D5EC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-16">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                 {region.isArabic
                   ? "لماذا تختار الشركات في منطقتك Deskmerit"
                   : `Why teams in ${region.name} choose Deskmerit`}
@@ -792,13 +792,13 @@ export function IndiaPage() {
                 return (
                   <div
                     key={c.title}
-                    className="p-7 rounded-2xl bg-white border border-[#E6E2D8] hover:border-[#FF5A36] transition-all hover:shadow-card flex flex-col justify-between group"
+                    className="p-7 rounded-2xl bg-white border border-[#E8D5EC] hover:border-[#61126E] transition-all hover:shadow-card flex flex-col justify-between group"
                   >
                     <div>
-                      <div className="w-11 h-11 rounded-xl bg-[#F8F9FA] border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-4 transition-all duration-200 shadow-xs">
+                      <div className="w-11 h-11 rounded-xl bg-[#F8F9FA] border border-[#E8D5EC] text-[#0F1730] group-hover:bg-[#61126E] group-hover:border-[#61126E] group-hover:text-white flex items-center justify-center mb-4 transition-all duration-200 shadow-xs">
                         <Icon className="w-5 h-5 transition-colors" />
                       </div>
-                      <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">
+                      <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-2">
                         {c.title}
                       </h3>
                       <p className="text-xs text-[#4A5370] leading-relaxed">
@@ -814,9 +814,9 @@ export function IndiaPage() {
 
         {/* Legal Guide Callout */}
         <section className="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#FFFFFF] rounded-2xl p-8 border border-[#E6E2D8] shadow-card flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="bg-[#FFFFFF] rounded-2xl p-8 border border-[#E8D5EC] shadow-card flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#61126E]">
                 {region.isArabic ? "الجانب القانوني والامتثال" : "Compliance & Law"}
               </span>
               <h3 className="text-2xl font-bold text-[#0F1730]">

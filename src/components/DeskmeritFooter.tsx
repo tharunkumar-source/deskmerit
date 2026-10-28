@@ -6,7 +6,7 @@ import { Linkedin, Twitter, Youtube, ShieldCheck, Phone, ExternalLink } from "lu
 
 export function DeskmeritFooter() {
   return (
-    <footer className="bg-[#0A0F1D] text-[#F7F4EE] pt-16 pb-12 border-t border-[#24305A] font-sans">
+    <footer className="bg-[#0A0F1D] text-[#FAF4FB] pt-16 pb-12 border-t border-[#24305A] font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Brand Header Banner */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-10 border-b border-[#24305A]">
@@ -18,7 +18,7 @@ export function DeskmeritFooter() {
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1A264F] text-xs text-[#E6E2D8] border border-[#2E3C6B]">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1A264F] text-xs text-[#E8D5EC] border border-[#2E3C6B]">
               <ShieldCheck className="w-3.5 h-3.5 text-[#12B886]" />
               <span>Zero keystrokes · No webcams · Pure trust</span>
             </span>
@@ -29,7 +29,7 @@ export function DeskmeritFooter() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="w-8 h-8 rounded-lg bg-[#1A264F] hover:bg-[#FF5A36] text-white flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#1A264F] hover:bg-[#61126E] text-white flex items-center justify-center transition-colors"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
@@ -38,7 +38,7 @@ export function DeskmeritFooter() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Twitter / X"
-                className="w-8 h-8 rounded-lg bg-[#1A264F] hover:bg-[#FF5A36] text-white flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#1A264F] hover:bg-[#61126E] text-white flex items-center justify-center transition-colors"
               >
                 <Twitter className="w-4 h-4" />
               </a>
@@ -47,7 +47,7 @@ export function DeskmeritFooter() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="YouTube demo channel"
-                className="w-8 h-8 rounded-lg bg-[#1A264F] hover:bg-[#FF5A36] text-white flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#1A264F] hover:bg-[#61126E] text-white flex items-center justify-center transition-colors"
               >
                 <Youtube className="w-4 h-4" />
               </a>
@@ -71,7 +71,7 @@ export function DeskmeritFooter() {
                         href={link.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-[#9AA1B2] hover:text-[#FF5A36] transition-colors inline-flex items-center gap-1"
+                        className="text-[#9AA1B2] hover:text-[#D8B4FE] transition-colors inline-flex items-center gap-1"
                       >
                         <span>{link.label}</span>
                         <ExternalLink className="w-3 h-3 opacity-60" />
@@ -79,7 +79,7 @@ export function DeskmeritFooter() {
                     ) : (
                       <Link
                         to={link.href}
-                        className="text-[#9AA1B2] hover:text-[#FF5A36] transition-colors block"
+                        className="text-[#9AA1B2] hover:text-[#D8B4FE] transition-colors block"
                       >
                         {link.label}
                       </Link>
@@ -100,71 +100,71 @@ export function DeskmeritFooter() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* India Center */}
-            <div className="p-5 rounded-2xl bg-[#0F1730] border border-[#24305A] hover:border-[#FF5A36]/50 transition-all flex flex-col justify-between">
+            <div className="p-5 rounded-2xl bg-gradient-to-br from-[#61126E]/50 via-[#4E0E58]/40 to-[#2A0630]/60 border border-[#61126E] hover:border-[#A81CD0] shadow-lg transition-all flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs font-bold text-white flex items-center gap-1.5">
                     <span>🇮🇳</span> India (R&D & Delivery)
                   </span>
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#1A264F] text-[#38BDF8]">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#0D625C] text-[#2DD4BF] border border-[#2DD4BF]/30">
                     Development Center
                   </span>
                 </div>
-                <p className="text-xs text-[#9AA1B2] leading-relaxed mt-1">
+                <p className="text-xs text-purple-100/80 leading-relaxed mt-1">
                   Kombee Tech Campus, Baner High St, Pune, Maharashtra 411045
                 </p>
               </div>
-              <div className="pt-4 mt-4 border-t border-[#24305A] flex items-center justify-between text-xs text-[#9AA1B2]">
+              <div className="pt-4 mt-4 border-t border-[#61126E]/50 flex items-center justify-between text-xs text-purple-200">
                 <span className="flex items-center gap-1">
-                  <Phone className="w-3.5 h-3.5 text-[#12B886]" /> +91 (020) 6700-KOMBEE
+                  <Phone className="w-3.5 h-3.5 text-[#2DD4BF]" /> +91 (020) 6700-KOMBEE
                 </span>
-                <span className="text-[11px] text-[#38BDF8]">IST Zone</span>
+                <span className="text-[11px] text-[#A81CD0] font-semibold">IST Zone</span>
               </div>
             </div>
 
             {/* Australia Center */}
-            <div className="p-5 rounded-2xl bg-[#0F1730] border border-[#24305A] hover:border-[#FF5A36]/50 transition-all flex flex-col justify-between">
+            <div className="p-5 rounded-2xl bg-gradient-to-br from-[#61126E]/50 via-[#4E0E58]/40 to-[#2A0630]/60 border border-[#61126E] hover:border-[#A81CD0] shadow-lg transition-all flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs font-bold text-white flex items-center gap-1.5">
                     <span>🇦🇺</span> Australia (Sydney HQ)
                   </span>
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#1A264F] text-[#38BDF8]">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#3D0B46] text-[#D8B4FE] border border-[#D8B4FE]/30">
                     Regional Office
                   </span>
                 </div>
-                <p className="text-xs text-[#9AA1B2] leading-relaxed mt-1">
+                <p className="text-xs text-purple-100/80 leading-relaxed mt-1">
                   Level 14, 175 Pitt Street, Sydney NSW 2000, Australia
                 </p>
               </div>
-              <div className="pt-4 mt-4 border-t border-[#24305A] flex items-center justify-between text-xs text-[#9AA1B2]">
+              <div className="pt-4 mt-4 border-t border-[#61126E]/50 flex items-center justify-between text-xs text-purple-200">
                 <span className="flex items-center gap-1">
-                  <Phone className="w-3.5 h-3.5 text-[#12B886]" /> +61 (2) 8000-KOMBEE
+                  <Phone className="w-3.5 h-3.5 text-[#2DD4BF]" /> +61 (2) 8000-KOMBEE
                 </span>
-                <span className="text-[11px] text-[#38BDF8]">AEST Zone</span>
+                <span className="text-[11px] text-[#A81CD0] font-semibold">AEST Zone</span>
               </div>
             </div>
 
             {/* New Zealand & Gulf */}
-            <div className="p-5 rounded-2xl bg-[#0F1730] border border-[#24305A] hover:border-[#FF5A36]/50 transition-all flex flex-col justify-between">
+            <div className="p-5 rounded-2xl bg-gradient-to-br from-[#61126E]/50 via-[#4E0E58]/40 to-[#2A0630]/60 border border-[#61126E] hover:border-[#A81CD0] shadow-lg transition-all flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs font-bold text-white flex items-center gap-1.5">
                     <span>🇳🇿 🇦🇪</span> New Zealand & Gulf
                   </span>
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#1A264F] text-[#38BDF8]">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#0D625C] text-[#2DD4BF] border border-[#2DD4BF]/30">
                     Partner Hub
                   </span>
                 </div>
-                <p className="text-xs text-[#9AA1B2] leading-relaxed mt-1">
+                <p className="text-xs text-purple-100/80 leading-relaxed mt-1">
                   Level 3, Innovation Precinct, Auckland & Dubai Internet City, UAE
                 </p>
               </div>
-              <div className="pt-4 mt-4 border-t border-[#24305A] flex items-center justify-between text-xs text-[#9AA1B2]">
+              <div className="pt-4 mt-4 border-t border-[#61126E]/50 flex items-center justify-between text-xs text-purple-200">
                 <span className="flex items-center gap-1">
-                  <Phone className="w-3.5 h-3.5 text-[#12B886]" /> +971 4 400-KOMBEE
+                  <Phone className="w-3.5 h-3.5 text-[#2DD4BF]" /> +971 4 400-KOMBEE
                 </span>
-                <span className="text-[11px] text-[#38BDF8]">NZST & GST</span>
+                <span className="text-[11px] text-[#A81CD0] font-semibold">NZST & GST</span>
               </div>
             </div>
           </div>
@@ -174,13 +174,13 @@ export function DeskmeritFooter() {
         <div className="pt-8 border-t border-[#24305A] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#9AA1B2]">
           <div className="text-center md:text-left">
             <span>© 2026 Kombee Technologies (India) Pvt. Ltd. · </span>
-            <span className="font-medium text-[#E6E2D8]">A Kombee Technologies product</span>
+            <span className="font-medium text-[#E8D5EC]">A Kombee Technologies product</span>
           </div>
 
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
             <Link
               to="/brand-guidelines"
-              className="text-[#FF5A36] font-semibold hover:underline transition-colors"
+              className="text-[#61126E] font-semibold hover:underline transition-colors"
             >
               Brand Guidelines
             </Link>
@@ -188,7 +188,7 @@ export function DeskmeritFooter() {
               <Link
                 key={item.label}
                 to={item.href}
-                className="hover:text-[#FF5A36] transition-colors"
+                className="hover:text-[#D8B4FE] transition-colors"
               >
                 {item.label}
               </Link>

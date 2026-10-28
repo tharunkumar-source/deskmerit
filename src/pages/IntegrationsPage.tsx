@@ -186,8 +186,8 @@ function ClaudeMcpLogo({ className = "w-11 h-11" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 44 44" fill="none">
       <rect width="44" height="44" rx="10" fill="#0F1730"/>
-      <circle cx="22" cy="22" r="12" stroke="#FF5A36" strokeWidth="3" strokeDasharray="4 3"/>
-      <circle cx="22" cy="22" r="5" fill="#FF5A36"/>
+      <circle cx="22" cy="22" r="12" stroke="#61126E" strokeWidth="3" strokeDasharray="4 3"/>
+      <circle cx="22" cy="22" r="5" fill="#61126E"/>
     </svg>
   );
 }
@@ -196,7 +196,7 @@ function SqalibleLogo({ className = "w-11 h-11" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 44 44" fill="none">
       <rect width="44" height="44" rx="10" fill="#0F1730"/>
-      <path d="M13 30l9-15 9 15" stroke="#FF5A36" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M13 30l9-15 9 15" stroke="#61126E" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
       <circle cx="22" cy="26" r="2.8" fill="#FFFFFF"/>
     </svg>
   );
@@ -580,7 +580,7 @@ export function FigmaIntegrationCard({
   return (
     <Link
       to={item.href || `/features/integrations/${item.id}-time-tracking`}
-      className={`bg-white rounded-2xl p-5 sm:p-6 border border-[#E6E2D8] hover:border-[#FF5A36] hover:shadow-[0_8px_24px_rgba(15,23,48,0.06)] hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between group cursor-pointer text-left ${className}`}
+      className={`bg-white rounded-2xl p-5 sm:p-6 border border-[#E8D5EC] hover:border-[#61126E] hover:shadow-[0_8px_24px_rgba(15,23,48,0.06)] hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between group cursor-pointer text-left ${className}`}
     >
       <div>
         {/* Real Official SVG Logo Image (No fake container box) */}
@@ -594,7 +594,7 @@ export function FigmaIntegrationCard({
         </div>
 
         {/* Integration Name */}
-        <h3 className="font-bold text-[15px] sm:text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors leading-snug">
+        <h3 className="font-bold text-[15px] sm:text-base text-[#0F1730] group-hover:text-[#61126E] transition-colors leading-snug">
           {item.name}
         </h3>
 
@@ -1800,7 +1800,7 @@ export function IntegrationsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-[#F7F4EE] text-[#0F1730] font-sans antialiased selection:bg-[#FF5A36] selection:text-white">
+    <div className="min-h-screen bg-[#FAF4FB] text-[#0F1730] font-sans antialiased selection:bg-[#61126E] selection:text-white">
       <DeskmeritHeader />
 
       <main>
@@ -1813,7 +1813,7 @@ export function IntegrationsPage() {
             {/* Dark Detail Hero */}
             <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
               <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
 
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Breadcrumb */}
@@ -1826,19 +1826,19 @@ export function IntegrationsPage() {
                     Integrations
                   </Link>
                   <span className="text-slate-500">/</span>
-                  <span className="text-[#FF5A36] font-bold">{detailData.name}</span>
+                  <span className="text-[#D8B4FE] font-bold">{detailData.name}</span>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
                   {/* Left Column: Headline + CTAs (No bi-directional sync capsule or dot above heading) */}
                   <div className="col-span-1 lg:col-span-7 min-w-0 max-w-full w-full space-y-6">
-                    <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
+                    <div className="inline-block px-3.5 py-1 rounded-full bg-[#61126E]/40 border border-[#A81CD0]/50 text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] shadow-xs mb-2">
                       INTEGRATION: {detailData.name.toUpperCase()} TIME TRACKING
                     </div>
 
                     <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-[-0.03em] leading-[1.22] text-white">
                       {detailData.heroHeadline}{" "}
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-[#FF5A36]">
+                      <span className="text-[#D8B4FE]">
                         {detailData.heroHighlight}
                       </span>
                     </h1>
@@ -1847,19 +1847,19 @@ export function IntegrationsPage() {
                       {detailData.heroDescription}
                     </p>
 
-                    <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                    <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                       <Link
                         to="/signup"
-                        className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all cursor-pointer"
+                        className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                       >
-                        <span>Start Free Trial</span>
+                        <span>Start free trial</span>
                         <ArrowRight className="w-4 h-4" />
                       </Link>
                       <Link
                         to="/demo"
-                        className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer"
+                        className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
                       >
-                        <span>Book a Live Demo</span>
+                        <span>Book a demo</span>
                       </Link>
                     </div>
                   </div>
@@ -1868,7 +1868,7 @@ export function IntegrationsPage() {
                   <div className="col-span-1 lg:col-span-5 min-w-0 max-w-full w-full">
                     <div className="relative w-full max-w-full overflow-hidden sm:overflow-visible">
                       {/* Clean Soft Ambient Glow */}
-                      <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 via-orange-500/10 to-teal-500/10 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
+                      <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 via-[#61126E]/10 to-teal-500/10 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
 
                       {/* Clean White Card strictly matching Screenshot 1 branding */}
                       <div className="relative rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] text-[#0F1730] w-full max-w-full">
@@ -1938,9 +1938,9 @@ export function IntegrationsPage() {
             {/* TL;DR KEY TAKEAWAYS SECTION (DeskTime-inspired callout) */}
             {detailData.tldr && detailData.tldr.length > 0 && (
               <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12 relative z-20">
-                <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E6E2D8] shadow-[0_12px_32px_rgba(15,23,48,0.08)]">
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-4">
-                    <Sparkles className="w-4 h-4 text-[#FF5A36]" />
+                <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E8D5EC] shadow-[0_12px_32px_rgba(15,23,48,0.08)]">
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#61126E] mb-4">
+                    <Sparkles className="w-4 h-4 text-[#61126E]" />
                     <span>TL;DR – Key Takeaways for {detailData.name} Time Tracking</span>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1962,7 +1962,7 @@ export function IntegrationsPage() {
             {/* Deep Feature Capabilities Grid */}
             <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-3xl mx-auto mb-16">
-                <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                   WHY INTEGRATE
                 </div>
                 <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-[#0F1730] tracking-tight leading-[1.2]">
@@ -1979,13 +1979,13 @@ export function IntegrationsPage() {
                   return (
                     <div
                       key={i}
-                      className="p-7 rounded-2xl bg-white border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all flex flex-col justify-between group"
+                      className="p-7 rounded-2xl bg-white border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all flex flex-col justify-between group"
                     >
                       <div>
-                        <div className="w-12 h-12 rounded-xl bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+                        <div className="w-12 h-12 rounded-xl bg-[#F6EDF8] text-[#61126E] flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
                           <IconC className="w-6 h-6 stroke-[2]" />
                         </div>
-                        <h3 className="font-bold text-lg text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2.5">
+                        <h3 className="font-bold text-lg text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-2.5">
                           {feat.title}
                         </h3>
                         <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed font-normal">
@@ -1999,10 +1999,10 @@ export function IntegrationsPage() {
             </section>
 
             {/* 3-Step Setup Section */}
-            <section className="py-20 bg-white border-y border-[#E6E2D8]">
+            <section className="py-20 bg-white border-y border-[#E8D5EC]">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                  <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                     QUICK SETUP
                   </div>
                   <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-tight leading-[1.2]">
@@ -2017,10 +2017,10 @@ export function IntegrationsPage() {
                   {detailData.steps.map((st) => (
                     <div
                       key={st.num}
-                      className="p-8 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] flex flex-col justify-between hover:border-[#FF5A36] hover:bg-white hover:shadow-card transition-all"
+                      className="p-8 rounded-2xl bg-[#FAF4FB] border border-[#E8D5EC] flex flex-col justify-between hover:border-[#61126E] hover:bg-white hover:shadow-card transition-all"
                     >
                       <div>
-                        <span className="text-xs font-mono font-bold text-[#FF5A36] bg-[#FFE6DF] border border-[#FF5A36]/30 px-3 py-1 rounded-md inline-block mb-5">
+                        <span className="text-xs font-mono font-bold text-[#61126E] bg-[#F6EDF8] border border-[#61126E]/30 px-3 py-1 rounded-md inline-block mb-5">
                           STEP {st.num}
                         </span>
                         <h3 className="text-xl font-bold text-[#0F1730] mb-3">{st.title}</h3>
@@ -2036,7 +2036,7 @@ export function IntegrationsPage() {
             <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
                 <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-1">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-1">
                     MORE INTEGRATIONS
                   </div>
                   <h3 className="text-2xl font-extrabold text-[#0F1730]">
@@ -2045,7 +2045,7 @@ export function IntegrationsPage() {
                 </div>
                 <Link
                   to="/features/integrations"
-                  className="text-xs font-bold text-[#FF5A36] hover:underline flex items-center gap-1"
+                  className="text-xs font-bold text-[#61126E] hover:underline flex items-center gap-1"
                 >
                   <span>View all 20+ integrations</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -2063,7 +2063,7 @@ export function IntegrationsPage() {
             <div className="pb-12 text-center">
               <Link
                 to="/features/integrations"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white border border-slate-300 text-[#0F1730] font-bold text-sm hover:border-[#FF5A36] hover:text-[#FF5A36] transition-all cursor-pointer shadow-xs"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white border border-slate-300 text-[#0F1730] font-bold text-sm hover:border-[#61126E] hover:text-[#61126E] transition-all cursor-pointer shadow-xs"
               >
                 <span>← Back to all integrations directory</span>
               </Link>
@@ -2088,7 +2088,7 @@ export function IntegrationsPage() {
             {/* HERO SECTION */}
             <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
               <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
 
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Breadcrumb */}
@@ -2097,12 +2097,12 @@ export function IntegrationsPage() {
                     Home
                   </Link>
                   <span className="text-slate-500">/</span>
-                  <span className="text-[#FF5A36] font-bold">Integrations & Ecosystem</span>
+                  <span className="text-[#D8B4FE] font-bold">Integrations & Ecosystem</span>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
                   <div className="col-span-1 lg:col-span-7 min-w-0 max-w-full w-full space-y-6">
-                    <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
+                    <div className="inline-block px-3.5 py-1 rounded-full bg-[#61126E]/40 border border-[#A81CD0]/50 text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] shadow-xs mb-2">
                       INTEGRATIONS & ECOSYSTEM
                     </div>
 
@@ -2114,20 +2114,19 @@ export function IntegrationsPage() {
                       Deskmerit connects with project management software, calendars, and communication tools so tracking happens in the natural flow of work with zero manual timesheets.
                     </p>
 
-                    <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                    <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                       <Link
                         to="/signup"
-                        className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all cursor-pointer"
+                        className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                       >
                         <span>Start free trial</span>
                         <ArrowRight className="w-4 h-4" />
                       </Link>
                       <Link
                         to="/demo"
-                        className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer"
+                        className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
                       >
-                        <span>Explore in demo account</span>
-                        <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                        <span>Book a demo</span>
                       </Link>
                     </div>
                   </div>
@@ -2136,7 +2135,7 @@ export function IntegrationsPage() {
                   <div className="col-span-1 lg:col-span-5 min-w-0 max-w-full w-full">
                     <div className="relative">
                       {/* Clean Soft Ambient Glow */}
-                      <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 via-orange-500/15 to-purple-500/20 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
+                      <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 via-[#61126E]/15 to-purple-500/20 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
 
                       {/* Crisp White Hero Container matching other pages */}
                       <div className="relative rounded-3xl bg-white border border-slate-200/90 p-5 sm:p-6 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.35)] text-[#0F1730]">
@@ -2164,7 +2163,7 @@ export function IntegrationsPage() {
                         </div>
 
                         {/* Interactive Tabs in Clean Light Style */}
-                        <div className="flex items-center gap-1.5 mb-4 p-1.5 bg-[#F7F4EE] rounded-xl border border-[#E6E2D8]">
+                        <div className="flex items-center gap-1.5 mb-4 p-1.5 bg-[#FAF4FB] rounded-xl border border-[#E8D5EC]">
                           <button
                             type="button"
                             onClick={() => setHeroActiveTab("jira")}
@@ -2236,7 +2235,7 @@ export function IntegrationsPage() {
                             <div className="text-[10px] text-[#4A5370] uppercase font-mono font-bold">
                               Worklog Writes
                             </div>
-                            <div className="text-sm font-extrabold text-[#FF5A36] mt-0.5">
+                            <div className="text-sm font-extrabold text-[#D8B4FE] mt-0.5">
                               38h 40m
                             </div>
                           </div>
@@ -2259,7 +2258,7 @@ export function IntegrationsPage() {
             {/* SECTION 1: AUTONOMOUS BY DESIGN */}
             <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-3xl mx-auto mb-16">
-                <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                   AUTONOMOUS BY DESIGN
                 </div>
                 <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-[#0F1730] tracking-tight leading-[1.24]">
@@ -2272,9 +2271,9 @@ export function IntegrationsPage() {
 
               {/* 3 Value Cards */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-white rounded-2xl p-8 border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all flex flex-col justify-between">
+                <div className="bg-white rounded-2xl p-8 border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all flex flex-col justify-between">
                   <div>
-                    <div className="w-12 h-12 rounded-xl bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center font-bold mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-[#F6EDF8] text-[#61126E] flex items-center justify-center font-bold mb-6">
                       <Monitor className="w-6 h-6" />
                     </div>
                     <h3 className="text-xl font-bold text-[#0F1730] mb-3">
@@ -2286,7 +2285,7 @@ export function IntegrationsPage() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-2xl p-8 border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all flex flex-col justify-between">
+                <div className="bg-white rounded-2xl p-8 border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all flex flex-col justify-between">
                   <div>
                     <div className="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center font-bold mb-6">
                       <RefreshCw className="w-6 h-6" />
@@ -2300,7 +2299,7 @@ export function IntegrationsPage() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-2xl p-8 border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all flex flex-col justify-between">
+                <div className="bg-white rounded-2xl p-8 border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all flex flex-col justify-between">
                   <div>
                     <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold mb-6">
                       <Zap className="w-6 h-6" />
@@ -2317,10 +2316,10 @@ export function IntegrationsPage() {
             </section>
 
             {/* SECTION 2: AVAILABLE INTEGRATIONS (EXACT FIGMA PRODUCT CARD DESIGNS) */}
-            <section className="py-20 bg-white border-t border-[#E6E2D8]">
+            <section className="py-20 bg-white border-t border-[#E8D5EC]">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                  <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                     DIRECTORY
                   </div>
                   <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-tight leading-[1.24]">
@@ -2333,7 +2332,7 @@ export function IntegrationsPage() {
 
                 {/* Filter and Search Bar */}
                 <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-10">
-                  <div className="flex-1 min-w-0 overflow-x-auto no-scrollbar scrollbar-none flex items-center gap-2 p-1.5 bg-[#F7F4EE] rounded-2xl border border-[#E6E2D8]">
+                  <div className="flex-1 min-w-0 overflow-x-auto no-scrollbar scrollbar-none flex items-center gap-2 p-1.5 bg-[#FAF4FB] rounded-2xl border border-[#E8D5EC]">
                     {categories.map((c) => (
                       <button
                         key={c.id}
@@ -2357,7 +2356,7 @@ export function IntegrationsPage() {
                       value={search}
                       onChange={(e) => setSearch(e.target.value)}
                       placeholder="Search tools (e.g. Jira, Asana, Linear)..."
-                      className="w-full pl-10 pr-4 py-2.5 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE] text-[#0F1730] placeholder-[#9AA1B2] focus:outline-none focus:border-[#FF5A36] focus:bg-white transition-all"
+                      className="w-full pl-10 pr-4 py-2.5 text-xs rounded-xl border border-[#E8D5EC] bg-[#FAF4FB] text-[#0F1730] placeholder-[#9AA1B2] focus:outline-none focus:border-[#61126E] focus:bg-white transition-all"
                     />
                   </div>
                 </div>
@@ -2374,7 +2373,7 @@ export function IntegrationsPage() {
             {/* SECTION 3: CONNECT TO EVERY TOOL */}
             <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-3xl mx-auto mb-16">
-                <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                   SEAMLESS INTEGRATION
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-tight leading-[1.24]">
@@ -2386,7 +2385,7 @@ export function IntegrationsPage() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-white rounded-2xl p-8 border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all flex flex-col justify-between">
+                <div className="bg-white rounded-2xl p-8 border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all flex flex-col justify-between">
                   <div>
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
@@ -2400,7 +2399,7 @@ export function IntegrationsPage() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-2xl p-8 border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all flex flex-col justify-between">
+                <div className="bg-white rounded-2xl p-8 border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all flex flex-col justify-between">
                   <div>
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
@@ -2414,7 +2413,7 @@ export function IntegrationsPage() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-2xl p-8 border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all flex flex-col justify-between">
+                <div className="bg-white rounded-2xl p-8 border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all flex flex-col justify-between">
                   <div>
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">

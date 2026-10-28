@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -119,16 +120,16 @@ export function DeskmeritHeader() {
   return (
     <header className="sticky top-0 z-50 w-full font-sans">
       {/* Top Announcement Bar */}
-      <div className="bg-[#0F1730] text-white py-2 px-4 text-xs font-medium border-b border-[#24305A]">
+      <div className="bg-[#61126E] text-white py-2 px-4 text-xs font-medium border-b border-[#4E0E58]">
         <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 text-center flex-wrap">
-          <span className="pulse-dot mr-1 shrink-0" />
-          <span className="text-[#FFE6DF] font-semibold">Introducing Tracker Plus:</span>
-          <span className="text-slate-300 hidden sm:inline">
+          <span className="pulse-dot mr-1 shrink-0 bg-white" />
+          <span className="text-white font-semibold">Introducing Tracker Plus:</span>
+          <span className="text-purple-100 hidden sm:inline">
             start tracking directly from Jira, Azure DevOps or OpenProject tasks
           </span>
           <Link
             to="/features/tracker-plus"
-            className="inline-flex items-center gap-1 text-[#FF5A36] hover:text-[#FFA994] font-semibold underline underline-offset-4 ml-1 transition-colors"
+            className="inline-flex items-center gap-1 text-white hover:text-[#F6EDF8] font-bold underline underline-offset-4 ml-1 transition-colors"
           >
             See how it works <ArrowRight className="w-3.5 h-3.5" />
           </Link>
@@ -152,7 +153,7 @@ export function DeskmeritHeader() {
           </div>
 
           {/* Center: Desktop Navigation Dock — Clearly visually grouped with generous breathing room */}
-          <div className="hidden xl:flex items-center gap-0.5 bg-[#F7F4EE]/90 border border-[#E6E2D8] rounded-full p-1 shadow-[inset_0_1px_2px_rgba(15,23,48,0.03)] font-semibold text-[12.5px] 2xl:text-[13px] text-[#0F1730]">
+          <div className="hidden xl:flex items-center gap-0.5 bg-[#FAF4FB]/90 border border-[#E8D5EC] rounded-full p-1 shadow-[inset_0_1px_2px_rgba(15,23,48,0.03)] font-semibold text-[12.5px] 2xl:text-[13px] text-[#0F1730]">
             {/* Product Mega Menu Trigger */}
             <button
               type="button"
@@ -160,15 +161,15 @@ export function DeskmeritHeader() {
               onClick={() => setActiveMenu(activeMenu === "products" ? null : "products")}
               className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
                 activeMenu === "products"
-                  ? "text-[#FF5A36] bg-white shadow-xs font-bold"
-                  : "text-[#0F1730] hover:text-[#FF5A36] hover:bg-white/70"
+                  ? "text-[#61126E] bg-white shadow-xs font-bold"
+                  : "text-[#0F1730] hover:text-[#61126E] hover:bg-white/70"
               }`}
               aria-expanded={activeMenu === "products"}
             >
               <span>Product</span>
               <ChevronDown
                 className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMenu === "products" ? "rotate-180 text-[#FF5A36]" : "text-slate-400"
+                  activeMenu === "products" ? "rotate-180 text-[#61126E]" : "text-slate-400"
                 }`}
               />
             </button>
@@ -180,15 +181,15 @@ export function DeskmeritHeader() {
               onClick={() => setActiveMenu(activeMenu === "solutions" ? null : "solutions")}
               className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
                 activeMenu === "solutions"
-                  ? "text-[#FF5A36] bg-white shadow-xs font-bold"
-                  : "text-[#0F1730] hover:text-[#FF5A36] hover:bg-white/70"
+                  ? "text-[#61126E] bg-white shadow-xs font-bold"
+                  : "text-[#0F1730] hover:text-[#61126E] hover:bg-white/70"
               }`}
               aria-expanded={activeMenu === "solutions"}
             >
               <span>Solutions</span>
               <ChevronDown
                 className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMenu === "solutions" ? "rotate-180 text-[#FF5A36]" : "text-slate-400"
+                  activeMenu === "solutions" ? "rotate-180 text-[#61126E]" : "text-slate-400"
                 }`}
               />
             </button>
@@ -200,15 +201,15 @@ export function DeskmeritHeader() {
               onClick={() => setActiveMenu(activeMenu === "integrations" ? null : "integrations")}
               className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
                 activeMenu === "integrations"
-                  ? "text-[#FF5A36] bg-white shadow-xs font-bold"
-                  : "text-[#0F1730] hover:text-[#FF5A36] hover:bg-white/70"
+                  ? "text-[#61126E] bg-white shadow-xs font-bold"
+                  : "text-[#0F1730] hover:text-[#61126E] hover:bg-white/70"
               }`}
               aria-expanded={activeMenu === "integrations"}
             >
               <span>Integrations</span>
               <ChevronDown
                 className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMenu === "integrations" ? "rotate-180 text-[#FF5A36]" : "text-slate-400"
+                  activeMenu === "integrations" ? "rotate-180 text-[#61126E]" : "text-slate-400"
                 }`}
               />
             </button>
@@ -220,15 +221,15 @@ export function DeskmeritHeader() {
               onClick={() => setActiveMenu(activeMenu === "compare" ? null : "compare")}
               className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
                 activeMenu === "compare"
-                  ? "text-[#FF5A36] bg-white shadow-xs font-bold"
-                  : "text-[#0F1730] hover:text-[#FF5A36] hover:bg-white/70"
+                  ? "text-[#61126E] bg-white shadow-xs font-bold"
+                  : "text-[#0F1730] hover:text-[#61126E] hover:bg-white/70"
               }`}
               aria-expanded={activeMenu === "compare"}
             >
               <span>Compare</span>
               <ChevronDown
                 className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMenu === "compare" ? "rotate-180 text-[#FF5A36]" : "text-slate-400"
+                  activeMenu === "compare" ? "rotate-180 text-[#61126E]" : "text-slate-400"
                 }`}
               />
             </button>
@@ -239,8 +240,8 @@ export function DeskmeritHeader() {
               onMouseEnter={() => handleMouseEnter("")}
               className={`px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
                 location.pathname === "/pricing"
-                  ? "text-[#FF5A36] bg-white shadow-xs font-bold"
-                  : "text-[#0F1730] hover:text-[#FF5A36] hover:bg-white/70"
+                  ? "text-[#61126E] bg-white shadow-xs font-bold"
+                  : "text-[#0F1730] hover:text-[#61126E] hover:bg-white/70"
               }`}
             >
               Pricing
@@ -253,15 +254,15 @@ export function DeskmeritHeader() {
               onClick={() => setActiveMenu(activeMenu === "resources" ? null : "resources")}
               className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
                 activeMenu === "resources"
-                  ? "text-[#FF5A36] bg-white shadow-xs font-bold"
-                  : "text-[#0F1730] hover:text-[#FF5A36] hover:bg-white/70"
+                  ? "text-[#61126E] bg-white shadow-xs font-bold"
+                  : "text-[#0F1730] hover:text-[#61126E] hover:bg-white/70"
               }`}
               aria-expanded={activeMenu === "resources"}
             >
               <span>Resources</span>
               <ChevronDown
                 className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMenu === "resources" ? "rotate-180 text-[#FF5A36]" : "text-slate-400"
+                  activeMenu === "resources" ? "rotate-180 text-[#61126E]" : "text-slate-400"
                 }`}
               />
             </button>
@@ -273,15 +274,15 @@ export function DeskmeritHeader() {
               onClick={() => setActiveMenu(activeMenu === "company" ? null : "company")}
               className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
                 activeMenu === "company"
-                  ? "text-[#FF5A36] bg-white shadow-xs font-bold"
-                  : "text-[#0F1730] hover:text-[#FF5A36] hover:bg-white/70"
+                  ? "text-[#61126E] bg-white shadow-xs font-bold"
+                  : "text-[#0F1730] hover:text-[#61126E] hover:bg-white/70"
               }`}
               aria-expanded={activeMenu === "company"}
             >
               <span>Company</span>
               <ChevronDown
                 className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMenu === "company" ? "rotate-180 text-[#FF5A36]" : "text-slate-400"
+                  activeMenu === "company" ? "rotate-180 text-[#61126E]" : "text-slate-400"
                 }`}
               />
             </button>
@@ -294,7 +295,7 @@ export function DeskmeritHeader() {
               href="https://app.deskmerit.com"
               target="_blank"
               rel="noreferrer"
-              className="text-[12.5px] 2xl:text-[13px] font-semibold text-[#0F1730] hover:text-[#FF5A36] transition-colors px-2 py-1.5 whitespace-nowrap"
+              className="text-[12.5px] 2xl:text-[13px] font-semibold text-[#0F1730] hover:text-[#61126E] transition-colors px-2 py-1.5 whitespace-nowrap"
             >
               Sign in
             </a>
@@ -302,7 +303,7 @@ export function DeskmeritHeader() {
             {/* Book a Demo Button */}
             <Link
               to="/demo"
-              className="px-2.5 2xl:px-3 py-1.5 rounded-xl text-xs font-semibold text-[#0F1730] bg-white border border-[#E6E2D8] hover:border-[#0F1730] hover:bg-slate-50 transition-all shadow-xs whitespace-nowrap"
+              className="px-2.5 2xl:px-3 py-1.5 rounded-xl text-xs font-semibold text-[#0F1730] bg-white border border-[#E8D5EC] hover:border-[#0F1730] hover:bg-slate-50 transition-all shadow-xs whitespace-nowrap"
             >
               Book a demo
             </Link>
@@ -310,7 +311,7 @@ export function DeskmeritHeader() {
             {/* Start Free Trial Primary Button */}
             <Link
               to="/signup"
-              className="px-3 2xl:px-3.5 py-1.5 rounded-xl text-xs font-bold text-white bg-[#FF5A36] hover:bg-[#E94A27] transition-all shadow-[0_2px_8px_rgba(255,90,54,0.28)] hover:shadow-[0_4px_12px_rgba(255,90,54,0.38)] flex items-center gap-1.5 whitespace-nowrap group"
+              className="px-3 2xl:px-3.5 py-1.5 rounded-xl text-xs font-bold text-white bg-[#61126E] hover:bg-[#4E0E58] transition-all shadow-[0_2px_8px_rgba(97, 18, 110,0.28)] hover:shadow-[0_4px_12px_rgba(97, 18, 110,0.38)] flex items-center gap-1.5 whitespace-nowrap group"
             >
               <span>Start free trial</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -321,13 +322,13 @@ export function DeskmeritHeader() {
           <div className="flex xl:hidden items-center gap-2">
             <Link
               to="/demo"
-              className="hidden sm:inline-flex px-3 py-1.5 rounded-xl text-xs font-semibold text-[#0F1730] bg-white border border-[#E6E2D8] hover:bg-slate-50 transition-all shadow-xs whitespace-nowrap"
+              className="hidden sm:inline-flex px-3 py-1.5 rounded-xl text-xs font-semibold text-[#0F1730] bg-white border border-[#E8D5EC] hover:bg-slate-50 transition-all shadow-xs whitespace-nowrap"
             >
               Book a demo
             </Link>
             <Link
               to="/signup"
-              className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-xl text-xs font-bold text-white bg-[#FF5A36] hover:bg-[#E94A27] transition-all shadow-xs whitespace-nowrap"
+              className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-xl text-xs font-bold text-white bg-[#61126E] hover:bg-[#4E0E58] transition-all shadow-xs whitespace-nowrap"
             >
               <span>Start free trial</span>
             </Link>
@@ -369,15 +370,18 @@ export function DeskmeritHeader() {
         </AnimatePresence>
 
         {/* Responsive Mobile Navigation Drawer (Brand-Aligned: Exact Web Structure & Deskmerit Colors) */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.18, ease: "easeOut" }}
-              className="fixed inset-0 z-[100] bg-white overflow-y-auto flex flex-col justify-between px-6 py-6 xl:hidden font-sans"
-            >
+        {typeof document !== "undefined" &&
+          createPortal(
+            <AnimatePresence>
+              {mobileMenuOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.18, ease: "easeOut" }}
+                  className="fixed inset-0 z-[9999] bg-white overflow-y-auto flex flex-col justify-between px-6 py-6 xl:hidden font-sans"
+                  style={{ height: "100dvh" }}
+                >
               <div>
                 {/* Top Row: Wordmark Logo Left, Ember Close Button Right */}
                 <div className="flex items-center justify-between pb-5 border-b border-slate-100">
@@ -385,7 +389,7 @@ export function DeskmeritHeader() {
                   <button
                     type="button"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="w-10 h-10 rounded-xl bg-[#FFE6DF] text-[#FF5A36] hover:bg-[#FFD4CA] flex items-center justify-center transition-colors shadow-xs"
+                    className="w-10 h-10 rounded-xl bg-[#F6EDF8] text-[#61126E] hover:bg-[#E8D5EC] flex items-center justify-center transition-colors shadow-xs"
                     aria-label="Close menu"
                   >
                     <X className="w-5 h-5 stroke-[2.5]" />
@@ -401,13 +405,13 @@ export function DeskmeritHeader() {
                       onClick={() =>
                         setMobileSection(mobileSection === "products" ? null : "products")
                       }
-                      className="w-full flex items-center justify-between font-extrabold text-[18px] text-[#0F1730] hover:text-[#FF5A36] transition-colors text-left"
+                      className="w-full flex items-center justify-between font-extrabold text-[18px] text-[#0F1730] hover:text-[#61126E] transition-colors text-left"
                     >
-                      <span className={mobileSection === "products" ? "text-[#FF5A36]" : ""}>
+                      <span className={mobileSection === "products" ? "text-[#61126E]" : ""}>
                         Products
                       </span>
                       <ChevronRight
-                        className={`w-4 h-4 text-[#FF5A36] transition-transform duration-200 ${
+                        className={`w-4 h-4 text-[#61126E] transition-transform duration-200 ${
                           mobileSection === "products" ? "rotate-90" : ""
                         }`}
                       />
@@ -418,13 +422,13 @@ export function DeskmeritHeader() {
                         <Link
                           to="/features/tracker-plus"
                           onClick={() => setMobileMenuOpen(false)}
-                          className="p-3 rounded-xl bg-[#FFE6DF]/70 border border-[#FFD4CA] text-xs font-bold text-[#C2361A] flex items-center justify-between shadow-xs"
+                          className="p-3 rounded-xl bg-[#F6EDF8]/70 border border-[#E8D5EC] text-xs font-bold text-[#4E0E58] flex items-center justify-between shadow-xs"
                         >
                           <div>
-                            <div className="font-extrabold text-[#C2361A]">Tracker Plus for Jira & DevOps</div>
+                            <div className="font-extrabold text-[#4E0E58]">Tracker Plus for Jira & DevOps</div>
                             <div className="text-[11px] text-[#0F1730] font-normal mt-0.5">Start work directly from sprint tasks</div>
                           </div>
-                          <span className="text-[9px] uppercase px-2 py-0.5 bg-[#FF5A36] text-white rounded-md font-extrabold shrink-0">
+                          <span className="text-[9px] uppercase px-2 py-0.5 bg-[#61126E] text-white rounded-md font-extrabold shrink-0">
                             ★ Key
                           </span>
                         </Link>
@@ -438,42 +442,42 @@ export function DeskmeritHeader() {
                             <Link
                               to="/features"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] hover:bg-slate-100 transition-colors"
                             >
                               Features overview
                             </Link>
                             <Link
                               to="/features/automatic-time-tracking"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] hover:bg-slate-100 transition-colors"
                             >
                               Automatic time tracking
                             </Link>
                             <Link
                               to="/features/productivity-tracking"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] hover:bg-slate-100 transition-colors"
                             >
                               Productivity tracking
                             </Link>
                             <Link
                               to="/features/document-tracking"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] hover:bg-slate-100 transition-colors"
                             >
                               Document tracking
                             </Link>
                             <Link
                               to="/features/live-status"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] hover:bg-slate-100 transition-colors"
                             >
                               Live status
                             </Link>
                             <Link
                               to="/features/focus-timer"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] hover:bg-slate-100 transition-colors"
                             >
                               Focus timer
                             </Link>
@@ -489,21 +493,21 @@ export function DeskmeritHeader() {
                             <Link
                               to="/features/tracker-plus"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] hover:bg-slate-100 transition-colors"
                             >
                               Tracker Plus ★
                             </Link>
                             <Link
                               to="/features/project-time-tracking"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] hover:bg-slate-100 transition-colors"
                             >
                               Project time & billing
                             </Link>
                             <Link
                               to="/features/timesheets-and-reports"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] hover:bg-slate-100 transition-colors"
                             >
                               Timesheets & reports
                             </Link>
@@ -519,42 +523,42 @@ export function DeskmeritHeader() {
                             <Link
                               to="/features/attendance-tracking"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] hover:bg-slate-100 transition-colors"
                             >
                               Attendance tracking
                             </Link>
                             <Link
                               to="/features/shift-scheduling"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] hover:bg-slate-100 transition-colors"
                             >
                               Shift scheduling
                             </Link>
                             <Link
                               to="/features/leave-management"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] hover:bg-slate-100 transition-colors"
                             >
                               Leave management
                             </Link>
                             <Link
                               to="/features/idle-and-private-time"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] hover:bg-slate-100 transition-colors"
                             >
                               Idle & Private Time
                             </Link>
                             <Link
                               to="/features/screenshots"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] hover:bg-slate-100 transition-colors"
                             >
                               Screenshots
                             </Link>
                             <Link
                               to="/download"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] hover:bg-slate-100 transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] hover:bg-slate-100 transition-colors"
                             >
                               Download desktop agent
                             </Link>
@@ -571,13 +575,13 @@ export function DeskmeritHeader() {
                       onClick={() =>
                         setMobileSection(mobileSection === "solutions" ? null : "solutions")
                       }
-                      className="w-full flex items-center justify-between font-extrabold text-[18px] text-[#0F1730] hover:text-[#FF5A36] transition-colors text-left"
+                      className="w-full flex items-center justify-between font-extrabold text-[18px] text-[#0F1730] hover:text-[#61126E] transition-colors text-left"
                     >
-                      <span className={mobileSection === "solutions" ? "text-[#FF5A36]" : ""}>
+                      <span className={mobileSection === "solutions" ? "text-[#61126E]" : ""}>
                         Solutions
                       </span>
                       <ChevronRight
-                        className={`w-4 h-4 text-[#FF5A36] transition-transform duration-200 ${
+                        className={`w-4 h-4 text-[#61126E] transition-transform duration-200 ${
                           mobileSection === "solutions" ? "rotate-90" : ""
                         }`}
                       />
@@ -592,35 +596,35 @@ export function DeskmeritHeader() {
                             <Link
                               to="/solutions/it-services"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               IT services
                             </Link>
                             <Link
                               to="/solutions/staff-augmentation"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Staff augmentation
                             </Link>
                             <Link
                               to="/solutions/agencies"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Agencies
                             </Link>
                             <Link
                               to="/solutions/bpo"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               BPO & contact centres
                             </Link>
                             <Link
                               to="/solutions/professional-services"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Consulting & accounting
                             </Link>
@@ -635,42 +639,42 @@ export function DeskmeritHeader() {
                             <Link
                               to="/solutions/remote-teams"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Remote teams
                             </Link>
                             <Link
                               to="/solutions/hybrid-teams"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Hybrid teams
                             </Link>
                             <Link
                               to="/solutions/office-teams"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Office teams
                             </Link>
                             <Link
                               to="/solutions/hr"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               For HR teams
                             </Link>
                             <Link
                               to="/solutions/managers"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               For managers
                             </Link>
                             <Link
                               to="/solutions/finance"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               For finance
                             </Link>
@@ -685,14 +689,14 @@ export function DeskmeritHeader() {
                             <Link
                               to="/hrms-add-on"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-[#FFE6DF]/60 text-xs font-bold text-[#C2361A] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-[#F6EDF8]/60 text-xs font-bold text-[#4E0E58] hover:text-[#61126E] transition-colors"
                             >
                               HRMS add-on (Sqalible) →
                             </Link>
                             <Link
                               to="/partners/white-label"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               White-label for resellers →
                             </Link>
@@ -709,13 +713,13 @@ export function DeskmeritHeader() {
                       onClick={() =>
                         setMobileSection(mobileSection === "integrations" ? null : "integrations")
                       }
-                      className="w-full flex items-center justify-between font-extrabold text-[18px] text-[#0F1730] hover:text-[#FF5A36] transition-colors text-left"
+                      className="w-full flex items-center justify-between font-extrabold text-[18px] text-[#0F1730] hover:text-[#61126E] transition-colors text-left"
                     >
-                      <span className={mobileSection === "integrations" ? "text-[#FF5A36]" : ""}>
+                      <span className={mobileSection === "integrations" ? "text-[#61126E]" : ""}>
                         Integrations
                       </span>
                       <ChevronRight
-                        className={`w-4 h-4 text-[#FF5A36] transition-transform duration-200 ${
+                        className={`w-4 h-4 text-[#61126E] transition-transform duration-200 ${
                           mobileSection === "integrations" ? "rotate-90" : ""
                         }`}
                       />
@@ -730,7 +734,7 @@ export function DeskmeritHeader() {
                             <Link
                               to="/features/integrations/jira"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               <img src="/images/integrations/jira.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
                               <span className="truncate">Jira</span>
@@ -738,7 +742,7 @@ export function DeskmeritHeader() {
                             <Link
                               to="/features/integrations/azure-devops"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               <img src="/images/integrations/azure-devops.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
                               <span className="truncate">Azure DevOps</span>
@@ -746,7 +750,7 @@ export function DeskmeritHeader() {
                             <Link
                               to="/features/integrations/linear"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               <img src="/images/integrations/linear.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
                               <span className="truncate">Linear</span>
@@ -754,7 +758,7 @@ export function DeskmeritHeader() {
                             <Link
                               to="/features/integrations/asana"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               <img src="/images/integrations/asana.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
                               <span className="truncate">Asana</span>
@@ -762,7 +766,7 @@ export function DeskmeritHeader() {
                             <Link
                               to="/features/integrations/clickup"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               <img src="/images/integrations/clickup.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
                               <span className="truncate">ClickUp</span>
@@ -770,7 +774,7 @@ export function DeskmeritHeader() {
                             <Link
                               to="/features/integrations/trello"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               <img src="/images/integrations/trello.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
                               <span className="truncate">Trello</span>
@@ -778,7 +782,7 @@ export function DeskmeritHeader() {
                             <Link
                               to="/features/integrations/gitlab"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               <img src="/images/integrations/gitlab.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
                               <span className="truncate">GitLab</span>
@@ -786,7 +790,7 @@ export function DeskmeritHeader() {
                             <Link
                               to="/features/integrations/openproject"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               <img src="/images/integrations/openproject.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
                               <span className="truncate">OpenProject</span>
@@ -802,7 +806,7 @@ export function DeskmeritHeader() {
                             <Link
                               to="/features/integrations/google-calendar"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               <img src="/images/integrations/google-calendar.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
                               <span className="truncate">Google Cal</span>
@@ -810,7 +814,7 @@ export function DeskmeritHeader() {
                             <Link
                               to="/features/integrations/outlook-calendar"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               <img src="/images/integrations/outlook.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
                               <span className="truncate">Outlook</span>
@@ -818,7 +822,7 @@ export function DeskmeritHeader() {
                             <Link
                               to="/features/integrations/slack"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               <img src="/images/integrations/slack.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
                               <span className="truncate">Slack</span>
@@ -826,7 +830,7 @@ export function DeskmeritHeader() {
                             <Link
                               to="/features/integrations/microsoft-teams"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               <img src="/images/integrations/teams.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
                               <span className="truncate">MS Teams</span>
@@ -842,7 +846,7 @@ export function DeskmeritHeader() {
                             <Link
                               to="/features/integrations/zapier"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               <img src="/images/integrations/zapier.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
                               <span className="truncate">Zapier</span>
@@ -850,7 +854,7 @@ export function DeskmeritHeader() {
                             <Link
                               to="/features/integrations/make"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               <img src="/images/integrations/make.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
                               <span className="truncate">Make</span>
@@ -858,7 +862,7 @@ export function DeskmeritHeader() {
                             <Link
                               to="/features/integrations/sqalible"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               <img src="/images/integrations/sqalible.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
                               <span className="truncate">Sqalible HRMS</span>
@@ -874,7 +878,7 @@ export function DeskmeritHeader() {
                             <Link
                               to="/developers/mcp-server"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               <img src="/images/integrations/claude.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
                               <span className="truncate">Claude MCP</span>
@@ -882,7 +886,7 @@ export function DeskmeritHeader() {
                             <Link
                               to="/developers/api"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               <img src="/images/integrations/rest-api.svg" alt="" className="w-4 h-4 object-contain shrink-0" />
                               <span className="truncate">REST API</span>
@@ -895,7 +899,7 @@ export function DeskmeritHeader() {
                             <Link
                               to="/integrations"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2.5 rounded-lg bg-[#FFE6DF] text-xs font-bold text-[#C2361A] hover:text-[#FF5A36] transition-colors flex items-center justify-between"
+                              className="p-2.5 rounded-lg bg-[#F6EDF8] text-xs font-bold text-[#4E0E58] hover:text-[#61126E] transition-colors flex items-center justify-between"
                             >
                               <span>Explore all 17 Integrations Hub</span>
                               <ArrowRight className="w-3.5 h-3.5" />
@@ -913,13 +917,13 @@ export function DeskmeritHeader() {
                       onClick={() =>
                         setMobileSection(mobileSection === "compare" ? null : "compare")
                       }
-                      className="w-full flex items-center justify-between font-extrabold text-[18px] text-[#0F1730] hover:text-[#FF5A36] transition-colors text-left"
+                      className="w-full flex items-center justify-between font-extrabold text-[18px] text-[#0F1730] hover:text-[#61126E] transition-colors text-left"
                     >
-                      <span className={mobileSection === "compare" ? "text-[#FF5A36]" : ""}>
+                      <span className={mobileSection === "compare" ? "text-[#61126E]" : ""}>
                         Compare & Trust
                       </span>
                       <ChevronRight
-                        className={`w-4 h-4 text-[#FF5A36] transition-transform duration-200 ${
+                        className={`w-4 h-4 text-[#61126E] transition-transform duration-200 ${
                           mobileSection === "compare" ? "rotate-90" : ""
                         }`}
                       />
@@ -934,49 +938,49 @@ export function DeskmeritHeader() {
                             <Link
                               to="/compare/desktime-alternative"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               vs DeskTime
                             </Link>
                             <Link
                               to="/compare/hubstaff-alternative"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               vs Hubstaff
                             </Link>
                             <Link
                               to="/compare/time-doctor-alternative"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               vs Time Doctor
                             </Link>
                             <Link
                               to="/compare/activtrak-alternative"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               vs ActivTrak
                             </Link>
                             <Link
                               to="/compare/toggl-alternative"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               vs Toggl Track
                             </Link>
                             <Link
                               to="/compare/time-champ-alternative"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               vs Time Champ
                             </Link>
                             <Link
                               to="/compare"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-[#FFE6DF]/60 text-xs font-bold text-[#C2361A] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-[#F6EDF8]/60 text-xs font-bold text-[#4E0E58] hover:text-[#61126E] transition-colors"
                             >
                               All comparisons overview →
                             </Link>
@@ -991,21 +995,21 @@ export function DeskmeritHeader() {
                             <Link
                               to="/security"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Security architecture
                             </Link>
                             <Link
                               to="/privacy-promise"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Privacy promise
                             </Link>
                             <Link
                               to="/trust"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Trust Center
                             </Link>
@@ -1020,7 +1024,7 @@ export function DeskmeritHeader() {
                     <Link
                       to="/pricing"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block font-extrabold text-[18px] text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                      className="block font-extrabold text-[18px] text-[#0F1730] hover:text-[#61126E] transition-colors"
                     >
                       Pricing
                     </Link>
@@ -1033,13 +1037,13 @@ export function DeskmeritHeader() {
                       onClick={() =>
                         setMobileSection(mobileSection === "resources" ? null : "resources")
                       }
-                      className="w-full flex items-center justify-between font-extrabold text-[18px] text-[#0F1730] hover:text-[#FF5A36] transition-colors text-left"
+                      className="w-full flex items-center justify-between font-extrabold text-[18px] text-[#0F1730] hover:text-[#61126E] transition-colors text-left"
                     >
-                      <span className={mobileSection === "resources" ? "text-[#FF5A36]" : ""}>
+                      <span className={mobileSection === "resources" ? "text-[#61126E]" : ""}>
                         Resources
                       </span>
                       <ChevronRight
-                        className={`w-4 h-4 text-[#FF5A36] transition-transform duration-200 ${
+                        className={`w-4 h-4 text-[#61126E] transition-transform duration-200 ${
                           mobileSection === "resources" ? "rotate-90" : ""
                         }`}
                       />
@@ -1049,21 +1053,21 @@ export function DeskmeritHeader() {
                         <Link
                           to="/blog"
                           onClick={() => setMobileMenuOpen(false)}
-                          className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] block"
+                          className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] block"
                         >
                           Blog & Insights
                         </Link>
                         <Link
                           to="/guides/employee-monitoring-laws"
                           onClick={() => setMobileMenuOpen(false)}
-                          className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] block"
+                          className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] block"
                         >
                           Monitoring-law guides hub
                         </Link>
                         <Link
                           to="/glossary"
                           onClick={() => setMobileMenuOpen(false)}
-                          className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] block"
+                          className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] block"
                         >
                           Terminology Glossary
                         </Link>
@@ -1071,7 +1075,7 @@ export function DeskmeritHeader() {
                           href="https://help.deskmerit.io"
                           target="_blank"
                           rel="noreferrer"
-                          className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center justify-between"
+                          className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] flex items-center justify-between"
                         >
                           <span>Help centre</span>
                           <ExternalLink className="w-3.5 h-3.5 opacity-60" />
@@ -1087,13 +1091,13 @@ export function DeskmeritHeader() {
                       onClick={() =>
                         setMobileSection(mobileSection === "company" ? null : "company")
                       }
-                      className="w-full flex items-center justify-between font-extrabold text-[18px] text-[#0F1730] hover:text-[#FF5A36] transition-colors text-left"
+                      className="w-full flex items-center justify-between font-extrabold text-[18px] text-[#0F1730] hover:text-[#61126E] transition-colors text-left"
                     >
-                      <span className={mobileSection === "company" ? "text-[#FF5A36]" : ""}>
+                      <span className={mobileSection === "company" ? "text-[#61126E]" : ""}>
                         Company & Legal
                       </span>
                       <ChevronRight
-                        className={`w-4 h-4 text-[#FF5A36] transition-transform duration-200 ${
+                        className={`w-4 h-4 text-[#61126E] transition-transform duration-200 ${
                           mobileSection === "company" ? "rotate-90" : ""
                         }`}
                       />
@@ -1108,42 +1112,42 @@ export function DeskmeritHeader() {
                             <Link
                               to="/about"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               About us
                             </Link>
                             <Link
                               to="/careers"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Careers
                             </Link>
                             <Link
                               to="/partners"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Partners & Resellers
                             </Link>
                             <Link
                               to="/press"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Press & Media Kit
                             </Link>
                             <Link
                               to="/contact"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Contact us
                             </Link>
                             <Link
                               to="/demo"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Book a demo
                             </Link>
@@ -1158,21 +1162,21 @@ export function DeskmeritHeader() {
                             <Link
                               to="/developers"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Developers & REST API
                             </Link>
                             <Link
                               to="/developers/mcp-server"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Claude MCP AI server
                             </Link>
                             <Link
                               to="/changelog"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Changelog
                             </Link>
@@ -1187,42 +1191,42 @@ export function DeskmeritHeader() {
                             <Link
                               to="/legal/terms"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Terms of Service
                             </Link>
                             <Link
                               to="/legal/privacy"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Privacy Policy
                             </Link>
                             <Link
                               to="/legal/dpa"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Data Processing Agreement
                             </Link>
                             <Link
                               to="/legal/subprocessors"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Sub-processors
                             </Link>
                             <Link
                               to="/legal/cookies"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Cookie Policy
                             </Link>
                             <Link
                               to="/legal/sla"
                               onClick={() => setMobileMenuOpen(false)}
-                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                              className="p-2 rounded-lg bg-slate-50 text-xs font-bold text-[#0F1730] hover:text-[#61126E] transition-colors"
                             >
                               Service Level Agreement
                             </Link>
@@ -1238,7 +1242,7 @@ export function DeskmeritHeader() {
                       href="https://app.deskmerit.com"
                       target="_blank"
                       rel="noreferrer"
-                      className="block font-extrabold text-[18px] text-[#0F1730] hover:text-[#FF5A36] transition-colors"
+                      className="block font-extrabold text-[18px] text-[#0F1730] hover:text-[#61126E] transition-colors"
                     >
                       Sign in
                     </a>
@@ -1249,23 +1253,23 @@ export function DeskmeritHeader() {
                 <Link
                   to="/features/tracker-plus"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="mt-6 block p-4 rounded-2xl border border-[#FFE6DF] bg-gradient-to-br from-[#FFF9F7] via-white to-white hover:border-[#FF5A36] shadow-xs transition-all group"
+                  className="mt-6 block p-4 rounded-2xl border border-[#F6EDF8] bg-gradient-to-br from-[#FAF4FB] via-white to-white hover:border-[#61126E] shadow-xs transition-all group"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#FF5A36]" />
-                      <span className="font-extrabold text-[14px] text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#61126E]" />
+                      <span className="font-extrabold text-[14px] text-[#0F1730] group-hover:text-[#61126E] transition-colors">
                         Tracker Plus for Jira & DevOps
                       </span>
                     </div>
-                    <span className="text-[10px] uppercase font-extrabold px-2 py-0.5 rounded-full bg-[#FF5A36] text-white">
+                    <span className="text-[10px] uppercase font-extrabold px-2 py-0.5 rounded-full bg-[#61126E] text-white">
                       ★ Key
                     </span>
                   </div>
                   <p className="text-xs text-[#4A5370] mt-2 leading-relaxed">
                     Synchronize billable work logs directly from Jira issues and Azure DevOps boards without manual time entry.
                   </p>
-                  <div className="mt-3 flex items-center gap-1.5 text-xs font-bold text-[#FF5A36]">
+                  <div className="mt-3 flex items-center gap-1.5 text-xs font-bold text-[#61126E]">
                     <span>Explore Tracker Plus</span>
                     <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -1277,7 +1281,7 @@ export function DeskmeritHeader() {
                 <Link
                   to="/signup"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-3.5 px-4 rounded-xl bg-[#FF5A36] hover:bg-[#E04826] text-white font-bold text-xs sm:text-sm text-center shadow-md flex items-center justify-center gap-1.5 transition-all"
+                  className="py-3.5 px-4 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-bold text-xs sm:text-sm text-center shadow-md flex items-center justify-center gap-1.5 transition-all"
                 >
                   <span>Start free trial</span>
                   <ArrowRight className="w-4 h-4" />
@@ -1292,7 +1296,9 @@ export function DeskmeritHeader() {
               </div>
             </motion.div>
           )}
-        </AnimatePresence>
+        </AnimatePresence>,
+        document.body
+      )}
       </nav>
     </header>
   );
@@ -1441,7 +1447,7 @@ export function DeskmeritHeader() {
       <div className="bg-white">
         <div className="p-6 lg:p-7 flex items-stretch gap-6 lg:gap-8 min-h-[380px]">
           {/* 1. Left Sidebar: Category Tabs */}
-          <div className="w-52 xl:w-60 shrink-0 border-r border-[#E6E2D8] pr-4 flex flex-col justify-start">
+          <div className="w-52 xl:w-60 shrink-0 border-r border-[#E8D5EC] pr-4 flex flex-col justify-start">
             <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em] px-3 pb-3">
               PRODUCT
             </p>
@@ -1457,15 +1463,15 @@ export function DeskmeritHeader() {
                     onClick={() => setProductsActiveTab(cat.id)}
                     className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left transition-all duration-150 cursor-pointer ${
                       isActive
-                        ? "bg-[#FFE6DF] text-[#0F1730] font-bold border border-[#FF5A36]/40 shadow-xs"
-                        : "text-[#4A5370] hover:bg-[#F7F4EE] hover:text-[#0F1730] font-medium border border-transparent"
+                        ? "bg-[#F6EDF8] text-[#0F1730] font-bold border border-[#61126E]/40 shadow-xs"
+                        : "text-[#4A5370] hover:bg-[#FAF4FB] hover:text-[#0F1730] font-medium border border-transparent"
                     }`}
                   >
                     <div
                       className={`flex h-8 w-8 items-center justify-center rounded-lg shrink-0 transition-colors ${
                         isActive
-                          ? "bg-[#FF5A36] text-white shadow-xs"
-                          : "bg-[#F7F4EE] text-[#4A5370]"
+                          ? "bg-[#61126E] text-white shadow-xs"
+                          : "bg-[#FAF4FB] text-[#4A5370]"
                       }`}
                     >
                       <IconComp className="w-4 h-4 stroke-[1.8] text-current" />
@@ -1485,15 +1491,13 @@ export function DeskmeritHeader() {
             <Link
               to={currentCategory.banner.href}
               onClick={() => setActiveMenu(null)}
-              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#FF5A36]/60 transition-all shadow-xs"
+              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#61126E]/60 transition-all shadow-xs"
             >
-              <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#FF5A36] transition-colors">
+              <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#D8B4FE] transition-colors">
                 <span>{currentCategory.banner.title}</span>
-                <span className="text-[#FF5A36] font-extrabold text-base transition-transform group-hover:translate-x-1">
-                  ›
-                </span>
+                <span className="text-[#D8B4FE] font-extrabold text-base transition-transform group-hover:translate-x-1">›</span>
               </div>
-              <p className="text-xs text-[#E6E2D8] mt-0.5 line-clamp-1 font-normal">
+              <p className="text-xs text-slate-300 mt-0.5 line-clamp-1 font-normal">
                 {currentCategory.banner.description}
               </p>
             </Link>
@@ -1507,14 +1511,14 @@ export function DeskmeritHeader() {
                     key={link.title}
                     to={link.href}
                     onClick={() => setActiveMenu(null)}
-                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F7F4EE] border border-transparent hover:border-[#E6E2D8] transition-all text-left"
+                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#FAF4FB] border border-transparent hover:border-[#E8D5EC] transition-all text-left"
                   >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F7F4EE] text-[#0F1730] group-hover:bg-[#FFE6DF] group-hover:text-[#C2361A] transition-colors mt-0.5 border border-[#E6E2D8]/60">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#FAF4FB] text-[#0F1730] group-hover:bg-[#F6EDF8] group-hover:text-[#61126E] transition-colors mt-0.5 border border-[#E8D5EC]/60">
                       <LinkIcon className="w-4 h-4 stroke-[1.8]" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors">
                           {link.title}
                         </span>
                       </div>
@@ -1529,13 +1533,13 @@ export function DeskmeritHeader() {
           </div>
 
           {/* 3. Right Column: Spotlight Card */}
-          <div className="w-72 2xl:w-80 shrink-0 pl-6 border-l border-[#E6E2D8] flex flex-col justify-between">
+          <div className="w-72 2xl:w-80 shrink-0 pl-6 border-l border-[#E8D5EC] flex flex-col justify-between">
             <div className="space-y-3">
               <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em]">
                 SPOTLIGHT
               </p>
-              <div className="p-5 rounded-[16px] bg-[#F7F4EE] border border-[#E6E2D8] space-y-2.5 shadow-xs">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF5A36] block">
+              <div className="p-5 rounded-[16px] bg-[#FAF4FB] border border-[#E8D5EC] space-y-2.5 shadow-xs">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#61126E] block">
                   KEY FEATURE
                 </span>
                 <h4 className="font-display font-bold text-[15px] leading-snug text-[#0F1730]">
@@ -1547,7 +1551,7 @@ export function DeskmeritHeader() {
                 <Link
                   to="/features/tracker-plus"
                   onClick={() => setActiveMenu(null)}
-                  className="text-xs font-bold text-[#FF5A36] hover:underline flex items-center gap-1.5 pt-1 group"
+                  className="text-xs font-bold text-[#61126E] hover:underline flex items-center gap-1.5 pt-1 group"
                 >
                   <span>Explore Tracker Plus</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -1555,53 +1559,53 @@ export function DeskmeritHeader() {
               </div>
             </div>
 
-            <div className="mt-4 pt-3.5 border-t border-[#E6E2D8]">
+            <div className="mt-4 pt-3.5 border-t border-[#E8D5EC]">
               <Link
                 to="/download"
                 onClick={() => setActiveMenu(null)}
-                className="text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center justify-between group transition-colors"
+                className="text-xs font-bold text-[#0F1730] hover:text-[#61126E] flex items-center justify-between group transition-colors"
               >
                 <span>Download desktop tracker</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#61126E] group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
         </div>
 
         {/* Full-Width Bottom Strip (Sitemap Specification) */}
-        <div className="px-8 py-3.5 bg-[#F7F4EE] border-t border-[#E6E2D8] flex items-center justify-between text-xs font-sans">
+        <div className="px-8 py-3.5 bg-[#FAF4FB] border-t border-[#E8D5EC] flex items-center justify-between text-xs font-sans">
           <div className="flex items-center gap-6">
             <Link
               to="/features"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>All features</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
             <Link
               to="/download"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>Download</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
             <Link
               to="/security"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>Security</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
             <Link
               to="/privacy-promise"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>Privacy promise</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
           </div>
           <span className="text-[11px] text-[#4A5370] flex items-center gap-2 font-medium">
@@ -1779,7 +1783,7 @@ export function DeskmeritHeader() {
       <div className="bg-white">
         <div className="p-6 lg:p-7 flex items-stretch gap-6 lg:gap-8 min-h-[380px]">
           {/* 1. Left Sidebar: Category Tabs */}
-          <div className="w-52 xl:w-60 shrink-0 border-r border-[#E6E2D8] pr-4 flex flex-col justify-start">
+          <div className="w-52 xl:w-60 shrink-0 border-r border-[#E8D5EC] pr-4 flex flex-col justify-start">
             <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em] px-3 pb-3">
               SOLUTIONS
             </p>
@@ -1795,15 +1799,15 @@ export function DeskmeritHeader() {
                     onClick={() => setSolutionsActiveTab(cat.id)}
                     className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left transition-all duration-150 cursor-pointer ${
                       isActive
-                        ? "bg-[#FFE6DF] text-[#0F1730] font-bold border border-[#FF5A36]/40 shadow-xs"
-                        : "text-[#4A5370] hover:bg-[#F7F4EE] hover:text-[#0F1730] font-medium border border-transparent"
+                        ? "bg-[#F6EDF8] text-[#0F1730] font-bold border border-[#61126E]/40 shadow-xs"
+                        : "text-[#4A5370] hover:bg-[#FAF4FB] hover:text-[#0F1730] font-medium border border-transparent"
                     }`}
                   >
                     <div
                       className={`flex h-8 w-8 items-center justify-center rounded-lg shrink-0 transition-colors ${
                         isActive
-                          ? "bg-[#FF5A36] text-white shadow-xs"
-                          : "bg-[#F7F4EE] text-[#4A5370]"
+                          ? "bg-[#61126E] text-white shadow-xs"
+                          : "bg-[#FAF4FB] text-[#4A5370]"
                       }`}
                     >
                       <IconComp className="w-4 h-4 stroke-[1.8] text-current" />
@@ -1823,15 +1827,13 @@ export function DeskmeritHeader() {
             <Link
               to={currentCategory.banner.href}
               onClick={() => setActiveMenu(null)}
-              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#FF5A36]/60 transition-all shadow-xs"
+              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#61126E]/60 transition-all shadow-xs"
             >
-              <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#FF5A36] transition-colors">
+              <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#D8B4FE] transition-colors">
                 <span>{currentCategory.banner.title}</span>
-                <span className="text-[#FF5A36] font-extrabold text-base transition-transform group-hover:translate-x-1">
-                  ›
-                </span>
+                <span className="text-[#D8B4FE] font-extrabold text-base transition-transform group-hover:translate-x-1">›</span>
               </div>
-              <p className="text-xs text-[#E6E2D8] mt-0.5 line-clamp-1 font-normal">
+              <p className="text-xs text-slate-300 mt-0.5 line-clamp-1 font-normal">
                 {currentCategory.banner.description}
               </p>
             </Link>
@@ -1845,14 +1847,14 @@ export function DeskmeritHeader() {
                     key={link.title}
                     to={link.href}
                     onClick={() => setActiveMenu(null)}
-                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F7F4EE] border border-transparent hover:border-[#E6E2D8] transition-all text-left"
+                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#FAF4FB] border border-transparent hover:border-[#E8D5EC] transition-all text-left"
                   >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F7F4EE] text-[#0F1730] group-hover:bg-[#FFE6DF] group-hover:text-[#C2361A] transition-colors mt-0.5 border border-[#E6E2D8]/60">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#FAF4FB] text-[#0F1730] group-hover:bg-[#F6EDF8] group-hover:text-[#61126E] transition-colors mt-0.5 border border-[#E8D5EC]/60">
                       <LinkIcon className="w-4 h-4 stroke-[1.8]" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors">
                           {link.title}
                         </span>
                       </div>
@@ -1867,13 +1869,13 @@ export function DeskmeritHeader() {
           </div>
 
           {/* 3. Right Column: Spotlight Card (Replaces Case Study Image) */}
-          <div className="w-72 2xl:w-80 shrink-0 pl-6 border-l border-[#E6E2D8] flex flex-col justify-between">
+          <div className="w-72 2xl:w-80 shrink-0 pl-6 border-l border-[#E8D5EC] flex flex-col justify-between">
             <div className="space-y-3">
               <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em]">
                 SPOTLIGHT
               </p>
-              <div className="p-5 rounded-[16px] bg-[#F7F4EE] border border-[#E6E2D8] space-y-2.5 shadow-xs">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF5A36] block">
+              <div className="p-5 rounded-[16px] bg-[#FAF4FB] border border-[#E8D5EC] space-y-2.5 shadow-xs">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#61126E] block">
                   HRMS ADD-ON
                 </span>
                 <h4 className="font-display font-bold text-[15px] leading-snug text-[#0F1730]">
@@ -1885,7 +1887,7 @@ export function DeskmeritHeader() {
                 <Link
                   to="/hrms-add-on"
                   onClick={() => setActiveMenu(null)}
-                  className="text-xs font-bold text-[#FF5A36] hover:underline flex items-center gap-1.5 pt-1 group"
+                  className="text-xs font-bold text-[#61126E] hover:underline flex items-center gap-1.5 pt-1 group"
                 >
                   <span>Discover HRMS add-on</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -1893,37 +1895,37 @@ export function DeskmeritHeader() {
               </div>
             </div>
 
-            <div className="mt-4 pt-3.5 border-t border-[#E6E2D8]">
+            <div className="mt-4 pt-3.5 border-t border-[#E8D5EC]">
               <Link
                 to="/partners/white-label"
                 onClick={() => setActiveMenu(null)}
-                className="text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center justify-between group transition-colors"
+                className="text-xs font-bold text-[#0F1730] hover:text-[#61126E] flex items-center justify-between group transition-colors"
               >
                 <span>White-label for resellers</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#61126E] group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
         </div>
 
         {/* Full-Width Bottom Strip (Sitemap Specification) */}
-        <div className="px-8 py-3.5 bg-[#F7F4EE] border-t border-[#E6E2D8] flex items-center justify-between text-xs font-sans">
+        <div className="px-8 py-3.5 bg-[#FAF4FB] border-t border-[#E8D5EC] flex items-center justify-between text-xs font-sans">
           <div className="flex items-center gap-6">
             <Link
               to="/hrms-add-on"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>HRMS add-on (Sqalible)</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
             <Link
               to="/partners/white-label"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>White-label for resellers</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
           </div>
           <span className="text-[11px] text-[#4A5370] flex items-center gap-2 font-medium">
@@ -2121,7 +2123,7 @@ export function DeskmeritHeader() {
       <div className="bg-white">
         <div className="p-6 lg:p-7 flex items-stretch gap-6 lg:gap-8 min-h-[380px]">
           {/* 1. Left Sidebar: Category Tabs */}
-          <div className="w-52 xl:w-60 shrink-0 border-r border-[#E6E2D8] pr-4 flex flex-col justify-start">
+          <div className="w-52 xl:w-60 shrink-0 border-r border-[#E8D5EC] pr-4 flex flex-col justify-start">
             <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em] px-3 pb-3">
               INTEGRATIONS
             </p>
@@ -2137,15 +2139,15 @@ export function DeskmeritHeader() {
                     onClick={() => setIntegrationsActiveTab(cat.id)}
                     className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left transition-all duration-150 cursor-pointer ${
                       isActive
-                        ? "bg-[#FFE6DF] text-[#0F1730] font-bold border border-[#FF5A36]/40 shadow-xs"
-                        : "text-[#4A5370] hover:bg-[#F7F4EE] hover:text-[#0F1730] font-medium border border-transparent"
+                        ? "bg-[#F6EDF8] text-[#0F1730] font-bold border border-[#61126E]/40 shadow-xs"
+                        : "text-[#4A5370] hover:bg-[#FAF4FB] hover:text-[#0F1730] font-medium border border-transparent"
                     }`}
                   >
                     <div
                       className={`flex h-8 w-8 items-center justify-center rounded-lg shrink-0 transition-colors ${
                         isActive
-                          ? "bg-[#FF5A36] text-white shadow-xs"
-                          : "bg-[#F7F4EE] text-[#4A5370]"
+                          ? "bg-[#61126E] text-white shadow-xs"
+                          : "bg-[#FAF4FB] text-[#4A5370]"
                       }`}
                     >
                       <IconComp className="w-4 h-4 stroke-[1.8] text-current" />
@@ -2165,15 +2167,13 @@ export function DeskmeritHeader() {
             <Link
               to={currentCategory.banner.href}
               onClick={() => setActiveMenu(null)}
-              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#FF5A36]/60 transition-all shadow-xs"
+              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#61126E]/60 transition-all shadow-xs"
             >
-              <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#FF5A36] transition-colors">
+              <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#D8B4FE] transition-colors">
                 <span>{currentCategory.banner.title}</span>
-                <span className="text-[#FF5A36] font-extrabold text-base transition-transform group-hover:translate-x-1">
-                  ›
-                </span>
+                <span className="text-[#D8B4FE] font-extrabold text-base transition-transform group-hover:translate-x-1">›</span>
               </div>
-              <p className="text-xs text-[#E6E2D8] mt-0.5 line-clamp-1 font-normal">
+              <p className="text-xs text-slate-300 mt-0.5 line-clamp-1 font-normal">
                 {currentCategory.banner.description}
               </p>
             </Link>
@@ -2187,9 +2187,9 @@ export function DeskmeritHeader() {
                     key={link.title}
                     to={link.href}
                     onClick={() => setActiveMenu(null)}
-                    className="group flex items-start gap-3 p-2 rounded-xl hover:bg-[#F7F4EE] border border-transparent hover:border-[#E6E2D8] transition-all text-left"
+                    className="group flex items-start gap-3 p-2 rounded-xl hover:bg-[#FAF4FB] border border-transparent hover:border-[#E8D5EC] transition-all text-left"
                   >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F7F4EE] text-[#0F1730] group-hover:bg-white group-hover:shadow-xs transition-all mt-0.5 border border-[#E6E2D8]/60 p-1.5">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#FAF4FB] text-[#0F1730] group-hover:bg-white group-hover:shadow-xs transition-all mt-0.5 border border-[#E8D5EC]/60 p-1.5">
                       {link.iconUrl ? (
                         <img
                           src={link.iconUrl}
@@ -2203,7 +2203,7 @@ export function DeskmeritHeader() {
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors">
                           {link.title}
                         </span>
                       </div>
@@ -2218,13 +2218,13 @@ export function DeskmeritHeader() {
           </div>
 
           {/* 3. Right Column: Spotlight Card (Exact Match to User Screenshot) */}
-          <div className="w-72 2xl:w-80 shrink-0 pl-6 border-l border-[#E6E2D8] flex flex-col justify-between">
+          <div className="w-72 2xl:w-80 shrink-0 pl-6 border-l border-[#E8D5EC] flex flex-col justify-between">
             <div className="space-y-3">
               <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em]">
                 SPOTLIGHT
               </p>
-              <div className="p-5 rounded-[16px] bg-[#F7F4EE] border border-[#E6E2D8] space-y-2.5 shadow-xs">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF5A36] block">
+              <div className="p-5 rounded-[16px] bg-[#FAF4FB] border border-[#E8D5EC] space-y-2.5 shadow-xs">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#61126E] block">
                   TRACKER PLUS FOR JIRA
                 </span>
                 <h4 className="font-display font-bold text-[15px] leading-snug text-[#0F1730]">
@@ -2236,7 +2236,7 @@ export function DeskmeritHeader() {
                 <Link
                   to="/features/tracker-plus"
                   onClick={() => setActiveMenu(null)}
-                  className="text-xs font-bold text-[#FF5A36] hover:underline flex items-center gap-1.5 pt-1 group"
+                  className="text-xs font-bold text-[#61126E] hover:underline flex items-center gap-1.5 pt-1 group"
                 >
                   <span>Learn how it connects</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -2244,49 +2244,49 @@ export function DeskmeritHeader() {
               </div>
             </div>
 
-            <div className="mt-4 pt-3.5 border-t border-[#E6E2D8]">
+            <div className="mt-4 pt-3.5 border-t border-[#E8D5EC]">
               <Link
                 to="/developers"
                 onClick={() => setActiveMenu(null)}
-                className="text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center justify-between group transition-colors"
+                className="text-xs font-bold text-[#0F1730] hover:text-[#61126E] flex items-center justify-between group transition-colors"
               >
                 <span>Request a custom integration</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#61126E] group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
         </div>
 
         {/* Full-Width Bottom Strip (Sitemap Specification) */}
-        <div className="px-8 py-3.5 bg-[#F7F4EE] border-t border-[#E6E2D8] flex items-center justify-between text-xs font-sans">
+        <div className="px-8 py-3.5 bg-[#FAF4FB] border-t border-[#E8D5EC] flex items-center justify-between text-xs font-sans">
           <div className="flex items-center gap-6">
             <Link
               to="/integrations"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>Integrations hub</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
             <Link
               to="/developers/mcp-server"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>Claude MCP AI server</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
             <Link
               to="/developers"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>REST API & Webhooks</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
           </div>
           <span className="text-[11px] text-[#4A5370] flex items-center gap-2 font-medium">
-            <Sparkles className="w-3.5 h-3.5 text-[#FF5A36]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#61126E]" />
             <span>2-minute API key setup · No IT ticket required</span>
           </span>
         </div>
@@ -2420,7 +2420,7 @@ export function DeskmeritHeader() {
       <div className="bg-white">
         <div className="p-6 lg:p-7 flex items-stretch gap-6 lg:gap-8 min-h-[380px]">
           {/* 1. Left Sidebar: Category Tabs */}
-          <div className="w-52 xl:w-60 shrink-0 border-r border-[#E6E2D8] pr-4 flex flex-col justify-start">
+          <div className="w-52 xl:w-60 shrink-0 border-r border-[#E8D5EC] pr-4 flex flex-col justify-start">
             <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em] px-3 pb-3">
               RESOURCES
             </p>
@@ -2436,15 +2436,15 @@ export function DeskmeritHeader() {
                     onClick={() => setResourcesActiveTab(cat.id)}
                     className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left transition-all duration-150 cursor-pointer ${
                       isActive
-                        ? "bg-[#FFE6DF] text-[#0F1730] font-bold border border-[#FF5A36]/40 shadow-xs"
-                        : "text-[#4A5370] hover:bg-[#F7F4EE] hover:text-[#0F1730] font-medium border border-transparent"
+                        ? "bg-[#F6EDF8] text-[#0F1730] font-bold border border-[#61126E]/40 shadow-xs"
+                        : "text-[#4A5370] hover:bg-[#FAF4FB] hover:text-[#0F1730] font-medium border border-transparent"
                     }`}
                   >
                     <div
                       className={`flex h-8 w-8 items-center justify-center rounded-lg shrink-0 transition-colors ${
                         isActive
-                          ? "bg-[#FF5A36] text-white shadow-xs"
-                          : "bg-[#F7F4EE] text-[#4A5370]"
+                          ? "bg-[#61126E] text-white shadow-xs"
+                          : "bg-[#FAF4FB] text-[#4A5370]"
                       }`}
                     >
                       <IconComp className="w-4 h-4 stroke-[1.8] text-current" />
@@ -2464,15 +2464,13 @@ export function DeskmeritHeader() {
             <Link
               to={currentCategory.banner.href}
               onClick={() => setActiveMenu(null)}
-              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#FF5A36]/60 transition-all shadow-xs"
+              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#61126E]/60 transition-all shadow-xs"
             >
-              <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#FF5A36] transition-colors">
+              <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#D8B4FE] transition-colors">
                 <span>{currentCategory.banner.title}</span>
-                <span className="text-[#FF5A36] font-extrabold text-base transition-transform group-hover:translate-x-1">
-                  ›
-                </span>
+                <span className="text-[#D8B4FE] font-extrabold text-base transition-transform group-hover:translate-x-1">›</span>
               </div>
-              <p className="text-xs text-[#E6E2D8] mt-0.5 line-clamp-1 font-normal">
+              <p className="text-xs text-slate-300 mt-0.5 line-clamp-1 font-normal">
                 {currentCategory.banner.description}
               </p>
             </Link>
@@ -2486,14 +2484,14 @@ export function DeskmeritHeader() {
                     key={link.title}
                     to={link.href}
                     onClick={() => setActiveMenu(null)}
-                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F7F4EE] border border-transparent hover:border-[#E6E2D8] transition-all text-left"
+                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#FAF4FB] border border-transparent hover:border-[#E8D5EC] transition-all text-left"
                   >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F7F4EE] text-[#0F1730] group-hover:bg-[#FFE6DF] group-hover:text-[#C2361A] transition-colors mt-0.5 border border-[#E6E2D8]/60">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#FAF4FB] text-[#0F1730] group-hover:bg-[#F6EDF8] group-hover:text-[#61126E] transition-colors mt-0.5 border border-[#E8D5EC]/60">
                       <LinkIcon className="w-4 h-4 stroke-[1.8]" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors">
                           {link.title}
                         </span>
                       </div>
@@ -2508,13 +2506,13 @@ export function DeskmeritHeader() {
           </div>
 
           {/* 3. Right Column: Spotlight Card */}
-          <div className="w-72 2xl:w-80 shrink-0 pl-6 border-l border-[#E6E2D8] flex flex-col justify-between">
+          <div className="w-72 2xl:w-80 shrink-0 pl-6 border-l border-[#E8D5EC] flex flex-col justify-between">
             <div className="space-y-3">
               <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em]">
                 SPOTLIGHT
               </p>
-              <div className="p-5 rounded-[16px] bg-[#F7F4EE] border border-[#E6E2D8] space-y-2.5 shadow-xs">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF5A36] block">
+              <div className="p-5 rounded-[16px] bg-[#FAF4FB] border border-[#E8D5EC] space-y-2.5 shadow-xs">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#61126E] block">
                   COMPLIANCE SPOTLIGHT
                 </span>
                 <h4 className="font-display font-bold text-[15px] leading-snug text-[#0F1730]">
@@ -2526,7 +2524,7 @@ export function DeskmeritHeader() {
                 <Link
                   to="/guides/employee-monitoring-laws"
                   onClick={() => setActiveMenu(null)}
-                  className="text-xs font-bold text-[#FF5A36] hover:underline flex items-center gap-1.5 pt-1 group"
+                  className="text-xs font-bold text-[#61126E] hover:underline flex items-center gap-1.5 pt-1 group"
                 >
                   <span>Read legal guides</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -2534,54 +2532,54 @@ export function DeskmeritHeader() {
               </div>
             </div>
 
-            <div className="mt-4 pt-3.5 border-t border-[#E6E2D8]">
+            <div className="mt-4 pt-3.5 border-t border-[#E8D5EC]">
               <Link
                 to="/privacy-promise"
                 onClick={() => setActiveMenu(null)}
-                className="text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center justify-between group transition-colors"
+                className="text-xs font-bold text-[#0F1730] hover:text-[#61126E] flex items-center justify-between group transition-colors"
               >
                 <span>Review privacy promise</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#61126E] group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
         </div>
 
         {/* Full-Width Bottom Strip (Sitemap Specification) */}
-        <div className="px-8 py-3.5 bg-[#F7F4EE] border-t border-[#E6E2D8] flex items-center justify-between text-xs font-sans">
+        <div className="px-8 py-3.5 bg-[#FAF4FB] border-t border-[#E8D5EC] flex items-center justify-between text-xs font-sans">
           <div className="flex items-center gap-6">
             <a
               href="https://help.deskmerit.io"
               target="_blank"
               rel="noreferrer"
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>Help centre</span>
-              <ExternalLink className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ExternalLink className="w-3.5 h-3.5 text-[#61126E]" />
             </a>
             <Link
               to="/developers"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>Developers (REST API)</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
             <Link
               to="/developers/mcp-server"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>MCP server</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
             <Link
               to="/changelog"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>Changelog</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
           </div>
           <span className="text-[11px] text-[#4A5370] flex items-center gap-2 font-medium">
@@ -2688,7 +2686,7 @@ export function DeskmeritHeader() {
       <div className="bg-white">
         <div className="p-6 lg:p-7 flex items-stretch gap-6 lg:gap-8 min-h-[380px]">
           {/* 1. Left Sidebar: Category Tabs */}
-          <div className="w-52 xl:w-60 shrink-0 border-r border-[#E6E2D8] pr-4 flex flex-col justify-start">
+          <div className="w-52 xl:w-60 shrink-0 border-r border-[#E8D5EC] pr-4 flex flex-col justify-start">
             <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em] px-3 pb-3">
               COMPARE & TRUST
             </p>
@@ -2704,15 +2702,15 @@ export function DeskmeritHeader() {
                     onClick={() => setCompareActiveTab(cat.id)}
                     className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left transition-all duration-150 cursor-pointer ${
                       isActive
-                        ? "bg-[#FFE6DF] text-[#0F1730] font-bold border border-[#FF5A36]/40 shadow-xs"
-                        : "text-[#4A5370] hover:bg-[#F7F4EE] hover:text-[#0F1730] font-medium border border-transparent"
+                        ? "bg-[#F6EDF8] text-[#0F1730] font-bold border border-[#61126E]/40 shadow-xs"
+                        : "text-[#4A5370] hover:bg-[#FAF4FB] hover:text-[#0F1730] font-medium border border-transparent"
                     }`}
                   >
                     <div
                       className={`flex h-8 w-8 items-center justify-center rounded-lg shrink-0 transition-colors ${
                         isActive
-                          ? "bg-[#FF5A36] text-white shadow-xs"
-                          : "bg-[#F7F4EE] text-[#4A5370]"
+                          ? "bg-[#61126E] text-white shadow-xs"
+                          : "bg-[#FAF4FB] text-[#4A5370]"
                       }`}
                     >
                       <IconComp className="w-4 h-4 stroke-[1.8] text-current" />
@@ -2732,15 +2730,13 @@ export function DeskmeritHeader() {
             <Link
               to={currentCategory.banner.href}
               onClick={() => setActiveMenu(null)}
-              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#FF5A36]/60 transition-all shadow-xs"
+              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#61126E]/60 transition-all shadow-xs"
             >
-              <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#FF5A36] transition-colors">
+              <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#D8B4FE] transition-colors">
                 <span>{currentCategory.banner.title}</span>
-                <span className="text-[#FF5A36] font-extrabold text-base transition-transform group-hover:translate-x-1">
-                  ›
-                </span>
+                <span className="text-[#D8B4FE] font-extrabold text-base transition-transform group-hover:translate-x-1">›</span>
               </div>
-              <p className="text-xs text-[#E6E2D8] mt-0.5 line-clamp-1 font-normal">
+              <p className="text-xs text-slate-300 mt-0.5 line-clamp-1 font-normal">
                 {currentCategory.banner.description}
               </p>
             </Link>
@@ -2754,14 +2750,14 @@ export function DeskmeritHeader() {
                     key={link.title}
                     to={link.href}
                     onClick={() => setActiveMenu(null)}
-                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F7F4EE] border border-transparent hover:border-[#E6E2D8] transition-all text-left"
+                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#FAF4FB] border border-transparent hover:border-[#E8D5EC] transition-all text-left"
                   >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F7F4EE] text-[#0F1730] group-hover:bg-[#FFE6DF] group-hover:text-[#C2361A] transition-colors mt-0.5 border border-[#E6E2D8]/60">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#FAF4FB] text-[#0F1730] group-hover:bg-[#F6EDF8] group-hover:text-[#61126E] transition-colors mt-0.5 border border-[#E8D5EC]/60">
                       <LinkIcon className="w-4 h-4 stroke-[1.8]" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors">
                           {link.title}
                         </span>
                       </div>
@@ -2776,13 +2772,13 @@ export function DeskmeritHeader() {
           </div>
 
           {/* 3. Right Column: Spotlight Card */}
-          <div className="w-72 2xl:w-80 shrink-0 pl-6 border-l border-[#E6E2D8] flex flex-col justify-between">
+          <div className="w-72 2xl:w-80 shrink-0 pl-6 border-l border-[#E8D5EC] flex flex-col justify-between">
             <div className="space-y-3">
               <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em]">
                 SPOTLIGHT
               </p>
-              <div className="p-5 rounded-[16px] bg-[#F7F4EE] border border-[#E6E2D8] space-y-2.5 shadow-xs">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF5A36] block">
+              <div className="p-5 rounded-[16px] bg-[#FAF4FB] border border-[#E8D5EC] space-y-2.5 shadow-xs">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#61126E] block">
                   WHY DESKMERIT
                 </span>
                 <h4 className="font-display font-bold text-[15px] leading-snug text-[#0F1730]">
@@ -2794,7 +2790,7 @@ export function DeskmeritHeader() {
                 <Link
                   to="/compare"
                   onClick={() => setActiveMenu(null)}
-                  className="text-xs font-bold text-[#FF5A36] hover:underline flex items-center gap-1.5 pt-1 group"
+                  className="text-xs font-bold text-[#61126E] hover:underline flex items-center gap-1.5 pt-1 group"
                 >
                   <span>Explore full comparison</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -2802,53 +2798,53 @@ export function DeskmeritHeader() {
               </div>
             </div>
 
-            <div className="mt-4 pt-3.5 border-t border-[#E6E2D8]">
+            <div className="mt-4 pt-3.5 border-t border-[#E8D5EC]">
               <Link
                 to="/privacy-promise"
                 onClick={() => setActiveMenu(null)}
-                className="text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center justify-between group transition-colors"
+                className="text-xs font-bold text-[#0F1730] hover:text-[#61126E] flex items-center justify-between group transition-colors"
               >
                 <span>Read our Privacy Promise</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#61126E] group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
         </div>
 
         {/* Full-Width Bottom Strip (Sitemap Specification) */}
-        <div className="px-8 py-3.5 bg-[#F7F4EE] border-t border-[#E6E2D8] flex items-center justify-between text-xs font-sans">
+        <div className="px-8 py-3.5 bg-[#FAF4FB] border-t border-[#E8D5EC] flex items-center justify-between text-xs font-sans">
           <div className="flex items-center gap-6">
             <Link
               to="/compare"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>Compare all time trackers</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
             <Link
               to="/security"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>Security architecture</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
             <Link
               to="/privacy-promise"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>Privacy promise</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
             <Link
               to="/trust"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>Trust Center</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
           </div>
           <span className="text-[11px] text-[#4A5370] flex items-center gap-2 font-medium">
@@ -3016,7 +3012,7 @@ export function DeskmeritHeader() {
       <div className="bg-white">
         <div className="p-6 lg:p-7 flex items-stretch gap-6 lg:gap-8 min-h-[380px]">
           {/* 1. Left Sidebar: Category Tabs */}
-          <div className="w-52 xl:w-60 shrink-0 border-r border-[#E6E2D8] pr-4 flex flex-col justify-start">
+          <div className="w-52 xl:w-60 shrink-0 border-r border-[#E8D5EC] pr-4 flex flex-col justify-start">
             <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em] px-3 pb-3">
               COMPANY & DEVELOPERS
             </p>
@@ -3032,15 +3028,15 @@ export function DeskmeritHeader() {
                     onClick={() => setCompanyActiveTab(cat.id)}
                     className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left transition-all duration-150 cursor-pointer ${
                       isActive
-                        ? "bg-[#FFE6DF] text-[#0F1730] font-bold border border-[#FF5A36]/40 shadow-xs"
-                        : "text-[#4A5370] hover:bg-[#F7F4EE] hover:text-[#0F1730] font-medium border border-transparent"
+                        ? "bg-[#F6EDF8] text-[#0F1730] font-bold border border-[#61126E]/40 shadow-xs"
+                        : "text-[#4A5370] hover:bg-[#FAF4FB] hover:text-[#0F1730] font-medium border border-transparent"
                     }`}
                   >
                     <div
                       className={`flex h-8 w-8 items-center justify-center rounded-lg shrink-0 transition-colors ${
                         isActive
-                          ? "bg-[#FF5A36] text-white shadow-xs"
-                          : "bg-[#F7F4EE] text-[#4A5370]"
+                          ? "bg-[#61126E] text-white shadow-xs"
+                          : "bg-[#FAF4FB] text-[#4A5370]"
                       }`}
                     >
                       <IconComp className="w-4 h-4 stroke-[1.8] text-current" />
@@ -3060,15 +3056,13 @@ export function DeskmeritHeader() {
             <Link
               to={currentCategory.banner.href}
               onClick={() => setActiveMenu(null)}
-              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#FF5A36]/60 transition-all shadow-xs"
+              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#61126E]/60 transition-all shadow-xs"
             >
-              <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#FF5A36] transition-colors">
+              <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#D8B4FE] transition-colors">
                 <span>{currentCategory.banner.title}</span>
-                <span className="text-[#FF5A36] font-extrabold text-base transition-transform group-hover:translate-x-1">
-                  ›
-                </span>
+                <span className="text-[#D8B4FE] font-extrabold text-base transition-transform group-hover:translate-x-1">›</span>
               </div>
-              <p className="text-xs text-[#E6E2D8] mt-0.5 line-clamp-1 font-normal">
+              <p className="text-xs text-slate-300 mt-0.5 line-clamp-1 font-normal">
                 {currentCategory.banner.description}
               </p>
             </Link>
@@ -3085,14 +3079,14 @@ export function DeskmeritHeader() {
                     target="_blank"
                     rel="noreferrer"
                     onClick={() => setActiveMenu(null)}
-                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F7F4EE] border border-transparent hover:border-[#E6E2D8] transition-all text-left"
+                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#FAF4FB] border border-transparent hover:border-[#E8D5EC] transition-all text-left"
                   >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F7F4EE] text-[#0F1730] group-hover:bg-[#FFE6DF] group-hover:text-[#C2361A] transition-colors mt-0.5 border border-[#E6E2D8]/60">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#FAF4FB] text-[#0F1730] group-hover:bg-[#F6EDF8] group-hover:text-[#61126E] transition-colors mt-0.5 border border-[#E8D5EC]/60">
                       <LinkIcon className="w-4 h-4 stroke-[1.8]" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors inline-flex items-center gap-1">
+                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors inline-flex items-center gap-1">
                           {link.title}
                           <ExternalLink className="w-3 h-3 opacity-60" />
                         </span>
@@ -3107,14 +3101,14 @@ export function DeskmeritHeader() {
                     key={link.title}
                     to={link.href}
                     onClick={() => setActiveMenu(null)}
-                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F7F4EE] border border-transparent hover:border-[#E6E2D8] transition-all text-left"
+                    className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#FAF4FB] border border-transparent hover:border-[#E8D5EC] transition-all text-left"
                   >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F7F4EE] text-[#0F1730] group-hover:bg-[#FFE6DF] group-hover:text-[#C2361A] transition-colors mt-0.5 border border-[#E6E2D8]/60">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#FAF4FB] text-[#0F1730] group-hover:bg-[#F6EDF8] group-hover:text-[#61126E] transition-colors mt-0.5 border border-[#E8D5EC]/60">
                       <LinkIcon className="w-4 h-4 stroke-[1.8]" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                        <span className="text-xs sm:text-[13px] font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors">
                           {link.title}
                         </span>
                       </div>
@@ -3129,13 +3123,13 @@ export function DeskmeritHeader() {
           </div>
 
           {/* 3. Right Column: Spotlight Card */}
-          <div className="w-72 2xl:w-80 shrink-0 pl-6 border-l border-[#E6E2D8] flex flex-col justify-between">
+          <div className="w-72 2xl:w-80 shrink-0 pl-6 border-l border-[#E8D5EC] flex flex-col justify-between">
             <div className="space-y-3">
               <p className="text-[11px] font-bold text-[#4A5370] uppercase tracking-[0.14em]">
                 SPOTLIGHT
               </p>
-              <div className="p-5 rounded-[16px] bg-[#F7F4EE] border border-[#E6E2D8] space-y-2.5 shadow-xs">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF5A36] block">
+              <div className="p-5 rounded-[16px] bg-[#FAF4FB] border border-[#E8D5EC] space-y-2.5 shadow-xs">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#61126E] block">
                   PARTNER ECOSYSTEM
                 </span>
                 <h4 className="font-display font-bold text-[15px] leading-snug text-[#0F1730]">
@@ -3147,7 +3141,7 @@ export function DeskmeritHeader() {
                 <Link
                   to="/partners"
                   onClick={() => setActiveMenu(null)}
-                  className="text-xs font-bold text-[#FF5A36] hover:underline flex items-center gap-1.5 pt-1 group"
+                  className="text-xs font-bold text-[#61126E] hover:underline flex items-center gap-1.5 pt-1 group"
                 >
                   <span>Explore partner tracks</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -3155,57 +3149,57 @@ export function DeskmeritHeader() {
               </div>
             </div>
 
-            <div className="mt-4 pt-3.5 border-t border-[#E6E2D8]">
+            <div className="mt-4 pt-3.5 border-t border-[#E8D5EC]">
               <Link
                 to="/signup"
                 onClick={() => setActiveMenu(null)}
-                className="text-xs font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center justify-between group transition-colors"
+                className="text-xs font-bold text-[#0F1730] hover:text-[#61126E] flex items-center justify-between group transition-colors"
               >
                 <span>Try Deskmerit free for 14 days</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#61126E] group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
         </div>
 
         {/* Full-Width Bottom Strip (Sitemap Specification) */}
-        <div className="px-8 py-3.5 bg-[#F7F4EE] border-t border-[#E6E2D8] flex items-center justify-between text-xs font-sans">
+        <div className="px-8 py-3.5 bg-[#FAF4FB] border-t border-[#E8D5EC] flex items-center justify-between text-xs font-sans">
           <div className="flex items-center gap-6">
             <Link
               to="/about"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>About Deskmerit</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
             <Link
               to="/partners"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>Partner program</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
             <Link
               to="/developers/mcp-server"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>Claude MCP AI server</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
             <Link
               to="/legal/terms"
               onClick={() => setActiveMenu(null)}
-              className="font-bold text-[#0F1730] hover:text-[#FF5A36] flex items-center gap-1.5 transition-colors"
+              className="font-bold text-[#0F1730] hover:text-[#61126E] flex items-center gap-1.5 transition-colors"
             >
               <span>Terms & Privacy</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#61126E]" />
             </Link>
           </div>
           <span className="text-[11px] text-[#4A5370] flex items-center gap-2 font-medium">
-            <Building2 className="w-3.5 h-3.5 text-[#FF5A36]" />
+            <Building2 className="w-3.5 h-3.5 text-[#61126E]" />
             <span>A Kombee Technologies product · India · Australia · UAE</span>
           </span>
         </div>

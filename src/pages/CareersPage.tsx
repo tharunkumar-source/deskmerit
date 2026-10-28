@@ -206,30 +206,30 @@ export function CareersPage() {
         {/* ========================================================================= */}
         <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-20 lg:pt-12 lg:pb-28 relative overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
-            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-slate-400 font-medium flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">
                 Home
               </Link>
               <span className="text-slate-500">/</span>
               <span className="text-slate-300">Company</span>
               <span className="text-slate-500">/</span>
-              <span>Careers</span>
+              <span className="text-[#D8B4FE] font-bold">Careers</span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Headline, Overline, Description */}
               <div className="col-span-1 lg:col-span-7 space-y-6 min-w-0 max-w-full w-full">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3 py-1 rounded-full inline-block border border-[#FF5A36]/30">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
                   CAREERS AT DESKMERIT
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
                   Build the future of ethical{" "}
-                  <span className="text-[#FF5A36] block">workforce intelligence.</span>
+                  <span className="text-[#D8B4FE]">workforce intelligence.</span>
                 </h1>
 
                 <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
@@ -238,17 +238,17 @@ export function CareersPage() {
                   Work with autonomy, high craft standards, and genuine respect for deep work.
                 </p>
 
-                <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                   <a
                     href="#open-roles"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all cursor-pointer"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Explore Open Roles</span>
                     <ArrowRight className="w-4 h-4" />
                   </a>
                   <a
                     href="#culture"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Our Culture & Values</span>
                   </a>
@@ -273,10 +273,10 @@ export function CareersPage() {
         {/* ========================================================================= */}
         {/* 2. CULTURE & VALUES SECTION                                               */}
         {/* ========================================================================= */}
-        <section id="culture" className="py-20 lg:py-24 bg-[#F7F4EE] border-b border-[#E6E2D8]">
+        <section id="culture" className="py-20 lg:py-24 bg-[#FAF4FB] border-b border-[#E8D5EC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] font-mono">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#61126E] font-mono">
                 HOW WE OPERATE
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-[-0.025em] mt-2">
@@ -289,11 +289,11 @@ export function CareersPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-              <div className="p-8 rounded-2xl bg-white border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all group">
-                <div className="w-12 h-12 rounded-xl bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+              <div className="p-8 rounded-2xl bg-white border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all group">
+                <div className="w-12 h-12 rounded-xl bg-[#F6EDF8] text-[#61126E] flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
                   <Globe className="w-6 h-6" />
                 </div>
-                <h3 className="font-extrabold text-lg text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">
+                <h3 className="font-extrabold text-lg text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-2">
                   Remote-First & Async
                 </h3>
                 <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed">
@@ -302,11 +302,11 @@ export function CareersPage() {
                 </p>
               </div>
 
-              <div className="p-8 rounded-2xl bg-white border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all group">
-                <div className="w-12 h-12 rounded-xl bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+              <div className="p-8 rounded-2xl bg-white border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all group">
+                <div className="w-12 h-12 rounded-xl bg-[#F6EDF8] text-[#61126E] flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
                   <Terminal className="w-6 h-6" />
                 </div>
-                <h3 className="font-extrabold text-lg text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">
+                <h3 className="font-extrabold text-lg text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-2">
                   High Craft Standards
                 </h3>
                 <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed">
@@ -315,11 +315,11 @@ export function CareersPage() {
                 </p>
               </div>
 
-              <div className="p-8 rounded-2xl bg-white border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all group">
-                <div className="w-12 h-12 rounded-xl bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+              <div className="p-8 rounded-2xl bg-white border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all group">
+                <div className="w-12 h-12 rounded-xl bg-[#F6EDF8] text-[#61126E] flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
-                <h3 className="font-extrabold text-lg text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">
+                <h3 className="font-extrabold text-lg text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-2">
                   Ethical Integrity
                 </h3>
                 <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed">
@@ -332,10 +332,10 @@ export function CareersPage() {
         </section>
 
         {/* Culture & Team Workplace Photo Gallery */}
-        <section className="py-16 bg-[#FFFFFF] border-b border-[#E6E2D8]">
+        <section className="py-16 bg-[#FFFFFF] border-b border-[#E8D5EC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="rounded-2xl overflow-hidden shadow-subtle border border-[#E6E2D8] group relative h-64">
+              <div className="rounded-2xl overflow-hidden shadow-subtle border border-[#E8D5EC] group relative h-64">
                 <img
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
                   alt="Team Whiteboard and Sprint Planning"
@@ -348,7 +348,7 @@ export function CareersPage() {
                 </div>
               </div>
 
-              <div className="rounded-2xl overflow-hidden shadow-subtle border border-[#E6E2D8] group relative h-64">
+              <div className="rounded-2xl overflow-hidden shadow-subtle border border-[#E8D5EC] group relative h-64">
                 <img
                   src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
                   alt="Ergonomic Workstation Setup"
@@ -361,7 +361,7 @@ export function CareersPage() {
                 </div>
               </div>
 
-              <div className="rounded-2xl overflow-hidden shadow-subtle border border-[#E6E2D8] group relative h-64">
+              <div className="rounded-2xl overflow-hidden shadow-subtle border border-[#E8D5EC] group relative h-64">
                 <img
                   src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80"
                   alt="Global Engineering Team Hackathon"
@@ -390,7 +390,7 @@ export function CareersPage() {
             </div>
 
             {/* Accordion List matching Image 1 structure */}
-            <div className="divide-y divide-[#E6E2D8]">
+            <div className="divide-y divide-[#E8D5EC]">
               {openRoles.map((role) => {
                 const isOpen = openRoleId === role.id;
                 return (
@@ -402,15 +402,15 @@ export function CareersPage() {
                       className="w-full flex items-center justify-between text-left group cursor-pointer py-1"
                       aria-expanded={isOpen}
                     >
-                      <span className="text-base sm:text-lg font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors leading-snug">
+                      <span className="text-base sm:text-lg font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors leading-snug">
                         {role.title} · {role.level} ({role.experience}) · {role.type} ·{" "}
                         {role.location}
                       </span>
 
-                      <div className="ml-4 shrink-0 text-[#0F1730] group-hover:text-[#FF5A36] transition-transform duration-200">
+                      <div className="ml-4 shrink-0 text-[#0F1730] group-hover:text-[#61126E] transition-transform duration-200">
                         <ChevronDown
                           className={`w-5 h-5 transition-transform duration-200 ${
-                            isOpen ? "rotate-180 text-[#FF5A36]" : "text-[#0F1730]"
+                            isOpen ? "rotate-180 text-[#61126E]" : "text-[#0F1730]"
                           }`}
                         />
                       </div>
@@ -437,7 +437,7 @@ export function CareersPage() {
                             <ul className="space-y-2 text-xs sm:text-sm text-[#4A5370]">
                               {role.requirements.map((req, i) => (
                                 <li key={i} className="flex items-start gap-2.5">
-                                  <span className="text-[#FF5A36] font-bold mt-1 text-xs">•</span>
+                                  <span className="text-[#61126E] font-bold mt-1 text-xs">•</span>
                                   <span>{req}</span>
                                 </li>
                               ))}
@@ -480,7 +480,7 @@ export function CareersPage() {
                                 setSelectedRoleForApply(role);
                                 setApplySubmitted(false);
                               }}
-                              className="px-6 py-2.5 rounded-full bg-[#FF5A36] hover:bg-[#E94A27] text-white font-bold text-xs transition-colors shadow-xs hover:shadow-md cursor-pointer"
+                              className="px-6 py-2.5 rounded-full bg-[#61126E] hover:bg-[#4E0E58] text-white font-bold text-xs transition-colors shadow-xs hover:shadow-md cursor-pointer"
                             >
                               Apply
                             </button>
@@ -529,7 +529,7 @@ export function CareersPage() {
               initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              className="bg-white rounded-2xl border border-[#E6E2D8] shadow-2xl max-w-xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto"
+              className="bg-white rounded-2xl border border-[#E8D5EC] shadow-2xl max-w-xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto"
             >
               <button
                 type="button"
@@ -561,7 +561,7 @@ export function CareersPage() {
               ) : (
                 <div className="space-y-6">
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] font-mono">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] font-mono">
                       JOB APPLICATION
                     </span>
                     <h3 className="text-xl sm:text-2xl font-extrabold text-[#0F1730] mt-1">
@@ -587,7 +587,7 @@ export function CareersPage() {
                         required
                         type="text"
                         placeholder="e.g. Alex Sharma"
-                        className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE] text-[#0F1730] focus:outline-none focus:border-[#FF5A36]"
+                        className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-[#E8D5EC] bg-[#FAF4FB] text-[#0F1730] focus:outline-none focus:border-[#61126E]"
                       />
                     </div>
 
@@ -600,7 +600,7 @@ export function CareersPage() {
                           required
                           type="email"
                           placeholder="alex@domain.com"
-                          className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE] text-[#0F1730] focus:outline-none focus:border-[#FF5A36]"
+                          className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-[#E8D5EC] bg-[#FAF4FB] text-[#0F1730] focus:outline-none focus:border-[#61126E]"
                         />
                       </div>
                       <div>
@@ -610,7 +610,7 @@ export function CareersPage() {
                         <input
                           type="tel"
                           placeholder="+91 98765 43210"
-                          className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE] text-[#0F1730] focus:outline-none focus:border-[#FF5A36]"
+                          className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-[#E8D5EC] bg-[#FAF4FB] text-[#0F1730] focus:outline-none focus:border-[#61126E]"
                         />
                       </div>
                     </div>
@@ -623,7 +623,7 @@ export function CareersPage() {
                         required
                         type="url"
                         placeholder="https://github.com/username or linkedin.com/in/alex"
-                        className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE] text-[#0F1730] focus:outline-none focus:border-[#FF5A36]"
+                        className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-[#E8D5EC] bg-[#FAF4FB] text-[#0F1730] focus:outline-none focus:border-[#61126E]"
                       />
                     </div>
 
@@ -634,7 +634,7 @@ export function CareersPage() {
                       <textarea
                         rows={3}
                         placeholder="Tell us why you are interested in Deskmerit and what projects you're proud of..."
-                        className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE] text-[#0F1730] focus:outline-none focus:border-[#FF5A36]"
+                        className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-[#E8D5EC] bg-[#FAF4FB] text-[#0F1730] focus:outline-none focus:border-[#61126E]"
                       />
                     </div>
 
@@ -648,7 +648,7 @@ export function CareersPage() {
                       </button>
                       <button
                         type="submit"
-                        className="px-6 py-2.5 rounded-full bg-[#FF5A36] hover:bg-[#E94A27] text-white font-bold text-xs transition-colors shadow-md flex items-center gap-1.5"
+                        className="px-6 py-2.5 rounded-full bg-[#61126E] hover:bg-[#4E0E58] text-white font-bold text-xs transition-colors shadow-md flex items-center gap-1.5"
                       >
                         <span>Submit Application</span>
                         <Send className="w-3.5 h-3.5" />

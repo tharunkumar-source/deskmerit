@@ -78,7 +78,7 @@ export function ContactPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F7F4EE] text-[#0F1730] font-sans">
+    <div className="min-h-screen bg-[#FAF4FB] text-[#0F1730] font-sans">
       <DeskmeritHeader />
 
       <main>
@@ -86,27 +86,27 @@ export function ContactPage() {
         <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
           {/* Dual Radial Glows */}
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#24305A]/40 blur-[120px] rounded-full pointer-events-none" />
-          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#FF5A36]/10 blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#61126E]/10 blur-[100px] rounded-full pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
-            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-slate-400 font-medium flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
               <span className="text-slate-300">Company</span>
               <span className="text-slate-500">/</span>
-              <span>Contact Us</span>
+              <span className="text-[#D8B4FE] font-bold">Contact Us</span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               {/* Left Column: Heading, Direct Inquiries & Global Office Directory */}
               <div className="lg:col-span-5 space-y-6">
-                <div className="inline-block px-3 py-1 rounded-full bg-[#FFE6DF]/15 border border-[#FF5A36]/30 text-[11px] font-bold uppercase tracking-wider text-[#FF5A36]">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
                   ENTERPRISE SALES & SUPPORT
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
-                  Talk to our team. <span className="text-[#FF5A36] block">We reply within 4 hours.</span>
+                  Talk to our team. <span className="text-[#D8B4FE]">We reply within 4 hours.</span>
                 </h1>
 
                 <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
@@ -115,9 +115,9 @@ export function ContactPage() {
 
                 {/* Direct Channel Badges (High Contrast & Clear Readability) */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                  <div className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-left shadow-md hover:border-[#FF5A36] transition-all group">
+                  <div className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-left shadow-md hover:border-[#61126E] transition-all group">
                     <div className="flex items-center gap-2 text-xs font-bold text-white mb-2">
-                      <Mail className="w-4 h-4 text-[#FF5A36]" />
+                      <Mail className="w-4 h-4 text-[#D8B4FE]" />
                       <span>Sales inquiries</span>
                     </div>
                     <a
@@ -125,13 +125,13 @@ export function ContactPage() {
                       className="text-xs sm:text-[13px] font-mono font-bold text-[#0F1730] bg-white hover:bg-slate-50 transition-colors flex items-center justify-between px-3 py-2 rounded-lg border border-slate-200 shadow-sm"
                     >
                       <span>sales@deskmerit.com</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36] shrink-0" />
+                      <ArrowRight className="w-3.5 h-3.5 text-[#D8B4FE] shrink-0" />
                     </a>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-left shadow-md hover:border-[#FF5A36] transition-all group">
+                  <div className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-left shadow-md hover:border-[#61126E] transition-all group">
                     <div className="flex items-center gap-2 text-xs font-bold text-white mb-2">
-                      <ShieldCheck className="w-4 h-4 text-[#FF5A36]" />
+                      <ShieldCheck className="w-4 h-4 text-[#D8B4FE]" />
                       <span>Security & Legal</span>
                     </div>
                     <a
@@ -139,7 +139,7 @@ export function ContactPage() {
                       className="text-xs sm:text-[13px] font-mono font-bold text-[#0F1730] bg-white hover:bg-slate-50 transition-colors flex items-center justify-between px-3 py-2 rounded-lg border border-slate-200 shadow-sm"
                     >
                       <span>security@deskmerit.com</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36] shrink-0" />
+                      <ArrowRight className="w-3.5 h-3.5 text-[#D8B4FE] shrink-0" />
                     </a>
                   </div>
                 </div>
@@ -152,7 +152,7 @@ export function ContactPage() {
                   <div className="grid grid-cols-2 gap-2.5 text-xs text-slate-300">
                     {offices.map((off) => (
                       <div key={off.city} className="flex items-center gap-2">
-                        <MapPin className="w-3.5 h-3.5 text-[#FF5A36] shrink-0" />
+                        <MapPin className="w-3.5 h-3.5 text-[#D8B4FE] shrink-0" />
                         <span className="truncate">{off.city}</span>
                       </div>
                     ))}
@@ -167,7 +167,7 @@ export function ContactPage() {
                   <div className="p-4 sm:p-8 bg-white">
                     {submitted ? (
                       <div className="text-center py-10 space-y-4">
-                        <div className="w-14 h-14 rounded-full bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center mx-auto shadow-sm">
+                        <div className="w-14 h-14 rounded-full bg-[#F6EDF8] text-[#D8B4FE] flex items-center justify-center mx-auto shadow-sm">
                           <CheckCircle2 className="w-8 h-8" />
                         </div>
                         <h3 className="text-2xl font-bold text-[#0F1730]">Message Received!</h3>
@@ -177,7 +177,7 @@ export function ContactPage() {
                         <div className="pt-4 flex items-center justify-center gap-4">
                           <Link
                             to="/"
-                            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF5A36] hover:underline"
+                            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#D8B4FE] hover:underline"
                           >
                             Return to home page <ArrowRight className="w-3.5 h-3.5" />
                           </Link>
@@ -210,7 +210,7 @@ export function ContactPage() {
                               value={formData.name}
                               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                               placeholder="Rahul Mehta"
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#FF5A36] focus:ring-2 focus:ring-[#FF5A36]/10"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#61126E] focus:ring-2 focus:ring-[#61126E]/10"
                             />
                           </div>
 
@@ -224,7 +224,7 @@ export function ContactPage() {
                               value={formData.email}
                               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                               placeholder="rahul@enterprise.com"
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#FF5A36] focus:ring-2 focus:ring-[#FF5A36]/10"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#61126E] focus:ring-2 focus:ring-[#61126E]/10"
                             />
                           </div>
                         </div>
@@ -240,7 +240,7 @@ export function ContactPage() {
                               value={formData.company}
                               onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                               placeholder="Apex Global Systems"
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#FF5A36] focus:ring-2 focus:ring-[#FF5A36]/10"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#61126E] focus:ring-2 focus:ring-[#61126E]/10"
                             />
                           </div>
 
@@ -251,7 +251,7 @@ export function ContactPage() {
                             <select
                               value={formData.teamSize}
                               onChange={(e) => setFormData({ ...formData, teamSize: e.target.value })}
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] focus:bg-white focus:outline-none focus:border-[#FF5A36]"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] focus:bg-white focus:outline-none focus:border-[#61126E]"
                             >
                               <option value="1–15">1–15 members</option>
                               <option value="16–50">16–50 members</option>
@@ -269,7 +269,7 @@ export function ContactPage() {
                           <select
                             value={formData.inquiryType}
                             onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
-                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] focus:bg-white focus:outline-none focus:border-[#FF5A36]"
+                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] focus:bg-white focus:outline-none focus:border-[#61126E]"
                           >
                             <option value="Enterprise Deployment & Custom SLA">
                               Enterprise Deployment & Custom SLA
@@ -299,13 +299,13 @@ export function ContactPage() {
                             value={formData.message}
                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                             placeholder="Tell us about your team setup, timeline, or specific compliance requirements..."
-                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#FF5A36] focus:ring-2 focus:ring-[#FF5A36]/10 resize-none"
+                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#61126E] focus:ring-2 focus:ring-[#61126E]/10 resize-none"
                           />
                         </div>
 
                         <button
                           type="submit"
-                          className="w-full py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E04422] text-white font-bold text-xs transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 mt-2 cursor-pointer"
+                          className="w-full py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-bold text-xs transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 mt-2 cursor-pointer"
                         >
                           <Send className="w-3.5 h-3.5" />
                           <span>Send Message →</span>
@@ -326,7 +326,7 @@ export function ContactPage() {
         {/* Global Offices Cards Section */}
         <section className="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#61126E]">
               DIRECT LOCATIONS
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F1730] mt-1.5">
@@ -341,13 +341,13 @@ export function ContactPage() {
             {offices.map((office) => (
               <div
                 key={office.city}
-                className="group rounded-2xl bg-white border border-[#E6E2D8] p-6 shadow-sm hover:border-[#FF5A36] hover:shadow-md transition-all flex flex-col justify-between"
+                className="group rounded-2xl bg-white border border-[#E8D5EC] p-6 shadow-sm hover:border-[#61126E] hover:shadow-md transition-all flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-[#F7F4EE] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:text-white flex items-center justify-center transition-colors mb-4 border border-[#E6E2D8]/60">
+                  <div className="w-10 h-10 rounded-xl bg-[#FAF4FB] text-[#0F1730] group-hover:bg-[#61126E] group-hover:text-white flex items-center justify-center transition-colors mb-4 border border-[#E8D5EC]/60">
                     <Building2 className="w-5 h-5 stroke-[1.8]" />
                   </div>
-                  <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                  <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#61126E] transition-colors">
                     {office.city}
                   </h3>
                   <p className="text-xs text-neutral-600 mt-1 leading-relaxed">
@@ -361,7 +361,7 @@ export function ContactPage() {
                   </div>
                   <a
                     href={`mailto:${office.email}`}
-                    className="text-xs font-bold text-[#FF5A36] hover:underline block"
+                    className="text-xs font-bold text-[#61126E] hover:underline block"
                   >
                     {office.email}
                   </a>

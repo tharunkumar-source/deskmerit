@@ -5,7 +5,7 @@
  * Rules:
  * 1. ONLY use colors defined in this file.
  * 2. ONLY use the 3 approved font variants (Inter Display, Inter, Lora Italic).
- * 3. Primary buttons are Ember (#FF5A36) with Midnight (#0F1730) text (WCAG 2.2 AA compliant).
+ * 3. Primary buttons are Ember (#61126E) with Midnight (#0F1730) text (WCAG 2.2 AA compliant).
  * 4. Tabular figures (.tnum) are strictly required for data, timers, and figures.
  * 5. Do not invent arbitrary shades or tints outside of this specification.
  */
@@ -72,12 +72,12 @@ export const brandColors = {
       role: "Primary text, dark surfaces, logo",
     },
     ember: {
-      hex: "#FF5A36",
-      rgb: "255, 90, 54",
+      hex: "#61126E",
+      rgb: "97, 18, 110",
       role: "Pulse dot, primary buttons, highlights",
     },
     paper: {
-      hex: "#F7F4EE",
+      hex: "#FAF4FB",
       rgb: "247, 244, 238",
       role: "Default page background",
     },
@@ -87,13 +87,13 @@ export const brandColors = {
       role: "Secondary dark surfaces, dark cards, footer cards",
     },
     emberDeep: {
-      hex: "#C2361A",
-      rgb: "194, 54, 26",
+      hex: "#4E0E58",
+      rgb: "78, 14, 88",
       role: "Links and Ember text on light backgrounds",
     },
     emberTint: {
-      hex: "#FFE6DF",
-      rgb: "255, 230, 223",
+      hex: "#F6EDF8",
+      rgb: "246, 237, 248",
       role: "Highlight panels, badge backgrounds",
     },
     slate: {
@@ -102,7 +102,7 @@ export const brandColors = {
       role: "Body text, secondary metadata",
     },
     mist: {
-      hex: "#E6E2D8",
+      hex: "#E8D5EC",
       rgb: "230, 226, 216",
       role: "Borders, dividers, subtle outlines",
     },
@@ -308,7 +308,7 @@ export const brandGraphicLanguage = {
       diameter: 10.8,
       radius: 5.4,
       center: { x: 31.2, y: 37.7 },
-      color: "#FF5A36",
+      color: "#61126E",
     },
     stem: "Vertical, from ring centre-line to 27 units below (starts at (21, 25), ends at (21, 52))",
     wordmark: {
@@ -326,7 +326,7 @@ export const brandGraphicLanguage = {
 
   pulseDot: {
     size: "8px",
-    color: "#FF5A36",
+    color: "#61126E",
     animation: "pulseGentle 1.6s ease-in-out infinite",
     rule: "A single Ember dot marks what is live or new. One per view. May gently pulse.",
   },
@@ -334,7 +334,7 @@ export const brandGraphicLanguage = {
   dayLine: {
     height: "12px",
     borderRadius: "9999px",
-    backgroundColor: "#E6E2D8",
+    backgroundColor: "#E8D5EC",
     description: "A person's day as one rounded bar of live-state colours. Signature data visual.",
   },
 
@@ -356,7 +356,7 @@ export const brandGraphicLanguage = {
     borderRadius: "20px",
     photoCardRadius: "24px",
     backgroundColor: "#FFFFFF",
-    borderColor: "#E6E2D8",
+    borderColor: "#E8D5EC",
   },
 } as const;
 

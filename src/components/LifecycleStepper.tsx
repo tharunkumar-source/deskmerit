@@ -108,12 +108,12 @@ export function LifecycleStepper() {
   const activeStage = stages.find((s) => s.id === activeStageId) || stages[0];
 
   return (
-    <section className="py-20 bg-[#F7F4EE] border-b border-[#E6E2D8]">
+    <section className="py-20 bg-[#FAF4FB] border-b border-[#E8D5EC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
           <div>
-            <p className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
+            <p className="text-xs font-bold uppercase tracking-wider text-[#61126E]">
               Work-time lifecycle
             </p>
             <h2 className="mt-1 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F1730] tracking-[-0.025em]">
@@ -125,14 +125,14 @@ export function LifecycleStepper() {
           </div>
           <Link
             to="/features"
-            className="inline-flex items-center gap-1 text-xs font-bold text-[#C2361A] hover:text-[#FF5A36] transition-colors shrink-0"
+            className="inline-flex items-center gap-1 text-xs font-bold text-[#4E0E58] hover:text-[#61126E] transition-colors shrink-0"
           >
             Explore all capabilities <ArrowRight size={14} />
           </Link>
         </div>
 
         {/* 5-Step Navigation Tabs */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 p-1.5 bg-[#FFFFFF] rounded-2xl border border-[#E6E2D8] shadow-subtle mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 p-1.5 bg-[#FFFFFF] rounded-2xl border border-[#E8D5EC] shadow-subtle mb-8">
           {stages.map((s) => {
             const Icon = s.icon;
             const isSelected = s.id === activeStageId;
@@ -144,10 +144,10 @@ export function LifecycleStepper() {
                 className={`flex items-center gap-2 p-3 rounded-xl text-left transition-all ${
                   isSelected
                     ? "bg-[#0F1730] text-white shadow-sm"
-                    : "text-[#4A5370] hover:text-[#0F1730] hover:bg-[#F7F4EE]"
+                    : "text-[#4A5370] hover:text-[#0F1730] hover:bg-[#FAF4FB]"
                 }`}
               >
-                <Icon className={`w-4 h-4 shrink-0 ${isSelected ? "text-[#FF5A36]" : "text-[#4A5370]"}`} />
+                <Icon className={`w-4 h-4 shrink-0 ${isSelected ? "text-[#61126E]" : "text-[#4A5370]"}`} />
                 <span className="text-xs font-bold truncate">{s.name}</span>
               </button>
             );
@@ -155,9 +155,9 @@ export function LifecycleStepper() {
         </div>
 
         {/* Active Stage Detail Panel */}
-        <div className="bg-[#FFFFFF] rounded-[24px] p-8 sm:p-12 border border-[#E6E2D8] shadow-card grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="bg-[#FFFFFF] rounded-[24px] p-8 sm:p-12 border border-[#E8D5EC] shadow-card grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFE6DF] text-[#C2361A] text-xs font-bold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F6EDF8] text-[#4E0E58] text-xs font-bold">
               <span className="pulse-dot" />
               <span>{activeStage.badge}</span>
             </div>
@@ -182,7 +182,7 @@ export function LifecycleStepper() {
             <div className="pt-4 flex items-center gap-4">
               <Link
                 to={activeStage.link}
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF5A36] hover:text-[#E94A27] transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#61126E] hover:text-[#4E0E58] transition-colors"
               >
                 Learn more about {activeStage.name.split(". ")[1]} <ArrowRight size={14} />
               </Link>
@@ -190,11 +190,11 @@ export function LifecycleStepper() {
           </div>
 
           {/* Metric & Callout Card */}
-          <div className="lg:col-span-5 bg-[#F7F4EE] rounded-2xl p-6 sm:p-8 border border-[#E6E2D8] text-center space-y-4">
+          <div className="lg:col-span-5 bg-[#FAF4FB] rounded-2xl p-6 sm:p-8 border border-[#E8D5EC] text-center space-y-4">
             <div className="text-xs font-semibold text-[#4A5370] uppercase tracking-wider">
               Measurable Impact
             </div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-[#C2361A] font-display">
+            <div className="text-2xl sm:text-3xl font-extrabold text-[#4E0E58] font-display">
               {activeStage.metric}
             </div>
             <p className="text-xs text-[#4A5370] leading-relaxed">

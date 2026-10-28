@@ -34,12 +34,12 @@ function HeroInteractiveAppCard() {
   return (
     <div className="relative pt-6 pb-12 px-1 sm:px-6 w-full max-w-full sm:max-w-[560px] mx-auto overflow-hidden sm:overflow-visible">
       {/* Background Subtle Gradient Aura */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[480px] h-[280px] sm:h-[480px] bg-gradient-to-tr from-[#FF5A36]/15 via-indigo-500/10 to-transparent rounded-full blur-2xl sm:blur-3xl pointer-events-none -z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[480px] h-[280px] sm:h-[480px] bg-gradient-to-tr from-[#61126E]/15 via-indigo-500/10 to-transparent rounded-full blur-2xl sm:blur-3xl pointer-events-none -z-0" />
 
       {/* ========================================================================= */}
       {/* CARD 1: MAIN BASE CARD — TODAY'S ACTIVITY (Reference Image 2)               */}
       {/* ========================================================================= */}
-      <div className="relative z-10 w-full max-w-full bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-7 border border-[#E6E2D8] shadow-[0_20px_50px_rgba(15,23,48,0.08)] hover:shadow-[0_25px_60px_rgba(15,23,48,0.12)] transition-all duration-300">
+      <div className="relative z-10 w-full max-w-full bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-7 border border-[#E8D5EC] shadow-[0_20px_50px_rgba(15,23,48,0.08)] hover:shadow-[0_25px_60px_rgba(15,23,48,0.12)] transition-all duration-300">
         {/* Header */}
         <div className="flex items-center justify-between pb-3.5 border-b border-slate-100">
           <div>
@@ -58,7 +58,7 @@ function HeroInteractiveAppCard() {
             <div className="h-full bg-gradient-to-r from-[#4F46E5] to-[#6366F1] w-[30%]" title="Tracked: VS Code" />
             <div className="h-full bg-[#818CF8] w-[14%]" title="Tracked: Figma" />
             <div className="h-full bg-[#94A3B8] w-[10%]" title="Private Time (Excluded)" />
-            <div className="h-full bg-[#FF5A36] w-[5%]" title="Idle Time" />
+            <div className="h-full bg-[#61126E] w-[5%]" title="Idle Time" />
             <div className="h-full bg-gradient-to-r from-[#4F46E5] to-[#6366F1] w-[33%]" title="Tracked: Jira Sprint" />
           </div>
 
@@ -82,7 +82,7 @@ function HeroInteractiveAppCard() {
               <span className="w-2.5 h-2.5 rounded-sm bg-[#94A3B8]" /> Private 45m
             </span>
             <span className="flex items-center gap-1 font-medium text-[#0F1730]">
-              <span className="w-2.5 h-2.5 rounded-sm bg-[#FF5A36]" /> Idle 20m
+              <span className="w-2.5 h-2.5 rounded-sm bg-[#61126E]" /> Idle 20m
             </span>
           </div>
         </div>
@@ -127,7 +127,7 @@ function HeroInteractiveAppCard() {
         {/* Bottom Privacy Callout */}
         <div className="mt-4 pt-3 border-t border-slate-100 text-[10px] sm:text-[11px] text-slate-500 flex items-center justify-between gap-2">
           <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
-            <ShieldCheck className="w-4 h-4 text-[#FF5A36] shrink-0" />
+            <ShieldCheck className="w-4 h-4 text-[#61126E] shrink-0" />
             <span className="truncate">Zero keystrokes logged · 45m private excluded</span>
           </div>
           <span className="text-[10px] text-slate-400 font-mono hidden sm:inline shrink-0">Encrypted AES-256</span>
@@ -137,7 +137,7 @@ function HeroInteractiveAppCard() {
       {/* ========================================================================= */}
       {/* CARD 2: OVERLAPPING TOP-RIGHT CARD — TEAM LIVE STATUS (Hidden on Mobile)  */}
       {/* ========================================================================= */}
-      <div className="hidden sm:block absolute -top-6 -right-2 sm:-right-8 w-64 sm:w-72 bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-[#E6E2D8] shadow-[0_20px_45px_rgba(15,23,48,0.14)] z-20 hover:z-30 hover:-translate-y-1 transition-all duration-300">
+      <div className="hidden sm:block absolute -top-6 -right-2 sm:-right-8 w-64 sm:w-72 bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-[#E8D5EC] shadow-[0_20px_45px_rgba(15,23,48,0.14)] z-20 hover:z-30 hover:-translate-y-1 transition-all duration-300">
         <div className="flex items-center justify-between pb-2 border-b border-slate-100">
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -197,7 +197,7 @@ function HeroInteractiveAppCard() {
       {/* ========================================================================= */}
       {/* CARD 3: OVERLAPPING BOTTOM-LEFT CARD — PRODUCTIVITY (Hidden on Mobile)    */}
       {/* ========================================================================= */}
-      <div className="hidden sm:block absolute -bottom-8 -left-2 sm:-left-8 w-60 sm:w-68 bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-[#E6E2D8] shadow-[0_20px_45px_rgba(15,23,48,0.14)] z-20 hover:z-30 hover:-translate-y-1 transition-all duration-300">
+      <div className="hidden sm:block absolute -bottom-8 -left-2 sm:-left-8 w-60 sm:w-68 bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-[#E8D5EC] shadow-[0_20px_45px_rgba(15,23,48,0.14)] z-20 hover:z-30 hover:-translate-y-1 transition-all duration-300">
         <div className="flex items-center justify-between mb-1.5">
           <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
             Time tracking summary
@@ -215,13 +215,13 @@ function HeroInteractiveAppCard() {
         <div className="h-2.5 w-full bg-slate-100 rounded-full flex overflow-hidden mb-2">
           <div className="bg-[#4F46E5] h-full" style={{ width: "82%" }} />
           <div className="bg-[#94A3B8] h-full" style={{ width: "11%" }} />
-          <div className="bg-[#FF5A36] h-full" style={{ width: "7%" }} />
+          <div className="bg-[#61126E] h-full" style={{ width: "7%" }} />
         </div>
 
         <div className="flex justify-between text-[10px] text-slate-500 font-mono">
           <span className="text-[#4F46E5] font-bold">82% Productive</span>
           <span>11% Neutral</span>
-          <span className="text-[#FF5A36] font-bold">7% Idle</span>
+          <span className="text-[#61126E] font-bold">7% Idle</span>
         </div>
       </div>
 
@@ -343,7 +343,7 @@ export function DeskmeritHero() {
       icon: (
         <svg viewBox="0 0 24 24" className="w-full h-full" fill="none">
           <rect x="3" y="3" width="18" height="18" rx="5" fill="#0F1730"/>
-          <circle cx="12" cy="12" r="5" fill="#FF5A36"/>
+          <circle cx="12" cy="12" r="5" fill="#61126E"/>
           <circle cx="12" cy="12" r="2" fill="#FFFFFF"/>
         </svg>
       ),
@@ -377,15 +377,15 @@ export function DeskmeritHero() {
           {/* Left Column: Bold Typography & Lead Capture (Reference Image 4) */}
           <div className="lg:col-span-6 space-y-6 text-left">
             {/* Clean Eyebrow Standard */}
-            <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
+            <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#61126E] animate-pulse" />
               <span>AUTOMATIC TIME TRACKING FOR MODERN TEAMS</span>
             </div>
 
             {/* H1 Headline Matching Reference Image 4 Style */}
             <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-[#0A2540] tracking-[-0.035em] leading-[1.08]">
               Know where the work goes.{" "}
-              <span className="block text-[#FF5A36]">
+              <span className="text-[#61126E]">
                 Without watching over shoulders.
               </span>
             </h1>
@@ -400,7 +400,7 @@ export function DeskmeritHero() {
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
               <Link
                 to="/signup"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E04422] text-white font-bold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.32)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-bold text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.32)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer"
               >
                 <span>Start free trial</span>
                 <ArrowRight className="w-4 h-4" />
@@ -425,7 +425,7 @@ export function DeskmeritHero() {
                 <span>Windows, macOS & Linux</span>
               </div>
               <div className="flex items-center gap-1.5 font-medium">
-                <Clock className="w-4 h-4 text-[#FF5A36]" />
+                <Clock className="w-4 h-4 text-[#61126E]" />
                 <span>10-minute setup</span>
               </div>
             </div>

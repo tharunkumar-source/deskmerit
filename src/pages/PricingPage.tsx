@@ -98,33 +98,33 @@ export function PricingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F7F4EE] text-[#0F1730] font-sans">
+    <div className="min-h-screen bg-[#FAF4FB] text-[#0F1730] font-sans">
       <DeskmeritHeader />
 
       <main>
         {/* SECTION 1: Deep Navy Hero Matching Platform Standard with Product Showcase */}
         <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden mb-8">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
-            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-slate-400 font-medium flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
-              <span>Pricing</span>
+              <span className="text-[#D8B4FE] font-bold">Pricing</span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column */}
               <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
-                <div className="inline-block px-3.5 py-1.5 rounded-full bg-[#FFE6DF]/15 border border-[#FF5A36]/30 text-[11px] font-bold uppercase tracking-wider text-[#FF5A36]">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
                   Transparent, Predictable Pricing
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
                   Simple plans,{" "}
-                  <span className="text-[#FF5A36] block">predictable pricing.</span>
+                  <span className="text-[#D8B4FE]">predictable pricing.</span>
                 </h1>
 
                 <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
@@ -134,7 +134,7 @@ export function PricingPage() {
                 <div className="flex flex-wrap items-center gap-3.5 pt-2">
                   <Link
                     to="/signup"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all"
                   >
                     <span>Start free 14-day trial</span>
                     <ArrowRight className="w-4 h-4" />
@@ -168,7 +168,7 @@ export function PricingPage() {
         {/* SECTION 2: 3-Tier Cards with Highlighted Pro Tier (Sqalible Screenshot 2) */}
         <section className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
               Flexible Subscriptions
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730]">
@@ -176,7 +176,7 @@ export function PricingPage() {
             </h2>
 
             {/* Monthly / Annual Toggle */}
-            <div className="mt-6 inline-flex items-center p-1.5 rounded-2xl bg-[#FFFFFF] border border-[#E6E2D8] shadow-sm">
+            <div className="mt-6 inline-flex items-center p-1.5 rounded-2xl bg-[#FFFFFF] border border-[#E8D5EC] shadow-sm">
               <button
                 type="button"
                 onClick={() => setBillingInterval("monthly")}
@@ -194,7 +194,7 @@ export function PricingPage() {
                 }`}
               >
                 <span>Annual</span>
-                <span className="px-2 py-0.5 rounded-md text-[10px] bg-[#FFE6DF] text-[#C2361A] font-bold">
+                <span className="px-2 py-0.5 rounded-md text-[10px] bg-[#F6EDF8] text-[#4E0E58] font-bold">
                   Save 20%
                 </span>
               </button>
@@ -204,9 +204,9 @@ export function PricingPage() {
           {/* 3 Main Tier Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             {/* 1. Starter */}
-            <div className="rounded-3xl p-8 bg-white border border-[#E6E2D8] shadow-card flex flex-col justify-between">
+            <div className="rounded-3xl p-8 bg-white border border-[#E8D5EC] shadow-card flex flex-col justify-between">
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#4A5370] bg-[#F7F4EE] px-3 py-1 rounded-full border border-[#E6E2D8] inline-block mb-4">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#4A5370] bg-[#FAF4FB] px-3 py-1 rounded-full border border-[#E8D5EC] inline-block mb-4">
                   Starter Plan
                 </span>
                 <h3 className="text-2xl font-extrabold text-[#0F1730]">Free</h3>
@@ -214,7 +214,7 @@ export function PricingPage() {
                   For freelancers and small bootstrapped teams up to 5 seats.
                 </p>
 
-                <div className="mb-6 pb-6 border-b border-[#E6E2D8]">
+                <div className="mb-6 pb-6 border-b border-[#E8D5EC]">
                   <span className="text-4xl font-extrabold text-[#0F1730]">Free</span>
                   <span className="text-xs text-[#4A5370] ml-2">up to 5 users forever</span>
                 </div>
@@ -237,20 +237,20 @@ export function PricingPage() {
 
               <Link
                 to="/signup"
-                className="w-full py-3.5 rounded-xl border border-[#0F1730] hover:bg-[#F7F4EE] text-[#0F1730] font-bold text-xs text-center transition-all"
+                className="w-full py-3.5 rounded-xl border border-[#0F1730] hover:bg-[#FAF4FB] text-[#0F1730] font-bold text-xs text-center transition-all"
               >
                 Start free forever
               </Link>
             </div>
 
             {/* 2. Pro (Highlighted Middle Card with Sqalible Styling) */}
-            <div className="rounded-3xl p-8 bg-white border-2 border-[#FF5A36] shadow-2xl relative flex flex-col justify-between">
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#FF5A36] text-white text-[10px] font-extrabold uppercase tracking-wider px-4 py-1 rounded-full shadow-md">
+            <div className="rounded-3xl p-8 bg-white border-2 border-[#61126E] shadow-2xl relative flex flex-col justify-between">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#61126E] text-white text-[10px] font-extrabold uppercase tracking-wider px-4 py-1 rounded-full shadow-md">
                 ★ Most Popular
               </div>
 
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF] px-3 py-1 rounded-full inline-block mb-4 mt-2">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#61126E] bg-[#F6EDF8] px-3 py-1 rounded-full inline-block mb-4 mt-2">
                   Pro Plan
                 </span>
                 <h3 className="text-2xl font-extrabold text-[#0F1730]">Growing Teams</h3>
@@ -258,12 +258,12 @@ export function PricingPage() {
                   For agencies and engineering teams that bill client time.
                 </p>
 
-                <div className="mb-6 pb-6 border-b border-[#E6E2D8]">
+                <div className="mb-6 pb-6 border-b border-[#E8D5EC]">
                   <div className="flex items-baseline gap-1">
                     <span className="text-4xl font-extrabold text-[#0F1730]">{currency.symbol}{proRate}</span>
                     <span className="text-xs text-[#4A5370]">/ user / month</span>
                   </div>
-                  <span className="text-[11px] text-[#FF5A36] font-semibold mt-1 block">
+                  <span className="text-[11px] text-[#61126E] font-semibold mt-1 block">
                     Billed {isAnnual ? "annually (20% off)" : "monthly"}
                   </span>
                 </div>
@@ -281,7 +281,7 @@ export function PricingPage() {
                   ].map((feat, i) => (
                     <li key={i} className="flex items-center gap-2.5">
                       <Check className="w-4 h-4 text-[#12B886] shrink-0" />
-                      <span className={i === 0 ? "font-bold text-[#FF5A36]" : ""}>{feat}</span>
+                      <span className={i === 0 ? "font-bold text-[#61126E]" : ""}>{feat}</span>
                     </li>
                   ))}
                 </ul>
@@ -289,16 +289,16 @@ export function PricingPage() {
 
               <Link
                 to="/signup"
-                className="w-full py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-xs text-center transition-all shadow-md hover:shadow-glow-ember"
+                className="w-full py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs text-center transition-all shadow-md hover:shadow-glow-ember"
               >
                 Start 14-day free trial →
               </Link>
             </div>
 
             {/* 3. Enterprise */}
-            <div className="rounded-3xl p-8 bg-white border border-[#E6E2D8] shadow-card flex flex-col justify-between">
+            <div className="rounded-3xl p-8 bg-white border border-[#E8D5EC] shadow-card flex flex-col justify-between">
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#4A5370] bg-[#F7F4EE] px-3 py-1 rounded-full border border-[#E6E2D8] inline-block mb-4">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#4A5370] bg-[#FAF4FB] px-3 py-1 rounded-full border border-[#E8D5EC] inline-block mb-4">
                   Enterprise
                 </span>
                 <h3 className="text-2xl font-extrabold text-[#0F1730]">Regulated & Large</h3>
@@ -306,7 +306,7 @@ export function PricingPage() {
                   For 200+ seat organizations requiring governance & compliance.
                 </p>
 
-                <div className="mb-6 pb-6 border-b border-[#E6E2D8]">
+                <div className="mb-6 pb-6 border-b border-[#E8D5EC]">
                   <span className="text-4xl font-extrabold text-[#0F1730]">Custom</span>
                   <span className="text-xs text-[#4A5370] ml-2">Annual invoice billing</span>
                 </div>
@@ -369,8 +369,8 @@ export function PricingPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 {/* Left: Interactive Controls */}
                 <div className="lg:col-span-7 space-y-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A264F] text-xs font-semibold text-[#FF5A36]">
-                    <Sliders className="w-3.5 h-3.5" />
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#61126E]/40 border border-[#A81CD0]/50 text-xs font-semibold text-[#F0ABFC] shadow-xs">
+                    <Sliders className="w-3.5 h-3.5 text-[#F0ABFC]" />
                     <span>Live Cost Estimator</span>
                   </div>
 
@@ -386,7 +386,7 @@ export function PricingPage() {
                       onClick={() => setSelectedPlanForCalc("pro")}
                       className={`px-4 py-1.5 rounded-xl text-xs font-bold transition-all ${
                         selectedPlanForCalc === "pro"
-                          ? "bg-[#FF5A36] text-white font-extrabold shadow-sm"
+                          ? "bg-[#61126E] text-white font-extrabold shadow-sm border border-[#A81CD0] shadow-[0_0_15px_rgba(168,85,247,0.35)]"
                           : "bg-[#1A264F] text-white border border-[#2B3969]"
                       }`}
                     >
@@ -397,7 +397,7 @@ export function PricingPage() {
                       onClick={() => setSelectedPlanForCalc("premium")}
                       className={`px-4 py-1.5 rounded-xl text-xs font-bold transition-all ${
                         selectedPlanForCalc === "premium"
-                          ? "bg-[#FF5A36] text-white font-extrabold shadow-sm"
+                          ? "bg-[#61126E] text-white font-extrabold shadow-sm border border-[#A81CD0] shadow-[0_0_15px_rgba(168,85,247,0.35)]"
                           : "bg-[#1A264F] text-white border border-[#2B3969]"
                       }`}
                     >
@@ -418,7 +418,7 @@ export function PricingPage() {
                       step={5}
                       value={teamSize}
                       onChange={(e) => setTeamSize(Number(e.target.value))}
-                      className="w-full accent-[#FF5A36] cursor-pointer"
+                      className="w-full accent-[#A81CD0] cursor-pointer"
                     />
                     <div className="flex justify-between text-[11px] text-[#9AA1B2] font-mono">
                       <span>5 seats</span>
@@ -446,7 +446,7 @@ export function PricingPage() {
 
                   <Link
                     to="/signup"
-                    className="block w-full py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-xs text-center transition-all shadow-md hover:shadow-glow-ember"
+                    className="block w-full py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs text-center transition-all shadow-md hover:shadow-glow-ember"
                   >
                     Start 14-day free trial for {teamSize} users
                   </Link>
@@ -457,10 +457,10 @@ export function PricingPage() {
         </section>
 
         {/* SECTION 4: Full Feature Matrix by Module (Sqalible Screenshot 2) */}
-        <section className="py-20 lg:py-28 bg-[#FFFFFF] border-b border-[#E6E2D8]">
+        <section className="py-20 lg:py-28 bg-[#FFFFFF] border-b border-[#E8D5EC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-12">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                 Detailed Comparison
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730]">
@@ -468,27 +468,27 @@ export function PricingPage() {
               </h2>
             </div>
 
-            <div className="overflow-x-auto border border-[#E6E2D8] rounded-2xl shadow-card">
+            <div className="overflow-x-auto border border-[#E8D5EC] rounded-2xl shadow-card">
               <table className="w-full text-left text-xs">
                 <thead>
                   <tr className="bg-[#0F1730] text-white">
                     <th className="py-4 px-6 font-bold text-sm">Capability</th>
                     <th className="py-4 px-4 font-bold text-center">Starter</th>
-                    <th className="py-4 px-4 font-bold text-center bg-[#FF5A36] text-white font-extrabold">Pro</th>
+                    <th className="py-4 px-4 font-bold text-center bg-[#61126E] text-white font-extrabold">Pro</th>
                     <th className="py-4 px-4 font-bold text-center">Premium</th>
                     <th className="py-4 px-4 font-bold text-center">Enterprise</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#E6E2D8]">
+                <tbody className="divide-y divide-[#E8D5EC]">
                   {matrixSections.map((sec, secIdx) => (
                     <React.Fragment key={secIdx}>
-                      <tr className="bg-[#F7F4EE]">
+                      <tr className="bg-[#FAF4FB]">
                         <td colSpan={5} className="py-3 px-6 font-extrabold text-xs text-[#0F1730] uppercase tracking-wider">
                           {sec.category}
                         </td>
                       </tr>
                       {sec.features.map((row, rIdx) => (
-                        <tr key={rIdx} className="hover:bg-[#F7F4EE]/50 transition-colors">
+                        <tr key={rIdx} className="hover:bg-[#FAF4FB]/50 transition-colors">
                           <td className="py-3.5 px-6 font-medium text-[#0F1730]">{row.name}</td>
                           <td className="py-3.5 px-4 text-center">
                             {typeof row.starter === "boolean" ? (
@@ -497,11 +497,11 @@ export function PricingPage() {
                               <span className="font-semibold text-[#4A5370]">{row.starter}</span>
                             )}
                           </td>
-                          <td className="py-3.5 px-4 text-center bg-[#FFE6DF]/30">
+                          <td className="py-3.5 px-4 text-center bg-[#F6EDF8]/30">
                             {typeof row.pro === "boolean" ? (
                               row.pro ? <Check className="w-4 h-4 text-[#12B886] mx-auto" /> : <Minus className="w-4 h-4 text-[#9AA1B2] mx-auto" />
                             ) : (
-                              <span className="font-bold text-[#FF5A36]">{row.pro}</span>
+                              <span className="font-bold text-[#61126E]">{row.pro}</span>
                             )}
                           </td>
                           <td className="py-3.5 px-4 text-center">

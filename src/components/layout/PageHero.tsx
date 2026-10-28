@@ -348,21 +348,21 @@ export function PageHero({
               {description}
             </p>
             {actions ? (
-              <div className="mt-8 flex flex-wrap items-center gap-4">
+              <div className="mt-8 flex flex-row items-center gap-3 sm:gap-4">
                 {actions}
               </div>
             ) : showActions ? (
-              <div className="mt-8 flex flex-wrap items-center gap-4">
+              <div className="mt-8 flex flex-row items-center gap-3 sm:gap-4">
                 <a
                   href="/signup"
-                  className="rounded-full bg-primary hover:bg-teal-600 px-7 py-3.5 text-xs font-semibold text-white shadow-lg transition-all hover:scale-105"
+                  className="rounded-full bg-primary hover:bg-teal-600 px-4 sm:px-7 py-3 sm:py-3.5 text-xs font-semibold text-white shadow-lg transition-all hover:scale-105 whitespace-nowrap shrink-0"
                 >
                   Start free trial
                   <ArrowRightIcon size={16} strokeWidth={2} className="inline ml-1.5" aria-hidden="true" />
                 </a>
                 <a
                   href="/contact"
-                  className="rounded-full border border-neutral-700 bg-neutral-900/60 hover:bg-neutral-800 px-6 py-3.5 text-xs font-semibold text-neutral-200 transition-colors"
+                  className="rounded-full border border-neutral-700 bg-neutral-900/60 hover:bg-neutral-800 px-4 sm:px-6 py-3 sm:py-3.5 text-xs font-semibold text-neutral-200 transition-colors whitespace-nowrap shrink-0"
                 >
                   Book a demo
                 </a>

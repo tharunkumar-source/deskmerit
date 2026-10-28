@@ -108,9 +108,9 @@ export function TeamLiveOverviewWidget() {
   };
 
   return (
-    <div className="w-full bg-[#FFFFFF] rounded-[24px] p-6 shadow-elevated border border-[#E6E2D8] text-[#0F1730]">
+    <div className="w-full bg-[#FFFFFF] rounded-[24px] p-6 shadow-elevated border border-[#E8D5EC] text-[#0F1730]">
       {/* Top Header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-[#E6E2D8]">
+      <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-[#E8D5EC]">
         <div>
           <h3 className="font-bold text-base text-[#0F1730]">Team overview</h3>
           <p className="text-xs text-[#4A5370]">Real-time work signals · Updated every 60s</p>
@@ -134,8 +134,8 @@ export function TeamLiveOverviewWidget() {
       </div>
 
       {/* 3 Metric Cards */}
-      <div className="grid grid-cols-3 gap-3 py-4 border-b border-[#E6E2D8]">
-        <div className="bg-[#F7F4EE] rounded-xl p-3 border border-[#E6E2D8]/60">
+      <div className="grid grid-cols-3 gap-3 py-4 border-b border-[#E8D5EC]">
+        <div className="bg-[#FAF4FB] rounded-xl p-3 border border-[#E8D5EC]/60">
           <div className="text-[11px] font-semibold text-[#4A5370]">Productive time</div>
           <div className="text-xl font-bold text-[#0F1730] mt-0.5 tnum">82%</div>
           <div className="text-[10px] font-semibold text-[#12B886] flex items-center gap-0.5 mt-0.5">
@@ -143,7 +143,7 @@ export function TeamLiveOverviewWidget() {
           </div>
         </div>
 
-        <div className="bg-[#F7F4EE] rounded-xl p-3 border border-[#E6E2D8]/60">
+        <div className="bg-[#FAF4FB] rounded-xl p-3 border border-[#E8D5EC]/60">
           <div className="text-[11px] font-semibold text-[#4A5370]">Tracked today</div>
           <div className="text-xl font-bold text-[#0F1730] mt-0.5 tnum">118h 40m</div>
           <div className="text-[10px] text-[#4A5370] font-medium mt-0.5 flex items-center gap-1">
@@ -151,7 +151,7 @@ export function TeamLiveOverviewWidget() {
           </div>
         </div>
 
-        <div className="bg-[#F7F4EE] rounded-xl p-3 border border-[#E6E2D8]/60">
+        <div className="bg-[#FAF4FB] rounded-xl p-3 border border-[#E8D5EC]/60">
           <div className="text-[11px] font-semibold text-[#4A5370]">Billable</div>
           <div className="text-xl font-bold text-[#0F1730] mt-0.5 tnum">71%</div>
           <div className="text-[10px] font-semibold text-[#12B886] flex items-center gap-0.5 mt-0.5">
@@ -170,7 +170,7 @@ export function TeamLiveOverviewWidget() {
         {TEAM_DATA.map((member) => (
           <div
             key={member.name}
-            className="group p-2 -mx-2 rounded-xl hover:bg-[#F7F4EE] transition-all cursor-pointer"
+            className="group p-2 -mx-2 rounded-xl hover:bg-[#FAF4FB] transition-all cursor-pointer"
             onClick={() => setSelectedMember(member)}
           >
             <div className="flex items-center justify-between mb-1.5">
@@ -205,7 +205,7 @@ export function TeamLiveOverviewWidget() {
             </div>
 
             {/* The Day Line signature bar */}
-            <div className="h-2.5 w-full bg-[#E6E2D8] rounded-full overflow-hidden flex transition-all group-hover:h-3">
+            <div className="h-2.5 w-full bg-[#E8D5EC] rounded-full overflow-hidden flex transition-all group-hover:h-3">
               {member.timeline.map((seg, idx) => (
                 <div
                   key={idx}
@@ -222,7 +222,7 @@ export function TeamLiveOverviewWidget() {
       </div>
 
       {/* Hover tooltip or legend */}
-      <div className="mt-4 pt-3 border-t border-[#E6E2D8] flex flex-wrap items-center justify-between gap-2 text-[11px] text-[#4A5370]">
+      <div className="mt-4 pt-3 border-t border-[#E8D5EC] flex flex-wrap items-center justify-between gap-2 text-[11px] text-[#4A5370]">
         {hoveredSegment ? (
           <span className="font-semibold text-[#0F1730] truncate">
             {hoveredSegment}

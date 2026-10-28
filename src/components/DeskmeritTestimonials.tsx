@@ -53,11 +53,11 @@ export function DeskmeritTestimonials() {
   const current = testimonials[currentIndex];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#FBF9F5] border-b border-[#E6E2D8] font-sans relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-[#FBF9F5] border-b border-[#E8D5EC] font-sans relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header matching Kombee reference layout */}
         <div className="mb-12">
-          <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+          <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
             OUR CLIENTS
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-tight mt-2 max-w-3xl">
@@ -115,7 +115,7 @@ export function DeskmeritTestimonials() {
                     <button
                       type="button"
                       onClick={prev}
-                      className="w-9 h-9 rounded-full border border-slate-700 bg-slate-800/90 hover:bg-[#FF5A36] hover:border-[#FF5A36] text-white flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
+                      className="w-9 h-9 rounded-full border border-slate-700 bg-slate-800/90 hover:bg-[#61126E] hover:border-[#61126E] text-white flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
                       aria-label="Previous testimonial"
                     >
                       <ChevronLeft className="w-4 h-4" />
@@ -123,7 +123,7 @@ export function DeskmeritTestimonials() {
                     <button
                       type="button"
                       onClick={next}
-                      className="w-9 h-9 rounded-full border border-slate-700 bg-slate-800/90 hover:bg-[#FF5A36] hover:border-[#FF5A36] text-white flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
+                      className="w-9 h-9 rounded-full border border-slate-700 bg-slate-800/90 hover:bg-[#61126E] hover:border-[#61126E] text-white flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
                       aria-label="Next testimonial"
                     >
                       <ChevronRight className="w-4 h-4" />
@@ -141,27 +141,27 @@ export function DeskmeritTestimonials() {
               <svg className="w-full h-full" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <radialGradient id="emberGlow" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="#FF5A36" stopOpacity="0.45" />
-                    <stop offset="100%" stopColor="#FF5A36" stopOpacity="0" />
+                    <stop offset="0%" stopColor="#61126E" stopOpacity="0.45" />
+                    <stop offset="100%" stopColor="#61126E" stopOpacity="0" />
                   </radialGradient>
                   <linearGradient id="gridGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#FF5A36" stopOpacity="0.3" />
+                    <stop offset="0%" stopColor="#61126E" stopOpacity="0.3" />
                     <stop offset="50%" stopColor="#12B886" stopOpacity="0.2" />
                     <stop offset="100%" stopColor="#0F1730" stopOpacity="0" />
                   </linearGradient>
                 </defs>
                 {/* Concentric Telemetry Orbit Rings */}
                 <circle cx="280" cy="240" r="140" stroke="url(#gridGrad)" strokeWidth="1" strokeDasharray="3 3" />
-                <circle cx="280" cy="240" r="100" stroke="#FF5A36" strokeWidth="1" strokeOpacity="0.3" />
+                <circle cx="280" cy="240" r="100" stroke="#61126E" strokeWidth="1" strokeOpacity="0.3" />
                 <circle cx="280" cy="240" r="60" stroke="#12B886" strokeWidth="1.2" strokeOpacity="0.4" strokeDasharray="4 2" />
                 <circle cx="280" cy="240" r="24" fill="url(#emberGlow)" />
                 {/* Constellation Nodes and Rays */}
-                <line x1="280" y1="100" x2="280" y2="380" stroke="#FF5A36" strokeWidth="0.8" strokeOpacity="0.2" />
+                <line x1="280" y1="100" x2="280" y2="380" stroke="#61126E" strokeWidth="0.8" strokeOpacity="0.2" />
                 <line x1="140" y1="240" x2="420" y2="240" stroke="#12B886" strokeWidth="0.8" strokeOpacity="0.2" />
-                <line x1="180" y1="140" x2="380" y2="340" stroke="#FF5A36" strokeWidth="0.8" strokeOpacity="0.15" />
-                <circle cx="280" cy="140" r="3" fill="#FF5A36" />
+                <line x1="180" y1="140" x2="380" y2="340" stroke="#61126E" strokeWidth="0.8" strokeOpacity="0.15" />
+                <circle cx="280" cy="140" r="3" fill="#61126E" />
                 <circle cx="380" cy="240" r="3.5" fill="#12B886" />
-                <circle cx="220" cy="280" r="2.5" fill="#FF5A36" />
+                <circle cx="220" cy="280" r="2.5" fill="#61126E" />
                 <circle cx="340" cy="180" r="2" fill="#FFFFFF" />
                 {/* Digital telemetry grid points */}
                 <pattern id="telemetryDots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -177,7 +177,7 @@ export function DeskmeritTestimonials() {
                 <span className="text-xl font-extrabold tracking-tight text-white font-mono">
                   Deskmerit
                 </span>
-                <span className="w-2.5 h-2.5 rounded-full bg-[#FF5A36]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#61126E]" />
               </div>
 
               {/* Center Headline & Subtext */}
@@ -196,12 +196,12 @@ export function DeskmeritTestimonials() {
                 className="px-5 py-2.5 rounded-xl bg-white hover:bg-[#FBF9F5] text-[#0F1730] font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2 w-fit group/btn cursor-pointer"
               >
                 <span>Contact</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#FF5A36] group-hover/btn:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#61126E] group-hover/btn:translate-x-1 transition-transform" />
               </Link>
             </div>
 
             {/* Subtle Deskmerit Ember Ambient Glow */}
-            <div className="absolute -right-12 -bottom-12 w-48 h-48 rounded-full bg-[#FF5A36]/15 blur-3xl pointer-events-none" />
+            <div className="absolute -right-12 -bottom-12 w-48 h-48 rounded-full bg-[#61126E]/15 blur-3xl pointer-events-none" />
             <div className="absolute -left-12 -top-12 w-40 h-40 rounded-full bg-[#12B886]/10 blur-3xl pointer-events-none" />
           </div>
         </div>

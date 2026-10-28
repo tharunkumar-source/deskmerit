@@ -73,7 +73,7 @@ export function BlogListingPage() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#FAF7F2] font-sans text-neutral-900 selection:bg-teal-500 selection:text-white">
+    <div className="min-h-screen w-full bg-[#FAF4FB] font-sans text-neutral-900 selection:bg-teal-500 selection:text-white">
       {/* Fixed White Edge-to-Edge Navigation */}
       <Header />
 
@@ -104,7 +104,7 @@ export function BlogListingPage() {
                 value={searchQuery}
                 onChange={handleSearchChange}
                 placeholder="Search blogs by title, categories or tags"
-                className="w-full rounded-full bg-[#FAF7F2] text-neutral-900 placeholder-neutral-400 pl-12 pr-6 py-3.5 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary shadow-inner border border-neutral-300/60"
+                className="w-full rounded-full bg-[#FAF4FB] text-neutral-900 placeholder-neutral-400 pl-12 pr-6 py-3.5 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary shadow-inner border border-neutral-300/60"
               />
             </div>
 

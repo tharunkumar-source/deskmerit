@@ -1,5 +1,5 @@
 import React from "react";
-import { PulseTrackLogo } from "../design-system/components/PulseTrackLogo";
+import { Link } from "react-router-dom";
 
 export interface DeskmeritLogoProps {
   variant?: "horizontal" | "reverse" | "stacked" | "symbol";
@@ -9,40 +9,34 @@ export interface DeskmeritLogoProps {
 }
 
 /**
- * Brand Logo component.
- * Adheres strictly to the PulseTrack Brand Guidelines (v1.0):
- * - Live Loop symbol (64x64 grid geometry with 8.5 stroke and Ember pulse dot)
- * - Wordmark in Inter Display Bold, tracked -3%, lowercase
+ * Brand Logo component rendering the official Deskmerit logo asset.
+ * Includes D icon with clock accent and DESKMERIT typography in official deep purple #61126E.
  */
 export function DeskmeritLogo({
   variant = "horizontal",
   className = "",
   size = "md",
-  endorsement = false,
 }: DeskmeritLogoProps) {
-  let logoVariant:
-    | "primary"
-    | "reverse"
-    | "stacked"
-    | "symbol"
-    | "endorsed" = "primary";
+  const isDark = variant === "reverse";
 
-  if (variant === "reverse") {
-    logoVariant = "reverse";
-  } else if (variant === "stacked") {
-    logoVariant = "stacked";
-  } else if (variant === "symbol") {
-    logoVariant = "symbol";
-  } else if (endorsement) {
-    logoVariant = "endorsed";
-  }
+  const heightClasses = {
+    sm: "h-6 sm:h-7",
+    md: "h-7 sm:h-8",
+    lg: "h-9 sm:h-10",
+  };
+  const hClass = heightClasses[size] || "h-7 sm:h-8";
 
   return (
-    <PulseTrackLogo
-      variant={logoVariant}
-      size={size}
-      className={className}
-      asLink={true}
-    />
+    <Link
+      to="/"
+      aria-label="Deskmerit home"
+      className={`inline-flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#61126E] rounded-md transition-opacity hover:opacity-95 shrink-0 ${className}`}
+    >
+      <img
+        src="/images/deskmerit-logo.png"
+        alt="Deskmerit"
+        className={`${hClass} w-auto object-contain block ${isDark ? "brightness-0 invert" : ""}`}
+      />
+    </Link>
   );
 }

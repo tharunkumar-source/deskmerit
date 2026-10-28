@@ -7,7 +7,7 @@ export function BlogSection() {
   const sidePosts = rest.slice(0, 2);
 
   return (
-    <section className="bg-[#FAF7F2] py-16 md:py-24 border-b border-neutral-200" aria-labelledby="blog-title">
+    <section className="bg-[#FAF4FB] py-16 md:py-24 border-b border-neutral-200" aria-labelledby="blog-title">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-12">

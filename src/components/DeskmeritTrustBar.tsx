@@ -31,7 +31,7 @@ export function DeskmeritTrustBar() {
   ];
 
   return (
-    <section className="bg-[#FFFFFF] border-y border-[#E6E2D8] py-6">
+    <section className="bg-[#FFFFFF] border-y border-[#E8D5EC] py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
           {items.map((item, idx) => {
@@ -39,9 +39,9 @@ export function DeskmeritTrustBar() {
             return (
               <div
                 key={idx}
-                className="flex items-start gap-3 p-3 rounded-xl hover:bg-[#F7F4EE] transition-colors"
+                className="flex items-start gap-3 p-3 rounded-xl hover:bg-[#FAF4FB] transition-colors"
               >
-                <div className="w-9 h-9 rounded-lg bg-[#FFE6DF] text-[#C2361A] flex items-center justify-center shrink-0">
+                <div className="w-9 h-9 rounded-lg bg-[#F6EDF8] text-[#4E0E58] flex items-center justify-center shrink-0">
                   <Icon className="w-4 h-4" />
                 </div>
                 <div>

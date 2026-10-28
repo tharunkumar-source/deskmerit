@@ -474,7 +474,7 @@ function AboutView() {
       </section>
 
       {/* SECTION 3: LEADERSHIP & CORE TEAM (#team) */}
-      <section id="team" className="scroll-mt-24 bg-[#FAF7F2] py-16 md:py-24 border-b border-neutral-200" aria-label="Leadership & Team">
+      <section id="team" className="scroll-mt-24 bg-[#FAF4FB] py-16 md:py-24 border-b border-neutral-200" aria-label="Leadership & Team">
         <div className="mx-auto max-w-7xl px-6">
           <div className="w-full mb-12 sm:mb-16">
             <p className="pretitle text-primary">Executive Leadership & Core Team</p>
@@ -745,7 +745,7 @@ function LifeAtSqalibleView() {
           SECTION 1: OUR WORKSPACE — Inside Life at Sqalible
           (Masonry Collage with Centerpiece Quote Card)
           ===================================================================== */}
-      <section id="culture" className="bg-[#FAF7F2] py-20 md:py-28 border-b border-neutral-200">
+      <section id="culture" className="bg-[#FAF4FB] py-20 md:py-28 border-b border-neutral-200">
         <div className="mx-auto max-w-7xl px-6">
           <div className="w-full max-w-3xl mb-14 text-left">
             <p className="text-xs font-bold uppercase tracking-wider text-teal-700">

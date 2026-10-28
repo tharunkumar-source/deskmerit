@@ -3,12 +3,12 @@ import { AlertCircle, ArrowLeftRight, Clock, DollarSign, FileSpreadsheet } from 
 
 export function DeskmeritProblemSection() {
   return (
-    <section className="py-20 lg:py-28 bg-[#F7F4EE] border-b border-[#E6E2D8]">
+    <section className="py-20 lg:py-28 bg-[#FAF4FB] border-b border-[#E8D5EC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: The Problem Copy */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
               The problem
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F1730] tracking-[-0.025em] leading-tight">
@@ -19,8 +19,8 @@ export function DeskmeritProblemSection() {
               Manual timesheets are filled in on Friday from memory. Trackers live in one tab, tasks in another, attendance in a third. The result is hours nobody can defend. Deskmerit closes that gap by recording time where the work actually happens.
             </p>
 
-            <div className="p-4 rounded-xl bg-[#FFFFFF] border border-[#E6E2D8] flex items-center gap-4 text-xs text-[#4A5370]">
-              <span className="w-8 h-8 rounded-full bg-[#FFE6DF] text-[#C2361A] flex items-center justify-center shrink-0">
+            <div className="p-4 rounded-xl bg-[#FFFFFF] border border-[#E8D5EC] flex items-center gap-4 text-xs text-[#4A5370]">
+              <span className="w-8 h-8 rounded-full bg-[#F6EDF8] text-[#4E0E58] flex items-center justify-center shrink-0">
                 <AlertCircle className="w-4 h-4" />
               </span>
               <span>
@@ -31,10 +31,10 @@ export function DeskmeritProblemSection() {
 
           {/* Right Column: Statistics & System Disconnect Visual */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="bg-[#FFFFFF] rounded-2xl p-6 sm:p-8 shadow-card border border-[#E6E2D8]">
-              <div className="grid grid-cols-2 gap-6 pb-6 border-b border-[#E6E2D8]">
+            <div className="bg-[#FFFFFF] rounded-2xl p-6 sm:p-8 shadow-card border border-[#E8D5EC]">
+              <div className="grid grid-cols-2 gap-6 pb-6 border-b border-[#E8D5EC]">
                 <div>
-                  <div className="text-4xl sm:text-5xl font-extrabold text-[#C2361A] font-display tnum">
+                  <div className="text-4xl sm:text-5xl font-extrabold text-[#4E0E58] font-display tnum">
                     357h
                   </div>
                   <div className="text-xs text-[#4A5370] mt-1 font-medium">
@@ -43,7 +43,7 @@ export function DeskmeritProblemSection() {
                 </div>
 
                 <div>
-                  <div className="text-4xl sm:text-5xl font-extrabold text-[#FF5A36] font-display tnum">
+                  <div className="text-4xl sm:text-5xl font-extrabold text-[#61126E] font-display tnum">
                     ~35%
                   </div>
                   <div className="text-xs text-[#4A5370] mt-1 font-medium">
@@ -58,21 +58,21 @@ export function DeskmeritProblemSection() {
                   The disjointed workflow teams suffer from:
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
-                  <div className="p-2.5 rounded-lg bg-[#F7F4EE] border border-[#E6E2D8] text-xs font-medium text-[#0F1730]">
+                  <div className="p-2.5 rounded-lg bg-[#FAF4FB] border border-[#E8D5EC] text-xs font-medium text-[#0F1730]">
                     Timesheet
                   </div>
-                  <div className="p-2.5 rounded-lg bg-[#F7F4EE] border border-[#E6E2D8] text-xs font-medium text-[#0F1730]">
+                  <div className="p-2.5 rounded-lg bg-[#FAF4FB] border border-[#E8D5EC] text-xs font-medium text-[#0F1730]">
                     Tracker
                   </div>
-                  <div className="p-2.5 rounded-lg bg-[#F7F4EE] border border-[#E6E2D8] text-xs font-medium text-[#0F1730]">
+                  <div className="p-2.5 rounded-lg bg-[#FAF4FB] border border-[#E8D5EC] text-xs font-medium text-[#0F1730]">
                     PM Tool
                   </div>
-                  <div className="p-2.5 rounded-lg bg-[#F7F4EE] border border-[#E6E2D8] text-xs font-medium text-[#0F1730]">
+                  <div className="p-2.5 rounded-lg bg-[#FAF4FB] border border-[#E8D5EC] text-xs font-medium text-[#0F1730]">
                     HRMS
                   </div>
                 </div>
 
-                <div className="mt-4 p-3 rounded-lg bg-[#FFE6DF]/60 text-[#C2361A] text-xs font-semibold text-center flex items-center justify-center gap-1.5">
+                <div className="mt-4 p-3 rounded-lg bg-[#F6EDF8]/60 text-[#4E0E58] text-xs font-semibold text-center flex items-center justify-center gap-1.5">
                   <ArrowLeftRight className="w-3.5 h-3.5" />
                   Deskmerit replaces all four with one unified click
                 </div>

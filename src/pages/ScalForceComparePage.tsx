@@ -111,7 +111,7 @@ export function ScalForceComparePage() {
       />
 
       {/* 2. Side-by-Side Model Overview Section (Matches Image 1 Pricing Card Design) */}
-      <section className="py-16 md:py-20 bg-[#FAF7F2] border-b border-neutral-200" aria-labelledby="model-cards-title">
+      <section className="py-16 md:py-20 bg-[#FAF4FB] border-b border-neutral-200" aria-labelledby="model-cards-title">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <p className="pretitle text-primary">Two Flexible Paths to Workforce Scale</p>

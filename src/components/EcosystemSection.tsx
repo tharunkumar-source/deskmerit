@@ -47,11 +47,11 @@ export function EcosystemSection() {
   ];
 
   return (
-    <section className="py-20 bg-[#F7F4EE] border-b border-[#E6E2D8]">
+    <section className="py-20 bg-[#FAF4FB] border-b border-[#E8D5EC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <p className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+          <p className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
             Tailored Solutions
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F1730] tracking-[-0.025em]">
@@ -63,7 +63,7 @@ export function EcosystemSection() {
 
           {/* 3 Tabs */}
           <div className="flex items-center justify-center gap-2 mt-8">
-            <div className="p-1 bg-[#FFFFFF] rounded-2xl border border-[#E6E2D8] flex items-center shadow-subtle">
+            <div className="p-1 bg-[#FFFFFF] rounded-2xl border border-[#E8D5EC] flex items-center shadow-subtle">
               <button
                 type="button"
                 onClick={() => setActiveTab("industry")}
@@ -103,19 +103,19 @@ export function EcosystemSection() {
               <Link
                 key={item.title}
                 to={item.href}
-                className="group bg-[#FFFFFF] rounded-2xl p-7 border border-[#E6E2D8] hover:border-[#FF5A36] hover:shadow-card transition-all flex flex-col justify-between"
+                className="group bg-[#FFFFFF] rounded-2xl p-7 border border-[#E8D5EC] hover:border-[#61126E] hover:shadow-card transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-[#F7F4EE] group-hover:bg-[#FFE6DF] text-[#0F1730] group-hover:text-[#C2361A] flex items-center justify-center transition-colors border border-[#E6E2D8]">
+                    <div className="w-10 h-10 rounded-xl bg-[#FAF4FB] group-hover:bg-[#F6EDF8] text-[#0F1730] group-hover:text-[#4E0E58] flex items-center justify-center transition-colors border border-[#E8D5EC]">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#F7F4EE] text-[#4A5370] border border-[#E6E2D8]">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#FAF4FB] text-[#4A5370] border border-[#E8D5EC]">
                       {item.metric}
                     </span>
                   </div>
 
-                  <h3 className="font-bold text-lg text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">
+                  <h3 className="font-bold text-lg text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-2">
                     {item.title}
                   </h3>
                   <p className="text-xs text-[#4A5370] leading-relaxed">
@@ -123,7 +123,7 @@ export function EcosystemSection() {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#E6E2D8]/60 flex items-center justify-between text-xs font-semibold text-[#0F1730] group-hover:text-[#FF5A36]">
+                <div className="mt-6 pt-4 border-t border-[#E8D5EC]/60 flex items-center justify-between text-xs font-semibold text-[#0F1730] group-hover:text-[#61126E]">
                   <span>Explore workflow</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                 </div>
@@ -133,7 +133,7 @@ export function EcosystemSection() {
         </div>
 
         {/* Integrations Marquee Strip */}
-        <div className="pt-8 border-t border-[#E6E2D8]">
+        <div className="pt-8 border-t border-[#E8D5EC]">
           <div className="text-center text-xs font-semibold text-[#4A5370] uppercase tracking-wider mb-6">
             Works natively with your engineering and productivity stack:
           </div>
@@ -143,9 +143,9 @@ export function EcosystemSection() {
               {[...integrationPartners, ...integrationPartners].map((tool, i) => (
                 <div
                   key={i}
-                  className="px-4 py-2.5 rounded-xl bg-[#FFFFFF] border border-[#E6E2D8] text-xs font-bold text-[#0F1730] shadow-subtle shrink-0 flex items-center gap-2"
+                  className="px-4 py-2.5 rounded-xl bg-[#FFFFFF] border border-[#E8D5EC] text-xs font-bold text-[#0F1730] shadow-subtle shrink-0 flex items-center gap-2"
                 >
-                  <span className="w-2 h-2 rounded-full bg-[#FF5A36]" />
+                  <span className="w-2 h-2 rounded-full bg-[#61126E]" />
                   <span>{tool}</span>
                 </div>
               ))}

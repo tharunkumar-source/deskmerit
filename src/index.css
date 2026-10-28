@@ -5,13 +5,13 @@
 :root {
   /* PulseTrack Core Brand Color Tokens */
   --color-midnight: #0F1730;
-  --color-ember: #FF5A36;
-  --color-paper: #F7F4EE;
+  --color-ember: #61126E;
+  --color-paper: #FAF4FB;
   --color-dusk: #24305A;
-  --color-ember-deep: #C2361A;
-  --color-ember-tint: #FFE6DF;
+  --color-ember-deep: #4E0E58;
+  --color-ember-tint: #F6EDF8;
   --color-slate: #4A5370;
-  --color-mist: #E6E2D8;
+  --color-mist: #E8D5EC;
   --color-white: #FFFFFF;
 
   /* Live-State Semantic Color Tokens */
@@ -26,8 +26,6 @@
   html {
     scroll-behavior: smooth;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-    overflow-x: hidden;
-    max-width: 100%;
   }
 
   body {
@@ -36,12 +34,12 @@
     color: var(--color-midnight);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+    overflow-x: clip;
     max-width: 100%;
   }
 
   #root {
-    overflow-x: hidden;
+    overflow-x: clip;
     max-width: 100%;
     width: 100%;
   }
@@ -160,11 +158,11 @@
 @keyframes pulseGentle {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 90, 54, 0.4);
+    box-shadow: 0 0 0 0 rgba(97, 18, 110, 0.4);
   }
   50% {
     transform: scale(1.22);
-    box-shadow: 0 0 0 6px rgba(255, 90, 54, 0);
+    box-shadow: 0 0 0 6px rgba(97, 18, 110, 0);
   }
 }
 
@@ -236,6 +234,6 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #FF5A36;
+  color: #61126E;
 }
 

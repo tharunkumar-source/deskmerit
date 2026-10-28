@@ -21,24 +21,24 @@ export interface ButtonProps
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
-  // Brand Primary: Ember (#FF5A36) background with Midnight (#0F1730) text! Strict WCAG AA.
+  // Brand Primary: Ember (#61126E) background with Midnight (#0F1730) text! Strict WCAG AA.
   primary:
-    "bg-[#FF5A36] text-[#0F1730] font-semibold hover:bg-[#E94A27] active:bg-[#C2361A] active:text-white shadow-sm disabled:bg-[#FFA994] disabled:text-[#0F1730]/60",
+    "bg-[#61126E] text-[#0F1730] font-semibold hover:bg-[#4E0E58] active:bg-[#4E0E58] active:text-white shadow-sm disabled:bg-[#C594CE] disabled:text-[#0F1730]/60",
   // Brand Secondary: Midnight (#0F1730) background with White text
   secondary:
     "bg-[#0F1730] text-white font-semibold hover:bg-[#24305A] active:bg-[#172348] shadow-sm disabled:bg-[#4A5370] disabled:text-white/60",
-  // Brand Outline: Mist (#E6E2D8) border with Midnight text
+  // Brand Outline: Mist (#E8D5EC) border with Midnight text
   outline:
-    "border border-[#E6E2D8] bg-white text-[#0F1730] font-semibold hover:bg-[#F7F4EE] hover:border-[#D6D1C5] active:bg-[#EDE9E0] disabled:border-[#E6E2D8] disabled:text-[#4A5370]/60",
+    "border border-[#E8D5EC] bg-white text-[#0F1730] font-semibold hover:bg-[#FAF4FB] hover:border-[#DAC3DE] active:bg-[#F0DFEF] disabled:border-[#E8D5EC] disabled:text-[#4A5370]/60",
   // Brand Ghost:
   ghost:
-    "text-[#0F1730] font-medium hover:bg-[#FFE6DF]/60 hover:text-[#C2361A] active:bg-[#FFE6DF] disabled:text-[#4A5370]/40",
+    "text-[#0F1730] font-medium hover:bg-[#F6EDF8]/60 hover:text-[#4E0E58] active:bg-[#F6EDF8] disabled:text-[#4A5370]/40",
   // Brand Danger (Unproductive/Alert):
   danger:
-    "bg-[#E5484D] text-white font-semibold hover:bg-[#D63E43] active:bg-[#C2361A] disabled:bg-[#9AA1B2]",
+    "bg-[#E5484D] text-white font-semibold hover:bg-[#D63E43] active:bg-[#4E0E58] disabled:bg-[#9AA1B2]",
   // Desktop widget Stop action:
   "widget-stop":
-    "bg-[#FF5A36] text-[#0F1730] font-bold hover:bg-[#E94A27] active:bg-[#C2361A]",
+    "bg-[#61126E] text-[#0F1730] font-bold hover:bg-[#4E0E58] active:bg-[#4E0E58]",
   // Desktop widget Private Time action:
   "widget-sub":
     "bg-[#24305A] text-white font-medium hover:bg-[#334173] active:bg-[#1B2446]",
@@ -60,7 +60,7 @@ export function Button({
   ...rest
 }: ButtonProps) {
   const baseClasses =
-    "inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all duration-150 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A36] focus-visible:ring-offset-2 disabled:cursor-not-allowed select-none";
+    "inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all duration-150 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#61126E] focus-visible:ring-offset-2 disabled:cursor-not-allowed select-none";
   const classes = `${baseClasses} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
 
   if (href) {

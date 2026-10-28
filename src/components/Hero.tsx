@@ -41,7 +41,7 @@ export function Hero() {
           {/* Left Column: Prominent typography matching Sqalible / Kombee layout */}
           <div className="text-left z-10 max-w-xl">
             {/* Small pre-title badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#24305A]/80 border border-[#334173] text-xs font-semibold text-[#FFE6DF] mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#24305A]/80 border border-[#334173] text-xs font-semibold text-[#F6EDF8] mb-4">
               <span className="pulse-dot" />
               <span>Automatic time tracking for modern teams</span>
             </div>
@@ -50,13 +50,9 @@ export function Hero() {
               id="hero-title"
               className="text-4xl sm:text-5xl md:text-6xl lg:text-[54px] xl:text-[62px] font-extrabold tracking-tight text-white leading-[1.08]"
             >
-              <span className="block text-white">Know where the</span>
-              <span className="block mt-1 sm:mt-1.5 text-[#FF5A36] font-normal">
-                work goes.
-              </span>
-              <span className="block mt-1 sm:mt-1.5 font-bold text-white/90 text-3xl sm:text-4xl lg:text-[40px]">
-                Without watching over shoulders.
-              </span>
+              Know where the{" "}
+              <span className="text-[#D8B4FE]">work goes.</span>{" "}
+              <span className="font-bold text-white/90 text-3xl sm:text-4xl lg:text-[40px]">Without watching over shoulders.</span>
             </h1>
 
             <p className="mt-5 sm:mt-6 max-w-lg text-base sm:text-lg leading-[1.6] font-normal text-white/85">
@@ -66,7 +62,7 @@ export function Hero() {
             <div className="mt-7 sm:mt-8 flex flex-wrap items-center gap-3.5 sm:gap-4">
               <a
                 href="/signup"
-                className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#FF5A36] hover:bg-[#E94A27] px-7 sm:px-8 text-sm sm:text-base font-extrabold text-white shadow-lg shadow-orange-950/40 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#61126E] hover:bg-[#4E0E58] px-7 sm:px-8 text-sm sm:text-base font-extrabold text-white shadow-lg shadow-purple-950/40 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               >
                 Start free trial
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={2.2} />
@@ -102,24 +98,24 @@ export function Hero() {
               >
                 <path
                   d="M 120 50 C 20 80, 10 200, 50 250 C 105 300, 200 310, 275 270"
-                  stroke="rgba(255, 90, 54, 0.45)"
+                  stroke="rgba(97, 18, 110, 0.45)"
                   strokeWidth="1.3"
                 />
                 <path
                   d="M 335 230 C 375 210, 395 175, 410 130"
-                  stroke="#FF5A36"
+                  stroke="#61126E"
                   strokeWidth="1.4"
                 />
                 <path
                   d="M 404 136 L 410 130 L 416 134"
-                  stroke="#FF5A36"
+                  stroke="#61126E"
                   strokeWidth="1.4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M 445 150 C 480 200, 470 255, 425 285"
-                  stroke="rgba(255, 90, 54, 0.45)"
+                  stroke="rgba(97, 18, 110, 0.45)"
                   strokeWidth="1.3"
                 />
               </svg>
@@ -128,11 +124,11 @@ export function Hero() {
               <div
                 className="absolute top-0 right-0 sm:right-1 z-10 w-[210px] sm:w-[235px] rounded-[18px] bg-white/95 p-3.5 sm:p-4 border border-white/90 backdrop-blur-md transform rotate-[3.5deg] hover:rotate-0 transition-transform duration-300 text-[#0F1730]"
                 style={{
-                  boxShadow: "0 18px 35px -8px rgba(15, 23, 48, 0.6), 0 0 25px rgba(255, 90, 54, 0.12)",
+                  boxShadow: "0 18px 35px -8px rgba(15, 23, 48, 0.6), 0 0 25px rgba(97, 18, 110, 0.12)",
                 }}
               >
                 <div className="flex items-start justify-between">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#FFE6DF] text-[#C2361A] border border-[#FF5A36]/30 font-bold text-xs">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F6EDF8] text-[#4E0E58] border border-[#61126E]/30 font-bold text-xs">
                     J
                   </div>
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
@@ -150,7 +146,7 @@ export function Hero() {
                   <svg className="w-full h-6 overflow-visible" viewBox="0 0 100 20" fill="none">
                     <path
                       d="M 2 15 C 20 18, 35 15, 50 10 C 65 5, 80 12, 98 4"
-                      stroke="#FF5A36"
+                      stroke="#61126E"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -163,7 +159,7 @@ export function Hero() {
               <div
                 className="absolute top-10 left-0 sm:left-1 z-20 w-[315px] sm:w-[350px] rounded-[20px] bg-white p-4 sm:p-5 border border-white/95 transform -rotate-[2.5deg] hover:rotate-0 transition-transform duration-300 text-[#0F1730]"
                 style={{
-                  boxShadow: "0 22px 45px -10px rgba(15, 23, 48, 0.7), 0 0 35px rgba(255, 90, 54, 0.15)",
+                  boxShadow: "0 22px 45px -10px rgba(15, 23, 48, 0.7), 0 0 35px rgba(97, 18, 110, 0.15)",
                 }}
               >
                 {/* Header Bar */}
@@ -171,13 +167,13 @@ export function Hero() {
                   <div className="flex items-center gap-1.5">
                     <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF5A36]"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[#61126E]"></span>
                     </span>
                     <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.06em] text-[#0F1730] uppercase">
                       LIVE TRACKING SESSION
                     </span>
                   </div>
-                  <span className="rounded-full bg-[#FFE6DF] text-[#C2361A] border border-[#FF5A36]/30 px-2.5 py-0.5 text-[10px] sm:text-[11px] font-semibold">
+                  <span className="rounded-full bg-[#F6EDF8] text-[#4E0E58] border border-[#61126E]/30 px-2.5 py-0.5 text-[10px] sm:text-[11px] font-semibold">
                     {isPrivate ? "Private Time" : isTracking ? "Active · Jira" : "Paused"}
                   </span>
                 </div>
@@ -200,12 +196,12 @@ export function Hero() {
                 </div>
 
                 {/* Day Line visual inside card */}
-                <div className="rounded-xl border border-neutral-200/70 bg-[#F7F4EE] p-2.5 text-left my-1">
+                <div className="rounded-xl border border-neutral-200/70 bg-[#FAF4FB] p-2.5 text-left my-1">
                   <div className="flex items-center justify-between text-[10px] text-[#4A5370] mb-1 font-semibold">
                     <span>The Day Line:</span>
                     <span className="text-[#12B886]">84% Productive</span>
                   </div>
-                  <div className="h-2 rounded-full bg-[#E6E2D8] overflow-hidden flex">
+                  <div className="h-2 rounded-full bg-[#E8D5EC] overflow-hidden flex">
                     <div className="h-full bg-[#12B886] w-[65%]" title="Tracking" />
                     <div className="h-full bg-[#5B6CFF] w-[15%]" title="Private Time" />
                     <div className="h-full bg-[#F5A524] w-[12%]" title="Idle" />
@@ -218,7 +214,7 @@ export function Hero() {
                   <button
                     type="button"
                     onClick={() => setIsTracking(!isTracking)}
-                    className="py-1.5 px-3 rounded-lg bg-[#FF5A36] text-white text-[11px] font-extrabold hover:bg-[#E94A27] transition-colors flex items-center justify-center gap-1"
+                    className="py-1.5 px-3 rounded-lg bg-[#61126E] text-white text-[11px] font-extrabold hover:bg-[#4E0E58] transition-colors flex items-center justify-center gap-1"
                   >
                     {isTracking ? <Square className="w-3 h-3 fill-current" /> : <Play className="w-3 h-3 fill-current" />}
                     {isTracking ? "Stop" : "Resume"}
@@ -230,7 +226,7 @@ export function Hero() {
                     className={`py-1.5 px-3 rounded-lg border text-[11px] font-semibold transition-colors flex items-center justify-center gap-1 ${
                       isPrivate
                         ? "bg-[#5B6CFF] text-white border-[#5B6CFF]"
-                        : "bg-white text-[#0F1730] border-[#E6E2D8] hover:bg-neutral-50"
+                        : "bg-white text-[#0F1730] border-[#E8D5EC] hover:bg-neutral-50"
                     }`}
                   >
                     <Shield className="w-3 h-3" />
@@ -243,11 +239,11 @@ export function Hero() {
               <div
                 className="absolute bottom-1 right-1 sm:right-3 z-30 w-[215px] sm:w-[240px] rounded-[18px] bg-white/95 p-3.5 sm:p-4 border border-white/95 backdrop-blur-md transform rotate-[1deg] hover:rotate-0 transition-transform duration-300 text-[#0F1730]"
                 style={{
-                  boxShadow: "0 18px 40px -8px rgba(15, 23, 48, 0.65), 0 0 30px rgba(255, 90, 54, 0.12)",
+                  boxShadow: "0 18px 40px -8px rgba(15, 23, 48, 0.65), 0 0 30px rgba(97, 18, 110, 0.12)",
                 }}
               >
                 <div className="flex items-start gap-2.5">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#FFE6DF] text-[#C2361A] border border-[#FF5A36]/30">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#F6EDF8] text-[#4E0E58] border border-[#61126E]/30">
                     <Clock className="h-4 w-4" strokeWidth={1.8} />
                   </div>
                   <div className="min-w-0 flex-1">

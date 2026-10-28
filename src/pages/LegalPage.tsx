@@ -84,7 +84,7 @@ export function LegalPage() {
   const currentImage = legalImages[activeDoc] || legalImages.terms;
 
   return (
-    <div className="min-h-screen bg-[#F7F4EE] text-[#0F1730]">
+    <div className="min-h-screen bg-[#FAF4FB] text-[#0F1730]">
       <DeskmeritHeader />
 
       <main>
@@ -92,26 +92,26 @@ export function LegalPage() {
         <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
           {/* Dual Radial Glows */}
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#24305A]/40 blur-[120px] rounded-full pointer-events-none" />
-          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#FF5A36]/10 blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#61126E]/10 blur-[100px] rounded-full pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
-            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-slate-400 font-medium flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
               <span className="text-slate-300">Legal</span>
               <span className="text-slate-500">/</span>
-              <span>{title}</span>
+              <span className="text-[#D8B4FE] font-bold">{title}</span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Heading & Pitch */}
               <div className="lg:col-span-7 space-y-6">
-                <div className="inline-block px-3.5 py-1 rounded-full bg-[#FFE6DF]/15 border border-[#FF5A36]/30 text-[11px] font-bold uppercase tracking-wider text-[#FF5A36]">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
                   DESKMERIT LEGAL GOVERNANCE
                 </div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
-                  {title} <span className="text-[#FF5A36] block">& Compliance Standards.</span>
+                  {title} <span className="text-[#D8B4FE]">& Compliance Standards.</span>
                 </h1>
                 <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
                   {subtitle} Operated by Kombee Technologies (India) Pvt. Ltd. Structured for corporate integrity, data minimization, and cross-border statutory compliance.
@@ -123,7 +123,7 @@ export function LegalPage() {
                       e.preventDefault();
                       window.print();
                     }}
-                    className="px-6 py-3.5 rounded-[12px] bg-[#FF5A36] hover:bg-[#E04826] text-white font-extrabold text-sm shadow-lg hover:shadow-glow-ember transition-all inline-flex items-center gap-2 cursor-pointer"
+                    className="px-6 py-3.5 rounded-[12px] bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-sm shadow-lg hover:shadow-glow-ember transition-all inline-flex items-center gap-2 cursor-pointer"
                   >
                     Print or save PDF <Download className="w-4 h-4" />
                   </a>
@@ -153,10 +153,10 @@ export function LegalPage() {
 
         {/* Legal Document Content Card */}
         <section className="py-12 lg:py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#FFFFFF] rounded-[24px] p-8 sm:p-12 border border-[#E6E2D8] shadow-card space-y-8">
-            <div className="border-b border-[#E6E2D8] pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="bg-[#FFFFFF] rounded-[24px] p-8 sm:p-12 border border-[#E8D5EC] shadow-card space-y-8">
+            <div className="border-b border-[#E8D5EC] pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] block mb-1">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#61126E] block mb-1">
                   Deskmerit Legal Governance
                 </span>
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730]">{title}</h1>
@@ -172,7 +172,7 @@ export function LegalPage() {
                   e.preventDefault();
                   window.print();
                 }}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#F7F4EE] hover:bg-[#E6E2D8] text-xs font-bold text-[#0F1730] shrink-0 self-start transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#FAF4FB] hover:bg-[#E8D5EC] text-xs font-bold text-[#0F1730] shrink-0 self-start transition-colors"
               >
                 <Download className="w-3.5 h-3.5" /> Print / Save PDF
               </a>
@@ -185,15 +185,15 @@ export function LegalPage() {
                   Deskmerit utilizes the following third-party infrastructure and sub-processors to deliver high-availability services. Each vendor undergoes strict security, SOC 2, and DPA reviews:
                 </p>
                 <div className="overflow-x-auto pt-2">
-                  <table className="w-full text-left text-xs border border-[#E6E2D8] rounded-xl overflow-hidden">
-                    <thead className="bg-[#F7F4EE] text-[#0F1730]">
-                      <tr className="border-b border-[#E6E2D8]">
+                  <table className="w-full text-left text-xs border border-[#E8D5EC] rounded-xl overflow-hidden">
+                    <thead className="bg-[#FAF4FB] text-[#0F1730]">
+                      <tr className="border-b border-[#E8D5EC]">
                         <th className="py-3 px-4 font-bold">Sub-processor</th>
                         <th className="py-3 px-4 font-bold">Purpose</th>
                         <th className="py-3 px-4 font-bold">Location</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-[#E6E2D8] text-[#4A5370]">
+                    <tbody className="divide-y divide-[#E8D5EC] text-[#4A5370]">
                       {subprocessors.map((s, idx) => (
                         <tr key={idx}>
                           <td className="py-3 px-4 font-semibold text-[#0F1730]">{s.name}</td>

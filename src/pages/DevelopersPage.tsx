@@ -199,7 +199,7 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
   ];
 
   return (
-    <div className="min-h-screen bg-[#F7F4EE] text-[#0F1730] font-sans">
+    <div className="min-h-screen bg-[#FAF4FB] text-[#0F1730] font-sans">
       <DeskmeritHeader />
 
       <main>
@@ -208,11 +208,11 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
         {/* ========================================================================= */}
         <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
-            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-slate-400 font-medium flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
               <span className="text-slate-300">Developers</span>
@@ -227,7 +227,7 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Headline & Value Prop */}
               <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3 py-1 rounded-full inline-block border border-[#FF5A36]/30">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
                   {mode === "overview" && "DEVELOPER PLATFORM & WEBHOOKS"}
                   {mode === "mcp" && "MODEL CONTEXT PROTOCOL (MCP)"}
                   {mode === "api" && "OPENAPI 3.1 SPECIFICATION"}
@@ -237,19 +237,19 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
                   {mode === "overview" && (
                     <>
                       Build on top of Deskmerit{" "}
-                      <span className="text-[#FF5A36] block">time intelligence.</span>
+                      <span className="text-[#D8B4FE]">time intelligence.</span>
                     </>
                   )}
                   {mode === "mcp" && (
                     <>
                       Ask Claude about your team's{" "}
-                      <span className="text-[#FF5A36] block">capacity & burn.</span>
+                      <span className="text-[#D8B4FE]">capacity & burn.</span>
                     </>
                   )}
                   {mode === "api" && (
                     <>
                       Comprehensive REST API{" "}
-                      <span className="text-[#FF5A36] block">endpoint reference.</span>
+                      <span className="text-[#D8B4FE]">endpoint reference.</span>
                     </>
                   )}
                 </h1>
@@ -266,7 +266,7 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
                 <div className="flex flex-wrap items-center gap-3.5 pt-2">
                   <Link
                     to="/signup"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all"
                   >
                     <span>Get API Token</span>
                     <ArrowRight className="w-4 h-4" />
@@ -305,14 +305,14 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
                             : apiSampleCode
                         )
                       }
-                      className="text-[11px] font-bold text-[#FF5A36] hover:text-[#0F1730] flex items-center gap-1 transition-colors cursor-pointer"
+                      className="text-[11px] font-bold text-[#D8B4FE] hover:text-[#0F1730] flex items-center gap-1 transition-colors cursor-pointer"
                     >
                       {copiedCode ? <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                       <span>{copiedCode ? "Copied" : "Copy"}</span>
                     </button>
                   </div>
 
-                  <div className="p-5 font-mono text-xs leading-relaxed text-[#0F1730] overflow-x-auto bg-[#FFFFFF] selection:bg-[#FFE6DF]">
+                  <div className="p-5 font-mono text-xs leading-relaxed text-[#0F1730] overflow-x-auto bg-[#FFFFFF] selection:bg-[#F6EDF8]">
                     <pre>
                       <code>
                         {mode === "overview" && overviewCode}
@@ -334,7 +334,7 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
           {mode === "overview" && (
             <div>
               <div className="text-center max-w-3xl mx-auto mb-16">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#61126E]">
                   FOUNDATION CAPABILITIES
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-[-0.025em] mt-2">
@@ -351,20 +351,20 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
                   return (
                     <div
                       key={p.title}
-                      className="p-7 rounded-2xl bg-white border border-[#E6E2D8] hover:border-[#FF5A36] transition-all hover:shadow-card flex flex-col justify-between group"
+                      className="p-7 rounded-2xl bg-white border border-[#E8D5EC] hover:border-[#61126E] transition-all hover:shadow-card flex flex-col justify-between group"
                     >
                       <div>
-                        <div className="w-11 h-11 rounded-xl bg-[#F8F9FA] border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-5 transition-all duration-200 shadow-xs">
+                        <div className="w-11 h-11 rounded-xl bg-[#F8F9FA] border border-[#E8D5EC] text-[#0F1730] group-hover:bg-[#61126E] group-hover:border-[#61126E] group-hover:text-white flex items-center justify-center mb-5 transition-all duration-200 shadow-xs">
                           <Icon className="w-5 h-5 transition-colors" />
                         </div>
-                        <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">
+                        <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-2">
                           {p.title}
                         </h3>
                         <p className="text-xs text-[#4A5370] leading-relaxed">
                           {p.desc}
                         </p>
                       </div>
-                      <div className="pt-4 mt-4 border-t border-[#E6E2D8]/60 flex items-center gap-1.5 text-xs font-bold text-[#FF5A36]">
+                      <div className="pt-4 mt-4 border-t border-[#E8D5EC]/60 flex items-center gap-1.5 text-xs font-bold text-[#61126E]">
                         <span>Read specification</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </div>
@@ -378,7 +378,7 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
           {mode === "mcp" && (
             <div>
               <div className="text-center max-w-3xl mx-auto mb-12">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#61126E]">
                   NATURAL LANGUAGE WORKFORCE INTELLIGENCE
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-[-0.025em] mt-2">
@@ -409,20 +409,20 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
                   return (
                     <div
                       key={p.title}
-                      className="p-7 rounded-2xl bg-white border border-[#E6E2D8] hover:border-[#FF5A36] transition-all hover:shadow-card flex flex-col justify-between group"
+                      className="p-7 rounded-2xl bg-white border border-[#E8D5EC] hover:border-[#61126E] transition-all hover:shadow-card flex flex-col justify-between group"
                     >
                       <div>
-                        <div className="w-11 h-11 rounded-xl bg-[#F8F9FA] border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-5 transition-all duration-200 shadow-xs">
+                        <div className="w-11 h-11 rounded-xl bg-[#F8F9FA] border border-[#E8D5EC] text-[#0F1730] group-hover:bg-[#61126E] group-hover:border-[#61126E] group-hover:text-white flex items-center justify-center mb-5 transition-all duration-200 shadow-xs">
                           <Icon className="w-5 h-5 transition-colors" />
                         </div>
-                        <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">
+                        <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-2">
                           {p.title}
                         </h3>
                         <p className="text-xs text-[#4A5370] leading-relaxed">
                           {p.desc}
                         </p>
                       </div>
-                      <div className="pt-4 mt-4 border-t border-[#E6E2D8]/60 flex items-center gap-1.5 text-xs font-bold text-[#FF5A36]">
+                      <div className="pt-4 mt-4 border-t border-[#E8D5EC]/60 flex items-center gap-1.5 text-xs font-bold text-[#61126E]">
                         <span>Install MCP package</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </div>
@@ -436,14 +436,14 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
           {mode === "api" && (
             <div>
               <div className="text-center max-w-3xl mx-auto mb-16">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#61126E]">
                   CATALOGUE & SCHEMAS
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-[-0.025em] mt-2">
                   Core REST API Endpoints
                 </h2>
                 <p className="text-sm text-[#4A5370] mt-3 leading-relaxed">
-                  All requests require an <code className="bg-[#FFE6DF] text-[#C2361A] px-1.5 py-0.5 rounded text-xs">Authorization: Bearer dsk_live_...</code> header.
+                  All requests require an <code className="bg-[#F6EDF8] text-[#4E0E58] px-1.5 py-0.5 rounded text-xs">Authorization: Bearer dsk_live_...</code> header.
                 </p>
               </div>
 
@@ -451,7 +451,7 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
                 {apiEndpoints.map((ep) => (
                   <div
                     key={ep.path}
-                    className="p-6 rounded-2xl bg-white border border-[#E6E2D8] hover:border-[#FF5A36] transition-all hover:shadow-card flex flex-col justify-between group"
+                    className="p-6 rounded-2xl bg-white border border-[#E8D5EC] hover:border-[#61126E] transition-all hover:shadow-card flex flex-col justify-between group"
                   >
                     <div>
                       <div className="flex items-center gap-3 mb-3">
@@ -468,16 +468,16 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
                           {ep.path}
                         </span>
                       </div>
-                      <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-1.5">
+                      <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-1.5">
                         {ep.title}
                       </h3>
                       <p className="text-xs text-[#4A5370] leading-relaxed">
                         {ep.desc}
                       </p>
                     </div>
-                    <div className="pt-4 mt-4 border-t border-[#E6E2D8]/60 flex items-center justify-between text-xs">
+                    <div className="pt-4 mt-4 border-t border-[#E8D5EC]/60 flex items-center justify-between text-xs">
                       <span className="text-slate-400 font-medium">Format: JSON</span>
-                      <span className="text-[#FF5A36] font-bold group-hover:underline flex items-center gap-1">
+                      <span className="text-[#61126E] font-bold group-hover:underline flex items-center gap-1">
                         View schema <ArrowRight className="w-3 h-3" />
                       </span>
                     </div>

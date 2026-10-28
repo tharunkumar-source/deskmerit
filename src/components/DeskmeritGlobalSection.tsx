@@ -66,10 +66,10 @@ export function DeskmeritGlobalSection() {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#FFFFFF] border-b border-[#E6E2D8]">
+    <section className="py-20 lg:py-28 bg-[#FFFFFF] border-b border-[#E8D5EC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+          <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
             Global, locally
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F1730] tracking-[-0.025em]">
@@ -85,12 +85,12 @@ export function DeskmeritGlobalSection() {
           {regions.map((region) => (
             <div
               key={region.country}
-              className="bg-[#F7F4EE] rounded-2xl p-6 border border-[#E6E2D8] hover:border-[#FF5A36] hover:shadow-card transition-all flex flex-col justify-between"
+              className="bg-[#FAF4FB] rounded-2xl p-6 border border-[#E8D5EC] hover:border-[#61126E] hover:shadow-card transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-2xl">{region.flag}</span>
-                  <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded-md bg-[#FFFFFF] text-[#C2361A] border border-[#E6E2D8]">
+                  <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded-md bg-[#FFFFFF] text-[#4E0E58] border border-[#E8D5EC]">
                     {region.priceBadge}
                   </span>
                 </div>
@@ -105,14 +105,14 @@ export function DeskmeritGlobalSection() {
                 <ul className="space-y-2.5 mb-6">
                   {region.points.map((pt, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-xs text-[#4A5370]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A36] shrink-0 mt-1.5" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#61126E] shrink-0 mt-1.5" />
                       <span className="leading-snug">{pt}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="pt-4 border-t border-[#E6E2D8] flex items-center justify-between">
+              <div className="pt-4 border-t border-[#E8D5EC] flex items-center justify-between">
                 <button
                   type="button"
                   onClick={() => setCurrencyCode(region.currencyCode)}
@@ -123,7 +123,7 @@ export function DeskmeritGlobalSection() {
 
                 <Link
                   to={region.href}
-                  className="text-xs font-bold text-[#FF5A36] hover:text-[#E94A27] flex items-center gap-1"
+                  className="text-xs font-bold text-[#61126E] hover:text-[#4E0E58] flex items-center gap-1"
                 >
                   Regional details <ArrowRight className="w-3.5 h-3.5" />
                 </Link>

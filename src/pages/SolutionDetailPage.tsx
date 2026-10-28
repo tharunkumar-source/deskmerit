@@ -720,7 +720,7 @@ export function SolutionDetailPage() {
   const SolutionIcon = sol.pillars[0]?.icon || Users;
 
   return (
-    <div className="min-h-screen bg-[#F7F4EE] text-[#0F1730] font-sans">
+    <div className="min-h-screen bg-[#FAF4FB] text-[#0F1730] font-sans">
       <DeskmeritHeader />
 
       <main>
@@ -729,29 +729,29 @@ export function SolutionDetailPage() {
         {/* ========================================================================= */}
         <section className="bg-[#0A0F1D] text-white pt-10 pb-20 lg:pt-16 lg:pb-28 border-b border-[#24305A] relative overflow-hidden">
           {/* Subtle Ambient Radial Glow */}
-          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#FF5A36]/10 rounded-full blur-[140px] pointer-events-none" />
+          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#61126E]/10 rounded-full blur-[140px] pointer-events-none" />
           <div className="absolute -bottom-20 right-0 w-[400px] h-[400px] bg-[#38BDF8]/10 rounded-full blur-[120px] pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb matching Reference */}
-            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-slate-400 font-medium flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
               <Link to="/solutions/it-services" className="hover:underline text-slate-300">Solutions</Link>
               <span className="text-slate-500">/</span>
-              <span>{sol.title}</span>
+              <span className="text-[#D8B4FE] font-bold">{sol.title}</span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Headline, Overline, Description & CTAs */}
               <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
                   {sol.badge}
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
                   {sol.title}{" "}
-                  <span className="text-[#FF5A36] block">{sol.titleAccent}</span>
+                  <span className="text-[#D8B4FE]">{sol.titleAccent}</span>
                 </h1>
 
                 <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
@@ -761,7 +761,7 @@ export function SolutionDetailPage() {
                 {/* Proof Point Checklist with White-background bullets */}
                 <ul className="space-y-3 pt-1">
                   {sol.checkPoints.slice(0, 3).map((text, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm text-[#E6E2D8]">
+                    <li key={i} className="flex items-start gap-3 text-sm text-[#E8D5EC]">
                       <span className="w-5 h-5 rounded-full bg-white text-[#0F1730] flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                         <Check className="w-3.5 h-3.5 stroke-[3]" />
                       </span>
@@ -770,17 +770,17 @@ export function SolutionDetailPage() {
                   ))}
                 </ul>
 
-                <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                   <Link
                     to="/signup"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Start free trial</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Book a demo</span>
                   </Link>
@@ -807,10 +807,10 @@ export function SolutionDetailPage() {
         {/* ========================================================================= */}
         {/* 2. 4 PILLARS FEATURE BREAKDOWN                                            */}
         {/* ========================================================================= */}
-        <section className="py-20 bg-[#FFFFFF] border-b border-[#E6E2D8]">
+        <section className="py-20 bg-[#FFFFFF] border-b border-[#E8D5EC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                 Strategic Advantages
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-[-0.025em]">
@@ -824,13 +824,13 @@ export function SolutionDetailPage() {
                 return (
                   <div
                     key={p.title}
-                    className="p-7 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between group"
+                    className="p-7 rounded-2xl bg-[#FAF4FB] border border-[#E8D5EC] hover:border-[#61126E] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between group"
                   >
                     <div>
-                      <div className="w-11 h-11 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-5 transition-all duration-200 shadow-xs">
+                      <div className="w-11 h-11 rounded-xl bg-white border border-[#E8D5EC] text-[#0F1730] group-hover:bg-[#61126E] group-hover:border-[#61126E] group-hover:text-white flex items-center justify-center mb-5 transition-all duration-200 shadow-xs">
                         <Icon className="w-5 h-5 transition-colors" />
                       </div>
-                      <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">{p.title}</h3>
+                      <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-2">{p.title}</h3>
                       <p className="text-xs text-[#4A5370] leading-relaxed">{p.desc}</p>
                     </div>
                   </div>

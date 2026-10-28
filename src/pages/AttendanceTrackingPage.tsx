@@ -88,7 +88,7 @@ export function AttendanceTrackingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F7F4EE] text-[#0F1730] font-sans">
+    <div className="min-h-screen bg-[#FAF4FB] text-[#0F1730] font-sans">
       <DeskmeritHeader />
 
       <main>
@@ -98,41 +98,41 @@ export function AttendanceTrackingPage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb matching Reference */}
-            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-slate-400 font-medium flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
               <Link to="/features" className="hover:underline text-slate-300">Product</Link>
               <span className="text-slate-500">/</span>
-              <span>Attendance Tracking</span>
+              <span className="text-[#D8B4FE] font-bold">Attendance Tracking</span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Copy */}
               <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
                   WORKFORCE PRESENCE · ZERO BIOMETRICS
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
                   Attendance that reflects real work,{" "}
-                  <span className="text-[#FF5A36] block">not just a login.</span>
+                  <span className="text-[#D8B4FE]">not just a login.</span>
                 </h1>
 
                 <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
                   Deskmerit computes daily attendance from tracked work, accepted calendar meetings, and manually logged off-computer sessions — so team members in client workshops all day are never marked absent.
                 </p>
 
-                <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                   <Link
                     to="/signup"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Start free trial</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Book a demo</span>
                   </Link>
@@ -158,10 +158,10 @@ export function AttendanceTrackingPage() {
 
         {/* SECTION 2: Key Capabilities (Sqalible Screenshot 1) */}
         {/* SECTION 2: Key Capabilities (Matching Capabilities Section Style on White BG) */}
-        <section className="py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#E6E2D8]">
+        <section className="py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#E8D5EC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-14">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                 Core Capabilities
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-tight">
@@ -170,53 +170,53 @@ export function AttendanceTrackingPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-8 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between group">
+              <div className="p-8 rounded-2xl bg-[#FAF4FB] border border-[#E8D5EC] hover:border-[#61126E] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between group">
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-6 shadow-xs transition-all duration-200">
+                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E8D5EC] text-[#0F1730] group-hover:bg-[#61126E] group-hover:border-[#61126E] group-hover:text-white flex items-center justify-center mb-6 shadow-xs transition-all duration-200">
                     <Globe2 className="w-6 h-6 transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-3">
+                  <h3 className="text-xl font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-3">
                     Every Employee's Own Timezone
                   </h3>
                   <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed">
                     Days close at each person's local midnight. Teams distributed across Bengaluru, Dubai, Riyadh, Sydney, and Auckland get accurate days for everyone.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[#E6E2D8] text-xs font-semibold text-[#FF5A36]">
+                <div className="mt-6 pt-4 border-t border-[#E8D5EC] text-xs font-semibold text-[#61126E]">
                   DST Aware · Multi-Region
                 </div>
               </div>
 
-              <div className="p-8 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between group">
+              <div className="p-8 rounded-2xl bg-[#FAF4FB] border border-[#E8D5EC] hover:border-[#61126E] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between group">
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-6 shadow-xs transition-all duration-200">
+                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E8D5EC] text-[#0F1730] group-hover:bg-[#61126E] group-hover:border-[#61126E] group-hover:text-white flex items-center justify-center mb-6 shadow-xs transition-all duration-200">
                     <Moon className="w-6 h-6 transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-3">
+                  <h3 className="text-xl font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-3">
                     Fair for Late Nights & Shifts
                   </h3>
                   <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed">
                     A session crossing midnight is judged as a whole against your shift minimum — so a 6-hour night shift counts as present, never two separate absences.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[#E6E2D8] text-xs font-semibold text-[#FF5A36]">
+                <div className="mt-6 pt-4 border-t border-[#E8D5EC] text-xs font-semibold text-[#61126E]">
                   Overnight Shift Integrity
                 </div>
               </div>
 
-              <div className="p-8 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between group">
+              <div className="p-8 rounded-2xl bg-[#FAF4FB] border border-[#E8D5EC] hover:border-[#61126E] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between group">
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-6 shadow-xs transition-all duration-200">
+                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E8D5EC] text-[#0F1730] group-hover:bg-[#61126E] group-hover:border-[#61126E] group-hover:text-white flex items-center justify-center mb-6 shadow-xs transition-all duration-200">
                     <FileCheck className="w-6 h-6 transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-3">
+                  <h3 className="text-xl font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-3">
                     Audited HR Corrections
                   </h3>
                   <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed">
                     Set the minimum threshold for a present day. Every admin correction is logged with author, reason, and before/after values that are never overwritten.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[#E6E2D8] text-xs font-semibold text-[#FF5A36]">
+                <div className="mt-6 pt-4 border-t border-[#E8D5EC] text-xs font-semibold text-[#61126E]">
                   Immutable Audit Trail
                 </div>
               </div>
@@ -228,7 +228,7 @@ export function AttendanceTrackingPage() {
         <section className="py-20 lg:py-28 bg-[#0A0F1D] text-white border-b border-[#24305A]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-16">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2 font-mono">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2 font-mono">
                 AUTOMATED VERIFICATION
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
@@ -244,7 +244,7 @@ export function AttendanceTrackingPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-800">
                 {/* Step 1 */}
                 <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                  <div className="text-xs font-bold font-mono text-[#FF5A36] mb-4">STEP 01</div>
+                  <div className="text-xs font-bold font-mono text-[#61126E] mb-4">STEP 01</div>
                   <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
                     Passive Work Ingestion
                   </h3>
@@ -255,7 +255,7 @@ export function AttendanceTrackingPage() {
 
                 {/* Step 2 */}
                 <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                  <div className="text-xs font-bold font-mono text-[#FF5A36] mb-4">STEP 02</div>
+                  <div className="text-xs font-bold font-mono text-[#61126E] mb-4">STEP 02</div>
                   <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
                     Calendar Meeting Blend
                   </h3>
@@ -266,7 +266,7 @@ export function AttendanceTrackingPage() {
 
                 {/* Step 3 */}
                 <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                  <div className="text-xs font-bold font-mono text-[#FF5A36] mb-4">STEP 03</div>
+                  <div className="text-xs font-bold font-mono text-[#61126E] mb-4">STEP 03</div>
                   <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
                     Threshold Evaluation
                   </h3>
@@ -277,7 +277,7 @@ export function AttendanceTrackingPage() {
 
                 {/* Step 4 */}
                 <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                  <div className="text-xs font-bold font-mono text-[#FF5A36] mb-4">STEP 04</div>
+                  <div className="text-xs font-bold font-mono text-[#61126E] mb-4">STEP 04</div>
                   <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
                     HRMS & Payroll Feed
                   </h3>

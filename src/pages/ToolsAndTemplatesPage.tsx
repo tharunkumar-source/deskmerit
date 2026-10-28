@@ -56,7 +56,7 @@ export function ToolsAndTemplatesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F4EE] text-[#0F1730]">
+    <div className="min-h-screen bg-[#FAF4FB] text-[#0F1730]">
       <DeskmeritHeader />
 
       <main>
@@ -64,11 +64,11 @@ export function ToolsAndTemplatesPage() {
         <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
           {/* Dual Radial Glows */}
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#24305A]/40 blur-[120px] rounded-full pointer-events-none" />
-          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#FF5A36]/10 blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#61126E]/10 blur-[100px] rounded-full pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
-            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-slate-400 font-medium flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
               <Link to="/tools" className="hover:underline text-slate-300">Resources</Link>
@@ -87,25 +87,25 @@ export function ToolsAndTemplatesPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Heading & Pitch */}
               <div className="lg:col-span-7 space-y-6">
-                <div className="inline-block px-3.5 py-1 rounded-full bg-[#FFE6DF]/15 border border-[#FF5A36]/30 text-[11px] font-bold uppercase tracking-wider text-[#FF5A36]">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
                   {isTimesheet || isPolicy ? "FREE COMPLIANCE TEMPLATE" : "FREE PRODUCTIVITY TOOL"}
                 </div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
                   {isOvertime ? (
                     <>
-                      Work out overtime hours & pay <span className="text-[#FF5A36] block">with statutory accuracy.</span>
+                      Work out overtime hours & pay <span className="text-[#D8B4FE]">with statutory accuracy.</span>
                     </>
                   ) : isTimesheet ? (
                     <>
-                      Professional weekly timesheet <span className="text-[#FF5A36] block">Excel & Sheets template.</span>
+                      Professional weekly timesheet <span className="text-[#D8B4FE]">Excel & Sheets template.</span>
                     </>
                   ) : isPolicy ? (
                     <>
-                      A fair employee monitoring policy <span className="text-[#FF5A36] block">built on mutual trust.</span>
+                      A fair employee monitoring policy <span className="text-[#D8B4FE]">built on mutual trust.</span>
                     </>
                   ) : (
                     <>
-                      Calculate billable utilisation <span className="text-[#FF5A36] block">in seconds.</span>
+                      Calculate billable utilisation <span className="text-[#D8B4FE]">in seconds.</span>
                     </>
                   )}
                 </h1>
@@ -118,18 +118,19 @@ export function ToolsAndTemplatesPage() {
                     ? "A legally audited workplace transparency policy template aligned with DPDP, NSW surveillance acts, and zero-keylogging standards."
                     : "Billable hours divided by available hours with automated team benchmarks. Stop guessing utilization and optimize your engineering delivery."}
                 </p>
-                <div className="flex flex-wrap gap-4 pt-2">
+                <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                   <Link
                     to="/signup"
-                    className="px-6 py-3.5 rounded-[12px] bg-[#FF5A36] hover:bg-[#E04826] text-white font-extrabold text-sm shadow-lg hover:shadow-glow-ember transition-all inline-flex items-center gap-2"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-lg hover:shadow-glow-ember transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
-                    Start free trial <ArrowRight className="w-4 h-4" />
+                    <span>Start free trial</span>
+                    <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     to="/demo"
-                    className="px-6 py-3.5 rounded-[12px] bg-[#10192A] border border-slate-700 hover:border-slate-500 text-white font-semibold text-sm transition-all"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
-                    Book a demo
+                    <span>Book a demo</span>
                   </Link>
                 </div>
               </div>
@@ -163,9 +164,9 @@ export function ToolsAndTemplatesPage() {
         <section className="py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {!isOvertime && !isTimesheet && !isPolicy && (
             /* UTILISATION CALCULATOR */
-            <div className="bg-[#FFFFFF] rounded-[24px] p-8 sm:p-12 border border-[#E6E2D8] shadow-card space-y-8">
+            <div className="bg-[#FFFFFF] rounded-[24px] p-8 sm:p-12 border border-[#E8D5EC] shadow-card space-y-8">
               <div className="text-center max-w-2xl mx-auto">
-                <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                   Free Tool
                 </div>
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730]">
@@ -179,7 +180,7 @@ export function ToolsAndTemplatesPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-xs font-semibold text-[#0F1730] mb-2">
-                    Billable hours logged this week: <strong className="text-sm font-bold text-[#FF5A36]">{billableHours}h</strong>
+                    Billable hours logged this week: <strong className="text-sm font-bold text-[#61126E]">{billableHours}h</strong>
                   </label>
                   <input
                     type="range"
@@ -187,7 +188,7 @@ export function ToolsAndTemplatesPage() {
                     max="60"
                     value={billableHours}
                     onChange={(e) => setBillableHours(Number(e.target.value))}
-                    className="w-full accent-[#FF5A36] h-2 bg-[#E6E2D8] rounded-lg cursor-pointer"
+                    className="w-full accent-[#61126E] h-2 bg-[#E8D5EC] rounded-lg cursor-pointer"
                   />
                 </div>
 
@@ -201,13 +202,13 @@ export function ToolsAndTemplatesPage() {
                     max="60"
                     value={availableHours}
                     onChange={(e) => setAvailableHours(Number(e.target.value))}
-                    className="w-full accent-[#0F1730] h-2 bg-[#E6E2D8] rounded-lg cursor-pointer"
+                    className="w-full accent-[#0F1730] h-2 bg-[#E8D5EC] rounded-lg cursor-pointer"
                   />
                 </div>
               </div>
 
               {/* Result Callout */}
-              <div className="p-8 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] text-center space-y-2">
+              <div className="p-8 rounded-2xl bg-[#FAF4FB] border border-[#E8D5EC] text-center space-y-2">
                 <div className="text-xs font-semibold text-[#4A5370] uppercase tracking-wider">
                   Calculated Billable Utilisation
                 </div>
@@ -219,13 +220,13 @@ export function ToolsAndTemplatesPage() {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-[#E6E2D8] flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="pt-4 border-t border-[#E8D5EC] flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="text-xs text-[#4A5370]">
                   Tired of manual formulas? Deskmerit tracks billable rates automatically from Jira.
                 </div>
                 <Link
                   to="/signup"
-                  className="px-5 py-2.5 rounded-[12px] bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-xs shadow-md hover:shadow-glow-ember transition-colors shrink-0"
+                  className="px-5 py-2.5 rounded-[12px] bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs shadow-md hover:shadow-glow-ember transition-colors shrink-0"
                 >
                   Automate utilisation →
                 </Link>
@@ -235,9 +236,9 @@ export function ToolsAndTemplatesPage() {
 
           {isOvertime && (
             /* OVERTIME CALCULATOR */
-            <div className="bg-[#FFFFFF] rounded-[24px] p-8 sm:p-12 border border-[#E6E2D8] shadow-card space-y-8">
+            <div className="bg-[#FFFFFF] rounded-[24px] p-8 sm:p-12 border border-[#E8D5EC] shadow-card space-y-8">
               <div className="text-center max-w-2xl mx-auto">
-                <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                   Free Tool
                 </div>
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730]">
@@ -255,7 +256,7 @@ export function ToolsAndTemplatesPage() {
                     type="number"
                     value={hourlyRate}
                     onChange={(e) => setHourlyRate(Number(e.target.value))}
-                    className="w-full px-3 py-2 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE]"
+                    className="w-full px-3 py-2 text-xs rounded-xl border border-[#E8D5EC] bg-[#FAF4FB]"
                   />
                 </div>
 
@@ -265,7 +266,7 @@ export function ToolsAndTemplatesPage() {
                     type="number"
                     value={standardHours}
                     onChange={(e) => setStandardHours(Number(e.target.value))}
-                    className="w-full px-3 py-2 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE]"
+                    className="w-full px-3 py-2 text-xs rounded-xl border border-[#E8D5EC] bg-[#FAF4FB]"
                   />
                 </div>
 
@@ -275,7 +276,7 @@ export function ToolsAndTemplatesPage() {
                     type="number"
                     value={actualHours}
                     onChange={(e) => setActualHours(Number(e.target.value))}
-                    className="w-full px-3 py-2 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE]"
+                    className="w-full px-3 py-2 text-xs rounded-xl border border-[#E8D5EC] bg-[#FAF4FB]"
                   />
                 </div>
 
@@ -284,7 +285,7 @@ export function ToolsAndTemplatesPage() {
                   <select
                     value={otMultiplier}
                     onChange={(e) => setOtMultiplier(Number(e.target.value))}
-                    className="w-full px-3 py-2 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE]"
+                    className="w-full px-3 py-2 text-xs rounded-xl border border-[#E8D5EC] bg-[#FAF4FB]"
                   >
                     <option value={1.5}>1.5x (Time and a half - standard)</option>
                     <option value={2.0}>2.0x (Double time - weekend/public holiday)</option>
@@ -295,16 +296,16 @@ export function ToolsAndTemplatesPage() {
 
               {/* Overtime Results */}
               <div className="grid grid-cols-3 gap-4 text-center">
-                <div className="p-4 rounded-xl bg-[#F7F4EE] border border-[#E6E2D8]">
+                <div className="p-4 rounded-xl bg-[#FAF4FB] border border-[#E8D5EC]">
                   <div className="text-xs text-[#4A5370]">Overtime hours</div>
                   <div className="text-2xl font-bold text-[#0F1730] mt-1 font-display tnum">{otHours}h</div>
                 </div>
-                <div className="p-4 rounded-xl bg-[#F7F4EE] border border-[#E6E2D8]">
+                <div className="p-4 rounded-xl bg-[#FAF4FB] border border-[#E8D5EC]">
                   <div className="text-xs text-[#4A5370]">Overtime pay</div>
-                  <div className="text-2xl font-bold text-[#C2361A] mt-1 font-display tnum">${otPay.toFixed(2)}</div>
+                  <div className="text-2xl font-bold text-[#4E0E58] mt-1 font-display tnum">${otPay.toFixed(2)}</div>
                 </div>
-                <div className="p-4 rounded-xl bg-[#FFE6DF] border border-[#FF5A36]/30">
-                  <div className="text-xs text-[#C2361A] font-semibold">Total pay</div>
+                <div className="p-4 rounded-xl bg-[#F6EDF8] border border-[#61126E]/30">
+                  <div className="text-xs text-[#4E0E58] font-semibold">Total pay</div>
                   <div className="text-2xl font-bold text-[#0F1730] mt-1 font-display tnum">${totalPay.toFixed(2)}</div>
                 </div>
               </div>
@@ -313,9 +314,9 @@ export function ToolsAndTemplatesPage() {
 
           {isTimesheet && (
             /* TIMESHEET TEMPLATE */
-            <div className="bg-[#FFFFFF] rounded-[24px] p-8 sm:p-12 border border-[#E6E2D8] shadow-card space-y-8">
+            <div className="bg-[#FFFFFF] rounded-[24px] p-8 sm:p-12 border border-[#E8D5EC] shadow-card space-y-8">
               <div className="text-center max-w-2xl mx-auto">
-                <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                   Free Template
                 </div>
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730]">
@@ -326,8 +327,8 @@ export function ToolsAndTemplatesPage() {
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b border-[#E6E2D8]">
+              <div className="p-6 rounded-2xl bg-[#FAF4FB] border border-[#E8D5EC] space-y-4">
+                <div className="flex items-center justify-between pb-3 border-b border-[#E8D5EC]">
                   <span className="font-bold text-xs text-[#0F1730]">Template Preview: Weekly_Timesheet_v1.0.xlsx</span>
                   <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">
                     Formula enabled
@@ -337,7 +338,7 @@ export function ToolsAndTemplatesPage() {
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-xs">
                     <thead>
-                      <tr className="border-b border-[#E6E2D8] text-[#4A5370]">
+                      <tr className="border-b border-[#E8D5EC] text-[#4A5370]">
                         <th className="py-2">Day</th>
                         <th className="py-2">Task / Project</th>
                         <th className="py-2">Start</th>
@@ -346,7 +347,7 @@ export function ToolsAndTemplatesPage() {
                         <th className="py-2">Billable</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-[#E6E2D8]/60 text-[#0F1730]">
+                    <tbody className="divide-y divide-[#E8D5EC]/60 text-[#0F1730]">
                       <tr>
                         <td className="py-2">Mon</td>
                         <td>Acme Retail (Checkout API)</td>
@@ -382,9 +383,9 @@ export function ToolsAndTemplatesPage() {
 
           {isPolicy && (
             /* POLICY TEMPLATE */
-            <div className="bg-[#FFFFFF] rounded-[24px] p-8 sm:p-12 border border-[#E6E2D8] shadow-card space-y-6">
+            <div className="bg-[#FFFFFF] rounded-[24px] p-8 sm:p-12 border border-[#E8D5EC] shadow-card space-y-6">
               <div className="text-center max-w-2xl mx-auto">
-                <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                   Free Policy Template
                 </div>
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730]">
@@ -401,7 +402,7 @@ export function ToolsAndTemplatesPage() {
                   type="text"
                   value={companyName}
                   onChange={(e) => setCompanyName(e.target.value)}
-                  className="w-full max-w-md px-3 py-2 text-xs rounded-xl border border-[#E6E2D8] bg-[#F7F4EE] text-[#0F1730]"
+                  className="w-full max-w-md px-3 py-2 text-xs rounded-xl border border-[#E8D5EC] bg-[#FAF4FB] text-[#0F1730]"
                 />
               </div>
 
@@ -409,13 +410,13 @@ export function ToolsAndTemplatesPage() {
                 <button
                   type="button"
                   onClick={handleCopyPolicy}
-                  className="absolute top-4 right-4 px-3 py-1.5 rounded-lg bg-[#24305A] hover:bg-[#FF5A36] text-white text-[11px] font-sans font-bold flex items-center gap-1.5 transition-colors"
+                  className="absolute top-4 right-4 px-3 py-1.5 rounded-lg bg-[#24305A] hover:bg-[#61126E] text-white text-[11px] font-sans font-bold flex items-center gap-1.5 transition-colors"
                 >
                   {copiedPolicy ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                   {copiedPolicy ? "Copied!" : "Copy text"}
                 </button>
 
-                <div className="text-[#FF5A36] font-bold font-sans">
+                <div className="text-[#F0ABFC] font-bold font-sans">
                   EMPLOYEE WORKPLACE TIME TRACKING POLICY ({companyName})
                 </div>
                 <p className="text-[#9AA1B2]">

@@ -188,7 +188,7 @@ export function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F7F4EE] text-[#0F1730]">
+    <div className="min-h-screen bg-[#FAF4FB] text-[#0F1730]">
       <DeskmeritHeader />
 
       <main>
@@ -197,22 +197,22 @@ export function AboutPage() {
         {/* ========================================================================= */}
         <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden mb-12">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
-            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-slate-400 font-medium flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
               <span className="text-slate-300">Company</span>
               <span className="text-slate-500">/</span>
-              <span>{isCareers ? "Careers" : isPartners ? "Partners" : isPress ? "Press & Media Kit" : "About Us"}</span>
+              <span className="text-[#D8B4FE] font-bold">{isCareers ? "Careers" : isPartners ? "Partners" : isPress ? "Press & Media Kit" : "About Us"}</span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column */}
               <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full space-y-6">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
                   {isCareers
                     ? "CAREERS AT DESKMERIT"
                     : isPartners
@@ -226,22 +226,22 @@ export function AboutPage() {
                   {isCareers ? (
                     <>
                       Build software that respects{" "}
-                      <span className="text-[#FF5A36] block">the craft of knowledge work.</span>
+                      <span className="text-[#D8B4FE]">the craft of knowledge work.</span>
                     </>
                   ) : isPartners ? (
                     <>
                       Grow your consulting practice with{" "}
-                      <span className="text-[#FF5A36] block">transparent time tracking.</span>
+                      <span className="text-[#D8B4FE]">transparent time tracking.</span>
                     </>
                   ) : isPress ? (
                     <>
                       Press, brand guidelines, and{" "}
-                      <span className="text-[#FF5A36] block">official media assets.</span>
+                      <span className="text-[#D8B4FE]">official media assets.</span>
                     </>
                   ) : (
                     <>
                       We believe time data should be honest —{" "}
-                      <span className="text-[#FF5A36] block">and fair to both sides.</span>
+                      <span className="text-[#D8B4FE]">and fair to both sides.</span>
                     </>
                   )}
                 </h1>
@@ -256,17 +256,17 @@ export function AboutPage() {
                     : "Deskmerit is built by Kombee Technologies, serving remote, hybrid, and IT services teams globally with zero-surveillance telemetry."}
                 </p>
 
-                <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                   <Link
                     to="/signup"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Start free trial</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Book a demo</span>
                   </Link>
@@ -310,23 +310,23 @@ export function AboutPage() {
 
             {/* Culture / Values */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-              <div className="p-7 rounded-2xl bg-[#FFFFFF] border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all group">
+              <div className="p-7 rounded-2xl bg-[#FFFFFF] border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all group">
                 <span className="text-2xl mb-3 block">🌍</span>
-                <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">Remote-First & Async</h3>
+                <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-2">Remote-First & Async</h3>
                 <p className="text-xs text-[#4A5370] leading-relaxed">
                   We judge outcomes, not green status dots. Work when and where you are most productive.
                 </p>
               </div>
-              <div className="p-7 rounded-2xl bg-[#FFFFFF] border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all group">
+              <div className="p-7 rounded-2xl bg-[#FFFFFF] border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all group">
                 <span className="text-2xl mb-3 block">🦀</span>
-                <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">High Craft Standards</h3>
+                <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-2">High Craft Standards</h3>
                 <p className="text-xs text-[#4A5370] leading-relaxed">
                   Rust on the desktop, TypeScript on the web, robust WebSocket replication. We care deeply about sub-20ms interactions.
                 </p>
               </div>
-              <div className="p-7 rounded-2xl bg-[#FFFFFF] border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all group">
+              <div className="p-7 rounded-2xl bg-[#FFFFFF] border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all group">
                 <span className="text-2xl mb-3 block">🤝</span>
-                <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">Ethical Integrity</h3>
+                <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-2">Ethical Integrity</h3>
                 <p className="text-xs text-[#4A5370] leading-relaxed">
                   We never build features we wouldn't want running on our own personal computers.
                 </p>
@@ -339,12 +339,12 @@ export function AboutPage() {
               {openRoles.map((role) => (
                 <div
                   key={role.title}
-                  className="p-6 rounded-2xl bg-white border border-[#E6E2D8] hover:border-[#FF5A36] transition-all shadow-subtle flex flex-col md:flex-row md:items-center justify-between gap-6"
+                  className="p-6 rounded-2xl bg-white border border-[#E8D5EC] hover:border-[#61126E] transition-all shadow-subtle flex flex-col md:flex-row md:items-center justify-between gap-6"
                 >
                   <div className="space-y-1.5">
                     <div className="flex flex-wrap items-center gap-2">
                       <h3 className="font-bold text-base text-[#0F1730]">{role.title}</h3>
-                      <span className="px-2.5 py-0.5 rounded-full bg-[#FFE6DF] text-[#C2361A] text-[10px] font-bold">
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#F6EDF8] text-[#4E0E58] text-[10px] font-bold">
                         {role.type}
                       </span>
                     </div>
@@ -373,25 +373,25 @@ export function AboutPage() {
               {partnerTiers.map((tier) => (
                 <div
                   key={tier.name}
-                  className="p-7 rounded-2xl bg-white border border-[#E6E2D8] shadow-subtle flex flex-col justify-between hover:border-[#FF5A36] hover:shadow-card transition-all group"
+                  className="p-7 rounded-2xl bg-white border border-[#E8D5EC] shadow-subtle flex flex-col justify-between hover:border-[#61126E] hover:shadow-card transition-all group"
                 >
                   <div>
-                    <span className="text-xs font-bold px-2.5 py-1 rounded bg-[#FFE6DF] text-[#C2361A] inline-block mb-3">
+                    <span className="text-xs font-bold px-2.5 py-1 rounded bg-[#F6EDF8] text-[#4E0E58] inline-block mb-3">
                       {tier.benefit}
                     </span>
-                    <h3 className="font-bold text-lg text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">{tier.name}</h3>
+                    <h3 className="font-bold text-lg text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-2">{tier.name}</h3>
                     <p className="text-xs text-[#4A5370] leading-relaxed mb-6">{tier.desc}</p>
-                    <ul className="space-y-2.5 text-xs text-[#0F1730] border-t border-[#E6E2D8] pt-4">
+                    <ul className="space-y-2.5 text-xs text-[#0F1730] border-t border-[#E8D5EC] pt-4">
                       {tier.features.map((feat, i) => (
                         <li key={i} className="flex items-center gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5A36] shrink-0" />
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#61126E] shrink-0" />
                           <span>{feat}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="pt-6 mt-6 border-t border-[#E6E2D8]">
+                  <div className="pt-6 mt-6 border-t border-[#E8D5EC]">
                     <Link
                       to="/contact?type=partner"
                       className="w-full py-2.5 rounded-xl bg-[#0F1730] hover:bg-[#24305A] text-white font-bold text-xs text-center block transition-colors"
@@ -408,29 +408,29 @@ export function AboutPage() {
           <section className="py-6 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
               {/* Brand Logo Assets Card */}
-              <div className="p-8 rounded-2xl bg-white border border-[#E6E2D8] shadow-subtle space-y-6">
+              <div className="p-8 rounded-2xl bg-white border border-[#E8D5EC] shadow-subtle space-y-6">
                 <div className="flex items-center justify-between">
                   <h3 className="font-bold text-lg text-[#0F1730]">Official Brand Assets</h3>
-                  <Download className="w-5 h-5 text-[#FF5A36]" />
+                  <Download className="w-5 h-5 text-[#61126E]" />
                 </div>
                 <p className="text-xs text-[#4A5370] leading-relaxed">
                   Includes full vector SVGs, PNG marks on dark and light backgrounds, and our signature Ember flame emblem.
                 </p>
                 <div className="p-6 bg-[#0F1730] rounded-xl flex items-center justify-center">
                   <span className="text-xl font-bold tracking-tight text-white font-display">
-                    desk<span className="text-[#FF5A36]">merit</span>
+                    desk<span className="text-[#61126E]">merit</span>
                   </span>
                 </div>
                 <a
                   href="/download"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#F7F4EE] hover:bg-[#E6E2D8] text-xs font-bold text-[#0F1730] transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#FAF4FB] hover:bg-[#E8D5EC] text-xs font-bold text-[#0F1730] transition-colors"
                 >
                   <Download className="w-3.5 h-3.5" /> Download Media Package (.ZIP)
                 </a>
               </div>
 
               {/* Media Inquiries & Press Contact */}
-              <div className="p-8 rounded-2xl bg-white border border-[#E6E2D8] shadow-subtle space-y-6 flex flex-col justify-between">
+              <div className="p-8 rounded-2xl bg-white border border-[#E8D5EC] shadow-subtle space-y-6 flex flex-col justify-between">
                 <div>
                   <h3 className="font-bold text-lg text-[#0F1730] mb-2">Media & Press Inquiries</h3>
                   <p className="text-xs text-[#4A5370] leading-relaxed mb-4">
@@ -438,14 +438,14 @@ export function AboutPage() {
                   </p>
                   <div className="space-y-2 text-xs">
                     <div className="flex items-center gap-2 text-[#0F1730]">
-                      <Mail className="w-4 h-4 text-[#FF5A36]" />
+                      <Mail className="w-4 h-4 text-[#61126E]" />
                       <span className="font-bold">press@deskmerit.com</span>
                     </div>
                     <div className="text-[#4A5370]">Average turnaround: under 4 business hours.</div>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-[#E6E2D8]">
+                <div className="pt-4 border-t border-[#E8D5EC]">
                   <Link
                     to="/demo"
                     className="w-full py-2.5 rounded-xl bg-[#0F1730] hover:bg-[#24305A] text-white font-bold text-xs text-center block transition-colors"
@@ -460,10 +460,10 @@ export function AboutPage() {
           /* ================= ABOUT US (DEFAULT) ================= */
           <>
             {/* What We Believe */}
-            <section className="py-20 bg-[#FFFFFF] border-y border-[#E6E2D8]">
+            <section className="py-20 bg-[#FFFFFF] border-y border-[#E8D5EC]">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                  <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                     Our philosophy
                   </div>
                   <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-[-0.025em]">
@@ -477,12 +477,12 @@ export function AboutPage() {
                     return (
                       <div
                         key={b.title}
-                        className="p-8 rounded-2xl bg-white border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all group"
+                        className="p-8 rounded-2xl bg-white border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all group"
                       >
-                        <div className="w-11 h-11 rounded-xl bg-[#F8F9FA] border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center mb-5 transition-all duration-200 shadow-xs">
+                        <div className="w-11 h-11 rounded-xl bg-[#F8F9FA] border border-[#E8D5EC] text-[#0F1730] group-hover:bg-[#61126E] group-hover:border-[#61126E] group-hover:text-white flex items-center justify-center mb-5 transition-all duration-200 shadow-xs">
                           <Icon className="w-5 h-5 transition-colors" />
                         </div>
-                        <h3 className="text-xl font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-3">{b.title}</h3>
+                        <h3 className="text-xl font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-3">{b.title}</h3>
                         <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed">{b.desc}</p>
                       </div>
                     );
@@ -492,10 +492,10 @@ export function AboutPage() {
             </section>
 
             {/* Leadership & Core Team */}
-            <section className="py-20 bg-[#FBF9F5] border-b border-[#E6E2D8]">
+            <section className="py-20 bg-[#FBF9F5] border-b border-[#E8D5EC]">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                  <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                     Executive Leadership & Core Team
                   </div>
                   <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-[-0.025em]">
@@ -510,20 +510,20 @@ export function AboutPage() {
                   {teamMembers.map((member) => (
                     <div
                       key={member.name}
-                      className="bg-white rounded-2xl overflow-hidden border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all group flex flex-col justify-between"
+                      className="bg-white rounded-2xl overflow-hidden border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all group flex flex-col justify-between"
                     >
                       <div className="p-6">
-                        <div className="w-24 h-24 mx-auto rounded-2xl overflow-hidden mb-4 border-2 border-[#E6E2D8] group-hover:border-[#FF5A36] transition-colors shadow-xs">
+                        <div className="w-24 h-24 mx-auto rounded-2xl overflow-hidden mb-4 border-2 border-[#E8D5EC] group-hover:border-[#61126E] transition-colors shadow-xs">
                           <img
                             src={member.avatar}
                             alt={member.name}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
                         </div>
-                        <h3 className="text-base font-bold text-[#0F1730] text-center group-hover:text-[#FF5A36] transition-colors">
+                        <h3 className="text-base font-bold text-[#0F1730] text-center group-hover:text-[#61126E] transition-colors">
                           {member.name}
                         </h3>
-                        <div className="text-xs font-semibold text-[#FF5A36] text-center mt-0.5 mb-3">
+                        <div className="text-xs font-semibold text-[#61126E] text-center mt-0.5 mb-3">
                           {member.role}
                         </div>
                         <p className="text-xs text-[#4A5370] leading-relaxed text-center font-normal">
@@ -531,7 +531,7 @@ export function AboutPage() {
                         </p>
                       </div>
 
-                      <div className="px-5 py-3 bg-[#FAF8F5] border-t border-[#F0ECE1] text-center text-[11px] text-slate-500 font-medium">
+                      <div className="px-5 py-3 bg-[#FAF4FB] border-t border-[#F0ECE1] text-center text-[11px] text-slate-500 font-medium">
                         Kombee Technologies
                       </div>
                     </div>
@@ -543,7 +543,7 @@ export function AboutPage() {
             {/* Where We Work with Photographic City Hubs */}
             <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-2xl mx-auto mb-16">
-                <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                   Global Presence
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-[-0.025em]">
@@ -558,7 +558,7 @@ export function AboutPage() {
                 {offices.map((off) => (
                   <div
                     key={off.country}
-                    className="bg-white rounded-2xl overflow-hidden border border-[#E6E2D8] shadow-subtle hover:border-[#FF5A36] hover:shadow-card transition-all group flex flex-col justify-between"
+                    className="bg-white rounded-2xl overflow-hidden border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all group flex flex-col justify-between"
                   >
                     {/* Location Image */}
                     <div className="h-44 w-full relative overflow-hidden bg-slate-900">
@@ -583,7 +583,7 @@ export function AboutPage() {
                       </p>
                     </div>
 
-                    <div className="px-5 py-2.5 bg-[#FAF8F5] border-t border-[#F0ECE1] text-[11px] font-mono text-emerald-600 flex items-center gap-1.5">
+                    <div className="px-5 py-2.5 bg-[#FAF4FB] border-t border-[#F0ECE1] text-[11px] font-mono text-emerald-600 flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                       <span>Active Regional Cluster</span>
                     </div>

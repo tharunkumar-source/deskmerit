@@ -32,15 +32,15 @@ export default {
           900: "#0F1730",
         },
         ember: {
-          DEFAULT: "#FF5A36",
-          hover: "#E94A27",
-          deep: "#C2361A",
-          tint: "#FFE6DF",
-          subtle: "#FFF1ED",
+          DEFAULT: "#61126E",
+          hover: "#4E0E58",
+          deep: "#3D0B46",
+          tint: "#F6EDF8",
+          subtle: "#FAF4FB",
         },
         paper: {
-          DEFAULT: "#F7F4EE",
-          dark: "#EDE9E0",
+          DEFAULT: "#FAF4FB",
+          dark: "#F0DFEF",
           card: "#FFFFFF",
         },
         dusk: {
@@ -54,9 +54,9 @@ export default {
           light: "#8F97B0",
         },
         mist: {
-          DEFAULT: "#E6E2D8",
-          dark: "#D6D1C5",
-          light: "#F0ECE3",
+          DEFAULT: "#E8D5EC",
+          dark: "#DAC3DE",
+          light: "#F6EDF8",
         },
         white: "#FFFFFF",
 
@@ -71,12 +71,12 @@ export default {
 
         // Backward compatibility mappings
         primary: {
-          DEFAULT: "#FF5A36",
-          hover: "#E94A27",
-          pressed: "#C2361A",
-          bright: "#FF5A36",
-          light: "#FFE6DF",
-          disabled: "#FFA994",
+          DEFAULT: "#61126E",
+          hover: "#4E0E58",
+          pressed: "#3D0B46",
+          bright: "#8B1E9E",
+          light: "#F6EDF8",
+          disabled: "#C594CE",
         },
         secondary: {
           DEFAULT: "#0F1730",
@@ -88,7 +88,7 @@ export default {
         'subtle': '0 2px 10px rgba(15, 23, 48, 0.04)',
         'card': '0 4px 20px rgba(15, 23, 48, 0.06)',
         'elevated': '0 12px 36px rgba(15, 23, 48, 0.09)',
-        'glow-ember': '0 0 24px rgba(255, 90, 54, 0.25)',
+        'glow-ember': '0 0 24px rgba(97, 18, 110, 0.25)',
       },
       borderRadius: {
         'button': '12px',

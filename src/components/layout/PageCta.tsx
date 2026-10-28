@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 export function PageCta({
   title = "See your team's real week by Friday.",
   subtitle = "Install in minutes, start from a task, and get your first defensible report this week.",
-  className = "bg-[#F7F4EE] pt-6 pb-14 md:pt-8 md:pb-16",
+  className = "bg-[#FAF4FB] pt-6 pb-14 md:pt-8 md:pb-16",
 }: {
   title?: string;
   subtitle?: string;
@@ -23,14 +23,12 @@ export function PageCta({
                 strokeWidth="8.5"
                 strokeLinecap="round"
               />
-              <circle cx="31.2" cy="37.7" r="5.4" fill="#FF5A36" />
+              <circle cx="31.2" cy="37.7" r="5.4" fill="#61126E" />
             </svg>
           </div>
 
           <div className="flex-1 relative z-10">
-            <p className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-1">
-              Time tracking people trust
-            </p>
+            <div className="inline-block px-3 py-1 rounded-full bg-[#61126E]/40 border border-[#A81CD0]/50 text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] shadow-xs mb-2">Time tracking people trust</div>
             <h2 id="page-cta-title" className="text-2xl sm:text-3xl font-extrabold text-white">
               {title}
             </h2>

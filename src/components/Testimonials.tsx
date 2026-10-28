@@ -15,7 +15,7 @@ export function Testimonials() {
   const go = (dir: 1 | -1) => setIndex((i) => (i + dir + testimonials.length) % testimonials.length);
 
   return (
-    <section className="bg-[#FAF7F2] py-20 md:py-24 border-t border-neutral-200/80" aria-labelledby="testimonials-title">
+    <section className="bg-[#FAF4FB] py-20 md:py-24 border-t border-neutral-200/80" aria-labelledby="testimonials-title">
       <div className="mx-auto max-w-7xl px-6">
         <p className="pretitle text-primary">Customer Stories</p>
         <h2 id="testimonials-title" className="mt-2 text-h1 text-neutral-900">

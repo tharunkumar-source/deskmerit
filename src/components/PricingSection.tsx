@@ -82,7 +82,7 @@ export function PricingSection() {
   };
 
   return (
-    <section id="pricing" className="bg-[#FAF7F2] py-16 md:py-20" aria-labelledby="pricing-title">
+    <section id="pricing" className="bg-[#FAF4FB] py-16 md:py-20" aria-labelledby="pricing-title">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         
         {/* ========================================================= */}

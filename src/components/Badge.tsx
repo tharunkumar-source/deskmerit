@@ -9,17 +9,17 @@ const toneClasses: Record<BadgeTone, string> = {
   // Amber (Idle / Neutral)
   warning: "bg-[#FEF6E9] text-[#B37107] border-[#F5A524]/30",
   // Rose (Unproductive / Alert)
-  error: "bg-[#FDECEE] text-[#C2361A] border-[#E5484D]/30",
+  error: "bg-[#FDECEE] text-[#4E0E58] border-[#E5484D]/30",
   // Iris (Private Time)
   info: "bg-[#EEF0FF] text-[#3F4FD6] border-[#5B6CFF]/30",
   // Slate / Mist (Neutral)
-  neutral: "bg-[#F7F4EE] text-[#4A5370] border-[#E6E2D8]",
+  neutral: "bg-[#FAF4FB] text-[#4A5370] border-[#E8D5EC]",
   // Iris (AI / Technology)
   ai: "bg-[#EEF0FF] text-[#3F4FD6] border-[#5B6CFF]/30",
   // Ember Tint / Ember Deep (Primary brand highlight)
-  primary: "bg-[#FFE6DF] text-[#C2361A] border-[#FF5A36]/30",
+  primary: "bg-[#F6EDF8] text-[#4E0E58] border-[#61126E]/30",
   // Ember Deep accent
-  accent: "bg-[#FFE6DF] text-[#C2361A] border-[#FF5A36]/30",
+  accent: "bg-[#F6EDF8] text-[#4E0E58] border-[#61126E]/30",
 };
 
 export function Badge({

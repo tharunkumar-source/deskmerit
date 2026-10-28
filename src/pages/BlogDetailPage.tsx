@@ -283,7 +283,7 @@ export function BlogDetailPage() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#FAF7F2] font-sans text-neutral-900 selection:bg-teal-100">
+    <div className="min-h-screen w-full bg-[#FAF4FB] font-sans text-neutral-900 selection:bg-teal-100">
       <Header />
 
       {/* Hero Section - Dark & Premium (Screenshot 1) */}
@@ -568,7 +568,7 @@ export function BlogDetailPage() {
       </main>
 
       {/* "More Articles" Section at Bottom (Screenshot 4) */}
-      <section className="bg-[#FAF7F2] border-t border-neutral-300/80 py-16">
+      <section className="bg-[#FAF4FB] border-t border-neutral-300/80 py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between mb-10">
             <h2 className="text-2xl md:text-3xl font-extrabold text-neutral-900 tracking-tight">

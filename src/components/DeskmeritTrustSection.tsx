@@ -27,17 +27,17 @@ export function DeskmeritTrustSection() {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#FFFFFF] border-b border-[#E6E2D8] font-sans">
+    <section className="py-20 lg:py-28 bg-[#FFFFFF] border-b border-[#E8D5EC] font-sans">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           {/* Left Column: Eyebrow, Heading, Paragraph, Quote & Link (Exact Site Standard) */}
           <div className="col-span-1 lg:col-span-6 space-y-6 text-left min-w-0 max-w-full w-full">
-            <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-3">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-3">
               BUILT FOR TRUST
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#0F1730] tracking-[-0.025em] leading-[1.2]">
-              Time tracking employees <span className="block text-[#FF5A36]">don't resent.</span>
+              Time tracking employees <span className="block text-[#61126E]">don't resent.</span>
             </h2>
 
             <p className="text-base sm:text-lg text-[#4A5370] leading-relaxed max-w-xl font-normal">
@@ -47,7 +47,7 @@ export function DeskmeritTrustSection() {
             </p>
 
             <div className="pt-2 pb-1">
-              <blockquote className="font-serif italic text-2xl sm:text-[26px] text-[#0F1730] leading-snug border-l-2 border-[#FF5A36] pl-4">
+              <blockquote className="font-serif italic text-2xl sm:text-[26px] text-[#0F1730] leading-snug border-l-2 border-[#61126E] pl-4">
                 “Every hour, honestly accounted for.”
               </blockquote>
             </div>
@@ -55,7 +55,7 @@ export function DeskmeritTrustSection() {
             <div className="pt-1">
               <Link
                 to="/privacy-promise"
-                className="inline-flex items-center gap-1.5 text-sm font-bold text-[#FF5A36] hover:text-[#E94A27] hover:underline transition-colors group cursor-pointer"
+                className="inline-flex items-center gap-1.5 text-sm font-bold text-[#61126E] hover:text-[#4E0E58] hover:underline transition-colors group cursor-pointer"
               >
                 <span>Read our employee privacy promise</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -70,7 +70,7 @@ export function DeskmeritTrustSection() {
               return (
                 <div
                   key={idx}
-                  className="bg-[#FFFFFF] rounded-2xl p-6 sm:p-7 border border-[#E6E2D8] hover:border-slate-300 hover:shadow-subtle transition-all duration-200 text-left"
+                  className="bg-[#FFFFFF] rounded-2xl p-6 sm:p-7 border border-[#E8D5EC] hover:border-slate-300 hover:shadow-subtle transition-all duration-200 text-left"
                 >
                   <div className="w-11 h-11 rounded-xl border border-slate-200/90 bg-[#FBF9F5] flex items-center justify-center text-[#0F1730] mb-5">
                     <Icon className="w-5 h-5 stroke-[1.8]" />

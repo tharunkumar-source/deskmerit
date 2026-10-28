@@ -68,44 +68,44 @@ export function ItServicesPage() {
         <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-20 lg:pt-12 lg:pb-28 relative overflow-hidden">
           {/* Subtle radial glow */}
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb matching Reference */}
-            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-slate-400 font-medium flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
               <Link to="/solutions" className="hover:underline text-slate-300">Solutions</Link>
               <span className="text-slate-500">/</span>
-              <span>Startups & High-Growth Scaleups</span>
+              <span className="text-[#D8B4FE] font-bold">Startups & High-Growth Scaleups</span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Headline, Overline, Description & CTAs */}
               <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3 py-1 rounded-full inline-block border border-[#FF5A36]/30">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
                   FOR HIGH-GROWTH SCALEUPS & IT SERVICES
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
-                  Deskmerit for Startups & <span className="text-[#FF5A36]">High-Growth Scaleups</span>
+                  Deskmerit for Startups & <span className="text-[#D8B4FE]">High-Growth Scaleups</span>
                 </h1>
 
                 <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
                   Automate delivery tracking, prove every billable hour to clients, and streamline sprint operations without micro-management or keystroke surveillance.
                 </p>
 
-                <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                   <Link
                     to="/signup"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Start free trial</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Book a demo</span>
                   </Link>
@@ -136,7 +136,7 @@ export function ItServicesPage() {
         <section className="py-20 lg:py-28 bg-[#FFFFFF]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                 CORE CAPABILITIES / WORKFLOWS
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-[-0.03em]">
@@ -150,16 +150,16 @@ export function ItServicesPage() {
             {/* 3 Column Cards with Icons & Checkmark Bullets */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
               {/* Card 1 */}
-              <div className="p-6 sm:p-8 rounded-2xl border border-slate-200 bg-white hover:border-[#FF5A36] hover:shadow-card transition-all group">
+              <div className="p-6 sm:p-8 rounded-2xl border border-slate-200 bg-white hover:border-[#61126E] hover:shadow-card transition-all group">
                 <div className="flex items-center justify-between mb-5">
-                  <div className="w-11 h-11 rounded-xl bg-[#F8F9FA] border border-slate-200 text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center transition-all duration-200 shadow-xs">
+                  <div className="w-11 h-11 rounded-xl bg-[#F8F9FA] border border-slate-200 text-[#0F1730] group-hover:bg-[#61126E] group-hover:border-[#61126E] group-hover:text-white flex items-center justify-center transition-all duration-200 shadow-xs">
                     <Workflow className="w-5 h-5 transition-colors" />
                   </div>
-                  <span className="text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded bg-[#FFE6DF] text-[#C2361A] border border-[#FF5A36]/20">
+                  <span className="text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded bg-[#F6EDF8] text-[#4E0E58] border border-[#61126E]/20">
                     ★ Key Module
                   </span>
                 </div>
-                <h3 className="text-lg font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                <h3 className="text-lg font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors">
                   Autonomous Jira & DevOps Tracking
                 </h3>
                 <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed mt-2 mb-6">
@@ -167,28 +167,28 @@ export function ItServicesPage() {
                 </p>
                 <ul className="space-y-2.5 text-xs text-[#0F1730]">
                   <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-[#FF5A36] shrink-0" /> Scoped personal tokens, zero admin passwords
+                    <Check className="w-4 h-4 text-[#61126E] shrink-0" /> Scoped personal tokens, zero admin passwords
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-[#FF5A36] shrink-0" /> Automatic ticket number & title binding
+                    <Check className="w-4 h-4 text-[#61126E] shrink-0" /> Automatic ticket number & title binding
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-[#FF5A36] shrink-0" /> Full offline sync queue via Rust daemon
+                    <Check className="w-4 h-4 text-[#61126E] shrink-0" /> Full offline sync queue via Rust daemon
                   </li>
                 </ul>
               </div>
 
               {/* Card 2 */}
-              <div className="p-6 sm:p-8 rounded-2xl border border-slate-200 bg-white hover:border-[#FF5A36] hover:shadow-card transition-all group">
+              <div className="p-6 sm:p-8 rounded-2xl border border-slate-200 bg-white hover:border-[#61126E] hover:shadow-card transition-all group">
                 <div className="flex items-center justify-between mb-5">
-                  <div className="w-11 h-11 rounded-xl bg-[#F8F9FA] border border-slate-200 text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center transition-all duration-200 shadow-xs">
+                  <div className="w-11 h-11 rounded-xl bg-[#F8F9FA] border border-slate-200 text-[#0F1730] group-hover:bg-[#61126E] group-hover:border-[#61126E] group-hover:text-white flex items-center justify-center transition-all duration-200 shadow-xs">
                     <FileSpreadsheet className="w-5 h-5 transition-colors" />
                   </div>
                   <span className="text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded bg-slate-100 text-slate-700">
                     Billing Automation
                   </span>
                 </div>
-                <h3 className="text-lg font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                <h3 className="text-lg font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors">
                   Zero-Friction Invoicing & Margins
                 </h3>
                 <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed mt-2 mb-6">
@@ -196,28 +196,28 @@ export function ItServicesPage() {
                 </p>
                 <ul className="space-y-2.5 text-xs text-[#0F1730]">
                   <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-[#FF5A36] shrink-0" /> Multi-tier rate cards by engineer seniority
+                    <Check className="w-4 h-4 text-[#61126E] shrink-0" /> Multi-tier rate cards by engineer seniority
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-[#FF5A36] shrink-0" /> Automated budget overrun warning alerts
+                    <Check className="w-4 h-4 text-[#61126E] shrink-0" /> Automated budget overrun warning alerts
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-[#FF5A36] shrink-0" /> Audit-matched Excel, CSV & REST API export
+                    <Check className="w-4 h-4 text-[#61126E] shrink-0" /> Audit-matched Excel, CSV & REST API export
                   </li>
                 </ul>
               </div>
 
               {/* Card 3 */}
-              <div className="p-6 sm:p-8 rounded-2xl border border-slate-200 bg-white hover:border-[#FF5A36] hover:shadow-card transition-all group">
+              <div className="p-6 sm:p-8 rounded-2xl border border-slate-200 bg-white hover:border-[#61126E] hover:shadow-card transition-all group">
                 <div className="flex items-center justify-between mb-5">
-                  <div className="w-11 h-11 rounded-xl bg-[#F8F9FA] border border-slate-200 text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center transition-all duration-200 shadow-xs">
+                  <div className="w-11 h-11 rounded-xl bg-[#F8F9FA] border border-slate-200 text-[#0F1730] group-hover:bg-[#61126E] group-hover:border-[#61126E] group-hover:text-white flex items-center justify-center transition-all duration-200 shadow-xs">
                     <BarChart3 className="w-5 h-5 transition-colors" />
                   </div>
                   <span className="text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded bg-slate-100 text-slate-700">
                     Resource Intelligence
                   </span>
                 </div>
-                <h3 className="text-lg font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                <h3 className="text-lg font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors">
                   Real-Time Bench & Capacity Planning
                 </h3>
                 <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed mt-2 mb-6">
@@ -225,13 +225,13 @@ export function ItServicesPage() {
                 </p>
                 <ul className="space-y-2.5 text-xs text-[#0F1730]">
                   <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-[#FF5A36] shrink-0" /> Weekly billable vs non-billable ratio
+                    <Check className="w-4 h-4 text-[#61126E] shrink-0" /> Weekly billable vs non-billable ratio
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-[#FF5A36] shrink-0" /> Early alert on approaching contract caps
+                    <Check className="w-4 h-4 text-[#61126E] shrink-0" /> Early alert on approaching contract caps
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-[#FF5A36] shrink-0" /> 1-click sync with Sqalible HRMS attendance
+                    <Check className="w-4 h-4 text-[#61126E] shrink-0" /> 1-click sync with Sqalible HRMS attendance
                   </li>
                 </ul>
               </div>
@@ -245,7 +245,7 @@ export function ItServicesPage() {
         <section className="py-16 sm:py-20 bg-slate-50 border-y border-slate-200/70">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-10 text-center">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                 MEASURABLE IMPACT
               </div>
               <h2 className="text-3xl font-extrabold text-[#0F1730] tracking-[-0.03em]">
@@ -280,7 +280,7 @@ export function ItServicesPage() {
         <section className="py-20 lg:py-28 bg-[#0A1628] text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+              <div className="inline-block px-3.5 py-1 rounded-full bg-[#61126E]/40 border border-[#A81CD0]/50 text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] shadow-xs mb-3">
                 CRITICAL FRICTION POINTS
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-[-0.03em]">
@@ -296,8 +296,8 @@ export function ItServicesPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-800">
                 {/* Friction 1 */}
                 <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                  <div className="text-[#FF5A36] mb-6 group-hover:scale-105 transition-transform duration-200">
-                    <Zap className="w-8 h-8" strokeWidth={1.75} />
+                  <div className="w-12 h-12 rounded-xl bg-[#61126E]/30 border border-[#A81CD0]/40 text-[#F0ABFC] flex items-center justify-center mb-6 group-hover:scale-105 group-hover:bg-[#61126E]/50 transition-all duration-200 shadow-sm">
+                    <Zap className="w-6 h-6 text-[#F0ABFC]" strokeWidth={2} />
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
                     Manual Timesheet Bottlenecks
@@ -309,8 +309,8 @@ export function ItServicesPage() {
 
                 {/* Friction 2 */}
                 <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                  <div className="text-[#FF5A36] mb-6 group-hover:scale-105 transition-transform duration-200">
-                    <FileSpreadsheet className="w-8 h-8" strokeWidth={1.75} />
+                  <div className="w-12 h-12 rounded-xl bg-[#61126E]/30 border border-[#A81CD0]/40 text-[#F0ABFC] flex items-center justify-center mb-6 group-hover:scale-105 group-hover:bg-[#61126E]/50 transition-all duration-200 shadow-sm">
+                    <FileSpreadsheet className="w-6 h-6 text-[#F0ABFC]" strokeWidth={2} />
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
                     Messy Client Retainer Disputes
@@ -322,8 +322,8 @@ export function ItServicesPage() {
 
                 {/* Friction 3 */}
                 <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                  <div className="text-[#FF5A36] mb-6 group-hover:scale-105 transition-transform duration-200">
-                    <Layers className="w-8 h-8" strokeWidth={1.75} />
+                  <div className="w-12 h-12 rounded-xl bg-[#61126E]/30 border border-[#A81CD0]/40 text-[#F0ABFC] flex items-center justify-center mb-6 group-hover:scale-105 group-hover:bg-[#61126E]/50 transition-all duration-200 shadow-sm">
+                    <Layers className="w-6 h-6 text-[#F0ABFC]" strokeWidth={2} />
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
                     Scattered Records & Ghost Bench

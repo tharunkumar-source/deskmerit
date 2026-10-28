@@ -31,11 +31,11 @@ export function LiveLoopSymbol({
 }: LiveLoopSymbolProps) {
   // Determine loop stroke color
   let loopColor = "#0F1730"; // Midnight default
-  let dotColor = "#FF5A36";  // Ember default
+  let dotColor = "#61126E";  // Ember default
 
   if (variant === "reverse") {
     loopColor = "#FFFFFF";
-    dotColor = "#FF5A36";
+    dotColor = "#61126E";
   } else if (variant === "monochrome-black") {
     loopColor = "#0F1730";
     dotColor = "#0F1730";
@@ -92,7 +92,7 @@ export function LiveLoopSymbol({
             strokeLinecap="round"
             strokeLinejoin="round"
           />
-          <circle cx="31.2" cy="37.7" r="5.4" fill="#FF5A36" />
+          <circle cx="31.2" cy="37.7" r="5.4" fill="#61126E" />
         </svg>
       </div>
     );

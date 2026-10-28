@@ -21,14 +21,14 @@ export function BrandGuidelinesShowcase() {
   >("overview");
 
   return (
-    <div className="min-w-full bg-[#F7F4EE] text-[#0F1730] py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-w-full bg-[#FAF4FB] text-[#0F1730] py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Header Header */}
-        <div className="border-b border-[#E6E2D8] pb-8">
+        <div className="border-b border-[#E8D5EC] pb-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div>
               <div className="inline-flex items-center gap-2 mb-3">
-                <span className="text-[12px] uppercase tracking-[0.14em] font-semibold text-[#FF5A36] bg-[#FFE6DF] px-2.5 py-0.5 rounded-full">
+                <span className="text-[12px] uppercase tracking-[0.14em] font-semibold text-[#61126E] bg-[#F6EDF8] px-2.5 py-0.5 rounded-full">
                   Design System & Brand Guidelines v1.0
                 </span>
                 <span className="text-[12px] text-[#4A5370]">October 2026</span>
@@ -44,7 +44,7 @@ export function BrandGuidelinesShowcase() {
           </div>
 
           {/* Navigation Tabs */}
-          <div className="flex items-center gap-2 mt-8 overflow-x-auto no-scrollbar border-b border-[#E6E2D8]/60 pb-1">
+          <div className="flex items-center gap-2 mt-8 overflow-x-auto no-scrollbar border-b border-[#E8D5EC]/60 pb-1">
             {[
               { id: "overview", label: "01 Brand Idea" },
               { id: "logo", label: "02 Logo" },
@@ -59,7 +59,7 @@ export function BrandGuidelinesShowcase() {
                 className={`px-4 py-2.5 rounded-xl text-sm font-semibold transition-all whitespace-nowrap ${
                   activeTab === tab.id
                     ? "bg-[#0F1730] text-white shadow-sm"
-                    : "text-[#4A5370] hover:text-[#0F1730] hover:bg-[#E6E2D8]/50"
+                    : "text-[#4A5370] hover:text-[#0F1730] hover:bg-[#E8D5EC]/50"
                 }`}
               >
                 {tab.label}
@@ -74,17 +74,17 @@ export function BrandGuidelinesShowcase() {
             {/* Mission Hero Banner */}
             <div className="bg-[#0F1730] rounded-[24px] p-8 sm:p-12 text-white relative overflow-hidden">
               <div className="relative z-10 max-w-2xl">
-                <div className="text-[#FF5A36] font-semibold text-xs tracking-wider uppercase mb-2">
+                <div className="text-[#61126E] font-semibold text-xs tracking-wider uppercase mb-2">
                   01 · Brand Idea
                 </div>
                 <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight leading-tight">
                   Time tracking people trust.
                 </h2>
-                <p className="mt-4 text-base sm:text-lg text-[#E6E2D8] font-normal leading-relaxed">
+                <p className="mt-4 text-base sm:text-lg text-[#E8D5EC] font-normal leading-relaxed">
                   Most tools in this category were designed for the person watching. Deskmerit is designed for both sides of the screen: managers get honest answers, employees keep their dignity.
                 </p>
                 <div className="mt-8 pt-6 border-t border-[#24305A] flex flex-wrap gap-4 items-center">
-                  <span className="font-human text-xl text-[#FFE6DF]">
+                  <span className="font-human text-xl text-[#F6EDF8]">
                     “{brandIdentity.taglines.secondary}”
                   </span>
                 </div>
@@ -98,7 +98,7 @@ export function BrandGuidelinesShowcase() {
 
             {/* Core Pillars */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white rounded-[20px] p-6 border border-[#E6E2D8] shadow-sm">
+              <div className="bg-white rounded-[20px] p-6 border border-[#E8D5EC] shadow-sm">
                 <div className="text-[12px] font-semibold tracking-wider uppercase text-[#4A5370]">
                   PURPOSE
                 </div>
@@ -110,7 +110,7 @@ export function BrandGuidelinesShowcase() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-[20px] p-6 border border-[#E6E2D8] shadow-sm">
+              <div className="bg-white rounded-[20px] p-6 border border-[#E8D5EC] shadow-sm">
                 <div className="text-[12px] font-semibold tracking-wider uppercase text-[#4A5370]">
                   PROMISE
                 </div>
@@ -122,7 +122,7 @@ export function BrandGuidelinesShowcase() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-[20px] p-6 border border-[#E6E2D8] shadow-sm">
+              <div className="bg-white rounded-[20px] p-6 border border-[#E8D5EC] shadow-sm">
                 <div className="text-[12px] font-semibold tracking-wider uppercase text-[#4A5370]">
                   POSITIONING
                 </div>
@@ -136,7 +136,7 @@ export function BrandGuidelinesShowcase() {
             </div>
 
             {/* Personality Bar */}
-            <div className="bg-white rounded-[20px] p-8 border border-[#E6E2D8] shadow-sm">
+            <div className="bg-white rounded-[20px] p-8 border border-[#E8D5EC] shadow-sm">
               <div className="text-[12px] font-semibold tracking-wider uppercase text-[#4A5370] mb-4">
                 BRAND PERSONALITY
               </div>
@@ -161,8 +161,8 @@ export function BrandGuidelinesShowcase() {
         {activeTab === "logo" && (
           <div className="space-y-10">
             {/* The Live Loop Concept */}
-            <div className="bg-white rounded-[20px] p-8 border border-[#E6E2D8] shadow-sm">
-              <div className="text-[#FF5A36] font-semibold text-xs tracking-wider uppercase mb-2">
+            <div className="bg-white rounded-[20px] p-8 border border-[#E8D5EC] shadow-sm">
+              <div className="text-[#61126E] font-semibold text-xs tracking-wider uppercase mb-2">
                 02 · LOGO
               </div>
               <h2 className="text-3xl font-display font-bold text-[#0F1730]">
@@ -174,25 +174,25 @@ export function BrandGuidelinesShowcase() {
 
               {/* Anatomy cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
-                <div className="p-4 rounded-xl bg-[#F7F4EE] border border-[#E6E2D8]">
+                <div className="p-4 rounded-xl bg-[#FAF4FB] border border-[#E8D5EC]">
                   <div className="font-bold text-[#0F1730] text-sm">The ring</div>
                   <p className="mt-1 text-xs text-[#4A5370]">
                     A progress dial — time accumulating, never a surveillance eye.
                   </p>
                 </div>
-                <div className="p-4 rounded-xl bg-[#F7F4EE] border border-[#E6E2D8]">
+                <div className="p-4 rounded-xl bg-[#FAF4FB] border border-[#E8D5EC]">
                   <div className="font-bold text-[#0F1730] text-sm">The stem</div>
                   <p className="mt-1 text-xs text-[#4A5370]">
                     One straight stroke: the single click that starts everything.
                   </p>
                 </div>
-                <div className="p-4 rounded-xl bg-[#F7F4EE] border border-[#E6E2D8]">
+                <div className="p-4 rounded-xl bg-[#FAF4FB] border border-[#E8D5EC]">
                   <div className="font-bold text-[#0F1730] text-sm">The pulse</div>
                   <p className="mt-1 text-xs text-[#4A5370]">
                     A warm ember dot that sits apart from the ring — present, alive, not pushy.
                   </p>
                 </div>
-                <div className="p-4 rounded-xl bg-[#F7F4EE] border border-[#E6E2D8]">
+                <div className="p-4 rounded-xl bg-[#FAF4FB] border border-[#E8D5EC]">
                   <div className="font-bold text-[#0F1730] text-sm">The wordmark</div>
                   <p className="mt-1 text-xs text-[#4A5370]">
                     Lowercase Inter Display Bold, tracked −3%. Approachable, not corporate.
@@ -202,9 +202,9 @@ export function BrandGuidelinesShowcase() {
             </div>
 
             {/* Construction Specs Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-white rounded-[20px] p-8 border border-[#E6E2D8] shadow-sm">
-              <div className="flex flex-col items-center justify-center p-8 bg-[#F7F4EE] rounded-2xl border border-dashed border-[#E6E2D8]">
-                <div className="relative p-6 bg-white rounded-xl shadow-sm border border-[#E6E2D8]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-white rounded-[20px] p-8 border border-[#E8D5EC] shadow-sm">
+              <div className="flex flex-col items-center justify-center p-8 bg-[#FAF4FB] rounded-2xl border border-dashed border-[#E8D5EC]">
+                <div className="relative p-6 bg-white rounded-xl shadow-sm border border-[#E8D5EC]">
                   <LiveLoopSymbol size={160} variant="default" />
                   <div className="text-[10px] text-center font-mono text-[#4A5370] mt-3">
                     64 × 64 master grid · r=13 · Ø10.8 pulse dot
@@ -216,7 +216,7 @@ export function BrandGuidelinesShowcase() {
                 <h3 className="font-display font-bold text-xl text-[#0F1730]">
                   Construction Geometry (64×64 Unit Grid)
                 </h3>
-                <div className="divide-y divide-[#E6E2D8] text-sm">
+                <div className="divide-y divide-[#E8D5EC] text-sm">
                   <div className="py-2 flex justify-between">
                     <span className="text-[#4A5370]">Grid</span>
                     <span className="font-mono font-semibold text-[#0F1730]">64 × 64 units</span>
@@ -256,11 +256,11 @@ export function BrandGuidelinesShowcase() {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Primary Horizontal */}
-                <div className="bg-white rounded-[20px] p-6 border border-[#E6E2D8] flex flex-col justify-between h-48">
+                <div className="bg-white rounded-[20px] p-6 border border-[#E8D5EC] flex flex-col justify-between h-48">
                   <div className="flex items-center justify-center h-full">
                     <PulseTrackLogo variant="primary" size="md" asLink={false} />
                   </div>
-                  <div className="text-[12px] text-[#4A5370] border-t border-[#E6E2D8] pt-2">
+                  <div className="text-[12px] text-[#4A5370] border-t border-[#E8D5EC] pt-2">
                     <strong className="text-[#0F1730]">Primary horizontal</strong> — default for web, product, print
                   </div>
                 </div>
@@ -270,33 +270,33 @@ export function BrandGuidelinesShowcase() {
                   <div className="flex items-center justify-center h-full">
                     <PulseTrackLogo variant="reverse" size="md" asLink={false} />
                   </div>
-                  <div className="text-[12px] text-[#E6E2D8] border-t border-[#24305A] pt-2">
+                  <div className="text-[12px] text-[#E8D5EC] border-t border-[#24305A] pt-2">
                     <strong className="text-white">Reverse</strong> — on Midnight or dark surfaces
                   </div>
                 </div>
 
                 {/* Stacked */}
-                <div className="bg-white rounded-[20px] p-6 border border-[#E6E2D8] flex flex-col justify-between h-48">
+                <div className="bg-white rounded-[20px] p-6 border border-[#E8D5EC] flex flex-col justify-between h-48">
                   <div className="flex items-center justify-center h-full">
                     <PulseTrackLogo variant="stacked" size="md" asLink={false} />
                   </div>
-                  <div className="text-[12px] text-[#4A5370] border-t border-[#E6E2D8] pt-2">
+                  <div className="text-[12px] text-[#4A5370] border-t border-[#E8D5EC] pt-2">
                     <strong className="text-[#0F1730]">Stacked</strong> — square spaces, merchandise
                   </div>
                 </div>
 
                 {/* One colour black */}
-                <div className="bg-white rounded-[20px] p-6 border border-[#E6E2D8] flex flex-col justify-between h-48">
+                <div className="bg-white rounded-[20px] p-6 border border-[#E8D5EC] flex flex-col justify-between h-48">
                   <div className="flex items-center justify-center h-full">
                     <PulseTrackLogo variant="monochrome-black" size="md" asLink={false} />
                   </div>
-                  <div className="text-[12px] text-[#4A5370] border-t border-[#E6E2D8] pt-2">
+                  <div className="text-[12px] text-[#4A5370] border-t border-[#E8D5EC] pt-2">
                     <strong className="text-[#0F1730]">One colour black</strong> — fax, stamps, single-ink
                   </div>
                 </div>
 
                 {/* One colour white on Ember */}
-                <div className="bg-[#FF5A36] rounded-[20px] p-6 border border-[#E94A27] flex flex-col justify-between h-48">
+                <div className="bg-[#61126E] rounded-[20px] p-6 border border-[#4E0E58] flex flex-col justify-between h-48">
                   <div className="flex items-center justify-center h-full">
                     <PulseTrackLogo variant="monochrome-white" size="md" asLink={false} />
                   </div>
@@ -306,12 +306,12 @@ export function BrandGuidelinesShowcase() {
                 </div>
 
                 {/* Symbol and app icon */}
-                <div className="bg-white rounded-[20px] p-6 border border-[#E6E2D8] flex flex-col justify-between h-48">
+                <div className="bg-white rounded-[20px] p-6 border border-[#E8D5EC] flex flex-col justify-between h-48">
                   <div className="flex items-center justify-center gap-6 h-full">
                     <LiveLoopSymbol size={44} variant="default" />
                     <LiveLoopSymbol size={44} variant="app-icon" />
                   </div>
-                  <div className="text-[12px] text-[#4A5370] border-t border-[#E6E2D8] pt-2">
+                  <div className="text-[12px] text-[#4A5370] border-t border-[#E8D5EC] pt-2">
                     <strong className="text-[#0F1730]">Symbol & app icon</strong> — favicon, agent, avatars
                   </div>
                 </div>
@@ -327,7 +327,7 @@ export function BrandGuidelinesShowcase() {
             <div>
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
                 <div>
-                  <div className="text-[#FF5A36] font-semibold text-xs tracking-wider uppercase mb-1">
+                  <div className="text-[#61126E] font-semibold text-xs tracking-wider uppercase mb-1">
                     03 · COLOUR
                   </div>
                   <h2 className="text-3xl font-display font-bold text-[#0F1730]">
@@ -341,12 +341,12 @@ export function BrandGuidelinesShowcase() {
                 {/* Recommended proportion preview bar */}
                 <div className="text-xs text-[#4A5370]">
                   <div className="font-semibold mb-1">Recommended page proportion:</div>
-                  <div className="flex h-4 w-72 rounded-full overflow-hidden border border-[#E6E2D8]">
-                    <div style={{ width: "45%" }} className="bg-[#F7F4EE]" title="Paper 45%" />
+                  <div className="flex h-4 w-72 rounded-full overflow-hidden border border-[#E8D5EC]">
+                    <div style={{ width: "45%" }} className="bg-[#FAF4FB]" title="Paper 45%" />
                     <div style={{ width: "25%" }} className="bg-[#0F1730]" title="Midnight 25%" />
                     <div style={{ width: "15%" }} className="bg-[#FFFFFF]" title="White 15%" />
                     <div style={{ width: "10%" }} className="bg-[#4A5370]" title="Slate 10%" />
-                    <div style={{ width: "5%" }} className="bg-[#FF5A36]" title="Ember 5%" />
+                    <div style={{ width: "5%" }} className="bg-[#61126E]" title="Ember 5%" />
                   </div>
                   <div className="flex justify-between text-[10px] mt-1 text-[#4A5370]">
                     <span>Paper 45</span>
@@ -366,7 +366,7 @@ export function BrandGuidelinesShowcase() {
                   return (
                     <div
                       key={key}
-                      className="rounded-[16px] overflow-hidden border border-[#E6E2D8] bg-white shadow-sm flex flex-col"
+                      className="rounded-[16px] overflow-hidden border border-[#E8D5EC] bg-white shadow-sm flex flex-col"
                     >
                       <div
                         className="h-28 p-4 flex flex-col justify-between"
@@ -411,7 +411,7 @@ export function BrandGuidelinesShowcase() {
                 {Object.entries(brandColors.liveState).map(([key, item]) => (
                   <div
                     key={key}
-                    className="bg-white rounded-[16px] p-4 border border-[#E6E2D8] shadow-sm flex flex-col justify-between"
+                    className="bg-white rounded-[16px] p-4 border border-[#E8D5EC] shadow-sm flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex items-center gap-2 mb-3">
@@ -430,7 +430,7 @@ export function BrandGuidelinesShowcase() {
                         {item.description}
                       </p>
                     </div>
-                    <div className="font-mono text-[11px] text-[#4A5370] border-t border-[#E6E2D8] pt-2 mt-4">
+                    <div className="font-mono text-[11px] text-[#4A5370] border-t border-[#E8D5EC] pt-2 mt-4">
                       {item.hex}
                     </div>
                   </div>
@@ -449,7 +449,7 @@ export function BrandGuidelinesShowcase() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-[20px] overflow-hidden border border-[#E6E2D8] shadow-sm divide-y divide-[#E6E2D8]">
+              <div className="bg-white rounded-[20px] overflow-hidden border border-[#E8D5EC] shadow-sm divide-y divide-[#E8D5EC]">
                 {brandAccessiblePairings.map((pair, idx) => (
                   <div
                     key={idx}
@@ -464,18 +464,18 @@ export function BrandGuidelinesShowcase() {
                             pair.element.includes("on White")
                               ? "#FFFFFF"
                               : pair.element.includes("on Paper")
-                              ? "#F7F4EE"
+                              ? "#FAF4FB"
                               : pair.element.includes("on Ember")
-                              ? "#FF5A36"
+                              ? "#61126E"
                               : "#0F1730",
                           color: pair.element.startsWith("Midnight")
                             ? "#0F1730"
                             : pair.element.startsWith("Slate")
                             ? "#4A5370"
                             : pair.element.startsWith("Ember Deep")
-                            ? "#C2361A"
+                            ? "#4E0E58"
                             : "#FFFFFF",
-                          borderColor: "#E6E2D8",
+                          borderColor: "#E8D5EC",
                         }}
                       >
                         Aa
@@ -512,7 +512,7 @@ export function BrandGuidelinesShowcase() {
         {activeTab === "typography" && (
           <div className="space-y-12">
             <div>
-              <div className="text-[#FF5A36] font-semibold text-xs tracking-wider uppercase mb-1">
+              <div className="text-[#61126E] font-semibold text-xs tracking-wider uppercase mb-1">
                 04 · TYPOGRAPHY
               </div>
               <h2 className="text-3xl font-display font-bold text-[#0F1730]">
@@ -526,9 +526,9 @@ export function BrandGuidelinesShowcase() {
             {/* 3 Font Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Inter Display */}
-              <div className="bg-white rounded-[20px] p-6 border border-[#E6E2D8] shadow-sm flex flex-col justify-between">
+              <div className="bg-white rounded-[20px] p-6 border border-[#E8D5EC] shadow-sm flex flex-col justify-between">
                 <div>
-                  <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36]">
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-[#61126E]">
                     DISPLAY
                   </div>
                   <div className="font-display font-extrabold text-6xl text-[#0F1730] my-4">
@@ -541,13 +541,13 @@ export function BrandGuidelinesShowcase() {
                     Bold & ExtraBold, tracking −2.5% to −3%. Headlines, numbers in hero stats, the wordmark.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[#E6E2D8] font-display text-xs text-[#0F1730] tracking-[-0.025em]">
+                <div className="mt-6 pt-4 border-t border-[#E8D5EC] font-display text-xs text-[#0F1730] tracking-[-0.025em]">
                   ABCDEFGHIJKLM abcdefghijklm 0123456789
                 </div>
               </div>
 
               {/* Inter Text & UI */}
-              <div className="bg-white rounded-[20px] p-6 border border-[#E6E2D8] shadow-sm flex flex-col justify-between">
+              <div className="bg-white rounded-[20px] p-6 border border-[#E8D5EC] shadow-sm flex flex-col justify-between">
                 <div>
                   <div className="text-[11px] font-bold uppercase tracking-wider text-[#0F1730]">
                     TEXT & UI
@@ -562,15 +562,15 @@ export function BrandGuidelinesShowcase() {
                     Regular, Medium, SemiBold. Body copy, interface, tables. Turn on tabular figures for data.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[#E6E2D8] font-sans text-xs text-[#0F1730] tnum">
+                <div className="mt-6 pt-4 border-t border-[#E8D5EC] font-sans text-xs text-[#0F1730] tnum">
                   08:42 · 6h 14m · 92% (Tabular numbers)
                 </div>
               </div>
 
               {/* Lora Italic */}
-              <div className="bg-white rounded-[20px] p-6 border border-[#E6E2D8] shadow-sm flex flex-col justify-between">
+              <div className="bg-white rounded-[20px] p-6 border border-[#E8D5EC] shadow-sm flex flex-col justify-between">
                 <div>
-                  <div className="text-[11px] font-bold uppercase tracking-wider text-[#C2361A]">
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-[#4E0E58]">
                     HUMAN ACCENT
                   </div>
                   <div className="font-human text-6xl text-[#0F1730] my-4">
@@ -583,19 +583,19 @@ export function BrandGuidelinesShowcase() {
                     Medium Italic only. One phrase per layout: quotes, promises, the human moment.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[#E6E2D8] font-human text-sm text-[#0F1730]">
+                <div className="mt-6 pt-4 border-t border-[#E8D5EC] font-human text-sm text-[#0F1730]">
                   “Every hour, honestly accounted for.”
                 </div>
               </div>
             </div>
 
             {/* Live Type Scale */}
-            <div className="bg-white rounded-[20px] p-8 border border-[#E6E2D8] shadow-sm space-y-8">
+            <div className="bg-white rounded-[20px] p-8 border border-[#E8D5EC] shadow-sm space-y-8">
               <h3 className="font-display font-bold text-2xl text-[#0F1730]">
                 Type Scale (Web & Desktop)
               </h3>
 
-              <div className="space-y-6 divide-y divide-[#E6E2D8]">
+              <div className="space-y-6 divide-y divide-[#E8D5EC]">
                 {/* Display XL */}
                 <div className="pt-4 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                   <div className="text-xs font-mono text-[#4A5370] w-48">
@@ -667,7 +667,7 @@ export function BrandGuidelinesShowcase() {
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-[#FFE6DF]/60 text-xs text-[#C2361A] font-medium">
+              <div className="p-4 rounded-xl bg-[#F6EDF8]/60 text-xs text-[#4E0E58] font-medium">
                 Rule: Mobile scales Display and H1 to 70%. Sentence case everywhere — never Title Case Headlines, never all-caps paragraphs.
               </div>
             </div>
@@ -678,7 +678,7 @@ export function BrandGuidelinesShowcase() {
         {activeTab === "components" && (
           <div className="space-y-12">
             <div>
-              <div className="text-[#FF5A36] font-semibold text-xs tracking-wider uppercase mb-1">
+              <div className="text-[#61126E] font-semibold text-xs tracking-wider uppercase mb-1">
                 05 · UI COMPONENTS & GRAPHIC LANGUAGE
               </div>
               <h2 className="text-3xl font-display font-bold text-[#0F1730]">
@@ -687,7 +687,7 @@ export function BrandGuidelinesShowcase() {
             </div>
 
             {/* Buttons & Radii */}
-            <div className="bg-white rounded-[20px] p-8 border border-[#E6E2D8] shadow-sm space-y-6">
+            <div className="bg-white rounded-[20px] p-8 border border-[#E8D5EC] shadow-sm space-y-6">
               <h3 className="font-display font-bold text-xl text-[#0F1730]">
                 Buttons (12 px radius · 48 px tall · Ember for main action)
               </h3>
@@ -705,7 +705,7 @@ export function BrandGuidelinesShowcase() {
             {/* The Pulse Dot & Day Line */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Pulse Dot */}
-              <div className="bg-white rounded-[20px] p-6 border border-[#E6E2D8] shadow-sm space-y-4">
+              <div className="bg-white rounded-[20px] p-6 border border-[#E8D5EC] shadow-sm space-y-4">
                 <h3 className="font-display font-bold text-lg text-[#0F1730]">
                   The Pulse Dot (1.6s ease)
                 </h3>
@@ -725,7 +725,7 @@ export function BrandGuidelinesShowcase() {
               </div>
 
               {/* Progress Loops */}
-              <div className="bg-white rounded-[20px] p-6 border border-[#E6E2D8] shadow-sm space-y-4">
+              <div className="bg-white rounded-[20px] p-6 border border-[#E8D5EC] shadow-sm space-y-4">
                 <h3 className="font-display font-bold text-lg text-[#0F1730]">
                   Progress Loops (12 o'clock clockwise)
                 </h3>
@@ -738,7 +738,7 @@ export function BrandGuidelinesShowcase() {
             </div>
 
             {/* Signature Data Visual: The Day Line */}
-            <div className="bg-white rounded-[20px] p-8 border border-[#E6E2D8] shadow-sm space-y-4">
+            <div className="bg-white rounded-[20px] p-8 border border-[#E8D5EC] shadow-sm space-y-4">
               <h3 className="font-display font-bold text-xl text-[#0F1730]">
                 The Day Line (Signature Data Visual)
               </h3>
@@ -751,7 +751,7 @@ export function BrandGuidelinesShowcase() {
             </div>
 
             {/* Desktop Widget */}
-            <div className="bg-white rounded-[20px] p-8 border border-[#E6E2D8] shadow-sm space-y-4">
+            <div className="bg-white rounded-[20px] p-8 border border-[#E8D5EC] shadow-sm space-y-4">
               <h3 className="font-display font-bold text-xl text-[#0F1730]">
                 Desktop Widget (Product UI)
               </h3>
@@ -765,33 +765,33 @@ export function BrandGuidelinesShowcase() {
         {/* TAB 6: VOICE & TONE */}
         {activeTab === "voice" && (
           <div className="space-y-10">
-            <div className="bg-white rounded-[20px] p-8 border border-[#E6E2D8] shadow-sm">
-              <div className="text-[#FF5A36] font-semibold text-xs tracking-wider uppercase mb-1">
+            <div className="bg-white rounded-[20px] p-8 border border-[#E8D5EC] shadow-sm">
+              <div className="text-[#61126E] font-semibold text-xs tracking-wider uppercase mb-1">
                 07 · VOICE
               </div>
               <h2 className="text-3xl font-display font-bold text-[#0F1730]">
                 Say it like a trusted colleague
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-                <div className="p-4 rounded-xl bg-[#F7F4EE]">
+                <div className="p-4 rounded-xl bg-[#FAF4FB]">
                   <div className="font-bold text-[#0F1730] text-sm">Plain, not technical</div>
                   <p className="mt-1 text-xs text-[#4A5370]">
                     Short sentences. Everyday words. Explain once, then stop.
                   </p>
                 </div>
-                <div className="p-4 rounded-xl bg-[#F7F4EE]">
+                <div className="p-4 rounded-xl bg-[#FAF4FB]">
                   <div className="font-bold text-[#0F1730] text-sm">Honest, not hyped</div>
                   <p className="mt-1 text-xs text-[#4A5370]">
                     Say what we do and what we don't. Name limits openly — it is why people trust us.
                   </p>
                 </div>
-                <div className="p-4 rounded-xl bg-[#F7F4EE]">
+                <div className="p-4 rounded-xl bg-[#FAF4FB]">
                   <div className="font-bold text-[#0F1730] text-sm">Warm, not cute</div>
                   <p className="mt-1 text-xs text-[#4A5370]">
                     Respect both managers and employees. No jokes at anyone's expense, no fear tactics.
                   </p>
                 </div>
-                <div className="p-4 rounded-xl bg-[#F7F4EE]">
+                <div className="p-4 rounded-xl bg-[#FAF4FB]">
                   <div className="font-bold text-[#0F1730] text-sm">Local, not generic</div>
                   <p className="mt-1 text-xs text-[#4A5370]">
                     British English spelling. Name real places, currencies and work weeks.
@@ -833,7 +833,7 @@ export function BrandGuidelinesShowcase() {
 
             {/* Preferred / Avoided Vocabulary */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-[20px] p-6 border border-[#E6E2D8] shadow-sm">
+              <div className="bg-white rounded-[20px] p-6 border border-[#E8D5EC] shadow-sm">
                 <div className="font-bold text-xs uppercase tracking-wider text-[#4A5370] mb-3">
                   WORDS WE PREFER
                 </div>
@@ -849,7 +849,7 @@ export function BrandGuidelinesShowcase() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-[20px] p-6 border border-[#E6E2D8] shadow-sm">
+              <div className="bg-white rounded-[20px] p-6 border border-[#E8D5EC] shadow-sm">
                 <div className="font-bold text-xs uppercase tracking-wider text-[#4A5370] mb-3">
                   WORDS WE AVOID
                 </div>
@@ -857,7 +857,7 @@ export function BrandGuidelinesShowcase() {
                   {brandIdentity.voice.wordsWeAvoid.map((w) => (
                     <span
                       key={w}
-                      className="px-3 py-1 rounded-full text-xs font-semibold bg-[#FDECEE] text-[#C2361A] line-through"
+                      className="px-3 py-1 rounded-full text-xs font-semibold bg-[#FDECEE] text-[#4E0E58] line-through"
                     >
                       {w}
                     </span>

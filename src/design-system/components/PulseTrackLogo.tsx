@@ -82,7 +82,7 @@ export function PulseTrackLogo({
         <Link
           to={href}
           aria-label="Deskmerit home"
-          className={`inline-flex items-center justify-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A36] ${className}`}
+          className={`inline-flex items-center justify-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#61126E] ${className}`}
         >
           {symbolEl}
         </Link>
@@ -129,7 +129,7 @@ export function PulseTrackLogo({
       {isEndorsed && (
         <span
           className="text-[10px] sm:text-[11px] font-medium tracking-normal text-slate-400 mt-1 pl-[1px]"
-          style={{ color: isDark ? "#E6E2D8" : "#4A5370" }}
+          style={{ color: isDark ? "#E8D5EC" : "#4A5370" }}
         >
           A Kombee Technologies product
         </span>
@@ -142,7 +142,7 @@ export function PulseTrackLogo({
       <Link
         to={href}
         aria-label="Deskmerit home"
-        className="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A36] rounded-lg py-1 transition-opacity hover:opacity-90"
+        className="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#61126E] rounded-lg py-1 transition-opacity hover:opacity-90"
       >
         {logoContent}
       </Link>

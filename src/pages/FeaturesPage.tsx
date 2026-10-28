@@ -30,7 +30,7 @@ import {
 } from "lucide-react";
 
 export function FeaturesPage() {
-  const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({});
+  const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({ "01": true, "02": true });
 
   const toggleGroup = (num: string) => {
     setOpenGroups((prev) => ({ ...prev, [num]: !prev[num] }));
@@ -185,22 +185,22 @@ export function FeaturesPage() {
         {/* ========================================================================= */}
         <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-20 lg:pt-12 lg:pb-28 relative overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb matching Reference */}
-            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-slate-400 font-medium flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
-              <span className="text-slate-300">Product</span>
+              <span className="text-slate-400">Product</span>
               <span className="text-slate-500">/</span>
-              <span>All Features</span>
+              <span className="text-[#D8B4FE] font-bold">All Features</span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Headline, Overline, Description & CTAs */}
               <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full space-y-6">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3 py-1 rounded-full inline-block border border-[#FF5A36]/30">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
                   COMPLETE FEATURE CATALOGUE
                 </div>
 
@@ -212,17 +212,17 @@ export function FeaturesPage() {
                   Deskmerit brings automatic computer time tracking, Jira task binding, attendance and client billing into one lightweight desktop engine. Grouped by the questions they answer.
                 </p>
 
-                <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                   <Link
                     to="/signup"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Start free trial</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Book a demo</span>
                   </Link>
@@ -249,7 +249,7 @@ export function FeaturesPage() {
         {/* ========================================================================= */}
         {/* 2. CATEGORIZED FEATURE GROUPS (Sqalible Style Dropdowns with Brand Cards)  */}
         {/* ========================================================================= */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 divide-y divide-[#E6E2D8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 divide-y divide-[#E8D5EC]">
           {groups.map((grp) => {
             const isOpen = Boolean(openGroups[grp.num]);
             const isFourCards = grp.items.length === 4;
@@ -266,15 +266,15 @@ export function FeaturesPage() {
                   aria-expanded={isOpen}
                 >
                   <div className="flex items-center gap-3.5 sm:gap-4">
-                    <span className="text-xs font-extrabold text-[#0F1730] bg-[#F7F4EE] border border-[#E6E2D8] px-3 py-1 rounded-lg font-mono">
+                    <span className="text-xs font-extrabold text-[#0F1730] bg-[#FAF4FB] border border-[#E8D5EC] text-[#61126E] px-3 py-1 rounded-lg font-mono">
                       {grp.num}
                     </span>
-                    <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F1730] group-hover/btn:text-[#FF5A36] transition-colors tracking-tight">
+                    <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F1730] group-hover/btn:text-[#61126E] transition-colors tracking-tight">
                       {grp.question}
                     </h2>
                   </div>
 
-                  <div className="w-10 h-10 rounded-full bg-white border border-[#E6E2D8] flex items-center justify-center text-[#4A5370] group-hover/btn:border-[#FF5A36] group-hover/btn:text-[#FF5A36] group-hover/btn:bg-[#FFE6DF]/30 transition-all shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-white border border-[#E8D5EC] flex items-center justify-center text-[#4A5370] group-hover/btn:border-[#61126E] group-hover/btn:text-[#61126E] group-hover/btn:bg-[#F6EDF8]/30 transition-all shrink-0">
                     {isOpen ? (
                       <Minus className="w-4 h-4 stroke-[2.5]" />
                     ) : (
@@ -298,21 +298,21 @@ export function FeaturesPage() {
                         <Link
                           key={item.title}
                           to={item.href}
-                          className="group p-6 rounded-2xl bg-[#F7F4EE] border border-[#E6E2D8] hover:border-[#FF5A36] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between"
+                          className="group p-6 rounded-2xl bg-[#FAF4FB] border border-[#E8D5EC] hover:border-[#61126E] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between"
                         >
                           <div>
                             <div className="flex items-center justify-between mb-4">
-                              {/* Icon container: white in default with border, on hover brand BG #FF5A36 & icon turns white */}
-                              <div className="w-11 h-11 rounded-xl bg-white border border-[#E6E2D8] text-[#0F1730] group-hover:bg-[#FF5A36] group-hover:border-[#FF5A36] group-hover:text-white flex items-center justify-center transition-all duration-200 shadow-xs">
+                              {/* Icon container: white in default with border, on hover brand BG #61126E & icon turns white */}
+                              <div className="w-11 h-11 rounded-xl bg-white border border-[#E8D5EC] text-[#0F1730] group-hover:bg-[#61126E] group-hover:border-[#61126E] group-hover:text-white flex items-center justify-center transition-all duration-200 shadow-xs">
                                 <Icon className="w-5 h-5 transition-colors" />
                               </div>
                               {item.badge && (
-                                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-white text-[#C2361A] border border-[#E6E2D8] group-hover:bg-[#FFE6DF] group-hover:border-[#FF5A36]/30 transition-colors shadow-2xs">
+                                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-white text-[#4E0E58] border border-[#E8D5EC] group-hover:bg-[#F6EDF8] group-hover:border-[#61126E]/30 transition-colors shadow-2xs">
                                   {item.badge}
                                 </span>
                               )}
                             </div>
-                            <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-2">
+                            <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-2">
                               {item.title}
                             </h3>
                             <p className="text-xs text-[#4A5370] leading-relaxed">
@@ -320,7 +320,7 @@ export function FeaturesPage() {
                             </p>
                           </div>
 
-                          <div className="mt-5 pt-3 border-t border-[#E6E2D8] flex items-center justify-between text-xs font-semibold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors">
+                          <div className="mt-5 pt-3 border-t border-[#E8D5EC] flex items-center justify-between text-xs font-semibold text-[#0F1730] group-hover:text-[#61126E] transition-colors">
                             <span>Explore details</span>
                             <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                           </div>
@@ -336,7 +336,7 @@ export function FeaturesPage() {
 
         {/* Plan Comparison Table Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-          <div className="bg-white rounded-[28px] p-8 sm:p-12 border border-[#E6E2D8] shadow-sm">
+          <div className="bg-white rounded-[28px] p-8 sm:p-12 border border-[#E8D5EC] shadow-sm">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F1730] mb-2">
               Feature Availability by Plan
             </h2>
@@ -350,7 +350,7 @@ export function FeaturesPage() {
                   <tr className="border-b border-slate-200 text-[#4A5370]">
                     <th className="py-3 pr-4 font-semibold">Capability</th>
                     <th className="py-3 px-3 font-bold text-[#0F1730] text-center">Starter</th>
-                    <th className="py-3 px-3 font-bold text-[#FF5A36] text-center">Pro</th>
+                    <th className="py-3 px-3 font-bold text-[#61126E] text-center">Pro</th>
                     <th className="py-3 px-3 font-bold text-[#0F1730] text-center">Premium</th>
                     <th className="py-3 px-3 font-bold text-[#0F1730] text-center">Enterprise</th>
                   </tr>
@@ -362,7 +362,7 @@ export function FeaturesPage() {
                       <td className="py-3.5 px-3 text-center">
                         {row.starter ? <Check className="w-4 h-4 text-[#12B886] mx-auto" /> : <Minus className="w-4 h-4 text-slate-300 mx-auto" />}
                       </td>
-                      <td className="py-3.5 px-3 text-center bg-orange-50/40">
+                      <td className="py-3.5 px-3 text-center bg-[#F6EDF8]/40">
                         {row.pro ? <Check className="w-4 h-4 text-[#12B886] mx-auto" /> : <Minus className="w-4 h-4 text-slate-300 mx-auto" />}
                       </td>
                       <td className="py-3.5 px-3 text-center">

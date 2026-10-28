@@ -227,7 +227,7 @@ export function DeskTimeAlternativePage() {
   const comp = COMPETITORS[activeCompKey] || COMPETITORS.desktime;
 
   return (
-    <div className="min-h-screen bg-[#F7F4EE] text-[#0F1730]">
+    <div className="min-h-screen bg-[#FAF4FB] text-[#0F1730]">
       <DeskmeritHeader />
 
       <main>
@@ -236,18 +236,18 @@ export function DeskTimeAlternativePage() {
         {/* ========================================================================= */}
         <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
-            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-slate-400 font-medium flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
               <Link to="/compare" className="hover:underline text-slate-300">Compare</Link>
               {!isHub && (
                 <>
                   <span className="text-slate-500">/</span>
-                  <span>{comp.name} Alternative</span>
+                  <span className="text-[#D8B4FE] font-bold">{comp.name} Alternative</span>
                 </>
               )}
             </div>
@@ -255,7 +255,7 @@ export function DeskTimeAlternativePage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
               {/* Left Column */}
               <div className="col-span-1 lg:col-span-5 min-w-0 max-w-full w-full space-y-6">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
                   {isHub ? "COMPARE · ALL COMPETITOR PLATFORMS" : comp.heroBadge}
                 </div>
 
@@ -263,12 +263,12 @@ export function DeskTimeAlternativePage() {
                   {isHub ? (
                     <>
                       How Deskmerit compares to{" "}
-                      <span className="text-[#FF5A36] block">legacy time tracking software.</span>
+                      <span className="text-[#D8B4FE]">legacy time tracking software.</span>
                     </>
                   ) : (
                     <>
                       {comp.heroTitle}{" "}
-                      <span className="text-[#FF5A36] block">{comp.heroAccent}</span>
+                      <span className="text-[#D8B4FE]">{comp.heroAccent}</span>
                     </>
                   )}
                 </h1>
@@ -279,17 +279,17 @@ export function DeskTimeAlternativePage() {
                     : comp.heroDesc}
                 </p>
 
-                <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                   <Link
                     to="/signup"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(255,90,54,0.35)] hover:shadow-[0_6px_22px_rgba(255,90,54,0.45)] transition-all"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Start free trial</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Book a demo</span>
                   </Link>
@@ -399,13 +399,13 @@ export function DeskTimeAlternativePage() {
               {Object.values(COMPETITORS).map((c) => (
                 <div
                   key={c.slug}
-                  className="bg-white rounded-2xl p-7 border border-[#E6E2D8] hover:border-[#FF5A36] transition-all shadow-subtle hover:shadow-card flex flex-col justify-between group"
+                  className="bg-white rounded-2xl p-7 border border-[#E8D5EC] hover:border-[#61126E] transition-all shadow-subtle hover:shadow-card flex flex-col justify-between group"
                 >
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+                    <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
                       Deskmerit vs {c.name}
                     </div>
-                    <h3 className="text-xl font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors mb-3">
+                    <h3 className="text-xl font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-3">
                       {c.name} Alternative
                     </h3>
                     <p className="text-xs text-[#4A5370] leading-relaxed mb-6">
@@ -413,10 +413,10 @@ export function DeskTimeAlternativePage() {
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-[#E6E2D8]">
+                  <div className="pt-4 border-t border-[#E8D5EC]">
                     <Link
                       to={`/compare/${c.slug}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors"
                     >
                       <span>View detailed comparison</span>
                       <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -429,8 +429,8 @@ export function DeskTimeAlternativePage() {
         ) : (
           /* Detailed Competitor Side-by-Side Table */
           <section className="py-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#FFFFFF] rounded-[24px] border border-[#E6E2D8] shadow-card overflow-hidden">
-              <div className="p-6 sm:p-8 bg-[#FAF8F5] border-b border-[#E6E2D8] flex items-center justify-between">
+            <div className="bg-[#FFFFFF] rounded-[24px] border border-[#E8D5EC] shadow-card overflow-hidden">
+              <div className="p-6 sm:p-8 bg-[#FAF4FB] border-b border-[#E8D5EC] flex items-center justify-between">
                 <div>
                   <h3 className="font-extrabold text-lg text-[#0F1730]">
                     Feature Breakdown
@@ -447,11 +447,11 @@ export function DeskTimeAlternativePage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs border-collapse">
                   <thead>
-                    <tr className="border-b border-[#E6E2D8] bg-[#FFFFFF]">
+                    <tr className="border-b border-[#E8D5EC] bg-[#FFFFFF]">
                       <th className="py-4 px-6 font-bold text-[#0F1730] w-1/2">
                         Capability
                       </th>
-                      <th className="py-4 px-6 font-bold text-[#FF5A36] w-1/4 bg-[#FFE6DF]/30">
+                      <th className="py-4 px-6 font-bold text-[#61126E] w-1/4 bg-[#F6EDF8]/30">
                         Deskmerit
                       </th>
                       <th className="py-4 px-6 font-bold text-[#4A5370] w-1/4">
@@ -459,22 +459,22 @@ export function DeskTimeAlternativePage() {
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#E6E2D8]">
+                  <tbody className="divide-y divide-[#E8D5EC]">
                     {comp.rows.map((row, i) => (
                       <tr
                         key={i}
                         className={
                           row.highlight
-                            ? "bg-[#FFF9F7]/50"
+                            ? "bg-[#FAF4FB]/50"
                             : i % 2 === 0
                             ? "bg-[#FFFFFF]"
-                            : "bg-[#FAF8F5]/30"
+                            : "bg-[#FAF4FB]/30"
                         }
                       >
                         <td className="py-3.5 px-6 font-medium text-[#0F1730]">
                           {row.feature}
                         </td>
-                        <td className="py-3.5 px-6 font-semibold text-[#0F1730] bg-[#FFE6DF]/20">
+                        <td className="py-3.5 px-6 font-semibold text-[#0F1730] bg-[#F6EDF8]/20">
                           {row.pulse}
                         </td>
                         <td
@@ -495,9 +495,9 @@ export function DeskTimeAlternativePage() {
 
             {/* Honesty Section: When Competitor is better & Migration call */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-              <div className="bg-[#FFFFFF] rounded-2xl p-7 border border-[#E6E2D8] shadow-subtle">
+              <div className="bg-[#FFFFFF] rounded-2xl p-7 border border-[#E8D5EC] shadow-subtle">
                 <div className="flex items-center gap-2 font-bold text-sm text-[#0F1730] mb-2">
-                  <Smartphone className="w-4 h-4 text-[#FF5A36]" />
+                  <Smartphone className="w-4 h-4 text-[#61126E]" />
                   <span>When {comp.name} is the better choice</span>
                 </div>
                 <p className="text-xs text-[#4A5370] leading-relaxed">
@@ -508,7 +508,7 @@ export function DeskTimeAlternativePage() {
               <div className="bg-[#0F1730] text-white rounded-2xl p-7 border border-[#24305A] shadow-subtle flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-2 font-bold text-sm text-white mb-2">
-                    <RefreshCw className="w-4 h-4 text-[#FF5A36]" />
+                    <RefreshCw className="w-4 h-4 text-[#F0ABFC]" />
                     <span>{comp.switchTitle}</span>
                   </div>
                   <p className="text-xs text-[#9AA1B2] leading-relaxed">
@@ -519,7 +519,7 @@ export function DeskTimeAlternativePage() {
                 <div className="mt-4 pt-3 border-t border-[#24305A]">
                   <Link
                     to="/demo"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF5A36] hover:underline"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#D8B4FE] hover:underline"
                   >
                     Book a migration walkthrough call{" "}
                     <ArrowRight className="w-3.5 h-3.5" />

@@ -385,14 +385,14 @@ export function GlossaryPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FDFCFB] text-[#0F1730] font-sans antialiased flex flex-col selection:bg-[#FF5A36]/15 selection:text-[#FF5A36]">
+    <div className="min-h-screen bg-[#FDFCFB] text-[#0F1730] font-sans antialiased flex flex-col selection:bg-[#61126E]/15 selection:text-[#61126E]">
       <DeskmeritHeader />
 
       <main className="flex-grow">
         {/* HERO SECTION */}
         <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-10 pb-16 lg:pt-14 lg:pb-24 relative overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Standard Breadcrumb */}
@@ -403,12 +403,12 @@ export function GlossaryPage() {
               <span className="text-slate-500">/</span>
               <span className="text-slate-300">Resources</span>
               <span className="text-slate-500">/</span>
-              <span className="text-[#FF5A36] font-bold">Glossary</span>
+              <span className="text-[#D8B4FE] font-bold">Glossary</span>
             </div>
 
             <div className="max-w-3xl space-y-6">
               {/* Standard Accent Eyebrow */}
-              <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE]">
                 DESKMERIT TERMINOLOGY GLOSSARY
               </div>
 
@@ -429,7 +429,7 @@ export function GlossaryPage() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search terms, concepts, formulas (e.g. Active Time, GDPR, Utilization)..."
-                    className="w-full pl-12 pr-10 py-3.5 bg-slate-900/90 border border-slate-700/80 rounded-xl text-white placeholder-slate-400 text-sm focus:outline-none focus:border-[#FF5A36] focus:ring-1 focus:ring-[#FF5A36] transition-all shadow-inner"
+                    className="w-full pl-12 pr-10 py-3.5 bg-slate-900/90 border border-slate-700/80 rounded-xl text-white placeholder-slate-400 text-sm focus:outline-none focus:border-[#61126E] focus:ring-1 focus:ring-[#61126E] transition-all shadow-inner"
                   />
                   {searchQuery && (
                     <button
@@ -446,7 +446,7 @@ export function GlossaryPage() {
         </section>
 
         {/* CONTROLS SECTION: Category Filter & Alphabetical Index Bar */}
-        <section className="bg-white border-b border-[#E6E2D8] sticky top-16 z-30 shadow-xs">
+        <section className="bg-white border-b border-[#E8D5EC] sticky top-16 z-30 shadow-xs">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-3">
             {/* Category Filter Pills */}
             <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
@@ -464,7 +464,7 @@ export function GlossaryPage() {
                   className={`px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
                     selectedCategory === cat
                       ? "bg-[#0F1730] text-white shadow-xs"
-                      : "bg-[#F7F4EE] text-[#4A5370] hover:bg-slate-200 hover:text-[#0F1730]"
+                      : "bg-[#FAF4FB] text-[#4A5370] hover:bg-slate-200 hover:text-[#0F1730]"
                   }`}
                 >
                   {cat}
@@ -478,7 +478,7 @@ export function GlossaryPage() {
                 onClick={() => setSelectedLetter("All")}
                 className={`px-2 py-1 rounded text-xs font-extrabold transition-all cursor-pointer ${
                   selectedLetter === "All"
-                    ? "bg-[#FF5A36] text-white"
+                    ? "bg-[#61126E] text-white"
                     : "text-slate-500 hover:text-[#0F1730] hover:bg-slate-100"
                 }`}
               >
@@ -494,7 +494,7 @@ export function GlossaryPage() {
                     onClick={() => setSelectedLetter(letter)}
                     className={`w-7 h-7 flex items-center justify-center rounded text-xs font-bold transition-all ${
                       isSelected
-                        ? "bg-[#FF5A36] text-white shadow-xs"
+                        ? "bg-[#61126E] text-white shadow-xs"
                         : hasTerms
                         ? "text-[#0F1730] hover:bg-slate-100 cursor-pointer"
                         : "text-slate-300 cursor-not-allowed"
@@ -529,7 +529,7 @@ export function GlossaryPage() {
                     setSelectedCategory("All");
                     setSelectedLetter("All");
                   }}
-                  className="text-xs font-bold text-[#FF5A36] hover:underline cursor-pointer"
+                  className="text-xs font-bold text-[#61126E] hover:underline cursor-pointer"
                 >
                   Reset all filters
                 </button>
@@ -549,7 +549,7 @@ export function GlossaryPage() {
                     setSelectedCategory("All");
                     setSelectedLetter("All");
                   }}
-                  className="mt-4 px-4 py-2 bg-[#FF5A36] text-white text-xs font-bold rounded-lg hover:bg-[#E94A27] transition-all cursor-pointer"
+                  className="mt-4 px-4 py-2 bg-[#61126E] text-white text-xs font-bold rounded-lg hover:bg-[#4E0E58] transition-all cursor-pointer"
                 >
                   Clear search & filters
                 </button>
@@ -562,17 +562,17 @@ export function GlossaryPage() {
                     <article
                       key={term.slug}
                       id={term.slug}
-                      className="bg-white rounded-2xl p-6 sm:p-7 border border-[#E6E2D8] shadow-[0_2px_12px_rgba(15,23,48,0.03)] hover:shadow-[0_8px_24px_rgba(15,23,48,0.08)] hover:border-[#FF5A36]/40 transition-all duration-300 flex flex-col justify-between group scroll-mt-36"
+                      className="bg-white rounded-2xl p-6 sm:p-7 border border-[#E8D5EC] shadow-[0_2px_12px_rgba(15,23,48,0.03)] hover:shadow-[0_8px_24px_rgba(15,23,48,0.08)] hover:border-[#61126E]/40 transition-all duration-300 flex flex-col justify-between group scroll-mt-36"
                     >
                       <div>
                         {/* Header: Category Badge + Copy Link */}
                         <div className="flex items-center justify-between gap-3 mb-3">
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-[#F7F4EE] text-[#4A5370] border border-[#E6E2D8]">
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-[#FAF4FB] text-[#4A5370] border border-[#E8D5EC]">
                             {term.category}
                           </span>
                           <button
                             onClick={() => handleCopyLink(term.slug)}
-                            className="text-slate-400 hover:text-[#FF5A36] transition-colors p-1 rounded hover:bg-slate-50"
+                            className="text-slate-400 hover:text-[#61126E] transition-colors p-1 rounded hover:bg-slate-50"
                             title="Copy link to this term"
                           >
                             {copiedSlug === term.slug ? (
@@ -586,7 +586,7 @@ export function GlossaryPage() {
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-xl sm:text-2xl font-extrabold text-[#0F1730] group-hover:text-[#FF5A36] transition-colors tracking-tight mb-3">
+                        <h3 className="text-xl sm:text-2xl font-extrabold text-[#0F1730] group-hover:text-[#61126E] transition-colors tracking-tight mb-3">
                           {term.term}
                         </h3>
 
@@ -626,9 +626,9 @@ export function GlossaryPage() {
                               </p>
                             </div>
 
-                            <div className="p-3 rounded-xl bg-orange-50/60 border border-[#FF5A36]/20">
-                              <h4 className="font-bold text-[#FF5A36] uppercase tracking-wider text-[11px] mb-1 flex items-center gap-1.5">
-                                <ShieldCheck className="w-4 h-4 text-[#FF5A36]" />
+                            <div className="p-3 rounded-xl bg-[#F6EDF8]/60 border border-[#61126E]/20">
+                              <h4 className="font-bold text-[#61126E] uppercase tracking-wider text-[11px] mb-1 flex items-center gap-1.5">
+                                <ShieldCheck className="w-4 h-4 text-[#61126E]" />
                                 Deskmerit's Approach
                               </h4>
                               <p className="text-slate-700 leading-relaxed">
@@ -664,7 +664,7 @@ export function GlossaryPage() {
                           onClick={() =>
                             setExpandedTermSlug(isExpanded ? null : term.slug)
                           }
-                          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF5A36] hover:text-[#E94A27] transition-colors cursor-pointer"
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#61126E] hover:text-[#4E0E58] transition-colors cursor-pointer"
                         >
                           <span>{isExpanded ? "Collapse definition" : "Read full explanation & benchmarks"}</span>
                           <ChevronDown
@@ -686,9 +686,9 @@ export function GlossaryPage() {
         </section>
 
         {/* BOTTOM CTA: Need deeper help? */}
-        <section className="py-16 bg-[#F7F4EE] border-t border-[#E6E2D8]">
+        <section className="py-16 bg-[#FAF4FB] border-t border-[#E8D5EC]">
           <div className="max-w-4xl mx-auto px-4 text-center space-y-5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFE6DF]/30 text-xs font-bold text-[#FF5A36] border border-[#FF5A36]/30">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F6EDF8]/30 text-xs font-bold text-[#61126E] border border-[#61126E]/30">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Have a term or policy nuance we should cover?</span>
             </div>
@@ -701,7 +701,7 @@ export function GlossaryPage() {
             <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
               <Link
                 to="/signup"
-                className="px-6 py-3 rounded-xl bg-[#FF5A36] hover:bg-[#E94A27] text-white font-bold text-xs transition-all shadow-sm hover:shadow-md"
+                className="px-6 py-3 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-bold text-xs transition-all shadow-sm hover:shadow-md"
               >
                 Start free 14-day trial
               </Link>

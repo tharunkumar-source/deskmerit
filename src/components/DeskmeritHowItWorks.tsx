@@ -34,7 +34,7 @@ export function DeskmeritHowItWorks() {
       tabSub: "Background Capture",
       icon: PlayCircle,
       badge: "Works 100% Offline",
-      badgeColor: "bg-[#FFE6DF] text-[#C2361A] border-[#FFD2C8]",
+      badgeColor: "bg-[#F6EDF8] text-[#4E0E58] border-[#E8D5EC]",
       headline: "Press Start for Instant, Privacy-First Background Capture",
       description:
         "Tracking begins instantly with zero stopwatch friction, even without internet access. The lightweight native agent records active window titles and application focus without ever inspecting inner document contents.",
@@ -109,11 +109,11 @@ export function DeskmeritHowItWorks() {
   const current = steps[activeStep];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#FBF9F5] border-b border-[#E6E2D8] font-sans relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-[#FFFFFF] border-b border-[#E8D5EC] font-sans relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
+          <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
             CONTINUOUS WORKFORCE AUTOMATION
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-[1.24]">
@@ -129,7 +129,7 @@ export function DeskmeritHowItWorks() {
         <div
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          className="border-b border-[#E6E2D8] mb-8 w-full overflow-x-auto no-scrollbar scroll-smooth"
+          className="border-b border-[#E8D5EC] mb-8 w-full overflow-x-auto no-scrollbar scroll-smooth"
         >
           <div className="flex sm:grid sm:grid-cols-3 min-w-[410px] sm:min-w-0 w-full snap-x">
             {steps.map((step, idx) => {
@@ -141,7 +141,7 @@ export function DeskmeritHowItWorks() {
                   type="button"
                   onClick={() => selectStep(idx)}
                   className={`group relative text-center transition-all duration-200 cursor-pointer w-[38%] min-w-[128px] max-w-[155px] sm:w-auto sm:min-w-0 sm:max-w-none sm:flex-1 shrink-0 snap-start px-2.5 sm:px-6 py-3.5 sm:py-5 select-none ${isActive
-                      ? "bg-white border-t border-x border-[#E6E2D8] shadow-xs z-10"
+                      ? "bg-white border-t border-x border-[#E8D5EC] shadow-xs z-10"
                       : "bg-transparent hover:bg-white/60 border-t border-x border-transparent z-0"
                     }`}
                   style={{
@@ -152,11 +152,11 @@ export function DeskmeritHowItWorks() {
                     {/* Top Line: Icon + Step Title */}
                     <div className="flex items-center justify-center gap-1.5 sm:gap-2.5 w-full">
                       <Icon
-                        className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-colors shrink-0 ${isActive ? "text-[#FF5A36]" : "text-slate-400 group-hover:text-[#0F1730]"
+                        className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-colors shrink-0 ${isActive ? "text-[#61126E]" : "text-slate-400 group-hover:text-[#0F1730]"
                           }`}
                       />
                       <span
-                        className={`text-xs sm:text-base font-extrabold tracking-tight transition-colors truncate sm:overflow-visible ${isActive ? "text-[#FF5A36]" : "text-[#0F1730] group-hover:text-[#FF5A36]"
+                        className={`text-xs sm:text-base font-extrabold tracking-tight transition-colors truncate sm:overflow-visible ${isActive ? "text-[#61126E]" : "text-[#0F1730] group-hover:text-[#61126E]"
                           }`}
                       >
                         {step.tabTitle}
@@ -171,7 +171,7 @@ export function DeskmeritHowItWorks() {
 
                   {/* Active Step Bottom Highlight Bar matching user screenshot */}
                   {isActive && (
-                    <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF5A36] overflow-hidden">
+                    <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#61126E] overflow-hidden">
                       {/* Smooth Progress Fill */}
                       <div
                         className="h-full bg-[#12B886] transition-all duration-75"
@@ -189,7 +189,7 @@ export function DeskmeritHowItWorks() {
         <div
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          className="bg-white border border-[#E6E2D8] rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-sm transition-all"
+          className="bg-white border border-[#E8D5EC] rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-sm transition-all"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Column: Pill, Title, Description, Bullets & Architecture Link (Col 1-5) */}
@@ -197,8 +197,8 @@ export function DeskmeritHowItWorks() {
               <div>
                 {/* Clean Tag */}
                 <div className="mb-4">
-                  <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5A36]" />
+                  <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#61126E]">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#61126E]" />
                     <span>{current.badge}</span>
                   </span>
                 </div>
@@ -225,10 +225,10 @@ export function DeskmeritHowItWorks() {
               </div>
 
               {/* Bottom Footer Row: Explore Link & Stage X of 3 + Prev/Next Controls */}
-              <div className="flex items-center justify-between pt-6 border-t border-[#E6E2D8]/80">
+              <div className="flex items-center justify-between pt-6 border-t border-[#E8D5EC]/80">
                 <Link
                   to="/features/tracker-plus"
-                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#FF5A36] hover:text-[#C2361A] group transition-colors"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#61126E] hover:text-[#4E0E58] group transition-colors"
                 >
                   <span>Inspect detailed architecture</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

@@ -23,7 +23,7 @@ export function DemoPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F4EE] text-[#0F1730]">
+    <div className="min-h-screen bg-[#FAF4FB] text-[#0F1730]">
       <DeskmeritHeader />
 
       <main>
@@ -31,26 +31,26 @@ export function DemoPage() {
         <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
           {/* Dual Radial Glows */}
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#24305A]/40 blur-[120px] rounded-full pointer-events-none" />
-          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#FF5A36]/10 blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#61126E]/10 blur-[100px] rounded-full pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
-            <div className="text-xs text-[#FF5A36] font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs text-slate-400 font-medium flex items-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">Home</Link>
               <span className="text-slate-500">/</span>
               <span className="text-slate-300">Product Walkthrough</span>
               <span className="text-slate-500">/</span>
-              <span>Book a Demo</span>
+              <span className="text-[#D8B4FE] font-bold">Book a Demo</span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               {/* Left Column: Heading & Value Proposition */}
               <div className="lg:col-span-5 space-y-6">
-                <div className="inline-block px-3 py-1 rounded-full bg-[#FFE6DF]/15 border border-[#FF5A36]/30 text-[11px] font-bold uppercase tracking-wider text-[#FF5A36]">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
                   20-MINUTE LIVE WALKTHROUGH
                 </div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
-                  See Deskmerit with your own workflow <span className="text-[#FF5A36] block">in 20 minutes.</span>
+                  See Deskmerit with your own workflow <span className="text-[#D8B4FE]">in 20 minutes.</span>
                 </h1>
                 <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
                   We will walk you through your exact setup — whether you're syncing Jira issues, configuring attendance for Sunday–Thursday shifts, or connecting Sqalible HRMS.
@@ -64,7 +64,7 @@ export function DemoPage() {
                     "Transparent proposal in your local currency (INR, AUD, NZD, AED, USD)",
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
-                      <span className="w-5 h-5 rounded-full bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center shrink-0 mt-0.5 font-bold">
+                      <span className="w-5 h-5 rounded-full bg-[#F6EDF8] text-[#D8B4FE] flex items-center justify-center shrink-0 mt-0.5 font-bold">
                         <Check className="w-3.5 h-3.5 stroke-[2.5]" />
                       </span>
                       <span>{item}</span>
@@ -74,7 +74,7 @@ export function DemoPage() {
 
                 {/* Specialist Card */}
                 <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 text-left flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#FF5A36] text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-xs">
+                  <div className="w-10 h-10 rounded-full bg-[#61126E] text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-xs">
                     DM
                   </div>
                   <div>
@@ -95,7 +95,7 @@ export function DemoPage() {
                   <div className="p-4 sm:p-8 bg-white">
                     {submitted ? (
                       <div className="text-center py-10 space-y-4">
-                        <div className="w-14 h-14 rounded-full bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center mx-auto shadow-sm">
+                        <div className="w-14 h-14 rounded-full bg-[#F6EDF8] text-[#D8B4FE] flex items-center justify-center mx-auto shadow-sm">
                           <CheckCircle2 className="w-8 h-8" />
                         </div>
                         <h3 className="text-2xl font-bold text-[#0F1730]">Demo Walkthrough Scheduled!</h3>
@@ -105,7 +105,7 @@ export function DemoPage() {
                         <div className="pt-4">
                           <Link
                             to="/"
-                            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF5A36] hover:underline"
+                            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#D8B4FE] hover:underline"
                           >
                             Return to home page <ArrowRight className="w-3.5 h-3.5" />
                           </Link>
@@ -129,7 +129,7 @@ export function DemoPage() {
                               value={formData.name}
                               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                               placeholder="Ananya Sharma"
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#FF5A36] focus:ring-2 focus:ring-[#FF5A36]/10"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#61126E] focus:ring-2 focus:ring-[#61126E]/10"
                             />
                           </div>
 
@@ -143,7 +143,7 @@ export function DemoPage() {
                               value={formData.email}
                               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                               placeholder="ananya@company.com"
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#FF5A36] focus:ring-2 focus:ring-[#FF5A36]/10"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#61126E] focus:ring-2 focus:ring-[#61126E]/10"
                             />
                           </div>
                         </div>
@@ -159,7 +159,7 @@ export function DemoPage() {
                               value={formData.company}
                               onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                               placeholder="Acme Technologies"
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#FF5A36] focus:ring-2 focus:ring-[#FF5A36]/10"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#61126E] focus:ring-2 focus:ring-[#61126E]/10"
                             />
                           </div>
 
@@ -170,7 +170,7 @@ export function DemoPage() {
                             <select
                               value={formData.teamSize}
                               onChange={(e) => setFormData({ ...formData, teamSize: e.target.value })}
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] focus:bg-white focus:outline-none focus:border-[#FF5A36]"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] focus:bg-white focus:outline-none focus:border-[#61126E]"
                             >
                               <option value="1–15">1–15 seats</option>
                               <option value="16–50">16–50 seats</option>
@@ -189,7 +189,7 @@ export function DemoPage() {
                             <select
                               value={formData.country}
                               onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] focus:bg-white focus:outline-none focus:border-[#FF5A36]"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] focus:bg-white focus:outline-none focus:border-[#61126E]"
                             >
                               <option value="India">India (₹ INR)</option>
                               <option value="Australia">Australia (A$ AUD)</option>
@@ -210,7 +210,7 @@ export function DemoPage() {
                               value={formData.pmTool}
                               onChange={(e) => setFormData({ ...formData, pmTool: e.target.value })}
                               placeholder="Jira, Azure DevOps, OpenProject, etc."
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#FF5A36] focus:ring-2 focus:ring-[#FF5A36]/10"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#61126E] focus:ring-2 focus:ring-[#61126E]/10"
                             />
                           </div>
                         </div>
@@ -222,7 +222,7 @@ export function DemoPage() {
                           <select
                             value={formData.isSqalibleUser}
                             onChange={(e) => setFormData({ ...formData, isSqalibleUser: e.target.value })}
-                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] focus:bg-white focus:outline-none focus:border-[#FF5A36]"
+                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] focus:bg-white focus:outline-none focus:border-[#61126E]"
                           >
                             <option value="No">No, evaluating standalone Deskmerit</option>
                             <option value="Yes">Yes, want to activate the HRMS add-on</option>
@@ -231,7 +231,7 @@ export function DemoPage() {
 
                         <button
                           type="submit"
-                          className="w-full py-3.5 rounded-xl bg-[#FF5A36] hover:bg-[#E04422] text-white font-bold text-xs transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 mt-2 cursor-pointer"
+                          className="w-full py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-bold text-xs transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 mt-2 cursor-pointer"
                         >
                           Schedule Product Demo →
                         </button>

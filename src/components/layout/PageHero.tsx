@@ -334,8 +334,8 @@ export function PageHero({
           </ol>
         </nav>
 
-        <div className={`mt-6 grid items-center gap-8 lg:gap-12 ${hasSide ? "lg:grid-cols-12" : ""}`}>
-          <div className={hasSide ? "lg:col-span-7" : "w-full"}>
+        <div className={`mt-6 grid grid-cols-1 items-center gap-8 lg:gap-12 ${hasSide ? "lg:grid-cols-12" : ""}`}>
+          <div className={hasSide ? "col-span-1 lg:col-span-7 min-w-0 max-w-full w-full" : "w-full"}>
             {pretitle && (
               <p className={`pretitle mb-2 ${accent === "ai" ? "text-[#C4B5FD]" : "text-teal-400"}`}>
                 {pretitle}
@@ -371,33 +371,15 @@ export function PageHero({
           </div>
 
           {hasSide && (
-            <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="w-full max-w-[540px] xl:max-w-[580px] rounded-xl overflow-hidden border border-neutral-700/60 bg-[#0E1620] shadow-2xl shadow-black/60 group hover:border-teal-500/40 transition-all duration-300">
-                {/* Modern Window Title Bar */}
-                <div className="flex items-center justify-between px-3.5 py-2.5 bg-[#080D14] border-b border-white/10 select-none">
-                  <div className="flex items-center gap-1.5">
-                    <span className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
-                  </div>
-                  <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/5 border border-white/5 text-[10px] text-neutral-400 font-mono">
-                    <span className="h-1.5 w-1.5 rounded-full bg-teal-400" />
-                    <span>
-                      {heroImage?.startsWith("/figma-screens/") || heroImage?.startsWith("/dashboards/")
-                        ? "app.sqalible.com"
-                        : "sqalible.com"}
-                    </span>
-                  </div>
-                  <div className="w-10" />
-                </div>
-
+            <div className="col-span-1 lg:col-span-5 flex justify-center lg:justify-end min-w-0 max-w-full w-full">
+              <div className="w-full max-w-full sm:max-w-[540px] xl:max-w-[580px] rounded-xl overflow-hidden border border-neutral-700/60 bg-[#0E1620] shadow-2xl shadow-black/60 group hover:border-teal-500/40 transition-all duration-300">
                 {/* Screenshot Frame Area */}
-                <div className="w-full aspect-[16/10] overflow-hidden bg-neutral-950">
+                <div className="w-full max-w-full aspect-[16/10] overflow-hidden bg-neutral-950">
                   {heroImage ? (
                     <img
                       src={heroImage}
                       alt={imageAlt || title}
-                      className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
+                      className="h-full w-full max-w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
                     />
                   ) : (
                     aside

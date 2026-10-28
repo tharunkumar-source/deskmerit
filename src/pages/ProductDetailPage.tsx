@@ -790,9 +790,9 @@ export function ProductDetailPage() {
               <span>{feat.title}</span>
             </div>
 
-            <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Headline, Overline, Description & CTAs */}
-              <div className="col-span-12 lg:col-span-6 space-y-6">
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full space-y-6">
                 <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
                   {feat.badge}
                 </div>
@@ -836,58 +836,30 @@ export function ProductDetailPage() {
               </div>
 
               {/* Right Column: Authentic Product Screenshot or Mockup */}
-              <div className="col-span-12 lg:col-span-6 flex justify-center items-center">
+              <div className="col-span-1 lg:col-span-6 flex justify-center items-center min-w-0 max-w-full w-full">
                 {feat.screenshot ? (
                   feat.screenshot.type === "tray" ? (
                     /* Native Windows/Desktop Tray UI Showcase */
-                    <div className="relative max-w-[340px] sm:max-w-[360px] w-full mx-auto">
+                    <div className="relative max-w-full sm:max-w-[360px] w-full mx-auto overflow-hidden sm:overflow-visible">
                       <div className="absolute -inset-2 bg-gradient-to-r from-[#FF5A36]/20 via-[#38BDF8]/20 to-[#FF5A36]/10 rounded-3xl blur-xl opacity-75" />
                       <div className="relative rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] overflow-hidden">
-                        <div className="bg-[#0A1628] px-4 py-2.5 border-b border-slate-800 flex items-center justify-between">
-                          <div className="flex items-center gap-1.5">
-                            <div className="w-2.5 h-2.5 rounded-full bg-[#ED6A5E]" />
-                            <div className="w-2.5 h-2.5 rounded-full bg-[#F5BF4F]" />
-                            <div className="w-2.5 h-2.5 rounded-full bg-[#62C554]" />
-                          </div>
-                          <div className="text-[10px] font-mono text-slate-300">
-                            Pulse Track Tray · Windows & macOS
-                          </div>
-                          <div className="flex items-center gap-1 text-[10px] text-[#12B886] font-bold">
-                            <span className="w-2 h-2 rounded-full bg-[#12B886] animate-pulse" />
-                            Live
-                          </div>
-                        </div>
                         <img
                           src={feat.screenshot.src}
                           alt={feat.screenshot.alt}
-                          className="w-full h-auto object-contain block"
+                          className="w-full max-w-full h-auto object-contain block"
                           loading="eager"
                         />
                       </div>
                     </div>
                   ) : (
                     /* Web Admin Dashboard Screen Showcase */
-                    <div className="w-full">
+                    <div className="w-full max-w-full min-w-0">
                       <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
-                        <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
-                            <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
-                            <div className="w-3 h-3 rounded-full bg-[#62C554]" />
-                          </div>
-                          <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
-                            app.deskmerit.com/{feat.slug}
-                          </div>
-                          <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
-                            <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
-                            Verified Output
-                          </div>
-                        </div>
-                        <div className="bg-slate-950 p-1 sm:p-2">
+                        <div className="bg-slate-950 p-1 sm:p-2 overflow-hidden w-full max-w-full">
                           <img
                             src={feat.screenshot.src}
                             alt={feat.screenshot.alt}
-                            className="w-full h-auto max-h-[460px] object-contain object-top rounded-lg block shadow-inner"
+                            className="w-full max-w-full h-auto max-h-[460px] object-contain object-top rounded-lg block shadow-inner"
                             loading="eager"
                           />
                         </div>
@@ -896,23 +868,8 @@ export function ProductDetailPage() {
                   )
                 ) : (
                   /* Fallback Mockup if no screenshot */
-                  <div className="w-full">
+                  <div className="w-full max-w-full min-w-0">
                     <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
-                      <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
-                          <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
-                          <div className="w-3 h-3 rounded-full bg-[#62C554]" />
-                        </div>
-                        <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
-                          app.deskmerit.com/{feat.slug}
-                        </div>
-                        <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
-                          <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
-                          Active Engine
-                        </div>
-                      </div>
-
                       <div className="p-6 space-y-4">
                         <div className="p-4 rounded-xl bg-slate-900/70 border border-slate-800 flex items-center justify-between">
                           <div className="flex items-center gap-3">

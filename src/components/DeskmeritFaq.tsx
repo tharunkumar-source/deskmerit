@@ -72,9 +72,9 @@ export function DeskmeritFaq({
         </div>
 
         {/* 2-Column Split Layout (Matching Reference Image 2) */}
-        <div className="grid grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Left Column: Dark Callout Highlight Box */}
-          <div className="col-span-12 lg:col-span-5">
+          <div className="col-span-1 lg:col-span-5 min-w-0 max-w-full w-full">
             <div className="rounded-3xl bg-gradient-to-br from-[#0A1628] via-[#0F1E36] to-[#0A1324] p-8 sm:p-10 text-white shadow-xl border border-slate-800 relative overflow-hidden flex flex-col justify-between min-h-[380px]">
               {/* Subtle Radial Glow in background */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
@@ -107,7 +107,7 @@ export function DeskmeritFaq({
           </div>
 
           {/* Right Column: Clean Accordion List */}
-          <div className="col-span-12 lg:col-span-7 divide-y divide-slate-100">
+          <div className="col-span-1 lg:col-span-7 divide-y divide-slate-100 min-w-0 max-w-full w-full">
             {faqs.map((faq, idx) => {
               const isOpen = openIndex === idx;
               return (

@@ -209,9 +209,9 @@ export function AboutPage() {
               <span>{isCareers ? "Careers" : isPartners ? "Partners" : isPress ? "Press & Media Kit" : "About Us"}</span>
             </div>
 
-            <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column */}
-              <div className="col-span-12 lg:col-span-6 space-y-6">
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full space-y-6">
                 <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
                   {isCareers
                     ? "CAREERS AT DESKMERIT"
@@ -274,8 +274,8 @@ export function AboutPage() {
               </div>
 
               {/* Right Column: Individual Clean Image (No UI wrappers) */}
-              <div className="col-span-12 lg:col-span-6">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 aspect-[16/10] sm:aspect-[4/3] group bg-slate-900">
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 aspect-[16/10] sm:aspect-[4/3] group bg-slate-900 w-full max-w-full">
                   <img
                     src={
                       isCareers

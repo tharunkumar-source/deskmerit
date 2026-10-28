@@ -325,8 +325,8 @@ export function ComparePage() {
             <span className="text-teal-400 font-semibold">Sqalible vs {data.name}</span>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div className="lg:col-span-7">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="col-span-1 lg:col-span-7 min-w-0 max-w-full w-full">
               <div className="inline-flex items-center gap-2 rounded-none border border-teal-500/30 bg-teal-950/60 px-3.5 py-1 text-xs font-semibold text-teal-300">
                 <ScaleIcon size={14} className="text-teal-400" />
                 Objective B2B Platform Comparison
@@ -359,22 +359,8 @@ export function ComparePage() {
               </div>
             </div>
 
-            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="col-span-1 lg:col-span-5 flex justify-center lg:justify-end min-w-0 max-w-full w-full">
               <div className="w-full max-w-[540px] xl:max-w-[580px] rounded-xl overflow-hidden border border-neutral-700/60 bg-[#0E1620] shadow-2xl shadow-black/60 group hover:border-teal-500/40 transition-all duration-300">
-                {/* Modern Window Title Bar */}
-                <div className="flex items-center justify-between px-3.5 py-2.5 bg-[#080D14] border-b border-white/10 select-none">
-                  <div className="flex items-center gap-1.5">
-                    <span className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
-                  </div>
-                  <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/5 border border-white/5 text-[10px] text-neutral-400 font-mono">
-                    <span className="h-1.5 w-1.5 rounded-full bg-teal-400" />
-                    <span>app.sqalible.com/compare/{currentKey}</span>
-                  </div>
-                  <div className="w-10" />
-                </div>
-
                 {/* Screenshot Frame Area */}
                 <div className="w-full aspect-[16/10] overflow-hidden bg-neutral-950">
                   <CompetitorCompareHeroCard competitor={currentKey} />

@@ -60,9 +60,9 @@ export function DownloadPage() {
               <span>Downloads</span>
             </div>
 
-            <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column */}
-              <div className="col-span-12 lg:col-span-6 space-y-6">
+              <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
                 <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3 py-1 rounded-full inline-block border border-[#FF5A36]/30">
                   NATIVE LIGHTWEIGHT DESKTOP ENGINE
                 </div>
@@ -100,28 +100,14 @@ export function DownloadPage() {
               </div>
 
               {/* Right Column: Authentic Native Desktop Tray Screenshot */}
-              <div className="col-span-12 lg:col-span-6 flex justify-center items-center">
-                <div className="relative max-w-[340px] sm:max-w-[360px] w-full mx-auto">
+              <div className="col-span-1 lg:col-span-6 flex justify-center items-center min-w-0 max-w-full w-full">
+                <div className="relative max-w-full sm:max-w-[360px] w-full mx-auto overflow-hidden sm:overflow-visible">
                   <div className="absolute -inset-2 bg-gradient-to-r from-[#FF5A36]/25 via-[#38BDF8]/20 to-[#FF5A36]/15 rounded-3xl blur-xl opacity-75" />
                   <div className="relative rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] overflow-hidden">
-                    <div className="bg-[#0A1628] px-4 py-2.5 border-b border-slate-800 flex items-center justify-between text-xs">
-                      <div className="flex items-center gap-1.5">
-                        <div className="w-2.5 h-2.5 rounded-full bg-[#ED6A5E]" />
-                        <div className="w-2.5 h-2.5 rounded-full bg-[#F5BF4F]" />
-                        <div className="w-2.5 h-2.5 rounded-full bg-[#62C554]" />
-                      </div>
-                      <div className="text-[10px] font-mono text-slate-300">
-                        Pulse Track Desktop Agent · v2.4 Signed
-                      </div>
-                      <div className="flex items-center gap-1 text-[10px] text-[#12B886] font-bold">
-                        <span className="w-2 h-2 rounded-full bg-[#12B886] animate-pulse" />
-                        Online
-                      </div>
-                    </div>
                     <img
                       src="/images/figma/tray-active-tracking.png"
                       alt="Deskmerit Pulse Track Native Desktop Client Live Tracking Session"
-                      className="w-full h-auto object-contain block"
+                      className="w-full max-w-full h-auto object-contain block"
                       loading="eager"
                     />
                   </div>

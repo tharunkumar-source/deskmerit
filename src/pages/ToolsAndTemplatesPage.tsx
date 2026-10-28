@@ -135,25 +135,9 @@ export function ToolsAndTemplatesPage() {
               </div>
 
               {/* Right Column: Authentic Tool & Template Screenshot in macOS Browser Window Frame */}
-              <div className="lg:col-span-5">
-                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-2xl overflow-hidden group">
-                  {/* macOS Window Titlebar */}
-                  <div className="flex items-center justify-between px-4 py-3 bg-[#0A1628] border-b border-slate-800">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
-                      <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
-                      <div className="w-3 h-3 rounded-full bg-[#62C554]" />
-                    </div>
-                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
-                      app.deskmerit.com/tools/{isOvertime ? "overtime" : isTimesheet ? "timesheet" : isPolicy ? "policy" : "utilisation"}
-                    </div>
-                    <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
-                      Calculated
-                    </div>
-                  </div>
-
-                  <div className="bg-[#070E1A] p-2">
+              <div className="lg:col-span-5 min-w-0 max-w-full">
+                <div className="w-full max-w-full rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-2xl overflow-hidden group">
+                  <div className="bg-[#070E1A] p-1.5 sm:p-2 overflow-hidden w-full max-w-full">
                     <img
                       src={
                         isOvertime
@@ -165,7 +149,7 @@ export function ToolsAndTemplatesPage() {
                           : "/images/figma/productivity-breakdown.png"
                       }
                       alt="Deskmerit Workplace Tool and Compliance Template Preview"
-                      className="w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
+                      className="w-full max-w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
                       loading="eager"
                     />
                   </div>

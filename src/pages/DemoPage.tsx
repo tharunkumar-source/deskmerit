@@ -89,26 +89,10 @@ export function DemoPage() {
               </div>
 
               {/* Right Column: Clean White Window with Booking Form (White Background Only for Form) */}
-              <div className="lg:col-span-7">
-                <div className="rounded-2xl border border-slate-200/90 bg-white shadow-2xl overflow-hidden text-[#0F1730]">
-                  {/* Window Titlebar */}
-                  <div className="flex items-center justify-between px-4 py-3 bg-slate-100/90 border-b border-slate-200">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 rounded-full bg-[#FF5F56]" />
-                      <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
-                      <div className="w-3 h-3 rounded-full bg-[#27C93F]" />
-                    </div>
-                    <div className="text-[11px] font-mono text-slate-600 bg-white px-3 py-1 rounded-md border border-slate-200 shadow-xs">
-                      app.deskmerit.com/demo/schedule
-                    </div>
-                    <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
-                      Live Calendar
-                    </div>
-                  </div>
-
+              <div className="lg:col-span-7 min-w-0 max-w-full">
+                <div className="w-full max-w-full rounded-2xl border border-slate-200/90 bg-white shadow-2xl overflow-hidden text-[#0F1730]">
                   {/* Window Body Form */}
-                  <div className="p-6 sm:p-8 bg-white">
+                  <div className="p-4 sm:p-8 bg-white">
                     {submitted ? (
                       <div className="text-center py-10 space-y-4">
                         <div className="w-14 h-14 rounded-full bg-[#FFE6DF] text-[#FF5A36] flex items-center justify-center mx-auto shadow-sm">

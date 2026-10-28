@@ -86,9 +86,9 @@ export function TrackerPlusPage() {
               <span>Tracker Plus</span>
             </div>
 
-            <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Copy */}
-              <div className="col-span-12 lg:col-span-6 space-y-6">
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full space-y-6">
                 <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
                   FLAGSHIP INNOVATION · MULTI-TOOL TRACKER
                 </div>
@@ -118,7 +118,7 @@ export function TrackerPlusPage() {
                   </Link>
                 </div>
 
-                <div className="flex items-center gap-6 text-xs text-[#9AA1B2] pt-2">
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-[#9AA1B2] pt-2">
                   <span className="flex items-center gap-1.5">
                     <Check className="w-4 h-4 text-[#12B886]" /> No second login
                   </span>
@@ -131,30 +131,14 @@ export function TrackerPlusPage() {
                 </div>
               </div>
 
-              {/* Right Framed App Mockup with macOS Header Dots */}
-              <div className="col-span-12 lg:col-span-6">
-                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
-                  {/* macOS Window Title Bar */}
-                  <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
-                      <span className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
-                      <span className="w-3 h-3 rounded-full bg-[#62C554]" />
-                    </div>
-                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
-                      app.deskmerit.com/features/tracker-plus
-                    </div>
-                    <span className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
-                      Jira & ClickUp Sync
-                    </span>
-                  </div>
-
-                  <div className="bg-slate-950 p-1 sm:p-2">
+              {/* Right Framed App Mockup */}
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
+                <div className="w-full max-w-full rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
+                  <div className="bg-slate-950 p-1 sm:p-2 overflow-hidden w-full max-w-full">
                     <img
                       src="/images/figma/tray-pm-tasks-sync.png"
                       alt="Deskmerit Tracker Plus Task in Project with PM Tool Badges and Status Sync"
-                      className="w-full h-auto object-contain rounded-lg block shadow-inner"
+                      className="w-full max-w-full h-auto object-contain rounded-lg block shadow-inner"
                       loading="eager"
                     />
                   </div>

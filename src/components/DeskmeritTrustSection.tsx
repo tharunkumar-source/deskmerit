@@ -31,7 +31,7 @@ export function DeskmeritTrustSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           {/* Left Column: Eyebrow, Heading, Paragraph, Quote & Link (Exact Site Standard) */}
-          <div className="lg:col-span-6 space-y-6 text-left">
+          <div className="col-span-1 lg:col-span-6 space-y-6 text-left min-w-0 max-w-full w-full">
             <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-3">
               BUILT FOR TRUST
             </div>
@@ -64,7 +64,7 @@ export function DeskmeritTrustSection() {
           </div>
 
           {/* Right Column: 2x2 White Cards (Exact Match to User Screenshot 2) */}
-          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+          <div className="col-span-1 lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 min-w-0 max-w-full w-full">
             {cards.map((c, idx) => {
               const Icon = c.icon;
               return (

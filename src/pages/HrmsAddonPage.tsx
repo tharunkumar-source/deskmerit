@@ -31,9 +31,9 @@ export function HrmsAddonPage() {
               <span>HRMS Add-on</span>
             </div>
 
-            <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column */}
-              <div className="col-span-12 lg:col-span-6 space-y-6">
+              <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
                 <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
                   NATIVE 1-CLICK MODULE · ZERO RE-ENROLLMENT
                 </div>
@@ -65,28 +65,13 @@ export function HrmsAddonPage() {
               </div>
 
               {/* Right Column: Authentic HRMS Integration Screenshot in macOS Browser Window Frame */}
-              <div className="col-span-12 lg:col-span-6">
-                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
-                  <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
-                      <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
-                      <div className="w-3 h-3 rounded-full bg-[#62C554]" />
-                    </div>
-                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
-                      app.deskmerit.com/hrms-module/workforce-insights
-                    </div>
-                    <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
-                      HRMS Ingress Active
-                    </div>
-                  </div>
-
-                  <div className="bg-[#070E1A] p-2">
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
+                <div className="w-full max-w-full rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
+                  <div className="bg-[#070E1A] p-1.5 sm:p-2 overflow-hidden w-full max-w-full">
                     <img
                       src="/images/figma/hrms-employee-profile.png"
                       alt="Deskmerit Switched On Inside Sqalible HRMS Workforce Insights"
-                      className="w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
+                      className="w-full max-w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
                       loading="eager"
                     />
                   </div>

@@ -193,7 +193,7 @@ export function DeskmeritHowItWorks() {
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Column: Pill, Title, Description, Bullets & Architecture Link (Col 1-5) */}
-            <div className="lg:col-span-5 flex flex-col justify-between transition-all duration-300">
+            <div className="col-span-1 lg:col-span-5 min-w-0 max-w-full w-full flex flex-col justify-between transition-all duration-300">
               <div>
                 {/* Clean Tag */}
                 <div className="mb-4">
@@ -261,23 +261,8 @@ export function DeskmeritHowItWorks() {
             </div>
 
             {/* Right Column: Browser / App Mock Window Frame with Real Figma UI (Col 6-12) */}
-            <div className="lg:col-span-7">
+            <div className="col-span-1 lg:col-span-7 min-w-0 max-w-full w-full">
               <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-slate-800 bg-[#0F1730]">
-                {/* Top Window Header with traffic light dots and URL */}
-                <div className="px-4 py-3 bg-[#0F1730] flex items-center justify-between border-b border-slate-800/80">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
-                  </div>
-                  <div className="px-3 py-1 rounded-md bg-white/5 border border-white/10 text-[11px] font-mono text-slate-300">
-                    {current.url}
-                  </div>
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-white/10 text-slate-300 font-mono uppercase tracking-wider hidden sm:inline-block">
-                    {current.tag}
-                  </span>
-                </div>
-
                 {/* Screenshot Display with Live Product UI Badge */}
                 <div className="relative aspect-[16/10] overflow-hidden bg-slate-950 flex items-center justify-center">
                   <img

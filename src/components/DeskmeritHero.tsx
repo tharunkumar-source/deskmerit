@@ -32,14 +32,14 @@ function HeroInteractiveAppCard() {
   ];
 
   return (
-    <div className="relative pt-6 pb-12 px-2 sm:px-6 w-full max-w-[560px] mx-auto">
+    <div className="relative pt-6 pb-12 px-1 sm:px-6 w-full max-w-full sm:max-w-[560px] mx-auto overflow-hidden sm:overflow-visible">
       {/* Background Subtle Gradient Aura */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[480px] bg-gradient-to-tr from-[#FF5A36]/15 via-indigo-500/10 to-transparent rounded-full blur-3xl pointer-events-none -z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[480px] h-[280px] sm:h-[480px] bg-gradient-to-tr from-[#FF5A36]/15 via-indigo-500/10 to-transparent rounded-full blur-2xl sm:blur-3xl pointer-events-none -z-0" />
 
       {/* ========================================================================= */}
       {/* CARD 1: MAIN BASE CARD — TODAY'S ACTIVITY (Reference Image 2)               */}
       {/* ========================================================================= */}
-      <div className="relative z-10 w-full bg-white rounded-3xl p-5 sm:p-7 border border-[#E6E2D8] shadow-[0_20px_50px_rgba(15,23,48,0.08)] hover:shadow-[0_25px_60px_rgba(15,23,48,0.12)] transition-all duration-300">
+      <div className="relative z-10 w-full max-w-full bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-7 border border-[#E6E2D8] shadow-[0_20px_50px_rgba(15,23,48,0.08)] hover:shadow-[0_25px_60px_rgba(15,23,48,0.12)] transition-all duration-300">
         {/* Header */}
         <div className="flex items-center justify-between pb-3.5 border-b border-slate-100">
           <div>
@@ -71,17 +71,17 @@ function HeroInteractiveAppCard() {
             <span>18:00</span>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3.5 mt-3 text-[11px] text-slate-600">
-            <span className="flex items-center gap-1.5 font-medium text-[#0F1730]">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3.5 mt-3 text-[10px] sm:text-[11px] text-slate-600">
+            <span className="flex items-center gap-1 font-medium text-[#0F1730]">
               <span className="w-2.5 h-2.5 rounded-sm bg-[#4F46E5]" /> Tracked 5h 25m
             </span>
-            <span className="flex items-center gap-1.5 font-medium text-[#0F1730]">
+            <span className="flex items-center gap-1 font-medium text-[#0F1730]">
               <span className="w-2.5 h-2.5 rounded-sm bg-[#818CF8]" /> Overtime 1h 15m
             </span>
-            <span className="flex items-center gap-1.5 font-medium text-[#0F1730]">
+            <span className="flex items-center gap-1 font-medium text-[#0F1730]">
               <span className="w-2.5 h-2.5 rounded-sm bg-[#94A3B8]" /> Private 45m
             </span>
-            <span className="flex items-center gap-1.5 font-medium text-[#0F1730]">
+            <span className="flex items-center gap-1 font-medium text-[#0F1730]">
               <span className="w-2.5 h-2.5 rounded-sm bg-[#FF5A36]" /> Idle 20m
             </span>
           </div>
@@ -95,9 +95,9 @@ function HeroInteractiveAppCard() {
           </div>
 
           {apps.map((app, i) => (
-            <div key={i} className="flex items-center justify-between text-xs py-1.5 px-2.5 rounded-xl hover:bg-slate-50 transition-colors">
-              <span className="font-semibold text-[#0F1730] truncate w-36">{app.name}</span>
-              <div className="flex-1 mx-3">
+            <div key={i} className="flex items-center justify-between text-xs py-1.5 px-1.5 sm:px-2.5 rounded-xl hover:bg-slate-50 transition-colors gap-2">
+              <span className="font-semibold text-[#0F1730] truncate w-20 sm:w-36 text-[11px] sm:text-xs shrink-0">{app.name}</span>
+              <div className="flex-1 mx-1 sm:mx-3 min-w-[20px]">
                 <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
                   <div
                     className="h-full rounded-full transition-all"
@@ -108,8 +108,8 @@ function HeroInteractiveAppCard() {
                   />
                 </div>
               </div>
-              <div className="flex items-center gap-2.5 shrink-0">
-                <span className="font-mono text-[11px] text-slate-600">{app.time}</span>
+              <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+                <span className="font-mono text-[10px] sm:text-[11px] text-slate-600">{app.time}</span>
                 <span
                   className={`text-[9px] font-bold px-1.5 py-0.5 rounded-md ${
                     app.status === "Productive"
@@ -125,12 +125,12 @@ function HeroInteractiveAppCard() {
         </div>
 
         {/* Bottom Privacy Callout */}
-        <div className="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-500 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+        <div className="mt-4 pt-3 border-t border-slate-100 text-[10px] sm:text-[11px] text-slate-500 flex items-center justify-between gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
             <ShieldCheck className="w-4 h-4 text-[#FF5A36] shrink-0" />
-            <span>Zero keystrokes logged · 45m private time excluded</span>
+            <span className="truncate">Zero keystrokes logged · 45m private excluded</span>
           </div>
-          <span className="text-[10px] text-slate-400 font-mono hidden sm:inline">Encrypted AES-256</span>
+          <span className="text-[10px] text-slate-400 font-mono hidden sm:inline shrink-0">Encrypted AES-256</span>
         </div>
       </div>
 

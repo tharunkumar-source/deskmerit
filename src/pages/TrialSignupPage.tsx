@@ -94,26 +94,10 @@ export function TrialSignupPage() {
               </div>
 
               {/* Right Column: macOS Provisioning Window (White Background Standard) */}
-              <div className="lg:col-span-7">
-                <div className="rounded-2xl border border-slate-200/90 bg-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.25)] overflow-hidden">
-                  {/* macOS Window Titlebar */}
-                  <div className="flex items-center justify-between px-4 py-3 bg-slate-50 border-b border-slate-200">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
-                      <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
-                      <div className="w-3 h-3 rounded-full bg-[#62C554]" />
-                    </div>
-                    <div className="text-[11px] font-mono text-slate-700 bg-white px-3 py-1 rounded-md border border-slate-200 shadow-xs">
-                      app.deskmerit.com/signup/provision
-                    </div>
-                    <div className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
-                      Provisioning Engine
-                    </div>
-                  </div>
-
+              <div className="lg:col-span-7 min-w-0 max-w-full">
+                <div className="w-full max-w-full rounded-2xl border border-slate-200/90 bg-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.25)] overflow-hidden">
                   {/* Window Body Form */}
-                  <div className="p-6 sm:p-8 bg-white">
+                  <div className="p-4 sm:p-8 bg-white">
                     {step === "form" && (
                       <form onSubmit={handleSubmit} className="space-y-4 text-left">
                         <div className="mb-2">

@@ -652,9 +652,9 @@ export function IndiaPage() {
               <span>{isGuidesOverview ? "Monitoring Law Guides" : region.name}</span>
             </div>
 
-            <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column */}
-              <div className="col-span-12 lg:col-span-6 space-y-6">
+              <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
                 <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
                   {isGuidesOverview ? "🌐 GLOBAL EMPLOYEE MONITORING LAWS" : region.badge}
                 </div>
@@ -697,15 +697,15 @@ export function IndiaPage() {
               </div>
 
               {/* Right Column: Clean Regional Compliance Showcase Card matching application hero standard */}
-              <div className="col-span-12 lg:col-span-6">
-                <div className="relative">
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
+                <div className="relative w-full max-w-full overflow-hidden sm:overflow-visible">
                   {/* Clean Soft Ambient Glow */}
                   <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 via-orange-500/10 to-teal-500/10 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
 
                   {/* Clean White Card strictly matching Application Hero Standard */}
-                  <div className="relative rounded-3xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] text-[#0F1730]">
+                  <div className="relative rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] text-[#0F1730] w-full max-w-full">
                     {/* Top Grey Area with Official Regional Badge */}
-                    <div className="bg-[#F8F9FA] p-6 sm:p-7 flex flex-col items-center justify-center border-b border-slate-100 relative text-center">
+                    <div className="bg-[#F8F9FA] p-5 sm:p-7 flex flex-col items-center justify-center border-b border-slate-100 relative text-center">
                       <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white shadow-xs border border-slate-200/90 flex items-center justify-center p-3 overflow-hidden shadow-xs">
                         <img
                           src={activeCard.flagUrl}
@@ -725,9 +725,9 @@ export function IndiaPage() {
                     </div>
 
                     {/* Card Content & Trust Features */}
-                    <div className="p-6 sm:p-7 space-y-4">
+                    <div className="p-4 sm:p-7 space-y-4">
                       {/* Connected Entity / Statutory Regime Box */}
-                      <div className="p-3.5 rounded-xl bg-[#F8FAFC] border border-slate-200/90 flex items-center justify-between text-xs gap-3">
+                      <div className="p-3 sm:p-3.5 rounded-xl bg-[#F8FAFC] border border-slate-200/90 flex items-center justify-between text-xs gap-2 sm:gap-3">
                         <div className="min-w-0 flex-1">
                           <div className="text-[10px] font-mono font-bold uppercase text-[#4A5370]">
                             Governing Statutory Regime
@@ -736,7 +736,7 @@ export function IndiaPage() {
                             {activeCard.statutoryFramework}
                           </div>
                         </div>
-                        <span className="px-2.5 py-1 rounded-lg text-[11px] font-mono font-bold text-[#027A48] bg-[#ECFDF3] border border-[#A6F4C5] shrink-0">
+                        <span className="px-2 sm:px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-mono font-bold text-[#027A48] bg-[#ECFDF3] border border-[#A6F4C5] shrink-0">
                           {activeCard.metricBadge}
                         </span>
                       </div>
@@ -744,7 +744,7 @@ export function IndiaPage() {
                       {/* Feature Guarantees */}
                       <div className="space-y-2.5 text-xs text-[#4A5370]">
                         {activeCard.guarantees.map((item, idx) => (
-                          <div key={idx} className="flex items-start gap-2.5">
+                          <div key={idx} className="flex items-start gap-2 sm:gap-2.5">
                             <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                             <span className="leading-snug">{item}</span>
                           </div>
@@ -752,12 +752,12 @@ export function IndiaPage() {
                       </div>
 
                       {/* Bottom Verification Strip */}
-                      <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-[#4A5370]">
-                        <span className="flex items-center gap-1.5 font-medium">
-                          <ShieldCheck className="w-3.5 h-3.5 text-[#027A48]" />
-                          {activeCard.securityNote}
+                      <div className="pt-3 border-t border-slate-100 flex flex-wrap sm:flex-nowrap items-center justify-between gap-2 text-[10px] sm:text-[11px] text-[#4A5370]">
+                        <span className="flex items-center gap-1.5 font-medium min-w-0">
+                          <ShieldCheck className="w-3.5 h-3.5 text-[#027A48] shrink-0" />
+                          <span className="truncate">{activeCard.securityNote}</span>
                         </span>
-                        <span className="text-emerald-600 font-mono font-semibold flex items-center gap-1.5">
+                        <span className="text-emerald-600 font-mono font-semibold flex items-center gap-1.5 shrink-0">
                           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                           Statutory Verified
                         </span>

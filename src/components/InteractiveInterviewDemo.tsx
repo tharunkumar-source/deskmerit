@@ -234,9 +234,9 @@ export function InteractiveInterviewDemo() {
         </div>
 
         {/* Interactive Main Stage Grid */}
-        <div className="mt-8 grid gap-8 lg:grid-cols-12 items-start">
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Simulated Video Session & Live Synchronized Transcript */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="col-span-1 lg:col-span-7 space-y-6 min-w-0 max-w-full w-full">
             {/* Video Frame */}
             <div className="relative rounded-none border border-neutral-800 bg-[#070B11] shadow-2xl overflow-hidden">
               {/* Window Status Bar */}
@@ -370,7 +370,7 @@ export function InteractiveInterviewDemo() {
           </div>
 
           {/* Right Column: Explainable Scorecard & Tactile Human Sign-Off Gate */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="col-span-1 lg:col-span-5 space-y-6 min-w-0 max-w-full w-full">
             <div className="rounded-none border border-neutral-800 bg-[#0E1521] p-6 shadow-xl">
               {/* Scorecard Header */}
               <div className="flex items-start justify-between pb-5 border-b border-neutral-800">

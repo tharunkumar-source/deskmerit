@@ -13,7 +13,7 @@ export function DeskmeritTrackerPlusSpotlight() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Copy & Checklist */}
-          <div className="lg:col-span-6 space-y-6">
+          <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
             <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36] mb-2">
               Flagship innovation
             </div>
@@ -55,21 +55,9 @@ export function DeskmeritTrackerPlusSpotlight() {
           </div>
 
           {/* Right Column: Interactive PM Tools Display */}
-          <div className="lg:col-span-6">
+          <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
             <div className="bg-[#172348] rounded-[24px] p-4 sm:p-5 border border-[#24305A] shadow-2xl overflow-hidden group">
-              <div className="flex items-center justify-between pb-3 px-2 border-b border-[#24305A]/80">
-                <div className="flex items-center gap-2">
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#ED6A5E]" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#F5BF4F]" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#62C554]" />
-                  <span className="text-xs font-mono text-slate-300 ml-2">Deskmerit Tray · Task Search</span>
-                </div>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#12B886]/20 text-[#12B886] border border-[#12B886]/30">
-                  Active Sync
-                </span>
-              </div>
-
-              <div className="pt-3">
+              <div>
                 <img
                   src="/images/figma/tray-project-search.png"
                   alt="Deskmerit Desktop Tray Task & Project Search Interface"

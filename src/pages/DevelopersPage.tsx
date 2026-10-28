@@ -224,9 +224,9 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
               </span>
             </div>
 
-            <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Headline & Value Prop */}
-              <div className="col-span-12 lg:col-span-6 space-y-6">
+              <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
                 <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3 py-1 rounded-full inline-block border border-[#FF5A36]/30">
                   {mode === "overview" && "DEVELOPER PLATFORM & WEBHOOKS"}
                   {mode === "mcp" && "MODEL CONTEXT PROTOCOL (MCP)"}
@@ -281,7 +281,7 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
               </div>
 
               {/* Right Column: Interactive Code Console Mockup (White Card Standard) */}
-              <div className="col-span-12 lg:col-span-6">
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
                 <div className="rounded-2xl border border-slate-200/90 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.25)] overflow-hidden">
                   <div className="bg-slate-50 px-4 py-3 border-b border-slate-200 flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -390,27 +390,13 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
               </div>
 
               {/* Product Visual Showcase: MCP Server Console */}
-              <div className="mb-16 max-w-4xl mx-auto">
-                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-2xl overflow-hidden group">
-                  <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
-                      <div className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
-                      <div className="w-3 h-3 rounded-full bg-[#62C554]" />
-                    </div>
-                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
-                      app.deskmerit.com/developers/mcp-console
-                    </div>
-                    <div className="text-[11px] font-bold text-emerald-400 flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      Live Verified
-                    </div>
-                  </div>
-                  <div className="bg-[#070E1A] p-2">
+              <div className="mb-16 max-w-4xl mx-auto w-full min-w-0">
+                <div className="w-full max-w-full rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-2xl overflow-hidden group">
+                  <div className="bg-[#070E1A] p-1.5 sm:p-2 overflow-hidden w-full max-w-full">
                     <img
                       src="/images/figma/developer-console-mcp.png"
                       alt="Deskmerit Model Context Protocol (MCP) Server Console"
-                      className="w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.005]"
+                      className="w-full max-w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.005]"
                       loading="lazy"
                     />
                   </div>

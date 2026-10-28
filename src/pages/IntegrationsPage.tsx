@@ -1829,9 +1829,9 @@ export function IntegrationsPage() {
                   <span className="text-[#FF5A36] font-bold">{detailData.name}</span>
                 </div>
 
-                <div className="grid grid-cols-12 gap-10 lg:gap-14 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
                   {/* Left Column: Headline + CTAs (No bi-directional sync capsule or dot above heading) */}
-                  <div className="col-span-12 lg:col-span-7 space-y-6">
+                  <div className="col-span-1 lg:col-span-7 min-w-0 max-w-full w-full space-y-6">
                     <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
                       INTEGRATION: {detailData.name.toUpperCase()} TIME TRACKING
                     </div>
@@ -1865,23 +1865,23 @@ export function IntegrationsPage() {
                   </div>
 
                   {/* Right Column: Clean Integration Showcase Card matching Screenshot 1 branding */}
-                  <div className="col-span-12 lg:col-span-5">
-                    <div className="relative">
+                  <div className="col-span-1 lg:col-span-5 min-w-0 max-w-full w-full">
+                    <div className="relative w-full max-w-full overflow-hidden sm:overflow-visible">
                       {/* Clean Soft Ambient Glow */}
                       <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 via-orange-500/10 to-teal-500/10 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
 
                       {/* Clean White Card strictly matching Screenshot 1 branding */}
-                      <div className="relative rounded-3xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] text-[#0F1730]">
+                      <div className="relative rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] text-[#0F1730] w-full max-w-full">
                         {/* Top Grey Area with Official SVG inside White Circular Badge */}
-                        <div className="bg-[#F8F9FA] p-8 flex flex-col items-center justify-center border-b border-slate-100 relative">
-                          <div className="w-20 h-20 rounded-2xl bg-white shadow-xs border border-slate-200/90 flex items-center justify-center p-3.5">
+                        <div className="bg-[#F8F9FA] p-6 sm:p-8 flex flex-col items-center justify-center border-b border-slate-100 relative text-center">
+                          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white shadow-xs border border-slate-200/90 flex items-center justify-center p-3 sm:p-3.5">
                             <img
                               src={matchingFigmaItem.iconUrl}
                               alt={detailData.name}
-                              className="w-14 h-14 max-h-14 max-w-14 object-contain"
+                              className="w-12 h-12 sm:w-14 sm:h-14 max-h-14 max-w-14 object-contain"
                             />
                           </div>
-                          <h3 className="font-extrabold text-lg sm:text-xl text-[#0F1730] mt-4 tracking-tight">
+                          <h3 className="font-extrabold text-lg sm:text-xl text-[#0F1730] mt-3 sm:mt-4 tracking-tight">
                             {detailData.name} + Deskmerit
                           </h3>
                           <div className="text-xs text-[#4A5370] font-medium mt-1">
@@ -1890,17 +1890,17 @@ export function IntegrationsPage() {
                         </div>
 
                         {/* Card Content & Trust Features */}
-                        <div className="p-6 sm:p-7 space-y-4">
-                          <div className="p-3.5 rounded-xl bg-[#F8FAFC] border border-slate-200/90 flex items-center justify-between text-xs">
-                            <div>
+                        <div className="p-4 sm:p-7 space-y-4">
+                          <div className="p-3 sm:p-3.5 rounded-xl bg-[#F8FAFC] border border-slate-200/90 flex items-center justify-between text-xs gap-2">
+                            <div className="min-w-0 flex-1">
                               <div className="text-[10px] font-mono font-bold uppercase text-[#4A5370]">
                                 Connected Entity
                               </div>
-                              <div className="font-bold text-[#0F1730] mt-0.5">
+                              <div className="font-bold text-[#0F1730] mt-0.5 truncate">
                                 {detailData.previewCardTitle}
                               </div>
                             </div>
-                            <span className="px-2.5 py-1 rounded-lg text-[11px] font-mono font-bold text-[#027A48] bg-[#ECFDF3] border border-[#A6F4C5]">
+                            <span className="px-2 sm:px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-mono font-bold text-[#027A48] bg-[#ECFDF3] border border-[#A6F4C5] shrink-0">
                               {detailData.previewMetricValue}
                             </span>
                           </div>
@@ -1908,24 +1908,24 @@ export function IntegrationsPage() {
                           <div className="space-y-2 text-xs text-[#4A5370]">
                             <div className="flex items-center gap-2">
                               <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                              <span>Zero keystroke or screen recording</span>
+                              <span className="leading-snug">Zero keystroke or screen recording</span>
                             </div>
                             <div className="flex items-center gap-2">
                               <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                              <span>Direct worklog attribution to projects</span>
+                              <span className="leading-snug">Direct worklog attribution to projects</span>
                             </div>
                             <div className="flex items-center gap-2">
                               <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                              <span>100% employee audit priority review</span>
+                              <span className="leading-snug">100% employee audit priority review</span>
                             </div>
                           </div>
 
-                          <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-[#4A5370]">
-                            <span className="flex items-center gap-1.5 font-medium">
-                              <ShieldCheck className="w-3.5 h-3.5 text-[#027A48]" />
-                              TLS 1.3 Encrypted
+                          <div className="pt-3 border-t border-slate-100 flex flex-wrap sm:flex-nowrap items-center justify-between gap-2 text-[10px] sm:text-[11px] text-[#4A5370]">
+                            <span className="flex items-center gap-1.5 font-medium min-w-0">
+                              <ShieldCheck className="w-3.5 h-3.5 text-[#027A48] shrink-0" />
+                              <span className="truncate">TLS 1.3 Encrypted</span>
                             </span>
-                            <span className="text-emerald-600 font-mono font-semibold">Active & Verified</span>
+                            <span className="text-emerald-600 font-mono font-semibold shrink-0">Active & Verified</span>
                           </div>
                         </div>
                       </div>
@@ -2100,8 +2100,8 @@ export function IntegrationsPage() {
                   <span className="text-[#FF5A36] font-bold">Integrations & Ecosystem</span>
                 </div>
 
-                <div className="grid grid-cols-12 gap-10 lg:gap-14 items-center">
-                  <div className="col-span-12 lg:col-span-7 space-y-6">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+                  <div className="col-span-1 lg:col-span-7 min-w-0 max-w-full w-full space-y-6">
                     <div className="text-xs font-bold uppercase tracking-wider text-[#FF5A36]">
                       INTEGRATIONS & ECOSYSTEM
                     </div>
@@ -2133,7 +2133,7 @@ export function IntegrationsPage() {
                   </div>
 
                   {/* Hero Right: THE REAL INTEGRATION CARDS SHOWCASE (White Card Container) */}
-                  <div className="col-span-12 lg:col-span-5">
+                  <div className="col-span-1 lg:col-span-5 min-w-0 max-w-full w-full">
                     <div className="relative">
                       {/* Clean Soft Ambient Glow */}
                       <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 via-orange-500/15 to-purple-500/20 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
@@ -2143,11 +2143,6 @@ export function IntegrationsPage() {
                         {/* Top Hub Bar with macOS window controls */}
                         <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
                           <div className="flex items-center gap-2.5">
-                            <div className="flex items-center gap-1.5">
-                              <span className="w-2.5 h-2.5 rounded-full bg-[#ED6A5E]" />
-                              <span className="w-2.5 h-2.5 rounded-full bg-[#F5BF4F]" />
-                              <span className="w-2.5 h-2.5 rounded-full bg-[#62C554]" />
-                            </div>
                             <div>
                               <div className="text-xs font-bold text-[#0F1730] flex items-center gap-2">
                                 <span>Workspace Integrations Hub</span>

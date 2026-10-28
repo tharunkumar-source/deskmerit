@@ -636,9 +636,9 @@ Example for ₹80,000 basic salary with 6 completed years:
             </div>
 
             {/* Interactive Interview Viewer Grid */}
-            <div className="grid gap-6 lg:grid-cols-12 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
               {/* Left Column: Video Simulation & Live Transcript */}
-              <div className="lg:col-span-7 space-y-6">
+              <div className="col-span-1 lg:col-span-7 space-y-6 min-w-0 max-w-full w-full">
                 {/* Simulated Video Frame */}
                 <div className="relative rounded-none overflow-hidden bg-[#0A0F1D] border border-neutral-800 shadow-xl">
                   {/* Top Bar */}
@@ -743,7 +743,7 @@ Example for ₹80,000 basic salary with 6 completed years:
               </div>
 
               {/* Right Column: Explainable Scorecard & Human Action */}
-              <div className="lg:col-span-5 space-y-6">
+              <div className="col-span-1 lg:col-span-5 space-y-6 min-w-0 max-w-full w-full">
                 <div className="rounded-none border border-neutral-200 bg-white p-6 md:p-8 shadow-xs">
                   <div className="flex items-center justify-between pb-5 border-b border-neutral-100">
                     <div>

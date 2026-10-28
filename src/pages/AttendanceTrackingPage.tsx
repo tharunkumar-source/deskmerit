@@ -106,9 +106,9 @@ export function AttendanceTrackingPage() {
               <span>Attendance Tracking</span>
             </div>
 
-            <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Copy */}
-              <div className="col-span-12 lg:col-span-6 space-y-6">
+              <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
                 <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A36] bg-[#FFE6DF]/15 px-3.5 py-1 rounded-full inline-block border border-[#FF5A36]/30">
                   WORKFORCE PRESENCE · ZERO BIOMETRICS
                 </div>
@@ -140,28 +140,13 @@ export function AttendanceTrackingPage() {
               </div>
 
               {/* Right Framed App Mockup (macOS Window + Authentic Attendance Matrix) */}
-              <div className="col-span-12 lg:col-span-6">
-                <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
-                  <div className="bg-[#0A1628] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="w-3 h-3 rounded-full bg-[#ED6A5E]" />
-                      <span className="w-3 h-3 rounded-full bg-[#F5BF4F]" />
-                      <span className="w-3 h-3 rounded-full bg-[#62C554]" />
-                    </div>
-                    <div className="text-[11px] font-mono text-slate-300 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800">
-                      app.deskmerit.com/attendance/matrix
-                    </div>
-                    <span className="text-[11px] font-bold text-[#FF5A36] flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#FF5A36] animate-pulse" />
-                      Live Verified
-                    </span>
-                  </div>
-
-                  <div className="bg-slate-950 p-1 sm:p-2">
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
+                <div className="w-full max-w-full rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
+                  <div className="bg-slate-950 p-1 sm:p-2 overflow-hidden w-full max-w-full">
                     <img
                       src="/images/figma/attendance-company-matrix.png"
                       alt="Deskmerit Workforce Attendance Matrix and Daily Work Verification"
-                      className="w-full h-auto object-contain rounded-lg block shadow-inner"
+                      className="w-full max-w-full h-auto object-contain rounded-lg block shadow-inner"
                       loading="eager"
                     />
                   </div>

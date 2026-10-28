@@ -32,11 +32,11 @@ export function TrialSignupPage() {
       <DeskmeritHeader />
 
       <main>
-        {/* Standard Consistent Dark Hero */}
-        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
+        {/* Standard Consistent Brand Dark Hero */}
+        <section className="bg-gradient-to-b from-[#180C24] via-[#12081B] to-[#180C24] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
           {/* Dual Radial Glows */}
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#24305A]/40 blur-[120px] rounded-full pointer-events-none" />
-          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#61126E]/10 blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#61126E]/20 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#A81CD0]/15 blur-[100px] rounded-full pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
@@ -50,14 +50,14 @@ export function TrialSignupPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               {/* Left Column: Heading & Value Proposition */}
-              <div className="lg:col-span-5 space-y-6">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
+              <div className="lg:col-span-5">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                   14-DAY FULL ENTERPRISE TRIAL
                 </div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-[1.28] sm:leading-[1.25] text-white mb-6">
                   Start your Deskmerit workspace <span className="text-[#D8B4FE]">in 60 seconds.</span>
                 </h1>
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-6">
                   No credit card required. Includes Tracker Plus (Jira, Azure DevOps, OpenProject), automated attendance tracking, and AI workforce queries via REST & MCP.
                 </p>
 

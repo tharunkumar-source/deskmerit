@@ -11,7 +11,7 @@ export function DeskmeritTwoWaysToBuy() {
           <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-3">
             TWO WAYS TO BUY
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-[1.2]">
+          <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#0F1730] tracking-[-0.025em] leading-[1.28] sm:leading-[1.25]">
             Use it on its own, or inside your HRMS.
           </h2>
           <p className="text-base sm:text-lg text-[#4A5370] mt-4 leading-relaxed font-normal">
@@ -20,7 +20,7 @@ export function DeskmeritTwoWaysToBuy() {
         </div>
 
         {/* 2 Symmetrical, Clean & Professional Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
           {/* Card 1: Standalone */}
           <div className="bg-white rounded-3xl p-8 sm:p-10 border border-[#E8D5EC] shadow-[0_4px_20px_rgba(15,23,48,0.04)] hover:shadow-[0_12px_32px_rgba(15,23,48,0.08)] hover:border-[#61126E]/40 transition-all duration-300 flex flex-col justify-between group">
             <div>
@@ -181,8 +181,8 @@ export function DeskmeritTwoWaysToBuy() {
           </div>
         </div>
 
-        {/* Bottom Reassurance Banner (Aligned with max-w-6xl width of cards above) */}
-        <div className="max-w-6xl mx-auto mt-8 p-4 sm:p-5 rounded-2xl bg-white border border-[#E8D5EC] flex items-center gap-3.5 text-left shadow-xs">
+        {/* Bottom Reassurance Banner (Aligned with full width of cards above) */}
+        <div className="w-full mt-8 p-4 sm:p-5 rounded-2xl bg-white border border-[#E8D5EC] flex items-center gap-3.5 text-left shadow-xs">
           <div className="hidden sm:flex w-10 h-10 rounded-xl bg-[#F6EDF8] text-[#61126E] items-center justify-center shrink-0">
             <ShieldCheck className="w-5 h-5" />
           </div>

@@ -146,30 +146,32 @@ export function DeskmeritHeader() {
         aria-label="Main Navigation"
         onMouseLeave={handleMouseLeave}
       >
-        <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Left: Logo anchored to left content margin */}
-          <div className="shrink-0 flex items-center">
+        <div className="max-w-[1440px] w-full mx-auto px-4 sm:px-6 xl:px-6 2xl:px-8 flex items-center justify-between">
+          {/* Group 1: Logo anchored with breathing room */}
+          <div className="shrink-0 flex items-center pr-2 xl:pr-3 2xl:pr-6">
             <DeskmeritLogo variant="horizontal" size="md" />
           </div>
 
-          {/* Center: Desktop Navigation Dock — Clearly visually grouped with generous breathing room */}
-          <div className="hidden xl:flex items-center gap-0.5 bg-[#FAF4FB]/90 border border-[#E8D5EC] rounded-full p-1 shadow-[inset_0_1px_2px_rgba(15,23,48,0.03)] font-semibold text-[12.5px] 2xl:text-[13px] text-[#0F1730]">
+          {/* Group 2: Desktop Navigation — Clean, open layout without background enclosure */}
+          <div className="hidden xl:flex items-center gap-0.5 xl:gap-1 2xl:gap-1.5 font-medium text-[12.5px] xl:text-[13px] 2xl:text-sm text-[#0F1730]">
             {/* Product Mega Menu Trigger */}
             <button
               type="button"
               onMouseEnter={() => handleMouseEnter("products")}
               onClick={() => setActiveMenu(activeMenu === "products" ? null : "products")}
-              className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
+              className={`group flex items-center gap-1 xl:gap-1.5 px-2 xl:px-2.5 2xl:px-3 py-1.5 xl:py-2 rounded-xl text-[12.5px] xl:text-[13px] 2xl:text-sm font-semibold transition-all duration-150 border cursor-pointer select-none whitespace-nowrap shrink-0 ${
                 activeMenu === "products"
-                  ? "text-[#61126E] bg-white shadow-xs font-bold"
-                  : "text-[#0F1730] hover:text-[#61126E] hover:bg-white/70"
+                  ? "text-[#61126E] bg-[#F6EDF8] border-[#E8D5EC] shadow-2xs"
+                  : "text-[#0F1730] border-transparent hover:text-[#61126E] hover:bg-[#F6EDF8] hover:border-[#E8D5EC]"
               }`}
               aria-expanded={activeMenu === "products"}
             >
               <span>Product</span>
               <ChevronDown
-                className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMenu === "products" ? "rotate-180 text-[#61126E]" : "text-slate-400"
+                className={`w-3 h-3 xl:w-3.5 xl:h-3.5 shrink-0 stroke-[2.2] transition-transform duration-200 ${
+                  activeMenu === "products"
+                    ? "rotate-180 text-[#61126E]"
+                    : "text-slate-500 group-hover:text-[#61126E]"
                 }`}
               />
             </button>
@@ -179,17 +181,19 @@ export function DeskmeritHeader() {
               type="button"
               onMouseEnter={() => handleMouseEnter("solutions")}
               onClick={() => setActiveMenu(activeMenu === "solutions" ? null : "solutions")}
-              className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
+              className={`group flex items-center gap-1 xl:gap-1.5 px-2 xl:px-2.5 2xl:px-3 py-1.5 xl:py-2 rounded-xl text-[12.5px] xl:text-[13px] 2xl:text-sm font-semibold transition-all duration-150 border cursor-pointer select-none whitespace-nowrap shrink-0 ${
                 activeMenu === "solutions"
-                  ? "text-[#61126E] bg-white shadow-xs font-bold"
-                  : "text-[#0F1730] hover:text-[#61126E] hover:bg-white/70"
+                  ? "text-[#61126E] bg-[#F6EDF8] border-[#E8D5EC] shadow-2xs"
+                  : "text-[#0F1730] border-transparent hover:text-[#61126E] hover:bg-[#F6EDF8] hover:border-[#E8D5EC]"
               }`}
               aria-expanded={activeMenu === "solutions"}
             >
               <span>Solutions</span>
               <ChevronDown
-                className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMenu === "solutions" ? "rotate-180 text-[#61126E]" : "text-slate-400"
+                className={`w-3 h-3 xl:w-3.5 xl:h-3.5 shrink-0 stroke-[2.2] transition-transform duration-200 ${
+                  activeMenu === "solutions"
+                    ? "rotate-180 text-[#61126E]"
+                    : "text-slate-500 group-hover:text-[#61126E]"
                 }`}
               />
             </button>
@@ -199,17 +203,19 @@ export function DeskmeritHeader() {
               type="button"
               onMouseEnter={() => handleMouseEnter("integrations")}
               onClick={() => setActiveMenu(activeMenu === "integrations" ? null : "integrations")}
-              className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
+              className={`group flex items-center gap-1 xl:gap-1.5 px-2 xl:px-2.5 2xl:px-3 py-1.5 xl:py-2 rounded-xl text-[12.5px] xl:text-[13px] 2xl:text-sm font-semibold transition-all duration-150 border cursor-pointer select-none whitespace-nowrap shrink-0 ${
                 activeMenu === "integrations"
-                  ? "text-[#61126E] bg-white shadow-xs font-bold"
-                  : "text-[#0F1730] hover:text-[#61126E] hover:bg-white/70"
+                  ? "text-[#61126E] bg-[#F6EDF8] border-[#E8D5EC] shadow-2xs"
+                  : "text-[#0F1730] border-transparent hover:text-[#61126E] hover:bg-[#F6EDF8] hover:border-[#E8D5EC]"
               }`}
               aria-expanded={activeMenu === "integrations"}
             >
               <span>Integrations</span>
               <ChevronDown
-                className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMenu === "integrations" ? "rotate-180 text-[#61126E]" : "text-slate-400"
+                className={`w-3 h-3 xl:w-3.5 xl:h-3.5 shrink-0 stroke-[2.2] transition-transform duration-200 ${
+                  activeMenu === "integrations"
+                    ? "rotate-180 text-[#61126E]"
+                    : "text-slate-500 group-hover:text-[#61126E]"
                 }`}
               />
             </button>
@@ -219,17 +225,19 @@ export function DeskmeritHeader() {
               type="button"
               onMouseEnter={() => handleMouseEnter("compare")}
               onClick={() => setActiveMenu(activeMenu === "compare" ? null : "compare")}
-              className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
+              className={`group flex items-center gap-1 xl:gap-1.5 px-2 xl:px-2.5 2xl:px-3 py-1.5 xl:py-2 rounded-xl text-[12.5px] xl:text-[13px] 2xl:text-sm font-semibold transition-all duration-150 border cursor-pointer select-none whitespace-nowrap shrink-0 ${
                 activeMenu === "compare"
-                  ? "text-[#61126E] bg-white shadow-xs font-bold"
-                  : "text-[#0F1730] hover:text-[#61126E] hover:bg-white/70"
+                  ? "text-[#61126E] bg-[#F6EDF8] border-[#E8D5EC] shadow-2xs"
+                  : "text-[#0F1730] border-transparent hover:text-[#61126E] hover:bg-[#F6EDF8] hover:border-[#E8D5EC]"
               }`}
               aria-expanded={activeMenu === "compare"}
             >
               <span>Compare</span>
               <ChevronDown
-                className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMenu === "compare" ? "rotate-180 text-[#61126E]" : "text-slate-400"
+                className={`w-3 h-3 xl:w-3.5 xl:h-3.5 shrink-0 stroke-[2.2] transition-transform duration-200 ${
+                  activeMenu === "compare"
+                    ? "rotate-180 text-[#61126E]"
+                    : "text-slate-500 group-hover:text-[#61126E]"
                 }`}
               />
             </button>
@@ -238,10 +246,10 @@ export function DeskmeritHeader() {
             <Link
               to="/pricing"
               onMouseEnter={() => handleMouseEnter("")}
-              className={`px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
+              className={`group flex items-center px-2 xl:px-2.5 2xl:px-3 py-1.5 xl:py-2 rounded-xl text-[12.5px] xl:text-[13px] 2xl:text-sm font-semibold transition-all duration-150 border cursor-pointer select-none whitespace-nowrap shrink-0 ${
                 location.pathname === "/pricing"
-                  ? "text-[#61126E] bg-white shadow-xs font-bold"
-                  : "text-[#0F1730] hover:text-[#61126E] hover:bg-white/70"
+                  ? "text-[#61126E] bg-[#F6EDF8] border-[#E8D5EC] shadow-2xs"
+                  : "text-[#0F1730] border-transparent hover:text-[#61126E] hover:bg-[#F6EDF8] hover:border-[#E8D5EC]"
               }`}
             >
               Pricing
@@ -252,17 +260,19 @@ export function DeskmeritHeader() {
               type="button"
               onMouseEnter={() => handleMouseEnter("resources")}
               onClick={() => setActiveMenu(activeMenu === "resources" ? null : "resources")}
-              className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
+              className={`group flex items-center gap-1 xl:gap-1.5 px-2 xl:px-2.5 2xl:px-3 py-1.5 xl:py-2 rounded-xl text-[12.5px] xl:text-[13px] 2xl:text-sm font-semibold transition-all duration-150 border cursor-pointer select-none whitespace-nowrap shrink-0 ${
                 activeMenu === "resources"
-                  ? "text-[#61126E] bg-white shadow-xs font-bold"
-                  : "text-[#0F1730] hover:text-[#61126E] hover:bg-white/70"
+                  ? "text-[#61126E] bg-[#F6EDF8] border-[#E8D5EC] shadow-2xs"
+                  : "text-[#0F1730] border-transparent hover:text-[#61126E] hover:bg-[#F6EDF8] hover:border-[#E8D5EC]"
               }`}
               aria-expanded={activeMenu === "resources"}
             >
               <span>Resources</span>
               <ChevronDown
-                className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMenu === "resources" ? "rotate-180 text-[#61126E]" : "text-slate-400"
+                className={`w-3 h-3 xl:w-3.5 xl:h-3.5 shrink-0 stroke-[2.2] transition-transform duration-200 ${
+                  activeMenu === "resources"
+                    ? "rotate-180 text-[#61126E]"
+                    : "text-slate-500 group-hover:text-[#61126E]"
                 }`}
               />
             </button>
@@ -272,78 +282,83 @@ export function DeskmeritHeader() {
               type="button"
               onMouseEnter={() => handleMouseEnter("company")}
               onClick={() => setActiveMenu(activeMenu === "company" ? null : "company")}
-              className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-full transition-all duration-150 ${
+              className={`group flex items-center gap-1 xl:gap-1.5 px-2 xl:px-2.5 2xl:px-3 py-1.5 xl:py-2 rounded-xl text-[12.5px] xl:text-[13px] 2xl:text-sm font-semibold transition-all duration-150 border cursor-pointer select-none whitespace-nowrap shrink-0 ${
                 activeMenu === "company"
-                  ? "text-[#61126E] bg-white shadow-xs font-bold"
-                  : "text-[#0F1730] hover:text-[#61126E] hover:bg-white/70"
+                  ? "text-[#61126E] bg-[#F6EDF8] border-[#E8D5EC] shadow-2xs"
+                  : "text-[#0F1730] border-transparent hover:text-[#61126E] hover:bg-[#F6EDF8] hover:border-[#E8D5EC]"
               }`}
               aria-expanded={activeMenu === "company"}
             >
               <span>Company</span>
               <ChevronDown
-                className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMenu === "company" ? "rotate-180 text-[#61126E]" : "text-slate-400"
+                className={`w-3 h-3 xl:w-3.5 xl:h-3.5 shrink-0 stroke-[2.2] transition-transform duration-200 ${
+                  activeMenu === "company"
+                    ? "rotate-180 text-[#61126E]"
+                    : "text-slate-500 group-hover:text-[#61126E]"
                 }`}
               />
             </button>
           </div>
 
-          {/* Right Action Items — Desktop */}
-          <div className="hidden xl:flex items-center gap-2 shrink-0">
-            {/* Sign in / Log in */}
+          {/* Group 3: Right Action Items — Desktop: Sign in & Proportional CTAs with Breathing Room */}
+          <div className="hidden xl:flex items-center gap-2 xl:gap-2.5 2xl:gap-3 shrink-0 pl-2 xl:pl-4 2xl:pl-6">
+            {/* Sign in */}
             <a
               href="https://app.deskmerit.com"
               target="_blank"
               rel="noreferrer"
-              className="text-[12.5px] 2xl:text-[13px] font-semibold text-[#0F1730] hover:text-[#61126E] transition-colors px-2 py-1.5 whitespace-nowrap"
+              className="text-[12.5px] xl:text-[13px] 2xl:text-sm font-semibold text-[#0F1730] hover:text-[#61126E] px-2 xl:px-2.5 2xl:px-3 py-2 rounded-xl hover:bg-[#F6EDF8]/60 transition-colors whitespace-nowrap shrink-0"
             >
               Sign in
             </a>
 
-            {/* Book a Demo Button */}
+            {/* Subtle Divider */}
+            <div className="h-5 w-px bg-slate-200 mx-0.5 shrink-0" aria-hidden="true" />
+
+            {/* Book a Demo Button (Proportional to Hero Secondary Button) */}
             <Link
               to="/demo"
-              className="px-2.5 2xl:px-3 py-1.5 rounded-xl text-xs font-semibold text-[#0F1730] bg-white border border-[#E8D5EC] hover:border-[#0F1730] hover:bg-slate-50 transition-all shadow-xs whitespace-nowrap"
+              className="inline-flex items-center justify-center h-10 px-3.5 xl:px-4 2xl:px-4.5 rounded-xl text-[12.5px] xl:text-[13px] 2xl:text-sm font-semibold text-[#0F1730] bg-white border border-[#E8D5EC] hover:border-[#61126E] hover:text-[#61126E] hover:bg-[#FAF4FB] shadow-xs transition-all whitespace-nowrap shrink-0 cursor-pointer"
             >
               Book a demo
             </Link>
 
-            {/* Start Free Trial Primary Button */}
+            {/* Start Free Trial Primary Button (Proportional to Hero Primary Button) */}
             <Link
               to="/signup"
-              className="px-3 2xl:px-3.5 py-1.5 rounded-xl text-xs font-bold text-white bg-[#61126E] hover:bg-[#4E0E58] transition-all shadow-[0_2px_8px_rgba(97, 18, 110,0.28)] hover:shadow-[0_4px_12px_rgba(97, 18, 110,0.38)] flex items-center gap-1.5 whitespace-nowrap group"
+              className="inline-flex items-center justify-center gap-1.5 2xl:gap-2 h-10 px-4 xl:px-4.5 2xl:px-5 rounded-xl text-[12.5px] xl:text-[13px] 2xl:text-sm font-bold text-white bg-[#61126E] hover:bg-[#4E0E58] shadow-[0_2px_10px_rgba(97,18,110,0.28)] hover:shadow-[0_4px_14px_rgba(97,18,110,0.38)] transition-all whitespace-nowrap shrink-0 group cursor-pointer"
             >
-              <span>Start free trial</span>
-              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+              <span className="shrink-0 whitespace-nowrap">Start free trial</span>
+              <ArrowRight className="w-3.5 h-3.5 2xl:w-4 2xl:h-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
 
           {/* Right Action Items — Tablet / Mobile (Never overflows, crisp quick-CTAs) */}
-          <div className="flex xl:hidden items-center gap-2">
+          <div className="flex xl:hidden items-center gap-1.5 sm:gap-2 shrink-0">
             <Link
               to="/demo"
-              className="hidden sm:inline-flex px-3 py-1.5 rounded-xl text-xs font-semibold text-[#0F1730] bg-white border border-[#E8D5EC] hover:bg-slate-50 transition-all shadow-xs whitespace-nowrap"
+              className="hidden sm:inline-flex items-center justify-center h-9 px-3 sm:px-3.5 rounded-xl text-xs font-semibold text-[#0F1730] bg-white border border-[#E8D5EC] hover:bg-slate-50 transition-all shadow-xs whitespace-nowrap shrink-0"
             >
               Book a demo
             </Link>
             <Link
               to="/signup"
-              className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-xl text-xs font-bold text-white bg-[#61126E] hover:bg-[#4E0E58] transition-all shadow-xs whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-1.5 h-9 px-3.5 sm:px-4 rounded-xl text-xs font-bold text-white bg-[#61126E] hover:bg-[#4E0E58] transition-all shadow-xs whitespace-nowrap shrink-0"
             >
-              <span>Start free trial</span>
+              <span className="shrink-0 whitespace-nowrap">Start free trial</span>
             </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-[#0A2540] hover:bg-slate-100 transition-colors"
+              className="p-1.5 sm:p-2 rounded-xl text-[#0A2540] hover:bg-[#F6EDF8]/60 transition-colors shrink-0"
               aria-label="Toggle Navigation Menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-6 h-6 text-[#61126E]" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
 
-        {/* FULL-WIDTH MEGA MENU (Aligned to max-w-7xl content bounds) */}
+        {/* FULL-WIDTH MEGA MENU (Aligned to container content bounds) */}
         <AnimatePresence>
           {activeMenu && (
             <motion.div
@@ -355,7 +370,7 @@ export function DeskmeritHeader() {
               onMouseEnter={() => handleMouseEnter(activeMenu)}
               onMouseLeave={handleMouseLeave}
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-[1440px] mx-auto px-4 sm:px-6 xl:px-6 2xl:px-8">
                 <div className="bg-white rounded-2xl shadow-[0_30px_70px_-15px_rgba(15,23,48,0.24),0_15px_30px_-5px_rgba(15,23,48,0.08)] border border-slate-200/90 overflow-hidden text-[#0F1730]">
                   {activeMenu === "products" && renderProductsMegaMenu()}
                   {activeMenu === "solutions" && renderSolutionsMegaMenu()}
@@ -1491,7 +1506,7 @@ export function DeskmeritHeader() {
             <Link
               to={currentCategory.banner.href}
               onClick={() => setActiveMenu(null)}
-              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#61126E]/60 transition-all shadow-xs"
+              className="group block bg-[#140A1C] text-white px-5 py-3.5 rounded-[12px] border border-[#2A1433] mb-4 hover:border-[#61126E]/60 transition-all shadow-xs"
             >
               <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#D8B4FE] transition-colors">
                 <span>{currentCategory.banner.title}</span>
@@ -1827,7 +1842,7 @@ export function DeskmeritHeader() {
             <Link
               to={currentCategory.banner.href}
               onClick={() => setActiveMenu(null)}
-              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#61126E]/60 transition-all shadow-xs"
+              className="group block bg-[#140A1C] text-white px-5 py-3.5 rounded-[12px] border border-[#2A1433] mb-4 hover:border-[#61126E]/60 transition-all shadow-xs"
             >
               <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#D8B4FE] transition-colors">
                 <span>{currentCategory.banner.title}</span>
@@ -2167,7 +2182,7 @@ export function DeskmeritHeader() {
             <Link
               to={currentCategory.banner.href}
               onClick={() => setActiveMenu(null)}
-              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#61126E]/60 transition-all shadow-xs"
+              className="group block bg-[#140A1C] text-white px-5 py-3.5 rounded-[12px] border border-[#2A1433] mb-4 hover:border-[#61126E]/60 transition-all shadow-xs"
             >
               <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#D8B4FE] transition-colors">
                 <span>{currentCategory.banner.title}</span>
@@ -2464,7 +2479,7 @@ export function DeskmeritHeader() {
             <Link
               to={currentCategory.banner.href}
               onClick={() => setActiveMenu(null)}
-              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#61126E]/60 transition-all shadow-xs"
+              className="group block bg-[#140A1C] text-white px-5 py-3.5 rounded-[12px] border border-[#2A1433] mb-4 hover:border-[#61126E]/60 transition-all shadow-xs"
             >
               <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#D8B4FE] transition-colors">
                 <span>{currentCategory.banner.title}</span>
@@ -2730,7 +2745,7 @@ export function DeskmeritHeader() {
             <Link
               to={currentCategory.banner.href}
               onClick={() => setActiveMenu(null)}
-              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#61126E]/60 transition-all shadow-xs"
+              className="group block bg-[#140A1C] text-white px-5 py-3.5 rounded-[12px] border border-[#2A1433] mb-4 hover:border-[#61126E]/60 transition-all shadow-xs"
             >
               <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#D8B4FE] transition-colors">
                 <span>{currentCategory.banner.title}</span>
@@ -3056,7 +3071,7 @@ export function DeskmeritHeader() {
             <Link
               to={currentCategory.banner.href}
               onClick={() => setActiveMenu(null)}
-              className="group block bg-[#0F1730] text-white px-5 py-3.5 rounded-[12px] border border-[#24305A] mb-4 hover:border-[#61126E]/60 transition-all shadow-xs"
+              className="group block bg-[#140A1C] text-white px-5 py-3.5 rounded-[12px] border border-[#2A1433] mb-4 hover:border-[#61126E]/60 transition-all shadow-xs"
             >
               <div className="flex items-center gap-1.5 font-display font-bold text-[14px] sm:text-[15px] text-white group-hover:text-[#D8B4FE] transition-colors">
                 <span>{currentCategory.banner.title}</span>

@@ -186,15 +186,15 @@ export function DeskmeritWhoItsFor() {
   };
 
   return (
-    <section className="py-20 lg:py-28 bg-[#FBF9F5] border-b border-[#E8D5EC]/80 font-sans">
+    <section className="py-20 lg:py-28 bg-[#FAF4FB] border-b border-[#E8D5EC]/80 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Header: Tailored Architecture + Controls (Screenshot 3 Reference) */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 gap-6">
           <div className="max-w-3xl">
-            <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-3">
               Tailored Architecture
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-[1.24]">
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-[1.28] sm:leading-[1.25]">
               Solutions for Every Size, Industry & Region
             </h2>
             <p className="text-sm sm:text-base text-[#4A5370] mt-3 leading-relaxed">

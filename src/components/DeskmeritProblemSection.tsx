@@ -7,15 +7,15 @@ export function DeskmeritProblemSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: The Problem Copy */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
-              The problem
+          <div className="lg:col-span-7">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-3">
+              THE PROBLEM
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F1730] tracking-[-0.025em] leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F1730] tracking-[-0.025em] leading-[1.28] sm:leading-[1.25] mb-6">
               Your timesheets say one thing.{" "}
               <span className="block text-[#4A5370]">Your invoices say another.</span>
             </h2>
-            <p className="text-base sm:text-lg text-[#4A5370] leading-relaxed">
+            <p className="text-base sm:text-lg text-[#4A5370] leading-relaxed mb-6">
               Manual timesheets are filled in on Friday from memory. Trackers live in one tab, tasks in another, attendance in a third. The result is hours nobody can defend. Deskmerit closes that gap by recording time where the work actually happens.
             </p>
 

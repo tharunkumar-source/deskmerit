@@ -28,25 +28,25 @@ export function DeskmeritTrustSection() {
 
   return (
     <section className="py-20 lg:py-28 bg-[#FFFFFF] border-b border-[#E8D5EC] font-sans">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           {/* Left Column: Eyebrow, Heading, Paragraph, Quote & Link (Exact Site Standard) */}
-          <div className="col-span-1 lg:col-span-6 space-y-6 text-left min-w-0 max-w-full w-full">
+          <div className="col-span-1 lg:col-span-6 text-left min-w-0 max-w-full w-full">
             <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-3">
               BUILT FOR TRUST
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#0F1730] tracking-[-0.025em] leading-[1.2]">
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#0F1730] tracking-[-0.025em] leading-[1.28] sm:leading-[1.25] mb-6">
               Time tracking employees <span className="block text-[#61126E]">don't resent.</span>
             </h2>
 
-            <p className="text-base sm:text-lg text-[#4A5370] leading-relaxed max-w-xl font-normal">
+            <p className="text-base sm:text-lg text-[#4A5370] leading-relaxed max-w-xl font-normal mb-6">
               Monitoring software fails when people feel watched. Deskmerit is designed the other way round.
               Screenshots stay off unless an admin turns them on — and even then they are blurred and announced.
               We are the colleague who keeps good notes, not the supervisor behind the glass.
             </p>
 
-            <div className="pt-2 pb-1">
+            <div className="pt-2 pb-1 mb-6">
               <blockquote className="font-serif italic text-2xl sm:text-[26px] text-[#0F1730] leading-snug border-l-2 border-[#61126E] pl-4">
                 “Every hour, honestly accounted for.”
               </blockquote>
@@ -72,7 +72,7 @@ export function DeskmeritTrustSection() {
                   key={idx}
                   className="bg-[#FFFFFF] rounded-2xl p-6 sm:p-7 border border-[#E8D5EC] hover:border-slate-300 hover:shadow-subtle transition-all duration-200 text-left"
                 >
-                  <div className="w-11 h-11 rounded-xl border border-slate-200/90 bg-[#FBF9F5] flex items-center justify-center text-[#0F1730] mb-5">
+                  <div className="w-11 h-11 rounded-xl border border-[#E8D5EC] bg-[#FAF4FB] flex items-center justify-center text-[#61126E] mb-5">
                     <Icon className="w-5 h-5 stroke-[1.8]" />
                   </div>
 

@@ -25,7 +25,7 @@ export function GratuityCalculator() {
 
   return (
     <section className="bg-white pt-10 pb-6 md:pt-12 md:pb-8" aria-labelledby="gratuity-calc-title">
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Intro Banner */}
         <div className="mb-8 rounded-none border border-teal-100 bg-teal-50/60 p-6 text-neutral-800">
           <div className="flex items-start gap-3">
@@ -196,7 +196,7 @@ export function GratuityCalculator() {
                 </div>
                 <div className="flex justify-between items-center text-caption">
                   <span className="text-neutral-500">Statutory Formula:</span>
-                  <span className="font-mono text-neutral-700 text-[11px] bg-neutral-100 px-2 py-0.5 rounded">
+                  <span className="font-display font-medium text-neutral-700 text-[11px] bg-neutral-100 px-2 py-0.5 rounded">
                     (15 × {basicSalary} × {effectiveYears}) ÷ {divisor}
                   </span>
                 </div>

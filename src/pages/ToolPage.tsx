@@ -50,7 +50,7 @@ export function ToolPage() {
         <GratuityCalculator />
       ) : (
         <section className="bg-white pt-10 pb-6 md:pt-12 md:pb-8" aria-label={tool.title}>
-          <div className="mx-auto max-w-5xl px-6">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {slug === "ctc-calculator" ? <CtcCalculator /> : <NoticePayCalculator />}
           </div>
         </section>

@@ -113,10 +113,10 @@ export function DeskmeritHowItWorks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
+          <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-3">
             CONTINUOUS WORKFORCE AUTOMATION
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-[1.24]">
+          <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#0F1730] tracking-[-0.025em] leading-[1.28] sm:leading-[1.25]">
             One Click. Three Answers.
           </h2>
           <p className="text-sm sm:text-base text-[#4A5370] mt-3 max-w-2xl mx-auto leading-relaxed">
@@ -235,7 +235,7 @@ export function DeskmeritHowItWorks() {
                 </Link>
 
                 <div className="flex items-center gap-3">
-                  <span className="text-xs font-mono text-slate-400">
+                  <span className="text-xs font-display font-medium text-slate-500">
                     Stage {activeStep + 1} of 3
                   </span>
                   <div className="flex items-center gap-1">

@@ -362,7 +362,7 @@ export function PageHero({
                 </a>
                 <a
                   href="/contact"
-                  className="rounded-full border border-neutral-700 bg-neutral-900/60 hover:bg-neutral-800 px-4 sm:px-6 py-3 sm:py-3.5 text-xs font-semibold text-neutral-200 transition-colors whitespace-nowrap shrink-0"
+                  className="rounded-full border border-white/20 bg-white/10 hover:bg-white hover:text-[#0F1730] hover:border-white px-4 sm:px-6 py-3 sm:py-3.5 text-xs font-semibold text-white transition-all whitespace-nowrap shrink-0 backdrop-blur-xs"
                 >
                   Book a demo
                 </a>

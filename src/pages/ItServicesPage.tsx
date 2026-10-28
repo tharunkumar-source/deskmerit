@@ -63,12 +63,12 @@ export function ItServicesPage() {
 
       <main>
         {/* ========================================================================= */}
-        {/* 1. DARK HERO SECTION (Exact Reference Image 2 Layout)                     */}
+        {/* 1. BRAND DARK HERO SECTION (Exact Reference Image 2 Layout)               */}
         {/* ========================================================================= */}
-        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-20 lg:pt-12 lg:pb-28 relative overflow-hidden">
+        <section className="bg-gradient-to-b from-[#180C24] via-[#12081B] to-[#180C24] text-white pt-8 pb-20 lg:pt-12 lg:pb-28 relative overflow-hidden">
           {/* Subtle radial glow */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#61126E]/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#A81CD0]/15 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb matching Reference */}
@@ -82,30 +82,30 @@ export function ItServicesPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Headline, Overline, Description & CTAs */}
-              <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                   FOR HIGH-GROWTH SCALEUPS & IT SERVICES
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-[1.28] sm:leading-[1.25] text-white mb-6">
                   Deskmerit for Startups & <span className="text-[#D8B4FE]">High-Growth Scaleups</span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl mb-6">
                   Automate delivery tracking, prove every billable hour to clients, and streamline sprint operations without micro-management or keystroke surveillance.
                 </p>
 
                 <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                   <Link
                     to="/signup"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Start free trial</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 ml-0.5" />
                   </Link>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-white/10 hover:bg-white text-white hover:text-[#0F1730] font-bold text-xs sm:text-sm border border-white/20 hover:border-white transition-all cursor-pointer whitespace-nowrap shrink-0 shadow-sm backdrop-blur-xs"
                   >
                     <span>Book a demo</span>
                   </Link>
@@ -275,15 +275,15 @@ export function ItServicesPage() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 4. ADDRESSING CRITICAL FRICTION (Dark navy background matching Image 2)   */}
+        {/* 4. ADDRESSING CRITICAL FRICTION (Brand Dark tone)                          */}
         {/* ========================================================================= */}
-        <section className="py-20 lg:py-28 bg-[#0A1628] text-white">
+        <section className="py-20 lg:py-28 bg-[#140A1C] text-white border-b border-[#2A1433]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <div className="inline-block px-3.5 py-1 rounded-full bg-[#61126E]/40 border border-[#A81CD0]/50 text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] shadow-xs mb-3">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                 CRITICAL FRICTION POINTS
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-[-0.03em]">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-[-0.03em] leading-[1.28] sm:leading-[1.25]">
                 Addressing Critical Friction for Modern Delivery Teams
               </h2>
               <p className="mt-3 text-sm sm:text-base text-slate-400 leading-relaxed max-w-3xl">

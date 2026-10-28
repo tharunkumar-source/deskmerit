@@ -218,15 +218,15 @@ export function DeskmeritFeatureGrid() {
   };
 
   return (
-    <section className="py-20 lg:py-28 bg-[#FBF9F5] border-b border-[#E8D5EC]/80 font-sans relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-[#FAF4FB] border-b border-[#E8D5EC] font-sans relative overflow-hidden">
       {/* 1. Header & Controls - Contained to Standard Content Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Headline */}
         <div className="mb-8 max-w-3xl">
-          <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
+          <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-3">
             TAILORED ARCHITECTURE
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-[1.24]">
+          <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#0F1730] tracking-[-0.025em] leading-[1.28] sm:leading-[1.25]">
             Features Built for Every Workflow
           </h2>
           <p className="text-sm sm:text-base text-[#4A5370] mt-3 leading-relaxed">
@@ -251,7 +251,7 @@ export function DeskmeritFeatureGrid() {
                   className={`shrink-0 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border whitespace-nowrap ${
                     isActive
                       ? "bg-[#61126E] text-white border-[#61126E] shadow-sm"
-                      : "bg-white text-[#4A5370] border-slate-300 hover:border-[#61126E] hover:text-[#61126E]"
+                      : "bg-white text-[#4A5370] border-[#E8D5EC] hover:border-[#61126E] hover:text-[#61126E]"
                   }`}
                 >
                   {cat.label}
@@ -265,21 +265,21 @@ export function DeskmeritFeatureGrid() {
             <button
               type="button"
               onClick={() => scroll("left")}
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-300 bg-white hover:border-[#61126E] hover:text-[#61126E] text-[#0F1730] flex items-center justify-center transition-all shadow-xs cursor-pointer active:scale-95 shrink-0"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#E8D5EC] bg-white hover:border-[#61126E] hover:text-[#61126E] text-[#0F1730] flex items-center justify-center transition-all shadow-xs cursor-pointer active:scale-95 shrink-0"
               aria-label="Scroll features left"
             >
               <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
             <Link
               to="/features"
-              className="px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-white hover:border-[#61126E] hover:bg-[#61126E] hover:text-white text-xs font-bold text-[#0F1730] shadow-xs hover:shadow-sm transition-all whitespace-nowrap shrink-0"
+              className="px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl border border-[#E8D5EC] bg-white hover:border-[#61126E] hover:bg-[#61126E] hover:text-white text-xs font-bold text-[#0F1730] shadow-xs hover:shadow-sm transition-all whitespace-nowrap shrink-0"
             >
               View all
             </Link>
             <button
               type="button"
               onClick={() => scroll("right")}
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-300 bg-white hover:border-[#61126E] hover:text-[#61126E] text-[#0F1730] flex items-center justify-center transition-all shadow-xs cursor-pointer active:scale-95 shrink-0"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#E8D5EC] bg-white hover:border-[#61126E] hover:text-[#61126E] text-[#0F1730] flex items-center justify-center transition-all shadow-xs cursor-pointer active:scale-95 shrink-0"
               aria-label="Scroll features right"
             >
               <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -290,9 +290,6 @@ export function DeskmeritFeatureGrid() {
 
       {/* 2. Full-Bleed Scrolling Track - Extends all the way to screen edges across full desktop width */}
       <div className="relative w-full overflow-hidden">
-        {/* Soft edge gradient fade on left only to blend with header margin */}
-        <div className="absolute left-0 top-0 bottom-6 w-6 sm:w-12 bg-gradient-to-r from-[#FBF9F5] via-[#FBF9F5]/80 to-transparent z-10 pointer-events-none" />
-
         {/* Scrollable Container bleeding to the very right edge of the screen */}
         <div
           ref={scrollRef}
@@ -312,10 +309,10 @@ export function DeskmeritFeatureGrid() {
               key={`${item.title}-${idx}`}
               to={item.href}
               data-card="true"
-              className="group shrink-0 w-[310px] sm:w-[370px] lg:w-[410px] rounded-none bg-[#0B1426] border border-slate-800/90 shadow-lg hover:shadow-2xl hover:border-slate-700 transition-all duration-300 flex flex-col justify-between overflow-hidden block"
+              className="group shrink-0 w-[310px] sm:w-[370px] lg:w-[410px] rounded-none bg-[#140A1C] border border-[#2A1433] shadow-lg hover:shadow-2xl hover:border-[#61126E]/60 transition-all duration-300 flex flex-col justify-between overflow-hidden block"
             >
               {/* Top Image Canvas flush to top edges with sharp corners */}
-              <div className="relative aspect-[16/10] overflow-hidden bg-slate-900 border-b border-slate-800 rounded-none">
+              <div className="relative aspect-[16/10] overflow-hidden bg-[#180C24] border-b border-[#2A1433] rounded-none">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -325,15 +322,15 @@ export function DeskmeritFeatureGrid() {
 
                 {/* Floating Tag */}
                 <div className="absolute top-3.5 right-3.5 z-10">
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider shadow-sm bg-white/95 text-[#0F1730] backdrop-blur-xs border border-white/60">
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[10px] font-display font-bold uppercase tracking-wider shadow-sm bg-white/95 text-[#0F1730] backdrop-blur-xs border border-white/60">
                     {item.badge}
                   </span>
                 </div>
               </div>
 
               {/* Bottom Dark Card Body with bold white title and slate description */}
-              <div className="p-6 bg-[#0B1426] flex-1 flex flex-col justify-start">
-                <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-[#61126E] transition-colors mb-2.5 line-clamp-1">
+              <div className="p-6 bg-[#140A1C] flex-1 flex flex-col justify-start">
+                <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-[#D8B4FE] transition-colors mb-2.5 line-clamp-1">
                   {item.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300/90 leading-relaxed line-clamp-3">

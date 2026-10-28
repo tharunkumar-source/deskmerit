@@ -204,11 +204,11 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
 
       <main>
         {/* ========================================================================= */}
-        {/* DARK HERO SECTION (Consistent Across All Deskmerit Pages)                 */}
+        {/* BRAND DARK HERO SECTION (Consistent Across All Deskmerit Pages)            */}
         {/* ========================================================================= */}
-        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
+        <section className="bg-gradient-to-b from-[#180C24] via-[#12081B] to-[#180C24] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#61126E]/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#A81CD0]/15 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
@@ -226,14 +226,14 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Headline & Value Prop */}
-              <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                   {mode === "overview" && "DEVELOPER PLATFORM & WEBHOOKS"}
                   {mode === "mcp" && "MODEL CONTEXT PROTOCOL (MCP)"}
                   {mode === "api" && "OPENAPI 3.1 SPECIFICATION"}
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-[1.28] sm:leading-[1.25] text-white mb-6">
                   {mode === "overview" && (
                     <>
                       Build on top of Deskmerit{" "}
@@ -254,7 +254,7 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
                   )}
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl mb-6">
                   {mode === "overview" &&
                     "Integrate workforce telemetry, automate timesheet sync to your payroll software, and hook into live member events using our modern REST endpoints."}
                   {mode === "mcp" &&
@@ -269,11 +269,11 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all"
                   >
                     <span>Get API Token</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 ml-0.5" />
                   </Link>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white text-white hover:text-[#0F1730] font-bold text-sm border border-white/20 hover:border-white transition-all cursor-pointer shadow-sm backdrop-blur-xs"
                   >
                     <span>Talk to an Architect</span>
                   </Link>
@@ -289,7 +289,7 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
                       <span className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
                       <span className="w-3 h-3 rounded-full bg-[#27C93F]" />
                     </div>
-                    <div className="text-[11px] font-mono text-slate-700 bg-white px-3 py-1 rounded-md border border-slate-200 shadow-xs">
+                    <div className="text-[11px] font-semibold text-slate-700 bg-white px-3 py-1 rounded-md border border-slate-200 shadow-xs">
                       {mode === "overview" && "index.ts — Deskmerit SDK"}
                       {mode === "mcp" && "claude_desktop_config.json"}
                       {mode === "api" && "GET /v1/activities/live"}
@@ -456,7 +456,7 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
                     <div>
                       <div className="flex items-center gap-3 mb-3">
                         <span
-                          className={`px-2.5 py-1 rounded-md text-xs font-bold font-mono ${
+                          className={`px-2.5 py-1 rounded-md text-xs font-bold ${
                             ep.method === "GET"
                               ? "bg-blue-50 text-blue-700 border border-blue-200"
                               : "bg-emerald-50 text-emerald-700 border border-emerald-200"
@@ -464,7 +464,7 @@ console.log(\`Active engineers: \${liveActivity.length}\`);
                         >
                           {ep.method}
                         </span>
-                        <span className="font-mono text-xs font-bold text-[#0F1730]">
+                        <span className="text-xs font-bold text-[#0F1730]">
                           {ep.path}
                         </span>
                       </div>

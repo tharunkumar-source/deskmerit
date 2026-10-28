@@ -15,11 +15,11 @@ export function HrmsAddonPage() {
 
       <main>
         {/* ========================================================================= */}
-        {/* DARK HERO SECTION (Consistent Platform Standard)                          */}
+        {/* BRAND DARK HERO SECTION (Consistent Platform Standard)                     */}
         {/* ========================================================================= */}
-        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
+        <section className="bg-gradient-to-b from-[#180C24] via-[#12081B] to-[#180C24] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#61126E]/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#A81CD0]/15 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
@@ -33,31 +33,31 @@ export function HrmsAddonPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column */}
-              <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                   NATIVE 1-CLICK MODULE · ZERO RE-ENROLLMENT
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-[1.28] sm:leading-[1.25] text-white mb-6">
                   Time tracking,{" "}
                   <span className="text-[#D8B4FE]">switched on inside your HRMS.</span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl mb-6">
                   If you run an HRMS, Deskmerit is one toggle away. No new vendor, no new login, no separate invoice — attendance and work telemetry flow straight into your core employee directory.
                 </p>
 
                 <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                   <Link
                     to="/signup"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Start free trial</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 ml-0.5" />
                   </Link>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-white/10 hover:bg-white text-white hover:text-[#0F1730] font-bold text-xs sm:text-sm border border-white/20 hover:border-white transition-all cursor-pointer whitespace-nowrap shrink-0 shadow-sm backdrop-blur-xs"
                   >
                     <span>Book a demo</span>
                   </Link>
@@ -101,7 +101,7 @@ export function HrmsAddonPage() {
                 { step: "04", title: "Report", desc: "Attendance, productivity and project time appear inside Sqalible." },
               ].map((s) => (
                 <div key={s.step} className="p-6 rounded-2xl bg-[#FAF4FB] border border-[#E8D5EC] hover:border-[#61126E] hover:bg-white hover:shadow-card transition-all group">
-                  <span className="text-sm font-mono font-extrabold text-[#0F1730] bg-white border border-[#E8D5EC] group-hover:bg-[#61126E] group-hover:border-[#61126E] group-hover:text-white px-2.5 py-1 rounded-md inline-block mb-4 transition-colors shadow-xs">
+                  <span className="text-sm font-extrabold text-[#0F1730] bg-white border border-[#E8D5EC] group-hover:bg-[#61126E] group-hover:border-[#61126E] group-hover:text-white px-2.5 py-1 rounded-md inline-block mb-4 transition-colors shadow-xs">
                     {s.step}
                   </span>
                   <h3 className="text-base font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-2">{s.title}</h3>
@@ -113,7 +113,7 @@ export function HrmsAddonPage() {
         </section>
 
         {/* Add-on vs Standalone Comparison */}
-        <section className="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0F1730]">
               Add-on or standalone? Same product.

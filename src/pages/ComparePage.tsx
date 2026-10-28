@@ -425,7 +425,7 @@ export function ComparePage() {
       </section>
 
       {/* 3. Detailed Feature Comparison Matrix */}
-      <section className="bg-[#FAFAFA] py-16 md:py-24 px-6 border-b border-neutral-200">
+      <section className="bg-[#FAFAFA] py-16 md:py-24 px-4 sm:px-6 lg:px-8 border-b border-neutral-200">
         <div className="mx-auto max-w-7xl">
           <div className="w-full mb-12">
             <p className="pretitle text-primary">Feature by Feature</p>

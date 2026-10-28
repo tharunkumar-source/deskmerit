@@ -187,7 +187,7 @@ export function TeamLiveOverviewWidget() {
               </div>
 
               <div className="flex items-center gap-2">
-                <span className="text-xs font-mono font-semibold text-[#0F1730] tnum">
+                <span className="text-xs font-display font-semibold text-[#0F1730] tnum">
                   {member.time}
                 </span>
                 <span

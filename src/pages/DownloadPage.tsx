@@ -44,11 +44,11 @@ export function DownloadPage() {
 
       <main>
         {/* ========================================================================= */}
-        {/* DARK HERO SECTION (Consistent Platform Standard)                          */}
+        {/* BRAND DARK HERO SECTION (Consistent Platform Standard)                     */}
         {/* ========================================================================= */}
-        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden mb-12">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
+        <section className="bg-gradient-to-b from-[#180C24] via-[#12081B] to-[#180C24] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden mb-12">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#61126E]/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#A81CD0]/15 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
@@ -62,31 +62,31 @@ export function DownloadPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column */}
-              <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                   NATIVE LIGHTWEIGHT DESKTOP ENGINE
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-[1.28] sm:leading-[1.25] text-white mb-6">
                   Download Deskmerit for your computer.{" "}
                   <span className="text-[#D8B4FE]">macOS, Windows & Linux.</span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl mb-6">
                   One lightweight, signed desktop agent. Native performance with less than 25MB RAM footprint and offline cache sync.
                 </p>
 
                 <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                   <Link
                     to="/signup"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Start free trial</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 ml-0.5" />
                   </Link>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-white/10 hover:bg-white text-white hover:text-[#0F1730] font-bold text-xs sm:text-sm border border-white/20 hover:border-white transition-all cursor-pointer whitespace-nowrap shrink-0 shadow-sm backdrop-blur-xs"
                   >
                     <span>Book a demo</span>
                   </Link>
@@ -118,7 +118,7 @@ export function DownloadPage() {
         </section>
 
         {/* 3 OS Download Cards Grid */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Windows */}
             <div
@@ -155,7 +155,7 @@ export function DownloadPage() {
                 >
                   <Download className="w-4 h-4" /> Download for Windows
                 </button>
-                <div className="text-[11px] text-[#9AA1B2] text-center mt-2 font-mono">
+                <div className="text-[11px] text-[#9AA1B2] text-center mt-2 font-medium">
                   v1.2.4 · 22 MB · Signed MSI
                 </div>
               </div>
@@ -192,11 +192,11 @@ export function DownloadPage() {
                 <button
                   type="button"
                   onClick={() => handleDownload("macOS", "Deskmerit-v1.0-Universal.dmg")}
-                  className="w-full py-3 rounded-[12px] bg-[#0F1730] hover:bg-[#24305A] text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                  className="w-full py-3 rounded-[12px] bg-[#0F1730] hover:bg-[#61126E] text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer"
                 >
                   <Download className="w-4 h-4" /> Download for Mac
                 </button>
-                <div className="text-[11px] text-[#9AA1B2] text-center mt-2 font-mono">
+                <div className="text-[11px] text-[#9AA1B2] text-center mt-2 font-medium">
                   v1.2.4 · 28 MB · Universal binary
                 </div>
               </div>
@@ -237,7 +237,7 @@ export function DownloadPage() {
                 >
                   <Download className="w-4 h-4" /> Download for Linux
                 </button>
-                <div className="text-[11px] text-[#9AA1B2] text-center mt-2 font-mono">
+                <div className="text-[11px] text-[#9AA1B2] text-center mt-2 font-medium">
                   v1.2.4 · 19 MB · Tarball & AppImage
                 </div>
               </div>
@@ -271,8 +271,8 @@ export function DownloadPage() {
 
               {/* Consent Screen Interactive Simulation */}
               <div className="lg:col-span-6 max-w-md mx-auto w-full">
-                <div className="bg-[#0F1730] text-white rounded-[24px] p-7 border border-[#24305A] shadow-2xl space-y-5">
-                  <div className="flex items-center gap-2.5 pb-4 border-b border-[#24305A]">
+                <div className="bg-[#140A1C] text-white rounded-[24px] p-7 border border-[#2A1433] shadow-2xl space-y-5">
+                  <div className="flex items-center gap-2.5 pb-4 border-b border-[#2A1433]">
                     <span className="w-7 h-7 rounded-lg bg-[#61126E] text-white font-black text-sm flex items-center justify-center font-display">
                       ●
                     </span>
@@ -297,7 +297,7 @@ export function DownloadPage() {
                       <span>The task you choose to track</span>
                     </div>
 
-                    <div className="border-t border-[#24305A] my-3 pt-3 space-y-2">
+                    <div className="border-t border-[#2A1433] my-3 pt-3 space-y-2">
                       <div className="flex items-center gap-2 text-[#E5484D]">
                         <X className="w-4 h-4 text-[#E5484D] shrink-0" />
                         <span>Keystrokes, webcam or microphone (Never)</span>
@@ -323,7 +323,7 @@ export function DownloadPage() {
                     </button>
                     <Link
                       to="/privacy-promise"
-                      className="px-4 py-2.5 rounded-[10px] bg-[#24305A] hover:bg-[#334173] text-white font-medium text-xs text-center"
+                      className="px-4 py-2.5 rounded-[10px] bg-[#24122C] hover:bg-white hover:text-[#0F1730] border border-[#61126E]/50 text-white font-medium text-xs text-center transition-all cursor-pointer shadow-sm"
                     >
                       Read more
                     </Link>
@@ -374,7 +374,7 @@ export function DownloadPage() {
             </div>
           </div>
 
-          <div className="mt-10 p-4 rounded-xl bg-white border border-[#E8D5EC] text-center text-xs text-[#4A5370] max-w-xl mx-auto shadow-xs">
+          <div className="mt-10 p-4 sm:p-5 rounded-2xl bg-white border border-[#E8D5EC] text-center text-xs sm:text-sm text-[#4A5370] w-full shadow-xs">
             📱 <strong>Note:</strong> Deskmerit tracks computer work. There is no mobile phone app — phones aren't tracked.
           </div>
         </section>

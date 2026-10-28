@@ -347,9 +347,25 @@ export const brandGraphicLanguage = {
   },
 
   buttons: {
-    height: "48px",
-    borderRadius: "12px",
-    rule: "Ember for the one main action per view. Midnight text for AA contrast.",
+    hero: {
+      height: "48px",
+      borderRadius: "12px",
+      padding: "px-6 py-3.5",
+      rule: "Used for primary lead conversion in Hero and major call-to-action bands.",
+    },
+    nav: {
+      height: "40px",
+      borderRadius: "12px",
+      padding: "px-4.5 py-2.5",
+      rule: "Proportional companion for top navigation and high-density interface headers.",
+    },
+    sm: {
+      height: "36px",
+      borderRadius: "10px",
+      padding: "px-3.5 py-1.5",
+      rule: "Compact actions inside data tables and cards.",
+    },
+    rule: "Ember (#61126E) for primary actions, White/Midnight with Mist border for secondary.",
   },
 
   cards: {

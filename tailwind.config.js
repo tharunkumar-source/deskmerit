@@ -11,6 +11,7 @@ export default {
         sans: ["'Inter'", "-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "sans-serif"],
         display: ["'Inter Display'", "'Inter'", "-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "sans-serif"],
         human: ["'Lora'", "Georgia", "serif"],
+        mono: ["'Inter Display'", "'Inter'", "-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "sans-serif"],
       },
       fontSize: {
         // Official PulseTrack Web & Desktop Type Scale

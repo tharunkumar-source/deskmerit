@@ -53,14 +53,14 @@ export function DeskmeritTestimonials() {
   const current = testimonials[currentIndex];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#FBF9F5] border-b border-[#E8D5EC] font-sans relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-[#FAF4FB] border-b border-[#E8D5EC] font-sans relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header matching Kombee reference layout */}
         <div className="mb-12">
-          <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
+          <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-3">
             OUR CLIENTS
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#0F1730] tracking-[-0.03em] leading-tight mt-2 max-w-3xl">
+          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#0F1730] tracking-[-0.025em] leading-[1.28] sm:leading-[1.25] max-w-3xl">
             Read Real Stories from Distributed Teams Worldwide
           </h2>
         </div>
@@ -68,10 +68,10 @@ export function DeskmeritTestimonials() {
         {/* 2-Card Split Layout matching Kombee structure with Deskmerit Brand Guidelines */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           {/* 1. Left Card: The Testimonial Story Card (Col 1-8) */}
-          <div className="lg:col-span-8 bg-[#0B1426] border border-slate-800 rounded-none sm:rounded-2xl p-6 sm:p-7 md:p-8 shadow-xl flex flex-col justify-between relative overflow-hidden">
+          <div className="lg:col-span-8 bg-[#140A1C] border border-[#2A1433] rounded-none sm:rounded-2xl p-6 sm:p-7 md:p-8 shadow-xl flex flex-col justify-between relative overflow-hidden">
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-7 items-start">
               {/* Client Portrait Photo */}
-              <div className="w-full sm:w-48 md:w-52 aspect-square sm:aspect-[4/5] shrink-0 rounded-none sm:rounded-xl overflow-hidden border border-slate-800 bg-slate-900 shadow-md">
+              <div className="w-full sm:w-48 md:w-52 aspect-square sm:aspect-[4/5] shrink-0 rounded-none sm:rounded-xl overflow-hidden border border-[#2A1433] bg-[#1C0F27] shadow-md">
                 <img
                   src={current.image}
                   alt={current.name}
@@ -85,7 +85,7 @@ export function DeskmeritTestimonials() {
                   <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-snug">
                     {current.name}
                   </h3>
-                  <div className="text-xs sm:text-sm font-medium text-slate-400 mt-1 mb-4 font-mono">
+                  <div className="text-xs sm:text-sm font-medium text-slate-400 mt-1 mb-4 font-display">
                     {current.role} · {current.company}
                   </div>
 
@@ -105,7 +105,7 @@ export function DeskmeritTestimonials() {
                         />
                       ))}
                     </div>
-                    <span className="text-slate-300 text-xs ml-1 font-mono">
+                    <span className="text-slate-300 text-xs ml-1 font-display">
                       ({current.rating})
                     </span>
                   </div>
@@ -115,7 +115,7 @@ export function DeskmeritTestimonials() {
                     <button
                       type="button"
                       onClick={prev}
-                      className="w-9 h-9 rounded-full border border-slate-700 bg-slate-800/90 hover:bg-[#61126E] hover:border-[#61126E] text-white flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
+                      className="w-9 h-9 rounded-full border border-[#3A1B45] bg-[#24122C] hover:bg-[#61126E] hover:border-[#61126E] text-white flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
                       aria-label="Previous testimonial"
                     >
                       <ChevronLeft className="w-4 h-4" />
@@ -123,7 +123,7 @@ export function DeskmeritTestimonials() {
                     <button
                       type="button"
                       onClick={next}
-                      className="w-9 h-9 rounded-full border border-slate-700 bg-slate-800/90 hover:bg-[#61126E] hover:border-[#61126E] text-white flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
+                      className="w-9 h-9 rounded-full border border-[#3A1B45] bg-[#24122C] hover:bg-[#61126E] hover:border-[#61126E] text-white flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
                       aria-label="Next testimonial"
                     >
                       <ChevronRight className="w-4 h-4" />
@@ -135,7 +135,7 @@ export function DeskmeritTestimonials() {
           </div>
 
           {/* 2. Right Card: Deskmerit Branded Value/CTA Spotlight Card (Col 9-12) */}
-          <div className="lg:col-span-4 bg-gradient-to-br from-[#0B1426] via-[#111D36] to-[#080E1C] border border-slate-800 rounded-none sm:rounded-2xl p-6 sm:p-7 md:p-8 flex flex-col justify-between shadow-xl relative overflow-hidden group">
+          <div className="lg:col-span-4 bg-gradient-to-br from-[#180C24] via-[#140A1C] to-[#1F0C2E] border border-[#2A1433] rounded-none sm:rounded-2xl p-6 sm:p-7 md:p-8 flex flex-col justify-between shadow-xl relative overflow-hidden group">
             {/* High-tech SVG pattern overlay matching Kombee aesthetic with Deskmerit Brand Guidelines */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
               <svg className="w-full h-full" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -174,7 +174,7 @@ export function DeskmeritTestimonials() {
             {/* Top Brand Mark */}
             <div className="relative z-10">
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-xl font-extrabold tracking-tight text-white font-mono">
+                <span className="text-xl font-extrabold tracking-tight text-white font-display">
                   Deskmerit
                 </span>
                 <span className="w-2.5 h-2.5 rounded-full bg-[#61126E]" />
@@ -193,7 +193,7 @@ export function DeskmeritTestimonials() {
             <div className="relative z-10 pt-2">
               <Link
                 to="/signup"
-                className="px-5 py-2.5 rounded-xl bg-white hover:bg-[#FBF9F5] text-[#0F1730] font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2 w-fit group/btn cursor-pointer"
+                className="px-5 py-2.5 rounded-xl bg-white hover:bg-[#FAF4FB] text-[#0F1730] font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2 w-fit group/btn cursor-pointer"
               >
                 <span>Contact</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#61126E] group-hover/btn:translate-x-1 transition-transform" />

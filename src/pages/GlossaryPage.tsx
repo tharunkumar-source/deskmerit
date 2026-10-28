@@ -389,14 +389,13 @@ export function GlossaryPage() {
       <DeskmeritHeader />
 
       <main className="flex-grow">
-        {/* HERO SECTION */}
-        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-10 pb-16 lg:pt-14 lg:pb-24 relative overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
+        {/* BRAND DARK HERO SECTION - MATCHING BLOG HERO STANDARD */}
+        <section className="bg-gradient-to-b from-[#180C24] via-[#12081B] to-[#180C24] text-white pt-12 pb-20 border-b border-[#2A1433] text-center relative overflow-hidden">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#61126E]/20 rounded-full blur-[140px] pointer-events-none" />
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             {/* Standard Breadcrumb */}
-            <div className="text-xs font-semibold flex items-center gap-2 mb-6">
+            <div className="text-xs font-semibold flex items-center justify-center gap-2 mb-6">
               <Link to="/" className="hover:underline text-slate-300">
                 Home
               </Link>
@@ -406,77 +405,69 @@ export function GlossaryPage() {
               <span className="text-[#D8B4FE] font-bold">Glossary</span>
             </div>
 
-            <div className="max-w-3xl space-y-6">
-              {/* Standard Accent Eyebrow */}
-              <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE]">
-                DESKMERIT TERMINOLOGY GLOSSARY
-              </div>
-
-              <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold tracking-[-0.03em] leading-[1.2] text-white">
-                Definitive Workforce & Time Tracking Glossary
-              </h1>
-
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-                Authoritative definitions, legal compliance nuances, mathematical billing formulas, and architectural standards for modern workforce presence and employee trust.
-              </p>
-
-              {/* Instant Search Bar */}
-              <div className="pt-2">
-                <div className="relative max-w-xl">
-                  <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search terms, concepts, formulas (e.g. Active Time, GDPR, Utilization)..."
-                    className="w-full pl-12 pr-10 py-3.5 bg-slate-900/90 border border-slate-700/80 rounded-xl text-white placeholder-slate-400 text-sm focus:outline-none focus:border-[#61126E] focus:ring-1 focus:ring-[#61126E] transition-all shadow-inner"
-                  />
-                  {searchQuery && (
-                    <button
-                      onClick={() => setSearchQuery("")}
-                      className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-xs font-semibold px-1.5 py-0.5 rounded bg-slate-800"
-                    >
-                      Clear
-                    </button>
-                  )}
-                </div>
-              </div>
+            <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
+              DESKMERIT TERMINOLOGY GLOSSARY
             </div>
-          </div>
-        </section>
 
-        {/* CONTROLS SECTION: Category Filter & Alphabetical Index Bar */}
-        <section className="bg-white border-b border-[#E8D5EC] sticky top-16 z-30 shadow-xs">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-3">
-            {/* Category Filter Pills */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider shrink-0 mr-1 flex items-center gap-1">
-                <SlidersHorizontal className="w-3.5 h-3.5" />
-                Category:
-              </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4">
+              Glossary
+            </h1>
+
+            <p className="text-sm sm:text-base text-[#9AA1B2] max-w-2xl mx-auto mb-8 leading-relaxed">
+              Authoritative definitions, legal compliance nuances, mathematical billing formulas, and architectural standards for modern workforce presence and employee trust.
+            </p>
+
+            {/* Instant Search Bar (White Background Standard like Blog page) */}
+            <div className="max-w-xl mx-auto relative mb-6">
+              <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search terms, concepts, formulas (e.g. Active Time, GDPR, Utilization)..."
+                className="w-full pl-12 pr-16 py-3.5 rounded-2xl bg-white border border-slate-200/90 text-[#0F1730] placeholder-slate-400 text-xs sm:text-sm focus:outline-none focus:border-[#61126E] focus:ring-1 focus:ring-[#61126E] shadow-md transition-all"
+              />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-[#0F1730] text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 cursor-pointer"
+                >
+                  Clear
+                </button>
+              )}
+            </div>
+
+            {/* Category Filter Pills directly below the search bar */}
+            <div className="flex flex-wrap items-center justify-center gap-2">
               {categories.map((cat) => (
                 <button
                   key={cat}
+                  type="button"
                   onClick={() => {
                     setSelectedCategory(cat);
                     setSelectedLetter("All");
                   }}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+                  className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                     selectedCategory === cat
-                      ? "bg-[#0F1730] text-white shadow-xs"
-                      : "bg-[#FAF4FB] text-[#4A5370] hover:bg-slate-200 hover:text-[#0F1730]"
+                      ? "bg-[#61126E] text-white font-extrabold shadow-sm"
+                      : "bg-[#24122C] text-[#9AA1B2] hover:text-white border border-[#3A1B45]"
                   }`}
                 >
                   {cat}
                 </button>
               ))}
             </div>
+          </div>
+        </section>
 
-            {/* A to Z Jump Bar */}
-            <div className="flex items-center gap-1 overflow-x-auto pb-1 scrollbar-none border-t border-slate-100 pt-2">
+        {/* CONTROLS SECTION: Alphabetical Index Bar (Sticky & Centered) */}
+        <section className="bg-white border-b border-[#E8D5EC] sticky top-16 z-30 shadow-xs">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div className="flex items-center justify-center gap-1 overflow-x-auto pb-1 scrollbar-none">
               <button
                 onClick={() => setSelectedLetter("All")}
-                className={`px-2 py-1 rounded text-xs font-extrabold transition-all cursor-pointer ${
+                className={`px-3 py-1 rounded-md text-xs font-extrabold transition-all cursor-pointer ${
                   selectedLetter === "All"
                     ? "bg-[#61126E] text-white"
                     : "text-slate-500 hover:text-[#0F1730] hover:bg-slate-100"
@@ -492,7 +483,7 @@ export function GlossaryPage() {
                     key={letter}
                     disabled={!hasTerms}
                     onClick={() => setSelectedLetter(letter)}
-                    className={`w-7 h-7 flex items-center justify-center rounded text-xs font-bold transition-all ${
+                    className={`w-7 h-7 flex items-center justify-center rounded-md text-xs font-bold transition-all ${
                       isSelected
                         ? "bg-[#61126E] text-white shadow-xs"
                         : hasTerms
@@ -597,7 +588,7 @@ export function GlossaryPage() {
 
                         {/* Formula or Standard (if present) */}
                         {term.formulaOrStandard && (
-                          <div className="mb-4 p-3 rounded-xl bg-slate-50 border border-slate-200/80 font-mono text-xs text-slate-800">
+                          <div className="mb-4 p-3 rounded-xl bg-slate-50 border border-slate-200/80 font-semibold text-xs text-slate-800">
                             <span className="text-[10px] font-bold uppercase text-slate-400 block mb-1">
                               Standard / Formula:
                             </span>
@@ -673,7 +664,7 @@ export function GlossaryPage() {
                             }`}
                           />
                         </button>
-                        <span className="text-[11px] font-mono text-slate-400">
+                        <span className="text-[11px] font-semibold text-slate-400">
                           #{term.slug}
                         </span>
                       </div>

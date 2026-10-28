@@ -62,7 +62,7 @@ function HeroInteractiveAppCard() {
             <div className="h-full bg-gradient-to-r from-[#4F46E5] to-[#6366F1] w-[33%]" title="Tracked: Jira Sprint" />
           </div>
 
-          <div className="flex justify-between text-[10px] text-slate-400 font-mono mt-1.5 px-1">
+          <div className="flex justify-between text-[10px] text-slate-400 font-display mt-1.5 px-1">
             <span>08:00</span>
             <span>10:00</span>
             <span>12:00</span>
@@ -109,7 +109,7 @@ function HeroInteractiveAppCard() {
                 </div>
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
-                <span className="font-mono text-[10px] sm:text-[11px] text-slate-600">{app.time}</span>
+                <span className="font-display text-[10px] sm:text-[11px] text-slate-600">{app.time}</span>
                 <span
                   className={`text-[9px] font-bold px-1.5 py-0.5 rounded-md ${
                     app.status === "Productive"
@@ -130,7 +130,7 @@ function HeroInteractiveAppCard() {
             <ShieldCheck className="w-4 h-4 text-[#61126E] shrink-0" />
             <span className="truncate">Zero keystrokes logged · 45m private excluded</span>
           </div>
-          <span className="text-[10px] text-slate-400 font-mono hidden sm:inline shrink-0">Encrypted AES-256</span>
+          <span className="text-[10px] text-slate-400 font-display hidden sm:inline shrink-0">Encrypted AES-256</span>
         </div>
       </div>
 
@@ -152,15 +152,15 @@ function HeroInteractiveAppCard() {
         <div className="grid grid-cols-3 gap-1.5 my-2.5 text-center">
           <div className="p-1.5 rounded-xl bg-emerald-50/90 border border-emerald-100">
             <div className="text-[9px] text-emerald-800 font-bold uppercase">Track</div>
-            <div className="text-xs font-mono font-bold text-emerald-700">33</div>
+            <div className="text-xs font-display font-bold text-emerald-700">33</div>
           </div>
           <div className="p-1.5 rounded-xl bg-amber-50/90 border border-amber-100">
             <div className="text-[9px] text-amber-800 font-bold uppercase">Idle</div>
-            <div className="text-xs font-mono font-bold text-amber-700">6</div>
+            <div className="text-xs font-display font-bold text-amber-700">6</div>
           </div>
           <div className="p-1.5 rounded-xl bg-slate-50 border border-slate-200">
             <div className="text-[9px] text-slate-600 font-bold uppercase">Private</div>
-            <div className="text-xs font-mono font-bold text-slate-700">3</div>
+            <div className="text-xs font-display font-bold text-slate-700">3</div>
           </div>
         </div>
 
@@ -202,12 +202,12 @@ function HeroInteractiveAppCard() {
           <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
             Time tracking summary
           </span>
-          <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100 font-mono">
+          <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100 font-display">
             79% Score
           </span>
         </div>
 
-        <div className="text-lg font-extrabold text-[#0F1730] font-mono mb-2">
+        <div className="text-lg font-extrabold text-[#0F1730] font-display mb-2">
           412h 18m
         </div>
 
@@ -218,7 +218,7 @@ function HeroInteractiveAppCard() {
           <div className="bg-[#61126E] h-full" style={{ width: "7%" }} />
         </div>
 
-        <div className="flex justify-between text-[10px] text-slate-500 font-mono">
+        <div className="flex justify-between text-[10px] text-slate-500 font-display">
           <span className="text-[#4F46E5] font-bold">82% Productive</span>
           <span>11% Neutral</span>
           <span className="text-[#61126E] font-bold">7% Idle</span>
@@ -228,7 +228,7 @@ function HeroInteractiveAppCard() {
       {/* ========================================================================= */}
       {/* CARD 4: OVERLAPPING BOTTOM-RIGHT ACCENT BADGE — TRACKER PLUS ACTIVE TASK   */}
       {/* ========================================================================= */}
-      <div className="hidden sm:flex absolute -bottom-5 right-2 sm:-right-4 bg-[#0F1730] text-white rounded-2xl px-4 py-2.5 border border-slate-700/80 shadow-[0_15px_35px_rgba(15,23,48,0.25)] z-25 items-center gap-3 hover:-translate-y-1 transition-all duration-300">
+      <div className="hidden sm:flex absolute -bottom-5 right-2 sm:-right-4 bg-[#140A1C] text-white rounded-2xl px-4 py-2.5 border border-[#2A1433] shadow-[0_15px_35px_rgba(15,23,48,0.25)] z-25 items-center gap-3 hover:-translate-y-1 transition-all duration-300">
         <div className="w-8 h-8 rounded-xl bg-[#0052CC] flex items-center justify-center shrink-0">
           <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none">
             <path d="M11.53 2c0 5.25 4.25 9.5 9.5 9.5h.97v-1.94c0-4.17-3.39-7.56-7.56-7.56H11.53z" fill="#FFFFFF"/>
@@ -238,10 +238,10 @@ function HeroInteractiveAppCard() {
         </div>
         <div>
           <div className="flex items-center gap-2">
-            <span className="text-[10px] font-mono font-bold text-indigo-300 bg-indigo-950/60 px-1.5 py-0.5 rounded border border-indigo-800/60">
+            <span className="text-[10px] font-display font-bold text-indigo-300 bg-indigo-950/60 px-1.5 py-0.5 rounded border border-indigo-800/60">
               SQUAL-142
             </span>
-            <span className="text-[10px] font-mono text-emerald-400 font-bold">02:44:18</span>
+            <span className="text-[10px] font-display text-emerald-400 font-bold">02:44:18</span>
           </div>
           <div className="text-[11px] font-medium text-slate-200 truncate w-36">
             API Sync & Webhooks
@@ -375,15 +375,15 @@ export function DeskmeritHero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           {/* Left Column: Bold Typography & Lead Capture (Reference Image 4) */}
-          <div className="lg:col-span-6 space-y-6 text-left">
+          <div className="lg:col-span-6 text-left">
             {/* Clean Eyebrow Standard */}
-            <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] flex items-center gap-2">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] flex items-center gap-2 mb-3">
               <span className="w-2 h-2 rounded-full bg-[#61126E] animate-pulse" />
               <span>AUTOMATIC TIME TRACKING FOR MODERN TEAMS</span>
             </div>
 
             {/* H1 Headline Matching Reference Image 4 Style */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-[#0A2540] tracking-[-0.035em] leading-[1.08]">
+            <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-[#0A2540] tracking-[-0.035em] leading-[1.22] sm:leading-[1.18] lg:leading-[1.15] mb-6">
               Know where the work goes.{" "}
               <span className="text-[#61126E]">
                 Without watching over shoulders.
@@ -391,7 +391,7 @@ export function DeskmeritHero() {
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-base sm:text-lg text-[#4A5370] leading-relaxed max-w-xl font-normal">
+            <p className="text-base sm:text-lg text-[#4A5370] leading-relaxed max-w-xl font-normal mb-6">
               Deskmerit is the automatic time tracking software your team will actually trust.
               Connect Jira or Azure DevOps, press start, and defensible client hours and attendance build on their own.
             </p>
@@ -403,7 +403,7 @@ export function DeskmeritHero() {
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-bold text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.32)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer"
               >
                 <span>Start free trial</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 ml-0.5" />
               </Link>
               <Link
                 to="/demo"

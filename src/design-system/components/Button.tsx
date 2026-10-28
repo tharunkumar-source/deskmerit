@@ -9,7 +9,7 @@ export type ButtonVariant =
   | "widget-stop" // Dark widget Ember stop button
   | "widget-sub"  // Dark widget Dusk secondary action (e.g. Private Time)
 
-export type ButtonSize = "sm" | "md" | "lg";
+export type ButtonSize = "sm" | "nav" | "md" | "lg";
 
 export interface ButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "className" | "children"> {
@@ -24,9 +24,9 @@ const variantStyles: Record<ButtonVariant, string> = {
   // Brand Primary: Ember (#61126E) background with Midnight (#0F1730) text! Strict WCAG AA.
   primary:
     "bg-[#61126E] text-[#0F1730] font-semibold hover:bg-[#4E0E58] active:bg-[#4E0E58] active:text-white shadow-sm disabled:bg-[#C594CE] disabled:text-[#0F1730]/60",
-  // Brand Secondary: Midnight (#0F1730) background with White text
+  // Brand Secondary: Brand accent deep purple background with white text, moves towards white on hover
   secondary:
-    "bg-[#0F1730] text-white font-semibold hover:bg-[#24305A] active:bg-[#172348] shadow-sm disabled:bg-[#4A5370] disabled:text-white/60",
+    "bg-[#24122C] text-white font-semibold hover:bg-white hover:text-[#0F1730] hover:border-white border border-[#61126E]/50 active:bg-slate-100 shadow-sm disabled:bg-[#4A5370] disabled:text-white/60",
   // Brand Outline: Mist (#E8D5EC) border with Midnight text
   outline:
     "border border-[#E8D5EC] bg-white text-[#0F1730] font-semibold hover:bg-[#FAF4FB] hover:border-[#DAC3DE] active:bg-[#F0DFEF] disabled:border-[#E8D5EC] disabled:text-[#4A5370]/60",
@@ -46,7 +46,9 @@ const variantStyles: Record<ButtonVariant, string> = {
 
 const sizeStyles: Record<ButtonSize, string> = {
   sm: "h-9 px-3.5 text-[13px] rounded-[10px]",
-  // Official standard height: 48px, 12px radius per Page 16
+  // Standard compact/nav button height: 40px, 12px radius, proportional to Hero
+  nav: "h-10 px-4.5 text-[13.5px] rounded-[12px]",
+  // Official standard hero/form height: 48px, 12px radius per Page 16
   md: "h-12 px-6 text-[15px] rounded-[12px]",
   lg: "h-14 px-8 text-[16px] rounded-[12px]",
 };

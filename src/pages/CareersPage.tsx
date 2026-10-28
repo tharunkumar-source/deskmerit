@@ -202,11 +202,11 @@ export function CareersPage() {
 
       <main>
         {/* ========================================================================= */}
-        {/* 1. DARK HERO SECTION (Consistent Deskmerit Platform Standard)              */}
+        {/* 1. BRAND DARK HERO SECTION (Consistent Deskmerit Platform Standard)        */}
         {/* ========================================================================= */}
-        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-20 lg:pt-12 lg:pb-28 relative overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
+        <section className="bg-gradient-to-b from-[#180C24] via-[#12081B] to-[#180C24] text-white pt-8 pb-20 lg:pt-12 lg:pb-28 relative overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#61126E]/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#A81CD0]/15 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
@@ -222,17 +222,17 @@ export function CareersPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Headline, Overline, Description */}
-              <div className="col-span-1 lg:col-span-7 space-y-6 min-w-0 max-w-full w-full">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
+              <div className="col-span-1 lg:col-span-7 min-w-0 max-w-full w-full">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                   CAREERS AT DESKMERIT
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-[1.28] sm:leading-[1.25] text-white mb-6">
                   Build the future of ethical{" "}
                   <span className="text-[#D8B4FE]">workforce intelligence.</span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl mb-6">
                   We are engineers, designers, and systems architects building lightweight,
                   privacy-first tools that eliminate manual timesheets without invasive spyware.
                   Work with autonomy, high craft standards, and genuine respect for deep work.
@@ -241,14 +241,14 @@ export function CareersPage() {
                 <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                   <a
                     href="#open-roles"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Explore Open Roles</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 ml-0.5" />
                   </a>
                   <a
                     href="#culture"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-white/10 hover:bg-white text-white hover:text-[#0F1730] font-bold text-xs sm:text-sm border border-white/20 hover:border-white transition-all cursor-pointer whitespace-nowrap shrink-0 shadow-sm backdrop-blur-xs"
                   >
                     <span>Our Culture & Values</span>
                   </a>
@@ -276,7 +276,7 @@ export function CareersPage() {
         <section id="culture" className="py-20 lg:py-24 bg-[#FAF4FB] border-b border-[#E8D5EC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#61126E] font-mono">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#61126E]">
                 HOW WE OPERATE
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-[-0.025em] mt-2">
@@ -381,7 +381,7 @@ export function CareersPage() {
         {/* 3. OPEN ROLES ACCORDION (Exact Reference Image 1 Layout + Deskmerit Branding) */}
         {/* ========================================================================= */}
         <section id="open-roles" className="py-20 lg:py-28 bg-[#FFFFFF]">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Title matching Image 1 */}
             <div className="border-b border-[#0F1730] pb-5 mb-8">
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-tight">
@@ -469,7 +469,7 @@ export function CareersPage() {
                                 navigator.clipboard?.writeText(details);
                                 alert(`Copied full job specifications for "${role.title}" to clipboard!`);
                               }}
-                              className="px-6 py-2.5 rounded-full bg-[#0F1730] hover:bg-[#24305A] text-white font-bold text-xs transition-colors shadow-xs cursor-pointer"
+                              className="px-6 py-2.5 rounded-full bg-[#0F1730] hover:bg-[#341640] hover:border-[#61126E] border border-transparent text-white font-bold text-xs transition-all shadow-xs cursor-pointer"
                             >
                               View More
                             </button>
@@ -553,7 +553,7 @@ export function CareersPage() {
                   <button
                     type="button"
                     onClick={() => setSelectedRoleForApply(null)}
-                    className="mt-4 px-6 py-2.5 rounded-full bg-[#0F1730] text-white font-bold text-xs hover:bg-[#24305A] transition-colors"
+                    className="mt-4 px-6 py-2.5 rounded-full bg-[#0F1730] text-white font-bold text-xs hover:bg-[#341640] hover:border-[#61126E] border border-transparent transition-all cursor-pointer"
                   >
                     Done
                   </button>
@@ -561,7 +561,7 @@ export function CareersPage() {
               ) : (
                 <div className="space-y-6">
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] font-mono">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC]">
                       JOB APPLICATION
                     </span>
                     <h3 className="text-xl sm:text-2xl font-extrabold text-[#0F1730] mt-1">

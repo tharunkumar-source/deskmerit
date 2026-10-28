@@ -177,9 +177,9 @@ export function BlogPage() {
       <DeskmeritHeader />
 
       <main>
-        {/* SECTION 1: Deep Navy Hero with Search & Filters (Sqalible Screenshot 3) */}
-        <section className="bg-[#0A0F1D] text-white pt-12 pb-20 border-b border-[#24305A] text-center relative overflow-hidden">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#61126E]/10 rounded-full blur-[140px] pointer-events-none" />
+        {/* SECTION 1: Brand Dark Hero with Search & Filters */}
+        <section className="bg-gradient-to-b from-[#180C24] via-[#12081B] to-[#180C24] text-white pt-12 pb-20 border-b border-[#2A1433] text-center relative overflow-hidden">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#61126E]/20 rounded-full blur-[140px] pointer-events-none" />
 
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4">
@@ -211,7 +211,7 @@ export function BlogPage() {
                   className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
                     selectedCategory === cat
                       ? "bg-[#61126E] text-white font-extrabold shadow-sm"
-                      : "bg-[#1A264F] text-[#9AA1B2] hover:text-white border border-[#2B3969]"
+                      : "bg-[#24122C] text-[#9AA1B2] hover:text-white border border-[#3A1B45]"
                   }`}
                 >
                   {cat}
@@ -379,14 +379,14 @@ export function BlogPage() {
 
         {/* SECTION 4: Dedicated Article Reader Modal (Sqalible Screenshot 4 Architecture) */}
         {activeArticle && (
-          <div className="fixed inset-0 z-50 bg-[#0A0F1D]/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+          <div className="fixed inset-0 z-50 bg-[#0B060F]/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
             <div className="bg-[#FFFFFF] rounded-3xl max-w-4xl w-full border border-[#E8D5EC] shadow-2xl overflow-hidden my-8 max-h-[90vh] overflow-y-auto">
               {/* Header Banner */}
-              <div className="bg-[#0A0F1D] text-white p-8 sm:p-12 relative">
+              <div className="bg-[#140A1C] text-white p-8 sm:p-12 relative border-b border-[#2A1433]">
                 <button
                   type="button"
                   onClick={() => setActiveArticle(null)}
-                  className="absolute right-6 top-6 p-2 rounded-full bg-[#1A264F] hover:bg-[#61126E] text-white transition-colors"
+                  className="absolute right-6 top-6 p-2 rounded-full bg-[#24122C] hover:bg-[#61126E] text-white transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -481,7 +481,7 @@ export function BlogPage() {
                   </div>
 
                   {/* Dark CTA Box (Sqalible Screenshot 4) */}
-                  <div className="p-6 rounded-2xl bg-[#0F1730] border border-[#24305A] text-white space-y-4">
+                  <div className="p-6 rounded-2xl bg-[#140A1C] border border-[#2A1433] text-white space-y-4">
                     <h4 className="text-base font-bold text-white">
                       Ready to Modernise Your Workforce?
                     </h4>

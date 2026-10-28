@@ -60,7 +60,7 @@ export function DeskmeritIntegrationsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Structured Integration Ecosystem Stage */}
           <div className="lg:col-span-6">
-            <div className="bg-[#FBF9F5] border border-[#E8D5EC] rounded-3xl p-5 sm:p-7 shadow-[0_10px_30px_rgba(15,23,48,0.04)] relative overflow-hidden">
+            <div className="bg-[#FAF4FB] border border-[#E8D5EC] rounded-3xl p-5 sm:p-7 shadow-[0_10px_30px_rgba(15,23,48,0.04)] relative overflow-hidden">
               {/* Subtle Ambient Glow */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#61126E]/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -72,7 +72,7 @@ export function DeskmeritIntegrationsSection() {
                     Ecosystem Connectors
                   </span>
                 </div>
-                <span className="text-xs font-bold text-emerald-600 font-mono">
+                <span className="text-xs font-bold text-emerald-600 font-display">
                   Zero Code Setup
                 </span>
               </div>
@@ -111,7 +111,7 @@ export function DeskmeritIntegrationsSection() {
               {/* Stage Bottom Reassurance */}
               <div className="mt-4 pt-3.5 border-t border-[#E8D5EC] flex items-center justify-between text-[11px] text-[#64748B] relative z-10">
                 <span>Auto-sync every 60 seconds</span>
-                <span className="text-[#61126E] font-bold font-mono">REST & Webhooks Ready</span>
+                <span className="text-[#61126E] font-bold font-display">REST & Webhooks Ready</span>
               </div>
             </div>
           </div>

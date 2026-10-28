@@ -113,10 +113,10 @@ export function LifecycleStepper() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
           <div>
-            <p className="text-xs font-bold uppercase tracking-wider text-[#61126E]">
+            <p className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-3">
               Work-time lifecycle
             </p>
-            <h2 className="mt-1 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F1730] tracking-[-0.025em]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F1730] tracking-[-0.025em] leading-[1.28] sm:leading-[1.25]">
               One click that does three jobs.
             </h2>
             <p className="mt-2 text-sm text-[#4A5370] max-w-xl">
@@ -203,7 +203,7 @@ export function LifecycleStepper() {
             <div className="pt-2">
               <Link
                 to="/signup"
-                className="inline-flex items-center justify-center w-full py-2.5 rounded-xl bg-[#0F1730] text-white text-xs font-bold hover:bg-[#24305A] transition-colors"
+                className="inline-flex items-center justify-center w-full py-2.5 rounded-xl bg-[#0F1730] hover:bg-[#341640] hover:border-[#61126E] border border-transparent text-white text-xs font-bold transition-all cursor-pointer"
               >
                 Test with your team →
               </Link>

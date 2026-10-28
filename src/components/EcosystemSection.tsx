@@ -51,10 +51,10 @@ export function EcosystemSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <p className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
+          <p className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-3">
             Tailored Solutions
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F1730] tracking-[-0.025em]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F1730] tracking-[-0.025em] leading-[1.28] sm:leading-[1.25]">
             Built for your industry, team, and country.
           </h2>
           <p className="text-sm text-[#4A5370] mt-3">

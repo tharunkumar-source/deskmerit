@@ -26,7 +26,6 @@ import {
   Moon,
   Camera,
   Layers,
-  Sparkles,
   Bot,
   Terminal,
   Activity,
@@ -1811,9 +1810,9 @@ export function IntegrationsPage() {
           /* ========================================================================= */
           <div>
             {/* Dark Detail Hero */}
-            <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
-              <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
+            <section className="bg-gradient-to-b from-[#180C24] via-[#12081B] to-[#180C24] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
+              <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#61126E]/20 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#A81CD0]/15 rounded-full blur-3xl pointer-events-none" />
 
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Breadcrumb */}
@@ -1831,33 +1830,33 @@ export function IntegrationsPage() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
                   {/* Left Column: Headline + CTAs (No bi-directional sync capsule or dot above heading) */}
-                  <div className="col-span-1 lg:col-span-7 min-w-0 max-w-full w-full space-y-6">
-                    <div className="inline-block px-3.5 py-1 rounded-full bg-[#61126E]/40 border border-[#A81CD0]/50 text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] shadow-xs mb-2">
+                  <div className="col-span-1 lg:col-span-7 min-w-0 max-w-full w-full">
+                    <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                       INTEGRATION: {detailData.name.toUpperCase()} TIME TRACKING
                     </div>
 
-                    <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-[-0.03em] leading-[1.22] text-white">
+                    <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-[-0.03em] leading-[1.28] sm:leading-[1.25] text-white mb-6">
                       {detailData.heroHeadline}{" "}
                       <span className="text-[#D8B4FE]">
                         {detailData.heroHighlight}
                       </span>
                     </h1>
 
-                    <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl font-normal">
+                    <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl font-normal mb-6">
                       {detailData.heroDescription}
                     </p>
 
                     <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                       <Link
                         to="/signup"
-                        className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
+                        className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                       >
                         <span>Start free trial</span>
-                        <ArrowRight className="w-4 h-4" />
+                        <ArrowRight className="w-4 h-4 ml-0.5" />
                       </Link>
                       <Link
                         to="/demo"
-                        className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
+                        className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-white/10 hover:bg-white text-white hover:text-[#0F1730] font-bold text-xs sm:text-sm border border-white/20 hover:border-white transition-all cursor-pointer whitespace-nowrap shrink-0 shadow-sm backdrop-blur-xs"
                       >
                         <span>Book a demo</span>
                       </Link>
@@ -1893,14 +1892,14 @@ export function IntegrationsPage() {
                         <div className="p-4 sm:p-7 space-y-4">
                           <div className="p-3 sm:p-3.5 rounded-xl bg-[#F8FAFC] border border-slate-200/90 flex items-center justify-between text-xs gap-2">
                             <div className="min-w-0 flex-1">
-                              <div className="text-[10px] font-mono font-bold uppercase text-[#4A5370]">
+                              <div className="text-[10px] font-bold uppercase text-[#4A5370]">
                                 Connected Entity
                               </div>
                               <div className="font-bold text-[#0F1730] mt-0.5 truncate">
                                 {detailData.previewCardTitle}
                               </div>
                             </div>
-                            <span className="px-2 sm:px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-mono font-bold text-[#027A48] bg-[#ECFDF3] border border-[#A6F4C5] shrink-0">
+                            <span className="px-2 sm:px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-bold text-[#027A48] bg-[#ECFDF3] border border-[#A6F4C5] shrink-0">
                               {detailData.previewMetricValue}
                             </span>
                           </div>
@@ -1925,7 +1924,7 @@ export function IntegrationsPage() {
                               <ShieldCheck className="w-3.5 h-3.5 text-[#027A48] shrink-0" />
                               <span className="truncate">TLS 1.3 Encrypted</span>
                             </span>
-                            <span className="text-emerald-600 font-mono font-semibold shrink-0">Active & Verified</span>
+                            <span className="text-emerald-600 font-semibold shrink-0">Active & Verified</span>
                           </div>
                         </div>
                       </div>
@@ -1934,30 +1933,6 @@ export function IntegrationsPage() {
                 </div>
               </div>
             </section>
-
-            {/* TL;DR KEY TAKEAWAYS SECTION (DeskTime-inspired callout) */}
-            {detailData.tldr && detailData.tldr.length > 0 && (
-              <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12 relative z-20">
-                <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E8D5EC] shadow-[0_12px_32px_rgba(15,23,48,0.08)]">
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#61126E] mb-4">
-                    <Sparkles className="w-4 h-4 text-[#61126E]" />
-                    <span>TL;DR – Key Takeaways for {detailData.name} Time Tracking</span>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {detailData.tldr.map((point, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <div className="w-6 h-6 rounded-md bg-emerald-50 text-emerald-600 border border-emerald-200/80 flex items-center justify-center shrink-0 mt-0.5">
-                          <Check className="w-3.5 h-3.5 stroke-[3]" />
-                        </div>
-                        <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed font-normal">
-                          {point}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </section>
-            )}
 
             {/* Deep Feature Capabilities Grid */}
             <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1973,29 +1948,61 @@ export function IntegrationsPage() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {detailData.features.map((feat, i) => {
-                  const IconC = feat.icon;
-                  return (
-                    <div
-                      key={i}
-                      className="p-7 rounded-2xl bg-white border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all flex flex-col justify-between group"
-                    >
-                      <div>
-                        <div className="w-12 h-12 rounded-xl bg-[#F6EDF8] text-[#61126E] flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
-                          <IconC className="w-6 h-6 stroke-[2]" />
+              {detailData.features.length === 1 ? (
+                <div className="w-full">
+                  {detailData.features.map((feat, i) => {
+                    const IconC = feat.icon;
+                    return (
+                      <div
+                        key={i}
+                        className="p-8 sm:p-10 rounded-2xl bg-white border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8 group"
+                      >
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#F6EDF8] text-[#61126E] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                          <IconC className="w-7 h-7 sm:w-8 sm:h-8 stroke-[2]" />
                         </div>
-                        <h3 className="font-bold text-lg text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-2.5">
-                          {feat.title}
-                        </h3>
-                        <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed font-normal">
-                          {feat.desc}
-                        </p>
+                        <div className="flex-1">
+                          <h3 className="font-bold text-xl sm:text-2xl text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-2">
+                            {feat.title}
+                          </h3>
+                          <p className="text-sm sm:text-base text-[#4A5370] leading-relaxed font-normal">
+                            {feat.desc}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className={`grid ${
+                  detailData.features.length === 2
+                    ? "grid-cols-1 md:grid-cols-2"
+                    : detailData.features.length === 3
+                    ? "grid-cols-1 md:grid-cols-3"
+                    : "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+                } gap-6 w-full`}>
+                  {detailData.features.map((feat, i) => {
+                    const IconC = feat.icon;
+                    return (
+                      <div
+                        key={i}
+                        className="p-7 rounded-2xl bg-white border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all flex flex-col justify-between group"
+                      >
+                        <div>
+                          <div className="w-12 h-12 rounded-xl bg-[#F6EDF8] text-[#61126E] flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+                            <IconC className="w-6 h-6 stroke-[2]" />
+                          </div>
+                          <h3 className="font-bold text-lg text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-2.5">
+                            {feat.title}
+                          </h3>
+                          <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed font-normal">
+                            {feat.desc}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </section>
 
             {/* 3-Step Setup Section */}
@@ -2013,17 +2020,17 @@ export function IntegrationsPage() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
                   {detailData.steps.map((st) => (
                     <div
                       key={st.num}
-                      className="p-8 rounded-2xl bg-[#FAF4FB] border border-[#E8D5EC] flex flex-col justify-between hover:border-[#61126E] hover:bg-white hover:shadow-card transition-all"
+                      className="p-7 sm:p-8 rounded-2xl bg-[#FAF4FB] border border-[#E8D5EC] hover:border-[#61126E] hover:bg-white transition-all hover:shadow-card flex flex-col justify-between group"
                     >
                       <div>
-                        <span className="text-xs font-mono font-bold text-[#61126E] bg-[#F6EDF8] border border-[#61126E]/30 px-3 py-1 rounded-md inline-block mb-5">
+                        <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-3">
                           STEP {st.num}
-                        </span>
-                        <h3 className="text-xl font-bold text-[#0F1730] mb-3">{st.title}</h3>
+                        </div>
+                        <h3 className="text-xl font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors mb-3 leading-snug">{st.title}</h3>
                         <p className="text-sm text-[#4A5370] leading-relaxed font-normal">{st.desc}</p>
                       </div>
                     </div>
@@ -2086,9 +2093,9 @@ export function IntegrationsPage() {
           /* ========================================================================= */
           <div>
             {/* HERO SECTION */}
-            <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
-              <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
+            <section className="bg-gradient-to-b from-[#180C24] via-[#12081B] to-[#180C24] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
+              <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#61126E]/20 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#A81CD0]/15 rounded-full blur-3xl pointer-events-none" />
 
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Breadcrumb */}
@@ -2101,30 +2108,30 @@ export function IntegrationsPage() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-                  <div className="col-span-1 lg:col-span-7 min-w-0 max-w-full w-full space-y-6">
-                    <div className="inline-block px-3.5 py-1 rounded-full bg-[#61126E]/40 border border-[#A81CD0]/50 text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] shadow-xs mb-2">
+                  <div className="col-span-1 lg:col-span-7 min-w-0 max-w-full w-full">
+                    <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                       INTEGRATIONS & ECOSYSTEM
                     </div>
 
-                    <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold tracking-[-0.03em] leading-[1.22] text-white">
+                    <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold tracking-[-0.03em] leading-[1.28] sm:leading-[1.25] text-white mb-6">
                       Streamline your work processes with time tracking integrations
                     </h1>
 
-                    <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl font-normal">
+                    <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl font-normal mb-6">
                       Deskmerit connects with project management software, calendars, and communication tools so tracking happens in the natural flow of work with zero manual timesheets.
                     </p>
 
                     <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                       <Link
                         to="/signup"
-                        className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
+                        className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                       >
                         <span>Start free trial</span>
-                        <ArrowRight className="w-4 h-4" />
+                        <ArrowRight className="w-4 h-4 ml-0.5" />
                       </Link>
                       <Link
                         to="/demo"
-                        className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
+                        className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-white/10 hover:bg-white text-white hover:text-[#0F1730] font-bold text-xs sm:text-sm border border-white/20 hover:border-white transition-all cursor-pointer whitespace-nowrap shrink-0 shadow-sm backdrop-blur-xs"
                       >
                         <span>Book a demo</span>
                       </Link>
@@ -2156,7 +2163,7 @@ export function IntegrationsPage() {
                           </div>
                           <div className="flex items-center gap-1.5 bg-[#F8FAFC] px-2.5 py-1 rounded-lg border border-slate-200">
                             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                            <span className="text-[11px] font-mono font-medium text-[#027A48]">
+                            <span className="text-[11px] font-semibold text-[#027A48]">
                               Live 200 OK
                             </span>
                           </div>
@@ -2224,7 +2231,7 @@ export function IntegrationsPage() {
                         {/* Live Sync Stats Underneath in Clean Light Style */}
                         <div className="grid grid-cols-3 gap-2 mt-4 pt-3 border-t border-slate-100 text-center">
                           <div className="p-2.5 rounded-xl bg-[#F8FAFC] border border-slate-200/80">
-                            <div className="text-[10px] text-[#4A5370] uppercase font-mono font-bold">
+                            <div className="text-[10px] text-[#4A5370] uppercase font-bold">
                               Synced Tasks
                             </div>
                             <div className="text-sm font-extrabold text-[#0F1730] mt-0.5">
@@ -2232,7 +2239,7 @@ export function IntegrationsPage() {
                             </div>
                           </div>
                           <div className="p-2.5 rounded-xl bg-[#F8FAFC] border border-slate-200/80">
-                            <div className="text-[10px] text-[#4A5370] uppercase font-mono font-bold">
+                            <div className="text-[10px] text-[#4A5370] uppercase font-bold">
                               Worklog Writes
                             </div>
                             <div className="text-sm font-extrabold text-[#D8B4FE] mt-0.5">
@@ -2240,7 +2247,7 @@ export function IntegrationsPage() {
                             </div>
                           </div>
                           <div className="p-2.5 rounded-xl bg-[#F8FAFC] border border-slate-200/80">
-                            <div className="text-[10px] text-[#4A5370] uppercase font-mono font-bold">
+                            <div className="text-[10px] text-[#4A5370] uppercase font-bold">
                               Latency
                             </div>
                             <div className="text-sm font-extrabold text-[#027A48] mt-0.5">

@@ -93,7 +93,7 @@ export function InteractiveTrackerWidget() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute -top-12 left-1/2 -translate-x-1/2 z-30 bg-[#0F1730] text-white text-xs px-4 py-2 rounded-full shadow-elevated border border-[#24305A] flex items-center gap-2 whitespace-nowrap"
+            className="absolute -top-12 left-1/2 -translate-x-1/2 z-30 bg-[#140A1C] text-white text-xs px-4 py-2 rounded-full shadow-elevated border border-[#2A1433] flex items-center gap-2 whitespace-nowrap"
           >
             <span className="w-2 h-2 rounded-full bg-[#12B886]" />
             {toastMessage}
@@ -102,9 +102,9 @@ export function InteractiveTrackerWidget() {
       </AnimatePresence>
 
       {/* Widget Window */}
-      <div className="w-full max-w-[430px] mx-auto bg-[#0F1730] text-white rounded-[20px] p-5 shadow-2xl border border-[#24305A] transition-all">
+      <div className="w-full max-w-[430px] mx-auto bg-[#140A1C] text-white rounded-[20px] p-5 shadow-2xl border border-[#2A1433] transition-all">
         {/* Widget Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-[#24305A]">
+        <div className="flex items-center justify-between pb-4 border-b border-[#2A1433]">
           <div className="flex items-center gap-2">
             <span className="font-bold text-sm tracking-tight text-white">Deskmerit</span>
             <span className="text-[10px] uppercase font-semibold tracking-wider text-[#9AA1B2] ml-1">
@@ -113,7 +113,7 @@ export function InteractiveTrackerWidget() {
           </div>
 
           {/* Status Pill */}
-          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-[#24305A] border border-[#334173]">
+          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-[#24122C] border border-[#3A1B45]">
             {isPrivateTime ? (
               <>
                 <span className="w-2 h-2 rounded-full bg-[#5B6CFF]" />
@@ -148,7 +148,7 @@ export function InteractiveTrackerWidget() {
 
             {/* Stopwatch */}
             <div className="text-right">
-              <div className="font-mono text-2xl font-bold tracking-tight text-white tnum">
+              <div className="font-display text-2xl font-bold tracking-tight text-white tnum">
                 {formatTime(seconds)}
               </div>
               <div className="text-[10px] text-[#12B886] font-medium flex items-center justify-end gap-1 mt-0.5">
@@ -164,7 +164,7 @@ export function InteractiveTrackerWidget() {
               onClick={handleToggleTracking}
               className={`h-11 px-4 rounded-[12px] font-extrabold text-xs flex items-center justify-center gap-2 transition-all ${
                 isTracking && !isPrivateTime
-                  ? "bg-[#24305A] hover:bg-[#334173] text-white border border-[#384574]"
+                  ? "bg-[#24122C] hover:bg-[#341640] text-white border border-[#3A1B45]"
                   : "bg-[#61126E] hover:bg-[#4E0E58] text-white shadow-md hover:shadow-glow-ember"
               }`}
             >
@@ -185,7 +185,7 @@ export function InteractiveTrackerWidget() {
               className={`h-11 px-4 rounded-[12px] font-semibold text-xs border transition-all flex items-center justify-center gap-1.5 ${
                 isPrivateTime
                   ? "bg-[#5B6CFF] text-white border-[#5B6CFF]"
-                  : "bg-[#24305A] text-[#FAF4FB] border-[#334173] hover:bg-[#2c3b6f]"
+                  : "bg-[#24122C] text-[#FAF4FB] border-[#3A1B45] hover:bg-[#341640]"
               }`}
             >
               <Shield className="w-3.5 h-3.5" />
@@ -195,14 +195,14 @@ export function InteractiveTrackerWidget() {
         </div>
 
         {/* Integration Task Picker Tabs */}
-        <div className="pt-3 border-t border-[#24305A]">
+        <div className="pt-3 border-t border-[#2A1433]">
           <div className="text-[11px] font-semibold text-[#9AA1B2] mb-2 flex items-center justify-between">
             <span>Live tasks from PM tools</span>
             <span className="text-[10px] text-[#12B886]">Connected live</span>
           </div>
 
           {/* Tabs */}
-          <div className="flex gap-1 p-1 bg-[#24305A]/70 rounded-lg text-xs font-medium mb-3">
+          <div className="flex gap-1 p-1 bg-[#24122C] rounded-lg text-xs font-medium mb-3">
             {(["Jira", "Azure DevOps", "OpenProject", "Manual"] as const).map((source) => (
               <button
                 key={source}
@@ -230,13 +230,13 @@ export function InteractiveTrackerWidget() {
                   onClick={() => handleSelectTask(task)}
                   className={`w-full text-left p-2.5 rounded-xl transition-all flex items-center justify-between ${
                     isSelected
-                      ? "bg-[#24305A] border border-[#61126E]/50 text-white"
-                      : "bg-[#172348]/40 hover:bg-[#24305A]/70 text-[#9AA1B2]"
+                      ? "bg-[#24122C] border border-[#61126E]/50 text-white"
+                      : "bg-[#1C0F27]/60 hover:bg-[#24122C] text-[#9AA1B2]"
                   }`}
                 >
                   <div className="min-w-0 pr-2">
                     <div className="flex items-center gap-1.5">
-                      <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-[#0F1730] text-[#9AA1B2]">
+                      <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-[#140A1C] text-[#9AA1B2]">
                         {task.id}
                       </span>
                       <span className="text-xs font-medium text-white truncate">
@@ -261,7 +261,7 @@ export function InteractiveTrackerWidget() {
         </div>
 
         {/* Footer info: Today summary */}
-        <div className="mt-4 pt-3 border-t border-[#24305A] flex items-center justify-between text-xs text-[#9AA1B2]">
+        <div className="mt-4 pt-3 border-t border-[#2A1433] flex items-center justify-between text-xs text-[#9AA1B2]">
           <span className="flex items-center gap-1 text-white font-medium">
             <Clock className="w-3.5 h-3.5 text-[#61126E]" /> Today: 6h 12m
           </span>

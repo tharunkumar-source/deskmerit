@@ -68,15 +68,15 @@ export function DashboardShowcase() {
           <div className="space-y-2">
             <div className="p-2.5 rounded-xl bg-[#FAF4FB] flex items-center justify-between">
               <span className="font-bold">Jira Software (Acme Retail)</span>
-              <span className="font-mono text-[#0fa678]">KMB-482 ●</span>
+              <span className="font-display font-semibold text-[#0fa678]">KMB-482 ●</span>
             </div>
             <div className="p-2.5 rounded-xl bg-[#FAF4FB] flex items-center justify-between">
               <span className="font-bold">Azure DevOps (Northwind)</span>
-              <span className="font-mono text-[#0fa678]">AD-904 ●</span>
+              <span className="font-display font-semibold text-[#0fa678]">AD-904 ●</span>
             </div>
             <div className="p-2.5 rounded-xl bg-[#FAF4FB] flex items-center justify-between">
               <span className="font-bold">OpenProject (Contoso)</span>
-              <span className="font-mono text-[#4A5370]">OP-312</span>
+              <span className="font-display font-semibold text-[#4A5370]">OP-312</span>
             </div>
           </div>
         </div>
@@ -150,15 +150,15 @@ export function DashboardShowcase() {
       badge: "AI-Powered",
       link: "/developers/mcp-server",
       renderVisual: () => (
-        <div className="bg-[#0F1730] text-white rounded-2xl p-6 border border-[#24305A] space-y-3 text-xs">
-          <div className="flex items-center justify-between pb-2 border-b border-[#24305A]">
+        <div className="bg-[#140A1C] text-white rounded-2xl p-6 border border-[#2A1433] space-y-3 text-xs">
+          <div className="flex items-center justify-between pb-2 border-b border-[#2A1433]">
             <span className="font-bold">Deskmerit MCP Server</span>
             <span className="text-[#61126E] font-semibold text-[10px]">Connected to Claude</span>
           </div>
-          <div className="p-2.5 rounded-xl bg-[#172348] text-neutral-300">
+          <div className="p-2.5 rounded-xl bg-[#1C0F27] text-neutral-300">
             <strong>Prompt:</strong> &ldquo;Who worked more than 45 hours last week?&rdquo;
           </div>
-          <div className="p-2.5 rounded-xl bg-[#172348] text-[#12B886]">
+          <div className="p-2.5 rounded-xl bg-[#1C0F27] text-[#12B886]">
             <strong>Response:</strong> 3 people: Wei L. (47h 20m), Rohan P. (46h 05m), Ananya R. (45h 40m).
           </div>
         </div>
@@ -235,7 +235,7 @@ export function DashboardShowcase() {
                     {activeItem.badge}
                   </span>
                 </div>
-                <span className="text-[11px] font-mono text-[#4A5370]">app.deskmerit.io</span>
+                <span className="text-[11px] font-display text-[#4A5370]">app.deskmerit.io</span>
               </div>
 
               {activeItem.renderVisual()}

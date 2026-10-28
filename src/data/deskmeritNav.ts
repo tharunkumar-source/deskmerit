@@ -355,7 +355,6 @@ export const FOOTER_SECTIONS = [
       { label: "Claude MCP AI server", href: "/developers/mcp-server" },
       { label: "API documentation", href: "/developers/api" },
       { label: "Changelog", href: "/changelog" },
-      { label: "Brand guidelines", href: "/brand-guidelines" },
     ],
   },
   {

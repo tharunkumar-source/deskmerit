@@ -20,6 +20,8 @@ import {
   FileText,
   Mail,
   Send,
+  MapPin,
+  Phone,
 } from "lucide-react";
 
 export function AboutPage() {
@@ -52,35 +54,24 @@ export function AboutPage() {
   const offices = [
     {
       country: "India",
-      role: "Global Headquarters, Rust Engine & Core Platform",
-      location: "Pune & Bengaluru",
-      flag: "🇮🇳",
-      image: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=800&q=80",
-      stats: "120+ Engineers · 24/7 Support"
+      tag: "Development Center",
+      address: "517–520, 5th Floor, Homeland City, University Rd, Piplod, Surat",
+      phone: "+91 97695 63055",
+      zone: "IST Zone",
     },
     {
-      country: "Middle East",
-      role: "Enterprise Growth & Solutions Architecture",
-      location: "Dubai, UAE",
-      flag: "🇦🇪",
-      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
-      stats: "DIFC Regional Hub"
+      country: "Australia",
+      tag: "Regional Office",
+      address: "2.03/202 Jells Road, Wheelers Hill & 8 Archer Grove, Rowville, VIC",
+      phone: "+61 468 016 333",
+      zone: "AEST Zone",
     },
     {
-      country: "Australia & NZ",
-      role: "Strategic Alliances & Partner Network",
-      location: "Sydney, NSW",
-      flag: "🇦🇺",
-      image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&q=80",
-      stats: "Barangaroo Tech District"
-    },
-    {
-      country: "United States",
-      role: "Enterprise Accounts & North America Security",
-      location: "San Francisco, CA",
-      flag: "🇺🇸",
-      image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=800&q=80",
-      stats: "Financial District Office"
+      country: "New Zealand",
+      tag: "Regional Office",
+      address: "Level 2, 221 Ihumatao Road, Mangere, Auckland 2022",
+      phone: "+61 468 016 333",
+      zone: "NZST Zone",
     },
   ];
 
@@ -193,11 +184,11 @@ export function AboutPage() {
 
       <main>
         {/* ========================================================================= */}
-        {/* DARK HERO SECTION (Consistent Platform Standard)                          */}
+        {/* BRAND DARK HERO SECTION (Consistent Platform Standard)                     */}
         {/* ========================================================================= */}
-        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden mb-12">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
+        <section className="bg-gradient-to-b from-[#180C24] via-[#12081B] to-[#180C24] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden mb-12">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#61126E]/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#A81CD0]/15 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
@@ -211,8 +202,8 @@ export function AboutPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column */}
-              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full space-y-6">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                   {isCareers
                     ? "CAREERS AT DESKMERIT"
                     : isPartners
@@ -222,7 +213,7 @@ export function AboutPage() {
                     : "ABOUT DESKMERIT"}
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-[1.28] sm:leading-[1.25] text-white mb-6">
                   {isCareers ? (
                     <>
                       Build software that respects{" "}
@@ -246,7 +237,7 @@ export function AboutPage() {
                   )}
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl mb-6">
                   {isCareers
                     ? "We are a distributed engineering and product team solving one of the most fraught challenges in modern work: honest proof of work without dehumanizing surveillance."
                     : isPartners
@@ -259,14 +250,14 @@ export function AboutPage() {
                 <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                   <Link
                     to="/signup"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Start free trial</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 ml-0.5" />
                   </Link>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-white/10 hover:bg-white text-white hover:text-[#0F1730] font-bold text-xs sm:text-sm border border-white/20 hover:border-white transition-all cursor-pointer whitespace-nowrap shrink-0 shadow-sm backdrop-blur-xs"
                   >
                     <span>Book a demo</span>
                   </Link>
@@ -306,7 +297,7 @@ export function AboutPage() {
         {/* Dynamic Content based on which Company page is active */}
         {isCareers ? (
           /* ================= CAREERS PAGE ================= */
-          <section className="py-6 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <section className="py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Culture / Values */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
@@ -358,7 +349,7 @@ export function AboutPage() {
 
                   <a
                     href="mailto:careers@deskmerit.com?subject=Application for Senior Role"
-                    className="px-5 py-2.5 rounded-xl bg-[#0F1730] hover:bg-[#24305A] text-white font-bold text-xs shrink-0 transition-colors flex items-center gap-1.5 self-start md:self-center"
+                    className="px-5 py-2.5 rounded-xl bg-[#0F1730] hover:bg-[#341640] hover:border-[#61126E] border border-transparent text-white font-bold text-xs shrink-0 transition-all flex items-center gap-1.5 self-start md:self-center cursor-pointer"
                   >
                     Apply for role <ArrowRight className="w-3.5 h-3.5" />
                   </a>
@@ -368,7 +359,7 @@ export function AboutPage() {
           </section>
         ) : isPartners ? (
           /* ================= PARTNERS PAGE ================= */
-          <section className="py-6 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <section className="py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
               {partnerTiers.map((tier) => (
                 <div
@@ -394,7 +385,7 @@ export function AboutPage() {
                   <div className="pt-6 mt-6 border-t border-[#E8D5EC]">
                     <Link
                       to="/contact?type=partner"
-                      className="w-full py-2.5 rounded-xl bg-[#0F1730] hover:bg-[#24305A] text-white font-bold text-xs text-center block transition-colors"
+                      className="w-full py-3.5 px-6 rounded-xl bg-[#0F1730] hover:bg-[#341640] hover:border-[#61126E] border border-transparent text-white font-bold text-sm text-center flex items-center justify-center transition-all cursor-pointer shadow-sm"
                     >
                       Apply as Partner
                     </Link>
@@ -405,38 +396,37 @@ export function AboutPage() {
           </section>
         ) : isPress ? (
           /* ================= PRESS & MEDIA KIT ================= */
-          <section className="py-6 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <section className="py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
               {/* Brand Logo Assets Card */}
-              <div className="p-8 rounded-2xl bg-white border border-[#E8D5EC] shadow-subtle space-y-6">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-bold text-lg text-[#0F1730]">Official Brand Assets</h3>
-                  <Download className="w-5 h-5 text-[#61126E]" />
+              <div className="p-8 rounded-2xl bg-white border border-[#E8D5EC] shadow-subtle space-y-6 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-bold text-lg text-[#0F1730]">Official Brand Assets</h3>
+                    <Download className="w-5 h-5 text-[#61126E]" />
+                  </div>
+                  <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed">
+                    Includes full vector SVGs, PNG marks on dark and light backgrounds, and our signature Ember flame emblem.
+                  </p>
                 </div>
-                <p className="text-xs text-[#4A5370] leading-relaxed">
-                  Includes full vector SVGs, PNG marks on dark and light backgrounds, and our signature Ember flame emblem.
-                </p>
-                <div className="p-6 bg-[#0F1730] rounded-xl flex items-center justify-center">
-                  <span className="text-xl font-bold tracking-tight text-white font-display">
-                    desk<span className="text-[#61126E]">merit</span>
-                  </span>
+                <div className="pt-4 border-t border-[#E8D5EC]">
+                  <a
+                    href="/download"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FAF4FB] hover:bg-[#E8D5EC] text-sm font-bold text-[#0F1730] transition-colors border border-[#E8D5EC] cursor-pointer"
+                  >
+                    <Download className="w-4 h-4" /> Download Media Package (.ZIP)
+                  </a>
                 </div>
-                <a
-                  href="/download"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#FAF4FB] hover:bg-[#E8D5EC] text-xs font-bold text-[#0F1730] transition-colors"
-                >
-                  <Download className="w-3.5 h-3.5" /> Download Media Package (.ZIP)
-                </a>
               </div>
 
               {/* Media Inquiries & Press Contact */}
               <div className="p-8 rounded-2xl bg-white border border-[#E8D5EC] shadow-subtle space-y-6 flex flex-col justify-between">
                 <div>
                   <h3 className="font-bold text-lg text-[#0F1730] mb-2">Media & Press Inquiries</h3>
-                  <p className="text-xs text-[#4A5370] leading-relaxed mb-4">
+                  <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed mb-4">
                     For interview requests with founders, briefings on workplace monitoring trends, or background commentary:
                   </p>
-                  <div className="space-y-2 text-xs">
+                  <div className="space-y-2 text-xs sm:text-sm">
                     <div className="flex items-center gap-2 text-[#0F1730]">
                       <Mail className="w-4 h-4 text-[#61126E]" />
                       <span className="font-bold">press@deskmerit.com</span>
@@ -448,7 +438,7 @@ export function AboutPage() {
                 <div className="pt-4 border-t border-[#E8D5EC]">
                   <Link
                     to="/demo"
-                    className="w-full py-2.5 rounded-xl bg-[#0F1730] hover:bg-[#24305A] text-white font-bold text-xs text-center block transition-colors"
+                    className="w-full py-3.5 px-6 rounded-xl bg-[#0F1730] hover:bg-[#341640] hover:border-[#61126E] border border-transparent text-white font-bold text-sm text-center flex items-center justify-center transition-all cursor-pointer shadow-sm"
                   >
                     Request Executive Interview
                   </Link>
@@ -492,7 +482,7 @@ export function AboutPage() {
             </section>
 
             {/* Leadership & Core Team */}
-            <section className="py-20 bg-[#FBF9F5] border-b border-[#E8D5EC]">
+            <section className="py-20 bg-[#FAF4FB] border-b border-[#E8D5EC]">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
@@ -506,33 +496,26 @@ export function AboutPage() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
                   {teamMembers.map((member) => (
                     <div
                       key={member.name}
-                      className="bg-white rounded-2xl overflow-hidden border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all group flex flex-col justify-between"
+                      className="group flex flex-col"
                     >
-                      <div className="p-6">
-                        <div className="w-24 h-24 mx-auto rounded-2xl overflow-hidden mb-4 border-2 border-[#E8D5EC] group-hover:border-[#61126E] transition-colors shadow-xs">
-                          <img
-                            src={member.avatar}
-                            alt={member.name}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                          />
-                        </div>
-                        <h3 className="text-base font-bold text-[#0F1730] text-center group-hover:text-[#61126E] transition-colors">
+                      <div className="w-full aspect-square rounded-2xl overflow-hidden bg-slate-100 border border-[#E8D5EC]/90 group-hover:border-[#61126E] group-hover:shadow-card transition-all duration-300">
+                        <img
+                          src={member.avatar}
+                          alt={member.name}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="mt-3.5">
+                        <h3 className="text-base sm:text-lg font-bold text-[#0F1730] group-hover:text-[#61126E] transition-colors leading-snug">
                           {member.name}
                         </h3>
-                        <div className="text-xs font-semibold text-[#61126E] text-center mt-0.5 mb-3">
+                        <p className="text-xs sm:text-sm text-[#4A5370] mt-0.5 font-normal">
                           {member.role}
-                        </div>
-                        <p className="text-xs text-[#4A5370] leading-relaxed text-center font-normal">
-                          {member.bio}
                         </p>
-                      </div>
-
-                      <div className="px-5 py-3 bg-[#FAF4FB] border-t border-[#F0ECE1] text-center text-[11px] text-slate-500 font-medium">
-                        Kombee Technologies
                       </div>
                     </div>
                   ))}
@@ -540,52 +523,57 @@ export function AboutPage() {
               </div>
             </section>
 
-            {/* Where We Work with Photographic City Hubs */}
+            {/* Global Presence with Simple Accent Cards */}
             <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-2xl mx-auto mb-16">
                 <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
-                  Global Presence
+                  Global Footprint
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-[-0.025em]">
-                  Where we work
+                  Deskmerit Across the Globe
                 </h2>
-                <p className="text-xs sm:text-sm text-[#4A5370] mt-2">
-                  Serving distributed delivery and software teams across 4 global operating hubs.
+                <p className="text-base text-[#4A5370] mt-3 leading-relaxed">
+                  Operating centralized engineering powerhouses with regional client relationship hubs.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {offices.map((off) => (
                   <div
                     key={off.country}
-                    className="bg-white rounded-2xl overflow-hidden border border-[#E8D5EC] shadow-subtle hover:border-[#61126E] hover:shadow-card transition-all group flex flex-col justify-between"
+                    className="p-7 rounded-2xl bg-white border border-[#E8D5EC] hover:border-[#61126E] transition-all hover:shadow-card shadow-subtle flex flex-col justify-between group"
                   >
-                    {/* Location Image */}
-                    <div className="h-44 w-full relative overflow-hidden bg-slate-900">
-                      <img
-                        src={off.image}
-                        alt={`${off.country} Hub - ${off.location}`}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0F1730]/80 via-transparent to-transparent pointer-events-none" />
-                      <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-bold shadow-xs">
-                        {off.flag} {off.country}
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 rounded-lg bg-[#FAF4FB] border border-[#E8D5EC] flex items-center justify-center text-[#61126E] group-hover:scale-110 transition-transform shadow-xs">
+                            <MapPin className="w-4 h-4" />
+                          </div>
+                          <h3 className="font-bold text-base text-[#0F1730] group-hover:text-[#61126E] transition-colors">
+                            {off.country}
+                          </h3>
+                        </div>
+                        <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#FAF4FB] text-[#61126E] border border-[#E8D5EC] shadow-xs">
+                          {off.tag}
+                        </span>
                       </div>
-                      <div className="absolute bottom-3 left-3 right-3 text-white">
-                        <div className="text-xs font-bold text-white">{off.location}</div>
-                        <div className="text-[10px] text-slate-300 font-mono">{off.stats}</div>
-                      </div>
-                    </div>
 
-                    <div className="p-5">
-                      <p className="text-xs text-[#4A5370] leading-relaxed font-normal">
-                        {off.role}
+                      <p className="text-xs sm:text-sm text-[#4A5370] leading-relaxed mb-6 font-normal">
+                        {off.address}
                       </p>
                     </div>
 
-                    <div className="px-5 py-2.5 bg-[#FAF4FB] border-t border-[#F0ECE1] text-[11px] font-mono text-emerald-600 flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                      <span>Active Regional Cluster</span>
+                    <div className="pt-4 border-t border-[#E8D5EC] flex items-center justify-between text-xs text-[#0F1730]">
+                      <a
+                        href={`tel:${off.phone.replace(/[^+\d]/g, "")}`}
+                        className="flex items-center gap-2 text-xs font-semibold text-[#0F1730] group-hover:text-[#61126E] transition-colors"
+                      >
+                        <Phone className="w-3.5 h-3.5 text-[#61126E]" />
+                        <span>{off.phone}</span>
+                      </a>
+                      <span className="text-[11px] text-[#863A94] font-medium">
+                        {off.zone}
+                      </span>
                     </div>
                   </div>
                 ))}

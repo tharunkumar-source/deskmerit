@@ -92,9 +92,9 @@ export function AttendanceTrackingPage() {
       <DeskmeritHeader />
 
       <main>
-        {/* SECTION 1: Deep Navy Hero (Sqalible Screenshot 1) */}
-        <section className="bg-[#0A0F1D] text-white pt-10 pb-20 lg:pt-16 lg:pb-28 border-b border-[#24305A] relative overflow-hidden">
-          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#38BDF8]/10 rounded-full blur-[140px] pointer-events-none" />
+        {/* SECTION 1: Brand Dark Hero */}
+        <section className="bg-gradient-to-b from-[#180C24] via-[#12081B] to-[#180C24] text-white pt-10 pb-20 lg:pt-16 lg:pb-28 border-b border-[#2A1433] relative overflow-hidden">
+          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#61126E]/20 rounded-full blur-[140px] pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb matching Reference */}
@@ -108,31 +108,31 @@ export function AttendanceTrackingPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Copy */}
-              <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                   WORKFORCE PRESENCE · ZERO BIOMETRICS
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-[1.28] sm:leading-[1.25] text-white mb-6">
                   Attendance that reflects real work,{" "}
                   <span className="text-[#D8B4FE]">not just a login.</span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl mb-6">
                   Deskmerit computes daily attendance from tracked work, accepted calendar meetings, and manually logged off-computer sessions — so team members in client workshops all day are never marked absent.
                 </p>
 
                 <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                   <Link
                     to="/signup"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Start free trial</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 ml-0.5" />
                   </Link>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-white/10 hover:bg-white text-white hover:text-[#0F1730] font-bold text-xs sm:text-sm border border-white/20 hover:border-white transition-all cursor-pointer whitespace-nowrap shrink-0 shadow-sm backdrop-blur-xs"
                   >
                     <span>Book a demo</span>
                   </Link>
@@ -225,10 +225,10 @@ export function AttendanceTrackingPage() {
         </section>
 
         {/* SECTION 3: Deep Dark Section "How Attendance Operates in Practice" (Architectural Line-Divided Segmented Grid) */}
-        <section className="py-20 lg:py-28 bg-[#0A0F1D] text-white border-b border-[#24305A]">
+        <section className="py-20 lg:py-28 bg-[#140A1C] text-white border-b border-[#2A1433]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-16">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2 font-mono">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-2">
                 AUTOMATED VERIFICATION
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
@@ -240,11 +240,11 @@ export function AttendanceTrackingPage() {
             </div>
 
             {/* Architectural Line-Divided Segmented Grid (Matching Sqalible Reference) */}
-            <div className="border-t border-b border-slate-800">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-800">
+            <div className="border-t border-b border-[#2A1433]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#2A1433]">
                 {/* Step 1 */}
                 <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                  <div className="text-xs font-bold font-mono text-[#61126E] mb-4">STEP 01</div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-4">STEP 01</div>
                   <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
                     Passive Work Ingestion
                   </h3>
@@ -255,7 +255,7 @@ export function AttendanceTrackingPage() {
 
                 {/* Step 2 */}
                 <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                  <div className="text-xs font-bold font-mono text-[#61126E] mb-4">STEP 02</div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-4">STEP 02</div>
                   <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
                     Calendar Meeting Blend
                   </h3>
@@ -266,7 +266,7 @@ export function AttendanceTrackingPage() {
 
                 {/* Step 3 */}
                 <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                  <div className="text-xs font-bold font-mono text-[#61126E] mb-4">STEP 03</div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-4">STEP 03</div>
                   <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
                     Threshold Evaluation
                   </h3>
@@ -277,7 +277,7 @@ export function AttendanceTrackingPage() {
 
                 {/* Step 4 */}
                 <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                  <div className="text-xs font-bold font-mono text-[#61126E] mb-4">STEP 04</div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-4">STEP 04</div>
                   <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
                     HRMS & Payroll Feed
                   </h3>

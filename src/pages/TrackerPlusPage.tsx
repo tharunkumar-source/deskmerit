@@ -70,11 +70,11 @@ export function TrackerPlusPage() {
       <DeskmeritHeader />
 
       <main>
-        {/* SECTION 1: Deep Navy Hero Matching Sqalible Screenshot 1 */}
-        <section className="bg-[#0A0F1D] text-white pt-10 pb-20 lg:pt-16 lg:pb-28 border-b border-[#24305A] relative overflow-hidden">
+        {/* SECTION 1: Brand Dark Hero */}
+        <section className="bg-gradient-to-b from-[#180C24] via-[#12081B] to-[#180C24] text-white pt-10 pb-20 lg:pt-16 lg:pb-28 border-b border-[#2A1433] relative overflow-hidden">
           {/* Subtle glow / mesh in background */}
-          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#61126E]/10 rounded-full blur-[140px] pointer-events-none" />
-          <div className="absolute -bottom-20 right-0 w-[400px] h-[400px] bg-[#38BDF8]/10 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#61126E]/20 rounded-full blur-[140px] pointer-events-none" />
+          <div className="absolute -bottom-20 right-0 w-[400px] h-[400px] bg-[#A81CD0]/15 rounded-full blur-[120px] pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb matching Reference */}
@@ -88,37 +88,37 @@ export function TrackerPlusPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Copy */}
-              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full space-y-6">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                   FLAGSHIP INNOVATION · MULTI-TOOL TRACKER
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-[1.28] sm:leading-[1.25] text-white mb-6">
                   Pick a task. Press Start.{" "}
                   <span className="text-[#D8B4FE]">Everything else is automatic.</span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl mb-6">
                   Other trackers treat Jira as an afterthought. Tracker Plus lets your team start time straight from the Jira, Azure DevOps, or OpenProject ticket. One click logs time, marks attendance, and updates billable reports.
                 </p>
 
                 <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                   <Link
                     to="/signup"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Start free trial</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 ml-0.5" />
                   </Link>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-white/10 hover:bg-white text-white hover:text-[#0F1730] font-bold text-xs sm:text-sm border border-white/20 hover:border-white transition-all cursor-pointer whitespace-nowrap shrink-0 shadow-sm backdrop-blur-xs"
                   >
                     <span>Book a demo</span>
                   </Link>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-[#9AA1B2] pt-2">
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-[#9AA1B2] mt-6 sm:mt-8">
                   <span className="flex items-center gap-1.5">
                     <Check className="w-4 h-4 text-[#12B886]" /> No second login
                   </span>
@@ -226,10 +226,10 @@ export function TrackerPlusPage() {
         </section>
 
         {/* SECTION 3: Deep Dark Section "How Tracker Plus Operates In Practice" (Architectural Line-Divided Segmented Grid) */}
-        <section className="py-20 lg:py-28 bg-[#0A0F1D] text-white border-b border-[#24305A]">
+        <section className="py-20 lg:py-28 bg-[#140A1C] text-white border-b border-[#2A1433]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-16">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-2">
                 TECHNICAL EXECUTION PIPELINE
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
@@ -241,11 +241,11 @@ export function TrackerPlusPage() {
             </div>
 
             {/* Architectural Line-Divided Segmented Grid (Matching Reference) */}
-            <div className="border-t border-b border-slate-800">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-800">
+            <div className="border-t border-b border-[#2A1433]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#2A1433]">
                 {/* Step 1 */}
                 <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                  <div className="inline-block px-2.5 py-0.5 rounded bg-[#61126E]/40 border border-[#A81CD0]/50 text-xs font-bold font-mono text-[#F0ABFC] mb-4">STEP 01</div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-4">STEP 01</div>
                   <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
                     Trigger / Initiation
                   </h3>
@@ -256,7 +256,7 @@ export function TrackerPlusPage() {
 
                 {/* Step 2 */}
                 <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                  <div className="inline-block px-2.5 py-0.5 rounded bg-[#61126E]/40 border border-[#A81CD0]/50 text-xs font-bold font-mono text-[#F0ABFC] mb-4">STEP 02</div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-4">STEP 02</div>
                   <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
                     Policy Validation & Routing
                   </h3>
@@ -267,7 +267,7 @@ export function TrackerPlusPage() {
 
                 {/* Step 3 */}
                 <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                  <div className="inline-block px-2.5 py-0.5 rounded bg-[#61126E]/40 border border-[#A81CD0]/50 text-xs font-bold font-mono text-[#F0ABFC] mb-4">STEP 03</div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-4">STEP 03</div>
                   <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
                     Execution & Offline Telemetry
                   </h3>
@@ -278,7 +278,7 @@ export function TrackerPlusPage() {
 
                 {/* Step 4 */}
                 <div className="py-10 px-6 sm:px-8 flex flex-col justify-start hover:bg-white/[0.02] transition-colors group">
-                  <div className="inline-block px-2.5 py-0.5 rounded bg-[#61126E]/40 border border-[#A81CD0]/50 text-xs font-bold font-mono text-[#F0ABFC] mb-4">STEP 04</div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-4">STEP 04</div>
                   <h3 className="text-lg sm:text-xl font-bold text-white leading-snug mb-3">
                     Central Sync & Ledger Stamp
                   </h3>
@@ -306,9 +306,9 @@ export function TrackerPlusPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Persona 1: Engineering */}
               <div className="p-8 rounded-2xl bg-white border border-[#E8D5EC] shadow-card">
-                <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-[#F6EDF8] text-[#4E0E58] mb-4 inline-block">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-3">
                   For Engineering Teams
-                </span>
+                </div>
                 <h3 className="text-xl font-bold text-[#0F1730] mb-2">
                   Zero Friday Timesheet Anxiety
                 </h3>
@@ -319,9 +319,9 @@ export function TrackerPlusPage() {
 
               {/* Persona 2: Delivery */}
               <div className="p-8 rounded-2xl bg-white border border-[#E8D5EC] shadow-card">
-                <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-[#E0F2FE] text-[#0369A1] mb-4 inline-block">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-3">
                   For Delivery Leads
-                </span>
+                </div>
                 <h3 className="text-xl font-bold text-[#0F1730] mb-2">
                   Real-Time Burn-Down Clarity
                 </h3>
@@ -332,9 +332,9 @@ export function TrackerPlusPage() {
 
               {/* Persona 3: Finance */}
               <div className="p-8 rounded-2xl bg-white border border-[#E8D5EC] shadow-card">
-                <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-[#D1FAE5] text-[#065F46] mb-4 inline-block">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-3">
                   For Finance & Billing
-                </span>
+                </div>
                 <h3 className="text-xl font-bold text-[#0F1730] mb-2">
                   100% Defensible Invoices
                 </h3>

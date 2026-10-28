@@ -120,29 +120,29 @@ function AiLiveInterviewFlagshipView({
       />
 
       {/* Verified Buyer Outcomes & Metric Strip */}
-      <section className="border-y border-neutral-800 bg-[#06090F] text-white py-6" aria-label="Buyer Performance Outcomes">
+      <section className="border-y border-[#2A1433] bg-[#140A1C] text-white py-6" aria-label="Buyer Performance Outcomes">
         <div className="mx-auto max-w-7xl px-6">
           <dl className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <dd className="text-2xl sm:text-3xl font-extrabold text-teal-400 font-mono tabular-nums">70% faster</dd>
+              <dd className="text-2xl sm:text-3xl font-extrabold text-teal-400 font-display tabular-nums">70% faster</dd>
               <dt className="mt-1 text-xs text-neutral-300 uppercase tracking-wider font-medium">
                 Time-to-shortlist <sup className="text-[10px] text-teal-300 font-bold" title="Time from applicant submission to qualified hiring manager scorecard drops from 14 days to 4.2 days">[1]</sup>
               </dt>
             </div>
             <div>
-              <dd className="text-2xl sm:text-3xl font-extrabold text-teal-400 font-mono tabular-nums">15+ hrs/wk</dd>
+              <dd className="text-2xl sm:text-3xl font-extrabold text-teal-400 font-display tabular-nums">15+ hrs/wk</dd>
               <dt className="mt-1 text-xs text-neutral-300 uppercase tracking-wider font-medium">
                 Recruiter hours saved <sup className="text-[10px] text-teal-300 font-bold" title="Saved per talent acquisition partner on initial screening and calendar coordination calls">[2]</sup>
               </dt>
             </div>
             <div>
-              <dd className="text-2xl sm:text-3xl font-extrabold text-teal-400 font-mono tabular-nums">94.8%</dd>
+              <dd className="text-2xl sm:text-3xl font-extrabold text-teal-400 font-display tabular-nums">94.8%</dd>
               <dt className="mt-1 text-xs text-neutral-300 uppercase tracking-wider font-medium">
                 Candidate completion rate <sup className="text-[10px] text-teal-300 font-bold" title="Measured across 24/7 self-scheduled autonomous interview links">[3]</sup>
               </dt>
             </div>
             <div>
-              <dd className="text-2xl sm:text-3xl font-extrabold text-teal-400 font-mono tabular-nums">99.4%</dd>
+              <dd className="text-2xl sm:text-3xl font-extrabold text-teal-400 font-display tabular-nums">99.4%</dd>
               <dt className="mt-1 text-xs text-neutral-300 uppercase tracking-wider font-medium">
                 Rubric scoring consistency <sup className="text-[10px] text-teal-300 font-bold" title="Statistical parity audits demonstrating consistent evaluation across demographic cohorts">[4]</sup>
               </dt>
@@ -496,8 +496,10 @@ function AiWorkforceIntelligenceView({ stage }: { stage: LifecycleStage; slug?: 
       <section className="bg-[#0B0F19] py-14 md:py-20 text-white">
         <div className="mx-auto max-w-7xl px-6">
           <div className="w-full mb-10">
-            <div className="inline-block px-3.5 py-1 rounded-full bg-[#61126E]/40 border border-[#A81CD0]/50 text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] shadow-xs mb-3">Step-by-Step Architecture</div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
+              Step-by-Step Architecture
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-[1.28] sm:leading-[1.25]">
               How Sqalible Intelligence Operates in Practice
             </h3>
             <p className="mt-2 text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-3xl">
@@ -729,8 +731,10 @@ function ModuleDetailView({
       <section className="bg-[#0B0F19] py-14 md:py-20 text-white">
         <div className="mx-auto max-w-7xl px-6">
           <div className="w-full mb-10">
-            <div className="inline-block px-3.5 py-1 rounded-full bg-[#61126E]/40 border border-[#A81CD0]/50 text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] shadow-xs mb-3">Step-by-Step Process</div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
+              Step-by-Step Process
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-[1.28] sm:leading-[1.25]">
               How {mod.title} Operates in Practice
             </h3>
             <p className="mt-2 text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-3xl">
@@ -1103,7 +1107,7 @@ function PlatformOverviewView() {
                       <span>Explore {stage.label} Architecture</span>
                       <ArrowRightIcon size={13} />
                     </Link>
-                    <span className="text-[11px] text-neutral-400 font-mono">
+                    <span className="text-[11px] text-neutral-400 font-display">
                       {stage.modules.length} modules
                     </span>
                   </div>

@@ -14,7 +14,7 @@ export function PageCta({
   return (
     <section className={className} aria-labelledby="page-cta-title">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-start justify-between gap-8 rounded-[24px] bg-[#0F1730] px-8 py-10 md:flex-row md:items-center md:px-12 shadow-elevated border border-[#24305A] relative overflow-hidden">
+        <div className="flex flex-col items-start justify-between gap-8 rounded-[24px] bg-gradient-to-r from-[#180C24] via-[#12081B] to-[#180C24] px-8 py-10 md:flex-row md:items-center md:px-12 shadow-elevated border border-[#2A1433] relative overflow-hidden">
           <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 opacity-15 pointer-events-none">
             <svg width="350" height="350" viewBox="0 0 64 64" fill="none">
               <path
@@ -28,8 +28,10 @@ export function PageCta({
           </div>
 
           <div className="flex-1 relative z-10">
-            <div className="inline-block px-3 py-1 rounded-full bg-[#61126E]/40 border border-[#A81CD0]/50 text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] shadow-xs mb-2">Time tracking people trust</div>
-            <h2 id="page-cta-title" className="text-2xl sm:text-3xl font-extrabold text-white">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
+              Time tracking people trust
+            </div>
+            <h2 id="page-cta-title" className="text-2xl sm:text-3xl font-extrabold text-white tracking-[-0.02em] leading-[1.28] sm:leading-[1.25]">
               {title}
             </h2>
             <p className="text-xs sm:text-sm text-[#9AA1B2] mt-1.5 max-w-xl">

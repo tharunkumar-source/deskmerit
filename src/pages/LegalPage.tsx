@@ -88,11 +88,11 @@ export function LegalPage() {
       <DeskmeritHeader />
 
       <main>
-        {/* Standard Consistent Dark Hero */}
-        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
+        {/* Standard Consistent Brand Dark Hero */}
+        <section className="bg-gradient-to-b from-[#180C24] via-[#12081B] to-[#180C24] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
           {/* Dual Radial Glows */}
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#24305A]/40 blur-[120px] rounded-full pointer-events-none" />
-          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#61126E]/10 blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#61126E]/20 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#A81CD0]/15 blur-[100px] rounded-full pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
@@ -106,14 +106,14 @@ export function LegalPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Heading & Pitch */}
-              <div className="lg:col-span-7 space-y-6">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
+              <div className="lg:col-span-7">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                   DESKMERIT LEGAL GOVERNANCE
                 </div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-[1.28] sm:leading-[1.25] text-white mb-6">
                   {title} <span className="text-[#D8B4FE]">& Compliance Standards.</span>
                 </h1>
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl mb-6">
                   {subtitle} Operated by Kombee Technologies (India) Pvt. Ltd. Structured for corporate integrity, data minimization, and cross-border statutory compliance.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-2">
@@ -125,11 +125,12 @@ export function LegalPage() {
                     }}
                     className="px-6 py-3.5 rounded-[12px] bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-sm shadow-lg hover:shadow-glow-ember transition-all inline-flex items-center gap-2 cursor-pointer"
                   >
-                    Print or save PDF <Download className="w-4 h-4" />
+                    <span>Print or save PDF</span>
+                    <Download className="w-4 h-4 ml-0.5" />
                   </a>
                   <Link
                     to="/privacy-promise"
-                    className="px-6 py-3.5 rounded-[12px] bg-[#10192A] border border-slate-700 hover:border-slate-500 text-white font-semibold text-sm transition-all"
+                    className="px-6 py-3.5 rounded-[12px] bg-white/10 hover:bg-white text-white hover:text-[#0F1730] border border-white/20 hover:border-white font-semibold text-sm transition-all cursor-pointer shadow-sm backdrop-blur-xs"
                   >
                     Privacy Promise & Security
                   </Link>
@@ -152,16 +153,16 @@ export function LegalPage() {
         </section>
 
         {/* Legal Document Content Card */}
-        <section className="py-12 lg:py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#FFFFFF] rounded-[24px] p-8 sm:p-12 border border-[#E8D5EC] shadow-card space-y-8">
+        <section className="py-12 lg:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-[#FFFFFF] rounded-[24px] p-8 sm:p-14 border border-[#E8D5EC] shadow-card space-y-8">
             <div className="border-b border-[#E8D5EC] pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-[#61126E] block mb-1">
                   Deskmerit Legal Governance
                 </span>
-                <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0F1730]">{title}</h1>
-                <p className="text-xs text-[#4A5370] mt-1.5">{subtitle}</p>
-                <div className="text-[11px] text-[#9AA1B2] mt-2">
+                <h1 className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-[#0F1730] tracking-tight">{title}</h1>
+                <p className="text-sm sm:text-base text-[#4A5370] mt-2 font-normal leading-relaxed">{subtitle}</p>
+                <div className="text-xs sm:text-sm text-[#9AA1B2] mt-2.5 font-medium">
                   Effective Date: October 2026 · Kombee Technologies (India) Pvt. Ltd.
                 </div>
               </div>
@@ -172,33 +173,33 @@ export function LegalPage() {
                   e.preventDefault();
                   window.print();
                 }}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#FAF4FB] hover:bg-[#E8D5EC] text-xs font-bold text-[#0F1730] shrink-0 self-start transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#FAF4FB] hover:bg-[#E8D5EC] text-xs sm:text-sm font-bold text-[#0F1730] shrink-0 self-start md:self-center transition-colors border border-[#E8D5EC]"
               >
-                <Download className="w-3.5 h-3.5" /> Print / Save PDF
+                <Download className="w-4 h-4 text-[#61126E]" /> Print / Save PDF
               </a>
             </div>
 
             {/* Document Body depending on active legal slug */}
             {activeDoc === "subprocessors" ? (
-              <div className="space-y-4">
-                <p className="text-xs text-[#4A5370] leading-relaxed">
+              <div className="space-y-6">
+                <p className="text-sm sm:text-base text-[#4A5370] leading-relaxed">
                   Deskmerit utilizes the following third-party infrastructure and sub-processors to deliver high-availability services. Each vendor undergoes strict security, SOC 2, and DPA reviews:
                 </p>
                 <div className="overflow-x-auto pt-2">
-                  <table className="w-full text-left text-xs border border-[#E8D5EC] rounded-xl overflow-hidden">
+                  <table className="w-full text-left text-sm sm:text-base border border-[#E8D5EC] rounded-xl overflow-hidden">
                     <thead className="bg-[#FAF4FB] text-[#0F1730]">
                       <tr className="border-b border-[#E8D5EC]">
-                        <th className="py-3 px-4 font-bold">Sub-processor</th>
-                        <th className="py-3 px-4 font-bold">Purpose</th>
-                        <th className="py-3 px-4 font-bold">Location</th>
+                        <th className="py-3.5 px-5 font-bold">Sub-processor</th>
+                        <th className="py-3.5 px-5 font-bold">Purpose</th>
+                        <th className="py-3.5 px-5 font-bold">Location</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-[#E8D5EC] text-[#4A5370]">
                       {subprocessors.map((s, idx) => (
-                        <tr key={idx}>
-                          <td className="py-3 px-4 font-semibold text-[#0F1730]">{s.name}</td>
-                          <td className="py-3 px-4">{s.purpose}</td>
-                          <td className="py-3 px-4">{s.location}</td>
+                        <tr key={idx} className="hover:bg-[#FAF4FB]/40 transition-colors">
+                          <td className="py-3.5 px-5 font-semibold text-[#0F1730]">{s.name}</td>
+                          <td className="py-3.5 px-5">{s.purpose}</td>
+                          <td className="py-3.5 px-5">{s.location}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -206,20 +207,20 @@ export function LegalPage() {
                 </div>
               </div>
             ) : activeDoc === "sla" ? (
-              <div className="space-y-6 text-xs text-[#4A5370] leading-relaxed">
+              <div className="space-y-8 text-sm sm:text-base text-[#4A5370] leading-relaxed">
                 <div>
-                  <h3 className="text-base font-bold text-[#0F1730] mb-1.5">1. 99.9% Monthly Uptime Commitment</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0F1730] mb-2.5">1. 99.9% Monthly Uptime Commitment</h3>
                   <p>
                     Deskmerit commits to providing at least 99.9% uptime availability for the cloud syncing API and web reporting platform across each calendar month.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-base font-bold text-[#0F1730] mb-1.5">2. Service Credits</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0F1730] mb-2.5">2. Service Credits</h3>
                   <p>
                     If monthly uptime falls below 99.9%, customers are entitled to service credits on their next billing cycle:
                   </p>
-                  <ul className="list-disc pl-5 mt-2 space-y-1">
+                  <ul className="list-disc pl-6 mt-3 space-y-1.5">
                     <li>99.0% to 99.89%: 10% credit of monthly billing</li>
                     <li>95.0% to 98.99%: 25% credit of monthly billing</li>
                     <li>Below 95.0%: 50% credit of monthly billing</li>
@@ -227,7 +228,7 @@ export function LegalPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-base font-bold text-[#0F1730] mb-1.5">3. Recovery Point & Recovery Time</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0F1730] mb-2.5">3. Recovery Point & Recovery Time</h3>
                   <p>
                     • Recovery Point Objective (RPO): 15 minutes via continuous encrypted WAL streaming.
                     <br />
@@ -236,73 +237,71 @@ export function LegalPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-base font-bold text-[#0F1730] mb-1.5">4. Local Offline Resilience</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0F1730] mb-2.5">4. Local Offline Resilience</h3>
                   <p>
                     Because the Deskmerit desktop agent operates fully offline, local time recording and task capture continue without interruption even during upstream network outages.
                   </p>
                 </div>
               </div>
             ) : activeDoc === "privacy" ? (
-              <div className="space-y-6 text-xs text-[#4A5370] leading-relaxed">
+              <div className="space-y-8 text-sm sm:text-base text-[#4A5370] leading-relaxed">
                 <div>
-                  <h3 className="text-base font-bold text-[#0F1730] mb-1.5">1. Purpose Limitation & Data Minimization</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0F1730] mb-2.5">1. Purpose Limitation & Data Minimization</h3>
                   <p>
                     We collect only the telemetry strictly required to attribute work time to client projects and verify active work hours. We do not inspect personal emails, bank accounts, or non-work applications.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-base font-bold text-[#0F1730] mb-1.5">2. Non-Negotiable Privacy Tenets</h3>
-                  <p>
-                    • No Keystroke Logging: We never record typed keys or passwords.
-                    <br />
-                    • No Secret Webcam or Microphone Access: The application contains zero audio/video capture hardware hooks.
-                    <br />
-                    • Screenshots Blurred by Default: Screenshots are optional, announced, and blurred by default.
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0F1730] mb-2.5">2. Non-Negotiable Privacy Tenets</h3>
+                  <p className="space-y-2">
+                    <span className="block">• <strong className="text-[#0F1730]">No Keystroke Logging:</strong> We never record typed keys or passwords.</span>
+                    <span className="block">• <strong className="text-[#0F1730]">No Secret Webcam or Microphone Access:</strong> The application contains zero audio/video capture hardware hooks.</span>
+                    <span className="block">• <strong className="text-[#0F1730]">Screenshots Blurred by Default:</strong> Screenshots are optional, announced, and blurred by default.</span>
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-base font-bold text-[#0F1730] mb-1.5">3. Employee Private Time</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0F1730] mb-2.5">3. Employee Private Time</h3>
                   <p>
                     Every team member retains unilateral control to activate Private Time with one click. When Private Time is active, all monitoring is paused entirely and no data is transmitted to managers.
                   </p>
                 </div>
               </div>
             ) : activeDoc === "cookies" ? (
-              <div className="space-y-6 text-xs text-[#4A5370] leading-relaxed">
+              <div className="space-y-8 text-sm sm:text-base text-[#4A5370] leading-relaxed">
                 <div>
-                  <h3 className="text-base font-bold text-[#0F1730] mb-1.5">1. Essential Authentication Tokens</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0F1730] mb-2.5">1. Essential Authentication Tokens</h3>
                   <p>
                     We use secure HTTP-only cookies strictly for user session state, SAML single sign-on authentication, and CSRF protection. These cannot be disabled.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-base font-bold text-[#0F1730] mb-1.5">2. Analytics & Preferences</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0F1730] mb-2.5">2. Analytics & Preferences</h3>
                   <p>
                     We store your preferred currency (INR, AUD, NZD, AED, SAR, USD) and UI density locally in browser storage to provide a seamless browsing experience.
                   </p>
                 </div>
               </div>
             ) : (
-              <div className="space-y-6 text-xs text-[#4A5370] leading-relaxed">
+              <div className="space-y-8 text-sm sm:text-base text-[#4A5370] leading-relaxed">
                 <div>
-                  <h3 className="text-base font-bold text-[#0F1730] mb-1.5">1. License & Subscription</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0F1730] mb-2.5">1. License & Subscription</h3>
                   <p>
                     Deskmerit licenses its desktop tracking client and web reporting suite on a per-active-seat subscription basis. Subscriptions renew automatically until cancelled.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-base font-bold text-[#0F1730] mb-1.5">2. Acceptable Use Policy</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0F1730] mb-2.5">2. Acceptable Use Policy</h3>
                   <p>
                     The software must be deployed in accordance with applicable labor laws. Employers are responsible for providing mandatory statutory employee notices (such as the 14-day notice required under NSW Workplace Surveillance laws or DPDP Act notices in India).
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-base font-bold text-[#0F1730] mb-1.5">3. Data Ownership & Deletion</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0F1730] mb-2.5">3. Data Ownership & Deletion</h3>
                   <p>
                     Customer retains full and unencumbered ownership of all tracked records. Upon termination of service, customers may request complete cryptographic erasure of all stored databases and backups within 30 days.
                   </p>

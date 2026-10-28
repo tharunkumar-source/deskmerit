@@ -21,7 +21,7 @@ export function StatsBand() {
                 key={stat.label}
                 className={`p-6 text-center ${i % 2 === 0 ? "border-r border-neutral-700" : ""} ${i < 2 ? "border-b border-neutral-700" : ""}`}
               >
-                <dd className="text-3xl sm:text-4xl font-bold text-teal-300 font-mono tabular-nums tracking-tight">
+                <dd className="text-3xl sm:text-4xl font-bold text-teal-300 font-display tabular-nums tracking-tight">
                   {stat.value}
                 </dd>
                 <dt className="mt-2 text-xs sm:text-sm text-neutral-300 font-medium leading-snug">

@@ -37,15 +37,15 @@ export function AiVsLegacySection() {
   ];
 
   return (
-    <section id="why" className="border-b border-[#E8D5EC] bg-[#FFFFFF] py-20" aria-labelledby="why-title">
+    <section id="why" className="border-b border-[#E8D5EC] bg-[#FFFFFF] py-20 lg:py-28" aria-labelledby="why-title">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
           <div className="flex-1">
-            <p className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-2">
-              Architectural Benchmark
+            <p className="text-xs font-bold uppercase tracking-wider text-[#61126E] mb-3">
+              ARCHITECTURAL BENCHMARK
             </p>
-            <h2 id="why-title" className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-tight">
+            <h2 id="why-title" className="text-3xl sm:text-4xl font-extrabold text-[#0F1730] tracking-[-0.025em] leading-[1.28] sm:leading-[1.25]">
               Trust-First Tracker vs Legacy Surveillance Software
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-[#4A5370] max-w-2xl leading-relaxed">
@@ -63,11 +63,11 @@ export function AiVsLegacySection() {
 
         {/* Mobile Swipe Notice */}
         <div className="sm:hidden flex items-center justify-between text-[11px] text-[#4A5370] font-medium mb-3 px-1">
-          <span className="flex items-center gap-1.5 font-mono">
+          <span className="flex items-center gap-1.5 font-display">
             <span className="w-1.5 h-1.5 rounded-full bg-[#61126E] animate-pulse" />
             <span>Swipe horizontally to compare</span>
           </span>
-          <span className="text-slate-400 font-mono text-[10px]">← 3 COLUMNS →</span>
+          <span className="text-slate-400 font-display text-[10px]">← 3 COLUMNS →</span>
         </div>
 
         {/* 3-Column Table with Mobile Horizontal Scroll */}
@@ -85,7 +85,7 @@ export function AiVsLegacySection() {
                 <span className="text-white text-xs sm:text-sm font-extrabold tracking-tight">
                   Deskmerit (Trust-First)
                 </span>
-                <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider text-white bg-white/20 px-2 py-0.5 rounded-md shadow-xs">
+                <span className="inline-flex items-center gap-1 text-[10px] font-display font-bold uppercase tracking-wider text-white bg-white/20 px-2 py-0.5 rounded-md shadow-xs">
                   Recommended
                 </span>
               </div>

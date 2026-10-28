@@ -314,8 +314,10 @@ export function SolutionPage() {
         <section className="bg-[#0B0F19] py-14 md:py-20 text-white">
           <div className="mx-auto max-w-7xl px-6">
             <div className="w-full mb-10">
-              <div className="inline-block px-3.5 py-1 rounded-full bg-[#61126E]/40 border border-[#A81CD0]/50 text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] shadow-xs mb-3">Core Challenges Solved</div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
+                Core Challenges Solved
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-[1.28] sm:leading-[1.25]">
                 Addressing Critical Friction for {solution.name.replace(/^For /, "")}
               </h3>
               <p className="mt-2 text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-3xl">

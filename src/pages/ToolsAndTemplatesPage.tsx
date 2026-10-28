@@ -60,11 +60,11 @@ export function ToolsAndTemplatesPage() {
       <DeskmeritHeader />
 
       <main>
-        {/* Standard Consistent Dark Hero */}
-        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
+        {/* Standard Consistent Brand Dark Hero */}
+        <section className="bg-gradient-to-b from-[#180C24] via-[#12081B] to-[#180C24] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
           {/* Dual Radial Glows */}
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#24305A]/40 blur-[120px] rounded-full pointer-events-none" />
-          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#61126E]/10 blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#61126E]/20 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#A81CD0]/15 blur-[100px] rounded-full pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
@@ -86,11 +86,11 @@ export function ToolsAndTemplatesPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Heading & Pitch */}
-              <div className="lg:col-span-7 space-y-6">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
+              <div className="lg:col-span-7">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                   {isTimesheet || isPolicy ? "FREE COMPLIANCE TEMPLATE" : "FREE PRODUCTIVITY TOOL"}
                 </div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-[1.28] sm:leading-[1.25] text-white mb-6">
                   {isOvertime ? (
                     <>
                       Work out overtime hours & pay <span className="text-[#D8B4FE]">with statutory accuracy.</span>
@@ -109,7 +109,7 @@ export function ToolsAndTemplatesPage() {
                     </>
                   )}
                 </h1>
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl mb-6">
                   {isOvertime
                     ? "Calculate overtime hours, standard thresholds, and overtime multipliers (1.5x, 2.0x) with regional support for India, Australia, NZ, and the Middle East."
                     : isTimesheet
@@ -121,14 +121,14 @@ export function ToolsAndTemplatesPage() {
                 <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                   <Link
                     to="/signup"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-lg hover:shadow-glow-ember transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-lg hover:shadow-glow-ember transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Start free trial</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 ml-0.5" />
                   </Link>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-white/10 hover:bg-white text-white hover:text-[#0F1730] font-bold text-xs sm:text-sm border border-white/20 hover:border-white transition-all cursor-pointer whitespace-nowrap shrink-0 shadow-sm backdrop-blur-xs"
                   >
                     <span>Book a demo</span>
                   </Link>
@@ -161,7 +161,7 @@ export function ToolsAndTemplatesPage() {
         </section>
 
         {/* Content depending on active tab */}
-        <section className="py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {!isOvertime && !isTimesheet && !isPolicy && (
             /* UTILISATION CALCULATOR */
             <div className="bg-[#FFFFFF] rounded-[24px] p-8 sm:p-12 border border-[#E8D5EC] shadow-card space-y-8">
@@ -353,7 +353,7 @@ export function ToolsAndTemplatesPage() {
                         <td>Acme Retail (Checkout API)</td>
                         <td>09:00</td>
                         <td>17:30</td>
-                        <td className="font-mono">8.0h</td>
+                        <td className="font-semibold">8.0h</td>
                         <td className="text-[#12B886]">Yes</td>
                       </tr>
                       <tr>
@@ -361,7 +361,7 @@ export function ToolsAndTemplatesPage() {
                         <td>Northwind (Pipeline fix)</td>
                         <td>09:30</td>
                         <td>18:00</td>
-                        <td className="font-mono">8.0h</td>
+                        <td className="font-semibold">8.0h</td>
                         <td className="text-[#12B886]">Yes</td>
                       </tr>
                     </tbody>
@@ -372,7 +372,7 @@ export function ToolsAndTemplatesPage() {
                   <button
                     type="button"
                     onClick={() => alert("Downloaded Weekly_Timesheet_Template.csv")}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#0F1730] text-white text-xs font-bold hover:bg-[#24305A] transition-colors"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#0F1730] text-white text-xs font-bold hover:bg-[#61126E] transition-colors"
                   >
                     <Download className="w-3.5 h-3.5" /> Download Template (.xlsx)
                   </button>
@@ -406,11 +406,11 @@ export function ToolsAndTemplatesPage() {
                 />
               </div>
 
-              <div className="p-6 rounded-2xl bg-[#0F1730] text-white font-mono text-xs leading-relaxed space-y-3 relative">
+              <div className="p-6 rounded-2xl bg-[#140A1C] border border-[#2A1433] text-white text-xs leading-relaxed space-y-3 relative">
                 <button
                   type="button"
                   onClick={handleCopyPolicy}
-                  className="absolute top-4 right-4 px-3 py-1.5 rounded-lg bg-[#24305A] hover:bg-[#61126E] text-white text-[11px] font-sans font-bold flex items-center gap-1.5 transition-colors"
+                  className="absolute top-4 right-4 px-3 py-1.5 rounded-lg bg-[#24122C] hover:bg-[#61126E] text-white text-[11px] font-sans font-bold flex items-center gap-1.5 transition-colors border border-[#3A1B45]"
                 >
                   {copiedPolicy ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                   {copiedPolicy ? "Copied!" : "Copy text"}

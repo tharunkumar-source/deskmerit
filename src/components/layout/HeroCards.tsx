@@ -126,7 +126,7 @@ export function HiringRequestsHeroCard() {
                 {/* Role / Title with bold title */}
                 <div className="col-span-4 min-w-0 pr-1">
                   <p className="font-bold text-[#1E293B] truncate leading-tight">{req.title}</p>
-                  <p className="text-[9px] text-[#64748B] font-mono">{req.roleCode}</p>
+                  <p className="text-[9px] text-[#64748B] font-display">{req.roleCode}</p>
                 </div>
 
                 {/* Department pill */}
@@ -518,7 +518,7 @@ export function IntegrationsHeroCard() {
       </div>
 
       {/* Webhook live feed in Horilla table style */}
-      <div className="rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] p-2 text-[9px] my-1 font-mono">
+      <div className="rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] p-2 text-[9px] my-1 font-display">
         <div className="flex items-center justify-between text-[#64748B] pb-1 border-b border-[#E2E8F0]">
           <span>REST & WEBHOOK TELEMETRY</span>
           <span className="text-[#047857] font-bold">HTTP 200 OK</span>

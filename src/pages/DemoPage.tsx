@@ -27,11 +27,11 @@ export function DemoPage() {
       <DeskmeritHeader />
 
       <main>
-        {/* Standard Consistent Dark Hero */}
-        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
+        {/* Standard Consistent Brand Dark Hero */}
+        <section className="bg-gradient-to-b from-[#180C24] via-[#12081B] to-[#180C24] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden">
           {/* Dual Radial Glows */}
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#24305A]/40 blur-[120px] rounded-full pointer-events-none" />
-          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#61126E]/10 blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#61126E]/20 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute -top-24 right-10 w-[400px] h-[250px] bg-[#A81CD0]/15 blur-[100px] rounded-full pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
@@ -45,18 +45,18 @@ export function DemoPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               {/* Left Column: Heading & Value Proposition */}
-              <div className="lg:col-span-5 space-y-6">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
+              <div className="lg:col-span-5">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                   20-MINUTE LIVE WALKTHROUGH
                 </div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-[1.28] sm:leading-[1.25] text-white mb-6">
                   See Deskmerit with your own workflow <span className="text-[#D8B4FE]">in 20 minutes.</span>
                 </h1>
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-6">
                   We will walk you through your exact setup — whether you're syncing Jira issues, configuring attendance for Sunday–Thursday shifts, or connecting Sqalible HRMS.
                 </p>
 
-                <div className="space-y-3 pt-2">
+                <div className="space-y-3.5 pt-2 mb-8">
                   {[
                     "Tracker Plus live demonstration with your own PM tool",
                     "Attendance rules tailored to your country and work week",
@@ -64,8 +64,8 @@ export function DemoPage() {
                     "Transparent proposal in your local currency (INR, AUD, NZD, AED, USD)",
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
-                      <span className="w-5 h-5 rounded-full bg-[#F6EDF8] text-[#D8B4FE] flex items-center justify-center shrink-0 mt-0.5 font-bold">
-                        <Check className="w-3.5 h-3.5 stroke-[2.5]" />
+                      <span className="w-5 h-5 rounded-full bg-white text-[#61126E] flex items-center justify-center shrink-0 mt-0.5 shadow-sm font-bold">
+                        <Check className="w-3.5 h-3.5 stroke-[3]" />
                       </span>
                       <span>{item}</span>
                     </div>

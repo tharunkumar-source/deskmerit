@@ -13,20 +13,20 @@ export function DeskmeritTrackerPlusSpotlight() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Copy & Checklist */}
-          <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
-            <div className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-white/10 border border-white/20 mb-2">
-              Flagship innovation
+          <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
+              FLAGSHIP INNOVATION
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-[-0.025em] leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-[-0.025em] leading-[1.28] sm:leading-[1.25] mb-6">
               Start the timer from the task. That's it.
             </h2>
 
-            <p className="text-base sm:text-lg text-purple-100/90 leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-purple-100/90 leading-relaxed font-normal mb-8 sm:mb-10">
               Most trackers treat your PM tool as one more integration to keep in sync. With Tracker Plus, the desktop agent shows each person the tasks they're assigned to across every connected tool. They pick one and press Start.
             </p>
 
-            <ul className="space-y-3.5 pt-2">
+            <ul className="space-y-3.5 mb-8 sm:mb-10">
               {[
                 "Jira, Azure DevOps and OpenProject, in any combination",
                 "Each employee's own access only — nothing they can't already see",

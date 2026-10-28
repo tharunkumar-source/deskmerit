@@ -102,10 +102,10 @@ export function PricingPage() {
       <DeskmeritHeader />
 
       <main>
-        {/* SECTION 1: Deep Navy Hero Matching Platform Standard with Product Showcase */}
-        <section className="bg-gradient-to-b from-[#0A1628] via-[#0D1D35] to-[#0A1628] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden mb-8">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#24305A]/40 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#61126E]/10 rounded-full blur-3xl pointer-events-none" />
+        {/* SECTION 1: Brand Dark Hero Matching Platform Standard with Product Showcase */}
+        <section className="bg-gradient-to-b from-[#180C24] via-[#12081B] to-[#180C24] text-white pt-8 pb-16 lg:pt-12 lg:pb-24 relative overflow-hidden mb-8">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#61126E]/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#A81CD0]/15 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
@@ -117,17 +117,17 @@ export function PricingPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column */}
-              <div className="col-span-1 lg:col-span-6 space-y-6 min-w-0 max-w-full w-full">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                   Transparent, Predictable Pricing
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-[1.28] sm:leading-[1.25] text-white mb-6">
                   Simple plans,{" "}
                   <span className="text-[#D8B4FE]">predictable pricing.</span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl mb-6">
                   Every plan starts with a 14-day full trial with every feature included. No credit card required. Flat seat pricing with zero lock-in contracts.
                 </p>
 
@@ -137,11 +137,11 @@ export function PricingPage() {
                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all"
                   >
                     <span>Start free 14-day trial</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 ml-0.5" />
                   </Link>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white text-white hover:text-[#0F1730] font-bold text-sm border border-white/20 hover:border-white transition-all cursor-pointer shadow-sm backdrop-blur-xs"
                   >
                     <span>Talk to sales</span>
                   </Link>
@@ -331,41 +331,42 @@ export function PricingPage() {
 
               <Link
                 to="/demo"
-                className="w-full py-3.5 rounded-xl bg-[#0F1730] hover:bg-[#1A264F] text-white font-bold text-xs text-center transition-all"
+                className="w-full py-3.5 rounded-xl bg-[#24122C] hover:bg-white text-white hover:text-[#0F1730] font-bold text-xs text-center border border-[#61126E]/50 hover:border-[#61126E] transition-all cursor-pointer shadow-sm"
               >
                 Talk to enterprise sales
               </Link>
             </div>
           </div>
 
-          {/* Sqalible HRMS Add-on Banner (Sqalible Screenshot 2) */}
-          <div className="mt-12 p-6 rounded-2xl bg-[#E6F4EA] border border-[#B7E1CD] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <span className="w-9 h-9 rounded-xl bg-[#12B886] text-white flex items-center justify-center shrink-0">
-                <Check className="w-5 h-5" />
+          {/* Sqalible HRMS Add-on Banner (White card matching platform standard) */}
+          <div className="mt-12 p-6 sm:p-8 rounded-2xl bg-white border border-[#E8D5EC] shadow-card flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <span className="w-10 h-10 rounded-xl bg-[#FAF4FB] border border-[#E8D5EC] text-[#61126E] flex items-center justify-center shrink-0 shadow-xs">
+                <Check className="w-5 h-5 stroke-[2.5]" />
               </span>
               <div>
-                <span className="text-xs font-bold text-[#0F1730] block">
+                <span className="text-base font-bold text-[#0F1730] block">
                   Already using Sqalible HRMS?
                 </span>
-                <span className="text-xs text-[#4A5370]">
+                <span className="text-xs sm:text-sm text-[#4A5370] leading-relaxed mt-0.5 block">
                   Turn Deskmerit on from your HRMS admin console. Billed as a single consolidated line-item on your Sqalible invoice.
                 </span>
               </div>
             </div>
             <Link
               to="/hrms-add-on"
-              className="text-xs font-bold text-[#0F1730] hover:text-[#12B886] flex items-center gap-1 shrink-0"
+              className="px-6 py-3 rounded-xl bg-[#24122C] hover:bg-white hover:text-[#0F1730] text-white font-bold text-xs shrink-0 transition-all flex items-center gap-1.5 shadow-sm border border-[#61126E]/50 hover:border-[#61126E] cursor-pointer"
             >
-              Explore HRMS add-on →
+              <span>Explore HRMS add-on</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
         </section>
 
-        {/* SECTION 3: Deep Dark Interactive Cost Calculator Card (Sqalible Screenshot 2) */}
-        <section className="py-16 sm:py-20 bg-[#0A0F1D] text-white border-b border-[#24305A]">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#111A33] rounded-[28px] p-8 sm:p-12 border border-[#24305A] shadow-2xl">
+        {/* SECTION 3: Brand Dark Interactive Cost Calculator Card */}
+        <section className="py-16 sm:py-20 bg-[#140A1C] text-white border-b border-[#2A1433]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-[#1C0F27] rounded-[28px] p-8 sm:p-12 border border-[#2A1433] shadow-2xl">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 {/* Left: Interactive Controls */}
                 <div className="lg:col-span-7 space-y-6">
@@ -387,7 +388,7 @@ export function PricingPage() {
                       className={`px-4 py-1.5 rounded-xl text-xs font-bold transition-all ${
                         selectedPlanForCalc === "pro"
                           ? "bg-[#61126E] text-white font-extrabold shadow-sm border border-[#A81CD0] shadow-[0_0_15px_rgba(168,85,247,0.35)]"
-                          : "bg-[#1A264F] text-white border border-[#2B3969]"
+                          : "bg-[#24122C] text-white border border-[#3A1B45] hover:border-[#61126E]"
                       }`}
                     >
                       Pro Plan ({currency.symbol}{proRate}/mo)
@@ -398,7 +399,7 @@ export function PricingPage() {
                       className={`px-4 py-1.5 rounded-xl text-xs font-bold transition-all ${
                         selectedPlanForCalc === "premium"
                           ? "bg-[#61126E] text-white font-extrabold shadow-sm border border-[#A81CD0] shadow-[0_0_15px_rgba(168,85,247,0.35)]"
-                          : "bg-[#1A264F] text-white border border-[#2B3969]"
+                          : "bg-[#24122C] text-white border border-[#3A1B45] hover:border-[#61126E]"
                       }`}
                     >
                       Premium Plan ({currency.symbol}{premiumRate}/mo)
@@ -409,7 +410,7 @@ export function PricingPage() {
                   <div className="space-y-3 pt-2">
                     <div className="flex items-center justify-between text-xs">
                       <span className="text-[#9AA1B2]">Team size:</span>
-                      <span className="font-extrabold text-white text-base font-mono">{teamSize} seats</span>
+                      <span className="font-extrabold text-white text-base">{teamSize} seats</span>
                     </div>
                     <input
                       type="range"
@@ -420,7 +421,7 @@ export function PricingPage() {
                       onChange={(e) => setTeamSize(Number(e.target.value))}
                       className="w-full accent-[#A81CD0] cursor-pointer"
                     />
-                    <div className="flex justify-between text-[11px] text-[#9AA1B2] font-mono">
+                    <div className="flex justify-between text-[11px] text-[#9AA1B2]">
                       <span>5 seats</span>
                       <span>50</span>
                       <span>100</span>
@@ -432,11 +433,11 @@ export function PricingPage() {
                 </div>
 
                 {/* Right: Estimated Output Badge */}
-                <div className="lg:col-span-5 bg-[#0A0F1D] rounded-2xl p-8 border border-[#24305A] text-center space-y-4">
+                <div className="lg:col-span-5 bg-[#140A1C] rounded-2xl p-8 border border-[#2A1433] text-center space-y-4">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#9AA1B2]">
                     Total Estimated Investment
                   </span>
-                  <div className="text-4xl sm:text-5xl font-extrabold text-white font-mono">
+                  <div className="text-4xl sm:text-5xl font-extrabold text-white">
                     {currency.symbol}{totalCalculated}
                     <span className="text-xs font-normal text-[#9AA1B2] ml-1">/ mo</span>
                   </div>

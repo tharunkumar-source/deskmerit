@@ -23,7 +23,7 @@ export function Hero() {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-[#0F1730] text-white border-b border-[#24305A] flex flex-col justify-center pt-28 pb-14 sm:pt-32 sm:pb-16 lg:py-0 lg:pt-[68px] lg:h-[calc(100vh-68px)] lg:max-h-[760px] lg:min-h-[600px]"
+      className="relative isolate overflow-hidden bg-[#140A1C] text-white border-b border-[#2A1433] flex flex-col justify-center pt-28 pb-14 sm:pt-32 sm:pb-16 lg:py-0 lg:pt-[68px] lg:h-[calc(100vh-68px)] lg:max-h-[760px] lg:min-h-[600px]"
       aria-labelledby="hero-title"
       style={{
         backgroundImage: "url('/hero-bg.png')",
@@ -33,7 +33,7 @@ export function Hero() {
       }}
     >
       {/* Ambient glow highlight overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0F1730]/40 via-transparent to-[#090E1F]/70" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#180C24]/60 via-transparent to-[#12081B]/80" />
 
       <div className="relative mx-auto max-w-7xl w-full px-6 sm:px-8 lg:px-12 my-auto">
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-12">
@@ -41,7 +41,7 @@ export function Hero() {
           {/* Left Column: Prominent typography matching Sqalible / Kombee layout */}
           <div className="text-left z-10 max-w-xl">
             {/* Small pre-title badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#24305A]/80 border border-[#334173] text-xs font-semibold text-[#F6EDF8] mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#24122C] border border-[#3A1B45] text-xs font-semibold text-[#F6EDF8] mb-4">
               <span className="pulse-dot" />
               <span>Automatic time tracking for modern teams</span>
             </div>
@@ -69,7 +69,7 @@ export function Hero() {
               </a>
               <a
                 href="/demo"
-                className="group inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/30 bg-[#24305A]/50 px-7 sm:px-8 text-sm sm:text-base font-semibold text-white backdrop-blur-xs transition-all duration-200 hover:bg-[#24305A]/80 hover:border-white/60 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                className="group inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-7 sm:px-8 text-sm sm:text-base font-semibold text-white backdrop-blur-xs transition-all duration-200 hover:bg-white hover:text-[#0F1730] hover:border-white hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               >
                 Book a demo
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={2.2} />
@@ -186,7 +186,7 @@ export function Hero() {
                   </div>
 
                   <div className="text-right">
-                    <div className="text-xl sm:text-2xl font-black text-[#0F1730] font-mono leading-none tracking-tight tnum">
+                    <div className="text-xl sm:text-2xl font-black text-[#0F1730] font-display leading-none tracking-tight tnum">
                       {formatTime(seconds)}
                     </div>
                     <p className="text-[8px] sm:text-[9px] font-bold uppercase tracking-wider text-[#12B886] mt-0.5">

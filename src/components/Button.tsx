@@ -2,7 +2,7 @@ import React from "react";
 import { Button as DsButton, ButtonVariant as DsButtonVariant, ButtonSize as DsButtonSize } from "../design-system/components/Button";
 
 type ButtonVariant = "primary" | "secondary" | "ghost" | "danger" | "inverse" | "outline";
-type ButtonSize = "sm" | "md" | "lg";
+type ButtonSize = "sm" | "nav" | "md" | "lg";
 
 export type ButtonProps = {
   variant?: ButtonVariant;

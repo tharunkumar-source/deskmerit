@@ -668,9 +668,9 @@ const PRODUCT_FEATURES: Record<string, ProductFeatureDetail> = {
       },
     ],
         screenshot: {
-      src: "/images/figma/tray-focus-interval.png",
+      src: "/images/figma/tray-focus-interval-desktop.png",
       alt: "Deskmerit Pulse Track Focus Interval and Health Break Timer",
-      type: "tray",
+      type: "dashboard",
     },
     mockup: {
       title: "Focus Sprint #3 in Progress",
@@ -773,12 +773,12 @@ export function ProductDetailPage() {
 
       <main>
         {/* ========================================================================= */}
-        {/* 1. DEEP NAVY HERO SECTION (Exact Reference Layout)                        */}
+        {/* 1. BRAND DARK HERO SECTION                                                */}
         {/* ========================================================================= */}
-        <section className="bg-[#0A0F1D] text-white pt-10 pb-20 lg:pt-16 lg:pb-28 border-b border-[#24305A] relative overflow-hidden">
+        <section className="bg-gradient-to-b from-[#180C24] via-[#12081B] to-[#180C24] text-white pt-10 pb-20 lg:pt-16 lg:pb-28 border-b border-[#2A1433] relative overflow-hidden">
           {/* Subtle Ambient Radial Glow */}
-          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#61126E]/10 rounded-full blur-[140px] pointer-events-none" />
-          <div className="absolute -bottom-20 right-0 w-[400px] h-[400px] bg-[#38BDF8]/10 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#61126E]/20 rounded-full blur-[140px] pointer-events-none" />
+          <div className="absolute -bottom-20 right-0 w-[400px] h-[400px] bg-[#A81CD0]/15 rounded-full blur-[120px] pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumb matching Reference */}
@@ -792,22 +792,22 @@ export function ProductDetailPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Headline, Overline, Description & CTAs */}
-              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full space-y-6">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#F0ABFC] bg-[#61126E]/40 px-3.5 py-1 rounded-full inline-block border border-[#A81CD0]/50 shadow-xs">
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                   {feat.badge}
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-[1.28] sm:leading-[1.25] text-white mb-6">
                   {feat.title}{" "}
                   <span className="text-[#D8B4FE]">{feat.titleAccent}</span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl mb-6">
                   {feat.description}
                 </p>
 
                 {/* Proof Point Checklist with White-background bullets */}
-                <ul className="space-y-3 pt-1">
+                <ul className="space-y-3 pt-1 mb-6">
                   {feat.checkPoints.slice(0, 3).map((text, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm text-[#E8D5EC]">
                       <span className="w-5 h-5 rounded-full bg-white text-[#0F1730] flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
@@ -821,14 +821,14 @@ export function ProductDetailPage() {
                 <div className="flex flex-row items-center gap-3 sm:gap-3.5 pt-2">
                   <Link
                     to="/signup"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs sm:text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] hover:shadow-[0_6px_22px_rgba(97, 18, 110,0.45)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Start free trial</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 ml-0.5" />
                   </Link>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#10192A] hover:bg-[#1A264F] text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-slate-500 transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-white/10 hover:bg-white text-white hover:text-[#0F1730] font-bold text-xs sm:text-sm border border-white/20 hover:border-white transition-all cursor-pointer whitespace-nowrap shrink-0 shadow-sm backdrop-blur-xs"
                   >
                     <span>Book a demo</span>
                   </Link>
@@ -841,8 +841,8 @@ export function ProductDetailPage() {
                   feat.screenshot.type === "tray" ? (
                     /* Native Windows/Desktop Tray UI Showcase */
                     <div className="relative max-w-full sm:max-w-[360px] w-full mx-auto overflow-hidden sm:overflow-visible">
-                      <div className="absolute -inset-2 bg-gradient-to-r from-[#61126E]/20 via-[#38BDF8]/20 to-[#61126E]/10 rounded-3xl blur-xl opacity-75" />
-                      <div className="relative rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] overflow-hidden">
+                      <div className="absolute -inset-2 bg-gradient-to-r from-[#61126E]/20 via-[#A81CD0]/20 to-[#61126E]/10 rounded-3xl blur-xl opacity-75" />
+                      <div className="relative rounded-2xl border border-[#3D1B4B] bg-[#180C24] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] overflow-hidden">
                         <img
                           src={feat.screenshot.src}
                           alt={feat.screenshot.alt}
@@ -881,7 +881,7 @@ export function ProductDetailPage() {
                               <div className="text-[10px] text-slate-400">{feat.mockup.subtitle}</div>
                             </div>
                           </div>
-                          <span className="font-mono text-xs font-bold text-[#61126E]">{feat.mockup.stats[0]?.value || "1h 42m"}</span>
+                          <span className="text-xs font-bold text-[#61126E]">{feat.mockup.stats[0]?.value || "1h 42m"}</span>
                         </div>
                       </div>
                     </div>

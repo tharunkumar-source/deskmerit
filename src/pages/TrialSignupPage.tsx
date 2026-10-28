@@ -61,26 +61,26 @@ export function TrialSignupPage() {
                   No credit card required. Includes Tracker Plus (Jira, Azure DevOps, OpenProject), automated attendance tracking, and AI workforce queries via REST & MCP.
                 </p>
 
-                <div className="space-y-3 pt-2">
+                <div className="space-y-4 pt-2 mb-10">
                   {[
                     "14-day full feature trial with unlimited seats",
                     "Dedicated tenant isolation in your chosen cloud region",
                     "Connects with Jira, Azure DevOps or OpenProject in 2 minutes",
                     "Permanent zero keystroke logging and zero webcam guarantee",
                   ].map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
-                      <span className="w-5 h-5 rounded-full bg-[#F6EDF8] text-[#D8B4FE] flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="w-3.5 h-3.5" />
+                    <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-200">
+                      <span className="w-5 h-5 rounded-full bg-white text-[#61126E] flex items-center justify-center shrink-0 mt-0.5 shadow-sm font-bold">
+                        <Check className="w-3.5 h-3.5 stroke-[3]" />
                       </span>
                       <span>{item}</span>
                     </div>
                   ))}
                 </div>
 
-                {/* Trust guarantee card */}
-                <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 text-left flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#F6EDF8] text-[#D8B4FE] flex items-center justify-center shrink-0">
-                    <ShieldCheck className="w-5 h-5" />
+                {/* Trust guarantee card with generous spacing */}
+                <div className="mt-8 p-4 rounded-xl bg-slate-900/70 border border-slate-800 text-left flex items-center gap-4 shadow-sm">
+                  <div className="w-10 h-10 rounded-full bg-[#61126E] text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <ShieldCheck className="w-5 h-5 text-white" />
                   </div>
                   <div>
                     <div className="text-xs font-bold text-white">
@@ -93,9 +93,9 @@ export function TrialSignupPage() {
                 </div>
               </div>
 
-              {/* Right Column: macOS Provisioning Window (White Background Standard) */}
+              {/* Right Column: Clean White Window with Signup Form (Matching DemoPage Standard) */}
               <div className="lg:col-span-7 min-w-0 max-w-full">
-                <div className="w-full max-w-full rounded-2xl border border-slate-200/90 bg-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.25)] overflow-hidden">
+                <div className="w-full max-w-full rounded-2xl border border-slate-200/90 bg-white shadow-2xl overflow-hidden text-[#0F1730]">
                   {/* Window Body Form */}
                   <div className="p-4 sm:p-8 bg-white">
                     {step === "form" && (
@@ -105,49 +105,51 @@ export function TrialSignupPage() {
                           <p className="text-xs text-slate-500 mt-0.5">Free 14-day sandbox · No payment method needed</p>
                         </div>
 
-                        <div>
-                          <label className="block text-xs font-semibold text-[#0F1730] mb-1">Full name *</label>
-                          <input
-                            type="text"
-                            required
-                            value={formData.fullName}
-                            onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                            placeholder="Ananya Sharma"
-                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 bg-white text-[#0F1730] placeholder-slate-400 focus:outline-none focus:border-[#61126E] shadow-xs"
-                          />
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div>
+                            <label className="block text-xs font-semibold text-slate-700 mb-1">Full name *</label>
+                            <input
+                              type="text"
+                              required
+                              value={formData.fullName}
+                              onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                              placeholder="Ananya Sharma"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#61126E] focus:ring-2 focus:ring-[#61126E]/10"
+                            />
+                          </div>
+
+                          <div>
+                            <label className="block text-xs font-semibold text-slate-700 mb-1">Work email *</label>
+                            <input
+                              type="email"
+                              required
+                              value={formData.email}
+                              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                              placeholder="ananya@company.com"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#61126E] focus:ring-2 focus:ring-[#61126E]/10"
+                            />
+                          </div>
                         </div>
 
                         <div>
-                          <label className="block text-xs font-semibold text-[#0F1730] mb-1">Work email *</label>
-                          <input
-                            type="email"
-                            required
-                            value={formData.email}
-                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            placeholder="ananya@company.com"
-                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 bg-white text-[#0F1730] placeholder-slate-400 focus:outline-none focus:border-[#61126E] shadow-xs"
-                          />
-                        </div>
-
-                        <div>
-                          <label className="block text-xs font-semibold text-[#0F1730] mb-1">Company name *</label>
+                          <label className="block text-xs font-semibold text-slate-700 mb-1">Company name *</label>
                           <input
                             type="text"
                             required
                             value={formData.company}
                             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                             placeholder="Cognitive Scale Solutions"
-                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 bg-white text-[#0F1730] placeholder-slate-400 focus:outline-none focus:border-[#61126E] shadow-xs"
+                            className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#61126E] focus:ring-2 focus:ring-[#61126E]/10"
                           />
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-semibold text-[#0F1730] mb-1">Trial Plan</label>
+                            <label className="block text-xs font-semibold text-slate-700 mb-1">Trial Plan</label>
                             <select
                               value={formData.plan}
                               onChange={(e) => setFormData({ ...formData, plan: e.target.value })}
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 bg-white text-[#0F1730] focus:outline-none focus:border-[#61126E] shadow-xs cursor-pointer"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] focus:bg-white focus:outline-none focus:border-[#61126E] focus:ring-2 focus:ring-[#61126E]/10 cursor-pointer"
                             >
                               <option value="pro">Pro (Tracker Plus + Calendars)</option>
                               <option value="premium">Premium (White-label + Reseller)</option>
@@ -156,11 +158,11 @@ export function TrialSignupPage() {
                           </div>
 
                           <div>
-                            <label className="block text-xs font-semibold text-[#0F1730] mb-1">Data Residency Region</label>
+                            <label className="block text-xs font-semibold text-slate-700 mb-1">Data Residency Region</label>
                             <select
                               value={formData.region}
                               onChange={(e) => setFormData({ ...formData, region: e.target.value })}
-                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 bg-white text-[#0F1730] focus:outline-none focus:border-[#61126E] shadow-xs cursor-pointer"
+                              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/70 text-[#0F1730] focus:bg-white focus:outline-none focus:border-[#61126E] focus:ring-2 focus:ring-[#61126E]/10 cursor-pointer"
                             >
                               <option value="India (Mumbai · ap-south-1)">India (Mumbai · ap-south-1)</option>
                               <option value="Australia (Sydney · ap-southeast-2)">Australia (Sydney · ap-southeast-2)</option>
@@ -172,13 +174,13 @@ export function TrialSignupPage() {
 
                         <button
                           type="submit"
-                          className="w-full py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-xs shadow-md transition-colors flex items-center justify-center gap-2 mt-2 cursor-pointer"
+                          className="w-full py-3.5 rounded-xl bg-[#61126E] hover:bg-[#4E0E58] text-white font-extrabold text-sm shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] transition-all flex items-center justify-center gap-2 mt-2 cursor-pointer"
                         >
                           Create workspace →
                         </button>
 
                         <div className="text-[11px] text-slate-500 text-center pt-2">
-                          🔒 No credit card required. You agree to our <Link to="/legal/terms" className="underline hover:text-[#D8B4FE]">Terms</Link> and <Link to="/legal/privacy" className="underline hover:text-[#D8B4FE]">Privacy Policy</Link>.
+                          🔒 No credit card required. You agree to our <Link to="/legal/terms" className="underline hover:text-[#61126E]">Terms</Link> and <Link to="/legal/privacy" className="underline hover:text-[#61126E]">Privacy Policy</Link>.
                         </div>
                       </form>
                     )}
@@ -186,8 +188,8 @@ export function TrialSignupPage() {
                     {step === "provisioning" && (
                       <div className="text-center py-16 space-y-4">
                         <div className="w-12 h-12 rounded-full border-4 border-[#61126E] border-t-transparent animate-spin mx-auto" />
-                        <h3 className="text-xl font-bold text-white">Setting up your secure workspace...</h3>
-                        <p className="text-xs text-slate-400">
+                        <h3 className="text-xl font-bold text-[#0F1730]">Setting up your secure workspace...</h3>
+                        <p className="text-xs text-[#4A5370]">
                           Configuring tenant isolation in {formData.region}
                         </p>
                       </div>
@@ -195,42 +197,42 @@ export function TrialSignupPage() {
 
                     {step === "ready" && (
                       <div className="text-center py-8 space-y-6 max-w-xl mx-auto">
-                        <div className="w-16 h-16 rounded-full bg-[#F6EDF8] text-[#D8B4FE] flex items-center justify-center mx-auto">
-                          <CheckCircle2 className="w-10 h-10" />
+                        <div className="w-14 h-14 rounded-full bg-[#F6EDF8] text-[#61126E] flex items-center justify-center mx-auto shadow-sm">
+                          <CheckCircle2 className="w-8 h-8" />
                         </div>
 
                         <div>
-                          <h3 className="text-2xl font-bold text-white">
+                          <h3 className="text-2xl font-bold text-[#0F1730]">
                             Workspace created for {formData.company}!
                           </h3>
-                          <p className="text-xs sm:text-sm text-slate-300 mt-1.5 leading-relaxed">
+                          <p className="text-xs sm:text-sm text-[#4A5370] mt-1.5 leading-relaxed">
                             Your 14-day full trial is now active. Next step: download the lightweight desktop agent to start tracking from your Jira or Azure tickets.
                           </p>
                         </div>
 
-                        <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-left text-xs space-y-2">
-                          <div className="font-bold text-white">Quick Setup Steps:</div>
-                          <div className="flex items-center gap-2 text-slate-300">
-                            <Check className="w-3.5 h-3.5 text-[#D8B4FE]" /> 1. Download the agent for your OS below
+                        <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-left text-xs space-y-2">
+                          <div className="font-bold text-[#0F1730]">Quick Setup Steps:</div>
+                          <div className="flex items-center gap-2 text-[#4A5370]">
+                            <Check className="w-3.5 h-3.5 text-[#61126E] stroke-[2.5]" /> 1. Download the agent for your OS below
                           </div>
-                          <div className="flex items-center gap-2 text-slate-300">
-                            <Check className="w-3.5 h-3.5 text-[#D8B4FE]" /> 2. Sign in with <strong>{formData.email}</strong>
+                          <div className="flex items-center gap-2 text-[#4A5370]">
+                            <Check className="w-3.5 h-3.5 text-[#61126E] stroke-[2.5]" /> 2. Sign in with <strong>{formData.email}</strong>
                           </div>
-                          <div className="flex items-center gap-2 text-slate-300">
-                            <Check className="w-3.5 h-3.5 text-[#D8B4FE]" /> 3. Connect your Jira personal access token and press Start
+                          <div className="flex items-center gap-2 text-[#4A5370]">
+                            <Check className="w-3.5 h-3.5 text-[#61126E] stroke-[2.5]" /> 3. Connect your Jira personal access token and press Start
                           </div>
                         </div>
 
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
                           <Link
                             to="/download"
-                            className="w-full sm:w-auto px-6 py-3 rounded-[12px] bg-[#61126E] text-white font-extrabold text-xs flex items-center justify-center gap-2 hover:bg-[#4E0E58] shadow-md hover:shadow-glow-ember transition-colors"
+                            className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#61126E] text-white font-extrabold text-xs flex items-center justify-center gap-2 hover:bg-[#4E0E58] shadow-[0_4px_16px_rgba(97, 18, 110,0.35)] transition-all"
                           >
                             <Download className="w-4 h-4" /> Download Desktop Agent
                           </Link>
                           <Link
                             to="/"
-                            className="w-full sm:w-auto px-6 py-3 rounded-[12px] bg-slate-900 border border-slate-700 text-white font-semibold text-xs text-center hover:bg-slate-800"
+                            className="w-full sm:w-auto px-6 py-3 rounded-xl bg-slate-100 border border-slate-200 text-[#0F1730] font-semibold text-xs text-center hover:bg-slate-200 transition-colors"
                           >
                             Go to dashboard preview
                           </Link>

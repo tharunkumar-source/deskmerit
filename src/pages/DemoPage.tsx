@@ -56,14 +56,14 @@ export function DemoPage() {
                   We will walk you through your exact setup — whether you're syncing Jira issues, configuring attendance for Sunday–Thursday shifts, or connecting Sqalible HRMS.
                 </p>
 
-                <div className="space-y-3.5 pt-2 mb-8">
+                <div className="space-y-4 pt-2 mb-10">
                   {[
                     "Tracker Plus live demonstration with your own PM tool",
                     "Attendance rules tailored to your country and work week",
                     "Reports your finance & delivery team will actually defend",
                     "Transparent proposal in your local currency (INR, AUD, NZD, AED, USD)",
                   ].map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
+                    <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-200">
                       <span className="w-5 h-5 rounded-full bg-white text-[#61126E] flex items-center justify-center shrink-0 mt-0.5 shadow-sm font-bold">
                         <Check className="w-3.5 h-3.5 stroke-[3]" />
                       </span>
@@ -73,7 +73,7 @@ export function DemoPage() {
                 </div>
 
                 {/* Specialist Card */}
-                <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 text-left flex items-center gap-4">
+                <div className="mt-8 p-4 rounded-xl bg-slate-900/70 border border-slate-800 text-left flex items-center gap-4 shadow-sm">
                   <div className="w-10 h-10 rounded-full bg-[#61126E] text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-xs">
                     DM
                   </div>

@@ -83,10 +83,13 @@ export function DeskmeritHeader() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 15);
+      if (activeMenu) {
+        setActiveMenu(null);
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [activeMenu]);
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -107,14 +110,24 @@ export function DeskmeritHeader() {
 
   const handleMouseEnter = (menu: string) => {
     if (menuTimeoutRef.current) clearTimeout(menuTimeoutRef.current);
+    if (!menu) {
+      setActiveMenu(null);
+      return;
+    }
     setActiveMenu(menu);
   };
 
-  const handleMouseLeave = () => {
+  const handleNavMouseLeave = (e: React.MouseEvent) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    // If pointer moves down towards the mega menu card, keep it open!
+    if (e.clientY >= rect.bottom - 4) {
+      return;
+    }
+    // Pointer moved up into announcement bar or off the navbar
     if (menuTimeoutRef.current) clearTimeout(menuTimeoutRef.current);
     menuTimeoutRef.current = setTimeout(() => {
       setActiveMenu(null);
-    }, 150);
+    }, 120);
   };
 
   return (
@@ -144,11 +157,14 @@ export function DeskmeritHeader() {
             : "border-b border-slate-100 py-4"
         }`}
         aria-label="Main Navigation"
-        onMouseLeave={handleMouseLeave}
+        onMouseLeave={handleNavMouseLeave}
       >
-        <div className="max-w-[1440px] w-full mx-auto px-4 sm:px-6 xl:px-6 2xl:px-8 flex items-center justify-between">
+        <div className="max-w-[1440px] w-full mx-auto px-4 sm:px-6 xl:px-6 2xl:px-8 flex items-center justify-between relative z-40">
           {/* Group 1: Logo anchored with breathing room */}
-          <div className="shrink-0 flex items-center pr-2 xl:pr-3 2xl:pr-6">
+          <div
+            className="shrink-0 flex items-center pr-2 xl:pr-3 2xl:pr-6"
+            onMouseEnter={() => handleMouseEnter("")}
+          >
             <DeskmeritLogo variant="horizontal" size="md" />
           </div>
 
@@ -301,7 +317,10 @@ export function DeskmeritHeader() {
           </div>
 
           {/* Group 3: Right Action Items — Desktop: Sign in & Proportional CTAs with Breathing Room */}
-          <div className="hidden xl:flex items-center gap-2 xl:gap-2.5 2xl:gap-3 shrink-0 pl-2 xl:pl-4 2xl:pl-6">
+          <div
+            className="hidden xl:flex items-center gap-2 xl:gap-2.5 2xl:gap-3 shrink-0 pl-2 xl:pl-4 2xl:pl-6"
+            onMouseEnter={() => handleMouseEnter("")}
+          >
             {/* Sign in */}
             <a
               href="https://app.deskmerit.com"
@@ -361,26 +380,47 @@ export function DeskmeritHeader() {
         {/* FULL-WIDTH MEGA MENU (Aligned to container content bounds) */}
         <AnimatePresence>
           {activeMenu && (
-            <motion.div
-              initial={{ opacity: 0, y: 8, scale: 0.995 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 6, scale: 0.995 }}
-              transition={{ duration: 0.15, ease: "easeOut" }}
-              className="absolute left-0 right-0 top-full w-full pointer-events-auto z-50 pt-2"
-              onMouseEnter={() => handleMouseEnter(activeMenu)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <div className="max-w-[1440px] mx-auto px-4 sm:px-6 xl:px-6 2xl:px-8">
-                <div className="bg-white rounded-2xl shadow-[0_30px_70px_-15px_rgba(15,23,48,0.24),0_15px_30px_-5px_rgba(15,23,48,0.08)] border border-slate-200/90 overflow-hidden text-[#0F1730]">
-                  {activeMenu === "products" && renderProductsMegaMenu()}
-                  {activeMenu === "solutions" && renderSolutionsMegaMenu()}
-                  {activeMenu === "integrations" && renderIntegrationsMegaMenu()}
-                  {activeMenu === "compare" && renderCompareMegaMenu()}
-                  {activeMenu === "resources" && renderResourcesMegaMenu()}
-                  {activeMenu === "company" && renderCompanyMegaMenu()}
+            <>
+              {/* Backdrop for outside clicks only — strictly below the navbar, never blocking nav triggers */}
+              <div
+                className="fixed inset-x-0 bottom-0 top-[74px] sm:top-[86px] z-30 bg-transparent"
+                onClick={() => setActiveMenu(null)}
+              />
+
+              <motion.div
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 4 }}
+                transition={{ duration: 0.12, ease: "easeOut" }}
+                className="absolute left-0 right-0 top-full w-full pointer-events-none z-50 pt-1.5"
+              >
+                <div className="max-w-[1440px] mx-auto px-4 sm:px-6 xl:px-6 2xl:px-8 pointer-events-auto">
+                  <div
+                    className="bg-white rounded-2xl shadow-[0_30px_70px_-15px_rgba(15,23,48,0.24),0_15px_30px_-5px_rgba(15,23,48,0.08)] border border-slate-200/90 overflow-hidden text-[#0F1730]"
+                    onMouseEnter={() => {
+                      if (menuTimeoutRef.current) clearTimeout(menuTimeoutRef.current);
+                    }}
+                    onMouseLeave={(e) => {
+                      const rect = e.currentTarget.getBoundingClientRect();
+                      // If moving back up into the nav bar, keep it open
+                      if (e.clientY <= rect.top + 4) {
+                        return;
+                      }
+                      // If cursor crossed the width of the mega menu (left/right) or below its height, close immediately
+                      if (menuTimeoutRef.current) clearTimeout(menuTimeoutRef.current);
+                      setActiveMenu(null);
+                    }}
+                  >
+                    {activeMenu === "products" && renderProductsMegaMenu()}
+                    {activeMenu === "solutions" && renderSolutionsMegaMenu()}
+                    {activeMenu === "integrations" && renderIntegrationsMegaMenu()}
+                    {activeMenu === "compare" && renderCompareMegaMenu()}
+                    {activeMenu === "resources" && renderResourcesMegaMenu()}
+                    {activeMenu === "company" && renderCompanyMegaMenu()}
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
 

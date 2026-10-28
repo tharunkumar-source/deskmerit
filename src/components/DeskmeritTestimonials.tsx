@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Star, ArrowRight } from "lucide-react";
+import { DeskmeritLogo } from "./DeskmeritLogo";
 
 export function DeskmeritTestimonials() {
   const testimonials = [
@@ -66,12 +67,12 @@ export function DeskmeritTestimonials() {
         </div>
 
         {/* 2-Card Split Layout matching Kombee structure with Deskmerit Brand Guidelines */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-          {/* 1. Left Card: The Testimonial Story Card (Col 1-8) */}
-          <div className="lg:col-span-8 bg-[#140A1C] border border-[#2A1433] rounded-none sm:rounded-2xl p-6 sm:p-7 md:p-8 shadow-xl flex flex-col justify-between relative overflow-hidden">
-            <div className="flex flex-col sm:flex-row gap-6 sm:gap-7 items-start">
-              {/* Client Portrait Photo */}
-              <div className="w-full sm:w-48 md:w-52 aspect-square sm:aspect-[4/5] shrink-0 rounded-none sm:rounded-xl overflow-hidden border border-[#2A1433] bg-[#1C0F27] shadow-md">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
+          {/* 1. Left Card: The Testimonial Story Card (Col 1-7) — adjusted based on contact card height */}
+          <div className="lg:col-span-7 bg-[#140A1C] border border-[#2A1433] rounded-2xl p-5 sm:p-6 shadow-xl flex flex-col justify-between relative overflow-hidden">
+            <div className="flex flex-col sm:flex-row gap-5 sm:gap-6 items-stretch h-full">
+              {/* Client Portrait Photo — compact, balanced with contact card height */}
+              <div className="w-full sm:w-44 md:w-48 lg:w-52 shrink-0 rounded-xl overflow-hidden border border-[#2A1433] bg-[#1C0F27] shadow-md self-stretch flex min-h-[220px] sm:min-h-0">
                 <img
                   src={current.image}
                   alt={current.name}
@@ -80,28 +81,28 @@ export function DeskmeritTestimonials() {
               </div>
 
               {/* Client Details & Quote */}
-              <div className="flex-1 flex flex-col justify-between h-full min-h-[220px]">
+              <div className="flex-1 flex flex-col justify-between py-0.5">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-snug">
+                  <h3 className="text-lg sm:text-xl font-extrabold text-white tracking-tight leading-snug">
                     {current.name}
                   </h3>
-                  <div className="text-xs sm:text-sm font-medium text-slate-400 mt-1 mb-4 font-display">
+                  <div className="text-xs font-medium text-purple-300/80 mt-0.5 mb-3 font-display">
                     {current.role} · {current.company}
                   </div>
 
-                  <p className="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
-                    {current.quote}
+                  <p className="text-xs sm:text-sm text-slate-200 leading-relaxed mb-4 font-normal">
+                    "{current.quote}"
                   </p>
                 </div>
 
                 {/* Rating Stars on LEFT and Navigation Controls on RIGHT */}
-                <div className="flex items-center justify-between pt-2 mt-auto">
-                  <div className="flex items-center gap-1.5 text-amber-400 font-bold text-sm">
+                <div className="flex items-center justify-between pt-3 mt-auto border-t border-[#2A1433]/70">
+                  <div className="flex items-center gap-1.5 text-amber-400 font-bold text-xs sm:text-sm">
                     <div className="flex items-center gap-1">
                       {[...Array(current.stars)].map((_, i) => (
                         <Star
                           key={i}
-                          className="w-4 h-4 fill-amber-400 text-amber-400"
+                          className="w-3.5 h-3.5 fill-amber-400 text-amber-400"
                         />
                       ))}
                     </div>
@@ -111,22 +112,22 @@ export function DeskmeritTestimonials() {
                   </div>
 
                   {/* Navigation Arrows right of ratings */}
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1.5">
                     <button
                       type="button"
                       onClick={prev}
-                      className="w-9 h-9 rounded-full border border-[#3A1B45] bg-[#24122C] hover:bg-[#61126E] hover:border-[#61126E] text-white flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
+                      className="w-8 h-8 rounded-full border border-[#3A1B45] bg-[#24122C] hover:bg-[#61126E] hover:border-[#61126E] text-white flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
                       aria-label="Previous testimonial"
                     >
-                      <ChevronLeft className="w-4 h-4" />
+                      <ChevronLeft className="w-3.5 h-3.5" />
                     </button>
                     <button
                       type="button"
                       onClick={next}
-                      className="w-9 h-9 rounded-full border border-[#3A1B45] bg-[#24122C] hover:bg-[#61126E] hover:border-[#61126E] text-white flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
+                      className="w-8 h-8 rounded-full border border-[#3A1B45] bg-[#24122C] hover:bg-[#61126E] hover:border-[#61126E] text-white flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
                       aria-label="Next testimonial"
                     >
-                      <ChevronRight className="w-4 h-4" />
+                      <ChevronRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
                 </div>
@@ -134,75 +135,82 @@ export function DeskmeritTestimonials() {
             </div>
           </div>
 
-          {/* 2. Right Card: Deskmerit Branded Value/CTA Spotlight Card (Col 9-12) */}
-          <div className="lg:col-span-4 bg-gradient-to-br from-[#180C24] via-[#140A1C] to-[#1F0C2E] border border-[#2A1433] rounded-none sm:rounded-2xl p-6 sm:p-7 md:p-8 flex flex-col justify-between shadow-xl relative overflow-hidden group">
-            {/* High-tech SVG pattern overlay matching Kombee aesthetic with Deskmerit Brand Guidelines */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
-              <svg className="w-full h-full" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* 2. Right Card: Deskmerit Branded Value/CTA Spotlight Card (Col 8-12) */}
+          <div className="lg:col-span-5 rounded-2xl bg-gradient-to-br from-[#1F0728] via-[#14061A] to-[#280B33] border border-[#61126E]/50 p-5 sm:p-6 lg:p-7 flex flex-col justify-between shadow-xl relative overflow-hidden group">
+            {/* Geometric Concentric Rings & Tech Dot Grid Pattern radiating from BOTTOM RIGHT */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+              <svg
+                className="w-full h-full"
+                viewBox="0 0 400 360"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid slice"
+              >
                 <defs>
-                  <radialGradient id="emberGlow" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="#61126E" stopOpacity="0.45" />
-                    <stop offset="100%" stopColor="#61126E" stopOpacity="0" />
-                  </radialGradient>
-                  <linearGradient id="gridGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#61126E" stopOpacity="0.3" />
-                    <stop offset="50%" stopColor="#12B886" stopOpacity="0.2" />
-                    <stop offset="100%" stopColor="#0F1730" stopOpacity="0" />
+                  {/* Linear gradient starting brightest at bottom-right (100%, 100%) and radiating to top-left (0%, 0%) */}
+                  <linearGradient id="geomArcGrad" x1="100%" y1="100%" x2="0%" y2="0%">
+                    <stop offset="0%" stopColor="#E9D5FF" stopOpacity="0.9" />
+                    <stop offset="20%" stopColor="#C084FC" stopOpacity="0.75" />
+                    <stop offset="55%" stopColor="#A855F7" stopOpacity="0.45" />
+                    <stop offset="100%" stopColor="#61126E" stopOpacity="0.1" />
                   </linearGradient>
+                  <pattern id="geomDotGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1.1" fill="#C084FC" fillOpacity="0.18" />
+                  </pattern>
                 </defs>
-                {/* Concentric Telemetry Orbit Rings */}
-                <circle cx="280" cy="240" r="140" stroke="url(#gridGrad)" strokeWidth="1" strokeDasharray="3 3" />
-                <circle cx="280" cy="240" r="100" stroke="#61126E" strokeWidth="1" strokeOpacity="0.3" />
-                <circle cx="280" cy="240" r="60" stroke="#12B886" strokeWidth="1.2" strokeOpacity="0.4" strokeDasharray="4 2" />
-                <circle cx="280" cy="240" r="24" fill="url(#emberGlow)" />
-                {/* Constellation Nodes and Rays */}
-                <line x1="280" y1="100" x2="280" y2="380" stroke="#61126E" strokeWidth="0.8" strokeOpacity="0.2" />
-                <line x1="140" y1="240" x2="420" y2="240" stroke="#12B886" strokeWidth="0.8" strokeOpacity="0.2" />
-                <line x1="180" y1="140" x2="380" y2="340" stroke="#61126E" strokeWidth="0.8" strokeOpacity="0.15" />
-                <circle cx="280" cy="140" r="3" fill="#61126E" />
-                <circle cx="380" cy="240" r="3.5" fill="#12B886" />
-                <circle cx="220" cy="280" r="2.5" fill="#61126E" />
-                <circle cx="340" cy="180" r="2" fill="#FFFFFF" />
-                {/* Digital telemetry grid points */}
-                <pattern id="telemetryDots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                  <circle cx="2" cy="2" r="1" fill="#4A5370" fillOpacity="0.35" />
-                </pattern>
-                <rect width="100%" height="100%" fill="url(#telemetryDots)" />
+
+                {/* Geometric Dot Grid Texture */}
+                <rect width="100%" height="100%" fill="url(#geomDotGrid)" />
+
+                {/* Concentric Circular Arcs starting from BOTTOM RIGHT corner (390, 350) */}
+                <g fill="none" stroke="url(#geomArcGrad)" strokeWidth="1.25">
+                  <circle cx="390" cy="350" r="35" />
+                  <circle cx="390" cy="350" r="70" />
+                  <circle cx="390" cy="350" r="110" />
+                  <circle cx="390" cy="350" r="155" />
+                  <circle cx="390" cy="350" r="205" />
+                  <circle cx="390" cy="350" r="260" />
+                  <circle cx="390" cy="350" r="320" />
+                  <circle cx="390" cy="350" r="385" />
+                  <circle cx="390" cy="350" r="455" />
+                  <circle cx="390" cy="350" r="530" />
+                  <circle cx="390" cy="350" r="610" />
+                  <circle cx="390" cy="350" r="695" />
+                  <circle cx="390" cy="350" r="785" />
+                </g>
+
+                {/* Diagonal Geometric Rays radiating from BOTTOM RIGHT corner (390, 350) */}
+                <line x1="390" y1="350" x2="0" y2="0" stroke="#C084FC" strokeWidth="0.8" strokeDasharray="3 4" strokeOpacity="0.28" />
+                <line x1="390" y1="350" x2="0" y2="175" stroke="#C084FC" strokeWidth="0.8" strokeDasharray="3 4" strokeOpacity="0.22" />
+                <line x1="390" y1="350" x2="160" y2="0" stroke="#C084FC" strokeWidth="0.8" strokeDasharray="3 4" strokeOpacity="0.22" />
               </svg>
             </div>
 
-            {/* Top Brand Mark */}
+            {/* Top Brand Logo matching FAQ Contact Card */}
             <div className="relative z-10">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-xl font-extrabold tracking-tight text-white font-display">
-                  Deskmerit
-                </span>
-                <span className="w-2.5 h-2.5 rounded-full bg-[#61126E]" />
+              <div className="mb-4">
+                <DeskmeritLogo variant="reverse" size="md" />
               </div>
 
               {/* Center Headline & Subtext */}
-              <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-[1.25] mb-3">
+              <h3 className="text-lg sm:text-xl font-extrabold text-white tracking-tight leading-snug mb-2">
                 Still Wondering Where Your Team's Hours Really Go?
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300/90 leading-relaxed mb-6">
+              <p className="text-xs sm:text-[13px] text-purple-200/80 leading-relaxed mb-4">
                 Discover how automatic background tracking, role-aware app scoring, and Jira sprint sync eliminate guesswork without intrusive surveillance.
               </p>
             </div>
 
-            {/* Bottom CTA Button */}
-            <div className="relative z-10 pt-2">
+            {/* Bottom CTA Button (Sentence/Title case) */}
+            <div className="relative z-10 pt-1">
               <Link
-                to="/signup"
-                className="px-5 py-2.5 rounded-xl bg-white hover:bg-[#FAF4FB] text-[#0F1730] font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2 w-fit group/btn cursor-pointer"
+                to="/contact"
+                className="px-5 py-2.5 rounded-xl bg-white hover:bg-[#FAF4FB] text-[#0F1730] hover:text-[#61126E] font-bold text-xs sm:text-sm shadow-md hover:shadow-xl transition-all inline-flex items-center gap-2 group/btn cursor-pointer"
               >
-                <span>Contact</span>
+                <span>Contact us</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#61126E] group-hover/btn:translate-x-1 transition-transform" />
               </Link>
             </div>
-
-            {/* Subtle Deskmerit Ember Ambient Glow */}
-            <div className="absolute -right-12 -bottom-12 w-48 h-48 rounded-full bg-[#61126E]/15 blur-3xl pointer-events-none" />
-            <div className="absolute -left-12 -top-12 w-40 h-40 rounded-full bg-[#12B886]/10 blur-3xl pointer-events-none" />
           </div>
         </div>
       </div>

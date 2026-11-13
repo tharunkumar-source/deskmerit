@@ -260,25 +260,16 @@ export function DeskmeritHowItWorks() {
               </div>
             </div>
 
-            {/* Right Column: Browser / App Mock Window Frame with Real Figma UI (Col 6-12) */}
-            <div className="col-span-1 lg:col-span-7 min-w-0 max-w-full w-full">
-              <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-slate-800 bg-[#0F1730]">
-                {/* Screenshot Display with Live Product UI Badge */}
-                <div className="relative aspect-[16/10] overflow-hidden bg-slate-950 flex items-center justify-center">
-                  <img
-                    key={current.image}
-                    src={current.image}
-                    alt={current.screenAlt}
-                    className="w-full h-full object-contain object-top transition-all duration-300"
-                    loading="lazy"
-                  />
-
-                  {/* Corner Live Badge */}
-                  <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-[#0F1730]/90 backdrop-blur-md text-[11px] font-bold text-white flex items-center gap-1.5 shadow-md border border-white/10">
-                    <span className="w-2 h-2 rounded-full bg-[#12B886] animate-pulse" />
-                    <span>Live product UI</span>
-                  </div>
-                </div>
+            {/* Right Column: Automation Image inside Authentic Device Mockup (Col 6-12) */}
+            <div className="col-span-1 lg:col-span-7 flex justify-center items-center min-w-0 max-w-full w-full">
+              <div className="relative w-full max-w-[620px] mx-auto group">
+                <img
+                  key={current.image}
+                  src={current.image}
+                  alt={current.screenAlt}
+                  className="w-full h-auto object-contain block select-none drop-shadow-[0_20px_45px_rgba(15,23,48,0.18)] transition-all duration-300"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>

@@ -25,9 +25,9 @@ import {
 
 function HeroGraphic() {
   return (
-    <div className="relative w-full max-w-full lg:max-w-[760px] xl:max-w-[840px] mx-auto">
+    <div className="relative w-full max-w-full lg:max-w-[720px] xl:max-w-[780px] mx-auto">
       {/* Background Subtle Gradient Aura */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[600px] h-[340px] sm:h-[600px] bg-gradient-to-tr from-[#61126E]/18 via-indigo-500/12 to-transparent rounded-full blur-2xl sm:blur-3xl pointer-events-none -z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[580px] h-[340px] sm:h-[580px] bg-gradient-to-tr from-[#61126E]/18 via-indigo-500/12 to-transparent rounded-full blur-2xl sm:blur-3xl pointer-events-none -z-0" />
       <img
         src="/images/figma/hero-mockup-composite.png"
         alt="Deskmerit Live Team Activity, Timeline, and Time Tracking Summary"
@@ -159,9 +159,9 @@ export function DeskmeritHero() {
       />
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-10 items-center">
           {/* Left Column: Bold Typography & Lead Capture (Reference Image 4) */}
-          <div className="lg:col-span-5 text-left">
+          <div className="lg:col-span-6 text-left">
             {/* Clean Eyebrow Standard */}
             <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] flex items-center gap-2 mb-3">
               <span className="w-2 h-2 rounded-full bg-[#61126E] animate-pulse" />
@@ -199,18 +199,18 @@ export function DeskmeritHero() {
               </Link>
             </div>
 
-            {/* Clean Key Value Signals (No AI Pill Capsules) */}
-            <div className="pt-3 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-[#4A5370]">
-              <div className="flex items-center gap-1.5 font-medium">
+            {/* Clean Key Value Signals Guaranteed in Single Line */}
+            <div className="pt-3.5 flex flex-nowrap items-center gap-x-3 sm:gap-x-4 lg:gap-x-5 text-[11.5px] sm:text-xs text-[#4A5370] whitespace-nowrap overflow-x-auto no-scrollbar">
+              <div className="flex items-center gap-1.5 font-medium shrink-0">
                 <Check className="w-4 h-4 text-[#12B886] stroke-[2.5]" />
                 <span className="text-[#0F1730] font-bold">14-day free trial</span>
                 <span className="text-slate-400">· No card needed</span>
               </div>
-              <div className="flex items-center gap-1.5 font-medium">
+              <div className="flex items-center gap-1.5 font-medium shrink-0">
                 <Laptop className="w-4 h-4 text-slate-500" />
                 <span>Windows, macOS & Linux</span>
               </div>
-              <div className="flex items-center gap-1.5 font-medium">
+              <div className="flex items-center gap-1.5 font-medium shrink-0">
                 <Clock className="w-4 h-4 text-[#61126E]" />
                 <span>10-minute setup</span>
               </div>
@@ -218,7 +218,7 @@ export function DeskmeritHero() {
           </div>
 
           {/* Right Column: Hero Graphic from Figma (Image instead of code) */}
-          <div className="lg:col-span-7 relative flex justify-center lg:justify-end">
+          <div className="lg:col-span-6 relative flex justify-center lg:justify-end">
             <HeroGraphic />
           </div>
         </div>

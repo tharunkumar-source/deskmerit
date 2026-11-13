@@ -1902,7 +1902,7 @@ export function IntegrationsPage() {
                           : "/images/cards/card-jira.png"
                       }
                       alt={`${detailData.name} + Deskmerit Integration Card`}
-                      type="mobile"
+                      type="compact"
                     />
                   </div>
                 </div>

@@ -20,12 +20,17 @@ export function HeroDeviceMockup({
     type === "mobile" || type === "tray"
       ? "max-w-[360px] sm:max-w-[400px]"
       : type === "card" || type === "compact"
-      ? "max-w-[420px] sm:max-w-[460px]"
+      ? "max-w-[520px] sm:max-w-[580px] lg:max-w-[620px]"
       : "max-w-full sm:max-w-[640px] lg:max-w-[680px]";
 
   return (
     <div className={`relative w-full ${maxWidth} mx-auto group cursor-pointer ${className}`}>
-      {/* 100% Native Image - Zero dark solid background box behind mockup */}
+      {/* Radiant Purple Ambient Light / Backlight behind Mockup */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[115%] h-[115%] rounded-full bg-gradient-to-tr from-[#9333EA]/45 via-[#C084FC]/35 to-[#61126E]/45 blur-2xl sm:blur-3xl opacity-75 group-hover:opacity-100 group-hover:scale-108 transition-all duration-500 ease-out pointer-events-none -z-0"
+      />
+
+      {/* 100% Native Image - Clean elevation over ambient purple light */}
       <img
         src={src}
         alt={alt}

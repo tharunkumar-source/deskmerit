@@ -70,7 +70,7 @@ export function HrmsAddonPage() {
                 <HeroDeviceMockup
                   src="/images/cards/card-sqalible.png"
                   alt="Sqalible HRMS + Deskmerit Integration Card"
-                  type="mobile"
+                  type="compact"
                 />
               </div>
             </div>

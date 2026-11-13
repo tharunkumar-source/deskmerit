@@ -701,7 +701,7 @@ export function IndiaPage() {
                       ? "Global Employee Monitoring Laws & Compliance Matrix"
                       : `${activeCard.name} Edition Deskmerit Compliance Card`
                   }
-                  type="mobile"
+                  type="compact"
                 />
               </div>
             </div>

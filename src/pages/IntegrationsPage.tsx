@@ -5,6 +5,7 @@ import { DeskmeritFooter } from "../components/DeskmeritFooter";
 import { DeskmeritCtaBand } from "../components/DeskmeritCtaBand";
 import { DeskmeritFaq } from "../components/DeskmeritFaq";
 import { DeskmeritLogo } from "../components/DeskmeritLogo";
+import { HeroDeviceMockup } from "../components/ui/HeroDeviceMockup";
 import {
   ArrowRight,
   ExternalLink,
@@ -1706,7 +1707,6 @@ export function IntegrationsPage() {
   const { slug } = useParams<{ slug?: string }>();
   const [filter, setFilter] = useState<string>("all");
   const [search, setSearch] = useState("");
-  const [heroActiveTab, setHeroActiveTab] = useState<string>("jira");
 
   const categories = [
     { id: "all", label: "All integrations" },
@@ -1830,7 +1830,7 @@ export function IntegrationsPage() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
                   {/* Left Column: Headline + CTAs (No bi-directional sync capsule or dot above heading) */}
-                  <div className="col-span-1 lg:col-span-7 min-w-0 max-w-full w-full">
+                  <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
                     <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                       INTEGRATION: {detailData.name.toUpperCase()} TIME TRACKING
                     </div>
@@ -1863,72 +1863,47 @@ export function IntegrationsPage() {
                     </div>
                   </div>
 
-                  {/* Right Column: Clean Integration Showcase Card matching Screenshot 1 branding */}
-                  <div className="col-span-1 lg:col-span-5 min-w-0 max-w-full w-full">
-                    <div className="relative w-full max-w-full overflow-hidden sm:overflow-visible">
-                      {/* Clean Soft Ambient Glow */}
-                      <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 via-[#61126E]/10 to-teal-500/10 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
-
-                      {/* Clean White Card strictly matching Screenshot 1 branding */}
-                      <div className="relative rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] text-[#0F1730] w-full max-w-full">
-                        {/* Top Grey Area with Official SVG inside White Circular Badge */}
-                        <div className="bg-[#F8F9FA] p-6 sm:p-8 flex flex-col items-center justify-center border-b border-slate-100 relative text-center">
-                          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white shadow-xs border border-slate-200/90 flex items-center justify-center p-3 sm:p-3.5">
-                            <img
-                              src={matchingFigmaItem.iconUrl}
-                              alt={detailData.name}
-                              className="w-12 h-12 sm:w-14 sm:h-14 max-h-14 max-w-14 object-contain"
-                            />
-                          </div>
-                          <h3 className="font-extrabold text-lg sm:text-xl text-[#0F1730] mt-3 sm:mt-4 tracking-tight">
-                            {detailData.name} + Deskmerit
-                          </h3>
-                          <div className="text-xs text-[#4A5370] font-medium mt-1">
-                            Automatic Background Synchronization
-                          </div>
-                        </div>
-
-                        {/* Card Content & Trust Features */}
-                        <div className="p-4 sm:p-7 space-y-4">
-                          <div className="p-3 sm:p-3.5 rounded-xl bg-[#F8FAFC] border border-slate-200/90 flex items-center justify-between text-xs gap-2">
-                            <div className="min-w-0 flex-1">
-                              <div className="text-[10px] font-bold uppercase text-[#4A5370]">
-                                Connected Entity
-                              </div>
-                              <div className="font-bold text-[#0F1730] mt-0.5 truncate">
-                                {detailData.previewCardTitle}
-                              </div>
-                            </div>
-                            <span className="px-2 sm:px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-bold text-[#027A48] bg-[#ECFDF3] border border-[#A6F4C5] shrink-0">
-                              {detailData.previewMetricValue}
-                            </span>
-                          </div>
-
-                          <div className="space-y-2 text-xs text-[#4A5370]">
-                            <div className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                              <span className="leading-snug">Zero keystroke or screen recording</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                              <span className="leading-snug">Direct worklog attribution to projects</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                              <span className="leading-snug">100% employee audit priority review</span>
-                            </div>
-                          </div>
-
-                          <div className="pt-3 border-t border-slate-100 flex flex-wrap sm:flex-nowrap items-center justify-between gap-2 text-[10px] sm:text-[11px] text-[#4A5370]">
-                            <span className="flex items-center gap-1.5 font-medium min-w-0">
-                              <ShieldCheck className="w-3.5 h-3.5 text-[#027A48] shrink-0" />
-                              <span className="truncate">TLS 1.3 Encrypted</span>
-                            </span>
-                            <span className="text-emerald-600 font-semibold shrink-0">Active & Verified</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  {/* Right Column: Authentic Integration Card Image in Hero Mockup */}
+                  <div className="col-span-1 lg:col-span-6 flex justify-center items-center min-w-0 max-w-full w-full">
+                    <HeroDeviceMockup
+                      src={
+                        detailData.id === "jira"
+                          ? "/images/cards/card-jira.png"
+                          : detailData.id === "azure-devops"
+                          ? "/images/cards/card-azure-devops.png"
+                          : detailData.id === "asana"
+                          ? "/images/cards/card-asana.png"
+                          : detailData.id === "github"
+                          ? "/images/cards/card-github.png"
+                          : detailData.id === "gitlab"
+                          ? "/images/cards/card-gitlab.png"
+                          : detailData.id === "linear"
+                          ? "/images/cards/card-linear.png"
+                          : detailData.id === "clickup"
+                          ? "/images/cards/card-clickup.png"
+                          : detailData.id === "trello"
+                          ? "/images/cards/card-trello.png"
+                          : detailData.id === "slack"
+                          ? "/images/cards/card-slack.png"
+                          : detailData.id === "google-calendar"
+                          ? "/images/cards/card-google-calendar.png"
+                          : detailData.id === "openproject"
+                          ? "/images/cards/card-openproject.png"
+                          : detailData.id === "outlook-calendar" || detailData.id === "outlook"
+                          ? "/images/cards/card-outlook.png"
+                          : detailData.id === "microsoft-teams" || detailData.id === "teams"
+                          ? "/images/cards/card-teams.png"
+                          : detailData.id === "zapier"
+                          ? "/images/cards/card-zapier.png"
+                          : detailData.id === "make"
+                          ? "/images/cards/card-make.png"
+                          : detailData.id === "sqalible"
+                          ? "/images/cards/card-sqalible.png"
+                          : "/images/cards/card-jira.png"
+                      }
+                      alt={`${detailData.name} + Deskmerit Integration Card`}
+                      type="mobile"
+                    />
                   </div>
                 </div>
               </div>
@@ -2108,7 +2083,7 @@ export function IntegrationsPage() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-                  <div className="col-span-1 lg:col-span-7 min-w-0 max-w-full w-full">
+                  <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
                     <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                       INTEGRATIONS & ECOSYSTEM
                     </div>
@@ -2138,125 +2113,13 @@ export function IntegrationsPage() {
                     </div>
                   </div>
 
-                  {/* Hero Right: THE REAL INTEGRATION CARDS SHOWCASE (White Card Container) */}
-                  <div className="col-span-1 lg:col-span-5 min-w-0 max-w-full w-full">
-                    <div className="relative">
-                      {/* Clean Soft Ambient Glow */}
-                      <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 via-[#61126E]/15 to-purple-500/20 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
-
-                      {/* Crisp White Hero Container matching other pages */}
-                      <div className="relative rounded-3xl bg-white border border-slate-200/90 p-5 sm:p-6 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.35)] text-[#0F1730]">
-                        {/* Top Hub Bar with macOS window controls */}
-                        <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
-                          <div className="flex items-center gap-2.5">
-                            <div>
-                              <div className="text-xs font-bold text-[#0F1730] flex items-center gap-2">
-                                <span>Workspace Integrations Hub</span>
-                                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#ECFDF3] text-[#027A48] border border-[#A6F4C5]">
-                                  6 Active
-                                </span>
-                              </div>
-                              <div className="text-[11px] text-[#4A5370]">
-                                Telemetry synced with production daemon
-                              </div>
-                            </div>
-                          </div>
-                          <div className="flex items-center gap-1.5 bg-[#F8FAFC] px-2.5 py-1 rounded-lg border border-slate-200">
-                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                            <span className="text-[11px] font-semibold text-[#027A48]">
-                              Live 200 OK
-                            </span>
-                          </div>
-                        </div>
-
-                        {/* Interactive Tabs in Clean Light Style */}
-                        <div className="flex items-center gap-1.5 mb-4 p-1.5 bg-[#FAF4FB] rounded-xl border border-[#E8D5EC]">
-                          <button
-                            type="button"
-                            onClick={() => setHeroActiveTab("jira")}
-                            className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                              heroActiveTab === "jira"
-                                ? "bg-white text-[#0F1730] shadow-sm border border-slate-200/80"
-                                : "text-[#4A5370] hover:text-[#0F1730] hover:bg-white/60"
-                            }`}
-                          >
-                            Jira (Connected)
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => setHeroActiveTab("azure-devops")}
-                            className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                              heroActiveTab === "azure-devops"
-                                ? "bg-white text-[#0F1730] shadow-sm border border-slate-200/80"
-                                : "text-[#4A5370] hover:text-[#0F1730] hover:bg-white/60"
-                            }`}
-                          >
-                            Azure DevOps
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => setHeroActiveTab("asana")}
-                            className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                              heroActiveTab === "asana"
-                                ? "bg-white text-[#0F1730] shadow-sm border border-slate-200/80"
-                                : "text-[#4A5370] hover:text-[#0F1730] hover:bg-white/60"
-                            }`}
-                          >
-                            Asana
-                          </button>
-                        </div>
-
-                        {/* The Real Figma Card for Active Tab */}
-                        <div className="transition-all duration-300">
-                          {heroActiveTab === "jira" && (
-                            <FigmaIntegrationCard
-                              item={FIGMA_INTEGRATIONS.find((x) => x.id === "jira")!}
-                              className="shadow-sm border-slate-200"
-                            />
-                          )}
-                          {heroActiveTab === "azure-devops" && (
-                            <FigmaIntegrationCard
-                              item={FIGMA_INTEGRATIONS.find((x) => x.id === "azure-devops")!}
-                              className="shadow-sm border-slate-200"
-                            />
-                          )}
-                          {heroActiveTab === "asana" && (
-                            <FigmaIntegrationCard
-                              item={FIGMA_INTEGRATIONS.find((x) => x.id === "asana")!}
-                              className="shadow-sm border-slate-200"
-                            />
-                          )}
-                        </div>
-
-                        {/* Live Sync Stats Underneath in Clean Light Style */}
-                        <div className="grid grid-cols-3 gap-2 mt-4 pt-3 border-t border-slate-100 text-center">
-                          <div className="p-2.5 rounded-xl bg-[#F8FAFC] border border-slate-200/80">
-                            <div className="text-[10px] text-[#4A5370] uppercase font-bold">
-                              Synced Tasks
-                            </div>
-                            <div className="text-sm font-extrabold text-[#0F1730] mt-0.5">
-                              148 Active
-                            </div>
-                          </div>
-                          <div className="p-2.5 rounded-xl bg-[#F8FAFC] border border-slate-200/80">
-                            <div className="text-[10px] text-[#4A5370] uppercase font-bold">
-                              Worklog Writes
-                            </div>
-                            <div className="text-sm font-extrabold text-[#D8B4FE] mt-0.5">
-                              38h 40m
-                            </div>
-                          </div>
-                          <div className="p-2.5 rounded-xl bg-[#F8FAFC] border border-slate-200/80">
-                            <div className="text-[10px] text-[#4A5370] uppercase font-bold">
-                              Latency
-                            </div>
-                            <div className="text-sm font-extrabold text-[#027A48] mt-0.5">
-                              18 ms
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  {/* Hero Right: Authentic Workspace Integrations Hub Card Image in Hero Mockup */}
+                  <div className="col-span-1 lg:col-span-6 flex justify-center items-center min-w-0 max-w-full w-full">
+                    <HeroDeviceMockup
+                      src="/images/cards/card-integrations-hub.png"
+                      alt="Deskmerit Workspace Integrations Hub Card"
+                      type="card"
+                    />
                   </div>
                 </div>
               </div>

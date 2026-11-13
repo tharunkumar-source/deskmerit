@@ -4,6 +4,7 @@ import { DeskmeritHeader } from "../components/DeskmeritHeader";
 import { DeskmeritFooter } from "../components/DeskmeritFooter";
 import { DeskmeritCtaBand } from "../components/DeskmeritCtaBand";
 import { DeskmeritFaq } from "../components/DeskmeritFaq";
+import { HeroDeviceMockup } from "../components/ui/HeroDeviceMockup";
 import {
   Building2,
   Users,
@@ -787,18 +788,13 @@ export function SolutionDetailPage() {
                 </div>
               </div>
 
-              {/* Right Column: Browser Window Mockup with macOS Controls (Screenshot Reference Match) */}
+              {/* Right Column: Tablet Mockup Frame */}
               <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
-                <div className="w-full max-w-full rounded-2xl border border-[#3D1B4B] bg-[#180C24] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
-                  <div className="bg-[#100717] p-1.5 sm:p-3 overflow-hidden w-full max-w-full">
-                    <img
-                      src={sol.image}
-                      alt={sol.imageAlt}
-                      className="w-full max-w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
-                      loading="eager"
-                    />
-                  </div>
-                </div>
+                <HeroDeviceMockup
+                  src={sol.image}
+                  alt={sol.imageAlt}
+                  type="tablet"
+                />
               </div>
             </div>
           </div>

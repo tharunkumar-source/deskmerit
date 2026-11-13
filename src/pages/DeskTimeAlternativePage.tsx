@@ -4,6 +4,7 @@ import { DeskmeritHeader } from "../components/DeskmeritHeader";
 import { DeskmeritFooter } from "../components/DeskmeritFooter";
 import { DeskmeritCtaBand } from "../components/DeskmeritCtaBand";
 import { DeskmeritFaq } from "../components/DeskmeritFaq";
+import { HeroDeviceMockup } from "../components/ui/HeroDeviceMockup";
 import { Check, Minus, ArrowRight, ShieldCheck, RefreshCw, Smartphone, Layers, CheckCircle2, X } from "lucide-react";
 
 interface CompetitorConfig {
@@ -94,7 +95,7 @@ const COMPETITORS: Record<string, CompetitorConfig> = {
     heroDesc:
       "Replace constant video captures, keyboard logging paranoia and popup alarms with transparent output metrics, automatic document tracking and seamless project management workflows.",
     image: "/images/figma/compare-time-doctor.png",
-    imageAlt: "Deskmerit My PulseTrack Application Activity & Background Telemetry",
+    imageAlt: "Deskmerit Application Activity & Background Telemetry",
     rows: [
       { feature: "Automated desktop time tracking", pulse: "✓ Quiet & non-intrusive", comp: "✓ Popup prompt based" },
       { feature: "Distraction & pop-up alarms", pulse: "— No annoying alarm popups", comp: "Frequent idle nagging", highlight: true },
@@ -296,18 +297,13 @@ export function DeskTimeAlternativePage() {
                 </div>
               </div>
 
-              {/* Right Column: Full Width Authentic Figma Product Screenshot in macOS Window Frame */}
+              {/* Right Column: Full Width Authentic Figma Product Screenshot in Tablet Mockup */}
               <div className="col-span-1 lg:col-span-7 min-w-0 max-w-full w-full">
-                <div className="w-full max-w-full rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
-                  <div className="bg-[#070E1A] p-1.5 sm:p-2.5 overflow-hidden w-full max-w-full">
-                    <img
-                      src={isHub ? "/images/figma/productivity-breakdown.png" : comp.image}
-                      alt={isHub ? "Deskmerit Cross-Platform Productivity Comparison Matrix" : comp.imageAlt}
-                      className="w-full max-w-full h-auto block rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
-                      loading="eager"
-                    />
-                  </div>
-                </div>
+                <HeroDeviceMockup
+                  src={isHub ? "/images/figma/productivity-breakdown.png" : comp.image}
+                  alt={isHub ? "Deskmerit Cross-Platform Productivity Comparison Matrix" : comp.imageAlt}
+                  type="tablet"
+                />
               </div>
             </div>
           </div>

@@ -79,49 +79,49 @@ export function AboutPage() {
     {
       name: "Keyur Mehta",
       role: "Managing Director",
-      avatar: "/team/keyur-mehta.jpg",
+      avatar: "/images/team/keyur-mehta.jpg",
       bio: "Guiding enterprise vision, governance, and ethical workplace principles."
     },
     {
       name: "Dishant Mehta",
       role: "Chief Technology Officer",
-      avatar: "/team/dishant-mehta.jpg",
+      avatar: "/images/team/dishant-mehta.jpg",
       bio: "Architect of Deskmerit's native Rust desktop engine and sub-20ms WebSocket sync."
     },
     {
       name: "Zil Mehta",
       role: "Sr. Project Manager",
-      avatar: "/team/zil-mehta.jpg",
+      avatar: "/images/team/zil-mehta.jpg",
       bio: "Leading software delivery sprints, agile governance, and customer outcomes."
     },
     {
       name: "Sohail Khan",
       role: "Head of Strategy and Growth",
-      avatar: "/team/sohail-khan.jpg",
+      avatar: "/images/team/sohail-khan.jpg",
       bio: "Scaling reseller partnerships, global MSP programs, and enterprise accounts."
     },
     {
       name: "Anshika Mishra",
       role: "Project Manager",
-      avatar: "/team/anshika-mishra.jpg",
+      avatar: "/images/team/anshika-mishra.jpg",
       bio: "Managing cross-functional engineering pods, quality metrics, and release cycles."
     },
     {
       name: "Shivani Mehta",
       role: "Technical Project Manager",
-      avatar: "/team/shivani-mehta.jpg",
+      avatar: "/images/team/shivani-mehta.jpg",
       bio: "Overseeing Jira and Azure DevOps integrations, API tooling, and client onboarding."
     },
     {
       name: "Himali Jaiswal",
       role: "Lead – Account Management",
-      avatar: "/team/himali-jaiswal.jpg",
+      avatar: "/images/team/himali-jaiswal.jpg",
       bio: "Championing client satisfaction, rollout success, and SLA assurance."
     },
     {
       name: "Shashi Gupta",
       role: "Human Resource Manager",
-      avatar: "/team/shashi-gupta.jpg",
+      avatar: "/images/team/shashi-gupta.jpg",
       bio: "Nurturing our remote-first async culture and high-trust engineering talent."
     }
   ];

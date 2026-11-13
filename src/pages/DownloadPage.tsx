@@ -4,6 +4,7 @@ import { DeskmeritHeader } from "../components/DeskmeritHeader";
 import { DeskmeritFooter } from "../components/DeskmeritFooter";
 import { DeskmeritCtaBand } from "../components/DeskmeritCtaBand";
 import { DeskmeritFaq } from "../components/DeskmeritFaq";
+import { HeroDeviceMockup } from "../components/ui/HeroDeviceMockup";
 import {
   Download,
   Laptop,
@@ -99,19 +100,13 @@ export function DownloadPage() {
                 )}
               </div>
 
-              {/* Right Column: Authentic Native Desktop Tray Screenshot */}
+              {/* Right Column: Authentic Native Desktop Tray Screenshot in Tray Mockup */}
               <div className="col-span-1 lg:col-span-6 flex justify-center items-center min-w-0 max-w-full w-full">
-                <div className="relative max-w-full sm:max-w-[360px] w-full mx-auto overflow-hidden sm:overflow-visible">
-                  <div className="absolute -inset-2 bg-gradient-to-r from-[#61126E]/25 via-[#38BDF8]/20 to-[#61126E]/15 rounded-3xl blur-xl opacity-75" />
-                  <div className="relative rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] overflow-hidden">
-                    <img
-                      src="/images/figma/tray-active-tracking.png"
-                      alt="Deskmerit Pulse Track Native Desktop Client Live Tracking Session"
-                      className="w-full max-w-full h-auto object-contain block"
-                      loading="eager"
-                    />
-                  </div>
-                </div>
+                <HeroDeviceMockup
+                  src="/images/figma/tray-active-tracking.png"
+                  alt="Deskmerit Native Desktop Client Live Tracking Session"
+                  type="tray"
+                />
               </div>
             </div>
           </div>

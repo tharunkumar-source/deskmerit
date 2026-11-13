@@ -4,6 +4,7 @@ import { DeskmeritHeader } from "../components/DeskmeritHeader";
 import { DeskmeritFooter } from "../components/DeskmeritFooter";
 import { DeskmeritCtaBand } from "../components/DeskmeritCtaBand";
 import { DeskmeritFaq } from "../components/DeskmeritFaq";
+import { HeroDeviceMockup } from "../components/ui/HeroDeviceMockup";
 import { useCurrency } from "../utils/currencyContext";
 import {
   ShieldCheck,
@@ -616,23 +617,6 @@ export function IndiaPage() {
       <DeskmeritHeader />
 
       <main>
-        {/* Breadcrumb & Language/Region Selector */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-          <div className="flex flex-wrap items-center justify-between gap-4 text-xs text-[#4A5370]">
-            <div className="flex items-center gap-1.5">
-              <Link to="/" className="hover:text-[#0F1730]">
-                {region.isArabic ? "الرئيسية" : "Home"}
-              </Link>
-              <span>/</span>
-              <span className="text-[#4A5370]">
-                {region.isArabic ? "المناطق" : "Regions"}
-              </span>
-              <span>/</span>
-              <span className="font-semibold text-[#0F1730]">{region.name}</span>
-            </div>
-          </div>
-        </div>
-
         {/* ========================================================================= */}
         {/* BRAND DARK HERO SECTION (Consistent Platform Standard)                     */}
         {/* ========================================================================= */}
@@ -696,75 +680,29 @@ export function IndiaPage() {
                 </div>
               </div>
 
-              {/* Right Column: Clean Regional Compliance Showcase Card matching application hero standard */}
-              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
-                <div className="relative w-full max-w-full overflow-hidden sm:overflow-visible">
-                  {/* Clean Soft Ambient Glow */}
-                  <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 via-[#61126E]/10 to-teal-500/10 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
-
-                  {/* Clean White Card strictly matching Application Hero Standard */}
-                  <div className="relative rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] text-[#0F1730] w-full max-w-full">
-                    {/* Top Grey Area with Official Regional Badge */}
-                    <div className="bg-[#F8F9FA] p-5 sm:p-7 flex flex-col items-center justify-center border-b border-slate-100 relative text-center">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white shadow-xs border border-slate-200/90 flex items-center justify-center p-3 overflow-hidden shadow-xs">
-                        <img
-                          src={activeCard.flagUrl}
-                          alt={activeCard.name}
-                          className="w-12 h-9 sm:w-14 sm:h-10.5 rounded-md object-cover shadow-xs border border-slate-100"
-                        />
-                      </div>
-                      <div className="text-[10px] font-bold uppercase tracking-wider text-[#D8B4FE] mt-3 bg-[#F6EDF8]/60 px-3 py-0.5 rounded-full border border-[#61126E]/30">
-                        {activeCard.badge}
-                      </div>
-                      <h3 className="font-extrabold text-lg sm:text-xl text-[#0F1730] mt-1.5 tracking-tight">
-                        {activeCard.cardTitle}
-                      </h3>
-                      <div className="text-xs text-[#4A5370] font-medium mt-0.5">
-                        {activeCard.cardSubtitle}
-                      </div>
-                    </div>
-
-                    {/* Card Content & Trust Features */}
-                    <div className="p-4 sm:p-7 space-y-4">
-                      {/* Connected Entity / Statutory Regime Box */}
-                      <div className="p-3 sm:p-3.5 rounded-xl bg-[#F8FAFC] border border-slate-200/90 flex items-center justify-between text-xs gap-2 sm:gap-3">
-                        <div className="min-w-0 flex-1">
-                          <div className="text-[10px] font-bold uppercase text-[#4A5370]">
-                            Governing Statutory Regime
-                          </div>
-                          <div className="font-bold text-[#0F1730] mt-0.5 truncate">
-                            {activeCard.statutoryFramework}
-                          </div>
-                        </div>
-                        <span className="px-2 sm:px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-bold text-[#027A48] bg-[#ECFDF3] border border-[#A6F4C5] shrink-0">
-                          {activeCard.metricBadge}
-                        </span>
-                      </div>
-
-                      {/* Feature Guarantees */}
-                      <div className="space-y-2.5 text-xs text-[#4A5370]">
-                        {activeCard.guarantees.map((item, idx) => (
-                          <div key={idx} className="flex items-start gap-2 sm:gap-2.5">
-                            <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                            <span className="leading-snug">{item}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Bottom Verification Strip */}
-                      <div className="pt-3 border-t border-slate-100 flex flex-wrap sm:flex-nowrap items-center justify-between gap-2 text-[10px] sm:text-[11px] text-[#4A5370]">
-                        <span className="flex items-center gap-1.5 font-medium min-w-0">
-                          <ShieldCheck className="w-3.5 h-3.5 text-[#027A48] shrink-0" />
-                          <span className="truncate">{activeCard.securityNote}</span>
-                        </span>
-                        <span className="text-emerald-600 font-semibold flex items-center gap-1.5 shrink-0">
-                          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                          Statutory Verified
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              {/* Right Column: Authentic Regional Compliance Card Image in Hero Mockup */}
+              <div className="col-span-1 lg:col-span-6 flex justify-center items-center min-w-0 max-w-full w-full">
+                <HeroDeviceMockup
+                  src={
+                    isGuidesOverview
+                      ? "/images/cards/card-compliance-global.png"
+                      : activeKey === "au"
+                      ? "/images/cards/card-compliance-australia.png"
+                      : activeKey === "nz"
+                      ? "/images/cards/card-compliance-nz.png"
+                      : activeKey === "ae"
+                      ? "/images/cards/card-compliance-uae.png"
+                      : activeKey === "sa" || activeKey === "ar"
+                      ? "/images/cards/card-compliance-saudi.png"
+                      : "/images/cards/card-compliance-india.png"
+                  }
+                  alt={
+                    isGuidesOverview
+                      ? "Global Employee Monitoring Laws & Compliance Matrix"
+                      : `${activeCard.name} Edition Deskmerit Compliance Card`
+                  }
+                  type="mobile"
+                />
               </div>
             </div>
           </div>

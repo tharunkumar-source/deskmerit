@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRightIcon, ChevronRightIcon } from "lucide-react";
+import { HeroDeviceMockup } from "../ui/HeroDeviceMockup";
 
 type Crumb = { title: string; href?: string };
 
@@ -372,20 +373,19 @@ export function PageHero({
 
           {hasSide && (
             <div className="col-span-1 lg:col-span-5 flex justify-center lg:justify-end min-w-0 max-w-full w-full">
-              <div className="w-full max-w-full sm:max-w-[540px] xl:max-w-[580px] rounded-xl overflow-hidden border border-neutral-700/60 bg-[#0E1620] shadow-2xl shadow-black/60 group hover:border-teal-500/40 transition-all duration-300">
-                {/* Screenshot Frame Area */}
-                <div className="w-full max-w-full aspect-[16/10] overflow-hidden bg-neutral-950">
-                  {heroImage ? (
-                    <img
-                      src={heroImage}
-                      alt={imageAlt || title}
-                      className="h-full w-full max-w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
-                    />
-                  ) : (
-                    aside
-                  )}
+              {heroImage ? (
+                <HeroDeviceMockup
+                  src={heroImage}
+                  alt={imageAlt || title}
+                  type="tablet"
+                />
+              ) : (
+                <div className="w-full max-w-full sm:max-w-[540px] xl:max-w-[580px] rounded-xl overflow-hidden border border-neutral-700/60 bg-[#0E1620] shadow-2xl shadow-black/60 group hover:border-teal-500/40 transition-all duration-300">
+                  <div className="w-full max-w-full aspect-[16/10] overflow-hidden bg-neutral-950">
+                    {aside}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           )}
         </div>

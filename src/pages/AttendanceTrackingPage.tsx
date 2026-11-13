@@ -4,6 +4,7 @@ import { DeskmeritHeader } from "../components/DeskmeritHeader";
 import { DeskmeritFooter } from "../components/DeskmeritFooter";
 import { DeskmeritFaq } from "../components/DeskmeritFaq";
 import { DeskmeritCtaBand } from "../components/DeskmeritCtaBand";
+import { HeroDeviceMockup } from "../components/ui/HeroDeviceMockup";
 import {
   Calendar,
   Clock,
@@ -139,18 +140,13 @@ export function AttendanceTrackingPage() {
                 </div>
               </div>
 
-              {/* Right Framed App Mockup (macOS Window + Authentic Attendance Matrix) */}
+              {/* Right Framed App Mockup in Tablet Mockup */}
               <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
-                <div className="w-full max-w-full rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
-                  <div className="bg-slate-950 p-1 sm:p-2 overflow-hidden w-full max-w-full">
-                    <img
-                      src="/images/figma/attendance-company-matrix.png"
-                      alt="Deskmerit Workforce Attendance Matrix and Daily Work Verification"
-                      className="w-full max-w-full h-auto object-contain rounded-lg block shadow-inner"
-                      loading="eager"
-                    />
-                  </div>
-                </div>
+                <HeroDeviceMockup
+                  src="/images/figma/attendance-company-matrix.png"
+                  alt="Deskmerit Workforce Attendance Matrix and Daily Work Verification"
+                  type="tablet"
+                />
               </div>
             </div>
           </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 type BadgeTone = "success" | "warning" | "error" | "info" | "neutral" | "ai" | "primary" | "accent";
 
-// Strictly maps to PulseTrack Live-State and Core Palette
+// Strictly maps to Deskmerit Live-State and Core Palette
 const toneClasses: Record<BadgeTone, string> = {
   // Mint (Tracking / Productive)
   success: "bg-[#E8F8F3] text-[#0E8E66] border-[#12B886]/30",

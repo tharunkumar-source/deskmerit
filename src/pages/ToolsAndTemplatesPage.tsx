@@ -4,6 +4,7 @@ import { DeskmeritHeader } from "../components/DeskmeritHeader";
 import { DeskmeritFooter } from "../components/DeskmeritFooter";
 import { DeskmeritCtaBand } from "../components/DeskmeritCtaBand";
 import { DeskmeritFaq } from "../components/DeskmeritFaq";
+import { HeroDeviceMockup } from "../components/ui/HeroDeviceMockup";
 import {
   Calculator,
   Download,
@@ -86,7 +87,7 @@ export function ToolsAndTemplatesPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Heading & Pitch */}
-              <div className="lg:col-span-7">
+              <div className="lg:col-span-6">
                 <div className="text-xs font-bold uppercase tracking-wider text-[#D8B4FE] mb-3">
                   {isTimesheet || isPolicy ? "FREE COMPLIANCE TEMPLATE" : "FREE PRODUCTIVITY TOOL"}
                 </div>
@@ -135,26 +136,20 @@ export function ToolsAndTemplatesPage() {
                 </div>
               </div>
 
-              {/* Right Column: Authentic Tool & Template Screenshot in macOS Browser Window Frame */}
-              <div className="lg:col-span-5 min-w-0 max-w-full">
-                <div className="w-full max-w-full rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-2xl overflow-hidden group">
-                  <div className="bg-[#070E1A] p-1.5 sm:p-2 overflow-hidden w-full max-w-full">
-                    <img
-                      src={
-                        isOvertime
-                          ? "/images/figma/reports-extra-hours.png"
-                          : isTimesheet
-                          ? "/images/figma/timesheet-time-ledger.png"
-                          : isPolicy
-                          ? "/images/figma/privacy-settings-audit.png"
-                          : "/images/figma/productivity-breakdown.png"
-                      }
-                      alt="Deskmerit Workplace Tool and Compliance Template Preview"
-                      className="w-full max-w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
-                      loading="eager"
-                    />
-                  </div>
-                </div>
+              {/* Right Column: Authentic UI Tablet Mockup with Light Shadow Glow */}
+              <div className="lg:col-span-6 min-w-0 max-w-full flex justify-center items-center">
+                <HeroDeviceMockup
+                  src={
+                    isOvertime
+                      ? "/images/figma/reports-extra-hours.png"
+                      : isTimesheet
+                      ? "/images/figma/timesheet-time-ledger.png"
+                      : isPolicy
+                      ? "/images/figma/privacy-settings-audit.png"
+                      : "/images/figma/productivity-breakdown.png"
+                  }
+                  alt="Deskmerit Workplace Tool and Compliance Template Preview"
+                />
               </div>
             </div>
           </div>

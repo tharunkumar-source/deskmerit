@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { DeskmeritHeader } from "../components/DeskmeritHeader";
 import { DeskmeritFooter } from "../components/DeskmeritFooter";
 import { DeskmeritFaq } from "../components/DeskmeritFaq";
+import { HeroDeviceMockup } from "../components/ui/HeroDeviceMockup";
 import { useCurrency, CURRENCIES, CurrencyCode } from "../utils/currencyContext";
 import {
   Check,
@@ -148,18 +149,13 @@ export function PricingPage() {
                 </div>
               </div>
 
-              {/* Right Column: Authentic Figma Product Screenshot in macOS Browser Window Frame */}
+              {/* Right Column: Authentic Figma Product Screenshot in Tablet Mockup */}
               <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
-                <div className="w-full max-w-full rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
-                  <div className="bg-[#070E1A] p-1.5 sm:p-2 max-h-[380px] overflow-hidden flex items-center justify-center w-full max-w-full">
-                    <img
-                      src="/images/figma/dashboard-executive-overview.png"
-                      alt="Deskmerit Executive Overview Dashboard Included on Pro & Premium"
-                      className="w-full max-w-full h-auto rounded-lg object-cover object-top shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
-                      loading="eager"
-                    />
-                  </div>
-                </div>
+                <HeroDeviceMockup
+                  src="/images/figma/dashboard-executive-overview.png"
+                  alt="Deskmerit Executive Overview Dashboard Included on Pro & Premium"
+                  type="tablet"
+                />
               </div>
             </div>
           </div>

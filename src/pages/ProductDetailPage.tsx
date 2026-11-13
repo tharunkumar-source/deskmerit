@@ -4,6 +4,7 @@ import { DeskmeritHeader } from "../components/DeskmeritHeader";
 import { DeskmeritFooter } from "../components/DeskmeritFooter";
 import { DeskmeritCtaBand } from "../components/DeskmeritCtaBand";
 import { DeskmeritFaq } from "../components/DeskmeritFaq";
+import { HeroDeviceMockup } from "../components/ui/HeroDeviceMockup";
 import {
   Timer,
   Activity,
@@ -235,7 +236,7 @@ const PRODUCT_FEATURES: Record<string, ProductFeatureDetail> = {
     ],
         screenshot: {
       src: "/images/figma/tray-private-mode.png",
-      alt: "Deskmerit Pulse Track Desktop Tray with Private Mode Active",
+      alt: "Deskmerit Desktop Tray with Private Mode Active",
       type: "dashboard",
     },
     mockup: {
@@ -299,7 +300,7 @@ const PRODUCT_FEATURES: Record<string, ProductFeatureDetail> = {
     ],
     screenshot: {
       src: "/images/figma/tray-screenshot-transparency.png",
-      alt: "Deskmerit Pulse Track Screenshot Transparency and Privacy Controls",
+      alt: "Deskmerit Screenshot Transparency and Privacy Controls",
       type: "dashboard",
     },
     mockup: {
@@ -669,7 +670,7 @@ const PRODUCT_FEATURES: Record<string, ProductFeatureDetail> = {
     ],
         screenshot: {
       src: "/images/figma/tray-focus-interval-desktop.png",
-      alt: "Deskmerit Pulse Track Focus Interval and Health Break Timer",
+      alt: "Deskmerit Focus Interval and Health Break Timer",
       type: "dashboard",
     },
     mockup: {
@@ -835,37 +836,14 @@ export function ProductDetailPage() {
                 </div>
               </div>
 
-              {/* Right Column: Authentic Product Screenshot or Mockup */}
+              {/* Right Column: Authentic Product Screenshot in Device Mockup */}
               <div className="col-span-1 lg:col-span-6 flex justify-center items-center min-w-0 max-w-full w-full">
                 {feat.screenshot ? (
-                  feat.screenshot.type === "tray" ? (
-                    /* Native Windows/Desktop Tray UI Showcase */
-                    <div className="relative max-w-full sm:max-w-[360px] w-full mx-auto overflow-hidden sm:overflow-visible">
-                      <div className="absolute -inset-2 bg-gradient-to-r from-[#61126E]/20 via-[#A81CD0]/20 to-[#61126E]/10 rounded-3xl blur-xl opacity-75" />
-                      <div className="relative rounded-2xl border border-[#3D1B4B] bg-[#180C24] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] overflow-hidden">
-                        <img
-                          src={feat.screenshot.src}
-                          alt={feat.screenshot.alt}
-                          className="w-full max-w-full h-auto object-contain block"
-                          loading="eager"
-                        />
-                      </div>
-                    </div>
-                  ) : (
-                    /* Web Admin Dashboard Screen Showcase */
-                    <div className="w-full max-w-full min-w-0">
-                      <div className="rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
-                        <div className="bg-slate-950 p-1 sm:p-2 overflow-hidden w-full max-w-full">
-                          <img
-                            src={feat.screenshot.src}
-                            alt={feat.screenshot.alt}
-                            className="w-full max-w-full h-auto max-h-[460px] object-contain object-top rounded-lg block shadow-inner"
-                            loading="eager"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  )
+                  <HeroDeviceMockup
+                    src={feat.screenshot.src}
+                    alt={feat.screenshot.alt}
+                    type={feat.screenshot.type === "tray" ? "tray" : "tablet"}
+                  />
                 ) : (
                   /* Fallback Mockup if no screenshot */
                   <div className="w-full max-w-full min-w-0">

@@ -4,6 +4,7 @@ import { DeskmeritHeader } from "../components/DeskmeritHeader";
 import { DeskmeritFooter } from "../components/DeskmeritFooter";
 import { DeskmeritFaq } from "../components/DeskmeritFaq";
 import { DeskmeritCtaBand } from "../components/DeskmeritCtaBand";
+import { HeroDeviceMockup } from "../components/ui/HeroDeviceMockup";
 import {
   Code2,
   TrendingUp,
@@ -112,19 +113,12 @@ export function ItServicesPage() {
                 </div>
               </div>
 
-              {/* Right Column: Authentic Figma Product Screenshot in macOS Browser Window Frame */}
-              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
-                <div className="w-full max-w-full rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
-                  {/* Product Screenshot Preview */}
-                  <div className="bg-[#070E1A] p-1.5 sm:p-2 overflow-hidden w-full max-w-full">
-                    <img
-                      src="/images/figma/reports-cost-profitability.png"
-                      alt="Deskmerit Project Cost, Profitability & Utilization Analytics"
-                      className="w-full max-w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
-                      loading="eager"
-                    />
-                  </div>
-                </div>
+              {/* Right Column: Authentic UI Tablet Mockup with Light Shadow Glow */}
+              <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full flex justify-center items-center">
+                <HeroDeviceMockup
+                  src="/images/figma/reports-cost-profitability.png"
+                  alt="Deskmerit Project Cost, Profitability & Utilization Analytics"
+                />
               </div>
             </div>
           </div>

@@ -4,6 +4,7 @@ import { DeskmeritHeader } from "../components/DeskmeritHeader";
 import { DeskmeritFooter } from "../components/DeskmeritFooter";
 import { DeskmeritCtaBand } from "../components/DeskmeritCtaBand";
 import { DeskmeritFaq } from "../components/DeskmeritFaq";
+import { HeroDeviceMockup } from "../components/ui/HeroDeviceMockup";
 import { InteractiveTrackerWidget } from "../components/InteractiveTrackerWidget";
 import {
   ShieldCheck,
@@ -119,18 +120,13 @@ export function PrivacyPromisePage() {
                 </div>
               </div>
 
-              {/* Right Column: Authentic Privacy & Security Charter Screenshot in macOS Browser Window Frame */}
+              {/* Right Column: Authentic Privacy & Security Charter Screenshot in Tablet Mockup */}
               <div className="col-span-1 lg:col-span-6 min-w-0 max-w-full w-full">
-                <div className="w-full max-w-full rounded-2xl border border-slate-700/80 bg-[#0F1E36] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
-                  <div className="bg-[#070E1A] p-1.5 sm:p-2 overflow-hidden w-full max-w-full">
-                    <img
-                      src="/images/figma/privacy-settings-audit.png"
-                      alt="Deskmerit Enterprise Privacy Settings & Security Audit Controls"
-                      className="w-full max-w-full h-auto rounded-lg object-contain shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
-                      loading="eager"
-                    />
-                  </div>
-                </div>
+                <HeroDeviceMockup
+                  src="/images/figma/privacy-settings-audit.png"
+                  alt="Deskmerit Enterprise Privacy Settings & Security Audit Controls"
+                  type="tablet"
+                />
               </div>
             </div>
           </div>

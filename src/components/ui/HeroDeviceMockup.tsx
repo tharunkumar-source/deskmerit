@@ -17,18 +17,18 @@ export function HeroDeviceMockup({
 }: HeroDeviceMockupProps) {
   // Sizing container based on image type
   const maxWidth =
-    type === "mobile" || type === "tray"
-      ? "max-w-[360px] sm:max-w-[390px]"
-      : type === "card" || type === "compact"
-      ? "max-w-[440px] sm:max-w-[480px]"
+    type === "mobile" || type === "card" || type === "compact"
+      ? "max-w-[460px] sm:max-w-[500px] lg:max-w-[540px]"
+      : type === "tray"
+      ? "max-w-[380px] sm:max-w-[420px]"
       : "max-w-full sm:max-w-[640px] lg:max-w-[680px]";
 
   // Rounded radius corresponding to the baked device frame shape
   const deviceRadius =
-    type === "mobile"
-      ? "rounded-[46px]"
-      : type === "card" || type === "compact"
-      ? "rounded-[36px]"
+    type === "mobile" || type === "card" || type === "compact"
+      ? "rounded-[32px] sm:rounded-[36px]"
+      : type === "tray"
+      ? "rounded-[24px]"
       : "rounded-[32px] sm:rounded-[36px]";
 
   return (

@@ -25,13 +25,13 @@ import {
 
 function HeroGraphic() {
   return (
-    <div className="relative w-full max-w-full sm:max-w-[620px] mx-auto">
+    <div className="relative w-full max-w-full lg:max-w-[760px] xl:max-w-[840px] mx-auto">
       {/* Background Subtle Gradient Aura */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[480px] h-[280px] sm:h-[480px] bg-gradient-to-tr from-[#61126E]/15 via-indigo-500/10 to-transparent rounded-full blur-2xl sm:blur-3xl pointer-events-none -z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[600px] h-[340px] sm:h-[600px] bg-gradient-to-tr from-[#61126E]/18 via-indigo-500/12 to-transparent rounded-full blur-2xl sm:blur-3xl pointer-events-none -z-0" />
       <img
         src="/images/figma/hero-mockup-composite.png"
         alt="Deskmerit Live Team Activity, Timeline, and Time Tracking Summary"
-        className="relative z-10 w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(15,23,48,0.12)]"
+        className="relative z-10 w-full h-auto object-contain select-none drop-shadow-[0_24px_55px_rgba(15,23,48,0.14)]"
         loading="eager"
       />
     </div>
@@ -158,10 +158,10 @@ export function DeskmeritHero() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12 items-center">
           {/* Left Column: Bold Typography & Lead Capture (Reference Image 4) */}
-          <div className="lg:col-span-6 text-left">
+          <div className="lg:col-span-5 text-left">
             {/* Clean Eyebrow Standard */}
             <div className="text-xs font-bold uppercase tracking-wider text-[#61126E] flex items-center gap-2 mb-3">
               <span className="w-2 h-2 rounded-full bg-[#61126E] animate-pulse" />
@@ -169,7 +169,7 @@ export function DeskmeritHero() {
             </div>
 
             {/* H1 Headline Matching Reference Image 4 Style */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-[#0A2540] tracking-[-0.035em] leading-[1.22] sm:leading-[1.18] lg:leading-[1.15] mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-[52px] xl:text-[56px] font-extrabold text-[#0A2540] tracking-[-0.035em] leading-[1.22] sm:leading-[1.18] lg:leading-[1.14] mb-6">
               Know where the work goes.{" "}
               <span className="text-[#61126E]">
                 Without watching over shoulders.
@@ -218,7 +218,7 @@ export function DeskmeritHero() {
           </div>
 
           {/* Right Column: Hero Graphic from Figma (Image instead of code) */}
-          <div className="lg:col-span-6 relative">
+          <div className="lg:col-span-7 relative flex justify-center lg:justify-end">
             <HeroGraphic />
           </div>
         </div>

@@ -21,7 +21,7 @@ export function HeroDeviceMockup({
       ? "max-w-[360px] sm:max-w-[390px]"
       : type === "card" || type === "compact"
       ? "max-w-[440px] sm:max-w-[480px]"
-      : "max-w-full sm:max-w-[620px]";
+      : "max-w-full sm:max-w-[640px] lg:max-w-[680px]";
 
   // Rounded radius corresponding to the baked device frame shape
   const deviceRadius =
@@ -29,7 +29,7 @@ export function HeroDeviceMockup({
       ? "rounded-[46px]"
       : type === "card" || type === "compact"
       ? "rounded-[36px]"
-      : "rounded-[26px] sm:rounded-[30px]";
+      : "rounded-[32px] sm:rounded-[36px]";
 
   return (
     <div className={`relative w-full ${maxWidth} mx-auto group cursor-pointer ${className}`}>
